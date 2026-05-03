@@ -1,20 +1,32 @@
 import json
 import os
 import uuid
+import re
+import logging
 from datetime import datetime
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-import re
-import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-_DEFAULT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unknown_questions.json")
-QUESTIONS_FILE = os.environ.get("QUESTIONS_FILE", _DEFAULT_PATH)
+# ── مسار الملف ────────────────────────────────────────────
+# Railway Volume  → /data/unknown_questions.json
+# Local Docker    → rasa/actions/unknown_questions.json
+def _get_questions_file() -> str:
+    env = os.environ.get("QUESTIONS_FILE")
+    if env:
+        return env
+    if os.path.exists("/data"):
+        return "/data/unknown_questions.json"
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "unknown_questions.json")
+
+QUESTIONS_FILE = _get_questions_file()
+logger.info(f"[actions] QUESTIONS_FILE = {QUESTIONS_FILE}")
 
 
+# ── Helpers ───────────────────────────────────────────────
 def _load_questions() -> list:
     try:
         if os.path.exists(QUESTIONS_FILE):
@@ -22,24 +34,28 @@ def _load_questions() -> list:
                 data = json.load(f)
                 return data if isinstance(data, list) else []
     except (json.JSONDecodeError, IOError) as e:
-        logger.error(f"[load_questions] Erreur lecture : {e}")
+        logger.error(f"[load] Erreur: {e}")
     return []
 
 
 def _save_questions(data: list) -> bool:
+    """كتابة ذرية — تمنع تلف الملف عند الكتابة المتزامنة."""
     try:
         d = os.path.dirname(QUESTIONS_FILE)
         if d:
             os.makedirs(d, exist_ok=True)
-        with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
+        tmp = QUESTIONS_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, QUESTIONS_FILE)  # ذري — لا يتلف الملف
         return True
     except IOError as e:
-        logger.error(f"[save_questions] Erreur écriture : {e}")
+        logger.error(f"[save] Erreur: {e}")
         return False
 
 
-def _normalize_question(q: dict) -> dict:
+def _normalize(q: dict) -> dict:
+    """يضيف الحقول الناقصة للأسئلة القديمة."""
     if "id" not in q:
         q["id"] = str(uuid.uuid4())
     if "admin_reply" not in q:
@@ -49,105 +65,157 @@ def _normalize_question(q: dict) -> dict:
     return q
 
 
-def _migrate_legacy_data(data: list) -> list:
-    migrated = False
+def _migrate(data: list) -> list:
+    """ترحيل البيانات القديمة تلقائياً."""
+    changed = False
     for i, q in enumerate(data):
         if "id" not in q or "admin_reply" not in q:
-            data[i] = _normalize_question(q)
-            migrated = True
-    if migrated:
-        logger.info("[migrate] Données legacy migrées")
+            data[i] = _normalize(q)
+            changed = True
+    if changed:
+        logger.info("[migrate] بيانات قديمة تمت ترقيتها")
         _save_questions(data)
     return data
 
 
+def _is_arabic(text: str) -> bool:
+    ar = len(re.findall(r'[\u0600-\u06FF]', text))
+    return ar > len(text) * 0.2 if text else False
+
+
+def _save_unknown(question: str) -> bool:
+    """حفظ سؤال غير معروف مع anti-doublon."""
+    if not question or not question.strip():
+        return False
+    q = question.strip()
+    data = _load_questions()
+    data = _migrate(data)
+    # تجنب التكرار المتتالي
+    if data and data[-1].get("question") == q:
+        logger.info(f"[save] doublon ignoré: {q[:60]}")
+        return False
+    data.append({
+        "id":          str(uuid.uuid4()),
+        "question":    q,
+        "timestamp":   datetime.now().isoformat(),
+        "admin_reply": None,
+        "replied_at":  None
+    })
+    ok = _save_questions(data)
+    if ok:
+        logger.info(f"[save] ✅ ({len(data)} total): {q[:60]}")
+    else:
+        logger.error(f"[save] ❌ فشل: {q[:60]}")
+    return ok
+
+
+# ═══════════════════════════════════════════════════════════
+# Action 1 — Fallback
+# ═══════════════════════════════════════════════════════════
 class ActionDefaultFallback(Action):
 
     def name(self) -> Text:
         return "action_default_fallback"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
         user_message = (tracker.latest_message.get("text") or "").strip()
-        arabic_chars = len(re.findall(r'[\u0600-\u06FF]', user_message))
-        is_arabic = arabic_chars > len(user_message) * 0.2 if user_message else False
+
         if user_message:
-            self._save_unknown(user_message)
-        if is_arabic:
+            _save_unknown(user_message)
+
+        if _is_arabic(user_message):
             dispatcher.utter_message(response="utter_fallback_ar")
         else:
             dispatcher.utter_message(response="utter_fallback_fr")
-        return []
 
-    def _save_unknown(self, question: str):
-        data = _load_questions()
-        data = _migrate_legacy_data(data)
-        if data and data[-1].get("question") == question:
-            return
-        data.append({
-            "id": str(uuid.uuid4()),
-            "question": question,
-            "timestamp": datetime.now().isoformat(),
-            "admin_reply": None,
-            "replied_at": None
-        })
-        if _save_questions(data):
-            logger.info(f"[save_unknown] ✅ ({len(data)} total) : {question[:60]}")
-        else:
-            logger.error(f"[save_unknown] ❌ Échec : {question[:60]}")
-
-
-class ActionSearchKnowledge(Action):
-
-    def name(self) -> Text:
-        return "action_search_knowledge"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_message = (tracker.latest_message.get("text") or "").strip()
-        arabic_chars = len(re.findall(r'[\u0600-\u06FF]', user_message))
-        is_arabic = arabic_chars > len(user_message) * 0.2 if user_message else False
-        if is_arabic:
-            dispatcher.utter_message(text="عذراً، لم أجد معلومات كافية. هل يمكنك إعادة الصياغة؟")
-        else:
-            dispatcher.utter_message(text="Désolé, je n'ai pas trouvé d'informations suffisantes. Pouvez-vous reformuler ?")
         return []
 
 
+# ═══════════════════════════════════════════════════════════
+# Action 2 — حفظ سؤال غير معروف (من Rules)
+# ═══════════════════════════════════════════════════════════
 class ActionSaveUnknownQuestion(Action):
 
     def name(self) -> Text:
         return "action_save_unknown_question"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
         user_message = (tracker.latest_message.get("text") or "").strip()
         if user_message:
-            data = _load_questions()
-            data = _migrate_legacy_data(data)
-            if not (data and data[-1].get("question") == user_message):
-                data.append({
-                    "id": str(uuid.uuid4()),
-                    "question": user_message,
-                    "timestamp": datetime.now().isoformat(),
-                    "admin_reply": None,
-                    "replied_at": None
-                })
-                if _save_questions(data):
-                    logger.info(f"[ActionSaveUnknown] ✅ {user_message[:60]}")
-                else:
-                    logger.error(f"[ActionSaveUnknown] ❌ Échec : {user_message[:60]}")
+            _save_unknown(user_message)
+
         return []
 
 
+# ═══════════════════════════════════════════════════════════
+# Action 3 — البحث في قاعدة المعرفة
+# ═══════════════════════════════════════════════════════════
+class ActionSearchKnowledge(Action):
+
+    def name(self) -> Text:
+        return "action_search_knowledge"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        user_message = (tracker.latest_message.get("text") or "").strip()
+
+        if _is_arabic(user_message):
+            dispatcher.utter_message(
+                text="عذراً، لم أجد معلومات كافية. هل يمكنك إعادة الصياغة؟"
+            )
+        else:
+            dispatcher.utter_message(
+                text="Désolé, je n'ai pas trouvé d'informations suffisantes. "
+                     "Pouvez-vous reformuler ?"
+            )
+
+        return []
+
+
+# ═══════════════════════════════════════════════════════════
+# Action 4 — تفاصيل الماستر
+# ═══════════════════════════════════════════════════════════
 class ActionProvideMasterDetails(Action):
 
     def name(self) -> Text:
         return "action_provide_master_details"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
         user_message = (tracker.latest_message.get("text") or "").strip()
-        arabic_chars = len(re.findall(r'[\u0600-\u06FF]', user_message))
-        is_arabic = arabic_chars > len(user_message) * 0.2 if user_message else False
-        if is_arabic:
-            dispatcher.utter_message(text="للمزيد من المعلومات حول برامج الماستر، يرجى التواصل مع إدارة الكلية.")
+
+        if _is_arabic(user_message):
+            dispatcher.utter_message(
+                text="للمزيد من المعلومات حول برامج الماستر، "
+                     "يرجى التواصل مع إدارة الكلية أو زيارة الموقع الرسمي."
+            )
         else:
-            dispatcher.utter_message(text="Pour plus d'informations sur les programmes de Master, veuillez contacter l'administration de la faculté.")
+            dispatcher.utter_message(
+                text="Pour plus d'informations sur les programmes de Master, "
+                     "veuillez contacter l'administration de la faculté "
+                     "ou visiter le site officiel."
+            )
+
         return []
