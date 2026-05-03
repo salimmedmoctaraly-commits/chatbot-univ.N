@@ -1,0 +1,56 @@
+# ==================== M1 ====================
+version: "3.1"
+
+nlu:
+
+- intent: ask_matieres_mesa_m1
+  examples: |
+    - مواد M1 MESA
+    - ما هي مواد MESA M1
+    - مواد الماستر الأول MESA
+    - M1 MESA matières
+    - quelles sont les matières M1 MESA
+    - matières master 1 MESA
+    - مواد M1 اقتصاديات وتسيير
+    - MESA السنة الأولى ماستر
+    - M1 MESA
+    - matières M1 MESA
+
+- intent: ask_matieres_mbf_m1
+  examples: |
+    - مواد M1 MBF
+    - ما هي مواد MBF M1
+    - مواد الماستر الأول MBF
+    - M1 MBF matières
+    - quelles sont les matières M1 MBF
+    - matières master 1 MBF
+    - مواد M1 النقد والبنوك
+    - MBF السنة الأولى ماستر
+    - M1 Monnaie Banque Finance
+    - matières M1 MBF
+
+- intent: ask_matieres_cca_m1
+  examples: |
+    - مواد M1 CCA
+    - ما هي مواد CCA M1
+    - مواد الماستر الأول CCA
+    - M1 CCA matières
+    - quelles sont les matières M1 CCA
+    - matières master 1 CCA
+    - مواد M1 محاسبة ومراقبة
+    - CCA السنة الأولى ماستر
+    - M1 Comptabilité Contrôle Audit
+    - matières M1 CCA
+
+- intent: ask_matieres_management_m1
+  examples: |
+    - مواد M1 Management
+    - ما هي مواد Management M1
+    - مواد الماستر الأول تسيير
+    - M1 Management matières
+    - quelles sont les matières M1 Management
+    - matières master 1 Management
+    - مواد M1 تسيير
+    - Management السنة الأولى ماستر
+    - M1 Management
+    - matières M1 Management

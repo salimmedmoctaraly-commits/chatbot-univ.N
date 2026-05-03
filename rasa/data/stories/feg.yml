@@ -1,0 +1,141 @@
+# ══════════════════════════════════════════
+# FEG
+# ══════════════════════════════════════════
+version: "3.1"
+
+stories:
+
+# ==================== Stories simples ====================
+
+- story: مسار معلومات FEG
+  steps:
+  - intent: ask_feg_info
+  - action: utter_ask_feg_info
+
+- story: مسار مهام FEG
+  steps:
+  - intent: ask_feg_missions
+  - action: utter_ask_feg_missions
+
+- story: مسار رؤية FEG
+  steps:
+  - intent: ask_feg_vision
+  - action: utter_ask_feg_vision
+
+- story: مسار عروض التكوين FEG
+  steps:
+  - intent: ask_feg_offres
+  - action: utter_ask_feg_offres
+
+- story: مسار تخصصات FEG
+  steps:
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+
+- story: مسار الهيئة التدريسية FEG
+  steps:
+  - intent: ask_feg_corps_professoral
+  - action: utter_ask_feg_corps_professoral
+
+- story: مسار معايير المداولات FEG
+  steps:
+  - intent: ask_feg_criteres_passage
+  - action: utter_ask_feg_criteres_passage
+
+# ==================== Stories combinées ====================
+
+- story: مسار معلومات FEG ثم المهام
+  steps:
+  - intent: ask_feg_info
+  - action: utter_ask_feg_info
+  - intent: ask_feg_missions
+  - action: utter_ask_feg_missions
+
+- story: مسار معلومات FEG ثم الرؤية
+  steps:
+  - intent: ask_feg_info
+  - action: utter_ask_feg_info
+  - intent: ask_feg_vision
+  - action: utter_ask_feg_vision
+
+- story: مسار المهام ثم الرؤية
+  steps:
+  - intent: ask_feg_missions
+  - action: utter_ask_feg_missions
+  - intent: ask_feg_vision
+  - action: utter_ask_feg_vision
+
+- story: مسار عروض FEG ثم التخصصات
+  steps:
+  - intent: ask_feg_offres
+  - action: utter_ask_feg_offres
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+
+- story: مسار التخصصات ثم معايير المداولات
+  steps:
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+  - intent: ask_feg_criteres_passage
+  - action: utter_ask_feg_criteres_passage
+
+- story: مسار عروض FEG ثم الهيئة التدريسية
+  steps:
+  - intent: ask_feg_offres
+  - action: utter_ask_feg_offres
+  - intent: ask_feg_corps_professoral
+  - action: utter_ask_feg_corps_professoral
+
+- story: مسار معلومات ثم التخصصات ثم المداولات
+  steps:
+  - intent: ask_feg_info
+  - action: utter_ask_feg_info
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+  - intent: ask_feg_criteres_passage
+  - action: utter_ask_feg_criteres_passage
+
+- story: مسار معلومات ثم عروض ثم تخصصات
+  steps:
+  - intent: ask_feg_info
+  - action: utter_ask_feg_info
+  - intent: ask_feg_offres
+  - action: utter_ask_feg_offres
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+
+- story: مسار المهام ثم الرؤية ثم العروض
+  steps:
+  - intent: ask_feg_missions
+  - action: utter_ask_feg_missions
+  - intent: ask_feg_vision
+  - action: utter_ask_feg_vision
+  - intent: ask_feg_offres
+  - action: utter_ask_feg_offres
+
+- story: مسار التخصصات ثم الهيئة التدريسية ثم المداولات
+  steps:
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+  - intent: ask_feg_corps_professoral
+  - action: utter_ask_feg_corps_professoral
+  - intent: ask_feg_criteres_passage
+  - action: utter_ask_feg_criteres_passage
+
+- story: مسار كامل FEG
+  steps:
+  - intent: ask_feg_info
+  - action: utter_ask_feg_info
+  - intent: ask_feg_missions
+  - action: utter_ask_feg_missions
+  - intent: ask_feg_vision
+  - action: utter_ask_feg_vision
+  - intent: ask_feg_offres
+  - action: utter_ask_feg_offres
+  - intent: ask_feg_specialisations
+  - action: utter_ask_feg_specialisations
+  - intent: ask_feg_corps_professoral
+  - action: utter_ask_feg_corps_professoral
+  - intent: ask_feg_criteres_passage
+  - action: utter_ask_feg_criteres_passage
+

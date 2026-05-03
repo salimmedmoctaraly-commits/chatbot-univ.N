@@ -1,0 +1,17 @@
+version: "3.1"
+
+stories:
+
+  - story: Découverte FSJP complète
+    steps:
+      - intent: ask_fsjp_info
+      - action: utter_ask_fsjp_info
+      - intent: ask_fsjp_specializations
+      - action: utter_ask_fsjp_specializations
+
+  - story: Découverte puis Master
+    steps:
+      - intent: ask_fsjp_info
+      - action: utter_ask_fsjp_info
+      - intent: ask_matieres_master_droit_public
+      - action: utter_ask_matieres_master_droit_public

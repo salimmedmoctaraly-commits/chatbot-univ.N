@@ -1,0 +1,888 @@
+version: "3.1"
+
+nlu:
+
+# FST — Master 1 & 2 + Doctorat
+
+- intent: demander_masters_ar
+  examples: |
+    - ما هي برامج الماستر في FST؟
+    - ماسترات FST
+    - ما هي الماسترات المتاحة؟
+    - برامج ما بعد الليسانس
+    - ماستر في كلية العلوم والتقنيات
+    - قائمة الماسترات في FST
+    - ما هي تخصصات الماستر؟
+    - كم ماستر في FST؟
+    - ماستر إعلاميات FST
+    - ماستر بيولوجيا FST
+    - Bac+5 في FST
+    - برامج الماستر المتاحة
+    - ما ماستر يمكنني التسجيل فيه؟
+    - بعد الليسانس ما الخيارات؟
+    - الدراسات العليا في FST
+    - ماسترات FST قائمة
+    - ماستر جيولوجيا FST
+    - الماستر في FST ما هي تخصصاته؟
+
+- intent: demander_masters_fr
+  examples: |
+    - Quels sont les masters à la FST ?
+    - Les masters disponibles à la FST
+    - Masters FST
+    - Programmes de master à la FST
+    - Quels masters proposés par la FST ?
+    - Liste des masters FST
+    - Combien de masters à la FST ?
+    - Master informatique FST
+    - Master biologie FST
+    - Bac+5 à la FST
+    - Programmes masters disponibles
+    - Quel master puis-je intégrer ?
+    - Après la licence quelles options ?
+    - Études supérieures à la FST
+    - Masters FST liste
+    - Master géologie FST
+    - Offre de masters FST
+    - Quelles spécialités en master FST ?
+
+- intent: demander_doctorat_ar
+  examples: |
+    - ما هي برامج الدكتوراه في FST؟
+    - دكتوراه FST
+    - شروط الدكتوراه
+    - مدة الدكتوراه
+    - كيف أسجل في الدكتوراه؟
+    - Bac+8 في FST
+    - ما التخصصات المتاحة للدكتوراه؟
+    - الدكتوراه في كلية العلوم والتقنيات
+    - من يمكنه التسجيل في الدكتوراه؟
+    - ما مدة دراسة الدكتوراه؟
+    - PHD في FST
+    - الدكتوراه شروط القبول
+    - ما بعد الماستر في FST؟
+    - دكتوراه إعلاميات FST
+    - الدكتوراه
+    - مرحلة الدكتوراه FST
+    - دكتوراه بعد الماستر FST
+
+- intent: demander_doctorat_fr
+  examples: |
+    - Qu'est-ce que le doctorat à la FST ?
+    - Doctorat FST
+    - Conditions pour le doctorat
+    - Durée du doctorat
+    - Comment s'inscrire en doctorat ?
+    - Bac+8 à la FST
+    - Quelles spécialités pour le doctorat ?
+    - Qui peut s'inscrire en doctorat ?
+    - Quelle est la durée du doctorat ?
+    - PHD à la FST
+    - Doctorat conditions d'admission
+    - Après le master quelles options FST ?
+    - Thèse de doctorat FST
+    - Doctorat informatique FST
+    - Le doctorat
+    - Programme doctorat FST
+    - Doctorat après master FST
+
+- intent: masters_disponibles_MA_ar
+  examples: |
+    - ماسترات ma
+    - تخصصات ماستر ma
+    - ماستر متاح لـ ma
+    - ماذا يختار طالب ma
+    - خيارات ma للماستر
+    - ما هي ماسترات ma
+    - إحصائيات ماستر ma
+    - ترتيب ماستر ma
+    - معدل ماستر ma
+    - أفضل ماستر لـ ma
+    - ماستر بعد ma
+    - توجيه ma ماستر
+    - إحصائيات توجيه ma
+    - ماستر رياضيات وتطبيقات متاح
+    - ما هو آخر معدل ماستر ma
+    - ما هو آخر ترتيب ماستر ma
+    - إحصائيات ma 2025
+    - خيارات ماستر بعد ma
+    - ماستر ma fst
+    - ماستر بعد رياضيات وتطبيقات
+
+- intent: masters_disponibles_MA_fr
+  examples: |
+    - masters ma
+    - spécialités master ma
+    - master disponible ma
+    - que choisir ma master
+    - options ma master
+    - quels masters pour ma
+    - statistiques master ma
+    - classement master ma
+    - moyenne master ma
+    - meilleur master pour ma
+    - master après ma
+    - orientation ma master
+    - statistiques orientation ma
+    - master maths applications disponible
+    - dernier rang master ma
+    - dernière moyenne master ma
+    - statistiques ma 2025
+    - choix master après ma
+    - master ma fst
+    - master après mathématiques applications
+
+- intent: masters_disponibles_MI_ar
+  examples: |
+    - ماسترات mi
+    - تخصصات ماستر mi
+    - ماستر متاح لـ mi
+    - ماذا يختار طالب mi
+    - خيارات mi للماستر
+    - ما هي ماسترات mi
+    - إحصائيات ماستر mi
+    - ترتيب ماستر mi
+    - معدل ماستر mi
+    - أفضل ماستر لـ mi
+    - ماستر بعد mi
+    - توجيه mi ماستر
+    - إحصائيات توجيه mi
+    - ماستر رياضيات ومعلوماتية متاح
+    - ما هو آخر معدل ماستر mi
+    - ما هو آخر ترتيب ماستر mi
+    - إحصائيات mi 2025
+    - خيارات ماستر بعد mi
+    - ماستر mi fst
+    - ماستر بعد رياضيات ومعلوماتية
+
+- intent: masters_disponibles_MI_fr
+  examples: |
+    - masters mi
+    - spécialités master mi
+    - master disponible mi
+    - que choisir mi master
+    - options mi master
+    - quels masters pour mi
+    - statistiques master mi
+    - classement master mi
+    - moyenne master mi
+    - meilleur master pour mi
+    - master après mi
+    - orientation mi master
+    - statistiques orientation mi
+    - master maths informatique disponible
+    - dernier rang master mi
+    - dernière moyenne master mi
+    - statistiques mi 2025
+    - choix master après mi
+    - master mi fst
+    - master après mathématiques informatique
+
+- intent: M2_BMPB_fr
+  examples: |
+    - m2 bmpb
+    - master bmpb
+    - matières m2 bmpb
+    - programme m2 bmpb
+    - biologie moléculaire physiologie bactériologie master
+    - que contient le master bmpb
+    - modules m2 bmpb
+    - cours m2 bmpb
+    - s1 s2 s3 bmpb
+    - matières bmpb master
+    - master biologie moléculaire fst
+    - bmpb fst
+    - programme bmpb
+    - enseignements bmpb
+    - master biologie médicale
+    - génétique humaine master
+    - immunologie master fst
+    - biosécurité master
+    - oncologie master fst
+    - bioinformatique master bmpb
+    - ماستر bmpb
+    - مواد ماستر bmpb
+    - برنامج bmpb
+    - بيولوجيا جزيئية ماستر
+    - ماستر علم الأمراض
+    - مواد السنة الأولى bmpb
+    - تخصص bmpb في fst
+    - ما هي مواد ماستر bmpb
+    - بيولوجيا خلوية ماستر
+    - كيمياء حيوية ماستر bmpb
+    - وراثة جزيئية ماستر
+    - ماستر bmpb fst نواكشوط
+    - برنامج bmpb بالتفصيل
+    - مقاييس ماستر bmpb
+    - فصول ماستر bmpb
+
+- intent: M2_BOMVRH_fr
+  examples: |
+    - m2 bomvrh
+    - master bomvrh
+    - matières m2 bomvrh
+    - programme m2 bomvrh
+    - biologie océanique marine master
+    - que contient le master bomvrh
+    - modules m2 bomvrh
+    - cours m2 bomvrh
+    - s1 s2 s3 bomvrh
+    - master biologie marine fst
+    - bomvrh fst
+    - ressources halieutiques master
+    - aquaculture master fst
+    - océanographie master
+    - biodiversité aquatique master
+    - pêche master fst
+    - écologie marine master
+    - SIG pêche master
+    - génétique populations marines
+    - pollution marine master
+    - ماستر bomvrh
+    - مواد ماستر bomvrh
+    - برنامج bomvrh
+    - بيولوجيا بحرية ماستر
+    - موارد السمكية ماستر
+    - تربية الأحياء المائية ماستر
+    - علم البيئة البحرية ماستر
+    - ما هي مواد ماستر bomvrh
+    - تلوث بحري ماستر
+    - ماستر bomvrh fst نواكشوط
+    - برنامج bomvrh بالتفصيل
+    - مقاييس ماستر bomvrh
+    - تنوع بيولوجي مائي ماستر
+    - اقتصاد الصيد ماستر
+    - ماستر الموارد البحرية fst
+
+- intent: M2_TASSMQ_fr
+  examples: |
+    - m2 tassmq
+    - master tassmq
+    - matières m2 tassmq
+    - programme m2 tassmq
+    - technologie alimentaire master
+    - que contient le master tassmq
+    - modules m2 tassmq
+    - haccp iso master fst
+    - qualité alimentaire master
+    - sécurité alimentaire master fst
+    - biotechnologie alimentaire master
+    - normes iso 9001 22000 master
+    - contrôle qualité master fst
+    - audit qualité master
+    - nutrition aliments master
+    - enzymologie master fst
+    - logistique industrielle master
+    - bonnes pratiques industrielles master
+    - biostatistique alimentaire
+    - management qualité master fst
+    - ماستر tassmq
+    - مواد ماستر tassmq
+    - برنامج tassmq
+    - تكنولوجيا غذائية ماستر
+    - جودة الغذاء ماستر
+    - سلامة غذائية ماستر
+    - ما هي مواد ماستر tassmq
+    - تدقيق الجودة ماستر
+    - ماستر tassmq fst نواكشوط
+    - مقاييس ماستر tassmq
+    - إدارة الجودة ماستر fst
+    - صناعات غذائية ماستر
+    - iso haccp ماستر
+    - تحليل حسي غذاء ماستر
+    - لوجستيك صناعي ماستر
+
+- intent: M2_NS_fr
+  examples: |
+    - m2 ns
+    - master ns
+    - matières m2 ns
+    - programme m2 ns
+    - nutrition santé master
+    - que contient le master ns
+    - modules m2 ns
+    - nutrition communautaire master
+    - pathologies nutritionnelles master
+    - épidémiologie nutritionnelle master
+    - physiologie nutrition master fst
+    - alimentation urgence master
+    - nutrition mère enfant master
+    - malnutrition master fst
+    - santé publique nutrition master
+    - enquêtes nutritionnelles master
+    - comportement alimentaire master
+    - prise en charge nutritionnelle master
+    - biostatistique nutrition master
+    - vieillissement nutrition master
+    - ماستر ns
+    - مواد ماستر ns
+    - برنامج ns
+    - تغذية وصحة ماستر
+    - ماستر تغذية fst
+    - سوء التغذية ماستر
+    - ما هي مواد ماستر ns
+    - وبائيات التغذية ماستر
+    - ماستر ns fst نواكشوط
+    - مقاييس ماستر ns
+    - تغذية الأم والطفل ماستر
+    - صحة عامة تغذية ماستر
+    - استطلاعات غذائية ماستر
+    - فيزيولوجيا التغذية ماستر
+    - سلوك غذائي ماستر
+
+- intent: M2_ISDR_RSC_fr
+  examples: |
+    - m2 rsc
+    - master rsc
+    - matières m2 rsc
+    - programme m2 rsc
+    - réseaux sécurité cloud master
+    - que contient le master rsc
+    - modules m2 rsc
+    - isdr rsc fst
+    - sécurité réseaux master fst
+    - cloud computing master fst
+    - IoT master fst
+    - administration réseaux master
+    - réseaux mobiles master fst
+    - téléphonie IP master
+    - protocoles internet master
+    - traitement signal master rsc
+    - réseaux haut débit master
+    - systèmes distribués master
+    - développement mobile master rsc
+    - intelligence artificielle réseaux master
+    - ماستر rsc
+    - مواد ماستر rsc
+    - برنامج rsc
+    - أمن الشبكات ماستر
+    - ماستر شبكات fst
+    - حوسبة سحابية ماستر
+    - ما هي مواد ماستر rsc
+    - ماستر rsc fst نواكشوط
+    - مقاييس ماستر rsc
+    - إنترنت الأشياء ماستر
+    - إدارة الشبكات ماستر
+    - بروتوكولات إنترنت ماستر
+    - شبكات الهاتف المحمول ماستر
+    - ذكاء اصطناعي شبكات ماستر
+    - أنظمة موزعة ماستر
+
+- intent: M2_ISDR_SI_fr
+  examples: |
+    - m2 si
+    - master si
+    - matières m2 si
+    - programme m2 si
+    - systèmes information master
+    - que contient le master si
+    - modules m2 si
+    - isdr si fst
+    - erp master fst
+    - java génie logiciel master
+    - base de données nosql master
+    - web sémantique master fst
+    - intelligence artificielle SI master
+    - sécurité SI master
+    - méthodes agiles master fst
+    - développement mobile si master
+    - cloud computing si master
+    - SIG master si fst
+    - interface homme machine master
+    - framework python java javascript master
+    - ماستر si
+    - مواد ماستر si
+    - برنامج si
+    - نظم المعلومات ماستر
+    - ماستر معلوماتية fst
+    - قواعد بيانات ماستر
+    - ما هي مواد ماستر si
+    - ماستر si fst نواكشوط
+    - مقاييس ماستر si
+    - هندسة البرمجيات ماستر
+    - أمن نظم المعلومات ماستر
+    - ذكاء اصطناعي ماستر si
+    - تطوير تطبيقات ماستر
+    - java python javascript ماستر
+    - قواعد بيانات nosql ماستر
+
+- intent: M2_MA_IMCS_fr
+  examples: |
+    - m2 imcs
+    - master imcs
+    - matières m2 imcs
+    - programme m2 imcs
+    - mathématiques appliquées master
+    - que contient le master imcs
+    - modules m2 imcs
+    - ma imcs fst
+    - edp master fst
+    - analyse fonctionnelle master fst
+    - calcul stochastique master
+    - éléments finis master fst
+    - optimisation mathématiques master
+    - mécanique milieux continus master
+    - probabilités statistiques master imcs
+    - géométrie différentielle master
+    - analyse numérique master imcs
+    - volumes finis master fst
+    - équations différentielles master
+    - programmation scientifique master
+    - ماستر imcs
+    - مواد ماستر imcs
+    - برنامج imcs
+    - رياضيات تطبيقية ماستر
+    - ماستر رياضيات fst
+    - تحليل دالي ماستر
+    - ما هي مواد ماستر imcs
+    - ماستر imcs fst نواكشوط
+    - مقاييس ماستر imcs
+    - معادلات تفاضلية جزئية ماستر
+    - تحسين رياضي ماستر
+    - حساب عشوائي ماستر
+    - ميكانيكا وسط مستمر ماستر
+    - تحليل عددي ماستر
+    - هندسة تفاضلية ماستر
+
+- intent: M2_MINE_fr
+  examples: |
+    - m2 mine
+    - master mine
+    - matières m2 mine
+    - programme m2 mine
+    - exploitation minière master
+    - que contient le master mine
+    - modules m2 mine
+    - mine fst
+    - géostatistique minière master
+    - topographie minière master fst
+    - hydrogéologie mauritanie master
+    - enrichissement minerais master
+    - économie minière master fst
+    - géologie structurale mine master
+    - stabilité ouvrages master
+    - dessin technique mine master
+    - géophysique appliquée mine master
+    - stratigraphie mauritanie master
+    - prospection minière master fst
+    - pelletisation métallurgie master
+    - ماستر mine
+    - مواد ماستر mine
+    - برنامج mine
+    - استغلال مناجم ماستر
+    - ماستر مناجم fst
+    - جيولوجيا منجمية ماستر
+    - ما هي مواد ماستر mine
+    - ماستر mine fst نواكشوط
+    - مقاييس ماستر mine
+    - اقتصاد المناجم ماستر
+    - جيوفيزياء تطبيقية مناجم ماستر
+    - طبقية موريتانيا ماستر
+    - تخصيب المعادن ماستر
+    - جيوإحصاء مناجم ماستر
+    - تنقيب مناجم ماستر
+
+- intent: M2_GEOLOGIE_fr
+  examples: |
+    - m2 géologie
+    - master géologie
+    - matières m2 géologie
+    - programme m2 géologie
+    - géologie master fst
+    - que contient le master géologie
+    - modules m2 géologie
+    - géodynamique master fst
+    - métallogénie master fst
+    - pétrologie sédimentaire master
+    - tectonique analytique master fst
+    - géologie pétrole master fst
+    - stratigraphie mauritanie master géologie
+    - magmatisme métamorphisme master
+    - géostatistique géologie master
+    - fossiles micropaléontologie master
+    - géologie structurale master fst
+    - législation minière master
+    - hydrogéologie mauritanie géologie master
+    - sols formations superficielles master
+    - ماستر جيولوجيا
+    - مواد ماستر جيولوجيا
+    - برنامج ماستر جيولوجيا
+    - جيولوجيا ماستر fst
+    - ديناميكا أرضية ماستر
+    - طبقية موريتانيا جيولوجيا ماستر
+    - ما هي مواد ماستر جيولوجيا
+    - ماستر جيولوجيا fst نواكشوط
+    - مقاييس ماستر جيولوجيا
+    - جيولوجيا البترول ماستر
+    - تكتونيك تحليلي ماستر
+    - هيدروجيولوجيا موريتانيا ماستر
+    - صخرية رسوبية ماستر
+    - تعدين معدنية ماستر
+    - قياس الزمن الجيولوجي ماستر
+
+- intent: M2_2E_fr
+  examples: |
+    - m2 2e
+    - master 2e
+    - matières m2 2e
+    - programme m2 2e
+    - eau environnement master
+    - que contient le master 2e
+    - modules m2 2e
+    - traitement eau master fst
+    - épuration eaux usées master
+    - qualité eau potable master fst
+    - pollution environnement master
+    - SIG télédétection eau master
+    - hydraulique urbaine master fst
+    - climatologie hydrologie master
+    - déchets solides master fst
+    - énergies renouvelables eau master
+    - droit environnement master fst
+    - santé sécurité travail master
+    - microbiologie eau master fst
+    - stations épuration master
+    - ماستر 2e
+    - مواد ماستر 2e
+    - برنامج 2e
+    - ماء وبيئة ماستر
+    - ماستر معالجة الماء fst
+    - تلوث بيئي ماستر
+    - ما هي مواد ماستر 2e
+    - ماستر 2e fst نواكشوط
+    - مقاييس ماستر 2e
+    - تصفية مياه الصرف ماستر
+    - جودة الماء الصالح للشرب ماستر
+    - هيدرولوجيا ومناخيات ماستر
+    - نفايات صلبة ماستر
+    - حق البيئة ماستر
+
+- intent: M2_BEES_fr
+  examples: |
+    - m2 bees
+    - master bees
+    - matières m2 bees
+    - programme m2 bees
+    - biodiversité écosystèmes master
+    - que contient le master bees
+    - modules m2 bees
+    - écologie master fst
+    - désertification master fst
+    - écotoxicologie master fst
+    - aires protégées master fst
+    - norme iso 14001 master
+    - ornithologie master fst
+    - ressources phytogénétiques master
+    - perturbations anthropiques master
+    - écosystèmes marins désertiques master
+    - gestion biologique déchets master
+    - marqueurs biologiques master fst
+    - étude impact environnement master
+    - lutte insectes ravageurs master
+    - ماستر bees
+    - مواد ماستر bees
+    - برنامج bees
+    - تنوع بيولوجي وبيئة ماستر
+    - ماستر بيئة fst
+    - مكافحة التصحر ماستر
+    - ما هي مواد ماستر bees
+    - ماستر bees fst نواكشوط
+    - مقاييس ماستر bees
+    - سموم بيئية ماستر
+    - مناطق محمية ماستر
+    - موارد نباتية ماستر
+    - أنظمة مراقبة بيئية ماستر
+    - اضطرابات بشرية بيئة ماستر
+    - علم الطيور التطبيقي ماستر
+
+- intent: M2_ER_fr
+  examples: |
+    - m2 er
+    - master er
+    - matières m2 er
+    - programme m2 er
+    - énergies renouvelables master
+    - que contient le master er
+    - modules m2 er
+    - er fst
+    - solaire photovoltaïque master fst
+    - éolien master fst
+    - stockage énergie master fst
+    - machines électriques master er
+    - matériaux photovoltaïques master
+    - biomasse master fst
+    - convertisseurs électroniques master
+    - systèmes hybrides énergie master
+    - intégration réseaux renouvelables master
+    - métrologie capteurs énergie master
+    - gestion projets énergétiques master
+    - modélisation conversion énergie master
+    - ماستر er
+    - مواد ماستر er
+    - برنامج er
+    - طاقات متجددة ماستر
+    - ماستر طاقة fst
+    - طاقة شمسية ماستر
+    - ما هي مواد ماستر er
+    - ماستر er fst نواكشوط
+    - مقاييس ماستر er
+    - طاقة رياح ماستر
+    - تخزين طاقة ماستر
+    - أنظمة هجينة طاقة ماستر
+    - إلكترونيات قدرة ماستر
+    - كهرباء آلات ماستر
+    - تكامل طاقة متجددة شبكة ماستر
+
+- intent: M2_SDD_fr
+  examples: |
+    - m2 sdd
+    - master sdd
+    - matières m2 sdd
+    - programme m2 sdd
+    - science des données master
+    - que contient le master sdd
+    - modules m2 sdd
+    - data science master fst
+    - machine learning statistique master
+    - apprentissage statistique master fst
+    - logiciel r python master sdd
+    - big data master fst
+    - séries temporelles master fst
+    - économétrie master fst
+    - visualisation données master
+    - nettoyage données master fst
+    - processus stochastique master
+    - régression linéaire master sdd
+    - exploration données master fst
+    - optimisation science données master
+    - ماستر sdd
+    - مواد ماستر sdd
+    - برنامج sdd
+    - علم البيانات ماستر
+    - ماستر بيانات fst
+    - تعلم آلي ماستر
+    - ما هي مواد ماستر sdd
+    - ماستر sdd fst نواكشوط
+    - مقاييس ماستر sdd
+    - إحصاء استنتاجي ماستر
+    - python r ماستر بيانات
+    - اقتصاد قياسي ماستر
+    - سلاسل زمنية ماستر
+    - تنظيف بيانات ماستر
+    - تحليل بيانات ضخمة ماستر
+
+- intent: M2_2M_fr
+  examples: |
+    - m2 2m
+    - master 2m
+    - matières m2 2m
+    - programme m2 2m
+    - mécanique matériaux master
+    - que contient le master 2m
+    - modules m2 2m
+    - 2m fst
+    - mécanique fluides master fst
+    - matériaux de structure master
+    - nanomatériaux master fst
+    - corrosion matériaux master
+    - turbulence stabilité master fst
+    - milieux poreux master fst
+    - contrôle qualité matériaux master
+    - aérodynamique master fst
+    - transfert chaleur masse master
+    - méthodes numériques matériaux master
+    - microscopies caractérisations master
+    - modélisation multiphysique master
+    - ماستر 2m
+    - مواد ماستر 2m
+    - برنامج 2m
+    - ميكانيكا مواد ماستر
+    - ماستر فيزياء مواد fst
+    - ميكانيكا موائع ماستر
+    - ما هي مواد ماستر 2m
+    - ماستر 2m fst نواكشوط
+    - مقاييس ماستر 2m
+    - مواد هيكلية ماستر
+    - نانومواد ماستر
+    - تآكل مواد ماستر
+    - انتقال حرارة وكتلة ماستر
+    - طرق عددية مواد ماستر
+    - نمذجة متعددة الفيزياء ماستر
+
+- intent: M2_SN_fr
+  examples: |
+    - m2 sn
+    - M1 s1 sn
+    - m1 sn
+    - master sn
+    - matières m2 sn
+    - programme m2 sn
+    - substances naturelles master
+    - que contient le master sn
+    - modules m2 sn
+    - sn fst
+    - plantes médicinales master fst
+    - chimie organométallique master
+    - synthèse organique master fst
+    - métabolites végétaux master
+    - photochimie master fst
+    - chimie bio organique master
+    - normes environnementales chimie master
+    - botanique mauritanie master fst
+    - chimie analytique sn master
+    - méthodes spectroscopiques sn master
+    - méthodes séparatives sn master
+    - technologie substances naturelles master
+    - ماستر sn
+    - مواد ماستر sn
+    - برنامج sn
+    - مواد طبيعية ماستر
+    - ماستر كيمياء طبيعية fst
+    - نباتات طبية ماستر
+    - ما هي مواد ماستر sn
+    - ماستر sn fst نواكشوط
+    - مقاييس ماستر sn
+    - كيمياء عضوية معدنية ماستر
+    - تركيب عضوي ماستر
+    - مستقلبات نباتية ماستر
+    - ضوء كيمياء ماستر
+    - معايير بيئية كيمياء ماستر
+    - نباتات موريتانيا كيمياء ماستر
+
+- intent: M2_MATERIAUX_fr
+  examples: |
+    - m2 materiaux
+    - master materiaux
+    - matières m2 matériaux
+    - programme m2 matériaux
+    - master matériaux fst
+    - que contient le master matériaux
+    - modules m2 matériaux
+    - materiaux fst
+    - nanomatériaux master fstt
+    - polymères master fst
+    - métallurgie master fst
+    - céramiques industrielles master
+    - cristallographie rayons x master
+    - corrosion traitement surface master
+    - propriétés matériaux master fst
+    - assurance qualité matériaux master
+    - méthodes analyse matériaux master
+    - matériaux naturels master fst
+    - s3 matériaux master fst
+    - master chimie matériaux fst
+    - ماستر مواد
+    - مواد ماستر matériaux
+    - برنامج ماستر مواد
+    - مواد صناعية ماستر
+    - ماستر مواد fst
+    - نانو مواد ماستر
+    - ما هي مواد ماستر matériaux
+    - ماستر matériaux fst نواكشوط
+    - مقاييس ماستر مواد
+    - بوليمرات ماستر
+    - معادن صناعية ماستر
+    - تآكل ومعالجة سطح ماستر
+    - خصائص مواد ماستر
+    - سيراميك صناعي ماستر
+    - ضمان الجودة مواد ماستر
+
+- intent: M2_IA_MLDS_fr
+  examples: |
+    - m2 ia mlds
+    - master ia mlds
+    - matières m2 ia mlds
+    - programme m2 ia mlds
+    - machine learning master
+    - deep learning master
+    - que contient le master ia mlds
+    - ia mlds fst
+    - intelligence artificielle master fst
+    - python avancé ia master
+    - cloud computing ia master
+    - big data technologies master fst
+    - vision par ordinateur master ia
+    - reinforcement learning master fst
+    - lean startup master ia
+    - frameworks ia master fst
+    - bases mathématiques ia master
+    - optimisation apprentissage master
+    - traitement données ia master
+    - master data science ia fst
+    - ماستر ia mlds
+    - مواد ماستر ia mlds
+    - برنامج ia mlds
+    - تعلم آلي ماستر fst
+    - ذكاء اصطناعي ماستر
+    - تعلم عميق ماستر
+    - ما هي مواد ماستر ia mlds
+    - ماستر ia mlds fst نواكشوط
+    - مقاييس ماستر ia mlds
+    - python متقدم ذكاء اصطناعي ماستر
+    - حوسبة سحابية ذكاء اصطناعي ماستر
+    - بيانات ضخمة ذكاء اصطناعي ماستر
+    - رؤية حاسوب ماستر
+    - تعلم تعزيزي ماستر
+    - أسس رياضية ذكاء اصطناعي ماستر
+
+- intent: M2_IA_NLPCV_fr
+  examples: |
+    - m2 ia nlpcv
+    - master ia nlpcv
+    - matières m2 ia nlpcv
+    - programme m2 ia nlpcv
+    - nlp master
+    - vision ordinateur master
+    - que contient le master ia nlpcv
+    - ia nlpcv fst
+    - traitement langage naturel master fst
+    - large language models master fst
+    - llm master fst
+    - nlp dialects master fst
+    - vision par ordinateur nlpcv master
+    - traitement image master fst
+    - optimisation apprentissage nlpcv master
+    - anglais scientifique ia master
+    - projets ia nlpcv master
+    - master nlp fst
+    - master llm gpt ia fst
+    - deep learning nlp master fst
+    - ماستر ia nlpcv
+    - مواد ماستر ia nlpcv
+    - برنامج ia nlpcv
+    - معالجة اللغة الطبيعية ماستر
+    - ذكاء اصطناعي لغة ماستر
+    - نماذج لغوية كبيرة ماستر
+    - ما هي مواد ماستر ia nlpcv
+    - ماستر ia nlpcv fst نواكشوط
+    - مقاييس ماستر ia nlpcv
+    - رؤية حاسوب nlpcv ماستر
+    - معالجة صور ماستر
+    - llm gpt ماستر fst
+    - لهجات nlp ماستر
+    - تحسين التعلم ماستر nlpcv
+    - ذكاء اصطناعي لغة وصورة ماستر
+
+- intent: ask_master
+  examples: |
+    - ما هي برامج الماستر؟
+    - ماستر في الجامعة
+    - كيف أكمل الماستر؟
+    - ماستر معلوماتية
+    - ماستر بيولوجيا
+    - programmes de master
+    - master à l'université
+    - master informatique
+    - quels masters sont disponibles?
+    - ماستر رياضيات
+
+- intent: ask_doctorat
+  examples: |
+    - ما هي برامج الدكتوراه؟
+    - دكتوراه في الجامعة
+    - كيف أحصل على الدكتوراه؟
+    - doctorat université
+    - programmes de doctorat
+    - comment faire un doctorat?
+    - PhD université Nouakchott
+

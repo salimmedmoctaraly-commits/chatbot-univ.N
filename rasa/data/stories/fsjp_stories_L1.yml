@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+- story: Parcours L1 complet
+  steps:
+      - intent: ask_matieres_l1_droit_s1
+      - action: utter_ask_matieres_l1_droit_s1
+      - intent: ask_matieres_l1_droit_s2
+      - action: utter_ask_matieres_l1_droit_s2
+- story: Parcours L1 puis L2
+  steps:
+      - intent: ask_matieres_l1_droit_s1
+      - action: utter_ask_matieres_l1_droit_s1
+      - intent: ask_matieres_l1_droit_s2
+      - action: utter_ask_matieres_l1_droit_s2
+      - intent: ask_matieres_l2_droit_s3
+      - action: utter_ask_matieres_l2_droit_s3
+      - intent: ask_matieres_l2_droit_s4
+      - action: utter_ask_matieres_l2_droit_s4

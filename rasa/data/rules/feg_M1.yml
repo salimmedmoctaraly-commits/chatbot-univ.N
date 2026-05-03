@@ -1,0 +1,24 @@
+version: "3.1"
+
+rules:
+# ==================== M1 ====================
+
+- rule: مواد M1 MESA
+  steps:
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+
+- rule: مواد M1 MBF
+  steps:
+  - intent: ask_matieres_mbf_m1
+  - action: utter_ask_matieres_mbf_m1
+
+- rule: مواد M1 CCA
+  steps:
+  - intent: ask_matieres_cca_m1
+  - action: utter_ask_matieres_cca_m1
+
+- rule: مواد M1 Management
+  steps:
+  - intent: ask_matieres_management_m1
+  - action: utter_ask_matieres_management_m1

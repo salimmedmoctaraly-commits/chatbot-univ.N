@@ -1,0 +1,193 @@
+version: "3.1"
+
+nlu:
+
+# سلام / وداع / خارج النطاق / عام
+
+- intent: saluer_ar
+  examples: |
+    - مرحبا
+    - السلام عليكم
+    - أهلا
+    - صباح الخير
+    - مساء الخير
+    - أهلا وسهلا
+    - حياك الله
+    - هلا
+    - أهلاً بك
+    - مرحباً بك
+    - وعليكم السلام
+    - سلام
+    - هلا والله
+    - صباح النور
+    - مساء النور
+    - تحية طيبة
+    - السلام
+    - يا هلا
+    - مرحباً
+    - أهلاً وسهلاً
+    - تحياتي
+    - يسعد مساءك
+    - يسعد صباحك
+    - هلو
+    - أهلاً فيك
+
+- intent: saluer_fr
+  examples: |
+    - Bonjour
+    - Salut
+    - Bonsoir
+    - Bonjour !
+    - Hello
+    - Coucou
+    - Salut !
+    - Bonjour comment ça va ?
+    - Hey
+    - Bonne matinée
+    - Bonjour à vous
+    - Salutations
+    - Hey bonjour
+    - Bonsoir à tous
+    - Salut j'ai une question
+    - Bonjour je cherche des infos
+    - Hello FST
+    - Bonsoir bonjour
+    - Bonjour bonne journée
+    - Salut comment tu vas
+    - Hey salut
+    - Bonne journée à vous
+    - cv
+    - ca va
+    - slm
+    - hun
+    - ch7lk
+
+- intent: au_revoir_ar
+  examples: |
+    - مع السلامة
+    - وداعاً
+    - إلى اللقاء
+    - باي
+    - شكراً مع السلامة
+    - أراك لاحقاً
+    - تصبح على خير
+    - في أمان الله
+    - إلى اللقاء قريباً
+    - شكراً جزيلاً وداعاً
+    - باي باي
+    - شكراً لك على المساعدة
+    - سأتواصل لاحقاً
+    - شكراً على الإجابة
+    - وداعاً ومع السلامة
+    - تصبح وتقوم على خير
+    - شكراً
+    - مشكور وداعاً
+    - إلى لقاء قريب
+    - وداع
+    - الله يسلمك
+
+- intent: au_revoir_fr
+  examples: |
+    - Au revoir
+    - Bonne fin de journée
+    - À bientôt
+    - Bye
+    - Merci au revoir
+    - À plus tard
+    - Bonne soirée
+    - Ciao
+    - Merci beaucoup au revoir
+    - Bonne nuit
+    - À plus
+    - Bye bye
+    - Merci pour les infos au revoir
+    - Je pars merci
+    - Merci et bonne journée
+    - Salut à bientôt
+    - C'est tout merci
+    - On se reparle plus tard
+    - Merci pour votre aide
+    - Bonne continuation
+    - Merci bonne soirée
+    - À la prochaine
+    - Merci pour tout au revoir
+    - bay
+    - chkrn
+    - 
+
+- intent: out_of_scope_ar
+  examples: |
+    - ما هو الطقس اليوم؟
+    - أخبرني نكتة
+    - ما هو اسم رئيس الجمهورية؟
+    - كيف أطبخ الأرز؟
+    - ما هي أخبار اليوم؟
+    - كم الساعة؟
+    - من هو ميسي؟
+    - أريد مساعدة في الرياضيات
+    - ما هي عاصمة فرنسا؟
+    - هل تحب الموسيقى؟
+    - أوصني بفيلم
+    - من اخترع الهاتف؟
+    - ما هي أفضل جامعة في العالم؟
+    - ما رأيك في السياسة؟
+    - كيف أتعلم البرمجة؟
+    - ما هو لون السماء؟
+    - من فاز في كأس العالم؟
+
+- intent: out_of_scope_fr
+  examples: |
+    - Quel temps fait-il aujourd'hui ?
+    - Raconte-moi une blague
+    - Quel est le président ?
+    - Comment cuisiner le riz ?
+    - Quelles sont les actualités ?
+    - Quelle heure est-il ?
+    - Qui est Messi ?
+    - Je veux de l'aide en maths
+    - Quelle est la capitale de la France ?
+    - Tu aimes la musique ?
+    - Recommande-moi un film
+    - Qui a inventé le téléphone ?
+    - Quelle est la meilleure université du monde ?
+    - Quel est ton avis sur la politique ?
+    - Comment apprendre la programmation ?
+    - Quelle est la couleur du ciel ?
+    - Qui a gagné la coupe du monde ?
+
+- intent: greet
+  examples: |
+    - كيف حالك
+    - hi
+
+- intent: goodbye
+  examples: |
+    - وداعا
+    - شكرا
+    - شكراً جزيلاً
+    - merci
+    - بالسلامة
+
+- intent: affirm
+  examples: |
+    - نعم
+    - صحيح
+    - بالضبط
+    - أجل
+    - طبعا
+    - oui
+    - bien sûr
+    - exactement
+    - c'est ça
+    - correct
+
+- intent: deny
+  examples: |
+    - لا
+    - ليس
+    - غلط
+    - لا شكرا
+    - non
+    - pas du tout
+    - non merci
+

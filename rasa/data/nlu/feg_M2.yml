@@ -1,0 +1,174 @@
+version: "3.1"
+
+nlu:
+
+# ==================== M2 ====================
+
+- intent: ask_matieres_mesa_ise_m2
+  examples: |
+    - مواد M2 MESA ISE
+    - ما هي مواد MESA ISE M2
+    - مواد الماستر الثاني MESA ISE
+    - M2 MESA ISE matières
+    - quelles sont les matières M2 MESA ISE
+    - matières master 2 MESA ISE
+    - مواد M2 اقتصاديات ISE
+    - MESA ISE السنة الثانية ماستر
+    - M2 MESA ISE Prof
+    - matières M2 MESA ISE
+
+- intent: ask_matieres_mesa_econometrie_m2
+  examples: |
+    - مواد M2 MESA اقتصاد القياس
+    - ما هي مواد MESA économétrie M2
+    - مواد الماستر الثاني MESA économétrie
+    - M2 MESA économétrie matières
+    - quelles sont les matières M2 MESA économétrie
+    - matières master 2 MESA économétrie
+    - مواد M2 اقتصاد القياس
+    - MESA économétrie السنة الثانية ماستر
+    - M2 MESA Économétrie
+    - matières M2 MESA Économétrie
+
+- intent: ask_matieres_mbf_m2
+  examples: |
+    - مواد M2 MBF
+    - ما هي مواد MBF M2
+    - مواد الماستر الثاني MBF
+    - M2 MBF matières
+    - quelles sont les matières M2 MBF
+    - matières master 2 MBF
+    - مواد M2 النقد والبنوك
+    - MBF السنة الثانية ماستر
+    - M2 Monnaie Banque Finance
+    - matières M2 MBF
+
+- intent: ask_matieres_mae_cee_m2
+  examples: |
+    - مواد M2 MAE CEE
+    - ما هي مواد MAE CEE M2
+    - مواد الماستر الثاني MAE CEE
+    - M2 MAE CEE matières
+    - quelles sont les matières M2 MAE CEE
+    - matières master 2 MAE CEE
+    - مواد M2 إدارة اقتصادية مراقبة
+    - MAE CEE السنة الثانية ماستر
+    - M2 MAE CEE
+    - matières M2 MAE CEE
+
+- intent: ask_matieres_mae_ape_m2
+  examples: |
+    - مواد M2 MAE APE
+    - ما هي مواد MAE APE M2
+    - مواد الماستر الثاني MAE APE
+    - M2 MAE APE matières
+    - quelles sont les matières M2 MAE APE
+    - matières master 2 MAE APE
+    - مواد M2 إدارة اقتصادية تحليل
+    - MAE APE السنة الثانية ماستر
+    - M2 MAE APE
+    - matières M2 MAE APE
+
+- intent: ask_matieres_finance_islamique_m2
+  examples: |
+    - مواد M2 المالية الإسلامية
+    - ما هي مواد Finance Islamique M2
+    - مواد الماستر الثاني المالية الإسلامية
+    - M2 Finance Islamique matières
+    - quelles sont les matières M2 Finance Islamique
+    - matières master 2 Finance Islamique
+    - مواد M2 مالية إسلامية
+    - المالية الإسلامية السنة الثانية ماستر
+    - M2 Finance Islamique
+    - matières M2 Finance Islamique
+
+- intent: ask_matieres_finance_internationale_m2
+  examples: |
+    - مواد M2 المالية الدولية
+    - ما هي مواد Finance Internationale M2
+    - مواد الماستر الثاني المالية الدولية
+    - M2 Finance Internationale matières
+    - quelles sont les matières M2 Finance Internationale
+    - matières master 2 Finance Internationale
+    - مواد M2 مالية دولية
+    - المالية الدولية السنة الثانية ماستر
+    - M2 Finance Internationale
+    - matières M2 Finance Internationale
+
+- intent: ask_matieres_finance_fiscalite_m2
+  examples: |
+    - مواد M2 المالية والضريبة
+    - ما هي مواد Finance et Fiscalité M2
+    - مواد الماستر الثاني المالية والضريبة
+    - M2 Finance et Fiscalité matières
+    - quelles sont les matières M2 Finance et Fiscalité
+    - matières master 2 Finance et Fiscalité
+    - مواد M2 مالية وضريبة
+    - المالية والضريبة السنة الثانية ماستر
+    - M2 Finance et Fiscalité
+    - matières M2 Finance et Fiscalité
+
+- intent: ask_matieres_entrepreneuriat_m2
+  examples: |
+    - مواد M2 ريادة الأعمال
+    - ما هي مواد Entrepreneuriat M2
+    - مواد الماستر الثاني ريادة الأعمال
+    - M2 Entrepreneuriat matières
+    - quelles sont les matières M2 Entrepreneuriat
+    - matières master 2 Entrepreneuriat
+    - مواد M2 entrepreneuriat
+    - ريادة الأعمال السنة الثانية ماستر
+    - M2 Entrepreneuriat
+    - matières M2 Entrepreneuriat
+
+- intent: ask_matieres_cca_recherche_m2
+  examples: |
+    - مواد M2 CCA بحث
+    - ما هي مواد CCA Recherche M2
+    - مواد الماستر الثاني CCA بحث
+    - M2 CCA Recherche matières
+    - quelles sont les matières M2 CCA Recherche
+    - matières master 2 CCA Recherche
+    - مواد M2 محاسبة بحث
+    - CCA Recherche السنة الثانية ماستر
+    - M2 CCA Recherche
+    - matières M2 CCA Recherche
+
+- intent: ask_matieres_cca_prof_m2
+  examples: |
+    - مواد M2 CCA مهني
+    - ما هي مواد CCA Prof M2
+    - مواد الماستر الثاني CCA مهني
+    - M2 CCA Prof matières
+    - quelles sont les matières M2 CCA Prof
+    - matières master 2 CCA Prof
+    - مواد M2 محاسبة مهني
+    - CCA Prof السنة الثانية ماستر
+    - M2 CCA Prof
+    - matières M2 CCA Prof
+
+- intent: ask_matieres_controle_gestion_m2
+  examples: |
+    - مواد M2 مراقبة التسيير
+    - ما هي مواد Contrôle de Gestion M2
+    - مواد الماستر الثاني مراقبة التسيير
+    - M2 Contrôle de Gestion matières
+    - quelles sont les matières M2 Contrôle de Gestion
+    - matières master 2 Contrôle de Gestion
+    - مواد M2 contrôle de gestion
+    - مراقبة التسيير السنة الثانية ماستر
+    - M2 Contrôle de Gestion
+    - matières M2 Contrôle de Gestion
+
+- intent: ask_matieres_grh_m2
+  examples: |
+    - مواد M2 تسيير الموارد البشرية
+    - ما هي مواد GRH M2
+    - مواد الماستر الثاني تسيير الموارد البشرية
+    - M2 GRH matières
+    - quelles sont les matières M2 GRH
+    - matières master 2 GRH
+    - مواد M2 GRH
+    - تسيير الموارد البشرية السنة الثانية ماستر
+    - M2 Gestion des Ressources Humaines
+    - matières M2 GRH

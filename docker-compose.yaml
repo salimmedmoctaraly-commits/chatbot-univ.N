@@ -1,0 +1,82 @@
+services:
+
+  rasa:
+    image: rasa/rasa:3.6.20
+    container_name: rasa_server
+    networks:
+      - bot-net
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./rasa:/app
+    command: run --enable-api --cors "*" --debug
+    depends_on:
+      action_server:
+        condition: service_started
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  action_server:
+    image: rasa/rasa-sdk:3.6.2
+    container_name: action_server
+    networks:
+      - bot-net
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./rasa/actions:/app/actions
+      - ./shared:/app/shared
+    environment:
+      - QUESTIONS_FILE=/app/shared/unknown_questions.json
+    command: start --actions actions
+    restart: unless-stopped
+
+  flask_backend:
+    build: ./Flask_backend
+    container_name: flask_app
+    networks:
+      - bot-net
+    ports:
+      - "5000:5000"
+    depends_on:
+      rasa:
+        condition: service_healthy
+    environment:
+      - RASA_URL=http://rasa:5005/webhooks/rest/webhook
+      - QUESTIONS_FILE=/app/shared/unknown_questions.json
+      - RASA_TIMEOUT=15
+      - PORT=5000
+    volumes:
+      - ./shared:/app/shared
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  react_frontend:
+    build:
+      context: ./react_frontend
+      args:
+        REACT_APP_API_URL: ${REACT_APP_API_URL:-http://localhost:5000}
+        REACT_APP_ADMIN_PASSWORD: ${REACT_APP_ADMIN_PASSWORD:-fst2026}
+    container_name: react_app
+    networks:
+      - bot-net
+    ports:
+      - "3000:80"
+    depends_on:
+      flask_backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+networks:
+  bot-net:
+    driver: bridge

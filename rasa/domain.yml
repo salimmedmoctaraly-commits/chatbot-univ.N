@@ -1,0 +1,3485 @@
+version: "3.1"
+
+# ============================================================
+# INTENTS
+# ============================================================
+intents:
+  # ── عام / General ───────────────────────────────────
+  - saluer_ar
+  - saluer_fr
+  - au_revoir_ar
+  - au_revoir_fr
+  - out_of_scope_ar
+  - out_of_scope_fr
+  - greet
+  - goodbye
+  - affirm
+  - deny
+
+  # ── الجامعة / Université ─────────────────────────────
+  - ask_universite_generale
+  - ask_president
+  - ask_nombre_etudiants
+  - ask_nombre_facultes
+  - ask_centres
+  - ask_facultes_liste
+  - ask_repartition_etudiants
+
+  # ── FST ─────────────────────────────────────────────
+  - presentation_fst_ar
+  - presentation_fst_fr
+  - demander_doyen_FST_ar
+  - demander_doyen_FST_fr
+  - demander_vicedoyen_FST_ar
+  - demander_vicedoyen_FST_fr
+  - demander_sg_FST_ar
+  - demander_sg_FST_fr
+  - demander_departements_FST
+  - demander_infrastructure_ar
+  - demander_infrastructure_fr
+  - demander_filieres_FST_L1
+  - ask_fst
+  - ask_fst_licences
+  - ask_fst_parcours_bg
+  - ask_fst_parcours_mpi
+  - ask_fst_parcours_pc
+  - ask_master
+  - ask_doctorat
+
+  # ── FST L1 ───────────────────────────────────────────
+  - demander_info_MPI_ar
+  - demander_info_MPI_fr
+  - demander_matieres_MPI_S1
+  - demander_matieres_MPI_S2
+  - demander_info_BG_ar
+  - demander_info_BG_fr
+  - demander_matieres_BG_S1
+  - demander_matieres_BG_S2
+  - demander_info_PC_ar
+  - demander_info_PC_fr
+  - demander_matieres_PC_S1
+  - demander_matieres_PC_S2_ar
+  - demander_matieres_PC_S2_fr
+  - demander_specialites_BG_ar
+  - demander_specialites_BG_fr
+  - demander_specialites_PC_ar
+  - demander_specialites_PC_fr
+  - demander_specialites_MPI_ar
+  - demander_specialites_MPI_fr
+  - demander_matieres_MAI
+  - demander_matieres_BIOLOGIE
+  - demander_matieres_GEO
+
+  # ── FST L3 ──────────────────────────────────────────
+  - demander_matieres_DA2I
+  - demander_matieres_MIAGE
+  - demander_matieres_MA
+  - demander_matieres_MI
+  - demander_matieres_PF
+  - demander_matieres_EEA
+  - demander_matieres_TSER
+  - demander_matieres_IPG
+  - demander_matieres_GEOSS
+  - demander_matieres_GEOMIN
+  - demander_matieres_PEPE
+  - demander_matieres_CHIMIE
+  - demander_matieres_BMP
+  - demander_matieres_BOE
+  - demander_matieres_NS
+  - demander_matieres_TASSMQ
+  - demander_matieres_SP
+  - demander_matieres_ABC
+
+  # ── FST Master ──────────────────────────────────────
+  - demander_masters_ar
+  - demander_masters_fr
+  - demander_doctorat_ar
+  - demander_doctorat_fr
+  - masters_disponibles_MA_ar
+  - masters_disponibles_MA_fr
+  - masters_disponibles_MI_ar
+  - masters_disponibles_MI_fr
+  - M2_BMPB_fr
+  - M2_BOMVRH_fr
+  - M2_TASSMQ_fr
+  - M2_NS_fr
+  - M2_ISDR_RSC_fr
+  - M2_ISDR_SI_fr
+  - M2_MA_IMCS_fr
+  - M2_MINE_fr
+  - M2_GEOLOGIE_fr
+  - M2_2E_fr
+  - M2_BEES_fr
+  - M2_ER_fr
+  - M2_SDD_fr
+  - M2_2M_fr
+  - M2_SN_fr
+  - M2_MATERIAUX_fr
+  - M2_IA_MLDS_fr
+  - M2_IA_NLPCV_fr
+
+  # ── FLSH ─────────────────────────────────────────────
+  - ask_flsh
+  - ask_flsh_licences
+  - ask_inscription_flsh
+  - ask_matieres_flsh_l1
+  - ask_matieres_arabe_l1
+  - ask_matieres_francais_l1
+  - ask_matieres_anglais_l1
+  - ask_matieres_espagnol_l1
+  - ask_matieres_turc_l1
+  - ask_matieres_chinois_l1
+  - ask_matieres_langues_nationales_l1
+  - ask_matieres_philosophie_l1
+  - ask_matieres_sociologie_l1
+  - ask_matieres_histoire_l1
+  - ask_matieres_geographie_l1
+  - ask_matieres_travail_social_l1
+  - ask_matieres_developpement_local_l1
+  - ask_matieres_environnement_l1
+
+  # ── FEG ─────────────────────────────────────────────
+  - ask_feg_info
+  - ask_feg_missions
+  - ask_feg_vision
+  - ask_feg_offres
+  - ask_feg_specialisations
+  - ask_feg_corps_professoral
+  - ask_feg_criteres_passage
+  - ask_matieres_fc_l1
+  - ask_matieres_ba_l1
+  - ask_matieres_grh_l1
+  - ask_matieres_fc_l2
+  - ask_matieres_ba_l2
+  - ask_matieres_grh_l2
+  - ask_matieres_fc_l3
+  - ask_matieres_ba_l3
+  - ask_matieres_grh_l3
+  - ask_matieres_economie_gestion_l1
+  - ask_matieres_gestion_entreprises_l1
+  - ask_matieres_techniques_projets_publics_l1
+  - ask_matieres_gestion_administration_publique_l1
+  - ask_matieres_economie_gestion_l2
+  - ask_matieres_gestion_entreprises_l2
+  - ask_matieres_techniques_projets_publics_l2
+  - ask_matieres_gestion_administration_publique_l2
+  - ask_matieres_economie_gestion_l3
+  - ask_matieres_gestion_entreprises_l3
+  - ask_matieres_techniques_projets_publics_l3
+  - ask_matieres_gestion_administration_publique_l3
+  - ask_matieres_mesa_m1
+  - ask_matieres_mbf_m1
+  - ask_matieres_cca_m1
+  - ask_matieres_management_m1
+  - ask_matieres_mesa_ise_m2
+  - ask_matieres_mesa_econometrie_m2
+  - ask_matieres_mbf_m2
+  - ask_matieres_mae_cee_m2
+  - ask_matieres_mae_ape_m2
+  - ask_matieres_finance_islamique_m2
+  - ask_matieres_finance_internationale_m2
+  - ask_matieres_finance_fiscalite_m2
+  - ask_matieres_entrepreneuriat_m2
+  - ask_matieres_cca_recherche_m2
+  - ask_matieres_cca_prof_m2
+  - ask_matieres_controle_gestion_m2
+  - ask_matieres_grh_m2
+  - ask_matieres_economie_publique_l3
+# ============================================================
+# GÉNÉRAL fsjp
+# ============================================================
+  - ask_fsjp_info
+  - ask_fsjp_specializations
+
+  # L1 Droit
+  - ask_matieres_l1_droit_s1
+  - ask_matieres_l1_droit_s2
+
+  # L2 Droit
+  - ask_matieres_l2_droit_s3
+  - ask_matieres_l2_droit_s4
+
+  # L3 Droit Public — Administration publique
+  - ask_matieres_droit_public_admin_l3_s5
+  - ask_matieres_droit_public_admin_l3_s6
+
+  # L3 Droit Public — Sciences Politiques
+  - ask_matieres_droit_public_sp_l3_s5
+  - ask_matieres_droit_public_sp_l3_s6
+
+  # L3 Droit Privé — Affaires et Entreprise
+  - ask_matieres_droit_prive_affaires_l3_s5
+  - ask_matieres_droit_prive_affaires_l3_s6
+
+  # L3 Droit Privé — Carrières Judiciaires
+  - ask_matieres_droit_prive_carrieres_l3_s5
+  - ask_matieres_droit_prive_carrieres_l3_s6
+
+  # Master 1
+  - ask_matieres_master_droit_public
+  - ask_matieres_master_entreprise_affaires
+  - ask_matieres_master_droits_homme
+  - ask_matieres_master_relations_internationales
+  - ask_matieres_master_droit_prive
+  - ask_matieres_master_maritime
+  
+  # ── FMPOS  ───────────────────────────────
+ 
+  - ask_fmpos_info
+  - ask_fmpos_specializations
+  - ask_fmpos_structure_medecine
+  - ask_matieres_pcem1_s1
+  - ask_matieres_pcem1_s2
+  - ask_matieres_medecine_pcem1
+  - ask_matieres_pcep1_s1
+  - ask_matieres_pcep1_s2
+  - ask_matieres_pcep1
+
+  
+
+  # ── CNIM ────────────────────────────────────────────
+  - demander_cnim_ar
+  - demander_cnim_fr
+  - demander_cnim_epreuves_ar
+  - demander_cnim_epreuves_fr
+  - demander_cnim_voie1_ar
+  - demander_cnim_voie1_fr
+  - demander_cnim_voie2_ar
+  - demander_cnim_voie2_fr
+  - demander_Nuit_Info
+
+  # ── إدارية ──────────────────────────────────────────
+  - demander_inscription_ar
+  - demander_inscription_fr
+  - demander_frais_inscription_ar
+  - demander_frais_inscription_fr
+  - demander_paiement_bankily_ar
+  - demander_paiement_bankily_fr
+  - demander_documents_inscription_ar
+  - demander_documents_inscription_fr
+  - demander_attestation_inscription_ar
+  - demander_attestation_inscription_fr
+  - demander_planning_ar
+  - demander_planning_fr
+  - demander_jours_feries_ar
+  - demander_jours_feries_fr
+  - demander_rachat_passage_ar
+  - demander_rachat_passage_fr
+  - demander_rachat_diplome_ar
+  - demander_rachat_diplome_fr
+  - demander_reglement_examens_ar
+  - demander_reglement_examens_fr
+  - demander_types_exclusion_ar
+  - demander_types_exclusion_fr
+  - demander_reclamation_ar
+  - demander_reclamation_fr
+  - demander_systeme_LMD_ar
+  - demander_systeme_LMD_fr
+  - demander_organisation_LMD_ar
+  - demander_organisation_LMD_fr
+  - demander_progression_licence_ar
+  - demander_progression_licence_fr
+  - demander_progression_master_ar
+  - demander_progression_master_fr
+  - demander_regles_exclusion_LMD_ar
+  - demander_regles_exclusion_LMD_fr
+  - demander_evaluation_LMD_ar
+  - demander_evaluation_LMD_fr
+  - derogation_inscription_ar
+  - derogation_inscription_fr
+  - demander_resultats_fst_ar
+  - demander_resultats_fst_fr
+  - ask_criteres_bourse
+  - ask_inscription_bourse_cnou
+  - ask_criteres_logement
+  - ask_renouvellement_logement
+  - ask_criteres_transport
+  - ask_inscription_restaurant
+
+# ============================================================
+# ACTIONS
+# ============================================================
+actions:
+  - action_default_fallback
+  - action_search_knowledge
+  - action_save_unknown_question
+  - action_provide_master_details
+  # ── Université ──────────────────────────────────────
+  - utter_ask_universite_generale
+  - utter_ask_president
+  - utter_ask_nombre_etudiants
+  - utter_ask_nombre_facultes
+  - utter_ask_centres
+  - utter_ask_facultes_liste
+  - utter_ask_repartition_etudiants
+  # ── FST ─────────────────────────────────────────────
+  - utter_ask_fst
+  - utter_ask_fst_licences
+  - utter_ask_fst_parcours_bg
+  - utter_ask_fst_parcours_mpi
+  - utter_ask_fst_parcours_pc
+  - utter_ask_master
+  - utter_ask_doctorat
+  # ── FLSH ────────────────────────────────────────────
+  - utter_ask_flsh
+  - utter_ask_flsh_licences
+  - utter_ask_inscription_flsh
+  - utter_ask_matieres_flsh_l1
+  - utter_ask_matieres_arabe_l1
+  - utter_ask_matieres_francais_l1
+  - utter_ask_matieres_anglais_l1
+  - utter_ask_matieres_espagnol_l1
+  - utter_ask_matieres_turc_l1
+  - utter_ask_matieres_chinois_l1
+  - utter_ask_matieres_langues_nationales_l1
+  - utter_ask_matieres_philosophie_l1
+  - utter_ask_matieres_sociologie_l1
+  - utter_ask_matieres_histoire_l1
+  - utter_ask_matieres_geographie_l1
+  - utter_ask_matieres_travail_social_l1
+  - utter_ask_matieres_developpement_local_l1
+  - utter_ask_matieres_environnement_l1
+
+ 
+
+
+# ============================================================
+# RESPONSES
+# ============================================================
+responses:
+
+  # ── سلام / وداع ──────────────────────────────────────
+  utter_greet:
+    - text: "أهلاً بك في مساعد جامعة نواكشوط العصرية! 👋\nكيف يمكنني مساعدتك؟\n\nBonjour ! Bienvenue dans l'assistant de l'UNA ! Comment puis-je vous aider ?"
+
+  utter_goodbye:
+    - text: "وداعاً! نتمنى لك التوفيق 🎓\nAu revoir et bonne chance !"
+
+  utter_affirm:
+    - text: "ممتاز! هل تريد مزيداً من المعلومات؟"
+
+  utter_deny:
+    - text: "حسناً! هل يمكنني مساعدتك بشيء آخر؟"
+
+  utter_saluer_ar:
+    - text: "أهلاً بك في خدمة معلومات جامعة نواكشوط العصرية. كيف يمكنني مساعدتك؟"
+    - text: "أهلاً وسهلاً بك في جامعة نواكشوط العصرية. كيف أستطيع مساعدتك اليوم؟"
+    - text: "مرحباً بك في خدمة المعلومات بجامعة نواكشوط العصرية. تفضل بطرح سؤالك."
+    - text: "حياك الله! أنت الآن في خدمة معلومات جامعة نواكشوط العصرية. كيف يمكنني مساعدتك؟"
+    - text: "أهلاً بك! يسعدني مساعدتك في كل ما يتعلق بجامعة نواكشوط العصرية."
+
+  utter_saluer_fr:
+    - text: "Bonjour ! Bienvenue au service d'information de l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider ?"
+    - text: "Bonjour et bienvenue à l'Université de Nouakchott Al-Aasriya. Que puis-je faire pour vous ?"
+    - text: "Bienvenue au service d'information de l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider aujourd'hui ?"
+    - text: "Salut ! Je suis l'assistant virtuel de l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider ?"
+    - text: "Bonjour ! N'hésitez pas à poser votre question sur l'Université de Nouakchott Al-Aasriya."
+
+  utter_au_revoir_ar:
+    - text: "مع السلامة! نتمنى لك التوفيق."
+
+  utter_au_revoir_fr:
+    - text: "Au revoir ! Bonne chance dans vos études."
+
+  utter_out_of_scope_ar:
+    - text: "عذراً، هذا السؤال خارج نطاق اختصاصي. أنا هنا للإجابة على أسئلة حول جامعة نواكشوط العصرية. كيف يمكنني مساعدتك؟"
+
+  utter_out_of_scope_fr:
+    - text: "Désolé, cette question dépasse mon domaine. Je suis ici pour les questions sur l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider ?"
+
+  utter_fallback_ar:
+    - text: "عذراً، لم أفهم سؤالك. هل يمكنك إعادة الصياغة؟"
+
+  utter_fallback_fr:
+    - text: "Désolé, je n'ai pas bien compris. Pouvez-vous reformuler ?"
+
+  # ── الجامعة ─────────────────────────────────────────
+  utter_ask_universite_generale:
+    - text: |
+        🎓 **جامعة نواكشوط العصرية (UNA)**
+        - تأسست سنة 1981 | www.univ-nkc.mr
+        - الطلبة: 29,000 (120 دوليون)
+        - مدرسون دائمون: 590 | متعاونون: 480
+        - 5 كليات | 90 شعبة | 30 بنية بحث
+
+  utter_ask_president:
+    - text: |
+        🏛️ **رئاسة الجامعة:**
+        - الرئيس: د. علي محمد سالم البخاري
+        - نائب الرئيس (الأكاديمية): د. محمد الأمين مولاي إبراهيم
+        - نائب الرئيس (البحث): د. عليو حمادي باري
+        - الأمين العام: د. محمد عبد الجليل ولد احويبيب
+
+  utter_ask_nombre_etudiants:
+    - text: "👨‍🎓 عدد الطلاب: **29,000** (منهم 120 دوليون)\n29 000 étudiants dont 120 internationaux."
+
+  utter_ask_nombre_facultes:
+    - text: "🏫 **5 كليات** و**90 شعبة تكوين**\n5 facultés | 90 filières de formation"
+
+  utter_ask_centres:
+    - text: |
+        🏢 **مراكز الجامعة:**
+        - مكتبة جامعية
+        - مركز تشغيل وتكوين
+        - مركز تعليم عن بعد
+        - مركز دعم تدريس اللغات
+        - 6 مراكز أخرى
+
+  utter_ask_facultes_liste:
+    - text: |
+        🏛️ **الكليات الخمس:**
+        1. كلية الآداب والعلوم الإنسانية (FLSH)
+        2. كلية العلوم والتقنيات (FST)
+        3. كلية الطب والصيدلة وطب الأسنان (FMPOS)
+        4. كلية العلوم القانونية والسياسية (FSJP)
+        5. كلية الاقتصاد والتسيير (FEG)
+
+  utter_ask_repartition_etudiants:
+    - text: |
+        📊 **توزيع الطلاب:**
+        - FEG (الاقتصاد): 33.3%
+        - FST (العلوم): 27.7%
+        - FLSH (الآداب): 17.4%
+        - FSJP (القانون): 13%
+        - FMPOS (الطب): 8.7%
+
+  # ── FST ─────────────────────────────────────────────
+  utter_ask_fst:
+    - text: |
+        🔬 **كلية العلوم والتقنيات (FST)**
+        - العميد: د. دياكانا يعقوبا
+        - نائب العميد: د. محمد عبد الودود ولد المحمد
+        - الأمين العام: د. محمد حدامين حميدي
+        - **20 ليسانس** — 3 سنوات بعد الباك
+
+  utter_ask_fst_licences:
+    - text: |
+        📋 **شعب FST:**
+        **أساسي:** BMP | BOE | GEO | Chimie | SP | PF | EEA | MA | MI
+        **مهني:** GEOMIN | NS | TAS-SMQ | TSER | MIAGE | DA2I | PEPE | IPG | ABC
+
+  utter_ask_fst_parcours_bg:
+    - text: |
+        🌿 **مسار BG — FST:**
+        L1: BG → L2: PEPE | ABC | TAS-SMQ | NS | GEO
+        L3: PEPE | ABC | TAS-SMQ | NS | GEOSS | GEOMIN | BMP | BOE
+        Master: NS | BEE3 | BMPB | BOMVRH | TASSMQ | MEE
+        Doctorat: Biologie | Géologie
+
+  utter_ask_fst_parcours_mpi:
+    - text: |
+        💻 **مسار MPI — FST:**
+        L1: MPI → L2: DA2I | MIAGE | EEA | PF | SP | MAI
+        L3: DA2I | MIAGE | EEA | TSER | PF | SP | MA | MI
+        Master: ISDR_SI | ISDR_RSC | IA_MLDS | IA_NLPCV | MA_IMCS | SDD
+        Doctorat: Informatique | Maths | Physique
+
+  utter_ask_fst_parcours_pc:
+    - text: |
+        ⚗️ **مسار PC — FST:**
+        L1: PC → L2: SP | PF | EEA | Chimie | IPG | ABC
+        L3: SP | PF | EEA | TSER | IPG | ABC | Chimie
+        Master: SN | Chimie | MEE | ER | 2M
+        Doctorat: Chimie | Physique
+
+  utter_ask_master:
+    - text: |
+        🎓 **برامج الماستر — FST:**
+        - Informatique: IA_MLDS | IA_NLPCV | ISDR_SI | ISDR_RSC
+        - Biologie: BMPB | BOMVRH | BEES | NS | TASSMQ
+        - Statistiques/Maths: SDD | MA_IMCS
+        - Chimie/Physique: SN | MATERIAUX | 2M | ER
+        - Géologie: MINE | GEOLOGIE | 2E
+
+  utter_ask_doctorat:
+    - text: |
+        🎓 **الدكتوراه:**
+        **FST:** Biologie | Géologie | Chimie | Physique | Maths | Informatique
+        **FMPOS:** الطب (7 سنوات) | الصيدلة (6 سنوات) | طب الأسنان (6 سنوات)
+        الشرط: ماستر أو ما يعادله (Bac+5) | المدة: 3 سنوات (Bac+8)
+
+  # ── FST Responses détaillées ────────────────────────
+  utter_presentation_fst_ar:
+    - text: "كلية العلوم والتقنيات (FST) - نواكشوط\n• تأسست نوفمبر 1995 (مرسوم 95.046)\n• تابعة لجامعة نواكشوط العصرية\n• نظام LMD منذ 2008-2009\n• المهمة: تكوين أساسي وتطبيقي + بحث علمي + خدمة المجتمع"
+
+  utter_presentation_fst_fr:
+    - text: "Faculté des Sciences et Techniques (FST) - Nouakchott\n• Créée en novembre 1995 (décret n°95.046)\n• Rattachée à l'Université de Nouakchott Al Aasriya\n• Système LMD depuis 2008-2009\n• Mission: formation fondamentale + recherche + service communautaire"
+
+  utter_demander_doyen_FST_ar:
+    - text: "عميد كلية العلوم والتقنيات هو الدكتور دياغانا ياكوبا"
+
+  utter_demander_doyen_FST_fr:
+    - text: "Le Doyen de la FST est Dr. Diagana Yacouba"
+
+  utter_demander_vicedoyen_FST_ar:
+    - text: "نائب العميد هو الدكتور محمد عبد الودود ولد محمد"
+
+  utter_demander_vicedoyen_FST_fr:
+    - text: "Le Vice-Doyen de la FST est Dr. Mohamed Abdelwedoud Ould Mhamed"
+
+  utter_demander_sg_FST_ar:
+    - text: "الأمين العام للكلية هو الدكتور محمد هدامين همدي"
+
+  utter_demander_sg_FST_fr:
+    - text: "Le Secrétaire Général de la FST est Dr. Mohamed Hademine Hemmidy"
+
+  utter_demander_departements_FST:
+    - text: |
+        Départements de la FST (6):
+        1. Biologie
+        2. Chimie
+        3. Géologie
+        4. Mathématiques
+        5. Physique
+        6. Informatique
+
+  utter_demander_infrastructure_ar:
+    - text: |
+        بنية FST التحتية:
+        • المساحة: 20,832 م²
+        • 10 مدرجات، 69 قاعة دروس
+        • 80 مختبراً، 38 مختبر تطبيقي
+        • 6,202 طالب (2023-2024)
+        • 16 وحدة بحثية + مختبر LRAER
+
+  utter_demander_infrastructure_fr:
+    - text: |
+        Infrastructure de la FST:
+        • Superficie: 20 832 m²
+        • 10 amphithéâtres, 69 salles de cours
+        • 80 laboratoires, 38 labos TP
+        • 6 202 étudiants (2023-2024)
+        • 16 unités de recherche + laboratoire LRAER
+
+  utter_demander_filieres_FST_L1:
+    - text: |
+        شعب السنة الأولى في FST (3 شعب):
+        1. MPI – رياضيات، فيزياء، معلوماتية
+        2. BG – بيولوجيا، جيولوجيا
+        3. PC – فيزياء، كيمياء
+
+  utter_demander_info_MPI_ar:
+    - text: |
+        شعبة MPI (رياضيات – فيزياء – معلوماتية)
+        بعد L1:
+        L2: MIAGE، DA2I، MAI، EEA، TSER، PF
+        L3: MA، MI، MIAGE، DA2I، EEA، TSER، PF
+
+  utter_demander_info_MPI_fr:
+    - text: |
+        Filière MPI (Mathématiques – Physique – Informatique)
+        Après L1:
+        L2: MIAGE, DA2I, MAI, EEA, TSER, PF
+        L3: MA, MI, MIAGE, DA2I, EEA, TSER, PF
+
+  utter_demander_info_BG_ar:
+    - text: |
+        شعبة BG (بيولوجيا – جيولوجيا)
+        بعد L1:
+        L2: BIO، GEO، NS، TAS-SMQ، ABC، IPG، 2P2E
+        L3: BMP، BOE، Géos، Géomin، NS، TAS-SMQ، ABC، IPG، 2P2E
+
+  utter_demander_info_BG_fr:
+    - text: |
+        Filière BG (Biologie – Géologie)
+        Après L1:
+        L2: BIO, GEO, NS, TAS-SMQ, ABC, IPG, 2P2E
+        L3: BMP, BOE, Géos, Géomin, NS, TAS-SMQ, ABC, IPG, 2P2E
+
+  utter_demander_info_PC_ar:
+    - text: |
+        شعبة PC (فيزياء – كيمياء)
+        بعد L1:
+        L2/L3: Chimie، SP، PF، EEA، TSER، IPG، ABC، 2P2E
+
+  utter_demander_info_PC_fr:
+    - text: |
+        Filière PC (Physique – Chimie)
+        Après L1:
+        L2/L3: Chimie, SP, PF, EEA, TSER, IPG, ABC, 2P2E
+
+  utter_demander_matieres_MPI_S1:
+    - text: |
+        Matières MPI – S1:
+        1. Algèbre générale
+        2. Analyse 1
+        3. Mécanique du point
+        4. Électrostatique
+        5. Bases de l'informatique et programmation
+        6. Certificat informatique et internet 1
+        7. Arabe 1
+        8. Anglais 1
+
+  utter_demander_matieres_MPI_S2:
+    - text: |
+        Matières MPI – S2:
+        1. Algèbre linéaire 1
+        2. Analyse 2
+        3. Électromagnétisme
+        4. Optique géométrique
+        5. Complément d'algorithmique et programmation
+        6. Certificat informatique et internet 2
+        7. Arabe 2
+        8. Anglais 2
+
+  utter_demander_matieres_BG_S1:
+    - text: |
+        Matières BG – S1:
+        1. Découverte de la biologie
+        2. Géodynamique interne
+        3. Système Terre 1
+        4. Chimie organique 1
+        5. Chimie générale
+        6. Physique 1
+        7. Biologie cellulaire 1
+        8. Mathématiques 1
+        9. Arabe 1
+        10. Anglais 1
+
+  utter_demander_matieres_BG_S2:
+    - text: |
+        Matières BG – S2:
+        1. Certificat informatique
+        2. Système Terre 2
+        3. Géodynamique externe
+        4. Embryologie et Histologie
+        5. Physique 2
+        6. Chimie organique 2
+        7. Chimie inorganique
+        8. Biologie cellulaire 2
+        9. Mathématiques 2
+        10. Arabe 2
+
+  utter_demander_matieres_PC_S1:
+    - text: |
+        Matières PC – S1:
+        1. Réaction chimique
+        2. Structure de la matière
+        3. Mécanique du point
+        4. Électrostatique
+        5. Algèbre
+        6. Analyse
+        7. Arabe
+        8. Certificat informatique
+
+  utter_demander_matieres_PC_S2_ar:
+    - text: |
+        مواد PC – S2:
+        1. كيمياء عضوية
+        2. رابطة كيميائية
+        3. ثيرموديناميك
+        4. كهرومغناطيسية
+        5. بصريات هندسية
+        6. جبر 2
+        7. تحليل 2
+        8. عربية 2
+        9. إنجليزية
+
+  utter_demander_matieres_PC_S2_fr:
+    - text: |
+        Matières PC – S2:
+        1. Chimie organique
+        2. Liaison chimique
+        3. Thermodynamique
+        4. Électromagnétisme
+        5. Optique géométrique
+        6. Algèbre 2
+        7. Analyse 2
+        8. Arabe 2
+        9. Anglais
+
+  utter_demander_specialites_MPI_ar:
+    - text: |
+        تخصصات MPI:
+        L2: MIAGE، DA2I، MAI، EEA، TSER، PF
+        L3:
+        • الرياضيات والتطبيقات (MA)
+        • الرياضيات والمعلوماتية (MI)
+        • تطوير وإدارة الإنترنت (DA2I)
+        • طرق المعلوماتية المطبقة (MIAGE)
+        • الفيزياء الأساسية (PF)
+        • الإلكترونيات والكهرباء (EEA)
+        • تكنولوجيا الطاقات المتجددة (TSER)
+
+  utter_demander_specialites_MPI_fr:
+    - text: |
+        Spécialités MPI:
+        L2: MIAGE, DA2I, MAI, EEA, TSER, PF
+        L3:
+        • Mathématiques et Applications (MA)
+        • Mathématiques et Informatique (MI)
+        • Développement, Administration Internet (DA2I)
+        • Méthode Informatique Appliquée (MIAGE)
+        • Physiques Fondamentales (PF)
+        • Electronique, Electrotechnique (EEA)
+        • Technologies Energies Renouvelables (TSER)
+
+  utter_demander_specialites_BG_ar:
+    - text: |
+        تخصصات BG:
+        L2: BIO، GEO، NS، TAS-SMQ، ABC، IPG، 2P2E
+        L3:
+        • بيولوجيا جزيئية وفيزيولوجيا (BMP)
+        • بيولوجيا الكائنات والأنظمة البيئية (BOE)
+        • علوم الأرض (Géosciences)
+        • جيولوجيا منجمية (Géomin)
+        • تغذية وصحة (NS)
+        • تكنولوجيا غذائية (TAS-SMQ)
+        • هندسة البترول والغاز (IPG)
+        • تحاليل بيولوجية وكيميائية (ABC)
+        • إنتاج الماء الشروب (2P2E)
+
+  utter_demander_specialites_BG_fr:
+    - text: |
+        Spécialités BG:
+        L2: BIO, GEO, NS, TAS-SMQ, ABC, IPG, 2P2E
+        L3:
+        • Biologie Moléculaire et Physiologie (BMP)
+        • Biologie des Organismes et Ecosystèmes (BOE)
+        • Géosciences (Géos)
+        • Géologie Minière (Géomin)
+        • Nutrition et Santé (NS)
+        • Technologie Alimentaire (TAS-SMQ)
+        • Ingénierie Pétrole et Gaz (IPG)
+        • Analyses Biologiques et Chimiques (ABC)
+        • Production Eau Potable (2P2E)
+
+  utter_demander_specialites_PC_ar:
+    - text: |
+        تخصصات PC:
+        • الكيمياء (Chimie)
+        • العلوم الفيزيائية (SP)
+        • الفيزياء الأساسية (PF)
+        • الإلكترونيات والكهرباء (EEA)
+        • تكنولوجيا الطاقات المتجددة (TSER)
+        • هندسة البترول والغاز (IPG)
+        • التحاليل البيولوجية والكيميائية (ABC)
+        • إنتاج الماء الشروب (2P2E)
+
+  utter_demander_specialites_PC_fr:
+    - text: |
+        Spécialités PC:
+        • Chimie
+        • Sciences Physiques (SP)
+        • Physiques Fondamentales (PF)
+        • Electronique, Electrotechnique (EEA)
+        • Technologies Energies Renouvelables (TSER)
+        • Ingénierie Pétrole et Gaz (IPG)
+        • Analyses Biologiques et Chimiques (ABC)
+        • Production Eau Potable (2P2E)
+
+  utter_demander_matieres_MAI:
+    - text: |
+        MAI (Mathématiques et Applications de l'Informatique) L2:
+        S3: Langage C avancé • Graphes • Algèbre linéaire 2 • Systèmes d'exploitation
+            Topologie métriques • Calcul scientifique • Fonctions plusieurs variables I
+        S4: Analyse numérique • Fonctions plusieurs variables II • Projet UNIX
+            Architecture ordinateurs • Python • EDO • Probabilités discrètes • Anglais
+
+  utter_demander_matieres_BIOLOGIE:
+    - text: |
+        Biologie L2:
+        S3: Génétique formelle • Diversité animale 1 • Diversité végétale 1
+            Bactériologie I • Écologie végétale I • Biologie moléculaire I
+            Biochimie structurale 1 • Parasitologie I • Anglais
+        S4: Écologie animale I • Physiologie animale I • Biochimie métabolique
+            Génétique des populations • Physiologie végétale I • Anglais
+
+  utter_demander_matieres_GEO:
+    - text: |
+        Géologie L2:
+        S3: Trigonométrie • Stratigraphie • Pétrographie ignée • Géophysique
+            Géochimie • Géodésie • Paléontologie • Étude des minéraux • Anglais
+        S4: Géochimie minérale • Géologie environnement • Topographie
+            Cartographie géologique • Géophysique appliquée • Pétrographie sédimentaire
+
+  # ── FST L3 ──────────────────────────────────────────
+  utter_demander_matieres_MA:
+    - text: |
+        MA (Mathématiques et Applications):
+        S5: 
+        Théorie des groupes 
+        Analyse complexe 
+        Topologie 
+        Mesure & intégration
+        Programmation linéaire 
+        Géométrie affine  
+        Calcul différentiel  
+        Python II
+        S6:
+        Anneaux et corps 
+        Courbes et surfaces 
+        Statistique inférentielle
+        Algorithmique 
+        Optimisation 
+        Analyse convexe 
+        Anglais 
+        PFE
+
+  utter_demander_matieres_MI:
+    - text: |
+        MI (Mathématiques et Informatique):
+        S5: Programmation linéaire • Python II • Projet Web • Analyse numérique II
+            Java I • Base de données • Mesure & intégration I • Web dynamique • Anglais
+        S6: Réseaux • Algorithmique • Statistique inférentielle • Optimisation
+            Java II • Entreprenariat • Anglais • PFE
+
+  utter_demander_matieres_DA2I:
+    - text: |
+        DA2I:
+        S3: Système d'exploitation • Programmation Internet • JavaSE • Unix
+            Architecture ordinateurs • Python • Base de données • Anglais
+        S4: Réseaux informatiques • Data Mining • Recherche opérationnelle
+            Outils web • Web dynamique • Multimédia • Anglais
+        S5: Conception SI • Admin BDD • Sécurité • Admin systèmes • Génie logiciel
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_MIAGE:
+    - text: |
+        MIAGE:
+        S3: Python • Anglais • Automates • BDD • Internet • JavaSE • Unix
+        S4: Web dynamique • Outils web • Réseaux • Data Mining • Marketing • Comptabilité
+        S5: Réseaux avancés • Conception SI • Économie • Maqaolátía • Génie logiciel • IA
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_PF:
+    - text: |
+        PF (Physique Fondamentale):
+        S3: Techniques communication • Programmation C • Math physiciens I
+            Electromagnétisme • Mécanique solide • Thermodynamique
+        S4: Mécanique milieux continus • Analyse numérique I • Mécanique quantique I
+            Electronique • Physique ondes • Optique physique • Anglais
+        S5: Mécanique analytique • Math physiciens II • Physique état solide
+            Relativité restreinte • Mécanique fluides • Anglais
+        S6: Physique nucléaire • Thermodynamique avancée • Mécanique quantique II • PFE
+
+  utter_demander_matieres_EEA:
+    - text: |
+        EEA:
+        S3: Machines électriques I • Electromagnétisme • Analogique I • Numérique I
+            Outils math • Programmation C • Circuits linéaires • Anglais
+        S4: Machines électriques II • Thermodynamique • Traitement signal
+            Systèmes linéaires • Analogique II • Anglais
+        S5: Instrumentation • Commande machines • Production énergie
+            Electronique puissance • Asservissement • Informatique industrielle
+        S6: Stage en entreprise
+
+  utter_demander_matieres_TSER:
+    - text: |
+        TSER:
+        S3: Thermodynamique ingénieur • Mécanique fluides • Math ingénieur
+            Electromagnétisme • Electrotechnique • Transferts thermiques • Matlab • Anglais
+        S4: Electronique analogique • Production énergie • Machines électriques • Anglais
+        S5: Conversion solaire • Génie énergétique • Biomasse • Solaire PV • Éolien
+        S6: Stage en entreprise
+
+  utter_demander_matieres_IPG:
+    - text: |
+        IPG (Ingénierie Pétrole et Gaz):
+        S3: Acoustique • Géologie • Chimie minérale • Chimie hydrocarbures • Hydraulique
+        S4: Géophysique appliquée • Pétrologie • Hydrologie • Chimie hydrocarbures II
+        S5: Pétrochimie • Géochimie • Forage • Exploration sismique • Traitement gaz
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_GEOSS:
+    - text: |
+        GEOSS (Géosciences):
+        S5: Géologie régionale • Géoressources • Télédétection • Géologie Précambrien
+            Cycles géochimiques • Ressources minérales • Anglais
+        S6: Géodynamique bassins • Géologie structurale • Géophysique analytique
+            Géodynamique globale • Géomorphologie • Chimie eau • Économie • Droit
+
+  utter_demander_matieres_GEOMIN:
+    - text: |
+        GEOMIN:
+        S3: Paléontologie • Minéraux • Trigonométrie • Stratigraphie • Pétrographie
+            Géophysique • Géochimie • Géodésie • Anglais
+        S4: Stratigraphie avancée • Géochimie • Géophysique appliquée • Pétrologie
+        S5: Géologie Mauritanie • Métallogénie • Hydrogéologie • Valorisation minerais
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_PEPE:
+    - text: |
+        PEPE (2P2E):
+        S3: Chimie minérale • Chimie organique • Chimie analytique
+            Mécanique fluides • Microbiologie eaux • Statistiques • Anglais
+        S4: Chimie avancée • Microbiologie avancée • Hydraulique II • Techniques traitement eau
+        S5: Réseaux assainissement • Ressources eau • Pompage • Impact environnemental
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_CHIMIE:
+    - text: |
+        CHIMIE L3:
+        S3: Outils math • Chimie minérale • Chimie des solutions • Stéréochimie
+        S4: Chimie organique avancée • Chimie inorganique avancée • Chimie analytique avancée
+        S5: Méthodes séparatives • Chimie matériaux • Chimie quantique • Electrochimie
+        S6: Chimie coordination • Chimie verte • Chimie eau/env • Économie • Droit
+
+  utter_demander_matieres_BMP:
+    - text: |
+        BMP (Biologie Moléculaire et Physiologie):
+        S5: Génie Génétique • Immunologie • Biochimie structurale II
+            Biochimie métabolique II • Génétique des populations II
+            Microbiologie 2 • Statistiques • Anglais
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_BOE:
+    - text: |
+        BOE (Biologie des Organismes et Écosystèmes):
+        S3: Écologie animale I • Ornithologie • Diversité végétale I
+            Bio statistique • Biologie marine • Diversité animale I
+        S4: Écologie animale II • Ornithologie avancée • Diversité végétale II
+        S5: Mêmes modules + approfondissement
+        S6: Écologie microorganismes • Écotoxicologie • Pédologie
+
+  utter_demander_matieres_NS:
+    - text: |
+        NS (Nutrition et Santé):
+        S5: Sécurité alimentaire • Diététique clinique • Pathologies nutritionnelles
+            Alimentation nourrisson • Nutrition femmes enceintes
+            Nutrition communautaire • Méthodes enquêtes • Biostatistique
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_TASSMQ:
+    - text: |
+        TASSMQ (Technologie Alimentaire et Système Management Qualité):
+        S5: Sécurité alimentaire • Analyse sensorielle • Technologies alimentaires 2
+            Produits locaux • Biotechnologie • Système Management Qualité • Biostatistique
+        S6: Projet de fin d'études
+
+  utter_demander_matieres_SP:
+    - text: |
+        SP (Sciences Physiques):
+        S3: JavaSE • Python • BDD • OS • Mécanique solide • Thermodynamique • Chimie organique 2
+        S4: Java avancé • Python avancé • BDD avancée • Réseaux sécurité • Mécanique appliquée
+        S5: Chimie analytique • Méthodes séparatives • Physique état solide • Mécanique quantique II
+        S6: Physique nucléaire • Mécanique fluides • Chimie organique 3 • Économie • Droit
+
+  utter_demander_matieres_ABC:
+    - text: |
+        ABC (Analyses Biologiques et Chimiques):
+        S3: Chimie base • Biochimie base • Biologie moléculaire • Chimie analytique • Statistiques
+        S4: Chimie organique avancée • Biochimie métabolique • Techniques analytiques avancées
+        S5: Analyses chimiques • Analyses biologiques • Électrochimie • Entrepreneuriat
+        S6: Projet de fin d'études
+
+  # ── FST Master ──────────────────────────────────────
+  utter_demander_masters_ar:
+    - text: |
+        الماسترات في FST:
+        • بيولوجيا: BEE3، BMPB، BOMVRH، TASSMQ، NS
+        • كيمياء/فيزياء: SN، MATERIAUX، 2M، ER
+        • معلوماتية: IA_MLDS، IA_NLPCV، ISDR_SI، ISDR_RSC
+        • جيولوجيا: MINE، GEOLOGIE، 2E
+        • رياضيات/إحصاء: MA_IMCS، SDD
+
+  utter_demander_masters_fr:
+    - text: |
+        Masters à la FST:
+        • Biologie: BEE3, BMPB, BOMVRH, TASSMQ, NS
+        • Chimie/Physique: SN, MATERIAUX, 2M, ER
+        • Informatique: IA_MLDS, IA_NLPCV, ISDR_SI, ISDR_RSC
+        • Géologie: MINE, GEOLOGIE, 2E
+        • Mathématiques/Stats: MA_IMCS, SDD
+
+  utter_demander_doctorat_ar:
+    - text: |
+        الدكتوراه في FST:
+        • التخصصات: البيولوجيا، الفيزياء، الكيمياء، الجيولوجيا، الرياضيات، المعلوماتية
+        • الشروط: ماستر أو ما يعادله (Bac+5)
+        • المدة: 3 سنوات بعد الماستر (Bac+8)
+
+  utter_demander_doctorat_fr:
+    - text: |
+        Doctorat à la FST:
+        • Spécialités: Biologie, Physique, Chimie, Géologie, Mathématiques, Informatique
+        • Conditions: Master ou équivalent (Bac+5)
+        • Durée: 3 ans après le master (Bac+8)
+
+  utter_masters_disponibles_MA_ar:
+    - text: |
+        الماسترات المتاحة لتخصص MA – 2025:
+        1️⃣ ماستر المعلوماتية - الشبكات RSC (UNFST)
+        2️⃣ ماستر الذكاء الاصطناعي MLDS (UNFST)
+        3️⃣ ماستر الذكاء الاصطناعي - NLP & CV (UNFST)
+        4️⃣ ماستر الرياضيات - SSD (UNFST)
+        5️⃣ ماستر المعلوماتية - نظم المعلومات SI (UNFST)
+        6️⃣ ماستر الاقتصاد القياسي (UNFEG)
+        7️⃣ ماستر الرياضيات - IMCS (UNFST)
+        8️⃣ ماجستير في الجامعات الجزائرية (UNDZ)
+        9️⃣ ماجستير في الجامعات التونسية (UNTN)
+        🔟 ماجستير في الجامعات المغربية (UNMA)
+
+  utter_masters_disponibles_MA_fr:
+    - text: |
+        Masters disponibles pour MA – 2025:
+        1️⃣ Master Informatique - RSC (UNFST)
+        2️⃣ Master Informatique - IA MLDS (UNFST)
+        3️⃣ Master Informatique - IA NLP & CV (UNFST)
+        4️⃣ Master Mathématiques - SSD (UNFST)
+        5️⃣ Master Informatique - SI (UNFST)
+        6️⃣ Master Econométrie (UNFEG)
+        7️⃣ Master Mathématiques - IMCS (UNFST)
+        8️⃣ Master universités algériennes (UNDZ)
+        9️⃣ Master universités tunisiennes (UNTN)
+        🔟 Master universités marocaines (UNMA)
+
+  utter_masters_disponibles_MI_ar:
+    - text: |
+        الماسترات المتاحة لتخصص MI – 2025:
+                كلية العلوم والتقنيات (UNFST):
+                1️⃣ ماستر المعلوماتية - الشبكات والأنظمة المتصلة
+                2️⃣ ماجستير في علوم الحاسوب - الذكاء الاصطناعي - التعلم الآلي وعلوم البيانات
+                3️⃣ ماجستير في علوم الحاسوب - معالجة اللغة الطبيعية والرؤية الحاسوبية
+                4️⃣ ماستر الرياضيات وتطبيقاتها - الإحصاء وعلوم البيانات
+                5️⃣ ماستر المعلوماتية - نظم المعلومات
+                6️⃣ ماستر الرياضيات وتطبيقاتها - المهندسة الرياضية والحساب العلمي
+                7️⃣ ماستر المعلوماتية - المعلوماتية الحيوية
+
+              كلية الاقتصاد والتسيير (UNFEG):
+                8️⃣ ماستر الاقتصاد القياسي - المهندسة الإحصائية والاقتصادية
+                9️⃣ ماستر الاقتصاد القياسي - الاقتصاد القياسي
+
+        ISCAE (مشترك مع FST):
+
+                🔟 المعلوماتية التطبيقية للإدارة
+
+              خارج موريتانيا:
+                🇩🇿 ماجستير في الجامعات الجزائرية (UNDZ)
+                🇹🇳 ماجستير في الجامعات التونسية (UNTN)
+                🇲🇦 ماجستير في الجامعات المغربية (UNMA)
+
+  utter_masters_disponibles_MI_fr:
+    - text: |
+        Masters disponibles pour MI – 2025:
+
+        Faculté des Sciences et Techniques (UNFST) :
+            1️⃣ Master en Informatique – Réseaux et Systèmes Connectés
+            2️⃣ Master en Informatique – Intelligence Artificielle, Apprentissage Automatique et Science des Données
+            3️⃣ Master en Informatique – Traitement du Langage Naturel et Vision par Ordinateur
+            4️⃣ Master en Mathématiques et Applications – Statistique et Science des Données
+            5️⃣ Master en Informatique – Systèmes d’Information
+            6️⃣ Master en Mathématiques et Applications – Ingénierie Mathématique et Calcul Scientifique
+            7️⃣ Master en Informatique – Bio-informatique
+
+            Faculté des Sciences Économiques et de Gestion (UNFEG) :
+            8️⃣ Master en Économétrie – Ingénierie Statistique et Économique
+            9️⃣ Master en Économétrie – Économétrie
+
+            ISCAE (en commun avec la FST) :
+            🔟 Informatique Appliquée à la Gestion
+
+            Hors Mauritanie :
+            🇩🇿 Master dans les universités algériennes (UNDZ)
+            🇹🇳 Master dans les universités tunisiennes (UNTN)
+            🇲🇦 Master dans les universités marocaines (UNMA)  
+
+  # ── Master 2 ─────────────────────────────────────────
+  utter_M2_BMPB_fr:
+    - text: |
+        M2 BMPB:
+        S1: Biosécurité • Génétique humaine • Biochimie métabolique • Bioéthique
+            Oncologie fondamentale • Biologie Cellulaire • Génétique moléculaire • Anglais
+        S2: Biostatistiques • Bactériologie médicale • SIG • Virologie médicale
+            Biotechnologies animales • Biologie Moléculaire • Techniques d'analyses
+        S3: Substances naturelles • Bioinformatique • Amélioration génétique
+            Biotechnologies végétales • Parasitologie appliquée • Immunologie appliquée
+
+  utter_M2_BOMVRH_fr:
+    - text: |
+        M2 BOMVRH:
+        S1: Aquaculture marine et continentale • Biosécurité • Diversité des algues
+            Ecologie marine • Biodiversité aquatique • Socio-économie des pêches • Anglais
+        S2: Biostatistiques • Changements climatiques • SIG • Gestion durable des pêches
+            Océanographie • Génétique des populations • Droit de l'environnement
+        S3: Ressources halieutiques • Biologie et Ecologie du plancton • Technologie de pêche
+
+  utter_M2_TASSMQ_fr:
+    - text: |
+        M2 TASSMQ:
+        S1: Sécurité alimentaire • Outils statistiques • Biosécurité des aliments
+            Biostatistique • Filières alimentaires • Anglais scientifique
+        S2: Biofortification et Biotechnologie • Bonnes Pratiques industrielles
+            HACCP ISO 9001 • Méthodes microbiologiques • Analyses instrumentales
+        S3: Contrôle hygiène • Amélioration qualité • Audit BPH/BPF • ISO 14000 et 45000
+
+  utter_M2_NS_fr:
+    - text: |
+        M2 NS:
+        S2: Biochimie énergétique • Régulations physiologiques • Nutrition communautaire
+            Epidémiologie nutritionnelle • Physiologie de la nutrition • Comportement alimentaire
+        S3: Nutrition Mère-enfant • Education nutritionnelle • Montage de projet
+            Prise en charge nutritionnelle • Nutrition et vieillissement • Enquêtes alimentaires
+
+  utter_M2_ISDR_RSC_fr:
+    - text: |
+        M2 ISDR RSC:
+        S2: Cloud computing • Introduction au routage • Bases de données NoSQL
+            Intelligence Artificielle • Réseaux Télécoms • Protocoles internet • Gestion de projets
+        S3: Systèmes Distribués • Réseaux de Distribution de Contenus • Développement Mobile
+            Infrastructure IoT • Réseaux mobile • Administration Réseaux • Sécurité Réseaux
+
+  utter_M2_ISDR_SI_fr:
+    - text: |
+        M2 ISDR SI:
+        S1: Administration BD • BD semi-structurées • Python • Java et Génie logiciel
+            Fondements Réseaux • Perl & JavaScript • Anglais Scientifique
+        S2: Cloud computing • Web sémantique • Interface Homme-Machine • NoSQL • IA • SIG
+        S3: Motifs de Conception • Framework JAVA • Architectures SOA • Framework Python
+            Développement Mobile • Méthodes Agiles • ERP • Sécurité des SI
+
+  utter_M2_MA_IMCS_fr:
+    - text: |
+        M2 MA-IMCS:
+        S1: Analyse Fonctionnelle I • Mécanique des Milieux Continus • Probabilités et Statistiques
+            Géométrie Différentielle • Analyse Numérique • Anglais • EDO
+        S2: Analyse Fonctionnelle II • Méthodes des EDP Linéaires • Programmation Scientifique
+            Distribution et Analyse de Fourier • Graphes • Optimisation
+        S3: EDP Elliptiques • Analyse non Linéaire • Calcul Stochastique • Éléments Finis
+
+  utter_M2_MINE_fr:
+    - text: |
+        M2 MINE:
+        S1: Hydrogéologie de la Mauritanie • Méthodes d'enrichissement minières
+            Topographie appliquée • Pétrologie sédimentaire • SIG et bases de données
+        S2: Géophysique appliquée • Caractérisation Géotechnique • Enrichissement de minerais II
+            Stabilité des ouvrages • Impacts environnemental • Economie minière
+        S3: Pelletisation et Métallurgie • Géostatistique • Stratigraphie de la Mauritanie
+
+  utter_M2_GEOLOGIE_fr:
+    - text: |
+        M2 GEOLOGIE:
+        S1: Hydrogéologie de la Mauritanie • Topographie appliquée • Pétrologie sédimentaire
+            Géodynamique des Bassins • SIG et bases de données • Paléontologie
+        S2: Environnements littoraux • Géodynamique Globale • Métallogénie
+            Tectonique Analytique • Magmatisme et métamorphisme • Géologie structurale
+        S3: Prospection géophysique • Géologie du Pétrole • Géostatistique
+
+  utter_M2_2E_fr:
+    - text: |
+        M2 2E:
+        S1: Contrôle qualité de l'eau potable • Chimie et Microbiologie de l'eau
+            Sciences environnementales • Mécanique des fluides • Hydraulique urbaine
+        S2: Protection de l'environnement • Pollution • SIG et télédétection
+        S3: Epuration des eaux usées • Procédés d'extraction • Traitement de l'eau potable
+
+  utter_M2_BEES_fr:
+    - text: |
+        M2 BEES:
+        S1: Ecosystèmes marins • Bioéthique • Ecosystèmes désertiques et sahéliens
+            Marqueurs biologiques • Etude d'impact sur l'environnement • Ecotoxicologie
+        S2: Biostatistiques • SIG • Conservation et régénération de la diversité
+            Protection des aires protégées • Norme iso 14001
+        S3: Ornithologie appliquée • Résistance aux stress abiotiques • Politiques nationales
+
+  utter_M2_ER_fr:
+    - text: |
+        M2 ER:
+        S1: Réseaux Electriques • Electronique • Machines Electriques • Semi-Conducteurs
+            Transfert de Chaleur et de Masse • Matériaux Photovoltaïques • Instrumentation
+        S2: Convertisseurs Electroniques • Energie éolienne • Stockage de l'Energie
+            Energies Solaires Photovoltaïques • Energie solaire thermique
+        S3: Electronique de puissance • Automatique • Systèmes hybrides
+
+  utter_M2_SDD_fr:
+    - text: |
+        M2 SDD:
+        S1: Régression linéaire • Statistique Inférentielle • Base de données
+            Analyse de données • Anglais Scientifique • Logiciel R • Python
+        S2: Statistique Inférentielle 2 • Exploration de données • Apprentissage statistique
+        S3: Apprentissage statistique avancé • Séries temporelles • Visualisation de données
+            Analyse de données massives • Econométrie avancée
+
+  utter_M2_2M_fr:
+    - text: |
+        M2 2M:
+        S1: Mécanique des fluides • Comportement Mécanique des Matériaux
+            Mécanique des Milieux Continus • Analyse Numérique • Physique du Solide
+        S2: Matériaux de Structure • Dynamique Tourbillonnaire • Corrosion et Dégradation
+        S3: Méthodes d'élaboration des matériaux • Aérodynamique • Nanomatériaux
+
+  utter_M2_SN_fr:
+    - text: |
+        M2 SN:
+        S1: Ressources minières pétrolières • Cinétique chimique avancée • Chimie analytique
+            Plantes médicinales • Méthodes spectroscopiques • Méthodes séparatives
+        S2: Chimie de coordination • Statistiques et outil informatique • Photochimie
+        S3: Chimie organométallique • Méthodes récentes en Synthèse organique
+            Métabolites végétaux • Normes environnementales • Botanique de Mauritanie
+
+  utter_M2_MATERIAUX_fr:
+    - text: |
+        M2 MATERIAUX:
+        S3: Cristallographie aux Rayons X • Nanomatériaux • Polymères à propriétés spécifiques
+            Métallurgie • Propriétés des matériaux • Corrosion et traitement de surface
+            Méthodes d'analyse • Matériaux naturels utiles • Céramiques industrielles
+
+  utter_M2_IA_MLDS_fr:
+    - text: |
+        M2 IA – Parcours MLDS:
+        S1: Méthodologie Lean Startup • Python avancé • Frameworks IA
+            Machine Learning • Deep Learning • Bases Mathématiques pour l'IA • Cloud Computing
+        S2: Big Data Technologies • Traitement de Données
+            Techniques d'Optimisation • Vision par Ordinateur
+        S3: Reinforcement Learning et Agents Autonomes
+
+  utter_M2_IA_NLPCV_fr:
+    - text: |
+        M2 IA – Parcours NLPCV:
+        S2: Traitement d'Image • Techniques d'Optimisation • Vision par Ordinateur • NLP Dialects
+        S3: Large Language Models (LLM) et NLP Avancé
+
+  # ── FLSH ─────────────────────────────────────────────
+  utter_ask_flsh:
+    - text: |
+        📚 **كلية الآداب والعلوم الإنسانية (FLSH)**
+        - العميد: د. محمد فال بيان
+        - نائب العميد: د. أحمد مولود ولد أيده
+        - الأمين العام: د. عبد الله سيدي محمد ابنو
+        - **14 ليسانس** — 3 سنوات بعد الباك
+
+  utter_ask_flsh_licences:
+    - text: |
+        📋 **شعب FLSH:**
+        **أساسي:** العربية | الفرنسية | الإنجليزية | الإسبانية | التركية | الصينية | اللغات الوطنية | الفلسفة | علم الاجتماع | التاريخ | الجغرافيا
+        **مهني:** العمل الاجتماعي | التنمية المحلية | البيئة والتنمية المستدامة
+
+  utter_ask_inscription_flsh:
+    - text: |
+        📋 **التسجيل في FLSH:**
+        يتم عبر المنصة الجامعية الرسمية.
+        شروط إعادة التسجيل: لا يمكن التسجيل أكثر من مرتين في نفس المستوى.
+
+  utter_ask_matieres_flsh_l1:
+    - text: |
+        📚 **مواد L1 FLSH — حسب التخصص:**
+        اكتب تخصصك: العربية | الفرنسية | الإنجليزية | الإسبانية | التركية | الصينية | اللغات الوطنية | الفلسفة | علم الاجتماع | التاريخ | الجغرافيا | العمل الاجتماعي | التنمية المحلية | البيئة
+
+  utter_ask_matieres_philosophie_l1:
+    - text: |
+        🧠 **L1 — الفلسفة**
+
+        📅 السداسي الأول/S1:
+        علم الكلام • الفلسفة الإسلامية • الفلسفة اليونانية • ماهية الفلسفة
+        Sociologie • Psychologie • Terminologie • Français 1
+
+        📅 السداسي الثاني/S2:
+        الفلسفة الإسلامية • السياسة المدنية • فلسفة قرون الوسطى • الإمامة والسياسة الشرعية
+        Terminologie 2 • Français 2 • Méthodologie de pensée philosophique • Problématique de pensée philosophique
+
+  utter_ask_matieres_francais_l1:
+    - text: |
+        🇫🇷 **L1 — اللغة الفرنسية**
+
+        📅 السداسي الأول/S1:
+        Histoire de l'art • Histoire de la littérature africaine • Pratique de l'oral
+        Grammaire 1 • Arabe 1 • Questions de linguistique • Histoire de la littérature française • Introduction à la sociologie
+
+        📅 السداسي الثاني/S2:
+        Pratique de l'écrit • Arabe 2 • Histoire de la littérature mauritanienne
+        Histoire de la littérature maghrébine • Phonétique • Grammaires des textes
+        Introduction à l'anthropologie • Art et littérature
+
+  utter_ask_matieres_anglais_l1:
+    - text: |
+        🇬🇧 **L1 — اللغة الإنجليزية**
+
+        📅 السداسي الأول/S1:
+        العربية • Practical learning skills • Practical phonetics and Morphology 1
+        Writing 1 • Integrated listening, speaking and reading 1 • Grammar
+        Expresión y comprensión orales 1 • Français
+
+        📅 السداسي الثاني/S2:
+        العربية • Building learner anatomy • Integrated listening, speaking and reading 2
+        Expresión y comprensión escritas • Writing 2 • Grammar 2 • Français 2
+        Practical phonetics and morphology 2
+
+  utter_ask_matieres_turc_l1:
+    - text: |
+        🇹🇷 **L1 — اللغة التركية**
+
+        📅 السداسي الأول/S1:
+        تطبيقات على الكتابة • القواعد • الأدب التركي • تطبيقات على القراءة
+        تطبيقات على الاستماع • تطبيقات على الكلام • العربية • الفرنسية
+
+        📅 السداسي الثاني/S2:
+        تطبيقات على الكتابة • القواعد • الأدب التركي • تطبيقات على القراءة
+        تطبيقات على الاستماع • تطبيقات على الكلام • العربية • الفرنسية
+  utter_ask_matieres_espagnol_l1:
+    - text: |
+        🇪🇸 **L1 — تخصص الإسبانية (كلية الآداب)**
+
+        📅 **السداسي الأول (S1):**
+        Arabe de communication 1\n • Gramática 1\n • Fonética 1\n • Español de los medios de comunicación 1\n • Expresión y compréhension orales 1\n • Inglés 1\n • Français de communication 1\n • Expresión y compréhension escritas 1\n
+
+        📅 **السداسي الثاني (S2):**
+        Arabe de communication 2\n • Gramática 2\n • Fonética 2\n • Expresión y compréhension escritas 2\n • Expresión y compréhension orales 2\n • Inglés 2\n • Français de communication 2\n • Español de los medios de comunicación 2 (radio, tv)\n
+  utter_ask_matieres_chinois_l1:
+    - text: |
+        🇨🇳 **L1 — اللغة الصينية**
+
+        📅 السداسي الأول/S1:
+        Phonetic • Intensive Reading and Handwriting • Basic grammar
+        Arabe de Communication • Reading/Writing • Français de Communication
+        Listening • Speaking/Listening
+
+        📅 السداسي الثاني/S2:
+        Intensive Reading • Basic writing • Introduction to China
+        Français de Communication • Arabe de Communication • Listening and Speaking
+        Phonetics • Basic Grammar
+
+  utter_ask_matieres_langues_nationales_l1:
+    - text: |
+        🗣️ **L1 — اللغات الوطنية واللسانيات**
+
+        📅 السداسي الأول/S1:
+        Littérature française • Nature du langage • Pulaar 1 • Phonétique
+        Grammaire 1 • Questions de linguistics • Arabe 1 • Littérature négro-africaine
+
+        📅 السداسي الثاني/S2:
+        Littérature maghrébine • Linguistique générale • Soninke • Morphologie
+        Grammaire 2 • Littérature mauritanienne • Linguistique structurale • Wolof 1
+
+  utter_ask_matieres_sociologie_l1:
+    - text: |
+        👥 **L1 — علم الاجتماع**
+
+        📅 السداسي الأول/S1:
+        الأنتربولوجيا • مبادئ علم الإجتماع • الدراسات الكولونيالية • علم العمران البشري
+        Psychologie • Philosophie • Terminologie 1 • Français 1
+
+        📅 السداسي الثاني/S2:
+        الأنقسامية • الإنحراف الإجتماعي • الوظيفية والبنيوية
+        الإتجاهات المعاصرة والحديثة في علم الإجتماع
+        Statistique descriptive • Méthodologie de recherches • Terminologie 2 • Français 2
+
+  utter_ask_matieres_histoire_l1:
+    - text: |
+        🏛️ **L1 — التاريخ والحضارة**
+
+        📅 السداسي الأول/S1:
+        مدخل إلى دراسة العصور الحجرية • مدخل إلى دراسة علم الآثار
+        مدخل إلى دراسة علم الجغرافيا • Sociologie • Études du texte
+        النهضة الأوروبية • Méthodologie • التوسع الأوروبي
+
+        📅 السداسي الثاني/S2:
+        Approches des écoles historiques • Textes médiévaux • الثورة الفرنسية
+        شبه جزيرة العرب وبلاد الرافدين • الثورة الروسية • Terminologies
+        مصر وبلاد الشام • أعمال تطبيقية وميدانية
+
+  utter_ask_matieres_geographie_l1:
+    - text: |
+        🗺️ **L1 — الجغرافيا**
+
+        📅 السداسي الأول/S1:
+        Analyse de textes en français • Terminologies géographique • Introduction à la géographie
+        جيومورفولوجيا بنيوية • مدخل للجغرافيا الإقليمية • الجغرافيا السياسية
+        تاريخ موريتانيا • Introduction à la sociologie
+
+        📅 السداسي الثاني/S2:
+        المناخ العام • مناهج البحث الجغرافي • La géographie de la population
+        الجغرافيا الإقتصادية • الجغرافيا الحيوية • Analyse de textes en français
+        الخريطة الطبوغرافية • Terminologies géographiques
+
+  utter_ask_matieres_travail_social_l1:
+    - text: |
+        🤝 **L1 — العمل الاجتماعي**
+
+        📅 السداسي الأول/S1:
+        نظريات العمل الاجتماعي • العربية • تاريخ العمل الاجتماعي
+        Théories et psychologique de travail social • الإتصال والإنعاش
+        Technique de recherche • Vulgarisation social et assistance social • Français
+
+        📅 السداسي الثاني/S2:
+        Français • Informatique • Protection social et acteurs sociaux
+        الظواهر الاجتماعية الجديدة • تقنيات وتحليل المعطيات • العربية
+        الخدمة الاجتماعية في المجال الطبي • Déviance et conflits sociaux
+
+  utter_ask_matieres_developpement_local_l1:
+    - text: |
+        🌍 **L1 — التنمية المحلية**
+
+        📅 السداسي الأول/S1:
+        مدخل إلى التنمية المحلية في موريتانيا • المجتمعات والتنظيم المجالي
+        مدخل إلى التنمية الإقليمية • عربية نصوص ومصطلحات • Français de Communication
+        Structures sociales en Mauritanie • Introduction aux politiques territoriales
+        Introduction à l'Aménagement
+
+        📅 السداسي الثاني/S2:
+        المجتمعات الموريتانية والنظم العقارية • السياسات السكانية في موريتانيا
+        العربية لغة تواصل • التنظيم وحكامة الجماعات المحلي • Genre et développement
+        Sociologie de territoire en Mauritanie • Dynamique des villes et développement local
+        Français de Communication 2
+
+  utter_ask_matieres_environnement_l1:
+    - text: |
+        🌿 **L1 — البيئة والتنمية المستدامة**
+
+        📅 السداسي الأول/S1:
+        مدخل لدراسة الحاسوب • Français • Introduction à l'étude de l'environnement
+        Développement durable • مدخل الجغرافيا • Introduction à l'économie
+        مدخل لدراسة التنمية • مدخل لعلم الإجتماع
+
+        📅 السداسي الثاني/S2:
+        المقومات الطبيعية • Environnement continental • المقومات البشرية • Français
+        Statistiques descriptives • Lecture et analyse des cartes topographiques
+        البيئة البحرية • رسم الخرائط بمساعدة الحاسوب
+
+  utter_ask_matieres_arabe_l1:
+    - text: |
+        📖 **L1 — الدراسات العربية**
+
+        📅 السداسي الأول/S1:
+        النحو 1 • الصرف • الفقه • أدب إسلامي وأموي • تقنيات التعبير
+        علوم القرآن • أدب جاهلي • Français 1
+
+        📅 السداسي الثاني/S2:
+        أدب عباسي • أدب أندلسي • النحو 2 • الصرف 2 • تقنيات التعبير
+        علوم الحديث • حضارة عربية إسلامية • Français 2
+
+  
+
+
+  utter_ask_feg_info:
+    - text: |
+        🏛️ **كلية الاقتصاد والتسيير — FEG**
+        Faculté d'Economie et de Gestion
+
+        👨‍💼 العميد:
+        د. محمد عبد الله عرفه
+        Mr Mohamed Abdallahi Arafa
+
+        👨‍💼 نائب العميد:
+        د. محمد الأمين أحمد جدو عمي
+        Mr Mohamed Lemine Ahmed Jidou Ami
+
+        🗂️ الأمين العام:
+        د. يعقوب الشيخ محمد أحمد يورا
+        Mr Yacoub Cheikh Mohamed Ahmed Youra
+
+  utter_ask_feg_missions:
+    - text: |
+        🎯 **مهام كلية الاقتصاد والتسيير — Nos Missions**
+
+        1️⃣ ضمان التكوينات الأساسية والمهنية وكذلك التكوين المستمر في المجالات التي تغطيها الكلية وتسليم الشهادات المعترف بها
+        Assurer des formations initiales fondamentales et professionnelles ainsi que des formations continues et délivrer des diplômes reconnus et des certifications
+
+        2️⃣ تطوير المعرفة والعلم
+        Développer le savoir et la connaissance
+
+        3️⃣ إعداد الخريجين الشباب للاندماج المهني والحياة العملية
+        Préparer les jeunes diplômés à l'insertion professionnelle et à la vie active
+
+        4️⃣ تعزيز وتقوية القيم الثقافية العربية والأفريقية
+        Promouvoir et renforcer les valeurs culturelles arabes et africaines
+
+        5️⃣ تشجيع البحث العلمي وتقديم خدمات الخبرة في مجالات الكفاءة
+        Encourager la recherche scientifique et proposer des prestations de services et expertises dans ses domaines de compétence
+
+  utter_ask_feg_vision:
+    - text: |
+        🔭 **رؤية كلية الاقتصاد والتسيير — Notre Vision**
+
+        كلية رائدة بفضل جودة برامجها التكوينية والبحثية، في صميم الواقع والشواغل الاجتماعية والاقتصادية الوطنية والإقليمية، منفتحة على المستوى الدولي على التجديدات التكنولوجية والإبداعية، من أجل عالم مستدام.
+
+        Une faculté reconnue par la pertinence et la qualité de ses programmes de formation et de recherche, au cœur des réalités et des préoccupations socioéconomiques nationale et régionale, largement ouverte à l'international, aux innovations technologiques et créatrices, pour un monde durable.
+
+  utter_ask_feg_offres:
+    - text: |
+        📚 **عروض التكوين — Nos Offres de Formation**
+
+        🎓 **7 ليسانس** (مدة الدراسة: 3 سنوات بعد الباكالوريا):
+        • 4 ليسانس أساسية — Licences Fondamentales
+        • 3 ليسانس مهنية — Licences Professionnelles
+
+        🎓 **6 ماسترات** موزعة على **13 مساراً**
+        Six Masters répartis en treize (13) parcours
+
+        🎓 **مدرسة دكتوراه واحدة**
+        Une école doctorale
+
+        🔬 **4 وحدات بحث**
+        Quatre unités de Recherche
+
+        🏫 **الأقسام:**
+        • قسم الاقتصاد — Département d'économie
+        • قسم التسيير — Département de Gestion
+        • قسم الأساليب الكمية — Département de Méthodes quantitatives
+
+  utter_ask_feg_specialisations:
+    - text: |
+        🎓 **تخصصات كلية الاقتصاد والتسيير — FEG**
+        مدة الدراسة: 3 سنوات بعد الباكالوريا
+
+        📗 **ليسانس مهني — Licence Professionnelle:**
+        • التسيير/البنوك والتأمين
+          Gestion/Banques & Assurance
+        • التسيير/المالية والمحاسبة
+          Gestion/Finance et Comptabilité
+        • التسيير/تسيير الموارد البشرية
+          Gestion/Gestion des Ressources Humaines
+
+        📘 **ليسانس أساسي — Licence Fondamentale:**
+        • التسيير/تسيير المؤسسات
+          Gestion/Gestion des Entreprises
+        • التسيير/المالية والمحاسبة
+          Gestion/Finance et Comptabilité
+        • اقتصاد/تقنيات تسيير المشاريع العمومية
+          Economie/Techniques de Gestion des Projets Publics
+        • اقتصاد/تسيير الإدارة العمومية
+          Economie/Gestion de l'Administration Publique
+
+  utter_ask_feg_corps_professoral:
+    - text: |
+        👨‍🏫 **الهيئة التدريسية — Corps Professoral**
+
+        👩‍🏫 **69 أستاذاً دائماً**
+        69 enseignants permanents
+
+        👨‍💼 **حوالي 120 متدخلاً** من الوسط المهني أو الأكاديمي:
+        Environ 120 intervenants du milieu professionnel ou académique:
+        • باحثون — Chercheurs
+        • إطارات — Cadres
+        • مستشارون — Consultants
+        • منظمات دولية — Organismes internationaux
+        • مؤسسات متخصصة — Institutions spécialisées
+
+  utter_ask_feg_criteres_passage:
+    - text: |
+        📋 **معايير المداولات — FEG**
+        السنة الدراسية 2024-2025
+
+        ━━━━━━━━━━━━━━━━━━━
+        🔹 **السنة الأولى — L1**
+        ━━━━━━━━━━━━━━━━━━━
+
+        ✅ شروط الانتقال العادية:
+        • 39 رصيداً + معدل عام 10 بين S1 و S2
+
+        🔄 شروط المداولات الاستثنائية:
+        • 39 رصيداً + معدل 9.5 بين S1 و S2
+        • أو 36 رصيداً + معدل عام 10 بين الفصلين
+
+        ━━━━━━━━━━━━━━━━━━━
+        🔹 **السنة الثانية — L2**
+        ━━━━━━━━━━━━━━━━━━━
+
+        ✅ شروط الانتقال العادية:
+        • مجموع رصيد 99 + معدل 10 بين S3 و S4
+        • وأن يستوفي كل عناصر السنة الأولى
+
+        🔄 شروط المداولات الاستثنائية:
+        • الحاصل على 99 رصيداً يستفيد من مداولة عنصر واحد من L1
+        • الطالب الذي استوفى كل عناصر L1 ولم يحصل إلا على 96 رصيداً
+          + معدل 10 بين S3 و S4 → يستفيد من المداولات والتجاوز إلى L3
+
+        ━━━━━━━━━━━━━━━━━━━
+        🔹 **السنة الثالثة — L3**
+        ━━━━━━━━━━━━━━━━━━━
+
+        🔄 شروط المداولات:
+        • تمنح للطالب فرصة المداولات في عنصرين سواء في L2 أو L3 أو كليهما حتى يتمكن من التخرج
+
+        ⚠️ **ملاحظة عامة:**
+        لا يستفيد من المداولات إلا من أجرى امتحان الاستدراك في العنصر المعني ولم يرتكب مخالفات مدة الامتحان
+
+  
+# ============================================================
+# FMPOS
+# ============================================================
+  utter_ask_fmpos_info:
+    - text: |
+        🏥 **كلية الطب والصيدلة وطب الأسنان — FMPOS**
+
+        👨‍⚕️ العميد:
+        بروفسور يعقوب ولد محمد اصغير
+
+        👨‍⚕️ نائب العميد:
+        بروفسور يحيى اطفيل
+
+        🗂️ الأمين العام:
+        السيد محمد المختار السبتي
+
+  utter_ask_fmpos_specializations:
+    - text: |
+        🎓 **شعب كلية الطب والصيدلة وطب الأسنان — FMPOS**
+
+        🩺 دكتوراه في الطب:
+        • 7 سنوات بعد الباكالوريا
+        • Doctorat en Médecine
+
+        💊 دكتوراه في الصيدلة:
+        • 6 سنوات بعد الباكالوريا
+        • Doctorat en Pharmacie
+
+        🦷 دكتوراه في طب الأسنان:
+        • 6 سنوات بعد الباكالوريا
+        • Doctorat en Médecine Dentaire
+
+  utter_ask_fmpos_structure_medecine:
+    - text: |
+        🗂️ **هيكل الدراسة — Médecine**
+
+        📌 1er Cycle (سنتان):
+        • PCEM1 (السنة 1)
+        • PCEM2 (السنة 2)
+
+        📌 2ème Cycle — Externe (4 سنوات):
+        • DCEM1
+        • DCEM2
+        • DCEM3
+        • DCEM4
+
+        📌 3ème Cycle — Interne:
+        • TCEM1
+
+        ⏱️ المجموع: 7 سنوات بعد الباكالوريا
+
+# ============================================================
+# PCEM1 — MÉDECINE
+# ============================================================
+
+  utter_ask_matieres_medecine_pcem1:
+    - text: |
+       **PCEM1 — Médecine**
+
+        📅 S1:
+        Anatomie
+        • Membre supérieur
+        • Membre inférieur
+        Histologie
+        • T.épithélial
+        • T.conjonctive
+        • T.musculaire
+        • T.osseux
+        • T.nerveux
+        • T.sanguin
+        • App.cardio circulatoire
+        Physiologie
+        • Milieu intérieur
+        • Physiologie nerveux
+        • Physiologie musculaire
+        • Bioénergétique
+        • Thermorégulation
+        Biochimie
+        Biologie génétique
+        Anglais
+        Français
+
+        📅 S2:
+        Anatomie
+        • Thorax
+        • Abdomen
+        Physiologie
+        • Physiologie respiratoire
+        • Physiologie cardiaque
+        • Physiologie digestive
+        Embryologie
+        Biophysique
+        Anglais
+        Français
+
+# ============================================================
+# PCEP1 — PHARMACIE / MÉDECINE DENTAIRE
+# ============================================================
+
+  utter_ask_matieres_pcep1:
+    - text: |
+       **PCEP1 — Pharmacie / Médecine Dentaire**
+
+        📅 S1:
+        Chimie Organique 
+        Chimie Physique 
+        Physiologie 
+        Anatomie 
+        Histologie 
+        Biochimie 
+        Biologie 
+        Génétique 
+        Anglais 
+        Français 
+
+        📅 S2:
+        Biophysique 
+        Physiologie 
+        Anatomie 
+        Embryologie 
+        Mathématiques et Statistiques 
+        Informatique 
+        Philosophie de SN et Droit Homme 
+        Pharmacie galénique et histoire de pharmacie 
+        Français 
+
+  # ── CNIM ────────────────────────────────────────────
+  utter_demander_cnim_ar:
+    - text: |
+        CNIM – المسابقة الوطنية للمهندسين في موريتانيا:
+        • الوسيلة الوحيدة للالتحاق بمدارس المهندسين
+        • تنظمها وزارة التعليم العالي والبحث العلمي
+        • مساران:
+           المسار 1: لطلاب IPGEI والموريتانيين في CPGE الأجنبية
+           المسار 2: للطلاب المسجلين في L3 بالجامعات الحكومية
+        • المدارس المستهدفة: ESP و IPGEI
+
+  utter_demander_cnim_fr:
+    - text: |
+        CNIM – Concours National d'Ingénieurs de Mauritanie:
+        • Seul moyen d'accès aux cycles d'ingénieurs en Mauritanie
+        • Organisé par le Ministère de l'Enseignement Supérieur
+        • Deux voies:
+           Voie 1: Élèves IPGEI et Mauritaniens des CPGE étrangères
+           Voie 2: Étudiants inscrits en L3 dans les établissements publics
+        • Écoles visées: ESP et IPGEI
+
+  utter_demander_cnim_voie1_ar:
+    - text: |
+        CNIM – المسار الأول:
+        الشروط:
+           • العمر ≤ 26 سنة
+           • التحقق من السنة الثانية التحضيرية
+           • المشاركة مرة واحدة كحد أقصى
+        التسجيل: عبر Framaforms.org
+        الوثائق: CIN أو جواز السفر + كشوف نقاط CPGE + استمارة مكتملة
+
+  utter_demander_cnim_voie1_fr:
+    - text: |
+        CNIM – Voie 1:
+        Conditions:
+           • Âge ≤ 26 ans
+           • Avoir validé la 2ème année préparatoire
+           • Maximum une participation au concours
+        Inscription: via Framaforms.org
+        Dossier: CIN ou passeport + relevés CPGE + formulaire complété
+
+  utter_demander_cnim_voie2_ar:
+    - text: |
+        CNIM – المسار الثاني (طلاب L3):
+        الشروط:
+           • العمر ≤ 26 سنة
+           • مسجل في L3 بجامعة حكومية
+           • من أفضل 10% في الدفعة
+           • لم يشارك في المسابقة من قبل
+        التسجيل: عبر Framaforms.org
+
+  utter_demander_cnim_voie2_fr:
+    - text: |
+        CNIM – Voie 2 (Étudiants L3):
+        Conditions:
+           • Âge ≤ 26 ans
+           • Inscrit en L3 dans un établissement public
+           • Classé dans les 10% de sa promotion
+           • N'avoir jamais participé au concours
+        Inscription: via Framaforms.org
+
+  utter_demander_cnim_epreuves_ar:
+    - text: |
+        اختبارات CNIM (المسار الأول):
+        المواد والمعاملات:
+           • الرياضيات – معامل 4
+           • الفيزياء والكيمياء – معامل 4
+           • الفرنسية – معامل 4
+           • الإنجليزية – معامل 3
+           • الإعلاميات – معامل 3
+           • علوم المهندس – معامل 3
+        المدارس: ESP (www.esp.mr) | IPGEI (www.ipgei.mr)
+
+  utter_demander_cnim_epreuves_fr:
+    - text: |
+        Épreuves CNIM (Voie 1):
+        Matières et coefficients:
+           • Mathématiques – Coef. 4
+           • Physique & Chimie – Coef. 4
+           • Français – Coef. 4
+           • Anglais – Coef. 3
+           • Informatique – Coef. 3
+           • Science ingénieur – Coef. 3
+        Écoles: ESP (www.esp.mr) | IPGEI (www.ipgei.mr)
+
+  utter_demander_Nuit_Info:
+    - text: |
+        Nuit de l'Info (ليلة المعلوماتية) هي مسابقة برمجية وطنية فرنسية سنوية مكثفة، تجري على مدار ليلة كاملة من غروب يوم الخميس إلى شروق يوم الجمعة في أوائل ديسمبر.
+        إليك أبرز تفاصيلها:
+        الهدف: تطوير تطبيق (غالباً لعبة جادة - Serious Game) استجابة لتحديات وموضوعات اجتماعية، تقنية، أو بيئية.
+        طبيعة الحدث: عمل جماعي مكثف (Hackathon) يدمج بين التطوير البرمجي والإبداع.
+        المشاركون: طلاب الجامعات والمعاهد التكنولوجية (IUT) بشكل أساسي.
+
+        La Nuit de l'Info est un concours national français annuel de programmation intensif.
+        Objectif: développer une application (souvent un serious game) en réponse à des problématiques sociales, technologiques ou environnementales.
+        Nature: un travail collaboratif intensif (hackathon) combinant développement informatique et créativité.
+        Participants: principalement des étudiants issus des universités et des IUT.
+
+  # ── إدارية ──────────────────────────────────────────
+  utter_demander_inscription_ar:
+    - text: |
+        خطوات التسجيل :
+        1️⃣ ادفع 60 MRU عبر Bankily (B-PAY) – كود: 017604
+        2️⃣ أنشئ حساباً: https://fst-preinscription.netlify.app/
+        3️⃣ سجل الدخول بالبريد الإلكتروني وكلمة المرور
+        4️⃣ أكمل الاستمارة وأرسل طلبك
+        ⚠️ لا يمكن تعديل المعلومات بعد الإرسال!
+
+  utter_demander_inscription_fr:
+    - text: |
+        Étapes d'inscription :
+        1️⃣ Payer 60 MRU via Bankily (B-PAY) – Code: 017604
+        2️⃣ Créer un compte: https://fst-preinscription.netlify.app/
+        3️⃣ Se connecter avec email et mot de passe
+        4️⃣ Compléter le formulaire et soumettre la candidature
+        ⚠️ Aucune modification possible après soumission!
+
+  utter_demander_frais_inscription_ar:
+    - text: "رسوم التسجيل في FST هي 60 MRU فقط – تُدفع عبر Bankily بخدمة B-PAY"
+
+  utter_demander_frais_inscription_fr:
+    - text: "Les frais d'inscription à la FST sont 60 MRU – à payer via Bankily service B-PAY"
+
+  utter_demander_paiement_bankily_ar:
+    - text: |
+        الدفع عبر Bankily (B-PAY):
+        1️⃣ افتح Bankily ← B-PAY
+        2️⃣ كود الجامعة: 017604 | المبلغ: 60 MRU
+        3️⃣ أكد الدفع → احفظ كود الدفع
+        🔗 https://inscription.fst.univ-nkc.mr/
+
+  utter_demander_paiement_bankily_fr:
+    - text: |
+        Paiement via Bankily (B-PAY):
+        1️⃣ Ouvrir Bankily → B-PAY
+        2️⃣ Code université: 017604 | Montant: 60 MRU
+        3️⃣ Confirmer → noter le code de paiement
+        🔗 https://inscription.fst.univ-nkc.mr/
+
+  utter_demander_documents_inscription_ar:
+    - text: |
+        الوثائق المطلوبة للتسجيل:
+        • صورة شخصية (JPEG/PNG، 300dpi، max 1Mo)
+        • كشف نقاط البكالوريا (max 2Mo)
+        • رقم الهاتف ورقم WhatsApp
+        • رقم هاتف الوالدين
+        • العنوان (موقباتعه)
+        • الرقم الوطني للتعريف
+        • رقم التسجيل أو رقم البكالوريا
+        ⚠️ تأكد من صحة جميع المعلومات قبل الإرسال!
+
+  utter_demander_documents_inscription_fr:
+    - text: |
+        Documents requis pour l'inscription:
+        • Photo d'identité (JPEG/PNG, 300dpi, max 1Mo)
+        • Relevé de notes du bac (max 2Mo)
+        • Numéro de téléphone et WhatsApp
+        • Téléphone du tuteur/parent
+        • Adresse (moughataa)
+        • Numéro national d'identification
+        • Numéro d'inscription ou numéro bac
+        ⚠️ Assurez-vous que toutes les infos sont correctes avant de soumettre!
+
+  utter_demander_attestation_inscription_ar:
+    - text: |
+        تحميل شهادة التسجيل:
+        1️⃣ https://fst-preinscription.netlify.app/
+        2️⃣ ابحث عن: 'وثيقة تسجيلك متوفرة'
+        3️⃣ اضغط 'تحميل الوثيقة'
+
+  utter_demander_attestation_inscription_fr:
+    - text: |
+        Télécharger l'attestation d'inscription:
+        1️⃣ https://fst-preinscription.netlify.app/
+        2️⃣ Message: 'Votre attestation est disponible'
+        3️⃣ Cliquer 'Telecharger l'attestation'
+
+  utter_derogation_inscription_ar:
+    - text: |
+        قرارات طلبات الاستثناء للتسجيل:
+        1️⃣ طلاب الليسانس (المسجلون خلال 2024-2025):
+           • مقصيو السنة الأولى: أكثر من 22 رصيداً → مسموح
+           • طلاب السنة الثانية: أكثر من 56 رصيداً → مسموح
+           • طلاب السنة الثالثة: جميعهم مسموح
+        2️⃣ الطلاب غير المسجلين خلال 2024-2025:
+           • بكالوريا 2024 لم يستكملوا التسجيل → مسموح
+        3️⃣ طلاب الماستر:
+           • ماستر 1 (2024-2025) أكثر من 25 رصيداً → مسموح
+           • ماستر 2 (2024-2025) → جميعهم مسموح
+
+  utter_derogation_inscription_fr:
+    - text: |
+        Décisions concernant les dérogations d'inscription:
+        1️⃣ Étudiants Licence (inscrits en 2024-2025):
+           • Exclus de L1: plus de 22 crédits → autorisés
+           • Étudiants de L2: plus de 56 crédits → autorisés
+           • Étudiants de L3: tous autorisés
+        2️⃣ Étudiants non inscrits en 2024-2025:
+           • Bacheliers 2024 n'ayant pas finalisé → autorisés
+        3️⃣ Étudiants Master:
+           • Master 1 (2024-2025) plus de 25 crédits → autorisés
+           • Master 2 (2024-2025) → tous autorisés
+
+  utter_demander_planning_ar:
+    - text: |
+        التقويم الجامعي 2025-2026:
+        • الدخول الإداري: 29 سبتمبر 2025
+        • دخول الطلاب + التسجيل: 06 أكتوبر 2025
+        • بداية الدروس: 13 أكتوبر 2025
+        • يوم الأبواب المفتوحة: 16 أكتوبر 2025
+        • بداية الأعمال التطبيقية: 03 نوفمبر 2025
+        • اختبارات الفردية: 01 ديسمبر 2025
+        • امتحانات الدورة 1 (فردية): 19 يناير 2026
+        • بداية الفصول الزوجية: 09 فبراير 2026
+        • اختبارات الزوجية: 30 مارس 2026
+        • امتحانات الدورة 1 (زوجية): 01 يونيو 2026
+        • امتحانات الدورة 2 (فردية): 22 يونيو 2026
+        • امتحانات الدورة 2 (زوجية): 06 يوليو 2026
+        • احتفال نهاية السنة: 27 يوليو 2026
+
+  utter_demander_planning_fr:
+    - text: |
+        Planning universitaire 2025-2026:
+        • Rentrée administrative: 29 Septembre 2025
+        • Rentrée étudiants + inscription: 06 Octobre 2025
+        • Début des cours: 13 Octobre 2025
+        • Journée portes ouvertes: 16 Octobre 2025
+        • Début des travaux pratiques: 03 Novembre 2025
+        • Devoirs S.impairs: 01 Décembre 2025
+        • Examens 1ère session S.impairs: 19 Janvier 2026
+        • Démarrage S.pairs: 09 Février 2026
+        • Devoirs S.pairs: 30 Mars 2026
+        • Examens 1ère session S.pairs: 01 Juin 2026
+        • Examens 2ème session S.impairs: 22 Juin 2026
+        • Examens 2ème session S.pairs: 06 Juillet 2026
+        • Célébration fin d'année: 27 Juillet 2026
+
+  utter_demander_jours_feries_ar:
+    - text: |
+        العطل الرسمية 2025-2026:
+        • عيد الاستقلال: الجمعة 28 نوفمبر 2025
+        • رأس السنة: الخميس 01 يناير 2026
+        • عيد الفطر: الجمعة 20 مارس 2026
+        • عيد العمال: الخميس 01 مايو 2026
+        • يوم الاتحاد الأفريقي: الاثنين 25 مايو 2026
+        • عيد الأضحى: الاثنين 27 يونيو 2026
+        • رأس السنة الهجرية: الأربعاء 17 يونيو 2026
+
+  utter_demander_jours_feries_fr:
+    - text: |
+        Jours fériés 2025-2026:
+        • Fête de l'Indépendance: Vendredi 28 Novembre 2025
+        • Nouvel An: Jeudi 01 Janvier 2026
+        • Aïd El Fitr: Vendredi 20 Mars 2026
+        • Fête du travail: Lundi 01 Mai 2026
+        • Fête de l'UA: Lundi 25 Mai 2026
+        • Aïd El Adha: Lundi 27 Juin 2026
+        • 1er jour de l'an musulman: Mercredi 17 Juin 2026
+
+  utter_demander_rachat_passage_ar:
+    - text: |
+        معايير الاسترداد للانتقال 2024-2025:
+        الشروط الأساسية:
+           • لا يطبق إلا على فصل واحد وعنصر واحد
+           • العنصر المراد استرداده ≥ 6/20
+        L1→L2: 39 رصيداً (S1+S2) + معدل ≥ 9.8 → يُرفع إلى 10
+        L2→L3:
+           • الحالة 1 (L1 غير متحقق): تحقق S3+S4 أو 39 رصيداً بمعدل 10
+           • الحالة 2 (L1 متحقق): رصيد S3+S4 ≥ 39 ومعدل ≥ 9.8 → يُرفع إلى 10
+
+  utter_demander_rachat_passage_fr:
+    - text: |
+        Critères de rachat de passage 2024-2025:
+        Conditions de base:
+           • S'applique sur 1 semestre et 1 élément seulement
+           • Note de l'élément à racheter ≥ 6/20
+        L1→L2: 39 crédits (S1+S2) + moyenne ≥ 9,8 → ramenée à 10
+        L2→L3:
+           • Cas 1 (L1 non validé): validation S3+S4 ou 39 crédits avec moyenne 10
+           • Cas 2 (L1 validé): crédits S3+S4 ≥ 39 et moyenne ≥ 9,8 → ramenée à 10
+
+  utter_demander_rachat_diplome_ar:
+    - text: |
+        معايير الاسترداد للشهادة 2024-2025:
+        الشروط الأساسية:
+           • فصل واحد وعنصر واحد فقط | العنصر ≥ 5/20
+           • معدل الفصل غير المتحقق ≥ 9.5
+           • لا عنصر بعلامة نهائية < 6 | لا مقياس بمعدل < 9
+           • مقياس متعدد العناصر: ≥ 7.5 → الاسترداد ممكن
+           • مقياس وحيد العنصر: ≥ 7 → نفس الشرط
+
+  utter_demander_rachat_diplome_fr:
+    - text: |
+        Critères de rachat de diplôme 2024-2025:
+        Conditions de base:
+           • 1 semestre et 1 élément seulement | élément ≥ 5/20
+           • Moy. semestre non validé ≥ 9,5
+           • Aucun élément < 6 | aucun module < 9
+           • Module multi-éléments: moy. ≥ 7,5 → rachetable
+           • Module mono-élément: moy. ≥ 7 → même condition
+
+  utter_demander_reglement_examens_ar:
+    - text: |
+        اللائحة الداخلية للامتحانات:
+        ✅ وثائق إلزامية (أصليات فقط):
+           • شهادة التسجيل + بطاقة الطالب + هوية وطنية + صورة
+           ⚠️ النسخ المصادق عليها غير مقبولة!
+        ❌ محظور: الحقائب، أوراق الغش، الهواتف، السماعات، الساعات الذكية
+    
+
+  utter_demander_reglement_examens_fr:
+    - text: |
+        Règlement intérieur des examens:
+        ✅ Documents obligatoires (originaux uniquement):
+           • Attestation + carte étudiant + CIN + photo
+           ⚠️ Les copies légalisées ne sont pas acceptées!
+        ❌ Interdits: sacs, antisèches, téléphones, écouteurs, montres connectées
+        
+
+  utter_demander_types_exclusion_ar:
+    - text: |
+        أنواع الإقصاء في الامتحانات:
+        • تبادل لفظي → إنذار من العميد
+        • غياب الهوية (أصلي) → صفر للعنصر
+        • استخدام أوراق غش → صفر للعنصر
+        • استخدام وسائل تكنولوجية → صفر للدورة
+        • حيازة تكنولوجيا المعلومات → صفر للوحدة
+        • اسم وهمي ورقم الطالب → صفر في الدورة
+        • انتحال شخصية → صفر في الدورة/الفصل
+
+  utter_demander_types_exclusion_fr:
+    - text: |
+        Types d'exclusion aux examens:
+        • Échange verbal → Avertissement du Doyen
+        • Absence de pièce d'identité (originale) → Zéro pour l'élément
+        • Utilisation d'antisèches → Zéro pour l'élément
+        • Utilisation de moyens technologiques → Zéro pour la session
+        • Possession de TIC → Zéro pour l'unité
+        • Faux nom et numéro étudiant → Zéro dans la session
+        • Substitution d'étudiant → Zéro dans la session/semestre
+
+  utter_demander_reclamation_ar:
+    - text: |
+        قواعد الشكاوى:
+        الشكوى = علامة ضاعت لأسباب إدارية أو طبية (ليست عدم رضا)
+        • TP: اتصل بالأستاذ والمنسق فوراً
+        • الامتحانات: لا تعويض عن الغياب في CF
+        🔗 http://resultats.una.mr/FST/index.jsp (خلال 3 أيام)
+
+  utter_demander_reclamation_fr:
+    - text: |
+        Règles de réclamation:
+        Réclamation = note perdue pour raison administrative/médicale
+        • TP: contacter l'enseignant et coordinateur immédiatement
+        • Examens: aucun remplacement pour absence au CF
+        🔗 http://resultats.una.mr/FST/index.jsp (pendant 3 jours)
+
+  utter_demander_systeme_LMD_ar:
+    - text: |
+        نظام LMD (ليسانس – ماستر – دكتوراه):
+      
+        • ليسانس: 3 سنوات | 6 فصول | 180 رصيداً
+        • ماستر: 2 سنتان (Bac+5) | 4 فصول | 120 رصيداً
+        • دكتوراه: 3 سنوات بعد الماستر (Bac+8)
+
+  utter_demander_systeme_LMD_fr:
+    - text: |
+        Système LMD (Licence – Master – Doctorat):
+        
+        • Licence: 3 ans | 6 semestres | 180 crédits
+        • Master: 2 ans (Bac+5) | 4 semestres | 120 crédits
+        • Doctorat: 3 ans après le Master (Bac+8)
+
+  utter_demander_organisation_LMD_ar:
+    - text: |
+        تنظيم LMD:
+        الهرم: فيليار → فصل → مقياس (1-3 عناصر) → رصيد
+        • الفصل: 16 أسبوعاً | 5 مقاييس كحد أقصى | 30 رصيداً
+        • التسجيل: إداري + بيداغوجي (إلزامي كل فصل)
+        • لا تسجيل بعد انتهاء الآجال
+
+  utter_demander_organisation_LMD_fr:
+    - text: |
+        Organisation du LMD:
+        Hiérarchie: Filière → Semestre → Module (1-3 éléments) → Crédit
+        • Semestre: 16 semaines | max 5 modules | 30 crédits
+        • Inscription: Administrative + Pédagogique (obligatoire chaque semestre)
+        • Aucune inscription hors délai acceptée
+
+  utter_demander_progression_licence_ar:
+    - text: |
+        قواعد الانتقال في الليسانس:
+        التعويض:
+           • المقياس متحقق إذا كان معدل عناصره ≥ 10/20
+           • الفصل متحقق إذا كان معدل مقاييسه ≥ 10/20
+        الانتقال:
+           • داخل السنة: تلقائي
+           • L1→L2: 39 رصيداً (S1+S2) + معدل سنوي ≥ 10
+           • L2→L3: معدل ≥ 10 + 99 رصيداً (S1-S4)
+
+  utter_demander_progression_licence_fr:
+    - text: |
+        Règles de progression en Licence:
+        Compensation:
+           • Module validé si moyenne éléments ≥ 10/20
+           • Semestre validé si moyenne modules ≥ 10/20
+        Passage:
+           • Intra-année: automatique
+           • L1→L2: 39 crédits (S1+S2) + moyenne annuelle ≥ 10
+           • L2→L3: note ≥ 10 + 99 crédits (S1-S4)
+
+  utter_demander_progression_master_ar:
+    - text: |
+        قواعد الانتقال في الماستر:
+           • S1→S2: تلقائي
+           • M1→M2: علامة ≥ 10 في جميع الوحدات أو معدل عام ≥ 10
+           • S3→S4: 90 رصيداً متحققاً
+           • مذكرة غير مناقشة: تمديد استثنائي ≤ 6 أشهر
+
+  utter_demander_progression_master_fr:
+    - text: |
+        Règles de progression en Master:
+           • S1→S2: automatique
+           • M1→M2: note ≥ 10 dans toutes les unités OU moyenne générale ≥ 10
+           • S3→S4: 90 crédits validés
+           • Mémoire non soutenu: prorogation exceptionnelle ≤ 6 mois
+
+  utter_demander_regles_exclusion_LMD_ar:
+    - text: |
+        قواعد الإقصاء في نظام LMD:
+        • الطالب الذي يرسب لمدة أكثر من سنتين في نفس المستوى يُقصى
+        • الطالب الذي يتجاوز الحد الأقصى للتسجيل يُقصى
+        • في حالة الغش المثبت: إقصاء من الدورة الامتحانية
+
+  utter_demander_regles_exclusion_LMD_fr:
+    - text: |
+        Règles d'exclusion dans le système LMD:
+        • L'étudiant qui échoue pendant plus de 2 ans au même niveau est exclu
+        • L'étudiant qui dépasse le nombre maximum d'inscriptions est exclu
+        • En cas de fraude prouvée: exclusion de la session d'examen
+
+  utter_demander_evaluation_LMD_ar:
+    - text: |
+        نظام التقييم في LMD:
+        • CC (مراقبة مستمرة): 40%
+        • CF (امتحان نهائي): 60%
+        • TP (أعمال تطبيقية): يُحسب ضمن CC أو بشكل منفصل
+        • العتبة الدنيا للعنصر حسب المقياس
+
+  utter_demander_evaluation_LMD_fr:
+    - text: |
+        Système d'évaluation dans le LMD:
+        • CC (Contrôle Continu): 40%
+        • CF (Contrôle Final): 60%
+        • TP (Travaux Pratiques): comptabilisé dans le CC ou séparément
+        • Seuil minimal par élément selon le module
+
+  utter_demander_resultats_fst_ar:
+    - text: |
+        طريقة الاطلاع على نتائج الامتحانات:
+        1️⃣ افتح الرابط: http://resultats.una.mr/FST/
+        2️⃣ أدخل رقم التسجيل أو رقم الباكلوريا
+        3️⃣ اضغط زر 'ادخل ENTRER'
+        4️⃣ يظهر اسمك وشعبتك تلقائياً
+        5️⃣ اختر الفصل من القائمة
+        6️⃣ اضغط على تبويب 'Résultats CC / نتائج الاختبار'
+
+  utter_demander_resultats_fst_fr:
+    - text: |
+        Comment consulter vos résultats d'examens:
+        1️⃣ Ouvrir le lien: http://resultats.una.mr/FST/
+        2️⃣ Entrer votre Numéro Etudiant ou Num BAC
+        3️⃣ Cliquer sur 'ENTRER ادخل'
+        4️⃣ Votre nom et filière s'affichent automatiquement
+        5️⃣ Choisir le semestre dans la liste
+        6️⃣ Cliquer sur l'onglet 'Résultats CC'
+
+  utter_ask_criteres_bourse:
+    - text: |
+        بناءً على الوثائق الرسمية الصادرة عن وزارة التعليم العالي والبحث العلمي (مديرية التوجيه والمنح) بتاريخ 6 مارس 2026، إليك  معايير الاستحقاق
+
+        🎓 **معايير استحقاق المنحة الجامعية**
+
+        📌 معايير الدعم والتميز:
+        • **الدعم الاجتماعي**: ناجحو باكالوريا 2024/2025 المقيدون في السجل الاجتماعي أو اليتامى
+        • **لامركزية التعليم**: المسجلون في مؤسسات الداخل (خارج العاصمة)
+        • **التميز الدراسي**: المتفوقون في باكالوريا 2024/2025 (الأوائل حسب الشعبة)
+        • **التميز الأكاديمي**: الحاصلون على المراكز الثلاثة الأولى في كل مستوى وتخصص
+
+        📌 المعايير الانتقالية (حسب السنة والعمر):
+        • **السنة 3**: لا يتجاوز 24 سنة بتاريخ 31/12/2025
+        • **السنة 4**: لا يتجاوز 26 سنة
+        • **السنة 5**: لا يتجاوز 27 سنة
+        • **السنة 6**: لا يتجاوز 28 سنة • لا تتجاوز مدة الباك 7 سنوات
+        • **السنة 7**: لا يتجاوز 29 سنة • لا تتجاوز مدة الباك 8 سنوات
+        • **السنة 8**: لا يتجاوز 28 سنة • لا تتجاوز مدة الباك 9 سنوات
+
+  utter_ask_inscription_bourse_cnou:
+    - text: |
+        بناءً على الإعلان الرسمي الصادر عن المركز الوطني للخدمات الجامعية (إدارة المصالح المركزية) بتاريخ 21 نوفمبر 2025، إليك معلومات التسجيل في المنحة
+
+        🎓 **التسجيل في المنحة الجامعية 2025/2026**
+
+        📌 **الجهة المعنية:** الطلاب الممنوحون للسنة الجامعية 2025-2026
+
+        📍 **مكان التسجيل:** مصلحة المنح بالمركز الوطني للخدمات الجامعية
+
+        📋 **الوثائق المطلوبة:**
+        • إفادة تسجيل مصادق عليها
+        • صورة من بطاقة التعريف الوطنية
+
+        🗓️ **الموعد:** ابتداءً من الثلاثاء 25 نوفمبر 2025
+        🕘 **التوقيت:** من 9:00 صباحاً إلى 1:00 زوالاً
+        📅 **أيام العمل:** من الاثنين إلى الخميس
+
+  utter_ask_criteres_logement:
+    - text: |
+        بناءً على الوثائق الرسمية الصادرة عن وزارة التعليم العالي والبحث العلمي (مديرية التوجيه والمنح) بتاريخ 6 مارس 2026، إليك  معايير الاستحقاق
+
+        🏠 **معايير استحقاق السكن الجامعي**
+
+        📌 شروط عامة: يجب أن يكون الطالب مسجلاً في مؤسسات المركب الجامعي ومتقدماً بطلب سكن
+
+        📌 المعايير:
+        • **الدعم الاجتماعي**: ناجحو باكالوريا 2025 المقيدون في السجل الاجتماعي
+        • **التميز الدراسي — إناث**: البنات المتفوقات في باكالوريا 2025 وفق معيار المنح
+        • **التميز الدراسي — ذكور**: الطلاب ضمن الـ150 الأوائل من مختلف الشعب
+        • **التميز الأكاديمي**: البنات ضمن الأوائل الثلاثة في كل مستوى وتخصص
+        • **المعيار الانتقالي**: تثبيت الطلاب المتواجدين حالياً في السكن بموجب المعايير السابقة
+
+  utter_ask_renouvellement_logement:
+    - text: |
+        بناءً على الإعلان الرسمي الصادر عن المركز الوطني للخدمات الجامعية (إدارة الإقامات الجامعية) بتاريخ 25 نوفمبر 2025، إليك معلومات تجديد السكن الجامعي
+
+        🏠 **تجديد السكن الجامعي 2025-2026**
+
+        📌 **الجهة المعنية:** الطلاب والطالبات المستفيدون من الحي السكني للسنة الجامعية 2024-2025
+
+        📋 **الوثائق المطلوبة:**
+        • صورة شمسية مسجل عليها رقم الهاتف
+        • إفادة تسجيل تثبت الاجتياز في امتحانات الفصل الأخير من السنة الجامعية 2024-2025
+
+        🗓️ **الموعد:** ابتداءً من الاثنين 01 ديسمبر 2025
+        🕘 **التوقيت:** من 9:00 صباحاً إلى غاية 1:00 زوالاً
+
+  utter_ask_criteres_transport:
+    - text: |
+        بناءً على الوثائق الرسمية الصادرة عن وزارة التعليم العالي والبحث العلمي (مديرية التوجيه والمنح) بتاريخ 6 مارس 2026، إليك  معايير الاستحقاق
+
+        🚌 **معيار النقل الجامعي**
+
+        ✅ **مجانية النقل** مُعمَّمة لجميع الطلاب المسجلين في **السجل الاجتماعي**
+        الذين تقدموا بطلبات دعم النقل لدى مديرية التوجيه والمنح
+
+  utter_ask_inscription_restaurant:
+    - text: |
+        بناءً على الإعلان الرسمي الصادر عن المركز الوطني للخدمات الجامعية (إدارة المصالح المركزية) بتاريخ 21 نوفمبر 2025، إليك معلومات التسجيل في المطعم الجامعي
+
+        🍽️ **التسجيل في المطعم الجامعي 2025/2026**
+
+        📌 **الجهة المعنية:** جميع الطلاب الراغبين في الاستفادة من خدمات المطعم الجامعي
+
+        📍 **مكان التسجيل:** الشبابيك المفتوحة بالمطعم الجامعي (مباشرة)
+
+        🗓️ **الموعد:** ابتداءً من الاثنين 24 نوفمبر 2025
+        🕘 **التوقيت:** من 9:00 صباحاً إلى غاية 2:00 ظهراً
+  # ============================================================
+  # LICENCE PROFESSIONNELLE — FC
+  # ============================================================
+
+  utter_ask_matieres_fc_l1:
+    - text: |
+        **L1 prof — Finance et Comptabilité**
+
+        📅 S1:
+        Statistique descriptive 1 
+        Mathématiques 
+        Comptabilité financière 1 
+        Introduction au Droit
+        Techniques de communication 1
+        Introduction à l'économie
+        Principe de gestion
+        Anglais 1
+        Méthodologie de travail universitaire
+        TD Comptabilité financière 1
+
+        📅 S2:
+        Comptabilité financière 2
+        Anglais 2
+        Mathématiques financières
+        Statistique descriptive 2
+        Macroéconomie
+        Microéconomie
+        Microfinance
+        Économie d'entreprise
+        Technique de communication
+
+  utter_ask_matieres_fc_l2:
+    - text: |
+        **L2 prof — Finance et Comptabilité**
+
+        📅 S3:
+        Marketing
+        Anglais des affaires
+        Droit administratif
+        TD Comptabilité des sociétés
+        Stratégie d'entreprise
+        Droit commercial
+        Comptabilité des sociétés 1
+        Système financier mauritanien
+        Entreprise et banques
+        Méthode d'aide à la décision
+
+        📅 S4:
+        Comptabilité des sociétés 2
+        Analyse financière
+        Gestion des ressources humaines
+        Fiscalité
+        Droit du travail
+        Comptabilité analytique
+        Finance islamique
+        Gestion de portefeuilles
+        Instruments de crédits
+        Finance des marchés
+
+  utter_ask_matieres_fc_l3:
+    - text: |
+        **L3 prof — Finance et Comptabilité**
+
+        📅 S5:
+        Méthode d'évaluation d'entreprise
+        Audit financier
+        Droit bancaire et financier
+        Gestion de trésorerie
+        Analyse financière approfondie
+        Normes comptables internationales
+        Choix d'investissement
+        Marchés financiers
+        Contrôle de gestion
+
+        📅 S6:
+        PFE
+
+  # ============================================================
+  # LICENCE PROFESSIONNELLE — BA
+  # ============================================================
+
+  utter_ask_matieres_ba_l1:
+    - text: |
+        **L1 prof — Banques et Assurances**
+
+        📅 S1:
+        Introduction au Droit
+        Mathématiques
+        Techniques de communication 1
+        Comptabilité financière 1
+        Principe de gestion
+        Statistique descriptive 1
+        Anglais 1
+        Introduction à l'économie
+        Méthodologie de travail universitaire
+        TD Comptabilité financière 1
+
+        📅 S2:
+        Anglais 2
+        Technique de communication
+        Économie d'entreprise
+        Mathématiques financières
+        Comptabilité
+        Microéconomie
+        Microfinance
+        Macroéconomie
+
+  utter_ask_matieres_ba_l2:
+    - text: |
+        **L2 prof — Banques et Assurances**
+
+        📅 S3:
+        Anglais des affaires
+        Méthode d'aide à la décision
+        Droit administratif
+        Stratégie d'entreprise
+        TD Comptabilité des sociétés 1
+        Marketing
+        Droit commercial
+        Comptabilité des sociétés 1
+        Système financier mauritanien
+        Entreprise et banques
+
+        📅 S4:
+        Logiciels bancaires
+        Finance islamique 1
+        Gestion des ressources humaines
+        Assurances des biens et des personnes
+        Droit des assurances
+        Comptabilité bancaire 1
+        Finance des marchés
+        Analyse financière
+        Techniques bancaires
+        Commerce international
+
+  utter_ask_matieres_ba_l3:
+    - text: |
+        **L3 prof — Banques et Assurances**
+
+        📅 S5:
+        TD Gestion des risques
+        Finance islamique 2
+        Comptabilité bancaire 2
+        Choix d'investissement
+        Gestion de portefeuille
+        Analyse financière approfondie
+        Gestion des risques
+        Droit bancaire et financier
+        Fiscalité
+        Gestion de patrimoine
+        Initiation au milieu professionnel
+
+        📅 S6:
+        PFE
+
+  # ============================================================
+  # LICENCE PROFESSIONNELLE — GRH
+  # ============================================================
+
+  utter_ask_matieres_grh_l1:
+    - text: |
+        **L1 prof — Gestion des Ressources Humaines**
+
+        📅 S1:
+        Statistique descriptive 1
+        Mathématiques
+        Comptabilité financière 1
+        Introduction au Droit
+        Techniques de communication 1
+        Introduction à l'économie
+        Principe de gestion
+        Anglais 1
+        Méthodologie de travail universitaire
+
+        📅 S2:
+        PFE
+
+  utter_ask_matieres_grh_l2:
+    - text: |
+        **L2 prof — Gestion des Ressources Humaines**
+
+        📅 S3:
+        Anglais des affaires
+        Rédaction administrative 1
+        Recrutement
+        Gestion financière 2
+        GPEC
+        Hygiène et sécurité de travail
+        Analyse financière
+        Droit du travail 2
+        Évaluation des compétences
+
+        📅 S4:
+        Communication interne 1
+        Leadership et habilité de direction
+        Sécurité sociale
+        Droit administratif
+        Sociologie du travail
+        Rédaction administrative 2
+        Système d'information RH
+        Droit du travail 3
+        Plan et ingénierie de formation
+        Bilan social
+        Économie du travail
+
+  utter_ask_matieres_grh_l3:
+    - text: |
+        **L3 prof — Gestion des Ressources Humaines**
+
+        📅 S5:
+        Audit des ressources humaines
+        Source de motivation du personnel
+        Politique de rémunération
+        Gestion des connaissances
+        Droit pénal général
+        Outils pilotage RH
+        Communication interne 2
+        Dialogue et climat social
+        Sociologie des organisations
+
+        📅 S6:
+        Audit des ressources humaines
+        Source de motivation du personnel
+        Politique de rémunération
+        Gestion des connaissances
+        Droit pénal général
+        Outils pilotage RH
+        Communication interne 2
+        Dialogue et climat social
+        Sociologie des organisations
+        PFE
+
+  # ============================================================
+  # LICENCES FONDAMENTALES — L1
+  # ============================================================
+
+  utter_ask_matieres_economie_gestion_l1:
+    - text: |
+        **L1 fond — Economie-Gestion**
+
+        📅 S1:
+        Mathématiques 1
+        Macroéconomie 1
+        Histoire des faits Économiques
+        Comptabilité Générale 1
+        Introduction à l'étude du droit
+        Économie d'entreprise 1
+        Arabe 1
+        Microéconomie 1
+
+        📅 S2:
+        Mathématiques 1
+        Macroéconomie 2
+        Droit des Contrats
+        Comptabilité Générale 2
+        Démographie
+        Statistique 1
+        Microéconomie 2
+        Économie d'entreprise 2
+        Arabe 2
+
+  utter_ask_matieres_gestion_entreprises_l1:
+    - text: |
+        **L1 fond — Gestion des Entreprises**
+
+        📅 S1:
+        Mathématiques 1
+        Macroéconomie 1
+        Histoire des faits Économiques
+        Comptabilité Générale 1
+        Introduction à l'étude du droit
+        Économie d'entreprise 1
+        Arabe 1
+        Microéconomie 1
+
+        📅 S2:
+        Mathématiques 1
+        Macroéconomie 2
+        Droit des Contrats
+        Comptabilité Générale 2
+        Démographie
+        Statistique 1
+        Microéconomie 2
+        Économie d'entreprise 2
+        Arabe 2
+
+  utter_ask_matieres_techniques_projets_publics_l1:
+    - text: |
+        **L1 fond — Techniques de Gestion des Projets Publics**
+
+        📅 S1:
+        Mathématiques 1
+        Macroéconomie 1
+        Histoire des faits Économiques
+        Comptabilité Générale 1
+        Introduction à l'étude du droit
+        Économie d'entreprise 1
+        Arabe 1
+        Microéconomie 1
+
+        📅 S2:
+        Mathématiques 1
+        Macroéconomie 2
+        Droit des Contrats
+        Comptabilité Générale 2
+        Démographie
+        Statistique 1
+        Microéconomie 2
+        Économie d'entreprise 2
+        Arabe 2
+
+  utter_ask_matieres_gestion_administration_publique_l1:
+    - text: |
+        **L1 fond — Gestion de l'Administration Publique**
+
+        📅 S1:
+        Mathématiques 1
+        Macroéconomie 1
+        Histoire des faits Économiques
+        Comptabilité Générale 1
+        Introduction à l'étude du droit
+        Économie d'entreprise 1
+        Arabe 1
+        Microéconomie 1
+
+        📅 S2:
+        Mathématiques 1
+        Macroéconomie 2
+        Droit des Contrats
+        Comptabilité Générale 2
+        Démographie
+        Statistique 1
+        Microéconomie 2
+        Économie d'entreprise 2
+        Arabe 2
+
+  # ============================================================
+  # LICENCES FONDAMENTALES — L2
+  # ============================================================
+
+  utter_ask_matieres_economie_gestion_l2:
+    - text: |
+        **L2 fond — Economie-Gestion**
+
+        📅 S3:
+        Mathématiques 2
+        Anglais
+        Statistique 2
+        Droit Commercial
+        Arabe 3
+        Macroéconomie 3
+        Microéconomie 3
+        Comptabilité des Sociétés
+        Problèmes économiques contemporains (P.E.C)
+
+        📅 S4:
+        Monnaie et crédit
+        Mathématiques 3
+        Finances Publiques
+        Comptabilité analytique
+        Anglais 2
+        Macroéconomie 4
+        Microéconomie 4
+        Arabe 4
+        Statistique 3
+        Droit du travail
+
+  utter_ask_matieres_gestion_entreprises_l2:
+    - text: |
+        **L2 fond — Gestion des Entreprises**
+
+        📅 S3:
+        Mathématiques 2
+        Anglais
+        Statistique 2
+        Droit Commercial
+        Arabe 3
+        Macroéconomie 3
+        Microéconomie 3
+        Comptabilité des Sociétés
+        Problèmes économiques contemporains (P.E.C)
+
+        📅 S4:
+        Monnaie et crédit
+        Mathématiques 3
+        Finances Publiques
+        Comptabilité analytique
+        Anglais 2
+        Macroéconomie 4
+        Microéconomie 4
+        Arabe 4
+        Statistique 3
+        Droit du travail
+
+  utter_ask_matieres_techniques_projets_publics_l2:
+    - text: |
+        **L2 fond — Techniques de Gestion des Projets Publics**
+
+        📅 S3:
+        Mathématiques 2
+        Anglais
+        Statistique 2
+        Droit Commercial
+        Arabe 3
+        Macroéconomie 3
+        Microéconomie 3
+        Comptabilité des Sociétés
+        Problèmes économiques contemporains (P.E.C)
+
+        📅 S4:
+        Monnaie et crédit
+        Mathématiques 3
+        Finances Publiques
+        Comptabilité analytique
+        Anglais 2
+        Macroéconomie 4
+        Microéconomie 4
+        Arabe 4
+        Statistique 3
+        Droit du travail
+
+  utter_ask_matieres_gestion_administration_publique_l2:
+    - text: |
+        **L2 fond — Gestion de l'Administration Publique**
+
+        📅 S3:
+        Mathématiques 2
+        Anglais
+        Statistique 2
+        Droit Commercial
+        Arabe 3
+        Macroéconomie 3
+        Microéconomie 3
+        Comptabilité des Sociétés
+        Problèmes économiques contemporains (P.E.C)
+
+        📅 S4:
+        Monnaie et crédit
+        Mathématiques 3
+        Finances Publiques
+        Comptabilité analytique
+        Anglais 2
+        Macroéconomie 4
+        Microéconomie 4
+        Arabe 4
+        Statistique 3
+        Droit du travail
+
+  # ============================================================
+  # LICENCES FONDAMENTALES — L3
+  # ============================================================
+
+  utter_ask_matieres_economie_gestion_l3:
+    - text: |
+        **L3 fond — Economie-Gestion**
+
+        📅 S5:
+        Mathématiques de gestion
+        Gestion des ressources humaines
+        Droit fiscal
+        Techniques budgétaires
+        Fondamentaux du Marketing
+        Droit des sociétés
+        Analyse financière
+        Investissement et financement
+        Anglais
+
+        📅 S6:
+        Stratégie et politique de l'entreprise
+        Anglais 4
+        Gestion de la Production
+        Marketing 2
+        Méthodologie de la Recherche
+        Contrôle de gestion
+
+  utter_ask_matieres_gestion_entreprises_l3:
+    - text: |
+        **L3 fond — Gestion des Entreprises**
+
+        📅 S5:
+        Mathématiques de gestion
+        Gestion des ressources humaines
+        Droit fiscal
+        Techniques budgétaires
+        Fondamentaux du Marketing
+        Droit des sociétés
+        Analyse financière
+        Investissement et financement
+        Anglais
+
+        📅 S6:
+        Stratégie et politique de l'entreprise
+        Anglais 4
+        Gestion de la Production
+        Marketing 2
+        Méthodologie de la Recherche
+        Contrôle de gestion
+
+  utter_ask_matieres_techniques_projets_publics_l3:
+    - text: |
+        **L3 fond — Techniques de Gestion des Projets Publics**
+
+        📅 S5:
+        Analyse des données
+        Mécanisme de redistribution
+        Théorie des jeux
+        Recherche opérationnelle
+        Loi générale du droit
+        Économie internationale
+        Économétrie
+        Effets environnementaux
+        Anglais
+        Théorie de la croissance
+
+        📅 S6:
+        Économie mauritanienne
+        Évaluation de projets publics et développement
+        Méthodologie de la Recherche
+        Comptabilité nationale
+        Économie spatial
+        Économie publique locale
+        Programmation budgétaire
+        Analyse budgétaire et objectifs
+        Analyse Coûts-Bénéfices
+        Marchés de projets publics
+        PFE
+  utter_ask_matieres_economie_publique_l3:
+    - text: |
+        **L3 fond — Économie Publique**
+
+        📅 S5:
+        Analyse des données
+        Mécanisme de redistribution
+        Théorie des jeux
+        Recherche opérationnelle
+        Loi générale du droit
+        Économie internationale
+        Économétrie
+        Effets environnementaux
+        Anglais
+        Théorie de la croissance
+
+        📅 S6:
+        Économie mauritanienne
+        Évaluation de projets publics et développement
+        Méthodologie de la Recherche
+        Comptabilité nationale
+        Économie spatial
+        Économie publique locale
+        Programmation budgétaire
+        Analyse budgétaire et objectifs
+        Analyse Coûts-Bénéfices
+        Marchés de projets publics
+        PFE
+  utter_ask_matieres_gestion_administration_publique_l3:
+    - text: |
+        **L3 fond — Gestion de l'Administration Publique**
+
+        📅 S5:
+        Analyse des données
+        Mécanisme de redistribution
+        Théorie des jeux
+        Recherche opérationnelle
+        Loi générale du droit
+        Économie internationale
+        Économétrie
+        Effets environnementaux
+        Anglais
+        Théorie de la croissance
+
+        📅 S6:
+        Économie mauritanienne
+        Évaluation de projets publics et développement
+        Méthodologie de la Recherche
+        Comptabilité nationale
+        Économie spatial
+        Économie publique locale
+        Programmation budgétaire
+        Analyse budgétaire et objectifs
+        Analyse Coûts-Bénéfices
+        Marchés de projets publics
+        PFE
+
+  # ============================================================
+  # MASTER FEG
+  # ============================================================
+
+  utter_ask_matieres_mesa_m1:
+    - text: |
+        📕 **M1 — MESA (اقتصاديات وتسيير)**
+
+        📅 السداسي الأول:
+        Analyse des Données sous R
+        Économétrie
+        Théorie des Organisations
+        Macroéconomie Approfondie
+        Optimisation
+        Microéconomie Approfondie
+        EVIEUS
+
+        📅 السداسي الثاني:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_mbf_m1:
+    - text: |
+        📕 **M1 — MBF (النقد والبنوك والمالية)**
+
+        📅 السداسي الأول:
+        Structure bancaire et intermédiation
+        Macro finance
+        Défaillance des marchés et produits
+        Marchés financiers
+        Économétrie financière
+        Micro finance
+        Anglais Monétaire
+
+        📅 السداسي الثاني:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_cca_m1:
+    - text: |
+        📕 **M1 — CCA (محاسبة ومراقبة وتدقيق)**
+
+        📅 السداسي الأول:
+        Gestion financière 1
+        Comptabilité avancée
+        Anglais économique 1
+        Fiscalité
+        Contrôle de gestion
+        Analyse des données
+        Introduction à la finance islamique
+        Décision financière - Inv et Choix
+
+        📅 السداسي الثاني:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_management_m1:
+    - text: |
+        📕 **M1 — Management (التسيير)**
+
+        📅 السداسي الأول:
+        Anglais des affaires
+        Théorie financière I
+        Comptabilité avancée I
+        Fiscalité I
+        Management stratégique approfondi
+        Contrôle de gestion I
+        Entrepreneuriat
+        Marketing Management
+
+        📅 السداسي الثاني:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_mesa_ise_m2:
+    - text: |
+        📗 **M2 — MESA ISE Prof (اقتصاديات وتسيير — تخصص ISE)**
+
+        📅 السداسي الثالث:
+        Méthodes de Prévision
+        Économie du Travail
+        Économie Industrielle
+        Économie de Développement Durable
+        Statistique Inférentielle
+        Pauvreté et Politiques Sociales
+        Macroéconomie Ouverte
+        Modélisation & Simulation
+        Sondage
+        Analyse démographique
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_mesa_econometrie_m2:
+    - text: |
+        📗 **M2 — MESA Économétrie (اقتصاديات وتسيير — اقتصاد القياس)**
+
+        📅 السداسي الثالث:
+        Méthodes de Prévision
+        Économie Industrielle
+        Économie du Travail
+        Économie de Développement Durable
+        Statistique Inférentielle
+        Macroéconomie Approfondie
+        Macroéconomie Ouverte
+        Institution et politique monétaire
+        Sondage
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_mbf_m2:
+    - text: |
+        📗 **M2 — MBF (النقد والبنوك والمالية)**
+
+        📅 السداسي الثالث:
+        Théorie Monétaire
+        Comptabilité Approfondie
+        Audit Financier
+        Gestion Bancaire
+        Anglais Financier 2
+        Droit bancaire
+        Finance Internationale
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_mae_cee_m2:
+    - text: |
+        📗 **M2 — MAE CEE (إدارة اقتصادية — مراقبة وتقييم اقتصادي)**
+
+        📅 السداسي الثالث:
+        Analyse des données
+        SPSS
+        Arabe 3
+        Statistiques non paramétriques
+        Économie publique locale
+        Évaluation des politiques publiques
+        Méthodologies de recherche
+        Datamining
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_mae_ape_m2:
+    - text: |
+        📗 **M2 — MAE APE (إدارة اقتصادية — تحليل وسياسات اقتصادية)**
+
+        📅 السداسي الثالث:
+        Analyse des données
+        Politique monétaire
+        Méthodologies de recherche
+        Arabe 3
+        Analyse des politiques publiques
+        Évaluation des projets
+        Études & enquêtes
+        Politique budgétaire
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_finance_islamique_m2:
+    - text: |
+        📗 **M2 — Finance Islamique (المالية الإسلامية)**
+
+        📅 السداسي الثالث:
+        المصارفية الإسلامية
+        الاقتصاد الإسلامي
+        الفقه المالي
+        محاسبة 3
+        الموازنة العامة
+        مدخل في التأمين الإسلامي
+        التحليل المالي في المصارف الإسلامية
+        مباحث فقهية في الصيرفة الإسلامية
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_finance_internationale_m2:
+    - text: |
+        📗 **M2 — Finance Internationale (المالية الدولية)**
+
+        📅 السداسي الثالث:
+        العلاقات الاقتصادية الدولية
+        التمويل الدولي
+        محاسبة 3
+        النظام المالي الدولي
+        تصنيف ائتماني
+        الأسواق المالية الدولية
+        التحوط في الأسواق المالية
+        إدارة المخاطر المالية الدولية
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_finance_fiscalite_m2:
+    - text: |
+        📗 **M2 — Finance et Fiscalité (المالية والضريبة)**
+
+        📅 السداسي الثالث:
+        Ingénierie Financière
+        Théorie financière 3
+        Méthodologie de recherche
+        Normes comptables
+        Fiscalité internationale
+        Gestion financière internationale
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_entrepreneuriat_m2:
+    - text: |
+        📗 **M2 — Entrepreneuriat (ريادة الأعمال)**
+
+        📅 السداسي الثالث:
+        Entrepreneuriat et innovation
+        Leadership
+        Business model
+        Management des systèmes d'information
+        Méthodologie de recherche
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_cca_recherche_m2:
+    - text: |
+        📗 **M2 — CCA Recherche (محاسبة ومراقبة وتدقيق — بحث)**
+
+        📅 السداسي الثالث:
+        Comptabilité approfondie 2
+        Évaluation des entreprises et des choix
+        Comptabilité sectorielle
+        Normes comptables internationales
+        Méthodologie de recherches
+        Éthique professionnelle
+        Finance internationale
+        Audit financier 2
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_cca_prof_m2:
+    - text: |
+        📗 **M2 — CCA Prof (محاسبة ومراقبة وتدقيق — مهني)**
+
+        📅 السداسي الثالث:
+        Comptabilité approfondie
+        Consolidation, fusion et liquidation
+        Comptabilité sectorielle
+        Évaluation des entreprises et des choix
+        Normes comptables internationales
+        Méthodologie de recherches
+        Éthique professionnelle
+        Audit financier 2
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_controle_gestion_m2:
+    - text: |
+        📗 **M2 — Contrôle de Gestion (مراقبة التسيير)**
+
+        📅 السداسي الثالث:
+        Leadership
+        Management des systèmes d'information
+        Contrôle de gestion III
+        Méthodologie de recherche
+        Audit et contrôle
+        Management stratégique des entreprises
+        Management des projets
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+
+  utter_ask_matieres_grh_m2:
+    - text: |
+        📗 **M2 — GRH (تسيير الموارد البشرية)**
+
+        📅 السداسي الثالث:
+        Gestion des carrières
+        Méthodologie de recherche
+        Évaluation des compétences et plan de formation
+        Outils de gestion de la performance
+        Relations sociales et professionnelles
+        Rémunération et gestion de la paie
+
+        📅 السداسي الرابع:
+        (غير متوفر في جداول الأوقات)
+# ============================================================
+# GÉNÉRAL fsjp
+# ============================================================
+
+  utter_ask_fsjp_info:
+    - text: |
+        🏛️ **كلية العلوم القانونية والسياسية — FSJP**
+
+        العميد:\n
+        د. محمد معطالله\n
+        نائب العميد:\n
+        د. محمد محمود محمد مختار\n
+        الأمين العام:\n
+        د. محمد عبد الله سيدي بوي\n
+
+        مدة الدراسة: 3 سنوات بعد الباكالوريا\n
+        عدد الليسانسات: 04\n
+
+  utter_ask_fsjp_specializations:
+    - text: |
+        🎓 **تخصصات كلية العلوم القانونية والسياسية — FSJP**
+
+        📚 ليسانس أساسي — Droit Public:\n
+        قانون عام/إدارة عمومية\n
+        • Droit Public/Administration publique\n
+        قانون عام/علوم سياسية\n
+        • Droit Public/Sciences Politiques\n
+
+        📚 ليسانس أساسي — Droit Privé:\n
+        قانون خاص/قانون الأعمال والمؤسسات\n
+        • Droit Privé/Droit des affaires et de l'entreprise\n
+        قانون خاص/مهن قضائية وقانونية\n
+        • Droit Privé/Carrières Judiciaires et Juridiques\n
+
+# ============================================================
+# L1 DROIT — COMMUN
+# ============================================================
+
+  utter_ask_matieres_l1_droit_s1:
+    - text: |
+        📘 **L1 en Droit — S1 (مشترك)**
+
+        تاريخ القانون والمؤسسات الاجتماعية 1\n
+        المبهجة القانونية\n
+        القانون الدستوري 1\n
+        الاقتصاد السياسي\n
+        التشريع الإسلامي 1\n
+        مدخل لدراسة القانون 1\n
+        Introduction à l'Etude du droit 1\n
+        Introduction aux institutions politiques et administratives\n
+        Terminologies juridiques 1\n
+        Méthodologie Juridique\n
+
+  utter_ask_matieres_l1_droit_s2:
+    - text: |
+        📘 **L1 en Droit — S2 (مشترك)**
+
+        القانون الدستوري 2\n
+        Terminologies juridiques 2\n
+        Histoire de droit et des institutions Sociales 2\n
+        Introduction à l'Etude des Relations Internationales\n
+        Droit Musulman 2\n
+        Institutions Internationales\n
+        Introduction à l'Etude du droit 2\n
+
+# ============================================================
+# L2 DROIT — COMMUN
+# ============================================================
+
+  utter_ask_matieres_l2_droit_s3:
+    - text: |
+        📗 **L2 en Droit — S3 (مشترك)**
+
+        التشريع الإسلامي\n
+        Economie de l'Entreprise\n
+        الفرنسية 3\n
+        القانون الإداري 1\n
+        قانون الالتزامات 1 (العقود)\n
+        العلوم السياسية\n
+        القانون الجنائي العام\n
+        القانون التجاري\n
+
+  utter_ask_matieres_l2_droit_s4:
+    - text: |
+        📗 **L2 en Droit — S4 (مشترك)**
+
+        التشريع الإسلامي\n
+        القانون الإداري 2\n
+        مصطلحات قانونية 4\n
+        العلوم السياسية\n
+        القانون التجاري\n
+        Finances Publiques\n
+        القانون الجنائي العام\n
+        قانون الالتزامات 2 (العقود)\n
+
+# ============================================================
+# L3 — DROIT PUBLIC / ADMINISTRATION PUBLIQUE
+# ============================================================
+
+  utter_ask_matieres_droit_public_admin_l3_s5:
+    - text: |
+        📙 **L3 — قانون عام / إدارة عمومية — S5**
+
+        المرافق العمومية الكبرى\n
+        القانون الدولي للبيئة\n
+        اللغة\n
+        قانون المنظمات الدولية\n
+        الحريات العامة\n
+        القانون الدولي العام\n
+        التراعات الإدارية\n
+        القانون العام الاقتصادي\n
+
+  utter_ask_matieres_droit_public_admin_l3_s6:
+    - text: |
+        📙 **L3 — قانون عام / إدارة عمومية — S6**
+
+        القانون الضريبي\n
+        علوم الإدارة\n
+        قانون الميزانية\n
+        قانون الوظيفة العمومية\n
+        قانون الإجراءات\n
+        إدارة الأملاك العمومية\n
+        اللامركزية والتنمية المحلية\n
+        مناهج البحث\n
+
+# ============================================================
+# L3 — DROIT PUBLIC / SCIENCES POLITIQUES
+# ⚠️ S5 identique à Administration publique
+# ============================================================
+
+  utter_ask_matieres_droit_public_sp_l3_s5:
+    - text: |
+        📙 **L3 — قانون عام / علوم سياسية — S5**
+        ⚠️ نفس مواد S5 تخصص الإدارة العمومية\n
+
+        المرافق العمومية الكبرى\n
+        القانون الدولي للبيئة\n
+        اللغة\n
+        قانون المنظمات الدولية\n
+        الحريات العامة\n
+        القانون الدولي العام\n
+        التراعات الإدارية\n
+        Droit public économique\n
+
+  utter_ask_matieres_droit_public_sp_l3_s6:
+    - text: |
+        📙 **L3 — قانون عام / علوم سياسية — S6**
+
+        حقوق الإنسان الأساسية\n
+        العلاقات الدبلوماسية والقنصلية\n
+        الحكم الرشيد\n
+        علم الاجتماع السياسي\n
+        استراتيجيا الأمن والدفاع\n
+        العلاقات الأورومتوسطية\n
+        نظم سياسية مقارنة\n
+        مناهج البحث\n
+
+# ============================================================
+# L3 — DROIT PRIVÉ / AFFAIRES ET ENTREPRISE
+# ============================================================
+
+  utter_ask_matieres_droit_prive_affaires_l3_s5:
+    - text: |
+        📙 **L3 — قانون خاص / قانون الأعمال والمؤسسات — S5**
+
+        الحقوق العينية\n
+        نظام الالتزامات\n
+        القانون الاجتماعي\n
+        القانون العام للشركات\n
+        اللغة\n
+        الملكية الفكرية\n
+        TD القانون العام للشركات\n
+        قانون التأمين\n
+        القانون الجنائي الخاص وعلم الإجرام\n
+
+  utter_ask_matieres_droit_prive_affaires_l3_s6:
+    - text: |
+        📙 **L3 — قانون خاص / قانون الأعمال والمؤسسات — S6**
+
+        المسطرة المدنية\n
+        قانون العقود التجارية\n
+        القانون الخاص للشركات\n
+        قانون التحكيم\n
+        مناهج البحث\n
+        المسطرة الجنائية\n
+
+# ============================================================
+# L3 — DROIT PRIVÉ / CARRIÈRES JUDICIAIRES
+# ⚠️ S5 identique à Affaires et Entreprise
+# ============================================================
+
+  utter_ask_matieres_droit_prive_carrieres_l3_s5:
+    - text: |
+        📙 **L3 — قانون خاص / مهن قضائية وقانونية — S5**
+        ⚠️ نفس مواد S5 تخصص قانون الأعمال والمؤسسات\n
+
+        الحقوق العينية\n
+        نظام الالتزامات\n
+        اللغة\n
+        القانون الاجتماعي\n
+        القانون العام للشركات\n
+        الملكية الفكرية\n
+        TD القانون العام للشركات\n
+        قانون التأمين\n
+        القانون الجنائي الخاص وعلم الإجرام\n
+
+  utter_ask_matieres_droit_prive_carrieres_l3_s6:
+    - text: |
+        📙 **L3 — قانون خاص / مهن قضائية وقانونية — S6**
+
+        المسطرة المدنية\n
+        قانون العقود الخاصة\n
+        حقوق الإنسان والحريات الأساسية\n
+        طرق التنفيذ\n
+        منازعات إدارية\n
+        مناهج البحث\n
+        المسطرة الجنائية\n
+
+# ============================================================
+# MASTER 1
+# ============================================================
+
+  utter_ask_matieres_master_droit_public:
+    - text: |
+        🎓 **Master 1 — القانون العام — S2**
+
+        اللغة الفرنسية\n
+        قانون العلاقات الدبلوماسية والقنصلية\n
+        الوظيفة التشريعية في الدساتير المغاربية\n
+        قانون الوظيفة العمومية\n
+        نظرية العلاقات الدولية\n
+        إدارة الأزمات\n
+        القضاء الإداري\n
+        القضاء الدستوري\n
+        مناهج البحث القانوني\n
+
+  utter_ask_matieres_master_entreprise_affaires:
+    - text: |
+        🎓 **Master 1 — Droit de l'Entreprise et des Affaires — S2**
+
+        الطرق البديلة لتسوية النزاعات\n
+        السيطرة المدنية\n
+        صعوبات المؤسسة\n
+        الإنجليزية\n
+        قانون التجارة الدولية\n
+        القانون الدولي الخاص\n
+        محاسبة الشركات\n
+        قانون المنافسة وحماية المستهلك\n
+
+  utter_ask_matieres_master_droits_homme:
+    - text: |
+        🎓 **Master 1 — حقوق الإنسان والقانون الإنساني — S2**
+
+        الحقوق الاقتصادية والاجتماعية والثقافية\n
+        القانون الجنائي الدولي\n
+        الحقوق المدنية والسياسية\n
+        الإجراءات الجنائية والحريات\n
+        قوانين اللاجئين والهجرة\n
+        القانون الدولي الإنساني\n
+        القضاء الجنائي الدولي\n
+        الحماية الدولية للطفل والمرأة\n
+
+  utter_ask_matieres_master_relations_internationales:
+    - text: |
+        🎓 **Master 1 — العلاقات الدولية والدفاع — S2**
+
+        التحديات الدولية المعاصرة\n
+        القانون الدولي العام\n
+        اللغة\n
+        السياسات الخارجية السفارية\n
+        القانون الجنائي الدولي\n
+        الفضاءات الدولية السياسية والاقتصادية الكبرى\n
+        سوسيولوجيا الإعلام\n
+        القانون الدولي الإنساني\n
+
+  utter_ask_matieres_master_droit_prive:
+    - text: |
+        🎓 **Master 1 — بحث القانون الخاص — S2**
+
+        القانون الضريبي\n
+        قانون المنافسة وحماية المستهلك\n
+        القانون الدولي الخاص\n
+        قانون التأمين\n
+        القانون الجنائي للأعمال\n
+        قانون الأسرة\n
+
+  utter_ask_matieres_master_maritime:
+    - text: |
+        🎓 **Master 1 — Recherche Droit des Espaces et Activités Maritimes — S2**
+
+        Introduction à la logistique\n
+        Modes Alternatifs de règlement des conflits (MARC)\n
+        Droit des professions maritimes\n
+        Droit portiaire\n
+        Droit maritime (Transport Maritime)\n
+        Droit international privé\n
+        Droit et procédure douanière\n
+        Droit du littoral\n
+# ============================================================
+# SESSION CONFIG
+# ============================================================
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+# ============================================================
+# SLOTS
+# ============================================================
+slots:
+  language:
+    type: categorical
+    values:
+      - ar
+      - fr
+    initial_value: ar
+    mappings:
+      - type: from_intent
+        intent: saluer_ar
+        value: ar
+      - type: from_intent
+        intent: saluer_fr
+        value: fr
+
+  user_type:
+    type: categorical
+    values:
+      - student
+      - visitor
+      - staff
+    initial_value: visitor
+    mappings:
+      - type: from_text
+
+# ============================================================
+# FORMS
+# ============================================================
+forms:
+  simple_contact_form:
+    required_slots:
+      - user_type

@@ -1,0 +1,81 @@
+version: "3.1"
+
+nlu:
+ 
+  - intent: ask_matieres_master_droit_public
+    examples: |
+      - مواد ماستر القانون العام
+      - ماذا ندرس في ماستر دروا بوبليك؟
+      - مقررات Master 1 القانون العام
+      - ما مواد ماستر القانون العام S2؟
+      - برنامج ماستر القانون العام
+      - Matières master droit public
+      - Quelles matières en master droit public?
+      - Programme master 1 droit public
+      - Cours master droit public S2
+      - Que contient le master droit public?
+
+  - intent: ask_matieres_master_entreprise_affaires
+    examples: |
+      - مواد ماستر دروا دو لونتروبريز
+      - ماذا ندرس في ماستر قانون الأعمال؟
+      - مقررات Master 1 Droit de l'Entreprise
+      - ما مواد ماستر الأعمال S2؟
+      - برنامج ماستر قانون الأعمال والمؤسسات
+      - Matières master droit entreprise affaires
+      - Quelles matières en master droit des affaires?
+      - Programme master 1 droit entreprise
+      - Cours master droit affaires S2
+      - Que contient le master droit entreprise?
+
+  - intent: ask_matieres_master_droits_homme
+    examples: |
+      - مواد ماستر حقوق الإنسان
+      - ماذا ندرس في ماستر حقوق الإنسان والقانون الإنساني؟
+      - مقررات Master 1 حقوق الإنسان
+      - ما مواد ماستر حقوق الإنسان S2؟
+      - برنامج ماستر القانون الإنساني
+      - Matières master droits de l'homme
+      - Quelles matières en master droits de l'homme?
+      - Programme master 1 droits humains
+      - Cours master droit humanitaire S2
+      - Que contient le master droits de l'homme?
+
+  - intent: ask_matieres_master_relations_internationales
+    examples: |
+      - مواد ماستر العلاقات الدولية والدفاع
+      - ماذا ندرس في ماستر العلاقات الدولية؟
+      - مقررات Master 1 العلاقات الدولية
+      - ما مواد ماستر العلاقات الدولية S2؟
+      - برنامج ماستر الدفاع والعلاقات الدولية
+      - Matières master relations internationales
+      - Quelles matières en master relations internationales?
+      - Programme master 1 relations internationales défense
+      - Cours master relations internationales S2
+      - Que contient le master relations internationales?
+
+  - intent: ask_matieres_master_droit_prive
+    examples: |
+      - مواد ماستر بحث القانون الخاص
+      - ماذا ندرس في ماستر القانون الخاص؟
+      - مقررات Master 1 droit privé
+      - ما مواد ماستر القانون الخاص S2؟
+      - برنامج ماستر البحث قانون خاص
+      - Matières master recherche droit privé
+      - Quelles matières en master droit privé?
+      - Programme master 1 droit privé
+      - Cours master droit privé S2
+      - Que contient le master droit privé?
+
+  - intent: ask_matieres_master_maritime
+    examples: |
+      - مواد ماستر القانون البحري
+      - ماذا ندرس في ماستر دروا ماريتيم؟
+      - مقررات Master 1 الأنشطة البحرية
+      - ما مواد ماستر الفضاءات البحرية؟
+      - برنامج ماستر القانون البحري والنقل
+      - Matières master droit maritime
+      - Quelles matières en master droit maritime?
+      - Programme master espaces activités maritimes
+      - Cours master droit maritime S2
+      - Que contient le master droit maritime?

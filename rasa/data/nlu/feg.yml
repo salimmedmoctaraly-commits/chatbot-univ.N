@@ -1,0 +1,152 @@
+version: "3.1"
+
+nlu:
+
+- intent: ask_feg_info
+  examples: |
+    - ما هي كلية الاقتصاد والتسيير
+    - معلومات عن FEG
+    - أخبرني عن كلية الاقتصاد
+    - من هو عميد FEG
+    - عميد كلية الاقتصاد والتسيير
+    - FEG c'est quoi
+    - informations sur la FEG
+    - présentation de la FEG
+    - qui est le doyen de la FEG
+    - parle moi de la FEG
+    - كلية الاقتصاد والتسيير نواكشوط
+    - FEG Nouakchott
+    - faculté économie gestion mauritanie
+    - رقم هاتف FEG
+    - contact FEG
+    - كيف أتواصل مع كلية الاقتصاد
+    - comment contacter la FEG
+    - adresse FEG
+    - نائب عميد FEG
+    - الأمين العام FEG
+    - secrétaire général FEG
+    - vice doyen FEG
+    - FEG
+    - Chnhi FEG
+
+- intent: ask_feg_missions
+  examples: |
+    - ما هي مهام كلية الاقتصاد
+    - مهام FEG
+    - ما الهدف من كلية الاقتصاد والتسيير
+    - ماذا تقدم كلية الاقتصاد
+    - missions de la FEG
+    - quelles sont les missions de la FEG
+    - objectifs de la FEG
+    - à quoi sert la FEG
+    - but de la faculté économie gestion
+    - ما هي أهداف FEG
+    - أهداف كلية الاقتصاد
+    - nos missions FEG
+    - rôle de la FEG
+    - دور كلية الاقتصاد والتسيير
+
+- intent: ask_feg_vision
+  examples: |
+    - ما هي رؤية كلية الاقتصاد
+    - رؤية FEG
+    - vision de la FEG
+    - quelle est la vision de la FEG
+    - notre vision FEG
+    - ما هو توجه كلية الاقتصاد
+    - توجه FEG
+    - stratégie FEG
+    - ambition de la FEG
+    - رؤية كلية الاقتصاد والتسيير المستقبلية
+    - perspective FEG
+
+- intent: ask_feg_offres
+  examples: |
+    - ما هي عروض التكوين في FEG
+    - عروض FEG
+    - ماذا تقدم FEG من تكوينات
+    - كم ليسانس في FEG
+    - كم ماستر في FEG
+    - offres de formation FEG
+    - quelles sont les offres de la FEG
+    - combien de licences à la FEG
+    - combien de masters à la FEG
+    - formations disponibles FEG
+    - nos offres FEG
+    - programmes FEG
+    - برامج FEG
+    - مدرسة الدكتوراه FEG
+    - école doctorale FEG
+    - unités de recherche FEG
+    - وحدات البحث FEG
+    - أقسام FEG
+    - départements FEG
+
+- intent: ask_feg_specialisations
+  examples: |
+    - ما هي تخصصات FEG
+    - شعب كلية الاقتصاد والتسيير
+    - ما الذي ندرسه في FEG
+    - تخصصات FEG
+    - quelles sont les spécialités de la FEG
+    - filières FEG
+    - licences FEG
+    - spécialisations FEG
+    - ما هي الليسانسات المتاحة في FEG
+    - combien d'années pour FEG
+    - كم سنة الدراسة في FEG
+    - ليسانس مهني FEG
+    - ليسانس أساسي FEG
+    - licence professionnelle FEG
+    - licence fondamentale FEG
+    - البنوك والتأمين FEG
+    - المالية والمحاسبة FEG
+    - تسيير الموارد البشرية FEG
+    - تسيير المؤسسات FEG
+    - الإدارة العمومية FEG
+    - المشاريع العمومية FEG
+
+- intent: ask_feg_corps_professoral
+  examples: |
+    - من هم أساتذة FEG
+    - الهيئة التدريسية FEG
+    - كم عدد الأساتذة في FEG
+    - أساتذة كلية الاقتصاد
+    - corps professoral FEG
+    - combien d'enseignants à la FEG
+    - enseignants FEG
+    - professeurs FEG
+    - encadrement pédagogique FEG
+    - عدد الأساتذة الدائمين FEG
+    - enseignants permanents FEG
+    - intervenants FEG
+    - المتدخلون من الوسط المهني FEG
+
+- intent: ask_feg_criteres_passage
+  examples: |
+    - معايير الانتقال في FEG
+    - معايير المداولات
+    - كيف أنتقل من L1 إلى L2
+    - كيف أنتقل من L2 إلى L3
+    - شروط التجاوز في كلية الاقتصاد
+    - شروط المداولات FEG
+    - critères de passage FEG
+    - conditions de passage L1 L2 L3
+    - délibérations FEG
+    - comment passer en L2
+    - comment passer en L3
+    - conditions de validation FEG
+    - معدل الانتقال FEG
+    - كم رصيد للانتقال إلى L2
+    - كم رصيد للانتقال إلى L3
+    - moyenne pour passer en L2
+    - crédits nécessaires FEG
+    - رصيد الانتقال FEG
+    - شروط التخرج FEG
+    - conditions diplôme FEG
+    - مداولات L1
+    - مداولات L2
+    - مداولات L3
+    - délibérations L1
+    - délibérations L2
+    - délibérations L3

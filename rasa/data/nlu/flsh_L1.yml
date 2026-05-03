@@ -1,0 +1,152 @@
+version: "3.1"
+
+nlu:
+
+# FLSH — كلية الآداب والعلوم الإنسانية
+
+
+- intent: ask_matieres_flsh_l1
+  examples: |
+    - ما هي مواد السنة الأولى في FLSH؟
+    - مواد L1 كلية الآداب
+    - ماذا ندرس في السنة الأولى آداب؟
+    - مقررات السنة الأولى FLSH
+    - quelles sont les matières de L1 à la FLSH?
+    - programme de première année FLSH
+    - matières L1 lettres
+
+- intent: ask_matieres_arabe_l1
+  examples: |
+    - مواد تخصص الدراسات العربية السنة الأولى
+    - مقررات اللغة العربية L1
+    - ماذا ندرس في تخصص العربية؟
+    - مواد الأدب العربي
+    - النحو والصرف في السنة الأولى
+    - matières spécialité arabe L1
+    - programme études arabes première année
+    - مواد العربي
+    - تخصص عربية FLSH
+
+- intent: ask_matieres_francais_l1
+  examples: |
+    - مواد تخصص الفرنسية السنة الأولى
+    - مقررات اللغة الفرنسية L1
+    - ماذا ندرس في تخصص الفرنسية؟
+    - matières spécialité français L1
+    - programme français première année FLSH
+    - qu'est-ce qu'on étudie en français L1?
+    - cours de littérature française L1
+
+- intent: ask_matieres_anglais_l1
+  examples: |
+    - مواد تخصص الإنجليزية السنة الأولى
+    - مقررات اللغة الإنجليزية L1
+    - ماذا ندرس في تخصص الإنجليزية؟
+    - مواد الإنجليزي في الجامعة
+    - matières spécialité anglais L1
+    - programme anglais première année FLSH
+    - qu'est-ce qu'on étudie en anglais L1?
+
+- intent: ask_matieres_espagnol_l1
+  examples: |
+    - مواد تخصص الإسبانية السنة الأولى
+    - مقررات اللغة الإسبانية L1
+    - ماذا ندرس في تخصص الإسبانية؟
+    - matières spécialité espagnol L1
+    - programme espagnol première année FLSH
+    - cours espagnol L1
+
+- intent: ask_matieres_turc_l1
+  examples: |
+    - مواد تخصص التركية السنة الأولى
+    - مقررات اللغة التركية L1
+    - ماذا ندرس في تخصص التركية؟
+    - matières spécialité turc L1
+    - programme turc première année FLSH
+    - cours de turc L1
+
+- intent: ask_matieres_chinois_l1
+  examples: |
+    - مواد تخصص الصينية السنة الأولى
+    - مقررات اللغة الصينية L1
+    - ماذا ندرس في تخصص الصينية؟
+    - matières spécialité chinois L1
+    - programme chinois première année FLSH
+    - cours de chinois L1
+
+- intent: ask_matieres_langues_nationales_l1
+  examples: |
+    - مواد تخصص اللغات الوطنية L1
+    - مقررات اللسانيات السنة الأولى
+    - ماذا ندرس في اللغات الوطنية؟
+    - تخصص Pulaar السنة الأولى
+    - تخصص Wolof مواد
+    - تخصص Soninke
+    - matières langues nationales L1
+    - programme linguistique première année FLSH
+    - cours pulaar wolof soninke L1
+
+- intent: ask_matieres_philosophie_l1
+  examples: |
+    - مواد تخصص الفلسفة السنة الأولى
+    - مقررات الفلسفة L1
+    - ماذا ندرس في الفلسفة؟
+    - الفلسفة الإسلامية واليونانية
+    - matières spécialité philosophie L1
+    - programme philosophie première année FLSH
+    - cours de philosophie L1
+
+- intent: ask_matieres_sociologie_l1
+  examples: |
+    - مواد تخصص علم الاجتماع السنة الأولى
+    - مقررات السوسيولوجيا L1
+    - ماذا ندرس في علم الاجتماع؟
+    - matières spécialité sociologie L1
+    - programme sociologie première année FLSH
+    - cours de sociologie L1
+
+- intent: ask_matieres_histoire_l1
+  examples: |
+    - مواد تخصص التاريخ السنة الأولى
+    - مقررات التاريخ والحضارة L1
+    - ماذا ندرس في التاريخ؟
+    - matières spécialité histoire L1
+    - programme histoire et civilisation L1 FLSH
+    - cours d'histoire première année
+
+- intent: ask_matieres_geographie_l1
+  examples: |
+    - مواد تخصص الجغرافيا السنة الأولى
+    - مقررات الجغرافيا L1
+    - ماذا ندرس في الجغرافيا؟
+    - matières spécialité géographie L1
+    - programme géographie première année FLSH
+    - cours de géographie L1
+
+- intent: ask_matieres_travail_social_l1
+  examples: |
+    - مواد تخصص العمل الاجتماعي السنة الأولى
+    - مقررات العمل الاجتماعي L1
+    - ماذا ندرس في العمل الاجتماعي؟
+    - travail social L1 matières
+    - programme travail social FLSH
+    - cours travail social première année
+
+- intent: ask_matieres_developpement_local_l1
+  examples: |
+    - مواد تخصص التنمية المحلية السنة الأولى
+    - مقررات التنمية L1
+    - ماذا ندرس في التنمية المحلية؟
+    - matières développement local L1
+    - programme développement local FLSH
+    - cours développement local première année
+
+- intent: ask_matieres_environnement_l1
+  examples: |
+    - مواد تخصص البيئة السنة الأولى
+    - مقررات البيئة والتنمية المستدامة L1
+    - ماذا ندرس في البيئة؟
+    - matières environnement L1
+    - programme environnement et développement durable FLSH
+    - cours environnement première année
+

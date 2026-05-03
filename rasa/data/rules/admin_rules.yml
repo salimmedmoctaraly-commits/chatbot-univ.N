@@ -1,0 +1,214 @@
+version: "3.1"
+
+rules:
+
+# ══════════════════════════════════════════
+# Inscription
+# ══════════════════════════════════════════
+
+- rule: demander_inscription_ar
+  steps:
+    - intent: demander_inscription_ar
+    - action: utter_demander_inscription_ar
+
+- rule: demander_inscription_fr
+  steps:
+    - intent: demander_inscription_fr
+    - action: utter_demander_inscription_fr
+
+- rule: demander_frais_inscription_ar
+  steps:
+    - intent: demander_frais_inscription_ar
+    - action: utter_demander_frais_inscription_ar
+
+- rule: demander_frais_inscription_fr
+  steps:
+    - intent: demander_frais_inscription_fr
+    - action: utter_demander_frais_inscription_fr
+
+- rule: demander_paiement_bankily_ar
+  steps:
+    - intent: demander_paiement_bankily_ar
+    - action: utter_demander_paiement_bankily_ar
+
+- rule: demander_paiement_bankily_fr
+  steps:
+    - intent: demander_paiement_bankily_fr
+    - action: utter_demander_paiement_bankily_fr
+
+- rule: demander_documents_inscription_ar
+  steps:
+    - intent: demander_documents_inscription_ar
+    - action: utter_demander_documents_inscription_ar
+
+- rule: demander_documents_inscription_fr
+  steps:
+    - intent: demander_documents_inscription_fr
+    - action: utter_demander_documents_inscription_fr
+
+- rule: demander_attestation_inscription_ar
+  steps:
+    - intent: demander_attestation_inscription_ar
+    - action: utter_demander_attestation_inscription_ar
+
+- rule: demander_attestation_inscription_fr
+  steps:
+    - intent: demander_attestation_inscription_fr
+    - action: utter_demander_attestation_inscription_fr
+
+- rule: derogation_inscription_ar
+  steps:
+    - intent: derogation_inscription_ar
+    - action: utter_derogation_inscription_ar
+
+- rule: derogation_inscription_fr
+  steps:
+    - intent: derogation_inscription_fr
+    - action: utter_derogation_inscription_fr
+
+# ══════════════════════════════════════════
+# Planning
+# ══════════════════════════════════════════
+
+- rule: demander_planning_ar
+  steps:
+    - intent: demander_planning_ar
+    - action: utter_demander_planning_ar
+
+- rule: demander_planning_fr
+  steps:
+    - intent: demander_planning_fr
+    - action: utter_demander_planning_fr
+
+- rule: demander_jours_feries_ar
+  steps:
+    - intent: demander_jours_feries_ar
+    - action: utter_demander_jours_feries_ar
+
+- rule: demander_jours_feries_fr
+  steps:
+    - intent: demander_jours_feries_fr
+    - action: utter_demander_jours_feries_fr
+
+# ══════════════════════════════════════════
+# Rachat
+# ══════════════════════════════════════════
+
+- rule: demander_rachat_passage_ar
+  steps:
+    - intent: demander_rachat_passage_ar
+    - action: utter_demander_rachat_passage_ar
+
+- rule: demander_rachat_passage_fr
+  steps:
+    - intent: demander_rachat_passage_fr
+    - action: utter_demander_rachat_passage_fr
+
+- rule: demander_rachat_diplome_ar
+  steps:
+    - intent: demander_rachat_diplome_ar
+    - action: utter_demander_rachat_diplome_ar
+
+- rule: demander_rachat_diplome_fr
+  steps:
+    - intent: demander_rachat_diplome_fr
+    - action: utter_demander_rachat_diplome_fr
+
+# ══════════════════════════════════════════
+# Examens
+# ══════════════════════════════════════════
+
+- rule: demander_reglement_examens_ar
+  steps:
+    - intent: demander_reglement_examens_ar
+    - action: utter_demander_reglement_examens_ar
+
+- rule: demander_reglement_examens_fr
+  steps:
+    - intent: demander_reglement_examens_fr
+    - action: utter_demander_reglement_examens_fr
+
+- rule: demander_types_exclusion_ar
+  steps:
+    - intent: demander_types_exclusion_ar
+    - action: utter_demander_types_exclusion_ar
+
+- rule: demander_types_exclusion_fr
+  steps:
+    - intent: demander_types_exclusion_fr
+    - action: utter_demander_types_exclusion_fr
+
+- rule: demander_reclamation_ar
+  steps:
+    - intent: demander_reclamation_ar
+    - action: utter_demander_reclamation_ar
+
+- rule: demander_reclamation_fr
+  steps:
+    - intent: demander_reclamation_fr
+    - action: utter_demander_reclamation_fr
+
+# ══════════════════════════════════════════
+# LMD
+# ══════════════════════════════════════════
+
+- rule: demander_systeme_LMD_ar
+  steps:
+    - intent: demander_systeme_LMD_ar
+    - action: utter_demander_systeme_LMD_ar
+
+- rule: demander_systeme_LMD_fr
+  steps:
+    - intent: demander_systeme_LMD_fr
+    - action: utter_demander_systeme_LMD_fr
+
+- rule: demander_organisation_LMD_ar
+  steps:
+    - intent: demander_organisation_LMD_ar
+    - action: utter_demander_organisation_LMD_ar
+
+- rule: demander_organisation_LMD_fr
+  steps:
+    - intent: demander_organisation_LMD_fr
+    - action: utter_demander_organisation_LMD_fr
+
+- rule: demander_progression_licence_ar
+  steps:
+    - intent: demander_progression_licence_ar
+    - action: utter_demander_progression_licence_ar
+
+- rule: demander_progression_licence_fr
+  steps:
+    - intent: demander_progression_licence_fr
+    - action: utter_demander_progression_licence_fr
+
+- rule: demander_progression_master_ar
+  steps:
+    - intent: demander_progression_master_ar
+    - action: utter_demander_progression_master_ar
+
+- rule: demander_progression_master_fr
+  steps:
+    - intent: demander_progression_master_fr
+    - action: utter_demander_progression_master_fr
+
+- rule: demander_regles_exclusion_LMD_ar
+  steps:
+    - intent: demander_regles_exclusion_LMD_ar
+    - action: utter_demander_regles_exclusion_LMD_ar
+
+- rule: demander_regles_exclusion_LMD_fr
+  steps:
+    - intent: demander_regles_exclusion_LMD_fr
+    - action: utter_demander_regles_exclusion_LMD_fr
+
+- rule: demander_evaluation_LMD_ar
+  steps:
+    - intent: demander_evaluation_LMD_ar
+    - action: utter_demander_evaluation_LMD_ar
+
+- rule: demander_evaluation_LMD_fr
+  steps:
+    - intent: demander_evaluation_LMD_fr
+    - action: utter_demander_evaluation_LMD_fr
+

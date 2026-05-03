@@ -1,0 +1,284 @@
+version: "3.1"
+
+stories:
+
+# ══════════════════════════════════════════
+# Master 1 — général
+# ══════════════════════════════════════════
+
+- story: masters_ar
+  steps:
+    - intent: demander_masters_ar
+    - action: utter_demander_masters_ar
+
+- story: masters_fr
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+
+- story: doctorat_ar
+  steps:
+    - intent: demander_doctorat_ar
+    - action: utter_demander_doctorat_ar
+
+- story: doctorat_fr
+  steps:
+    - intent: demander_doctorat_fr
+    - action: utter_demander_doctorat_fr
+
+- story: masters_puis_doctorat_ar
+  steps:
+    - intent: demander_masters_ar
+    - action: utter_demander_masters_ar
+    - intent: demander_doctorat_ar
+    - action: utter_demander_doctorat_ar
+
+- story: masters_puis_doctorat_fr
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+    - intent: demander_doctorat_fr
+    - action: utter_demander_doctorat_fr
+
+# ══════════════════════════════════════════
+# Masters disponibles MA
+# ══════════════════════════════════════════
+
+- story: masters_disponibles_MA_ar
+  steps:
+    - intent: masters_disponibles_MA_ar
+    - action: utter_masters_disponibles_MA_ar
+
+- story: masters_disponibles_MA_fr
+  steps:
+    - intent: masters_disponibles_MA_fr
+    - action: utter_masters_disponibles_MA_fr
+
+- story: masters_ar_puis_MA
+  steps:
+    - intent: demander_masters_ar
+    - action: utter_demander_masters_ar
+    - intent: masters_disponibles_MA_ar
+    - action: utter_masters_disponibles_MA_ar
+
+- story: masters_fr_puis_MA
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+    - intent: masters_disponibles_MA_fr
+    - action: utter_masters_disponibles_MA_fr
+
+# ══════════════════════════════════════════
+# Masters disponibles MI
+# ══════════════════════════════════════════
+
+- story: masters_disponibles_MI_ar
+  steps:
+    - intent: masters_disponibles_MI_ar
+    - action: utter_masters_disponibles_MI_ar
+
+- story: masters_disponibles_MI_fr
+  steps:
+    - intent: masters_disponibles_MI_fr
+    - action: utter_masters_disponibles_MI_fr
+
+- story: masters_ar_puis_MI
+  steps:
+    - intent: demander_masters_ar
+    - action: utter_demander_masters_ar
+    - intent: masters_disponibles_MI_ar
+    - action: utter_masters_disponibles_MI_ar
+
+- story: masters_fr_puis_MI
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+    - intent: masters_disponibles_MI_fr
+    - action: utter_masters_disponibles_MI_fr
+
+- story: MA_puis_MI_ar
+  steps:
+    - intent: masters_disponibles_MA_ar
+    - action: utter_masters_disponibles_MA_ar
+    - intent: masters_disponibles_MI_ar
+    - action: utter_masters_disponibles_MI_ar
+
+# ══════════════════════════════════════════
+# Vue générale Master/Doctorat
+# ══════════════════════════════════════════
+
+- story: برامج الماستر
+  steps:
+    - intent: ask_master
+    - action: utter_ask_master
+
+- story: برامج الدكتوراه
+  steps:
+    - intent: ask_doctorat
+    - action: utter_ask_doctorat
+
+- story: ماستر ثم دكتوراه
+  steps:
+    - intent: ask_master
+    - action: utter_ask_master
+    - intent: ask_doctorat
+    - action: utter_ask_doctorat
+
+# ══════════════════════════════════════════
+# Master 2 — Informatique/IA
+# ══════════════════════════════════════════
+
+- story: M2_IA_MLDS
+  steps:
+    - intent: M2_IA_MLDS_fr
+    - action: utter_M2_IA_MLDS_fr
+
+- story: M2_IA_NLPCV
+  steps:
+    - intent: M2_IA_NLPCV_fr
+    - action: utter_M2_IA_NLPCV_fr
+
+- story: M2_IA_MLDS_puis_NLPCV
+  steps:
+    - intent: M2_IA_MLDS_fr
+    - action: utter_M2_IA_MLDS_fr
+    - intent: M2_IA_NLPCV_fr
+    - action: utter_M2_IA_NLPCV_fr
+
+- story: M2_ISDR_SI
+  steps:
+    - intent: M2_ISDR_SI_fr
+    - action: utter_M2_ISDR_SI_fr
+
+- story: M2_ISDR_RSC
+  steps:
+    - intent: M2_ISDR_RSC_fr
+    - action: utter_M2_ISDR_RSC_fr
+
+- story: M2_ISDR_SI_puis_RSC
+  steps:
+    - intent: M2_ISDR_SI_fr
+    - action: utter_M2_ISDR_SI_fr
+    - intent: M2_ISDR_RSC_fr
+    - action: utter_M2_ISDR_RSC_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Mathématiques/Stats
+# ══════════════════════════════════════════
+
+- story: M2_MA_IMCS
+  steps:
+    - intent: M2_MA_IMCS_fr
+    - action: utter_M2_MA_IMCS_fr
+
+- story: M2_SDD
+  steps:
+    - intent: M2_SDD_fr
+    - action: utter_M2_SDD_fr
+
+- story: M2_IMCS_puis_SDD
+  steps:
+    - intent: M2_MA_IMCS_fr
+    - action: utter_M2_MA_IMCS_fr
+    - intent: M2_SDD_fr
+    - action: utter_M2_SDD_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Énergie/Physique
+# ══════════════════════════════════════════
+
+- story: M2_ER
+  steps:
+    - intent: M2_ER_fr
+    - action: utter_M2_ER_fr
+
+- story: M2_2M
+  steps:
+    - intent: M2_2M_fr
+    - action: utter_M2_2M_fr
+
+- story: M2_ER_puis_2M
+  steps:
+    - intent: M2_ER_fr
+    - action: utter_M2_ER_fr
+    - intent: M2_2M_fr
+    - action: utter_M2_2M_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Géologie/Mines
+# ══════════════════════════════════════════
+
+- story: M2_GEOLOGIE
+  steps:
+    - intent: M2_GEOLOGIE_fr
+    - action: utter_M2_GEOLOGIE_fr
+
+- story: M2_MINE
+  steps:
+    - intent: M2_MINE_fr
+    - action: utter_M2_MINE_fr
+
+- story: M2_2E
+  steps:
+    - intent: M2_2E_fr
+    - action: utter_M2_2E_fr
+
+- story: M2_GEOLOGIE_puis_MINE
+  steps:
+    - intent: M2_GEOLOGIE_fr
+    - action: utter_M2_GEOLOGIE_fr
+    - intent: M2_MINE_fr
+    - action: utter_M2_MINE_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Biologie/Chimie
+# ══════════════════════════════════════════
+
+- story: M2_BMPB
+  steps:
+    - intent: M2_BMPB_fr
+    - action: utter_M2_BMPB_fr
+
+- story: M2_BOMVRH
+  steps:
+    - intent: M2_BOMVRH_fr
+    - action: utter_M2_BOMVRH_fr
+
+- story: M2_BEES
+  steps:
+    - intent: M2_BEES_fr
+    - action: utter_M2_BEES_fr
+
+- story: M2_NS
+  steps:
+    - intent: M2_NS_fr
+    - action: utter_M2_NS_fr
+
+- story: M2_TASSMQ
+  steps:
+    - intent: M2_TASSMQ_fr
+    - action: utter_M2_TASSMQ_fr
+
+- story: M2_SN
+  steps:
+    - intent: M2_SN_fr
+    - action: utter_M2_SN_fr
+
+- story: M2_MATERIAUX
+  steps:
+    - intent: M2_MATERIAUX_fr
+    - action: utter_M2_MATERIAUX_fr
+
+- story: M2_BMPB_puis_BOMVRH
+  steps:
+    - intent: M2_BMPB_fr
+    - action: utter_M2_BMPB_fr
+    - intent: M2_BOMVRH_fr
+    - action: utter_M2_BOMVRH_fr
+
+- story: M2_NS_puis_TASSMQ
+  steps:
+    - intent: M2_NS_fr
+    - action: utter_M2_NS_fr
+    - intent: M2_TASSMQ_fr
+    - action: utter_M2_TASSMQ_fr

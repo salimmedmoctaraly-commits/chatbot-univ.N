@@ -1,0 +1,70 @@
+version: "3.1"
+
+rules:
+
+- rule: saluer_ar
+  steps:
+    - intent: saluer_ar
+    - action: utter_saluer_ar
+
+- rule: saluer_fr
+  steps:
+    - intent: saluer_fr
+    - action: utter_saluer_fr
+
+- rule: au_revoir_ar
+  steps:
+    - intent: au_revoir_ar
+    - action: utter_au_revoir_ar
+
+- rule: au_revoir_fr
+  steps:
+    - intent: au_revoir_fr
+    - action: utter_au_revoir_fr
+
+# ============================================================
+# 2. معلومات عن الكلية
+# ============================================================
+- rule: out_of_scope_ar
+  steps:
+    - intent: out_of_scope_ar
+    - action: utter_out_of_scope_ar
+
+- rule: out_of_scope_fr
+  steps:
+    - intent: out_of_scope_fr
+    - action: utter_out_of_scope_fr
+
+- rule: nlu_fallback
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
+
+# ════════════════════════════════════════════════════════
+# Université générale / FLSH / FMPOS / FSJP / FEG
+# ════════════════════════════════════════════════════════
+
+- rule: ترحيب دائماً
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: وداع دائماً
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: تأكيد
+  steps:
+    - intent: affirm
+    - action: utter_affirm
+
+- rule: نفي
+  steps:
+    - intent: deny
+    - action: utter_deny
+
+# ══════════════════════════════════════════
+# Fallback
+# ══════════════════════════════════════════
+

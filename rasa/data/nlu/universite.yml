@@ -1,0 +1,237 @@
+version: "3.1"
+
+nlu:
+
+# معلومات عامة عن الجامعة
+
+- intent: ask_universite_generale
+  examples: |
+    - ما هي جامعة نواكشوط؟
+    - معلومات عن الجامعة
+    - أخبرني عن جامعة نواكشوط
+    - متى تأسست الجامعة؟
+    - تاريخ تأسيس الجامعة
+    - ما هي UNA؟
+    - معلومات عامة عن الجامعة
+    - عرفني بالجامعة
+    - جامعة نواكشوط العصرية
+    - qu'est-ce que l'université de Nouakchott?
+    - informations sur l'université
+    - c'est quoi l'UNA?
+    - présentation de l'université
+    - quand a été créée l'université?
+    - histoire de l'université de Nouakchott
+
+- intent: ask_president
+  examples: |
+    - من هو رئيس الجامعة؟
+    - من يترأس الجامعة؟
+    - رئاسة الجامعة
+    - إدارة الجامعة
+    - من هو عميد الجامعة؟
+    - الإدارة العليا للجامعة
+    - qui est le président de l'université?
+    - direction de l'université
+    - présidence de l'université
+    - qui dirige l'université?
+
+- intent: ask_nombre_etudiants
+  examples: |
+    - كم عدد الطلاب في الجامعة؟
+    - كم طالب في الجامعة؟
+    - عدد الطلبة
+    - كم يدرس في الجامعة؟
+    - combien d'étudiants?
+    - nombre d'étudiants à l'université
+    - effectif étudiant
+
+- intent: ask_nombre_facultes
+  examples: |
+    - كم كلية في الجامعة؟
+    - عدد الكليات
+    - كم شعبة في الجامعة؟
+    - combien de facultés?
+    - nombre de facultés
+    - combien de filières?
+
+
+
+- intent: ask_centres
+  examples: |
+    - ما هي مراكز الجامعة؟
+    - هل يوجد مكتبة جامعية؟
+    - مراكز الجامعة
+    - مركز التعليم عن بعد
+    - centres universitaires
+    - quels sont les centres de l'université?
+    - bibliothèque universitaire
+    - centre d'enseignement à distance
+
+- intent: ask_facultes_liste
+  examples: |
+    - ما هي الكليات؟
+    - اذكر الكليات
+    - قائمة الكليات
+    - ما الكليات الموجودة في الجامعة؟
+    - كم كلية هناك؟
+    - quelles sont les facultés?
+    - liste des facultés
+    - les facultés de l'université
+    - quelles facultés existe-t-il?
+    - facultés
+    - facultes
+    - الكليات
+
+- intent: ask_repartition_etudiants
+  examples: |
+    - توزيع الطلاب حسب الكلية
+    - كم نسبة طلاب FST؟
+    - إحصائيات الطلاب
+    - répartition des étudiants
+    - statistiques étudiants
+    - quelle faculté a le plus d'étudiants?
+    - pourcentage étudiants par faculté
+
+- intent: ask_criteres_bourse
+  examples: |
+    - معايير المنحة
+    - كيف أحصل على المنحة
+    - شروط المنحة الجامعية
+    - من يستحق المنحة
+    - معايير استحقاق المنحة
+    - ما هي معايير المنحة
+    - هل أنا مستحق للمنحة
+    - المنحة الجامعية
+    - شروط الحصول على المنحة
+    - معايير إسناد المنحة
+    - critères de la bourse
+    - comment obtenir une bourse
+    - conditions de la bourse universitaire
+    - qui a droit à la bourse
+    - critères d'éligibilité à la bourse
+    - quels sont les critères de la bourse
+    - est-ce que j'ai droit à une bourse
+    - la bourse universitaire
+    - conditions pour avoir une bourse
+    - critères d'attribution de la bourse
+    - ما هي شروط bourse
+    - كيف نحصل على la bourse
+    - هل أنا مستحق لـ bourse
+    - critères منحة جامعية
+    - conditions المنحة
+    - المنحة
+    - bourse 
+
+- intent: ask_inscription_bourse_cnou
+  examples: |
+    - التسجيل في المنحة بالمركز
+    - كيف أسجل منحتي
+    - وثائق التسجيل في المنحة
+    - أين أسجل منحتي
+    - متى يبدأ التسجيل في المنحة
+    - inscription bourse universitaire
+    - comment s'inscrire à la bourse
+    - documents pour l'inscription à la bourse
+    - où s'inscrire pour la bourse
+    - quand commence l'inscription à la bourse
+    - تسجيل المنحة 2025-2026
+    - وثائق المنحة بالمركز
+    - inscription bourse CNOU
+    - كيف أسجل في bourse
+    - وثائق inscription المنحة
+
+- intent: ask_criteres_logement
+  examples: |
+    - معايير السكن الجامعي
+    - كيف أحصل على سكن جامعي
+    - شروط السكن الجامعي
+    - من يستحق السكن
+    - معايير استحقاق السكن
+    - ما هي معايير السكن
+    - هل أنا مستحق للسكن الجامعي
+    - السكن الجامعي
+    - شروط الحصول على السكن
+    - معايير إسناد السكن
+    - critères du logement universitaire
+    - comment obtenir un logement universitaire
+    - conditions du logement universitaire
+    - qui a droit au logement
+    - critères d'éligibilité au logement
+    - quels sont les critères du logement
+    - est-ce que j'ai droit au logement universitaire
+    - le logement universitaire
+    - conditions pour avoir un logement
+    - critères d'attribution du logement
+    - ما هي شروط logement
+    - كيف نحصل على logement universitaire
+    - هل أنا مستحق لـ logement
+    - critères سكن جامعي
+    - conditions السكن
+    -  السكن
+    - logement
+
+- intent: ask_renouvellement_logement
+  examples: |
+    - تجديد السكن الجامعي
+    - كيف أجدد سكني الجامعي
+    - إجراءات تجديد السكن
+    - وثائق تجديد السكن الجامعي
+    - ما هي وثائق تجديد السكن
+    - متى يبدأ تجديد السكن
+    - renouvellement logement universitaire
+    - comment renouveler mon hébergement
+    - documents pour renouveler le logement
+    - formalités hébergement universitaire
+    - تجديد السكن 2025-2026
+    - إجراءات السكن الجامعي
+    - renouvellement hébergement 2025
+    - كيف أجدد logement
+    - وثائق renouvellement السكن
+
+- intent: ask_criteres_transport
+  examples: |
+    - معايير النقل الجامعي
+    - كيف أحصل على دعم النقل
+    - شروط النقل المجاني
+    - من يستفيد من النقل
+    - معايير استحقاق النقل
+    - ما هي معايير النقل
+    - هل أنا مستحق لدعم النقل
+    - النقل الجامعي
+    - مجانية النقل
+    - معايير إسناد النقل
+    - critères du transport universitaire
+    - comment obtenir une aide au transport
+    - conditions du transport gratuit
+    - qui bénéficie du transport
+    - critères d'éligibilité au transport
+    - quels sont les critères du transport
+    - est-ce que j'ai droit au transport gratuit
+    - le transport universitaire
+    - gratuité du transport
+    - critères d'attribution du transport
+    - ما هي شروط transport
+    - كيف نحصل على دعم transport
+    - هل أنا مستحق لـ transport gratuit
+    - critères نقل جامعي
+    - conditions النقل
+- intent: ask_inscription_restaurant
+  examples: |
+    - التسجيل في المطعم الجامعي
+    - كيف أسجل في المطعم
+    - خدمات المطعم الجامعي
+    - متى يبدأ التسجيل في المطعم
+    - inscription restaurant universitaire
+    - comment s'inscrire au restaurant universitaire
+    - services du restaurant universitaire
+    - quand commence l'inscription au restaurant
+    - المطعم الجامعي 2025-2026
+    - تسجيل المطعم الجامعي
+    - inscription cantine universitaire
+    - كيف أسجل في restaurant universitaire
+    - تسجيل في restaurant
+    - inscription مطعم جامعي
+    - أين أسجل في المطعم
+    - وثائق التسجيل في المطعم
+
+

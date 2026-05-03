@@ -1,0 +1,12 @@
+rasa/.rasa/
+rasa/models/
+rasa/.config/
+rasa/.keras/
+rasa/actions/__pycache__/
+__pycache__/
+*.pyc
+*.pkl
+*.tar.gz
+react_frontend/node_modules/
+.env
+shared/

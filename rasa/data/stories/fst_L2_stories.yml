@@ -1,0 +1,43 @@
+version: "3.1"
+
+stories:
+
+# ══════════════════════════════════════════
+# L2 - Matières
+# ══════════════════════════════════════════
+
+- story: matieres_L2_informatique
+  steps:
+    - intent: demander_matieres_MAI
+    - action: utter_demander_matieres_MAI
+
+- story: matieres_L2_biologie
+  steps:
+    - intent: demander_matieres_BIOLOGIE
+    - action: utter_demander_matieres_BIOLOGIE
+
+- story: matieres_L2_geologie
+  steps:
+    - intent: demander_matieres_GEO
+    - action: utter_demander_matieres_GEO
+
+- story: MPI_puis_MAI
+  steps:
+    - intent: demander_specialites_MPI_fr
+    - action: utter_demander_specialites_MPI_fr
+    - intent: demander_matieres_MAI
+    - action: utter_demander_matieres_MAI
+
+- story: BG_puis_biologie
+  steps:
+    - intent: demander_specialites_BG_fr
+    - action: utter_demander_specialites_BG_fr
+    - intent: demander_matieres_BIOLOGIE
+    - action: utter_demander_matieres_BIOLOGIE
+
+- story: BG_puis_geologie
+  steps:
+    - intent: demander_specialites_BG_fr
+    - action: utter_demander_specialites_BG_fr
+    - intent: demander_matieres_GEO
+    - action: utter_demander_matieres_GEO

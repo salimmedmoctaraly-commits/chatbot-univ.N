@@ -1,0 +1,33 @@
+version: "3.1"
+
+nlu:
+
+  - intent: ask_fsjp_info
+    examples: |
+      - من هو عميد كلية العلوم القانونية؟
+      - معلومات كلية FSJP
+      - من يدير كلية القانون؟
+      - إدارة كلية العلوم القانونية والسياسية
+      - Qui est le doyen de la FSJP?
+      - Informations sur la FSJP
+      - Qui dirige la faculté de droit?
+      - Présentation de la FSJP
+      - Administration de la faculté de droit
+      - C'est qui le vice-doyen de la FSJP?
+      - FSJP
+      - chnhi FSJP
+      - كلية العلوم القانونية
+      - كلية العلوم القانونية والسياسية
+
+  - intent: ask_fsjp_specializations
+    examples: |
+      - ما تخصصات كلية العلوم القانونية؟
+      - ما الليسانسات في FSJP؟
+      - تخصصات كلية القانون
+      - أقسام FSJP
+      - Quelles sont les spécialités de la FSJP?
+      - Quelles licences propose la FSJP?
+      - Filières disponibles à la faculté de droit
+      - Liste des spécialités FSJP
+      - Combien de licences à la FSJP?
+      - Les formations de la FSJP

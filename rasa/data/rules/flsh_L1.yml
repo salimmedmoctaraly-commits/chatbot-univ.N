@@ -1,0 +1,77 @@
+version: "3.1"
+
+rules:
+- rule: مواد L1 FLSH عامة
+  steps:
+    - intent: ask_matieres_flsh_l1
+    - action: utter_ask_matieres_flsh_l1
+
+- rule: مواد الدراسات العربية L1
+  steps:
+    - intent: ask_matieres_arabe_l1
+    - action: utter_ask_matieres_arabe_l1
+
+- rule: مواد الفرنسية L1
+  steps:
+    - intent: ask_matieres_francais_l1
+    - action: utter_ask_matieres_francais_l1
+
+- rule: مواد الإنجليزية L1
+  steps:
+    - intent: ask_matieres_anglais_l1
+    - action: utter_ask_matieres_anglais_l1
+
+- rule: مواد الإسبانية L1
+  steps:
+    - intent: ask_matieres_espagnol_l1
+    - action: utter_ask_matieres_espagnol_l1
+
+- rule: مواد التركية L1
+  steps:
+    - intent: ask_matieres_turc_l1
+    - action: utter_ask_matieres_turc_l1
+
+- rule: مواد الصينية L1
+  steps:
+    - intent: ask_matieres_chinois_l1
+    - action: utter_ask_matieres_chinois_l1
+
+- rule: مواد اللغات الوطنية L1
+  steps:
+    - intent: ask_matieres_langues_nationales_l1
+    - action: utter_ask_matieres_langues_nationales_l1
+
+- rule: مواد الفلسفة L1
+  steps:
+    - intent: ask_matieres_philosophie_l1
+    - action: utter_ask_matieres_philosophie_l1
+
+- rule: مواد علم الاجتماع L1
+  steps:
+    - intent: ask_matieres_sociologie_l1
+    - action: utter_ask_matieres_sociologie_l1
+
+- rule: مواد التاريخ L1
+  steps:
+    - intent: ask_matieres_histoire_l1
+    - action: utter_ask_matieres_histoire_l1
+
+- rule: مواد الجغرافيا L1
+  steps:
+    - intent: ask_matieres_geographie_l1
+    - action: utter_ask_matieres_geographie_l1
+
+- rule: مواد العمل الاجتماعي L1
+  steps:
+    - intent: ask_matieres_travail_social_l1
+    - action: utter_ask_matieres_travail_social_l1
+
+- rule: مواد التنمية المحلية L1
+  steps:
+    - intent: ask_matieres_developpement_local_l1
+    - action: utter_ask_matieres_developpement_local_l1
+
+- rule: مواد البيئة والتنمية المستدامة L1
+  steps:
+    - intent: ask_matieres_environnement_l1
+    - action: utter_ask_matieres_environnement_l1

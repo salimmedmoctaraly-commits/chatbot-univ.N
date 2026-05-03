@@ -1,0 +1,71 @@
+version: "3.1"
+
+rules:
+
+# ==================== M2 ====================
+
+- rule: مواد M2 MESA ISE
+  steps:
+  - intent: ask_matieres_mesa_ise_m2
+  - action: utter_ask_matieres_mesa_ise_m2
+
+- rule: مواد M2 MESA Économétrie
+  steps:
+  - intent: ask_matieres_mesa_econometrie_m2
+  - action: utter_ask_matieres_mesa_econometrie_m2
+
+- rule: مواد M2 MBF
+  steps:
+  - intent: ask_matieres_mbf_m2
+  - action: utter_ask_matieres_mbf_m2
+
+- rule: مواد M2 MAE CEE
+  steps:
+  - intent: ask_matieres_mae_cee_m2
+  - action: utter_ask_matieres_mae_cee_m2
+
+- rule: مواد M2 MAE APE
+  steps:
+  - intent: ask_matieres_mae_ape_m2
+  - action: utter_ask_matieres_mae_ape_m2
+
+- rule: مواد M2 Finance Islamique
+  steps:
+  - intent: ask_matieres_finance_islamique_m2
+  - action: utter_ask_matieres_finance_islamique_m2
+
+- rule: مواد M2 Finance Internationale
+  steps:
+  - intent: ask_matieres_finance_internationale_m2
+  - action: utter_ask_matieres_finance_internationale_m2
+
+- rule: مواد M2 Finance et Fiscalité
+  steps:
+  - intent: ask_matieres_finance_fiscalite_m2
+  - action: utter_ask_matieres_finance_fiscalite_m2
+
+- rule: مواد M2 Entrepreneuriat
+  steps:
+  - intent: ask_matieres_entrepreneuriat_m2
+  - action: utter_ask_matieres_entrepreneuriat_m2
+
+- rule: مواد M2 CCA Recherche
+  steps:
+  - intent: ask_matieres_cca_recherche_m2
+  - action: utter_ask_matieres_cca_recherche_m2
+
+- rule: مواد M2 CCA Prof
+  steps:
+  - intent: ask_matieres_cca_prof_m2
+  - action: utter_ask_matieres_cca_prof_m2
+
+- rule: مواد M2 Contrôle de Gestion
+  steps:
+  - intent: ask_matieres_controle_gestion_m2
+  - action: utter_ask_matieres_controle_gestion_m2
+
+- rule: مواد M2 GRH
+  steps:
+  - intent: ask_matieres_grh_m2
+  - action: utter_ask_matieres_grh_m2
+

@@ -1,0 +1,76 @@
+version: "3.1"
+
+stories:
+
+# ══════════════════════════════════════════
+# Salutations
+# ══════════════════════════════════════════
+
+- story: salutation_arabe
+  steps:
+    - intent: saluer_ar
+    - action: utter_saluer_ar
+
+- story: salutation_française
+  steps:
+    - intent: saluer_fr
+    - action: utter_saluer_fr
+
+- story: au_revoir_arabe
+  steps:
+    - intent: au_revoir_ar
+    - action: utter_au_revoir_ar
+
+- story: au_revoir_français
+  steps:
+    - intent: au_revoir_fr
+    - action: utter_au_revoir_fr
+
+- story: salutation_ar_puis_au_revoir
+  steps:
+    - intent: saluer_ar
+    - action: utter_saluer_ar
+    - intent: au_revoir_ar
+    - action: utter_au_revoir_ar
+
+- story: salutation_fr_puis_au_revoir
+  steps:
+    - intent: saluer_fr
+    - action: utter_saluer_fr
+    - intent: au_revoir_fr
+    - action: utter_au_revoir_fr
+
+# ══════════════════════════════════════════
+# Greet / Goodbye génériques
+# ══════════════════════════════════════════
+
+- story: greet_générique
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: goodbye_générique
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: greet_puis_goodbye
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
+
+# ══════════════════════════════════════════
+# Out of scope
+# ══════════════════════════════════════════
+
+- story: out_of_scope_ar
+  steps:
+    - intent: out_of_scope_ar
+    - action: utter_out_of_scope_ar
+
+- story: out_of_scope_fr
+  steps:
+    - intent: out_of_scope_fr
+    - action: utter_out_of_scope_fr

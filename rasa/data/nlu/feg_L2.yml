@@ -1,0 +1,105 @@
+# ==================== L2 ====================
+version: "3.1"
+
+nlu:
+
+- intent: ask_matieres_economie_gestion_l2
+  examples: |
+    - مواد L2 اقتصاد تسيير
+    - ما هي مواد اقتصاد تسيير L2
+    - مواد السنة الثانية اقتصاد تسيير
+    - L2 économie gestion matières
+    - quelles sont les matières L2 économie gestion
+    - matières deuxième année économie gestion
+    - مواد L2 اقتصاد
+    - اقتصاد تسيير السنة الثانية
+    - L2 Economie-Gestion
+    - matières L2 Economie-Gestion
+
+- intent: ask_matieres_fc_l2
+  examples: |
+    - مواد L2 مالية ومحاسبة
+    - ما هي مواد مالية ومحاسبة L2
+    - مواد السنة الثانية مالية ومحاسبة
+    - L2 finance comptabilité matières
+    - quelles sont les matières L2 FC
+    - matières deuxième année finance comptabilité
+    - مواد L2 FC
+    - مالية ومحاسبة السنة الثانية
+    - L2 Finance et Comptabilité
+    - matières L2 FC
+    - chnhoume matières L2 FC
+    - chnhoume mewad L2 FC
+    - chnhoume mewad L2 FC
+- intent: ask_matieres_ba_l2
+  examples: |
+    - مواد L2 بنوك وتأمينات
+    - ما هي مواد بنوك وتأمينات L2
+    - مواد السنة الثانية بنوك وتأمينات
+    - L2 banques assurances matières
+    - quelles sont les matières L2 BA
+    - matières deuxième année banques assurances
+    - مواد L2 BA
+    - بنوك وتأمينات السنة الثانية
+    - L2 Banques et Assurances
+    - matières L2 BA
+    - chnhoume mewad L2 BA
+    - chnhoume matières L2 BA
+- intent: ask_matieres_grh_l2
+  examples: |
+    - مواد L2 تسيير الموارد البشرية
+    - ما هي مواد تسيير الموارد البشرية L2
+    - مواد السنة الثانية GRH
+    - L2 GRH matières
+    - quelles sont les matières L2 GRH
+    - matières deuxième année gestion ressources humaines
+    - مواد L2 GRH
+    - تسيير الموارد البشرية السنة الثانية
+    - L2 Gestion des Ressources Humaines
+    - matières L2 GRH
+    - chnhoume matières L2 GRH
+    - chnhoume mewad L2 GRH
+- intent: ask_matieres_gestion_entreprises_l2
+  examples: |
+    - مواد L2 gestion des entreprises
+    - ما هي مواد gestion des entreprises L2
+    - مواد السنة الثانية gestion des entreprises
+    - L2 gestion entreprises matières
+    - quelles sont les matières L2 gestion entreprises
+    - matières deuxième année gestion des entreprises
+    - مواد L2 تسيير المؤسسات
+    - تسيير المؤسسات السنة الثانية
+    - L2 Gestion des Entreprises
+    - matières L2 Gestion des Entreprises
+    - برنامج L2 gestion entreprises
+    - دروس السنة الثانية تسيير المؤسسات
+    - chnhoume mewad L2 gestion entreprises
+- intent: ask_matieres_techniques_projets_publics_l2
+  examples: |
+    - مواد L2 techniques projets publics
+    - ما هي مواد techniques projets publics L2
+    - مواد السنة الثانية techniques projets publics
+    - L2 techniques projets publics matières
+    - quelles sont les matières L2 techniques projets publics
+    - matières deuxième année techniques gestion projets publics
+    - مواد L2 تقنيات تسيير المشاريع العمومية
+    - تقنيات تسيير المشاريع العمومية السنة الثانية
+    - L2 Techniques de Gestion des Projets Publics
+    - matières L2 Techniques Projets Publics
+    - برنامج L2 projets publics
+    - دروس السنة الثانية تقنيات المشاريع العمومية
+
+- intent: ask_matieres_gestion_administration_publique_l2
+  examples: |
+    - مواد L2 gestion administration publique
+    - ما هي مواد gestion administration publique L2
+    - مواد السنة الثانية gestion administration publique
+    - L2 gestion administration publique matières
+    - quelles sont les matières L2 administration publique
+    - matières deuxième année gestion administration publique
+    - مواد L2 تسيير الإدارة العمومية
+    - تسيير الإدارة العمومية السنة الثانية
+    - L2 Gestion de l'Administration Publique
+    - matières L2 Administration Publique
+    - برنامج L2 administration publique
+    - دروس السنة الثانية تسيير الإدارة العمومية

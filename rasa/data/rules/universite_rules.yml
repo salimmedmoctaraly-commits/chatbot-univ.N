@@ -1,0 +1,70 @@
+version: "3.1"
+
+rules:
+
+- rule: معلومات الجامعة
+  steps:
+    - intent: ask_universite_generale
+    - action: utter_ask_universite_generale
+
+- rule: رئاسة الجامعة
+  steps:
+    - intent: ask_president
+    - action: utter_ask_president
+
+- rule: عدد الطلاب
+  steps:
+    - intent: ask_nombre_etudiants
+    - action: utter_ask_nombre_etudiants
+
+- rule: عدد الكليات
+  steps:
+    - intent: ask_nombre_facultes
+    - action: utter_ask_nombre_facultes
+
+- rule: مراكز الجامعة
+  steps:
+    - intent: ask_centres
+    - action: utter_ask_centres
+
+- rule: قائمة الكليات
+  steps:
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+
+- rule: توزيع الطلاب
+  steps:
+    - intent: ask_repartition_etudiants
+    - action: utter_ask_repartition_etudiants
+
+- rule: معايير المنحة الجامعية
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+
+- rule: التسجيل في المنحة بالمركز
+  steps:
+  - intent: ask_inscription_bourse_cnou
+  - action: utter_ask_inscription_bourse_cnou
+
+- rule: معايير السكن الجامعي
+  steps:
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+
+- rule: تجديد السكن الجامعي
+  steps:
+  - intent: ask_renouvellement_logement
+  - action: utter_ask_renouvellement_logement
+
+- rule: معايير النقل الجامعي
+  steps:
+  - intent: ask_criteres_transport
+  - action: utter_ask_criteres_transport
+
+- rule: التسجيل في المطعم الجامعي
+  steps:
+  - intent: ask_inscription_restaurant
+  - action: utter_ask_inscription_restaurant
+
+

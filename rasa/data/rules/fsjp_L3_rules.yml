@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+  - rule: L3 Admin S5
+    steps:
+      - intent: ask_matieres_droit_public_admin_l3_s5
+      - action: utter_ask_matieres_droit_public_admin_l3_s5
+
+  - rule: L3 Admin S6
+    steps:
+      - intent: ask_matieres_droit_public_admin_l3_s6
+      - action: utter_ask_matieres_droit_public_admin_l3_s6
+
+  - rule: L3 Sciences Politiques S5
+    steps:
+      - intent: ask_matieres_droit_public_sp_l3_s5
+      - action: utter_ask_matieres_droit_public_sp_l3_s5
+
+  - rule: L3 Sciences Politiques S6
+    steps:
+      - intent: ask_matieres_droit_public_sp_l3_s6
+      - action: utter_ask_matieres_droit_public_sp_l3_s6
+
+  - rule: L3 Affaires S5
+    steps:
+      - intent: ask_matieres_droit_prive_affaires_l3_s5
+      - action: utter_ask_matieres_droit_prive_affaires_l3_s5
+
+  - rule: L3 Affaires S6
+    steps:
+      - intent: ask_matieres_droit_prive_affaires_l3_s6
+      - action: utter_ask_matieres_droit_prive_affaires_l3_s6
+
+  - rule: L3 Carrieres S5
+    steps:
+      - intent: ask_matieres_droit_prive_carrieres_l3_s5
+      - action: utter_ask_matieres_droit_prive_carrieres_l3_s5
+
+  - rule: L3 Carrieres S6
+    steps:
+      - intent: ask_matieres_droit_prive_carrieres_l3_s6
+      - action: utter_ask_matieres_droit_prive_carrieres_l3_s6

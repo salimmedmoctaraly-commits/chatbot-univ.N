@@ -1,0 +1,109 @@
+version: "3.1"
+
+rules:
+
+# ══════════════════════════════════════════
+# L3 - Matières informatique/maths
+# ══════════════════════════════════════════
+
+- rule: demander_matieres_MA
+  steps:
+    - intent: demander_matieres_MA
+    - action: utter_demander_matieres_MA
+
+- rule: demander_matieres_MI
+  steps:
+    - intent: demander_matieres_MI
+    - action: utter_demander_matieres_MI
+
+- rule: demander_matieres_DA2I
+  steps:
+    - intent: demander_matieres_DA2I
+    - action: utter_demander_matieres_DA2I
+
+- rule: demander_matieres_MIAGE
+  steps:
+    - intent: demander_matieres_MIAGE
+    - action: utter_demander_matieres_MIAGE
+
+# ══════════════════════════════════════════
+# L3 - Matières physique/énergie
+# ══════════════════════════════════════════
+
+- rule: demander_matieres_PF
+  steps:
+    - intent: demander_matieres_PF
+    - action: utter_demander_matieres_PF
+
+- rule: demander_matieres_EEA
+  steps:
+    - intent: demander_matieres_EEA
+    - action: utter_demander_matieres_EEA
+
+- rule: demander_matieres_TSER
+  steps:
+    - intent: demander_matieres_TSER
+    - action: utter_demander_matieres_TSER
+
+- rule: demander_matieres_SP
+  steps:
+    - intent: demander_matieres_SP
+    - action: utter_demander_matieres_SP
+
+# ══════════════════════════════════════════
+# L3 - Matières géologie/pétrole
+# ══════════════════════════════════════════
+
+- rule: demander_matieres_IPG
+  steps:
+    - intent: demander_matieres_IPG
+    - action: utter_demander_matieres_IPG
+
+- rule: demander_matieres_GEOSS
+  steps:
+    - intent: demander_matieres_GEOSS
+    - action: utter_demander_matieres_GEOSS
+
+- rule: demander_matieres_GEOMIN
+  steps:
+    - intent: demander_matieres_GEOMIN
+    - action: utter_demander_matieres_GEOMIN
+
+- rule: demander_matieres_PEPE
+  steps:
+    - intent: demander_matieres_PEPE
+    - action: utter_demander_matieres_PEPE
+
+# ══════════════════════════════════════════
+# L3 - Matières biologie/chimie/eau
+# ══════════════════════════════════════════
+
+- rule: demander_matieres_BMP
+  steps:
+    - intent: demander_matieres_BMP
+    - action: utter_demander_matieres_BMP
+
+- rule: demander_matieres_BOE
+  steps:
+    - intent: demander_matieres_BOE
+    - action: utter_demander_matieres_BOE
+
+- rule: demander_matieres_NS
+  steps:
+    - intent: demander_matieres_NS
+    - action: utter_demander_matieres_NS
+
+- rule: demander_matieres_TASSMQ
+  steps:
+    - intent: demander_matieres_TASSMQ
+    - action: utter_demander_matieres_TASSMQ
+
+- rule: demander_matieres_CHIMIE
+  steps:
+    - intent: demander_matieres_CHIMIE
+    - action: utter_demander_matieres_CHIMIE
+
+- rule: demander_matieres_ABC
+  steps:
+    - intent: demander_matieres_ABC
+    - action: utter_demander_matieres_ABC

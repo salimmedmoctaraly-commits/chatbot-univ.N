@@ -1,0 +1,357 @@
+version: "3.1"
+
+nlu:
+
+# FST — معلومات عامة، إدارة، بنية
+
+- intent: presentation_fst_ar
+  examples: |
+    - ما هي كلية العلوم والتقنيات؟
+    - تعريف FST
+    - معلومات عن كلية العلوم والتقنيات
+    - أخبرني عن FST
+    - ما هي الكلية؟
+    - تاريخ FST
+    - متى تأسست كلية العلوم والتقنيات؟
+    - ما هو تاريخ تأسيس FST؟
+    - قيم كلية العلوم والتقنيات
+    - مهمة FST
+    - نبذة عن FST
+    - FST ما هي؟
+    - هل FST تابعة لجامعة نواكشوط؟
+    - ما هي أهداف FST؟
+    - كلية العلوم والتقنيات نواكشوط
+    - FST معلومات عامة
+    - ما رسالة الكلية؟
+    - متى أُسست FST؟
+    - ما هو دور FST؟
+    - عرّفني بكلية العلوم والتقنيات
+    - FST تابعة لأي جامعة؟
+    -  كلية العلوم والتقنيات
+
+- intent: presentation_fst_fr
+  examples: |
+    - Qu'est-ce que la FST ?
+    - Présentation de la FST
+    - C'est quoi la Faculté des Sciences et Techniques ?
+    - Informations sur la FST
+    - Parlez-moi de la FST
+    - Quand a été créée la FST ?
+    - Histoire de la FST
+    - Mission de la FST
+    - Valeurs de la FST
+    - La FST c'est quoi ?
+    - FST Nouakchott
+    - La FST est rattachée à quelle université ?
+    - Objectifs de la FST
+    - Donnez-moi des infos sur la FST
+    - C'est quoi FST ?
+    - FST informations générales
+    - Rôle de la FST
+    - Depuis quand le LMD à la FST ?
+    - Faculté des Sciences et Techniques présentation
+    - Présentez la FST
+    - FST c'est rattaché à quelle université ?
+    - Quel est le rôle de la FST ?
+    - chnhi fst
+    - FST
+    - Faculté des Sciences et Techniques 
+
+- intent: demander_doyen_FST_ar
+  examples: |
+    - من هو عميد كلية العلوم والتقنيات؟
+    - من عميد FST؟
+    - اسم عميد الكلية
+    - من يترأس FST؟
+    - عميد FST
+    - من هو رئيس كلية العلوم والتقنيات؟
+    - من يدير كلية العلوم والتقنيات؟
+    - اسم العميد
+    - العميد الحالي لـ FST
+    - من المسؤول عن FST؟
+    - رئيس FST
+    - مدير FST
+    - عميد الكلية
+    - من عميد كلية العلوم والتقنيات نواكشوط؟
+    - العميد
+    - من يقود FST؟
+    - اسم رئيس FST
+
+- intent: demander_doyen_FST_fr
+  examples: |
+    - Qui est le doyen de la FST ?
+    - Quel est le nom du doyen ?
+    - Qui dirige la FST ?
+    - Le doyen de la FST
+    - Nom du doyen FST
+    - Qui est responsable de la FST ?
+    - Qui est à la tête de la FST ?
+    - Comment s'appelle le doyen ?
+    - Doyen actuel FST
+    - Qui préside la FST ?
+    - Qui administre la FST ?
+    - Le directeur de la FST
+    - Chef de la FST
+    - Le doyen
+    - Nom du responsable FST
+    - Qui dirige la faculté ?
+    - Nom du chef de la FST
+
+- intent: demander_vicedoyen_FST_ar
+  examples: |
+    - من هو نائب عميد FST؟
+    - نائب العميد في كلية العلوم والتقنيات
+    - من هو نائب رئيس الكلية؟
+    - نائب عميد FST
+    - اسم نائب العميد
+    - من يساعد العميد في FST؟
+    - نائب مدير الكلية
+    - من هو نائب العميد الحالي؟
+    - نائب عميد كلية العلوم والتقنيات
+    - من يخلف العميد؟
+    - اسم نائب رئيس FST
+    - من نائب العميد؟
+    - نائب العميد
+    - Vice-doyen FST من هو؟
+    - مسؤول نيابة العميد
+    - نائب عميد الكلية اسمه
+
+- intent: demander_vicedoyen_FST_fr
+  examples: |
+    - Qui est le vice-doyen de la FST ?
+    - Le vice-doyen de la FST
+    - Nom du vice-doyen
+    - Qui est le vice-doyen ?
+    - Qui assiste le doyen à la FST ?
+    - Le vice-doyen actuel
+    - Comment s'appelle le vice-doyen ?
+    - Qui remplace le doyen ?
+    - Vice-doyen FST nom
+    - Qui est le vice-directeur ?
+    - Responsable adjoint FST
+    - Adjoint du doyen FST
+    - Le vice doyen
+    - Vice doyen nom FST
+    - Le numéro deux de la FST
+    - Nom du vice-doyen FST
+
+- intent: demander_sg_FST_ar
+  examples: |
+    - من هو الأمين العام لـ FST؟
+    - الأمين العام للكلية
+    - اسم الأمين العام FST
+    - من يشغل منصب الأمين العام؟
+    - الأمين العام لكلية العلوم والتقنيات
+    - من هو SG الكلية؟
+    - اسم الكاتب العام
+    - من الأمين العام الحالي؟
+    - السكرتير العام للكلية
+    - من يدير الإدارة العامة في FST؟
+    - الأمين العام
+    - SG FST من هو؟
+    - الأمين العام لـ FST نواكشوط
+    - من يشغل الأمانة العامة؟
+    - الأمين العام اسمه
+    - اسم الأمين العام للكلية
+
+- intent: demander_sg_FST_fr
+  examples: |
+    - Qui est le secrétaire général de la FST ?
+    - Le secrétaire général de la FST
+    - Nom du secrétaire général
+    - Qui est le SG de la FST ?
+    - Qui occupe le poste de secrétaire général ?
+    - Le SG actuel de la FST
+    - Comment s'appelle le secrétaire général ?
+    - Qui gère l'administration générale de la FST ?
+    - SG FST nom
+    - Secrétaire général FST
+    - Qui est responsable de l'administration ?
+    - Le SG de la faculté
+    - Responsable administratif FST
+    - Le secrétaire général
+    - SG FST
+    - Nom du secrétaire général FST
+
+- intent: demander_departements_FST
+  examples: |
+    - ما هي أقسام FST؟
+    - Quels sont les départements de la FST ?
+    - أقسام كلية العلوم والتقنيات
+    - Les départements de la FST
+    - combien de départements à la FST ?
+    - كم قسماً في FST؟
+    - liste des départements FST
+    - قائمة أقسام الكلية
+    - ما الأقسام الموجودة في FST؟
+    - كم عدد الأقسام في FST؟
+    - أقسام FST ما هي؟
+    - Quels départements existent à la FST ?
+    - أقسام كلية العلوم والتقنيات نواكشوط
+    - Département de biologie FST
+    - هل يوجد قسم رياضيات في FST؟
+    - Département d'informatique FST
+    - الأقسام العلمية في FST
+    - departments FST
+    - أقسام FST
+    - قسم الإعلاميات FST
+    - قسم الكيمياء FST
+
+- intent: demander_infrastructure_ar
+  examples: |
+    - ما هي البنية التحتية لـ FST؟
+    - مرافق كلية العلوم والتقنيات
+    - كم مختبراً في FST؟
+    - عدد القاعات في الكلية
+    - المساحة الإجمالية لـ FST
+    - عدد الطلاب في FST
+    - مرافق FST
+    - كم مدرجاً في FST؟
+    - هل يوجد مكتبة في FST؟
+    - المختبرات في FST
+    - عدد وحدات البحث في FST
+    - مختبر LRAER في FST
+    - كم عدد المختبرات التطبيقية؟
+    - FST كم طالب فيها؟
+    - قاعات الدروس في FST
+    - الطاقة الاستيعابية لـ FST
+    - إمكانيات الكلية
+    - البنية التحتية للكلية
+    - إمكانيات FST المادية
+    - كم عدد طلاب FST 2024؟
+
+- intent: demander_infrastructure_fr
+  examples: |
+    - Quelle est l'infrastructure de la FST ?
+    - Combien de laboratoires à la FST ?
+    - Les équipements de la FST
+    - Superficie de la FST
+    - Nombre d'étudiants à la FST
+    - Les installations de la FST
+    - Combien d'amphithéâtres à la FST ?
+    - Y a-t-il une bibliothèque à la FST ?
+    - Les laboratoires de la FST
+    - Unités de recherche FST
+    - Laboratoire LRAER FST
+    - Combien de labos TP ?
+    - Salles de cours FST
+    - Capacité d'accueil FST
+    - Moyens matériels FST
+    - Infrastructure faculté
+    - Équipements disponibles FST
+    - FST superficie totale
+    - Nombre d'étudiants FST 2024
+    - Moyens pédagogiques FST
+
+- intent: demander_filieres_FST_L1
+  examples: |
+    - ما هي شعب السنة الأولى؟
+    - Quelles sont les filières de L1 ?
+    - filières première année FST
+    - شعب L1 في FST
+    - ما الشعب المتاحة في السنة الأولى؟
+    - les filières en 1ère année
+    - combien de filières en L1 ?
+    - كم شعبة في L1؟
+    - الشعب في السنة الأولى
+    - L1 FST شعب
+    - filières disponibles première année
+    - ما بين MPI و BG و PC ما الفرق؟
+    - كيف أختار شعبتي في L1؟
+    - شعب الدخول في كلية العلوم والتقنيات
+    - première année quelles filières
+    - filière L1 FST liste
+    - L1 FST filières disponibles
+    - شعب L1
+    - filières L1
+    - الشعب المتاحة في السنة الأولى FST
+    - ماذا أختار في L1؟
+
+- intent: ask_fst
+  examples: |
+    - معلومات عن FST
+    - كلية العلوم والتقنيات
+    - من هو عميد FST؟
+    - إدارة كلية العلوم
+    - FST نواكشوط
+    - qu'est-ce que la FST?
+    - faculté des sciences et techniques
+    - qui est le doyen de la FST?
+
+- intent: ask_fst_licences
+  examples: |
+    - ما هي شعب FST؟
+    - تخصصات كلية العلوم والتقنيات
+    - ليسانس FST
+    - شعب العلوم والتقنيات
+    - ما هي الليسانسات في FST؟
+    - filières de la FST
+    - licences FST
+    - quelles sont les spécialités de la FST?
+
+- intent: ask_fst_parcours_bg
+  examples: |
+    - ما هو مسار BG؟
+    - بيولوجيا جيولوجيا
+    - parcours BG FST
+    - مسار البيولوجيا والجيولوجيا
+    - BG FST
+    - تخصص بيولوجيا
+
+- intent: ask_fst_parcours_mpi
+  examples: |
+    - ما هو مسار MPI؟
+    - رياضيات فيزياء معلوماتية
+    - مسار المعلوماتية والرياضيات
+    - MPI FST
+    - تخصص المعلوماتية في FST
+
+- intent: ask_fst_parcours_pc
+  examples: |
+    - ما هو مسار PC؟
+    - فيزياء كيمياء
+    - parcours PC FST
+    - مسار الفيزياء والكيمياء
+    - PC FST
+
+
+- intent: demander_resultats_fst_ar
+  examples: |
+    -  MPI كيف أعرف نتيجتي
+    - أريد الاطلاع على نتائجي
+    - أين أجد نتائج الامتحانات
+    -  FST موقع النتائج
+    - كيف أشوف علاماتي
+    - نتائج الفصل الأول
+    - نتائج الفصل الثاني
+    - هل نجحت
+    - كشف النقاط
+    - نتائج الدورة الأولى
+    - نتائج الدورة الثانية
+    - رابط النتائج
+    - resultats fst
+    - BGأريد نتائجي
+    -  FST كيف أعرف إذا نجحت
+    - نتائج الامتحانات الجامعية
+
+- intent: demander_resultats_fst_fr
+  examples: |
+    - comment voir mes résultats fst
+    - où trouver mes résultats fst
+    - site des résultats fst
+    - je veux consulter mes notes
+    - comment accéder aux résultats
+    - résultats du semestre
+    - lien résultats fst
+    - mes résultats d'examen
+    - est-ce que j'ai réussi
+    - relevé de notes fst
+    - résultats de la session
+    - comment savoir si j'ai réussi
+    - résultats examens fst
+    - je veux voir mes notes
+    - accès résultats université
+    - voir mes notes en ligne
+    - chnho mew93 neta2ij fst 
+    - chnho mew93 neta2ij lemti7an fst
+    - chnho mew93 neta2ij lemti7an mpi MPI bg BG pc PC MAI MI MIAGE DA2I MI mi

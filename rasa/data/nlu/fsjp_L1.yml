@@ -1,0 +1,28 @@
+version: "3.1"
+
+nlu:
+- intent: ask_matieres_l1_droit_s1
+  examples: |
+      - مواد السنة الأولى قانون الفصل الأول
+      - ماذا ندرس في L1 دروا S1؟
+      - مقررات L1 قانون السداسي الأول
+      - مواد الفصل الأول السنة الأولى قانون
+      - ما مواد S1 قانون أولى؟
+      - Matières L1 droit S1
+      - Quelles sont les matières de première année droit S1?
+      - Programme L1 droit premier semestre
+      - Cours droit première année semestre 1
+      - Que contient le S1 de L1 droit?
+
+- intent: ask_matieres_l1_droit_s2
+  examples: |
+      - مواد السنة الأولى قانون الفصل الثاني
+      - ماذا ندرس في L1 دروا S2؟
+      - مقررات L1 قانون السداسي الثاني
+      - مواد الفصل الثاني السنة الأولى قانون
+      - ما مواد S2 قانون أولى؟
+      - Matières L1 droit S2
+      - Quelles sont les matières de première année droit S2?
+      - Programme L1 droit deuxième semestre
+      - Cours droit première année semestre 2
+      - Que contient le S2 de L1 droit?

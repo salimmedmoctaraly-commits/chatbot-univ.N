@@ -1,0 +1,383 @@
+version: "3.1"
+
+nlu:
+
+# FST — L1 (MPI / BG / PC) + L2 (تخصصات)
+
+- intent: demander_info_MPI_ar
+  examples: |
+    - ما هي شعبة MPI؟
+    - معلومات عن MPI
+    - ما الذي يمكن دراسته بعد MPI؟
+    - تخصصات ما بعد MPI
+    - شعبة رياضيات فيزياء معلوماتية
+    - MPI ماذا يمكن اختيار بعد L1؟
+    - شعبة MPI ما تدرس فيها؟
+    - ما البرنامج الدراسي لـ MPI؟
+    - ما التخصصات بعد MPI؟
+    - برنامج MPI
+    - MPI مسارها
+    - MPI وBG ما الفرق؟
+    - ما هي شعبة الرياضيات والفيزياء والمعلوماتية؟
+    - MPI في FST
+    - MPI
+    - شعبة MPI كيف تكون؟
+    - ما الذي يدرسه طلاب MPI؟
+
+- intent: demander_info_MPI_fr
+  examples: |
+    - C'est quoi la filière MPI ?
+    - Informations sur MPI
+    - Que peut-on choisir après MPI ?
+    - Les spécialités après MPI
+    - filière Mathématiques Physique Informatique
+    - MPI après L1 quelles options ?
+    - Qu'étudie-t-on en MPI ?
+    - Programme de la filière MPI
+    - Quelles spécialisations après MPI ?
+    - La filière MPI description
+    - Parcours MPI FST
+    - Différence MPI et BG
+    - Qu'est-ce qu'on apprend en MPI ?
+    - MPI à la FST
+    - La filière MPI
+    - Débouchés MPI FST
+    - MPI filière description
+
+- intent: demander_matieres_MPI_S1
+  examples: |
+    - ما هي مواد MPI في الفصل الأول؟
+    - Matières MPI S1
+    - مقررات MPI S1
+    - modules MPI premier semestre
+    - MPI S1 cours
+    - مواد الفصل الأول لشعبة MPI
+    - MPI semestre 1 matières
+    - ماذا يُدرَّس في MPI S1؟
+    - برنامج MPI الفصل الأول
+    - cours du premier semestre MPI
+    - MPI S1 programme
+    - قائمة مواد MPI S1
+    - MPI S1 matières liste
+    - مواد MPI S1
+    - programme MPI S1
+    - MPI الفصل الأول مواد
+    - cours MPI semestre 1
+
+- intent: demander_matieres_MPI_S2
+  examples: |
+    - ما هي مواد MPI في الفصل الثاني؟
+    - Matières MPI S2
+    - مقررات MPI S2
+    - modules MPI deuxième semestre
+    - MPI S2 cours
+    - مواد الفصل الثاني لشعبة MPI
+    - MPI semestre 2 matières
+    - ماذا يُدرَّس في MPI S2؟
+    - برنامج MPI الفصل الثاني
+    - cours du deuxième semestre MPI
+    - MPI S2 programme
+    - قائمة مواد MPI S2
+    - MPI S2 matières liste
+    - مواد MPI S2
+    - programme MPI S2
+    - MPI الفصل الثاني مواد
+    - cours MPI semestre 2
+
+- intent: demander_info_BG_ar
+  examples: |
+    - ما هي شعبة BG؟
+    - معلومات عن BG
+    - شعبة بيولوجيا جيولوجيا
+    - ما الذي يمكن دراسته بعد BG؟
+    - تخصصات ما بعد BG
+    - BG في FST ما هي؟
+    - ما البرنامج الدراسي لـ BG؟
+    - ما التخصصات بعد BG؟
+    - هل أختار BG؟
+    - BG وMPI ما الفرق؟
+    - شعبة البيولوجيا والجيولوجيا
+    - BG مسار التخصص
+    - BG بعد L2 ماذا أختار؟
+    - BG في FST
+    - BG
+    - شعبة BG ماذا تدرس؟
+    - ما الذي يتعلمه طلاب BG؟
+
+- intent: demander_info_BG_fr
+  examples: |
+    - C'est quoi la filière BG ?
+    - Informations sur BG
+    - filière Biologie Géologie
+    - Que peut-on choisir après BG ?
+    - les spécialités après BG
+    - BG à la FST c'est quoi ?
+    - Programme de la filière BG
+    - Quelles spécialisations après BG ?
+    - Différence BG et MPI
+    - Choisir BG pourquoi ?
+    - La filière BG description
+    - Options après BG L2
+    - La filière biologie géologie
+    - BG à la FST
+    - La filière BG
+    - Débouchés BG FST
+    - BG filière description
+
+- intent: demander_matieres_BG_S1
+  examples: |
+    - ما هي مواد BG في الفصل الأول؟
+    - Matières BG S1
+    - مقررات BG S1
+    - modules BG S1
+    - BG premier semestre matières
+    - مواد الفصل الأول BG
+    - BG S1 cours liste
+    - ماذا يُدرَّس في BG S1؟
+    - برنامج BG الفصل الأول
+    - cours du premier semestre BG
+    - BG S1 programme
+    - قائمة مواد BG S1
+    - مواد BG S1
+    - programme BG S1
+    - BG S1
+    - BG الفصل الأول مواد
+    - cours BG semestre 1
+
+- intent: demander_matieres_BG_S2
+  examples: |
+    - ما هي مواد BG في الفصل الثاني؟
+    - Matières BG S2
+    - مقررات BG S2
+    - modules BG S2
+    - BG deuxième semestre
+    - مواد الفصل الثاني BG
+    - BG S2 cours liste
+    - ماذا يُدرَّس في BG S2؟
+    - برنامج BG الفصل الثاني
+    - cours du deuxième semestre BG
+    - BG S2 programme
+    - قائمة مواد BG S2
+    - مواد BG S2
+    - programme BG S2
+    - BG S2
+    - BG الفصل الثاني مواد
+    - cours BG semestre 2
+
+- intent: demander_info_PC_ar
+  examples: |
+    - ما هي شعبة PC؟
+    - معلومات عن PC
+    - شعبة فيزياء كيمياء
+    - ما الذي يمكن دراسته بعد PC؟
+    - تخصصات ما بعد PC
+    - PC في FST ما هي؟
+    - ما البرنامج الدراسي لـ PC؟
+    - ما التخصصات بعد PC؟
+    - هل أختار PC؟
+    - PC وBG ما الفرق؟
+    - شعبة الفيزياء والكيمياء
+    - PC مسار التخصص
+    - PC بعد L2 ماذا أختار؟
+    - PC في FST
+    - PC
+    - شعبة PC ماذا تدرس؟
+    - ما الذي يتعلمه طلاب PC؟
+
+- intent: demander_info_PC_fr
+  examples: |
+    - C'est quoi la filière PC ?
+    - Informations sur PC
+    - filière Physique Chimie
+    - Que peut-on choisir après PC ?
+    - les spécialités après PC
+    - PC à la FST c'est quoi ?
+    - Programme de la filière PC
+    - Quelles spécialisations après PC ?
+    - Différence PC et BG
+    - Choisir PC pourquoi ?
+    - La filière PC description
+    - Options après PC L2
+    - La filière physique chimie
+    - PC à la FST
+    - La filière PC
+    - Débouchés PC FST
+    - PC filière description
+
+- intent: demander_matieres_PC_S1
+  examples: |
+    - ما هي مواد PC في الفصل الأول؟
+    - Matières PC S1
+    - مقررات PC S1
+    - modules PC S1
+    - PC premier semestre
+    - مواد الفصل الأول PC
+    - PC S1 cours liste
+    - ماذا يُدرَّس في PC S1؟
+    - برنامج PC الفصل الأول
+    - cours du premier semestre PC
+    - PC S1 programme
+    - قائمة مواد PC S1
+    - مواد PC S1
+    - programme PC S1
+    - PC S1
+    - PC الفصل الأول مواد
+    - cours PC semestre 1
+
+- intent: demander_matieres_PC_S2_ar
+  examples: |
+    - ما هي مواد PC في الفصل الثاني؟
+    - مقررات PC S2
+    - مواد الفصل الثاني PC
+    - مواد PC S2 بالعربي
+    - برنامج PC الفصل الثاني
+    - ماذا يُدرَّس في PC S2؟
+    - PC S2 مواد قائمة
+    - مواد PC الفصل الثاني
+    - قائمة مواد PC S2
+    - PC الفصل الثاني مواد
+    - مقررات PC الفصل الثاني
+    - PC S2 عربي
+    - PC S2 ما هي المواد؟
+    - برنامج الفصل الثاني PC
+    - مواد PC في الفصل الثاني
+    - مواد السداسي الثاني PC
+
+- intent: demander_matieres_PC_S2_fr
+  examples: |
+    - Matières PC S2
+    - modules PC S2
+    - PC deuxième semestre matières
+    - cours PC S2
+    - programme PC S2
+    - liste matières PC semestre 2
+    - Qu'enseigne-t-on en PC S2 ?
+    - PC S2 cours liste
+    - programme deuxième semestre PC
+    - PC S2 quels cours ?
+    - cours semestre 2 PC
+    - PC S2 liste des cours
+    - deuxième semestre PC cours
+    - liste cours PC semestre 2
+    - PC S2 programme complet
+    - cours PC deuxième semestre
+
+- intent: demander_specialites_BG_ar
+  examples: |
+    - ما هي تخصصات BG؟
+    - تخصصات شعبة بيولوجيا جيولوجيا
+    - ما الذي يمكن تخصصه من BG؟
+    - شعب L3 من BG
+    - ماذا أختار بعد BG؟
+    - L3 من BG ما هي الخيارات؟
+    - تخصصات L2 و L3 في BG
+    - ما الفرق بين BMP و BOE؟
+    - ماذا أختار في L2 من BG؟
+    - تخصصات BG المتاحة
+    - مسارات BG في الليسانس
+    - BG تخصصات L2 L3
+    - من BG ماذا يمكن؟
+    - BG مسارات التخصص
+    - تخصصات BG
+    - خيارات BG بعد L1
+    - تخصصات ما بعد BG في الليسانس
+
+- intent: demander_specialites_BG_fr
+  examples: |
+    - Quelles sont les spécialités de BG ?
+    - Les spécialités BG
+    - Que peut-on spécialiser depuis BG ?
+    - filières L3 depuis BG
+    - Que choisir après BG ?
+    - Options L3 depuis BG
+    - Spécialisations L2 et L3 BG
+    - Différence BMP et BOE
+    - Que choisir en L2 depuis BG ?
+    - Spécialités BG disponibles
+    - Parcours BG en Licence
+    - BG spécialités L2 L3
+    - Depuis BG quelles options ?
+    - BG parcours de spécialisation
+    - spécialités BG
+    - options BG après L1
+    - spécialisations disponibles depuis BG
+
+- intent: demander_specialites_PC_ar
+  examples: |
+    - ما هي تخصصات PC؟
+    - تخصصات شعبة فيزياء كيمياء
+    - شعب L3 من PC
+    - ماذا أختار بعد PC؟
+    - L3 من PC ما هي الخيارات؟
+    - تخصصات L2 و L3 في PC
+    - ماذا أختار في L2 من PC؟
+    - تخصصات PC المتاحة
+    - مسارات PC في الليسانس
+    - PC تخصصات L2 L3
+    - من PC ماذا يمكن؟
+    - PC مسارات التخصص
+    - الكيمياء والفيزياء تخصصات
+    - PC ماذا بعد؟
+    - تخصصات PC
+    - خيارات PC بعد L1
+    - تخصصات ما بعد PC في الليسانس
+
+- intent: demander_specialites_PC_fr
+  examples: |
+    - Quelles sont les spécialités de PC ?
+    - Les spécialités PC
+    - filières L3 depuis PC
+    - Que choisir après PC ?
+    - Options L3 depuis PC
+    - Spécialisations L2 et L3 PC
+    - Que choisir en L2 depuis PC ?
+    - Spécialités PC disponibles
+    - Parcours PC en Licence
+    - PC spécialités L2 L3
+    - Depuis PC quelles options ?
+    - PC parcours de spécialisation
+    - Chimie et physique spécialités
+    - PC après L1 que faire ?
+    - spécialités PC
+    - options PC après L1
+    - spécialisations disponibles depuis PC
+
+- intent: demander_specialites_MPI_ar
+  examples: |
+    - ما هي تخصصات MPI؟
+    - تخصصات شعبة رياضيات فيزياء معلوماتية
+    - شعب L3 من MPI
+    - ماذا أختار بعد MPI؟
+    - L3 من MPI ما هي الخيارات؟
+    - تخصصات L2 و L3 في MPI
+    - ماذا أختار في L2 من MPI؟
+    - تخصصات MPI المتاحة
+    - مسارات MPI في الليسانس
+    - MPI تخصصات L2 L3
+    - من MPI ماذا يمكن؟
+    - MPI مسارات التخصص
+    - الرياضيات والمعلوماتية تخصصات
+    - MPI ماذا بعد؟
+    - تخصصات MPI
+    - خيارات MPI بعد L1
+    - تخصصات ما بعد MPI في الليسانس
+
+- intent: demander_specialites_MPI_fr
+  examples: |
+    - Quelles sont les spécialités de MPI ?
+    - Les spécialités MPI
+    - filières L3 depuis MPI
+    - Que choisir après MPI ?
+    - Options L3 depuis MPI
+    - Spécialisations L2 et L3 MPI
+    - Que choisir en L2 depuis MPI ?
+    - Spécialités MPI disponibles
+    - Parcours MPI en Licence
+    - MPI spécialités L2 L3
+    - Depuis MPI quelles options ?
+    - MPI parcours de spécialisation
+    - Maths et informatique spécialités
+    - MPI après L1 que faire ?
+    - spécialités MPI
+    - options MPI après L1
+    - spécialisations disponibles depuis MPI

@@ -1,0 +1,44 @@
+version: "3.1"
+
+rules:
+# ==================== L3 ====================
+
+- rule: مواد L3 اقتصاد تسيير
+  steps:
+  - intent: ask_matieres_economie_gestion_l3
+  - action: utter_ask_matieres_economie_gestion_l3
+
+- rule: مواد L3 مالية ومحاسبة
+  steps:
+  - intent: ask_matieres_fc_l3
+  - action: utter_ask_matieres_fc_l3
+
+- rule: مواد L3 بنوك وتأمينات
+  steps:
+  - intent: ask_matieres_ba_l3
+  - action: utter_ask_matieres_ba_l3
+
+- rule: مواد L3 تسيير الموارد البشرية
+  steps:
+  - intent: ask_matieres_grh_l3
+  - action: utter_ask_matieres_grh_l3
+
+- rule: مواد L3 اقتصاد عمومي
+  steps:
+  - intent: ask_matieres_economie_publique_l3
+  - action: utter_ask_matieres_economie_publique_l3
+
+- rule: مواد L3 Gestion des Entreprises
+  steps:
+  - intent: ask_matieres_gestion_entreprises_l3
+  - action: utter_ask_matieres_gestion_entreprises_l3
+
+- rule: مواد L3 Techniques de Gestion des Projets Publics
+  steps:
+  - intent: ask_matieres_techniques_projets_publics_l3
+  - action: utter_ask_matieres_techniques_projets_publics_l3
+
+- rule: مواد L3 Gestion de l'Administration Publique
+  steps:
+  - intent: ask_matieres_gestion_administration_publique_l3
+  - action: utter_ask_matieres_gestion_administration_publique_l3

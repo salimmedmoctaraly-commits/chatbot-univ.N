@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: معلومات FLSH
+  steps:
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+
+- rule: شعب FLSH
+  steps:
+    - intent: ask_flsh_licences
+    - action: utter_ask_flsh_licences
+
+- rule: التسجيل في FLSH
+  steps:
+    - intent: ask_inscription_flsh
+    - action: utter_ask_inscription_flsh

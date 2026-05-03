@@ -1,0 +1,77 @@
+
+version: "3.1"
+
+nlu:
+
+# ==================== GÉNÉRAL ====================
+
+- intent: ask_fmpos_info
+  examples: |
+    - ما هي كلية الطب والصيدلة
+    - معلومات عن FMPOS
+    - أخبرني عن كلية الطب
+    - ما هي كلية الطب وطب الأسنان
+    - من هو عميد كلية الطب
+    - FMPOS c'est quoi
+    - informations sur la FMPOS
+    - présentation de la faculté de médecine
+    - qui est le doyen de la FMPOS
+    - parle moi de la FMPOS
+    - c'est quoi la faculté de médecine
+    - كلية الطب والصيدلة وطب الأسنان
+    - FMPOS معلومات
+    - faculté de médecine Mauritanie
+    - renseigne moi sur la FMPOS
+    - عميد FMPOS من هو
+    - ما هو FMPOS
+    - كلية الطب نواكشوط
+    - faculté médecine Nouakchott
+    - FMPOS 
+    - chnhi FMPOS 
+    - faculté de médecine
+    - كلية الطب
+
+- intent: ask_fmpos_specializations
+  examples: |
+    - ما هي تخصصات كلية الطب
+    - شعب FMPOS
+    - ما الذي ندرسه في كلية الطب
+    - كم سنة دراسة الطب
+    - كم سنة دراسة الصيدلة
+    - كم سنة دراسة طب الأسنان
+    - تخصصات FMPOS
+    - quelles sont les spécialités de la FMPOS
+    - combien d'années pour la médecine
+    - combien d'années pour la pharmacie
+    - combien d'années pour la médecine dentaire
+    - filières FMPOS
+    - durée des études à la FMPOS
+    - spécialités faculté de médecine
+    - ما هي الشعب المتاحة في FMPOS
+    - options FMPOS
+    - débouchés FMPOS
+    - كم سنة كلية الطب
+    - ماذا أدرس في FMPOS
+    - شعب كلية الطب
+
+- intent: ask_fmpos_structure_medecine
+  examples: |
+    - ما هو هيكل دراسة الطب
+    - مراحل دراسة الطب
+    - ما هي سنوات دراسة الطب
+    - PCEM DCEM TCEM ما هي
+    - هيكل كلية الطب
+    - structure des études de médecine
+    - quelles sont les étapes des études de médecine
+    - PCEM1 PCEM2 c'est quoi
+    - DCEM c'est quoi
+    - comment sont organisées les études de médecine
+    - cycle médecine FMPOS
+    - parcours médecine FMPOS
+    - مراحل PCEM DCEM TCEM
+    - السنوات الدراسية في الطب
+    - organisation études médecine
+    - externe interne médecine FMPOS
+    - TCEM c'est quoi
+    - ما هو DCEM
+    - ما معنى PCEM

@@ -1,0 +1,114 @@
+version: "3.1"
+
+rules:
+
+# ══════════════════════════════════════════
+# FST - Présentation générale
+# ══════════════════════════════════════════
+
+- rule: presentation_fst_ar
+  steps:
+    - intent: presentation_fst_ar
+    - action: utter_presentation_fst_ar
+
+- rule: presentation_fst_fr
+  steps:
+    - intent: presentation_fst_fr
+    - action: utter_presentation_fst_fr
+
+- rule: demander_doyen_FST_ar
+  steps:
+    - intent: demander_doyen_FST_ar
+    - action: utter_demander_doyen_FST_ar
+
+- rule: demander_doyen_FST_fr
+  steps:
+    - intent: demander_doyen_FST_fr
+    - action: utter_demander_doyen_FST_fr
+
+- rule: demander_vicedoyen_FST_ar
+  steps:
+    - intent: demander_vicedoyen_FST_ar
+    - action: utter_demander_vicedoyen_FST_ar
+
+- rule: demander_vicedoyen_FST_fr
+  steps:
+    - intent: demander_vicedoyen_FST_fr
+    - action: utter_demander_vicedoyen_FST_fr
+
+- rule: demander_sg_FST_ar
+  steps:
+    - intent: demander_sg_FST_ar
+    - action: utter_demander_sg_FST_ar
+
+- rule: demander_sg_FST_fr
+  steps:
+    - intent: demander_sg_FST_fr
+    - action: utter_demander_sg_FST_fr
+
+- rule: demander_departements_FST
+  steps:
+    - intent: demander_departements_FST
+    - action: utter_demander_departements_FST
+
+- rule: demander_infrastructure_ar
+  steps:
+    - intent: demander_infrastructure_ar
+    - action: utter_demander_infrastructure_ar
+
+- rule: demander_infrastructure_fr
+  steps:
+    - intent: demander_infrastructure_fr
+    - action: utter_demander_infrastructure_fr
+
+# ══════════════════════════════════════════
+# FST - Vue générale et parcours
+# ══════════════════════════════════════════
+
+- rule: ask_fst
+  steps:
+    - intent: ask_fst
+    - action: utter_ask_fst
+
+- rule: ask_fst_licences
+  steps:
+    - intent: ask_fst_licences
+    - action: utter_ask_fst_licences
+
+- rule: ask_fst_parcours_bg
+  steps:
+    - intent: ask_fst_parcours_bg
+    - action: utter_ask_fst_parcours_bg
+
+- rule: ask_fst_parcours_mpi
+  steps:
+    - intent: ask_fst_parcours_mpi
+    - action: utter_ask_fst_parcours_mpi
+
+- rule: ask_fst_parcours_pc
+  steps:
+    - intent: ask_fst_parcours_pc
+    - action: utter_ask_fst_parcours_pc
+
+# ══════════════════════════════════════════
+# FST - L1 filières
+# ══════════════════════════════════════════
+
+- rule: demander_filieres_FST_L1
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+
+# ══════════════════════════════════════════
+# Résultats
+# ══════════════════════════════════════════
+
+- rule: demander_resultats_fst_ar
+  steps:
+    - intent: demander_resultats_fst_ar
+    - action: utter_demander_resultats_fst_ar
+
+- rule: demander_resultats_fst_fr
+  steps:
+    - intent: demander_resultats_fst_fr
+    - action: utter_demander_resultats_fst_fr

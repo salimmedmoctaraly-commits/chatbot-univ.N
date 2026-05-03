@@ -1,0 +1,13 @@
+version: "3.1"
+
+rules:
+
+  - rule: L1 Droit S1
+    steps:
+        - intent: ask_matieres_l1_droit_s1
+        - action: utter_ask_matieres_l1_droit_s1
+
+  - rule: L1 Droit S2
+    steps:
+        - intent: ask_matieres_l1_droit_s2
+        - action: utter_ask_matieres_l1_droit_s2

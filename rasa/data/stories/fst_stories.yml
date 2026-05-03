@@ -1,0 +1,195 @@
+version: "3.1"
+
+stories:
+
+# ══════════════════════════════════════════
+# FST - Conversations générales
+# ══════════════════════════════════════════
+
+- story: conversation_arabe_complete
+  steps:
+    - intent: saluer_ar
+    - action: utter_saluer_ar
+    - intent: presentation_fst_ar
+    - action: utter_presentation_fst_ar
+    - intent: au_revoir_ar
+    - action: utter_au_revoir_ar
+
+- story: conversation_française_complete
+  steps:
+    - intent: saluer_fr
+    - action: utter_saluer_fr
+    - intent: presentation_fst_fr
+    - action: utter_presentation_fst_fr
+    - intent: au_revoir_fr
+    - action: utter_au_revoir_fr
+
+# ══════════════════════════════════════════
+# FST - Présentation
+# ══════════════════════════════════════════
+
+- story: presentation_fst_ar
+  steps:
+    - intent: presentation_fst_ar
+    - action: utter_presentation_fst_ar
+
+- story: presentation_fst_fr
+  steps:
+    - intent: presentation_fst_fr
+    - action: utter_presentation_fst_fr
+
+- story: administration_ar
+  steps:
+    - intent: demander_doyen_FST_ar
+    - action: utter_demander_doyen_FST_ar
+    - intent: demander_vicedoyen_FST_ar
+    - action: utter_demander_vicedoyen_FST_ar
+    - intent: demander_sg_FST_ar
+    - action: utter_demander_sg_FST_ar
+
+- story: administration_fr
+  steps:
+    - intent: demander_doyen_FST_fr
+    - action: utter_demander_doyen_FST_fr
+    - intent: demander_vicedoyen_FST_fr
+    - action: utter_demander_vicedoyen_FST_fr
+    - intent: demander_sg_FST_fr
+    - action: utter_demander_sg_FST_fr
+
+- story: infrastructure_ar
+  steps:
+    - intent: demander_infrastructure_ar
+    - action: utter_demander_infrastructure_ar
+
+- story: infrastructure_fr
+  steps:
+    - intent: demander_infrastructure_fr
+    - action: utter_demander_infrastructure_fr
+
+- story: departements
+  steps:
+    - intent: demander_departements_FST
+    - action: utter_demander_departements_FST
+
+# ══════════════════════════════════════════
+# FST - L1 filières
+# ══════════════════════════════════════════
+
+- story: filieres_L1
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+
+- story: filiere_MPI_ar
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+    - intent: demander_info_MPI_ar
+    - action: utter_demander_info_MPI_ar
+
+- story: filiere_MPI_fr
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+    - intent: demander_info_MPI_fr
+    - action: utter_demander_info_MPI_fr
+
+- story: filiere_BG_ar
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+    - intent: demander_info_BG_ar
+    - action: utter_demander_info_BG_ar
+
+- story: filiere_BG_fr
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+    - intent: demander_info_BG_fr
+    - action: utter_demander_info_BG_fr
+
+- story: filiere_PC_ar
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+    - intent: demander_info_PC_ar
+    - action: utter_demander_info_PC_ar
+
+- story: filiere_PC_fr
+  steps:
+    - intent: demander_filieres_FST_L1
+    - action: utter_demander_filieres_FST_L1
+    - intent: demander_info_PC_fr
+    - action: utter_demander_info_PC_fr
+
+# ══════════════════════════════════════════
+# FST - Vue générale et parcours
+# ══════════════════════════════════════════
+
+- story: معلومات FST
+  steps:
+    - intent: ask_fst
+    - action: utter_ask_fst
+
+- story: شعب FST
+  steps:
+    - intent: ask_fst_licences
+    - action: utter_ask_fst_licences
+
+- story: FST ثم شعبها
+  steps:
+    - intent: ask_fst
+    - action: utter_ask_fst
+    - intent: ask_fst_licences
+    - action: utter_ask_fst_licences
+
+- story: مسار BG
+  steps:
+    - intent: ask_fst_parcours_bg
+    - action: utter_ask_fst_parcours_bg
+
+- story: مسار MPI
+  steps:
+    - intent: ask_fst_parcours_mpi
+    - action: utter_ask_fst_parcours_mpi
+
+- story: مسار PC
+  steps:
+    - intent: ask_fst_parcours_pc
+    - action: utter_ask_fst_parcours_pc
+
+- story: FST ثم مسار BG
+  steps:
+    - intent: ask_fst
+    - action: utter_ask_fst
+    - intent: ask_fst_parcours_bg
+    - action: utter_ask_fst_parcours_bg
+
+- story: FST ثم مسار MPI
+  steps:
+    - intent: ask_fst
+    - action: utter_ask_fst
+    - intent: ask_fst_parcours_mpi
+    - action: utter_ask_fst_parcours_mpi
+
+- story: FST ثم مسار PC
+  steps:
+    - intent: ask_fst
+    - action: utter_ask_fst
+    - intent: ask_fst_parcours_pc
+    - action: utter_ask_fst_parcours_pc
+
+
+# ══════════════════════════════════════════
+# Résultats
+# ══════════════════════════════════════════
+
+- story: resultats_fst_ar
+  steps:
+    - intent: demander_resultats_fst_ar
+    - action: utter_demander_resultats_fst_ar
+
+- story: resultats_fst_fr
+  steps:
+    - intent: demander_resultats_fst_fr
+    - action: utter_demander_resultats_fst_fr

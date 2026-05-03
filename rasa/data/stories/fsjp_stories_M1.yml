@@ -1,0 +1,46 @@
+version: "3.1"
+
+stories:
+  - story: Master Droit Public
+    steps:
+      - intent: ask_matieres_master_droit_public
+      - action: utter_ask_matieres_master_droit_public
+
+  - story: Master Entreprise Affaires
+    steps:
+      - intent: ask_matieres_master_entreprise_affaires
+      - action: utter_ask_matieres_master_entreprise_affaires
+
+  - story: Master Droits Homme
+    steps:
+      - intent: ask_matieres_master_droits_homme
+      - action: utter_ask_matieres_master_droits_homme
+
+  - story: Master Relations Internationales
+    steps:
+      - intent: ask_matieres_master_relations_internationales
+      - action: utter_ask_matieres_master_relations_internationales
+
+  - story: Master Droit Privé
+    steps:
+      - intent: ask_matieres_master_droit_prive
+      - action: utter_ask_matieres_master_droit_prive
+
+  - story: Master Maritime
+    steps:
+      - intent: ask_matieres_master_maritime
+      - action: utter_ask_matieres_master_maritime
+
+  - story: Découverte puis Master
+    steps:
+      - intent: ask_fsjp_info
+      - action: utter_ask_fsjp_info
+      - intent: ask_matieres_master_droit_public
+      - action: utter_ask_matieres_master_droit_public
+
+  - story: L3 puis Master
+    steps:
+      - intent: ask_matieres_droit_public_admin_l3_s6
+      - action: utter_ask_matieres_droit_public_admin_l3_s6
+      - intent: ask_matieres_master_droit_public
+      - action: utter_ask_matieres_master_droit_public

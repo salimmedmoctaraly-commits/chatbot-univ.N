@@ -1,0 +1,28 @@
+version: "3.1"
+
+nlu:
+ - intent: ask_matieres_l2_droit_s3
+   examples: |
+      - مواد السنة الثانية قانون الفصل الثالث
+      - ماذا ندرس في L2 دروا S3؟
+      - مقررات L2 قانون السداسي الثالث
+      - مواد S3 قانون ثانية
+      - ما مواد الفصل الثالث في قانون؟
+      - Matières L2 droit S3
+      - Quelles sont les matières de deuxième année droit S3?
+      - Programme L2 droit semestre 3
+      - Cours droit deuxième année semestre 3
+      - Que contient le S3 de L2 droit?
+
+ - intent: ask_matieres_l2_droit_s4
+   examples: |
+      - مواد السنة الثانية قانون الفصل الرابع
+      - ماذا ندرس في L2 دروا S4؟
+      - مقررات L2 قانون السداسي الرابع
+      - مواد S4 قانون ثانية
+      - ما مواد الفصل الرابع في قانون؟
+      - Matières L2 droit S4
+      - Quelles sont les matières de deuxième année droit S4?
+      - Programme L2 droit semestre 4
+      - Cours droit deuxième année semestre 4
+      - Que contient le S4 de L2 droit?

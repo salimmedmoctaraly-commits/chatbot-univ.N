@@ -1,0 +1,115 @@
+
+# ==================== L3 ====================
+version: "3.1"
+
+nlu:
+
+- intent: ask_matieres_economie_gestion_l3
+  examples: |
+    - مواد L3 اقتصاد تسيير
+    - ما هي مواد اقتصاد تسيير L3
+    - مواد السنة الثالثة اقتصاد تسيير
+    - L3 économie gestion matières
+    - quelles sont les matières L3 économie gestion
+    - matières troisième année économie gestion
+    - مواد L3 اقتصاد
+    - اقتصاد تسيير السنة الثالثة
+    - L3 Economie-Gestion
+    - matières L3 Economie-Gestion
+
+- intent: ask_matieres_fc_l3
+  examples: |
+    - مواد L3 مالية ومحاسبة
+    - ما هي مواد مالية ومحاسبة L3
+    - مواد السنة الثالثة مالية ومحاسبة
+    - L3 finance comptabilité matières
+    - quelles sont les matières L3 FC
+    - matières troisième année finance comptabilité
+    - مواد L3 FC
+    - مالية ومحاسبة السنة الثالثة
+    - L3 Finance et Comptabilité
+    - matières L3 FC
+
+- intent: ask_matieres_ba_l3
+  examples: |
+    - مواد L3 بنوك وتأمينات
+    - ما هي مواد بنوك وتأمينات L3
+    - مواد السنة الثالثة بنوك وتأمينات
+    - L3 banques assurances matières
+    - quelles sont les matières L3 BA
+    - matières troisième année banques assurances
+    - مواد L3 BA
+    - بنوك وتأمينات السنة الثالثة
+    - L3 Banques et Assurances
+    - matières L3 BA
+
+- intent: ask_matieres_grh_l3
+  examples: |
+    - مواد L3 تسيير الموارد البشرية
+    - ما هي مواد تسيير الموارد البشرية L3
+    - مواد السنة الثالثة GRH
+    - L3 GRH matières
+    - quelles sont les matières L3 GRH
+    - matières troisième année gestion ressources humaines
+    - مواد L3 GRH
+    - تسيير الموارد البشرية السنة الثالثة
+    - L3 Gestion des Ressources Humaines
+    - matières L3 GRH
+
+- intent: ask_matieres_economie_publique_l3
+  examples: |
+    - مواد L3 اقتصاد عمومي
+    - ما هي مواد اقتصاد عمومي L3
+    - مواد السنة الثالثة اقتصاد عمومي
+    - L3 économie publique matières
+    - quelles sont les matières L3 économie publique
+    - matières troisième année économie publique
+    - مواد L3 اقتصاد عمومي
+    - اقتصاد عمومي السنة الثالثة
+    - L3 Economie-Publique
+    - matières L3 Economie-Publique
+
+- intent: ask_matieres_gestion_entreprises_l3
+  examples: |
+    - مواد L3 gestion des entreprises
+    - ما هي مواد gestion des entreprises L3
+    - مواد السنة الثالثة gestion des entreprises
+    - L3 gestion entreprises matières
+    - quelles sont les matières L3 gestion entreprises
+    - matières troisième année gestion des entreprises
+    - مواد L3 تسيير المؤسسات
+    - تسيير المؤسسات السنة الثالثة
+    - L3 Gestion des Entreprises
+    - matières L3 Gestion des Entreprises
+    - برنامج L3 gestion entreprises
+    - دروس السنة الثالثة تسيير المؤسسات
+
+- intent: ask_matieres_techniques_projets_publics_l3
+  examples: |
+    - مواد L3 techniques projets publics
+    - ما هي مواد techniques projets publics L3
+    - مواد السنة الثالثة techniques projets publics
+    - L3 techniques projets publics matières
+    - quelles sont les matières L3 techniques projets publics
+    - matières troisième année techniques gestion projets publics
+    - مواد L3 تقنيات تسيير المشاريع العمومية
+    - تقنيات تسيير المشاريع العمومية السنة الثالثة
+    - L3 Techniques de Gestion des Projets Publics
+    - matières L3 Techniques Projets Publics
+    - برنامج L3 projets publics
+    - دروس السنة الثالثة تقنيات المشاريع العمومية
+
+- intent: ask_matieres_gestion_administration_publique_l3
+  examples: |
+    - مواد L3 gestion administration publique
+    - ما هي مواد gestion administration publique L3
+    - مواد السنة الثالثة gestion administration publique
+    - L3 gestion administration publique matières
+    - quelles sont les matières L3 administration publique
+    - matières troisième année gestion administration publique
+    - مواد L3 تسيير الإدارة العمومية
+    - تسيير الإدارة العمومية السنة الثالثة
+    - L3 Gestion de l'Administration Publique
+    - matières L3 Administration Publique
+    - برنامج L3 administration publique
+    - دروس السنة الثالثة تسيير الإدارة العمومية

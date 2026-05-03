@@ -1,0 +1,32 @@
+version: "3.1"
+
+rules:
+  - rule: Master Droit Public
+    steps:
+      - intent: ask_matieres_master_droit_public
+      - action: utter_ask_matieres_master_droit_public
+
+  - rule: Master Entreprise Affaires
+    steps:
+      - intent: ask_matieres_master_entreprise_affaires
+      - action: utter_ask_matieres_master_entreprise_affaires
+
+  - rule: Master Droits Homme
+    steps:
+      - intent: ask_matieres_master_droits_homme
+      - action: utter_ask_matieres_master_droits_homme
+
+  - rule: Master Relations Internationales
+    steps:
+      - intent: ask_matieres_master_relations_internationales
+      - action: utter_ask_matieres_master_relations_internationales
+
+  - rule: Master Droit Prive
+    steps:
+      - intent: ask_matieres_master_droit_prive
+      - action: utter_ask_matieres_master_droit_prive
+
+  - rule: Master Maritime
+    steps:
+      - intent: ask_matieres_master_maritime
+      - action: utter_ask_matieres_master_maritime

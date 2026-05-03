@@ -1,0 +1,107 @@
+version: "3.1"
+
+stories:
+- story: مسار L2 اقتصاد تسيير
+  steps:
+  - intent: ask_matieres_economie_gestion_l2
+  - action: utter_ask_matieres_economie_gestion_l2
+
+- story: مسار L2 مالية ومحاسبة
+  steps:
+  - intent: ask_matieres_fc_l2
+  - action: utter_ask_matieres_fc_l2
+
+- story: مسار L2 بنوك وتأمينات
+  steps:
+  - intent: ask_matieres_ba_l2
+  - action: utter_ask_matieres_ba_l2
+
+- story: مسار L2 تسيير الموارد البشرية
+  steps:
+  - intent: ask_matieres_grh_l2
+  - action: utter_ask_matieres_grh_l2
+
+- story: مسار L2 Gestion des Entreprises
+  steps:
+  - intent: ask_matieres_gestion_entreprises_l2
+  - action: utter_ask_matieres_gestion_entreprises_l2
+
+- story: مسار L2 Techniques de Gestion des Projets Publics
+  steps:
+  - intent: ask_matieres_techniques_projets_publics_l2
+  - action: utter_ask_matieres_techniques_projets_publics_l2
+
+- story: مسار L2 Gestion de l'Administration Publique
+  steps:
+  - intent: ask_matieres_gestion_administration_publique_l2
+  - action: utter_ask_matieres_gestion_administration_publique_l2
+
+# ==================== Stories combinées L1→L2→L3 ====================
+
+- story: مسار L1 ثم L2 اقتصاد تسيير
+  steps:
+  - intent: ask_matieres_economie_gestion_l1
+  - action: utter_ask_matieres_economie_gestion_l1
+  - intent: ask_matieres_economie_gestion_l2
+  - action: utter_ask_matieres_economie_gestion_l2
+
+- story: مسار L2 ثم L3 اقتصاد تسيير
+  steps:
+  - intent: ask_matieres_economie_gestion_l2
+  - action: utter_ask_matieres_economie_gestion_l2
+  - intent: ask_matieres_economie_gestion_l3
+  - action: utter_ask_matieres_economie_gestion_l3
+
+- story: مسار L1 ثم L2 ثم L3 مالية ومحاسبة
+  steps:
+  - intent: ask_matieres_fc_l1
+  - action: utter_ask_matieres_fc_l1
+  - intent: ask_matieres_fc_l2
+  - action: utter_ask_matieres_fc_l2
+  - intent: ask_matieres_fc_l3
+  - action: utter_ask_matieres_fc_l3
+
+- story: مسار L1 ثم L2 ثم L3 بنوك وتأمينات
+  steps:
+  - intent: ask_matieres_ba_l1
+  - action: utter_ask_matieres_ba_l1
+  - intent: ask_matieres_ba_l2
+  - action: utter_ask_matieres_ba_l2
+  - intent: ask_matieres_ba_l3
+  - action: utter_ask_matieres_ba_l3
+
+- story: مسار L1 ثم L2 ثم L3 GRH
+  steps:
+  - intent: ask_matieres_grh_l1
+  - action: utter_ask_matieres_grh_l1
+  - intent: ask_matieres_grh_l2
+  - action: utter_ask_matieres_grh_l2
+  - intent: ask_matieres_grh_l3
+  - action: utter_ask_matieres_grh_l3
+
+- story: مسار L1 ثم L2 ثم L3 Gestion des Entreprises
+  steps:
+  - intent: ask_matieres_gestion_entreprises_l1
+  - action: utter_ask_matieres_gestion_entreprises_l1
+  - intent: ask_matieres_gestion_entreprises_l2
+  - action: utter_ask_matieres_gestion_entreprises_l2
+  - intent: ask_matieres_gestion_entreprises_l3
+  - action: utter_ask_matieres_gestion_entreprises_l3
+
+- story: مسار L1 ثم L2 ثم L3 Techniques Projets Publics
+  steps:
+  - intent: ask_matieres_techniques_projets_publics_l1
+  - action: utter_ask_matieres_techniques_projets_publics_l1
+  - intent: ask_matieres_techniques_projets_publics_l2
+  - action: utter_ask_matieres_techniques_projets_publics_l2
+  - intent: ask_matieres_techniques_projets_publics_l3
+  - action: utter_ask_matieres_techniques_projets_publics_l3
+
+- story: مسار L1 ثم L2 ثم L3 Administration Publique
+  steps:
+  - intent: ask_matieres_gestion_administration_publique_l1
+  - action: utter_ask_matieres_gestion_administration_publique_l1
+  - intent: ask_matieres_gestion_administration_publique_l2
+  - action: utter_ask_matieres_gestion_administration_publique_l2
+  - intent: ask_matieres_gestion_administration_publique_l3
+  - action: utter_ask_matieres_gestion_administration_publique_l3

@@ -1,0 +1,59 @@
+version: "3.1"
+
+nlu:
+
+# ==================== PCEM1 — MÉDECINE ====================
+
+- intent: ask_matieres_pcem1_s1
+  examples: |
+    - مواد PCEM1 السداسي الأول
+    - ما هي مواد S1 PCEM1
+    - برنامج PCEM1 S1
+    - دروس PCEM1 الفصل الأول
+    - مواد السنة الأولى طب S1
+    - matières PCEM1 S1
+    - quelles sont les matières PCEM1 premier semestre
+    - programme PCEM1 S1
+    - cours PCEM1 semestre 1
+    - matières semestre 1 première année médecine
+    - PCEM1 S1 médecine
+    - مواد الطب السنة الأولى S1
+    - programme S1 médecine première année
+    - S1 PCEM1 طب
+    - matières S1 médecine
+
+- intent: ask_matieres_pcem1_s2
+  examples: |
+    - مواد PCEM1 السداسي الثاني
+    - ما هي مواد S2 PCEM1
+    - برنامج PCEM1 S2
+    - دروس PCEM1 الفصل الثاني
+    - مواد السنة الأولى طب S2
+    - matières PCEM1 S2
+    - quelles sont les matières PCEM1 deuxième semestre
+    - programme PCEM1 S2
+    - cours PCEM1 semestre 2
+    - matières semestre 2 première année médecine
+    - PCEM1 S2 médecine
+    - مواد الطب السنة الأولى S2
+    - programme S2 médecine première année
+    - S2 PCEM1 طب
+    - matières S2 médecine
+
+- intent: ask_matieres_medecine_pcem1
+  examples: |
+    - مواد PCEM1 طب
+    - ما هي كل مواد PCEM1
+    - برنامج السنة الأولى طب
+    - دروس السنة الأولى في الطب
+    - ماذا ندرس في PCEM1
+    - matières PCEM1 médecine
+    - quel est le programme de PCEM1
+    - cours première année médecine
+    - programme complet PCEM1
+    - toutes les matières PCEM1
+    - PCEM1 médecine programme
+    - مجموع مواد PCEM1
+    - كل مواد السنة الأولى طب
+    - programme PCEM1 complet
+    - مواد السنة الأولى كلية الطب

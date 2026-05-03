@@ -1,0 +1,234 @@
+version: "3.1"
+
+nlu:
+
+# CNIM — مسابقة المهندسين
+
+- intent: demander_cnim_ar
+  examples: |
+    - مسابقة cnim
+    - ما هي cnim
+    - cnim ما هي
+    - معلومات عن cnim
+    - أخبرني عن cnim
+    - مسابقة المهندسين
+    - المسابقة الوطنية للمهندسين
+    - cnim موريتانيا
+    - كيف أشارك في cnim
+    - ما هو cnim
+    - مسابقة الدخول للمهندسين
+    - cnim 2026
+    - شرح cnim
+    - مسارات cnim
+    - cnim مساران
+    - cnim voie 1 و voie 2
+    - ما هي مدارس المهندسين
+    - esp و ipgei
+    - كيف أدخل مدرسة المهندسين
+    - مسابقة esp ipgei
+
+- intent: demander_cnim_fr
+  examples: |
+    - concours cnim
+    - c'est quoi cnim
+    - cnim c'est quoi
+    - informations sur cnim
+    - parle moi de cnim
+    - concours des ingénieurs
+    - concours national ingénieurs
+    - cnim mauritanie
+    - comment participer au cnim
+    - qu'est-ce que le cnim
+    - concours d'entrée ingénieurs
+    - cnim 2025
+    - explication cnim
+    - voies cnim
+    - cnim voie 1 et voie 2
+    - quelles sont les écoles d'ingénieurs
+    - esp et ipgei
+    - comment intégrer une école d'ingénieurs
+    - concours esp ipgei
+    - accès cycle ingénieur mauritanie
+
+- intent: demander_cnim_epreuves_ar
+  examples: |
+    - جدول اختبارات cnim
+    - مواد مسابقة cnim
+    - توقيت cnim
+    - برنامج cnim 2025
+    - ما هي مواد مسابقة cnim
+    - متى تبدأ اختبارات cnim
+    - جدول cnim 2025
+    - معاملات مواد cnim
+    - مادة الرياضيات في cnim
+    - مادة الفيزياء في cnim
+    - مادة الفرنسية في cnim
+    - مادة الإعلاميات في cnim
+    - توقيت اختبارات cnim
+    - كم ساعة اختبار cnim
+    - برنامج المسابقة الوطنية للمهندسين
+    - ما هي المدارس المستهدفة في cnim
+    - esp و ipgei مسابقة
+    - تواريخ اختبارات cnim
+    - ما هي معاملات cnim
+    - جدول مسابقة المهندسين 2025
+
+- intent: demander_cnim_epreuves_fr
+  examples: |
+    - épreuves cnim
+    - calendrier cnim
+    - matières du concours cnim
+    - horaires cnim 2025
+    - quelles sont les matières du cnim
+    - quand commencent les épreuves cnim
+    - programme cnim 2025
+    - coefficients des matières cnim
+    - matière mathématiques cnim
+    - matière physique chimie cnim
+    - matière français cnim
+    - matière informatique cnim
+    - durée des épreuves cnim
+    - dates des épreuves cnim
+    - programme concours national ingénieurs
+    - quelles écoles visées par cnim
+    - esp et ipgei concours
+    - coefficient anglais cnim
+    - coefficient science ingénieur cnim
+    - calendrier concours ingénieurs 2025
+
+- intent: demander_cnim_voie1_ar
+  examples: |
+    - المسار الأول cnim
+    - voie 1 knim
+    - cnim ipgeii
+    - شروط المسار الأول
+    - cpge أجنبية cnim
+    - كيف أشارك في المسار الأول
+    - تسجيل cnim voie 1
+    - موعد تسجيل المسار الأول
+    - وثائق المسار الأول cnim
+    - شروط ipgei للمسابقة
+    - concourscnim2026
+    - 28 مايو cnim
+    - esp أو eso اختيار
+    - كشوف نقاط cpge
+    - من يشارك في المسار الأول
+    - طالب ipgei مسابقة
+    - مسابقة المهندسين المسار الأول
+    - framaforms knim voie 1
+    - السنة الثانية تحضيرية cnim
+    - شرط العمر cnim voie 1
+
+- intent: demander_cnim_voie1_fr
+  examples: |
+    - voie 1 cnim
+    - cnim ipgei
+    - conditions voie 1
+    - cpge étrangères cnim
+    - comment participer voie 1
+    - inscription cnim voie 1
+    - date limite voie 1 cnim
+    - dossier voie 1 cnim
+    - conditions ipgei concours
+    - concourscnim2025
+    - 28 mai cnim
+    - choisir esp ou eso
+    - relevés de notes cpge
+    - qui participe voie 1
+    - étudiant ipgei concours
+    - concours ingénieurs voie 1
+    - framaforms cnim voie 1
+    - 2ème année préparatoire cnim
+    - condition âge cnim voie 1
+    - une seule participation cnim
+
+- intent: demander_cnim_voie2_ar
+  examples: |
+    - المسار الثاني cnim
+    - voie 2 cniim
+    - cnim 14
+    - شروط المسار الثاني
+    - طالب l3 مسابقة
+    - من أفضل 10 بالمئة
+    - كيف أشارك في المسار الثاني
+    - تسجيل cnim voie 2
+    - موعد تسجيل المسار الثاني
+    - وثائق المسار الثاني cnim
+    - concourscnimvoie2-2026
+    - 7 يونيو cnim
+    - مقابلات cnim
+    - 16 يونيو مقابلات
+    - طالب جامعة حكومية مسابقة
+    - framaformss cnim voie 2
+    - ترتيب الدفعة cnim
+    - شرط العمر cnim voie 2
+    - مسابقة المهندسين المسار الثاني
+    - لم أشارك في cnim من قبل
+
+- intent: demander_cnim_voie2_fr
+  examples: |
+    - voie 2 cnim
+    - cnim l3
+    - conditions voie 2
+    - étudiant l3 concours
+    - top 10 pourcent promotion
+    - comment participer voie 2
+    - inscription cnim voie 2
+    - date limite voie 2 cnim
+    - dossier voie 2 cnim
+    - concourscnimvoie2-2025
+    - 7 juin cnim
+    - entretiens cnim
+    - 16 juin entretiens
+    - étudiant établissement public concours
+    - framaforms cnim voie 2
+    - classement promotion cnim
+    - condition âge cnim voie 2
+    - concours ingénieurs voie 2
+    - jamais participé au cnim
+    - licence établissement public cnim
+
+- intent: demander_Nuit_Info
+  examples: |
+    -Qu’est-ce que la Nuit de l’Info ?
+    - Quel est l’objectif de la Nuit de l’Info ?
+    - Quand se déroule l’événement ?
+    - Combien de temps dure la compétition ?
+    - Qui peut participer à la Nuit de l’Info ?
+    - Est-ce réservé uniquement aux étudiants ?
+    - Quel type de projet doit-on développer ?
+    - Faut-il créer une application web ?
+    - Y a-t-il des prix pour les gagnants ?
+    - Quels sont les défis proposés ?
+    - Peut-on participer à distance ?
+    - Comment se forment les équipes ?
+    - Faut-il avoir de l’expérience en programmation ?
+    - Qui sont les partenaires industriels ?
+    - Où peut-on s’inscrire à la compétition ?
+    - chnhi Nuit de l’Info ?
+    - Nuit de l’Info 2025 2026
+    - Nuit de l’Info Mauritanie
+    - Nuit de l’Info 2025 Mauritanie
+    - Nuit de l’Info 2026 Mauritanie
+    - Nuit de l’Info explication
+    - Nuit de l’Info objectifs
+    - Nuit de l’Info durée
+    - Nuit de l’Info participants
+    - Nuit de l’Info projets
+    - Nuit de l’Info FST
+    - Nuit de l’Info comment participer
+    - Nuit de l’Info spécialités FST
+    - ما الهدف من Nuit de l’Info؟
+    - متى تقام المسابقة؟
+    - كم تدوم مدة الحدث؟
+    - من يمكنه المشاركة في المسابقة؟
+    - هل المسابقة مخصصة للطلاب فقط؟
+    - ما نوع المشاريع المطلوبة？
+    - هل يجب تطوير تطبيق ويب؟
+    - هل هناك جوائز للفائزين؟
+    - ما هي التحديات التي تقدم خلال الحدث؟
+    - هل يمكن المشاركة عن بعد؟
+    - كيف يتم تشكيل الفرق؟
+    - هل تحتاج إلى خبرة برمجية للمشاركة؟
+    - من هم الشركاء الصناعيون؟
+    - أين يمكنني التسجيل في المسابقة؟

@@ -1,0 +1,110 @@
+version: "3.1"
+
+rules:
+
+# ══════════════════════════════════════════
+# L1 - Infos filières
+# ══════════════════════════════════════════
+
+- rule: demander_info_MPI_ar
+  steps:
+    - intent: demander_info_MPI_ar
+    - action: utter_demander_info_MPI_ar
+
+- rule: demander_info_MPI_fr
+  steps:
+    - intent: demander_info_MPI_fr
+    - action: utter_demander_info_MPI_fr
+
+- rule: demander_info_BG_ar
+  steps:
+    - intent: demander_info_BG_ar
+    - action: utter_demander_info_BG_ar
+
+- rule: demander_info_BG_fr
+  steps:
+    - intent: demander_info_BG_fr
+    - action: utter_demander_info_BG_fr
+
+- rule: demander_info_PC_ar
+  steps:
+    - intent: demander_info_PC_ar
+    - action: utter_demander_info_PC_ar
+
+- rule: demander_info_PC_fr
+  steps:
+    - intent: demander_info_PC_fr
+    - action: utter_demander_info_PC_fr
+
+# ══════════════════════════════════════════
+# L1 - Matières
+# ══════════════════════════════════════════
+
+- rule: demander_matieres_MPI_S1
+  steps:
+    - intent: demander_matieres_MPI_S1
+    - action: utter_demander_matieres_MPI_S1
+
+- rule: demander_matieres_MPI_S2
+  steps:
+    - intent: demander_matieres_MPI_S2
+    - action: utter_demander_matieres_MPI_S2
+
+- rule: demander_matieres_BG_S1
+  steps:
+    - intent: demander_matieres_BG_S1
+    - action: utter_demander_matieres_BG_S1
+
+- rule: demander_matieres_BG_S2
+  steps:
+    - intent: demander_matieres_BG_S2
+    - action: utter_demander_matieres_BG_S2
+
+- rule: demander_matieres_PC_S1
+  steps:
+    - intent: demander_matieres_PC_S1
+    - action: utter_demander_matieres_PC_S1
+
+- rule: demander_matieres_PC_S2_ar
+  steps:
+    - intent: demander_matieres_PC_S2_ar
+    - action: utter_demander_matieres_PC_S2_ar
+
+- rule: demander_matieres_PC_S2_fr
+  steps:
+    - intent: demander_matieres_PC_S2_fr
+    - action: utter_demander_matieres_PC_S2_fr
+
+# ══════════════════════════════════════════
+# L2 - Spécialités
+# ══════════════════════════════════════════
+
+- rule: demander_specialites_MPI_ar
+  steps:
+    - intent: demander_specialites_MPI_ar
+    - action: utter_demander_specialites_MPI_ar
+
+- rule: demander_specialites_MPI_fr
+  steps:
+    - intent: demander_specialites_MPI_fr
+    - action: utter_demander_specialites_MPI_fr
+
+- rule: demander_specialites_BG_ar
+  steps:
+    - intent: demander_specialites_BG_ar
+    - action: utter_demander_specialites_BG_ar
+
+- rule: demander_specialites_BG_fr
+  steps:
+    - intent: demander_specialites_BG_fr
+    - action: utter_demander_specialites_BG_fr
+
+- rule: demander_specialites_PC_ar
+  steps:
+    - intent: demander_specialites_PC_ar
+    - action: utter_demander_specialites_PC_ar
+
+- rule: demander_specialites_PC_fr
+  steps:
+    - intent: demander_specialites_PC_fr
+    - action: utter_demander_specialites_PC_fr

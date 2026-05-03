@@ -1,0 +1,98 @@
+version: "3.1"
+
+stories:
+
+- story: مواد L1 FLSH عامة
+  steps:
+    - intent: ask_matieres_flsh_l1
+    - action: utter_ask_matieres_flsh_l1
+
+# ── مواد L1 حسب التخصص ──────────────────
+
+- story: مواد العربية L1
+  steps:
+    - intent: ask_matieres_arabe_l1
+    - action: utter_ask_matieres_arabe_l1
+
+- story: مواد الفرنسية L1
+  steps:
+    - intent: ask_matieres_francais_l1
+    - action: utter_ask_matieres_francais_l1
+
+- story: مواد الإنجليزية L1
+  steps:
+    - intent: ask_matieres_anglais_l1
+    - action: utter_ask_matieres_anglais_l1
+
+- story: مواد الإسبانية L1
+  steps:
+    - intent: ask_matieres_espagnol_l1
+    - action: utter_ask_matieres_espagnol_l1
+
+- story: مواد التركية L1
+  steps:
+    - intent: ask_matieres_turc_l1
+    - action: utter_ask_matieres_turc_l1
+
+- story: مواد الصينية L1
+  steps:
+    - intent: ask_matieres_chinois_l1
+    - action: utter_ask_matieres_chinois_l1
+
+- story: مواد اللغات الوطنية L1
+  steps:
+    - intent: ask_matieres_langues_nationales_l1
+    - action: utter_ask_matieres_langues_nationales_l1
+
+- story: مواد الفلسفة L1
+  steps:
+    - intent: ask_matieres_philosophie_l1
+    - action: utter_ask_matieres_philosophie_l1
+
+- story: مواد علم الاجتماع L1
+  steps:
+    - intent: ask_matieres_sociologie_l1
+    - action: utter_ask_matieres_sociologie_l1
+
+- story: مواد التاريخ L1
+  steps:
+    - intent: ask_matieres_histoire_l1
+    - action: utter_ask_matieres_histoire_l1
+
+- story: مواد الجغرافيا L1
+  steps:
+    - intent: ask_matieres_geographie_l1
+    - action: utter_ask_matieres_geographie_l1
+
+- story: مواد العمل الاجتماعي L1
+  steps:
+    - intent: ask_matieres_travail_social_l1
+    - action: utter_ask_matieres_travail_social_l1
+
+- story: مواد التنمية المحلية L1
+  steps:
+    - intent: ask_matieres_developpement_local_l1
+    - action: utter_ask_matieres_developpement_local_l1
+
+- story: مواد البيئة L1
+  steps:
+    - intent: ask_matieres_environnement_l1
+    - action: utter_ask_matieres_environnement_l1
+
+# ── محادثات FLSH متعددة الخطوات ──────────
+
+- story: FLSH ثم مواد العربية
+  steps:
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+    - intent: ask_matieres_flsh_l1
+    - action: utter_ask_matieres_flsh_l1
+    - intent: ask_matieres_arabe_l1
+    - action: utter_ask_matieres_arabe_l1
+
+- story: FLSH ثم مواد الفرنسية
+  steps:
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+    - intent: ask_matieres_francais_l1
+    - action: utter_ask_matieres_francais_l1

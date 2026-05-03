@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: مواد PCEP1 S1
+  steps:
+  - intent: ask_matieres_pcep1_s1
+  - action: utter_ask_matieres_pcep1
+
+- rule: مواد PCEP1 S2
+  steps:
+  - intent: ask_matieres_pcep1_s2
+  - action: utter_ask_matieres_pcep1
+
+- rule: مواد PCEP1 كاملة
+  steps:
+  - intent: ask_matieres_pcep1
+  - action: utter_ask_matieres_pcep1

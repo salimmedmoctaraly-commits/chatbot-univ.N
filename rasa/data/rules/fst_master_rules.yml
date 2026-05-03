@@ -1,0 +1,171 @@
+version: "3.1"
+
+rules:
+
+# ══════════════════════════════════════════
+# Master 1 — général
+# ══════════════════════════════════════════
+
+- rule: demander_masters_ar
+  steps:
+    - intent: demander_masters_ar
+    - action: utter_demander_masters_ar
+
+- rule: demander_masters_fr
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+
+- rule: demander_doctorat_ar
+  steps:
+    - intent: demander_doctorat_ar
+    - action: utter_demander_doctorat_ar
+
+- rule: demander_doctorat_fr
+  steps:
+    - intent: demander_doctorat_fr
+    - action: utter_demander_doctorat_fr
+
+- rule: masters_disponibles_MA_ar
+  steps:
+    - intent: masters_disponibles_MA_ar
+    - action: utter_masters_disponibles_MA_ar
+
+- rule: masters_disponibles_MA_fr
+  steps:
+    - intent: masters_disponibles_MA_fr
+    - action: utter_masters_disponibles_MA_fr
+
+- rule: masters_disponibles_MI_ar
+  steps:
+    - intent: masters_disponibles_MI_ar
+    - action: utter_masters_disponibles_MI_ar
+
+- rule: masters_disponibles_MI_fr
+  steps:
+    - intent: masters_disponibles_MI_fr
+    - action: utter_masters_disponibles_MI_fr
+
+# ══════════════════════════════════════════
+# Vue générale Master/Doctorat
+# ══════════════════════════════════════════
+
+- rule: ask_master
+  steps:
+    - intent: ask_master
+    - action: utter_ask_master
+
+- rule: ask_doctorat
+  steps:
+    - intent: ask_doctorat
+    - action: utter_ask_doctorat
+
+# ══════════════════════════════════════════
+# Master 2 — Informatique/IA
+# ══════════════════════════════════════════
+
+- rule: M2_IA_MLDS_fr
+  steps:
+    - intent: M2_IA_MLDS_fr
+    - action: utter_M2_IA_MLDS_fr
+
+- rule: M2_IA_NLPCV_fr
+  steps:
+    - intent: M2_IA_NLPCV_fr
+    - action: utter_M2_IA_NLPCV_fr
+
+- rule: M2_ISDR_SI_fr
+  steps:
+    - intent: M2_ISDR_SI_fr
+    - action: utter_M2_ISDR_SI_fr
+
+- rule: M2_ISDR_RSC_fr
+  steps:
+    - intent: M2_ISDR_RSC_fr
+    - action: utter_M2_ISDR_RSC_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Mathématiques/Stats
+# ══════════════════════════════════════════
+
+- rule: M2_MA_IMCS_fr
+  steps:
+    - intent: M2_MA_IMCS_fr
+    - action: utter_M2_MA_IMCS_fr
+
+- rule: M2_SDD_fr
+  steps:
+    - intent: M2_SDD_fr
+    - action: utter_M2_SDD_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Énergie/Physique
+# ══════════════════════════════════════════
+
+- rule: M2_ER_fr
+  steps:
+    - intent: M2_ER_fr
+    - action: utter_M2_ER_fr
+
+- rule: M2_2M_fr
+  steps:
+    - intent: M2_2M_fr
+    - action: utter_M2_2M_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Géologie/Mines
+# ══════════════════════════════════════════
+
+- rule: M2_GEOLOGIE_fr
+  steps:
+    - intent: M2_GEOLOGIE_fr
+    - action: utter_M2_GEOLOGIE_fr
+
+- rule: M2_MINE_fr
+  steps:
+    - intent: M2_MINE_fr
+    - action: utter_M2_MINE_fr
+
+- rule: M2_2E_fr
+  steps:
+    - intent: M2_2E_fr
+    - action: utter_M2_2E_fr
+
+# ══════════════════════════════════════════
+# Master 2 — Biologie/Chimie
+# ══════════════════════════════════════════
+
+- rule: M2_BMPB_fr
+  steps:
+    - intent: M2_BMPB_fr
+    - action: utter_M2_BMPB_fr
+
+- rule: M2_BOMVRH_fr
+  steps:
+    - intent: M2_BOMVRH_fr
+    - action: utter_M2_BOMVRH_fr
+
+- rule: M2_BEES_fr
+  steps:
+    - intent: M2_BEES_fr
+    - action: utter_M2_BEES_fr
+
+- rule: M2_NS_fr
+  steps:
+    - intent: M2_NS_fr
+    - action: utter_M2_NS_fr
+
+- rule: M2_TASSMQ_fr
+  steps:
+    - intent: M2_TASSMQ_fr
+    - action: utter_M2_TASSMQ_fr
+
+- rule: M2_SN_fr
+  steps:
+    - intent: M2_SN_fr
+    - action: utter_M2_SN_fr
+
+- rule: M2_MATERIAUX_fr
+  steps:
+    - intent: M2_MATERIAUX_fr
+    - action: utter_M2_MATERIAUX_fr

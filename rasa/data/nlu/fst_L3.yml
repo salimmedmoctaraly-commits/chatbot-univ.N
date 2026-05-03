@@ -1,0 +1,620 @@
+version: "3.1"
+
+nlu:
+
+# ═══════════════════════════════════════════════════════
+# FST L3 — S3+S4 puis S5+S6
+# ═══════════════════════════════════════════════════════
+
+- intent: demander_matieres_DA2I
+  examples: |
+    - ما هي مواد DA2I؟
+    - Matières DA2I
+    - cours DA2I
+    - مقررات DA2I
+    - programme DA2I
+    - modules DA2I
+    - DA2I quels cours ?
+    - ماذا يُدرَّس في DA2I؟
+    - DA2I matières liste
+    - DA2I programme complet
+    - DA2I مواد
+    - تطوير وإدارة الأنظمة مواد
+    - DA2I S3 S4
+    - matières DA2I S3
+    - modules DA2I S3
+    - cours DA2I S3
+    - programme DA2I S3
+    - liste matières DA2I semestre 3
+    - DA2I S3 quels cours
+    - DA2I troisième semestre matières
+    - مواد DA2I S3
+    - مواد السداسي الثالث DA2I
+    - برنامج DA2I S3
+    - matières DA2I S4
+    - modules DA2I S4
+    - cours DA2I S4
+    - programme DA2I S4
+    - liste matières DA2I semestre 4
+    - DA2I S4 quels cours
+    - DA2I quatrième semestre matières
+    - مواد DA2I S4
+    - مواد السداسي الرابع DA2I
+    - برنامج DA2I S4
+    - DA2I S5 S6
+    - matières DA2I S5
+    - modules DA2I S5
+    - cours DA2I S5
+    - programme DA2I S5
+    - DA2I cinquième semestre matières
+    - مواد DA2I S5
+    - مواد السداسي الخامس DA2I
+    - برنامج DA2I S5
+    - matières DA2I S6
+    - modules DA2I S6
+    - cours DA2I S6
+    - programme DA2I S6
+    - DA2I sixième semestre matières
+    - مواد DA2I S6
+    - مواد السداسي السادس DA2I
+    - برنامج DA2I S6
+
+- intent: demander_matieres_MIAGE
+  examples: |
+    - ما هي مواد MIAGE؟
+    - Matières MIAGE
+    - cours MIAGE
+    - مقررات MIAGE
+    - programme MIAGE
+    - modules MIAGE
+    - MIAGE quels cours ?
+    - ماذا يُدرَّس في MIAGE؟
+    - MIAGE matières liste
+    - MIAGE programme complet
+    - MIAGE مواد
+    - MIAGE S3 S4
+    - matières MIAGE S3
+    - modules MIAGE S3
+    - cours MIAGE S3
+    - programme MIAGE S3
+    - liste matières MIAGE semestre 3
+    - MIAGE S3 quels cours
+    - MIAGE troisième semestre matières
+    - مواد MIAGE S3
+    - مواد السداسي الثالث MIAGE
+    - برنامج MIAGE S3
+    - matières MIAGE S4
+    - modules MIAGE S4
+    - cours MIAGE S4
+    - programme MIAGE S4
+    - liste matières MIAGE semestre 4
+    - MIAGE S4 quels cours
+    - MIAGE quatrième semestre matières
+    - مواد MIAGE S4
+    - مواد السداسي الرابع MIAGE
+    - برنامج MIAGE S4
+    - MIAGE S5 S6
+    - matières MIAGE S5
+    - modules MIAGE S5
+    - cours MIAGE S5
+    - programme MIAGE S5
+    - MIAGE cinquième semestre matières
+    - مواد MIAGE S5
+    - مواد السداسي الخامس MIAGE
+    - برنامج MIAGE S5
+    - matières MIAGE S6
+    - modules MIAGE S6
+    - cours MIAGE S6
+    - programme MIAGE S6
+    - MIAGE sixième semestre matières
+    - مواد MIAGE S6
+    - مواد السداسي السادس MIAGE
+    - برنامج MIAGE S6
+
+- intent: demander_matieres_MA
+  examples: |
+    - ما هي مواد MA؟
+    - Matières MA
+    - cours Mathématiques et Applications
+    - مقررات MA
+    - programme MA L3
+    - modules MA
+    - MA quels cours ?
+    - ماذا يُدرَّس في MA؟
+    - MA matières liste
+    - MA programme complet
+    - MA مواد
+    - رياضيات وتطبيقات مواد
+    - MA S5 S6
+    - matières MA S5
+    - modules MA S5
+    - cours MA S5
+    - programme MA S5
+    - liste matières MA semestre 5
+    - MA cinquième semestre matières
+    - مواد MA S5
+    - مواد السداسي الخامس MA
+    - برنامج MA S5
+    - matières MA S6
+    - modules MA S6
+    - cours MA S6
+    - programme MA S6
+    - liste matières MA semestre 6
+    - MA sixième semestre matières
+    - مواد MA S6
+    - مواد السداسي السادس MA
+    - برنامج MA S6
+
+- intent: demander_matieres_MI
+  examples: |
+    - ما هي مواد MI؟
+    - Matières MI
+    - cours Mathématiques et Informatique
+    - مقررات MI
+    - programme MI L3
+    - modules MI
+    - MI quels cours ?
+    - Quelles sont les matières en MI ?
+    - ماذا يُدرَّس في MI؟
+    - MI matières liste
+    - MI programme complet
+    - MI مواد
+    - رياضيات ومعلوماتية مواد
+    - MI S5 S6
+    - matières MI S5
+    - modules MI S5
+    - cours MI S5
+    - programme MI S5
+    - liste matières MI semestre 5
+    - MI cinquième semestre matières
+    - مواد MI S5
+    - مواد السداسي الخامس MI
+    - برنامج MI S5
+    - matières MI S6
+    - modules MI S6
+    - cours MI S6
+    - programme MI S6
+    - liste matières MI semestre 6
+    - MI sixième semestre matières
+    - مواد MI S6
+    - مواد السداسي السادس MI
+    - برنامج MI S6
+
+- intent: demander_matieres_PF
+  examples: |
+    - ما هي مواد PF؟
+    - Matières PF
+    - cours Physique Fondamentale
+    - مقررات PF
+    - programme PF
+    - modules PF
+    - PF quels cours ?
+    - ماذا يُدرَّس في PF؟
+    - PF matières liste
+    - PF programme complet
+    - PF مواد
+    - فيزياء أساسية مواد
+    - PF S3 S4
+    - matières PF S3
+    - modules PF S3
+    - cours PF S3
+    - programme PF S3
+    - liste matières PF semestre 3
+    - PF troisième semestre matières
+    - مواد PF S3
+    - مواد السداسي الثالث PF
+    - برنامج PF S3
+    - matières PF S4
+    - modules PF S4
+    - cours PF S4
+    - programme PF S4
+    - liste matières PF semestre 4
+    - PF quatrième semestre matières
+    - مواد PF S4
+    - مواد السداسي الرابع PF
+    - برنامج PF S4
+    - PF S5 S6
+    - matières PF S5
+    - modules PF S5
+    - cours PF S5
+    - programme PF S5
+    - PF cinquième semestre matières
+    - مواد PF S5
+    - مواد السداسي الخامس PF
+    - برنامج PF S5
+    - matières PF S6
+    - modules PF S6
+    - cours PF S6
+    - programme PF S6
+    - PF sixième semestre matières
+    - مواد PF S6
+    - مواد السداسي السادس PF
+    - برنامج PF S6
+
+- intent: demander_matieres_EEA
+  examples: |
+    - ما هي مواد EEA؟
+    - Matières EEA
+    - cours Electronique Electrotechnique Automatique
+    - مقررات EEA
+    - programme EEA
+    - modules EEA
+    - EEA quels cours ?
+    - ماذا يُدرَّس في EEA؟
+    - EEA matières liste
+    - EEA programme complet
+    - EEA مواد
+    - إلكترونيك وكهرباء مواد
+    - EEA S3 S4
+    - matières EEA S3
+    - modules EEA S3
+    - cours EEA S3
+    - programme EEA S3
+    - liste matières EEA semestre 3
+    - EEA troisième semestre matières
+    - مواد EEA S3
+    - مواد السداسي الثالث EEA
+    - برنامج EEA S3
+    - matières EEA S4
+    - modules EEA S4
+    - cours EEA S4
+    - programme EEA S4
+    - liste matières EEA semestre 4
+    - EEA quatrième semestre matières
+    - مواد EEA S4
+    - مواد السداسي الرابع EEA
+    - برنامج EEA S4
+    - EEA S5 S6
+    - matières EEA S5
+    - modules EEA S5
+    - cours EEA S5
+    - programme EEA S5
+    - EEA cinquième semestre matières
+    - مواد EEA S5
+    - مواد السداسي الخامس EEA
+    - برنامج EEA S5
+    - matières EEA S6
+    - modules EEA S6
+    - cours EEA S6
+    - programme EEA S6
+    - EEA sixième semestre matières
+    - مواد EEA S6
+    - مواد السداسي السادس EEA
+    - برنامج EEA S6
+
+- intent: demander_matieres_TSER
+  examples: |
+    - ما هي مواد TSER؟
+    - Matières TSER
+    - cours Energies Renouvelables
+    - مقررات TSER
+    - programme TSER
+    - modules TSER
+    - TSER quels cours ?
+    - ماذا يُدرَّس في TSER؟
+    - TSER matières liste
+    - TSER programme complet
+    - TSER مواد
+    - طاقات متجددة مواد
+    - TSER S3 S4
+    - matières TSER S3
+    - modules TSER S3
+    - cours TSER S3
+    - programme TSER S3
+    - liste matières TSER semestre 3
+    - TSER troisième semestre matières
+    - مواد TSER S3
+    - مواد السداسي الثالث TSER
+    - برنامج TSER S3
+    - matières TSER S4
+    - modules TSER S4
+    - cours TSER S4
+    - programme TSER S4
+    - liste matières TSER semestre 4
+    - TSER quatrième semestre matières
+    - مواد TSER S4
+    - مواد السداسي الرابع TSER
+    - برنامج TSER S4
+    - TSER S5 S6
+    - matières TSER S5
+    - modules TSER S5
+    - cours TSER S5
+    - programme TSER S5
+    - TSER cinquième semestre matières
+    - مواد TSER S5
+    - مواد السداسي الخامس TSER
+    - برنامج TSER S5
+    - matières TSER S6
+    - modules TSER S6
+    - cours TSER S6
+    - programme TSER S6
+    - TSER sixième semestre matières
+    - مواد TSER S6
+    - مواد السداسي السادس TSER
+    - برنامج TSER S6
+
+- intent: demander_matieres_IPG
+  examples: |
+    - ما هي مواد IPG؟
+    - Matières IPG
+    - cours Ingénierie Pétrole Gaz
+    - مقررات IPG
+    - programme IPG
+    - modules IPG
+    - IPG quels cours ?
+    - ماذا يُدرَّس في IPG؟
+    - IPG matières liste
+    - IPG programme complet
+    - IPG مواد
+    - بترول وغاز مواد
+    - IPG S3 S4
+    - matières IPG S3
+    - modules IPG S3
+    - cours IPG S3
+    - programme IPG S3
+    - liste matières IPG semestre 3
+    - IPG troisième semestre matières
+    - مواد IPG S3
+    - مواد السداسي الثالث IPG
+    - برنامج IPG S3
+    - matières IPG S4
+    - modules IPG S4
+    - cours IPG S4
+    - programme IPG S4
+    - liste matières IPG semestre 4
+    - IPG quatrième semestre matières
+    - مواد IPG S4
+    - مواد السداسي الرابع IPG
+    - برنامج IPG S4
+    - IPG S5 S6
+    - matières IPG S5
+    - modules IPG S5
+    - cours IPG S5
+    - programme IPG S5
+    - IPG cinquième semestre matières
+    - مواد IPG S5
+    - مواد السداسي الخامس IPG
+    - برنامج IPG S5
+    - matières IPG S6
+    - modules IPG S6
+    - cours IPG S6
+    - programme IPG S6
+    - IPG sixième semestre matières
+    - مواد IPG S6
+    - مواد السداسي السادس IPG
+    - برنامج IPG S6
+
+- intent: demander_matieres_GEOSS
+  examples: |
+    - ما هي مواد GEOSS؟
+    - Matières GEOSS
+    - cours Géosciences
+    - مقررات GEOSS
+    - programme GEOSS
+    - modules GEOSS
+    - GEOSS quels cours ?
+    - ماذا يُدرَّس في GEOSS؟
+    - GEOSS matières liste
+    - GEOSS programme complet
+    - GEOSS مواد
+    - جيوعلوم مواد
+    - GEOSS S5 S6
+    - matières GEOSS S5
+    - modules GEOSS S5
+    - cours GEOSS S5
+    - programme GEOSS S5
+    - liste matières GEOSS semestre 5
+    - GEOSS cinquième semestre matières
+    - مواد GEOSS S5
+    - مواد السداسي الخامس GEOSS
+    - برنامج GEOSS S5
+    - matières GEOSS S6
+    - modules GEOSS S6
+    - cours GEOSS S6
+    - programme GEOSS S6
+    - liste matières GEOSS semestre 6
+    - GEOSS sixième semestre matières
+    - مواد GEOSS S6
+    - مواد السداسي السادس GEOSS
+    - برنامج GEOSS S6
+
+- intent: demander_matieres_GEOMIN
+  examples: |
+    - ما هي مواد GEOMIN؟
+    - Matières GEOMIN
+    - cours Géologie Minière
+    - مقررات GEOMIN
+    - programme GEOMIN
+    - modules GEOMIN
+    - GEOMIN quels cours ?
+    - ماذا يُدرَّس في GEOMIN؟
+    - GEOMIN matières liste
+    - GEOMIN programme complet
+    - GEOMIN مواد
+    - جيولوجيا منجمية مواد
+    - GEOMIN S3 S4
+    - matières GEOMIN S3
+    - modules GEOMIN S3
+    - cours GEOMIN S3
+    - programme GEOMIN S3
+    - liste matières GEOMIN semestre 3
+    - GEOMIN troisième semestre matières
+    - مواد GEOMIN S3
+    - مواد السداسي الثالث GEOMIN
+    - برنامج GEOMIN S3
+    - matières GEOMIN S4
+    - modules GEOMIN S4
+    - cours GEOMIN S4
+    - programme GEOMIN S4
+    - liste matières GEOMIN semestre 4
+    - GEOMIN quatrième semestre matières
+    - مواد GEOMIN S4
+    - مواد السداسي الرابع GEOMIN
+    - برنامج GEOMIN S4
+    - GEOMIN S5 S6
+    - matières GEOMIN S5
+    - modules GEOMIN S5
+    - cours GEOMIN S5
+    - programme GEOMIN S5
+    - GEOMIN cinquième semestre matières
+    - مواد GEOMIN S5
+    - مواد السداسي الخامس GEOMIN
+    - برنامج GEOMIN S5
+    - matières GEOMIN S6
+    - modules GEOMIN S6
+    - cours GEOMIN S6
+    - programme GEOMIN S6
+    - GEOMIN sixième semestre matières
+    - مواد GEOMIN S6
+    - مواد السداسي السادس GEOMIN
+    - برنامج GEOMIN S6
+
+- intent: demander_matieres_PEPE
+  examples: |
+    - ما هي مواد PEPE؟
+    - Matières PEPE
+    - cours Production Eau Potable
+    - مقررات PEPE
+    - programme 2P2E
+    - matières 2P2E
+    - PEPE quels cours ?
+    - ماذا يُدرَّس في PEPE؟
+    - PEPE matières liste
+    - PEPE programme complet
+    - PEPE مواد
+    - ماء شروب مواد
+    - PEPE S3 S4
+    - matières PEPE S3
+    - modules PEPE S3
+    - cours PEPE S3
+    - programme PEPE S3
+    - liste matières PEPE semestre 3
+    - PEPE troisième semestre matières
+    - مواد PEPE S3
+    - مواد السداسي الثالث PEPE
+    - برنامج PEPE S3
+    - matières PEPE S4
+    - modules PEPE S4
+    - cours PEPE S4
+    - programme PEPE S4
+    - liste matières PEPE semestre 4
+    - PEPE quatrième semestre matières
+    - مواد PEPE S4
+    - مواد السداسي الرابع PEPE
+    - برنامج PEPE S4
+    - PEPE S5 S6
+    - matières PEPE S5
+    - modules PEPE S5
+    - cours PEPE S5
+    - programme PEPE S5
+    - PEPE cinquième semestre matières
+    - مواد PEPE S5
+    - مواد السداسي الخامس PEPE
+    - برنامج PEPE S5
+    - matières PEPE S6
+    - modules PEPE S6
+    - cours PEPE S6
+    - programme PEPE S6
+    - PEPE sixième semestre matières
+    - مواد PEPE S6
+    - مواد السداسي السادس PEPE
+    - برنامج PEPE S6
+
+- intent: demander_matieres_CHIMIE
+  examples: |
+    - ما هي مواد الكيمياء L3؟
+    - Matières Chimie L3
+    - cours Chimie L3
+    - مقررات تخصص الكيمياء
+    - programme Chimie
+    - modules Chimie L3
+    - Chimie L3 quels cours ?
+    - ماذا يُدرَّس في تخصص الكيمياء؟
+    - Chimie L3 matières liste
+    - Chimie programme complet L3
+    - كيمياء L3 مواد
+    - الكيمياء L3 برنامج
+    - CHIMIE S3 S4
+    - matières CHIMIE S3
+    - modules CHIMIE S3
+    - cours CHIMIE S3
+    - programme CHIMIE S3
+    - liste matières CHIMIE semestre 3
+    - CHIMIE troisième semestre matières
+    - مواد CHIMIE S3
+    - مواد السداسي الثالث CHIMIE
+    - برنامج CHIMIE S3
+    - matières CHIMIE S4
+    - modules CHIMIE S4
+    - cours CHIMIE S4
+    - programme CHIMIE S4
+    - liste matières CHIMIE semestre 4
+    - CHIMIE quatrième semestre matières
+    - مواد CHIMIE S4
+    - مواد السداسي الرابع CHIMIE
+    - برنامج CHIMIE S4
+    - CHIMIE S5 S6
+    - matières CHIMIE S5
+    - modules CHIMIE S5
+    - cours CHIMIE S5
+    - programme CHIMIE S5
+    - CHIMIE cinquième semestre matières
+    - مواد CHIMIE S5
+    - مواد السداسي الخامس CHIMIE
+    - برنامج CHIMIE S5
+    - matières CHIMIE S6
+    - modules CHIMIE S6
+    - cours CHIMIE S6
+    - programme CHIMIE S6
+    - CHIMIE sixième semestre matières
+    - مواد CHIMIE S6
+    - مواد السداسي السادس CHIMIE
+    - برنامج CHIMIE S6
+
+- intent: demander_matieres_BMP
+  examples: |
+    - ما هي مواد BMP؟
+    - Matières BMP
+    - cours Biologie Moléculaire et Physiologie
+    - مقررات BMP
+    - programme BMP
+    - modules BMP
+    - BMP quels cours ?
+    - ماذا يُدرَّس في BMP؟
+    - BMP matières liste
+    - BMP programme complet
+    - BMP مواد
+    - بيولوجيا جزيئية مواد
+    - BMP S5 S6
+    - matières BMP S5
+    - modules BMP S5
+    - cours BMP S5
+    - programme BMP S5
+    - liste matières BMP semestre 5
+    - BMP cinquième semestre matières
+    - مواد BMP S5
+    - مواد السداسي الخامس BMP
+    - برنامج BMP S5
+    - matières BMP S6
+    - modules BMP S6
+    - cours BMP S6
+    - programme BMP S6
+    - liste matières BMP semestre 6
+    - BMP sixième semestre matières
+    - مواد BMP S6
+    - مواد السداسي السادس BMP
+    - برنامج BMP S6
+
+- intent: demander_matieres_BOE
+  examples: |
+    - ما هي مواد BOE؟
+    - Matières BOE
+    - cours Biologie des Organismes Ecosystèmes
+    - مقررات BOE
+    - programme BOE
+    - modules BOE
+    - BOE quels cours ?
+    - ماذا يُدرَّس في BOE؟
+    - BOE matières liste
+    - BOE programme complet
+    - BO

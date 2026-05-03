@@ -1,0 +1,57 @@
+version: "3.1"
+
+stories:
+
+  - story: L3 Administration publique complet
+    steps:
+      - intent: ask_matieres_droit_public_admin_l3_s5
+      - action: utter_ask_matieres_droit_public_admin_l3_s5
+      - intent: ask_matieres_droit_public_admin_l3_s6
+      - action: utter_ask_matieres_droit_public_admin_l3_s6
+
+  - story: L3 Sciences Politiques complet
+    steps:
+      - intent: ask_matieres_droit_public_sp_l3_s5
+      - action: utter_ask_matieres_droit_public_sp_l3_s5
+      - intent: ask_matieres_droit_public_sp_l3_s6
+      - action: utter_ask_matieres_droit_public_sp_l3_s6
+
+  - story: L3 Affaires et Entreprise complet
+    steps:
+      - intent: ask_matieres_droit_prive_affaires_l3_s5
+      - action: utter_ask_matieres_droit_prive_affaires_l3_s5
+      - intent: ask_matieres_droit_prive_affaires_l3_s6
+      - action: utter_ask_matieres_droit_prive_affaires_l3_s6
+
+  - story: L3 Carrières Judiciaires complet
+    steps:
+      - intent: ask_matieres_droit_prive_carrieres_l3_s5
+      - action: utter_ask_matieres_droit_prive_carrieres_l3_s5
+      - intent: ask_matieres_droit_prive_carrieres_l3_s6
+      - action: utter_ask_matieres_droit_prive_carrieres_l3_s6
+
+  - story: Parcours complet Droit Public Admin
+    steps:
+      - intent: ask_fsjp_specializations
+      - action: utter_ask_fsjp_specializations
+      - intent: ask_matieres_l1_droit_s1
+      - action: utter_ask_matieres_l1_droit_s1
+      - intent: ask_matieres_l2_droit_s3
+      - action: utter_ask_matieres_l2_droit_s3
+      - intent: ask_matieres_droit_public_admin_l3_s5
+      - action: utter_ask_matieres_droit_public_admin_l3_s5
+      - intent: ask_matieres_droit_public_admin_l3_s6
+      - action: utter_ask_matieres_droit_public_admin_l3_s6
+
+  - story: Parcours complet Droit Privé Affaires
+    steps:
+      - intent: ask_fsjp_specializations
+      - action: utter_ask_fsjp_specializations
+      - intent: ask_matieres_l1_droit_s1
+      - action: utter_ask_matieres_l1_droit_s1
+      - intent: ask_matieres_l2_droit_s3
+      - action: utter_ask_matieres_l2_droit_s3
+      - intent: ask_matieres_droit_prive_affaires_l3_s5
+      - action: utter_ask_matieres_droit_prive_affaires_l3_s5
+      - intent: ask_matieres_droit_prive_affaires_l3_s6
+      - action: utter_ask_matieres_droit_prive_affaires_l3_s6

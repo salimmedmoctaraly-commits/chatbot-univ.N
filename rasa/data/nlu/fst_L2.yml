@@ -1,0 +1,66 @@
+version: "3.1"
+
+nlu:
+
+# FST —  L2 (تخصصات)
+
+- intent: demander_matieres_MAI
+  examples: |
+    - ما هي مواد MAI؟
+    - Matières MAI
+    - cours MAI L2
+    - مقررات MAI
+    - programme MAI
+    - modules MAI
+    - MAI quels cours ?
+    - ماذا يُدرَّس في MAI؟
+    - MAI matières liste
+    - MAI S3 S4
+    - مقررات تخصص MAI
+    - cours enseignés en MAI
+    - MAI مواد
+    - MAI programme complet
+    - برنامج MAI الدراسي
+    - MAI L2 مواد
+    - مواد تخصص MAI
+
+- intent: demander_matieres_BIOLOGIE
+  examples: |
+    - ما هي مواد البيولوجيا L2؟
+    - Matières Biologie L2
+    - cours Biologie L2
+    - مقررات بيولوجيا L2
+    - programme BIO L2
+    - modules Biologie L2
+    - Biologie L2 quels cours ?
+    - ماذا يُدرَّس في بيولوجيا L2؟
+    - BIO L2 matières liste
+    - Biologie S3 S4
+    - مقررات شعبة البيولوجيا السنة الثانية
+    - cours enseignés en Biologie L2
+    - بيولوجيا L2 مواد
+    - Biologie L2 programme complet
+    - برنامج البيولوجيا L2
+    - BIO L2
+    - مواد البيولوجيا السنة الثانية
+
+- intent: demander_matieres_GEO
+  examples: |
+    - ما هي مواد الجيولوجيا L2؟
+    - Matières Géologie L2
+    - cours Géologie L2
+    - مقررات جيولوجيا L2
+    - programme GEO L2
+    - modules Géologie L2
+    - Géologie L2 quels cours ?
+    - ماذا يُدرَّس في جيولوجيا L2؟
+    - GEO L2 matières liste
+    - Géologie S3 S4
+    - مقررات شعبة الجيولوجيا السنة الثانية
+    - cours enseignés en Géologie L2
+    - جيولوجيا L2 مواد
+    - Géologie L2 programme complet
+    - برنامج الجيولوجيا L2
+    - GEO L2
+    - مواد الجيولوجيا السنة الثانية
+

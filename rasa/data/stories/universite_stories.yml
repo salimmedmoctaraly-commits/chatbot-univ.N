@@ -1,0 +1,190 @@
+version: "3.1"
+
+stories:
+
+# ══════════════════════════════════════════
+# الجامعة — معلومات عامة
+# ══════════════════════════════════════════
+
+- story: معلومات الجامعة
+  steps:
+    - intent: ask_universite_generale
+    - action: utter_ask_universite_generale
+
+- story: رئاسة الجامعة
+  steps:
+    - intent: ask_president
+    - action: utter_ask_president
+
+- story: عدد الطلاب
+  steps:
+    - intent: ask_nombre_etudiants
+    - action: utter_ask_nombre_etudiants
+
+- story: عدد الكليات
+  steps:
+    - intent: ask_nombre_facultes
+    - action: utter_ask_nombre_facultes
+
+- story: مراكز الجامعة
+  steps:
+    - intent: ask_centres
+    - action: utter_ask_centres
+
+- story: قائمة الكليات
+  steps:
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+
+- story: توزيع الطلاب
+  steps:
+    - intent: ask_repartition_etudiants
+    - action: utter_ask_repartition_etudiants
+
+# ══════════════════════════════════════════
+# محادثات متعددة الخطوات
+# ══════════════════════════════════════════
+
+- story: جامعة ثم كليات
+  steps:
+    - intent: ask_universite_generale
+    - action: utter_ask_universite_generale
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+
+- story: كليات ثم FST
+  steps:
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+    - intent: ask_fst
+    - action: utter_ask_fst
+
+- story: كليات ثم FLSH
+  steps:
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+
+- story: مقارنة بين الكليات
+  steps:
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+    - intent: ask_fst
+    - action: utter_ask_fst
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+
+- story: جامعة ثم عدد طلاب ثم كليات
+  steps:
+    - intent: ask_universite_generale
+    - action: utter_ask_universite_generale
+    - intent: ask_nombre_etudiants
+    - action: utter_ask_nombre_etudiants
+    - intent: ask_facultes_liste
+    - action: utter_ask_facultes_liste
+
+- story: رئاسة ثم عدد طلاب
+  steps:
+    - intent: ask_president
+    - action: utter_ask_president
+    - intent: ask_nombre_etudiants
+    - action: utter_ask_nombre_etudiants
+    
+
+- story: مسار معايير المنحة
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+
+- story: مسار التسجيل في المنحة
+  steps:
+  - intent: ask_inscription_bourse_cnou
+  - action: utter_ask_inscription_bourse_cnou
+
+- story: مسار معايير السكن
+  steps:
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+
+- story: مسار تجديد السكن
+  steps:
+  - intent: ask_renouvellement_logement
+  - action: utter_ask_renouvellement_logement
+
+- story: مسار معايير النقل
+  steps:
+  - intent: ask_criteres_transport
+  - action: utter_ask_criteres_transport
+
+- story: مسار التسجيل في المطعم
+  steps:
+  - intent: ask_inscription_restaurant
+  - action: utter_ask_inscription_restaurant
+
+- story: مسار معايير المنحة ثم التسجيل فيها
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+  - intent: ask_inscription_bourse_cnou
+  - action: utter_ask_inscription_bourse_cnou
+
+- story: مسار معايير السكن ثم التجديد
+  steps:
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+  - intent: ask_renouvellement_logement
+  - action: utter_ask_renouvellement_logement
+
+- story: مسار المنحة ثم السكن
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+
+- story: مسار المنحة ثم النقل
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+  - intent: ask_criteres_transport
+  - action: utter_ask_criteres_transport
+
+- story: مسار السكن ثم النقل
+  steps:
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+  - intent: ask_criteres_transport
+  - action: utter_ask_criteres_transport
+
+- story: مسار السكن ثم المطعم
+  steps:
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+  - intent: ask_inscription_restaurant
+  - action: utter_ask_inscription_restaurant
+
+- story: مسار المنحة ثم المطعم
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+  - intent: ask_inscription_restaurant
+  - action: utter_ask_inscription_restaurant
+
+- story: مسار النقل ثم المطعم
+  steps:
+  - intent: ask_criteres_transport
+  - action: utter_ask_criteres_transport
+  - intent: ask_inscription_restaurant
+  - action: utter_ask_inscription_restaurant
+
+- story: مسار المنحة والسكن والنقل والمطعم
+  steps:
+  - intent: ask_criteres_bourse
+  - action: utter_ask_criteres_bourse
+  - intent: ask_criteres_logement
+  - action: utter_ask_criteres_logement
+  - intent: ask_criteres_transport
+  - action: utter_ask_criteres_transport
+  - intent: ask_inscription_restaurant
+  - action: utter_ask_inscription_restaurant

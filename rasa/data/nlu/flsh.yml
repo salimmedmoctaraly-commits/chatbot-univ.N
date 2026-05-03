@@ -1,0 +1,45 @@
+version: "3.1"
+
+nlu:
+
+# FLSH — كلية الآداب والعلوم الإنسانية
+
+- intent: ask_flsh
+  examples: |
+    - ما هي كلية الآداب؟
+    - معلومات عن FLSH
+    - كلية الآداب والعلوم الإنسانية
+    - من هو عميد FLSH؟
+    - qu'est-ce que la FLSH?
+    - faculté des lettres
+    - informations sur la FLSH
+    - faculté des sciences humaines
+    - flsh
+    - chnhi flsh
+    -  كلية الآداب
+    - كلية الآداب والعلوم الإنسانية
+
+- intent: ask_flsh_licences
+  examples: |
+    - شعب كلية الآداب
+    - تخصصات FLSH
+    - ليسانس آداب
+    - ما هي اللغات المتاحة في FLSH؟
+    - filières FLSH
+    - licences lettres
+    - quelles langues à la FLSH?
+    - spécialités de la FLSH
+
+- intent: ask_inscription_flsh
+  examples: |
+    - كيف أسجل في كلية الآداب؟
+    - شروط التسجيل في FLSH
+    - شروط إعادة التسجيل FLSH
+    - الطلاب الممنوعون من التسجيل
+    - هل يمكنني التسجيل مرة ثالثة؟
+    - رصيدي 30 هل أسجل؟
+    - معيد مرتين هل أسجل؟
+    - inscription à la FLSH
+    - réinscription FLSH conditions
+    - je suis ajourné puis-je me réinscrire?
+    - conditions de réinscription

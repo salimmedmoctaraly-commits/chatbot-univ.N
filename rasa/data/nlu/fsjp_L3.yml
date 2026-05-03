@@ -1,0 +1,107 @@
+
+version: "3.1"
+nlu:
+
+- intent: ask_matieres_droit_public_admin_l3_s5
+  examples: |
+      - مواد قانون عام إدارة عمومية S5
+      - ماذا ندرس في L3 إدارة عمومية الفصل الخامس؟
+      - مقررات تخصص الإدارة العمومية السداسي الخامس
+      - مواد S5 قانون عام إدارة
+      - ما مواد الفصل الخامس إدارة عمومية؟
+      - Matières L3 droit public administration S5
+      - Quelles matières en administration publique S5?
+      - Programme droit public administration semestre 5
+      - Cours L3 administration publique S5
+      - Que contient le S5 administration publique?
+
+- intent: ask_matieres_droit_public_admin_l3_s6
+  examples: |
+      - مواد قانون عام إدارة عمومية S6
+      - ماذا ندرس في L3 إدارة عمومية الفصل السادس؟
+      - مقررات تخصص الإدارة العمومية السداسي السادس
+      - مواد S6 قانون عام إدارة
+      - ما مواد الفصل السادس إدارة عمومية؟
+      - Matières L3 droit public administration S6
+      - Quelles matières en administration publique S6?
+      - Programme droit public administration semestre 6
+      - Cours L3 administration publique S6
+      - Que contient le S6 administration publique?
+
+- intent: ask_matieres_droit_public_sp_l3_s5
+  examples: |
+      - مواد قانون عام علوم سياسية S5
+      - ماذا ندرس في L3 علوم سياسية الفصل الخامس؟
+      - مقررات تخصص العلوم السياسية السداسي الخامس
+      - مواد S5 قانون عام علوم سياسية
+      - ما مواد الفصل الخامس علوم سياسية؟
+      - Matières L3 droit public sciences politiques S5
+      - Quelles matières en sciences politiques S5?
+      - Programme droit public sciences politiques semestre 5
+      - Cours L3 sciences politiques S5
+      - Que contient le S5 sciences politiques?
+
+- intent: ask_matieres_droit_public_sp_l3_s6
+  examples: |
+      - مواد قانون عام علوم سياسية S6
+      - ماذا ندرس في L3 علوم سياسية الفصل السادس؟
+      - مقررات تخصص العلوم السياسية السداسي السادس
+      - مواد S6 قانون عام علوم سياسية
+      - ما مواد الفصل السادس علوم سياسية؟
+      - Matières L3 droit public sciences politiques S6
+      - Quelles matières en sciences politiques S6?
+      - Programme droit public sciences politiques semestre 6
+      - Cours L3 sciences politiques S6
+      - Que contient le S6 sciences politiques?
+
+- intent: ask_matieres_droit_prive_affaires_l3_s5
+  examples: |
+      - مواد قانون خاص أعمال ومؤسسات S5
+      - ماذا ندرس في L3 قانون الأعمال الفصل الخامس؟
+      - مقررات تخصص قانون الأعمال والمؤسسات S5
+      - مواد S5 دروا بريفي أعمال
+      - ما مواد الفصل الخامس قانون الأعمال？
+      - Matières L3 droit privé affaires entreprise S5
+      - Quelles matières en droit des affaires S5?
+      - Programme droit privé affaires semestre 5
+      - Cours L3 droit des affaires S5
+      - Que contient le S5 droit affaires entreprise?
+
+- intent: ask_matieres_droit_prive_affaires_l3_s6
+  examples: |
+      - مواد قانون خاص أعمال ومؤسسات S6
+      - ماذا ندرس في L3 قانون الأعمال الفصل السادس؟
+      - مقررات تخصص قانون الأعمال والمؤسسات S6
+      - مواد S6 دروا بريفي أعمال
+      - ما مواد الفصل السادس قانون الأعمال؟
+      - Matières L3 droit privé affaires entreprise S6
+      - Quelles matières en droit des affaires S6?
+      - Programme droit privé affaires semestre 6
+      - Cours L3 droit des affaires S6
+      - Que contient le S6 droit affaires entreprise?
+
+- intent: ask_matieres_droit_prive_carrieres_l3_s5
+  examples: |
+      - مواد قانون خاص مهن قضائية S5
+      - ماذا ندرس في L3 المهن القضائية الفصل الخامس؟
+      - مقررات تخصص المهن القضائية والقانونية S5
+      - مواد S5 مهن قضائية وقانونية
+      - ما مواد الفصل الخامس مهن قضائية؟
+      - Matières L3 carrières judiciaires S5
+      - Quelles matières en carrières judiciaires S5?
+      - Programme droit privé carrières judiciaires semestre 5
+      - Cours L3 carrières judiciaires juridiques S5
+      - Que contient le S5 carrières judiciaires?
+
+- intent: ask_matieres_droit_prive_carrieres_l3_s6
+  examples: |
+      - مواد قانون خاص مهن قضائية S6
+      - ماذا ندرس في L3 المهن القضائية الفصل السادس؟
+      - مقررات تخصص المهن القضائية والقانونية S6
+      - مواد S6 مهن قضائية وقانونية
+      - ما مواد الفصل السادس مهن قضائية؟
+      - Matières L3 carrières judiciaires S6
+      - Quelles matières en carrières judiciaires S6?
+      - Programme droit privé carrières judiciaires semestre 6
+      - Cours L3 carrières judiciaires juridiques S6
+      - Que contient le S6 carrières judiciaires?

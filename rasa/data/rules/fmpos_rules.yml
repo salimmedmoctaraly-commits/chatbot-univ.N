@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: معلومات عامة عن FMPOS
+  steps:
+  - intent: ask_fmpos_info
+  - action: utter_ask_fmpos_info
+
+- rule: شعب وتخصصات FMPOS
+  steps:
+  - intent: ask_fmpos_specializations
+  - action: utter_ask_fmpos_specializations
+
+- rule: هيكل دراسة الطب
+  steps:
+  - intent: ask_fmpos_structure_medecine
+  - action: utter_ask_fmpos_structure_medecine

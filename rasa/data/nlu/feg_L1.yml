@@ -1,0 +1,107 @@
+
+# ============================================================
+# NLU
+# ============================================================
+version: "3.1"
+
+nlu:
+
+# ==================== L1 ====================
+
+- intent: ask_matieres_economie_gestion_l1
+  examples: |
+    - مواد L1 اقتصاد تسيير
+    - ما هي مواد اقتصاد تسيير L1
+    - مواد السنة الأولى اقتصاد تسيير
+    - L1 économie gestion matières
+    - quelles sont les matières L1 économie gestion
+    - matières première année économie gestion
+    - مواد L1 اقتصاد
+    - اقتصاد تسيير السنة الأولى
+    - L1 Economie-Gestion
+    - matières L1 Economie-Gestion
+
+- intent: ask_matieres_fc_l1
+  examples: |
+    - مواد L1 مالية ومحاسبة
+    - ما هي مواد مالية ومحاسبة L1
+    - مواد السنة الأولى مالية ومحاسبة
+    - L1 finance comptabilité matières
+    - quelles sont les matières L1 FC
+    - matières première année finance comptabilité
+    - مواد L1 FC
+    - مالية ومحاسبة السنة الأولى
+    - L1 Finance et Comptabilité
+    - matières L1 FC
+
+- intent: ask_matieres_ba_l1
+  examples: |
+    - مواد L1 بنوك وتأمينات
+    - ما هي مواد بنوك وتأمينات L1
+    - مواد السنة الأولى بنوك وتأمينات
+    - L1 banques assurances matières
+    - quelles sont les matières L1 BA
+    - matières première année banques assurances
+    - مواد L1 BA
+    - بنوك وتأمينات السنة الأولى
+    - L1 Banques et Assurances
+    - matières L1 BA
+
+- intent: ask_matieres_grh_l1
+  examples: |
+    - مواد L1 تسيير الموارد البشرية
+    - ما هي مواد تسيير الموارد البشرية L1
+    - مواد السنة الأولى GRH
+    - L1 GRH matières
+    - quelles sont les matières L1 GRH
+    - matières première année gestion ressources humaines
+    - مواد L1 GRH
+    - تسيير الموارد البشرية السنة الأولى
+    - L1 Gestion des Ressources Humaines
+    - matières L1 GRH
+
+- intent: ask_matieres_gestion_entreprises_l1
+  examples: |
+    - مواد L1 gestion des entreprises
+    - ما هي مواد gestion des entreprises L1
+    - مواد السنة الأولى gestion des entreprises
+    - L1 gestion entreprises matières
+    - quelles sont les matières L1 gestion entreprises
+    - matières première année gestion des entreprises
+    - مواد L1 تسيير المؤسسات
+    - تسيير المؤسسات السنة الأولى
+    - L1 Gestion des Entreprises
+    - matières L1 Gestion des Entreprises
+    - برنامج L1 gestion entreprises
+    - دروس السنة الأولى تسيير المؤسسات
+
+- intent: ask_matieres_techniques_projets_publics_l1
+  examples: |
+    - مواد L1 techniques projets publics
+    - ما هي مواد techniques projets publics L1
+    - مواد السنة الأولى techniques projets publics
+    - L1 techniques projets publics matières
+    - quelles sont les matières L1 techniques projets publics
+    - matières première année techniques gestion projets publics
+    - مواد L1 تقنيات تسيير المشاريع العمومية
+    - تقنيات تسيير المشاريع العمومية السنة الأولى
+    - L1 Techniques de Gestion des Projets Publics
+    - matières L1 Techniques Projets Publics
+    - برنامج L1 projets publics
+    - دروس السنة الأولى تقنيات المشاريع العمومية
+
+- intent: ask_matieres_gestion_administration_publique_l1
+  examples: |
+    - مواد L1 gestion administration publique
+    - ما هي مواد gestion administration publique L1
+    - مواد السنة الأولى gestion administration publique
+    - L1 gestion administration publique matières
+    - quelles sont les matières L1 administration publique
+    - matières première année gestion administration publique
+    - مواد L1 تسيير الإدارة العمومية
+    - تسيير الإدارة العمومية السنة الأولى
+    - L1 Gestion de l'Administration Publique
+    - matières L1 Administration Publique
+    - برنامج L1 administration publique
+    - دروس السنة الأولى تسيير الإدارة العمومية
+

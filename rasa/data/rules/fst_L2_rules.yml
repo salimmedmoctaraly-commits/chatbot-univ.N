@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+
+# ══════════════════════════════════════════
+# L2 - Spécialités
+# ══════════════════════════════════════════
+
+
+- rule: demander_matieres_MAI
+  steps:
+    - intent: demander_matieres_MAI
+    - action: utter_demander_matieres_MAI
+
+- rule: demander_matieres_BIOLOGIE
+  steps:
+    - intent: demander_matieres_BIOLOGIE
+    - action: utter_demander_matieres_BIOLOGIE
+
+- rule: demander_matieres_GEO
+  steps:
+    - intent: demander_matieres_GEO
+    - action: utter_demander_matieres_GEO

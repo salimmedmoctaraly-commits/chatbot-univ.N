@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: مواد PCEM1 S1
+  steps:
+  - intent: ask_matieres_pcem1_s1
+  - action: utter_ask_matieres_medecine_pcem1
+
+- rule: مواد PCEM1 S2
+  steps:
+  - intent: ask_matieres_pcem1_s2
+  - action: utter_ask_matieres_medecine_pcem1
+
+- rule: مواد PCEM1 كاملة
+  steps:
+  - intent: ask_matieres_medecine_pcem1
+  - action: utter_ask_matieres_medecine_pcem1

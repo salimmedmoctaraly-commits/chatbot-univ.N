@@ -1,0 +1,36 @@
+version: "3.1"
+
+stories:
+
+- story: معلومات FLSH
+  steps:
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+
+- story: FLSH ثم شعبها
+  steps:
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+    - intent: ask_flsh_licences
+    - action: utter_ask_flsh_licences
+
+- story: شعب FLSH
+  steps:
+    - intent: ask_flsh_licences
+    - action: utter_ask_flsh_licences
+
+- story: التسجيل في FLSH
+  steps:
+    - intent: ask_inscription_flsh
+    - action: utter_ask_inscription_flsh
+
+- story: FLSH ثم التسجيل ثم مواد
+  steps:
+    - intent: ask_flsh
+    - action: utter_ask_flsh
+    - intent: ask_inscription_flsh
+    - action: utter_ask_inscription_flsh
+    - intent: ask_matieres_flsh_l1
+    - action: utter_ask_matieres_flsh_l1
+
+

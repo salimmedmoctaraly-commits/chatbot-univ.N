@@ -1,0 +1,748 @@
+version: "3.1"
+
+nlu:
+
+# إدارية — تسجيل، LMD، نتائج، مالية
+
+- intent: demander_inscription_ar
+  examples: |
+    - كيف أسجل في FST؟
+    - خطوات التسجيل
+    - طريقة التسجيل في الكلية
+    - إجراءات التسجيل
+    - كيفية التسجيل في كلية العلوم والتقنيات
+    - أريد التسجيل في FST
+    - ما هي خطوات التسجيل في FST؟
+    - رابط التسجيل
+    - منصة التسجيل FST
+    - كيف أفتح حساباً للتسجيل؟
+    - التسجيل الأول في FST
+    - أين أسجل في FST؟
+    - التسجيل الجامعي FST
+    - دليل التسجيل في FST
+    - التسجيل في FST نواكشوط
+    -  التسجيل FST
+    - التسجيل
+    - كيف أبدأ التسجيل في FST؟
+    - خطوات التسجيل الجامعي
+
+- intent: demander_inscription_fr
+  examples: |
+    - Comment s'inscrire à la FST ?
+    - Procédure d'inscription
+    - Étapes pour s'inscrire
+    - Comment faire pour s'inscrire ?
+    - Je veux m'inscrire à la FST
+    - Quelles sont les étapes d'inscription ?
+    - Comment postuler à la FST ?
+    - Lien d'inscription FST
+    - Plateforme d'inscription FST
+    - Comment créer un compte pour s'inscrire ?
+    - Première inscription à la FST
+    - Où s'inscrire à la FST ?
+    - Guide d'inscription FST
+    - Inscription FST Nouakchott
+    - Comment débuter l'inscription ?
+    - inscription FST
+    - s'inscrire FST
+    - Comment démarrer mon inscription à la FST ?
+    - étapes inscription FST
+
+- intent: demander_frais_inscription_ar
+  examples: |
+    - كم تبلغ رسوم التسجيل؟
+    - رسوم التسجيل في FST
+    - كم يكلف التسجيل؟
+    - سعر التسجيل في الكلية
+    - كم أدفع للتسجيل في FST؟
+    - مبلغ التسجيل في FST
+    - رسوم الالتحاق بـ FST
+    - كم المبلغ المطلوب للتسجيل؟
+    - رسوم FST كم هي؟
+    - رسوم التسجيل 2025
+    - ما هو مبلغ التسجيل في FST؟
+    - التكلفة المالية للتسجيل
+    - رسوم
+    - كم رسوم FST؟
+    - كم تبلغ الرسوم الجامعية؟
+    - مبلغ التسجيل كم هو؟
+
+- intent: demander_frais_inscription_fr
+  examples: |
+    - Combien coûte l'inscription ?
+    - Les frais d'inscription à la FST
+    - Quel est le montant des frais ?
+    - Coût de l'inscription FST
+    - Combien dois-je payer pour m'inscrire ?
+    - Montant de l'inscription FST
+    - Quel est le montant requis ?
+    - Frais FST combien ?
+    - Frais d'inscription 2025
+    - Quel montant pour s'inscrire à la FST ?
+    - Coût inscription FST
+    - frais inscription
+    - combien payer FST ?
+    - montant inscription
+    - frais
+    - Quel est le coût de l'inscription FST ?
+
+- intent: demander_paiement_bankily_ar
+  examples: |
+    - كيف أدفع عبر Bankily؟
+    - طريقة الدفع بـ Bankily
+    - الدفع عبر Bankily B-PAY
+    - كيفية استخدام Bankily للتسجيل
+    - خطوات الدفع Bankily
+    - كود Bankily للتسجيل في FST
+    - ما هو كود Bankily لـ FST؟
+    - كيف أستخدم B-PAY للتسجيل؟
+    - رقم Bankily FST
+    - B-PAY FST كيف؟
+    - أريد أن أدفع عبر Bankily
+    - Bankily التسجيل FST
+    - خطوات B-PAY FST
+    - كود الدفع FST
+    - Bankily
+    - كيف أستخدم Bankily لدفع رسوم FST؟
+
+- intent: demander_paiement_bankily_fr
+  examples: |
+    - Comment payer via Bankily ?
+    - Paiement Bankily B-PAY
+    - Comment utiliser Bankily pour l'inscription ?
+    - Étapes de paiement Bankily
+    - Code Bankily pour l'inscription FST
+    - Quel est le code Bankily de la FST ?
+    - Comment utiliser B-PAY pour s'inscrire ?
+    - Numéro Bankily FST
+    - B-PAY FST comment ?
+    - Je veux payer via Bankily
+    - Bankily inscription FST
+    - Code de paiement FST
+    - payer Bankily
+    - Bankily FST
+    - B-PAY
+    - Comment utiliser Bankily pour payer les frais FST ?
+
+- intent: demander_documents_inscription_ar
+  examples: |
+    - ما هي الوثائق المطلوبة للتسجيل؟
+    - وثائق التسجيل
+    - ما الذي أحتاجه للتسجيل؟
+    - ملف التسجيل
+    - الأوراق المطلوبة للتسجيل
+    - ما الوثائق الضرورية؟
+    - ملف التقديم في FST
+    - ما الذي يجب تقديمه للتسجيل؟
+    - وثائق ملف FST
+    - ما الصور المطلوبة للتسجيل؟
+    - وثائق مطلوبة FST
+    - ما هي متطلبات التسجيل؟
+    - ملف الالتحاق بـ FST
+    - الأوراق الرسمية للتسجيل
+    - وثائق FST
+    - ما الأوراق الضرورية للتسجيل في FST؟
+
+- intent: demander_documents_inscription_fr
+  examples: |
+    - Quels documents sont nécessaires pour l'inscription ?
+    - Documents d'inscription
+    - Dossier d'inscription FST
+    - Qu'est-ce qu'il faut pour s'inscrire ?
+    - Quels sont les documents requis ?
+    - Dossier de candidature FST
+    - Que faut-il fournir pour s'inscrire ?
+    - Quelle photo est requise ?
+    - Documents nécessaires FST
+    - Dossier d'accès à la FST
+    - Quelles sont les exigences d'inscription ?
+    - Pièces officielles pour l'inscription
+    - Documents obligatoires inscription FST
+    - documents FST
+    - dossier FST
+    - Quels documents fournir pour s'inscrire à la FST ?
+
+- intent: demander_attestation_inscription_ar
+  examples: |
+    - كيف أحصل على شهادة التسجيل؟
+    - تحميل شهادة التسجيل
+    - أين أجد شهادة التسجيل؟
+    - وثيقة التسجيل FST
+    - كيف أنزّل شهادة تسجيلي؟
+    - شهادة تسجيل FST
+    - أريد شهادة تسجيلي
+    - رابط تحميل الشهادة
+    - شهادة التسجيل متى تصبح متاحة؟
+    - كيف أطبع شهادة التسجيل؟
+    - الحصول على وثيقة التسجيل
+    - شهادة تسجيل كلية العلوم والتقنيات
+    - شهادة التسجيل
+    - تحميل الشهادة
+    - الشهادة
+    - كيف أحمل شهادة التسجيل من FST؟
+
+- intent: demander_attestation_inscription_fr
+  examples: |
+    - Comment télécharger l'attestation d'inscription ?
+    - Attestation d'inscription FST
+    - Où trouver l'attestation d'inscription ?
+    - Télécharger ma preuve d'inscription
+    - Comment obtenir mon attestation ?
+    - Je veux mon attestation d'inscription
+    - Lien de téléchargement attestation
+    - Quand l'attestation est-elle disponible ?
+    - Comment imprimer l'attestation ?
+    - Obtenir le document d'inscription
+    - Attestation FST où la trouver ?
+    - attestation inscription
+    - télécharger attestation FST
+    - preuve inscription FST
+    - attestation
+    - Comment obtenir mon attestation d'inscription FST ?
+
+- intent: demander_planning_ar
+  examples: |
+    - ما هو التقويم الجامعي؟
+    - التقويم الدراسي 2025-2026
+    - مواعيد الامتحانات
+    - بداية الدراسة
+    - موعد الدخول الجامعي
+    - جدول السنة الدراسية
+    - متى تبدأ الدراسة في FST؟
+    - مواعيد الامتحانات 2026
+    - متى الدورة الأولى؟
+    - موعد نهاية الدراسة
+    - التقويم الدراسي FST
+    - متى بداية الفصل الثاني؟
+    - الجدول الزمني للسنة الجامعية
+    - برنامج السنة الجامعية 2025-2026
+    - تقويم FST
+    - مواعيد FST 2026
+    - متى تبدأ امتحانات الدورة الثانية؟
+
+- intent: demander_planning_fr
+  examples: |
+    - Quel est le calendrier universitaire ?
+    - Planning 2025-2026
+    - Dates des examens
+    - Début des cours
+    - Rentrée universitaire
+    - Calendrier académique FST
+    - Quand commencent les cours à la FST ?
+    - Dates des examens 2026
+    - Quand a lieu la première session ?
+    - Date de fin des cours
+    - Calendrier FST
+    - Quand commence le second semestre ?
+    - Programme de l'année universitaire
+    - Calendrier universitaire 2025-2026
+    - planning FST
+    - dates FST 2026
+    - Quand commencent les examens de la deuxième session ?
+
+- intent: demander_jours_feries_ar
+  examples: |
+    - ما هي أيام العطل الرسمية؟
+    - العطل الوطنية
+    - أيام العطل 2025-2026
+    - متى العطل الرسمية؟
+    - قائمة العطل الوطنية
+    - أيام الإجازات الرسمية
+    - متى عيد الاستقلال؟
+    - أيام التوقف عن الدراسة
+    - العطل القانونية FST
+    - العطل الرسمية 2026
+    - متى عيد الفطر في الجامعة؟
+    - الأعياد الوطنية FST
+    - عطل FST
+    - الأعياد
+    - عطل
+    - ما هي العطل الرسمية لهذه السنة؟
+
+- intent: demander_jours_feries_fr
+  examples: |
+    - Quels sont les jours fériés ?
+    - Jours fériés 2025-2026
+    - Congés officiels
+    - Les fêtes nationales
+    - Liste des jours fériés
+    - Jours de congé officiels
+    - Quand est la fête de l'indépendance ?
+    - Jours sans cours FST
+    - Congés légaux FST
+    - Jours fériés 2026
+    - Quand est l'Aïd à l'université ?
+    - Fêtes nationales FST
+    - congés FST
+    - jours fériés
+    - fériés
+    - Quels sont les jours fériés de cette année universitaire ?
+
+- intent: demander_rachat_passage_ar
+  examples: |
+    - ما هي شروط الاسترداد للانتقال؟
+    - معايير الراشاه للانتقال
+    - كيف يمكن استرداد نقاط لاجتياز السنة؟
+    - شروط الانتقال بالاسترداد
+    - راشاه باساج
+    - شروط الراشاه للانتقال من L1 إلى L2
+    - معايير الراشاه من L2 إلى L3
+    - كم رصيد يلزم للراشاه؟
+    - ما هي نقطة الراشاه للانتقال؟
+    - هل يمكن الانتقال بالراشاه؟
+    - شروط الانتقال بالتعويض
+    - راشاه الانتقال FST
+    - كيف أستخدم الراشاه للانتقال؟
+    - راشاه انتقال
+    - الراشاه للانتقال
+    - شروط الراشاه من L1 إلى L2
+
+- intent: demander_rachat_passage_fr
+  examples: |
+    - Quels sont les critères de rachat de passage ?
+    - Rachat de passage FST
+    - Comment racheter pour passer l'année ?
+    - Conditions de rachat pour le passage
+    - rachat passage L1 L2 L3
+    - Conditions rachat L1 à L2
+    - Critères rachat L2 à L3
+    - Combien de crédits pour le rachat ?
+    - Peut-on passer avec rachat ?
+    - Conditions de passage par compensation
+    - Rachat de passage règles
+    - Comment utiliser le rachat pour passer ?
+    - rachat passage
+    - rachat pour passer
+    - conditions rachat passage
+    - Conditions de rachat de L1 à L2
+
+- intent: demander_rachat_diplome_ar
+  examples: |
+    - ما هي شروط الاسترداد للشهادة؟
+    - معايير الراشاه للحصول على الدبلوم
+    - راشاه ديبلوم
+    - استرداد للتخرج
+    - شروط الراشاه للحصول على الليسانس
+    - كم نقطة يلزم للراشاه للدبلوم؟
+    - ما هي شروط التخرج بالراشاه؟
+    - كيف أحصل على الشهادة بالراشاه؟
+    - هل يمكن التخرج بالراشاه؟
+    - شروط الراشاه لنيل الليسانس
+    - راشاه الليسانس FST
+    - راشاه للتخرج
+    - الراشاه للدبلوم
+    - راشاه ديبلوم FST
+    - راشاه للشهادة
+    - شروط الراشاه للحصول على شهادة الليسانس
+
+- intent: demander_rachat_diplome_fr
+  examples: |
+    - Quels sont les critères de rachat de diplôme ?
+    - Rachat de diplôme FST
+    - Comment racheter pour obtenir le diplôme ?
+    - Conditions de rachat diplôme
+    - Conditions rachat pour la Licence
+    - Quelle note pour le rachat diplôme ?
+    - Comment obtenir son diplôme par rachat ?
+    - Peut-on obtenir le diplôme par rachat ?
+    - Conditions rachat Licence FST
+    - Rachat Licence FST
+    - rachat diplôme
+    - rachat pour diplôme
+    - conditions rachat diplôme
+    - rachat diplôme FST conditions
+    - conditions obtenir diplôme par rachat
+    - Conditions de rachat pour la Licence FST
+
+- intent: demander_reglement_examens_ar
+  examples: |
+    - ما هو النظام الداخلي للامتحانات؟
+    - قواعد الامتحانات
+    - ما الذي يُسمح به في الامتحانات؟
+    - وثائق مطلوبة للامتحانات
+    - لائحة الامتحانات
+    - ماذا أحضر معي للامتحان؟
+    - قواعد الدخول للامتحان
+    - ما هو الممنوع في الامتحانات؟
+    - أوقات الدخول للامتحان
+    - تعليمات الامتحانات FST
+    - اللائحة الداخلية للامتحانات
+    - قواعد قاعة الامتحانات
+    - ضوابط الامتحانات
+    - لائحة امتحانات FST
+    - قواعد الامتحان
+    - ما الذي يُحضَر للامتحان في FST؟
+
+- intent: demander_reglement_examens_fr
+  examples: |
+    - Quel est le règlement des examens ?
+    - Règles des examens FST
+    - Documents requis pour les examens
+    - Que faut-il avoir pour les examens ?
+    - Règlement intérieur examens
+    - Qu'apporter à l'examen ?
+    - Règles d'accès à l'examen
+    - Qu'est-ce qui est interdit aux examens ?
+    - Horaires d'accès à l'examen
+    - Instructions examens FST
+    - Règlement intérieur des examens
+    - Règles salle d'examen
+    - Contraintes des examens
+    - règlement examens FST
+    - règles examen
+    - Que faut-il apporter à l'examen FST ?
+
+- intent: demander_types_exclusion_ar
+  examples: |
+    - ما هي أنواع الإقصاء في الامتحانات؟
+    - عقوبات الغش
+    - ماذا يحدث إذا غشت في الامتحان؟
+    - إقصاء من الامتحانات
+    - ما عقوبة الغش في FST؟
+    - ماذا يحدث إذا استخدمت هاتفي في الامتحان؟
+    - عقوبات مخالفات الامتحانات
+    - الغش في الامتحانات FST
+    - ما هي عواقب الغش؟
+    - أنواع الإقصاء في FST
+    - عقوبة حيازة الهاتف في الامتحان
+    - الغش وعواقبه FST
+    - إقصاء امتحانات
+    - عقوبة الغش
+    - عقوبات مخالفة قواعد الامتحانات
+    - ما هي عقوبة الغش في امتحانات FST؟
+
+- intent: demander_types_exclusion_fr
+  examples: |
+    - Quels sont les types d'exclusion aux examens ?
+    - Sanctions pour fraude
+    - Que se passe-t-il si on triche ?
+    - Exclusion lors des examens
+    - Quelle est la sanction pour fraude à la FST ?
+    - Que se passe-t-il si j'utilise mon téléphone ?
+    - Triche aux examens FST
+    - Quelles sont les conséquences de la fraude ?
+    - Types d'exclusion à la FST
+    - Sanction possession téléphone examen
+    - Fraude et conséquences FST
+    - sanctions fraude examen
+    - exclusion examen FST
+    - sanction triche
+    - conséquences fraude examen
+    - Quelles sont les sanctions pour triche aux examens FST ?
+
+- intent: demander_reclamation_ar
+  examples: |
+    - كيف أقدم شكوى؟
+    - شكاوى الامتحانات
+    - ماذا أفعل إذا ضاعت علامتي؟
+    - إجراءات الشكوى
+    - رابط الشكاوى
+    - كيف أطعن في علامتي؟
+    - علامتي ناقصة كيف أشتكي؟
+    - رابط الشكاوى الإلكترونية FST
+    - متى يمكن تقديم شكوى؟
+    - كيف أسترجع علامة ضائعة؟
+    - منصة الشكاوى FST
+    - شكوى علامة
+    - شكاوى FST
+    - شكوى
+    - كيف أتظلم من نتيجة الامتحان؟
+    - ما هو رابط الشكاوى في FST؟
+
+- intent: demander_reclamation_fr
+  examples: |
+    - Comment faire une réclamation ?
+    - Réclamation de notes FST
+    - Que faire si ma note est perdue ?
+    - Procédure de réclamation
+    - Lien réclamation FST
+    - Comment contester ma note ?
+    - Ma note est absente du relevé
+    - Lien réclamations en ligne FST
+    - Quand peut-on faire une réclamation ?
+    - Comment récupérer une note perdue ?
+    - Plateforme réclamations FST
+    - réclamation note FST
+    - lien réclamation
+    - réclamation FST
+    - réclamation
+    - Quel est le lien pour faire une réclamation FST ?
+
+- intent: demander_systeme_LMD_ar
+  examples: |
+    - ما هو نظام LMD؟
+    - شرح نظام LMD
+    - ليسانس ماستر دكتوراه
+    - ما هو النظام الجامعي في FST؟
+    - نظام التعليم في الجامعة
+    - LMD ما معناه؟
+    - كيف يعمل نظام LMD؟
+    - FST تستخدم نظام LMD؟
+    - شرح بسيط لنظام LMD
+    - LMD ثلاث سنوات أم أكثر؟
+    - كم سنة للليسانس في LMD؟
+    - نظام LMD FST
+    - LMD ما هو؟
+    - نظام LMD
+    - نظام ليسانس ماستر دكتوراه
+    - ما هو نظام LMD في FST؟
+    - ل.م.د
+
+- intent: demander_systeme_LMD_fr
+  examples: |
+    - C'est quoi le système LMD ?
+    - Explication du LMD
+    - Licence Master Doctorat
+    - Quel est le système universitaire à la FST ?
+    - Le système d'enseignement à l'université
+    - LMD que signifie-t-il ?
+    - Comment fonctionne le LMD ?
+    - La FST utilise le système LMD ?
+    - Explication simple du LMD
+    - LMD trois ans ou plus ?
+    - Combien d'années pour la Licence en LMD ?
+    - Système LMD FST
+    - LMD c'est quoi ?
+    - système LMD
+    - expliquer le système LMD
+    - Qu'est-ce que le système LMD à la FST ?
+    - chnho LMD
+    - LMD
+    - LMD c'est quoi ?
+    - LMD système universitaire
+
+- intent: demander_organisation_LMD_ar
+  examples: |
+    - كيف ينظم نظام LMD؟
+    - تنظيم LMD
+    - ما هو الهيكل التنظيمي لـ LMD؟
+    - شعبة فصل مقياس عنصر
+    - ما معنى رصيد في LMD؟
+    - كيف تُحسب الأرصدة في LMD؟
+    - الفرق بين المقياس والعنصر
+    - كم رصيداً في الفصل الواحد؟
+    - التسجيل الإداري والبيداغوجي ما الفرق؟
+    - هيكل LMD في الجامعة
+    - ما هو المقياس في LMD؟
+    - المصطلحات في نظام LMD
+    - تنظيم LMD FST
+    - تنظيم الليسانس
+    - هيكل LMD
+    - كيف يُنظَّم نظام LMD في FST؟
+
+- intent: demander_organisation_LMD_fr
+  examples: |
+    - Comment est organisé le LMD ?
+    - Organisation du LMD
+    - Structure du LMD
+    - Filière semestre module élément crédit
+    - Que signifie crédit dans le LMD ?
+    - Comment sont calculés les crédits ?
+    - Différence entre module et élément
+    - Combien de crédits par semestre ?
+    - Différence inscription admin et pédagogique ?
+    - Structure LMD à l'université
+    - Qu'est-ce qu'un module en LMD ?
+    - Terminologie du système LMD
+    - Organisation LMD FST
+    - structure licence
+    - organisation LMD
+    - Comment est structuré le LMD à la FST ?
+
+- intent: demander_progression_licence_ar
+  examples: |
+    - كيف تتم الترقية في الليسانس؟
+    - شروط الانتقال من L1 إلى L2
+    - شروط الانتقال من L2 إلى L3
+    - قواعد التعويض في الليسانس
+    - كيف أنجح في السنة؟
+    - كم رصيداً يلزم للانتقال؟
+    - شروط اجتياز L1
+    - ما هي قاعدة التعويض في الليسانس؟
+    - هل تُحفظ المقاييس المحققة؟
+    - المعدل اللازم للانتقال L1 L2
+    - تراكم الأرصدة في الليسانس
+    - انتقال L1 L2 L3 شروط
+    - شروط الانتقال في الليسانس
+    - الترقية في الليسانس
+    - انتقال الليسانس
+    - ما شروط الانتقال من L1 إلى L2 في FST؟
+
+- intent: demander_progression_licence_fr
+  examples: |
+    - Comment se fait la progression en Licence ?
+    - Conditions de passage L1 à L2
+    - Conditions de passage L2 à L3
+    - Règles de compensation en Licence
+    - Comment valider son année ?
+    - Combien de crédits pour passer ?
+    - Conditions de réussite en L1
+    - Quelle est la règle de compensation en Licence ?
+    - Les modules validés sont-ils conservés ?
+    - Moyenne requise pour passer L1 L2
+    - Cumul des crédits en Licence
+    - conditions passage L1 L2 L3
+    - progression Licence FST
+    - passage en licence
+    - progression licence
+    - Quelles sont les conditions de passage en Licence FST ?
+
+- intent: demander_progression_master_ar
+  examples: |
+    - كيف تتم الترقية في الماستر؟
+    - شروط الانتقال في الماستر
+    - من M1 إلى M2
+    - قواعد التعويض في الماستر
+    - كم رصيداً للانتقال في الماستر؟
+    - شروط الانتقال من S3 إلى S4؟
+    - ماذا يحدث إذا لم أناقش المذكرة؟
+    - شروط اجتياز الماستر
+    - M1 M2 شروط الانتقال
+    - تعويض في الماستر كيف؟
+    - تمديد الماستر شروطه
+    - انتقال الماستر شروط
+    - شروط الماستر
+    - الترقية في الماستر
+    - انتقال ماستر
+    - ما شروط الانتقال من M1 إلى M2؟
+
+- intent: demander_progression_master_fr
+  examples: |
+    - Comment se fait la progression en Master ?
+    - Conditions de passage en Master
+    - De M1 à M2
+    - Règles de compensation en Master
+    - Combien de crédits pour passer en Master ?
+    - Conditions de passage S3 à S4 ?
+    - Que se passe-t-il si je ne soutiens pas le mémoire ?
+    - M1 M2 conditions de passage
+    - Compensation en Master comment ?
+    - Prorogation Master conditions
+    - conditions passage master
+    - progression Master FST
+    - passage en master
+    - progression master
+    - passage master FST
+    - Quelles sont les conditions de passage en Master FST ?
+
+- intent: demander_regles_exclusion_LMD_ar
+  examples: |
+    - ما هي قواعد الإقصاء في LMD؟
+    - متى يُقصى الطالب من الجامعة؟
+    - شروط الإقصاء الجامعي
+    - الإقصاء من البرنامج
+    - كم مرة يمكن الرسوب قبل الإقصاء؟
+    - الإقصاء من الجامعة FST
+    - متى يُقصى الطالب من الليسانس؟
+    - قواعد عدم التجديد في LMD
+    - الإقصاء الأكاديمي FST
+    - ما حد الرسوب في LMD؟
+    - إقصاء بسبب الرسوب
+    - قواعد الإقصاء FST
+    - الإقصاء من LMD
+    - إقصاء جامعي
+    - إقصاء LMD
+    - متى يُقصى الطالب من برنامج LMD؟
+
+- intent: demander_regles_exclusion_LMD_fr
+  examples: |
+    - Quelles sont les règles d'exclusion dans le LMD ?
+    - Quand un étudiant est-il exclu ?
+    - Conditions d'exclusion universitaire
+    - Exclusion du programme LMD
+    - Combien de fois peut-on échouer avant l'exclusion ?
+    - Exclusion de l'université FST
+    - Quand est-on exclu de la Licence ?
+    - Règles de non-renouvellement en LMD
+    - Exclusion académique FST
+    - Quelle est la limite d'échec en LMD ?
+    - Exclusion pour échec répété
+    - règles exclusion FST
+    - exclusion LMD
+    - exclusion universitaire
+    - exclusion LMD FST
+    - Quand un étudiant est-il exclu du programme LMD ?
+
+- intent: demander_evaluation_LMD_ar
+  examples: |
+    - كيف يتم التقييم في LMD؟
+    - نسبة CC و CF
+    - كيف تُحسب العلامة النهائية؟
+    - مراقبة مستمرة وامتحان نهائي
+    - نسبة CC و CF في FST؟
+    - ما وزن الامتحان النهائي؟
+    - التقييم المستمر FST
+    - كيف تحسب علامة المقياس؟
+    - CC 40% و CF 60% صحيح؟
+    - نظام تقييم LMD
+    - علامة TP كيف تُحسب؟
+    - طريقة احتساب الدرجات في FST
+    - تقييم LMD FST
+    - حساب العلامة
+    - نسبة المراقبة المستمرة والامتحان النهائي
+    - كيف تُحسب العلامة النهائية في LMD؟
+
+- intent: demander_evaluation_LMD_fr
+  examples: |
+    - Comment se fait l'évaluation dans le LMD ?
+    - Pourcentage CC et CF
+    - Comment est calculée la note finale ?
+    - Contrôle continu et examen final
+    - Quel pourcentage CC et CF à la FST ?
+    - Quel est le poids de l'examen final ?
+    - Comment calculer la note d'un module ?
+    - CC 40% et CF 60% c'est correct ?
+    - Système d'évaluation LMD
+    - Comment est calculée la note TP ?
+    - Mode de calcul des notes à la FST
+    - évaluation LMD FST
+    - calcul note
+    - note finale LMD
+    - taux CC et CF LMD
+    - Comment est calculée la note finale en LMD ?
+
+- intent: derogation_inscription_ar
+  examples: |
+    - استثناء تسجيل
+    - طلب استثناء
+    - مقصي من السنة
+    - كم رصيد للتسجيل
+    - هل يمكنني التسجيل رغم الإقصاء
+    - قرارات الاستثناء
+    - طلبات الترخيص للتسجيل
+    - هل يُسمح لي بالتسجيل
+    - لدي أكثر من 22 رصيداً هل أسجل
+    - لدي أكثر من 56 رصيداً هل أسجل
+    - مقصي من L1 هل أسجل
+    - مقصي من L2 هل أسجل
+    - لم أسجل في 2024 هل يمكنني التسجيل
+    - انقطعت عن الدراسة هل أسجل
+    - طالب ماستر 1 هل يمكنني التسجيل
+    - لدي 25 رصيداً في الماستر هل أسجل
+    - قرارات تسجيل المقصيين
+    - شروط التسجيل الاستثنائي
+    - ترخيص استثنائي للتسجيل
+    - هل يسمح لطلاب L3 بالتسجيل
+
+- intent: derogation_inscription_fr
+  examples: |
+    - dérogation inscription
+    - demande de dérogation
+    - je suis exclu puis-je m'inscrire
+    - combien de crédits pour s'inscrire
+    - autorisation d'inscription
+    - décisions dérogation
+    - j'ai plus de 22 crédits puis-je m'inscrire
+    - j'ai plus de 56 crédits puis-je m'inscrire
+    - exclu de L1 puis-je m'inscrire
+    - exclu de L2 puis-je m'inscrire
+    - je n'étais pas inscrit en 2024
+    - interruption d'études inscription
+    - étudiant master 1 puis-je m'inscrire
+    - j'ai 25 crédits en master puis-je m'inscrire
+    - conditions inscription exceptionnelle
+    - autorisation exceptionnelle inscription
+    - bachelier 2024 non inscrit
+    - inscrit en 2023 pas en 2024
+    - tous les étudiants L3 autorisés
+    - master 2 inscription autorisée

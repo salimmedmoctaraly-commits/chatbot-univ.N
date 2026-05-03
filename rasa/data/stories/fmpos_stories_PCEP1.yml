@@ -1,0 +1,100 @@
+version: "3.1"
+
+stories:
+
+- story: مسار مواد PCEP1 S1
+  steps:
+  - intent: ask_matieres_pcep1_s1
+  - action: utter_ask_matieres_pcep1
+
+- story: مسار مواد PCEP1 S2
+  steps:
+  - intent: ask_matieres_pcep1_s2
+  - action: utter_ask_matieres_pcep1
+
+- story: مسار مواد PCEP1 كاملة
+  steps:
+  - intent: ask_matieres_pcep1
+  - action: utter_ask_matieres_pcep1
+  
+# ==================== Stories combinées ====================
+
+- story: مسار معلومات FMPOS ثم التخصصات
+  steps:
+  - intent: ask_fmpos_info
+  - action: utter_ask_fmpos_info
+  - intent: ask_fmpos_specializations
+  - action: utter_ask_fmpos_specializations
+
+- story: مسار التخصصات ثم هيكل الطب
+  steps:
+  - intent: ask_fmpos_specializations
+  - action: utter_ask_fmpos_specializations
+  - intent: ask_fmpos_structure_medecine
+  - action: utter_ask_fmpos_structure_medecine
+
+- story: مسار FMPOS ثم هيكل ثم مواد PCEM1
+  steps:
+  - intent: ask_fmpos_info
+  - action: utter_ask_fmpos_info
+  - intent: ask_fmpos_structure_medecine
+  - action: utter_ask_fmpos_structure_medecine
+  - intent: ask_matieres_medecine_pcem1
+  - action: utter_ask_matieres_medecine_pcem1
+
+- story: مسار مواد PCEM1 S1 ثم S2
+  steps:
+  - intent: ask_matieres_pcem1_s1
+  - action: utter_ask_matieres_medecine_pcem1
+  - intent: ask_matieres_pcem1_s2
+  - action: utter_ask_matieres_medecine_pcem1
+
+- story: مسار مواد PCEP1 S1 ثم S2
+  steps:
+  - intent: ask_matieres_pcep1_s1
+  - action: utter_ask_matieres_pcep1
+  - intent: ask_matieres_pcep1_s2
+  - action: utter_ask_matieres_pcep1
+
+- story: مسار التخصصات ثم مواد PCEM1 ثم PCEP1
+  steps:
+  - intent: ask_fmpos_specializations
+  - action: utter_ask_fmpos_specializations
+  - intent: ask_matieres_medecine_pcem1
+  - action: utter_ask_matieres_medecine_pcem1
+  - intent: ask_matieres_pcep1
+  - action: utter_ask_matieres_pcep1
+
+- story: مسار هيكل الطب ثم مواد PCEM1 S1
+  steps:
+  - intent: ask_fmpos_structure_medecine
+  - action: utter_ask_fmpos_structure_medecine
+  - intent: ask_matieres_pcem1_s1
+  - action: utter_ask_matieres_medecine_pcem1
+
+- story: مسار هيكل الطب ثم مواد PCEM1 S2
+  steps:
+  - intent: ask_fmpos_structure_medecine
+  - action: utter_ask_fmpos_structure_medecine
+  - intent: ask_matieres_pcem1_s2
+  - action: utter_ask_matieres_medecine_pcem1
+
+- story: مسار PCEM1 كاملة ثم PCEP1 كاملة
+  steps:
+  - intent: ask_matieres_medecine_pcem1
+  - action: utter_ask_matieres_medecine_pcem1
+  - intent: ask_matieres_pcep1
+  - action: utter_ask_matieres_pcep1
+
+- story: مسار كامل FMPOS
+  steps:
+  - intent: ask_fmpos_info
+  - action: utter_ask_fmpos_info
+  - intent: ask_fmpos_specializations
+  - action: utter_ask_fmpos_specializations
+  - intent: ask_fmpos_structure_medecine
+  - action: utter_ask_fmpos_structure_medecine
+  - intent: ask_matieres_medecine_pcem1
+  - action: utter_ask_matieres_medecine_pcem1
+  - intent: ask_matieres_pcep1
+  - action: utter_ask_matieres_pcep1

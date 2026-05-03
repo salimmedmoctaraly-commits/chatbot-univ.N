@@ -1,0 +1,64 @@
+
+version: "3.1"
+
+nlu:
+
+# ==================== PCEP1 — PHARMACIE / DENTAIRE ====================
+
+- intent: ask_matieres_pcep1_s1
+  examples: |
+    - مواد PCEP1 السداسي الأول
+    - ما هي مواد S1 PCEP1
+    - برنامج PCEP1 S1
+    - دروس PCEP1 الفصل الأول
+    - مواد السنة الأولى صيدلة S1
+    - matières PCEP1 S1
+    - quelles sont les matières PCEP1 premier semestre
+    - programme PCEP1 S1
+    - cours PCEP1 semestre 1
+    - matières semestre 1 première année pharmacie
+    - PCEP1 S1 pharmacie
+    - مواد الصيدلة السنة الأولى S1
+    - programme S1 pharmacie première année
+    - S1 PCEP1 صيدلة
+    - matières S1 pharmacie
+
+- intent: ask_matieres_pcep1_s2
+  examples: |
+    - مواد PCEP1 السداسي الثاني
+    - ما هي مواد S2 PCEP1
+    - برنامج PCEP1 S2
+    - دروس PCEP1 الفصل الثاني
+    - مواد السنة الأولى صيدلة S2
+    - matières PCEP1 S2
+    - quelles sont les matières PCEP1 deuxième semestre
+    - programme PCEP1 S2
+    - cours PCEP1 semestre 2
+    - matières semestre 2 première année pharmacie
+    - PCEP1 S2 pharmacie
+    - مواد الصيدلة السنة الأولى S2
+    - programme S2 pharmacie première année
+    - S2 PCEP1 صيدلة
+    - matières S2 pharmacie
+
+- intent: ask_matieres_pcep1
+  examples: |
+    - مواد PCEP1
+    - ما هي كل مواد PCEP1
+    - برنامج السنة الأولى صيدلة
+    - برنامج السنة الأولى طب الأسنان
+    - دروس السنة الأولى في الصيدلة
+    - ماذا ندرس في PCEP1
+    - matières PCEP1
+    - quel est le programme de PCEP1
+    - cours première année pharmacie
+    - programme complet PCEP1
+    - toutes les matières PCEP1
+    - PCEP1 pharmacie programme
+    - مجموع مواد PCEP1
+    - كل مواد السنة الأولى صيدلة
+    - مواد PCEP1 صيدلة وطب الأسنان
+    - programme PCEP1 médecine dentaire
+    - programme PCEP1 complet
+    - مواد السنة الأولى صيدلة كاملة
+

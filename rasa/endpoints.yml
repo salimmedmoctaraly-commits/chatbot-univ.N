@@ -1,0 +1,2 @@
+action_endpoint:
+  url: "https://devoted-learning-production.up.railway.app/webhook"

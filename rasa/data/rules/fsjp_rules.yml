@@ -1,0 +1,13 @@
+version: "3.1"
+
+rules:
+
+  - rule: FSJP info
+    steps:
+      - intent: ask_fsjp_info
+      - action: utter_ask_fsjp_info
+
+  - rule: FSJP specializations
+    steps:
+      - intent: ask_fsjp_specializations
+      - action: utter_ask_fsjp_specializations

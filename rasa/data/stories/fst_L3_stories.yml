@@ -1,0 +1,179 @@
+version: "3.1"
+
+stories:
+
+# ══════════════════════════════════════════
+# L3 - Matières informatique/maths
+# ══════════════════════════════════════════
+
+- story: matieres_L3_MA
+  steps:
+    - intent: demander_matieres_MA
+    - action: utter_demander_matieres_MA
+
+- story: matieres_L3_MI
+  steps:
+    - intent: demander_matieres_MI
+    - action: utter_demander_matieres_MI
+
+- story: matieres_L3_DA2I
+  steps:
+    - intent: demander_matieres_DA2I
+    - action: utter_demander_matieres_DA2I
+
+- story: matieres_L3_MIAGE
+  steps:
+    - intent: demander_matieres_MIAGE
+    - action: utter_demander_matieres_MIAGE
+
+- story: matieres_MI_puis_DA2I
+  steps:
+    - intent: demander_matieres_MI
+    - action: utter_demander_matieres_MI
+    - intent: demander_matieres_DA2I
+    - action: utter_demander_matieres_DA2I
+
+- story: matieres_MA_puis_MI
+  steps:
+    - intent: demander_matieres_MA
+    - action: utter_demander_matieres_MA
+    - intent: demander_matieres_MI
+    - action: utter_demander_matieres_MI
+
+# ══════════════════════════════════════════
+# L3 - Matières physique/énergie
+# ══════════════════════════════════════════
+
+- story: matieres_L3_PF
+  steps:
+    - intent: demander_matieres_PF
+    - action: utter_demander_matieres_PF
+
+- story: matieres_L3_EEA
+  steps:
+    - intent: demander_matieres_EEA
+    - action: utter_demander_matieres_EEA
+
+- story: matieres_L3_TSER
+  steps:
+    - intent: demander_matieres_TSER
+    - action: utter_demander_matieres_TSER
+
+- story: matieres_L3_SP
+  steps:
+    - intent: demander_matieres_SP
+    - action: utter_demander_matieres_SP
+
+- story: matieres_EEA_puis_TSER
+  steps:
+    - intent: demander_matieres_EEA
+    - action: utter_demander_matieres_EEA
+    - intent: demander_matieres_TSER
+    - action: utter_demander_matieres_TSER
+
+- story: matieres_PF_puis_EEA
+  steps:
+    - intent: demander_matieres_PF
+    - action: utter_demander_matieres_PF
+    - intent: demander_matieres_EEA
+    - action: utter_demander_matieres_EEA
+
+# ══════════════════════════════════════════
+# L3 - Matières géologie/pétrole
+# ══════════════════════════════════════════
+
+- story: matieres_L3_IPG
+  steps:
+    - intent: demander_matieres_IPG
+    - action: utter_demander_matieres_IPG
+
+- story: matieres_L3_GEOSS
+  steps:
+    - intent: demander_matieres_GEOSS
+    - action: utter_demander_matieres_GEOSS
+
+- story: matieres_L3_GEOMIN
+  steps:
+    - intent: demander_matieres_GEOMIN
+    - action: utter_demander_matieres_GEOMIN
+
+- story: matieres_GEOSS_puis_GEOMIN
+  steps:
+    - intent: demander_matieres_GEOSS
+    - action: utter_demander_matieres_GEOSS
+    - intent: demander_matieres_GEOMIN
+    - action: utter_demander_matieres_GEOMIN
+
+- story: matieres_IPG_puis_GEOSS
+  steps:
+    - intent: demander_matieres_IPG
+    - action: utter_demander_matieres_IPG
+    - intent: demander_matieres_GEOSS
+    - action: utter_demander_matieres_GEOSS
+
+# ══════════════════════════════════════════
+# L3 - Matières biologie/chimie/eau
+# ══════════════════════════════════════════
+
+- story: matieres_L3_BMP
+  steps:
+    - intent: demander_matieres_BMP
+    - action: utter_demander_matieres_BMP
+
+- story: matieres_L3_BOE
+  steps:
+    - intent: demander_matieres_BOE
+    - action: utter_demander_matieres_BOE
+
+- story: matieres_L3_NS
+  steps:
+    - intent: demander_matieres_NS
+    - action: utter_demander_matieres_NS
+
+- story: matieres_L3_TASSMQ
+  steps:
+    - intent: demander_matieres_TASSMQ
+    - action: utter_demander_matieres_TASSMQ
+
+- story: matieres_L3_PEPE
+  steps:
+    - intent: demander_matieres_PEPE
+    - action: utter_demander_matieres_PEPE
+
+- story: matieres_L3_CHIMIE
+  steps:
+    - intent: demander_matieres_CHIMIE
+    - action: utter_demander_matieres_CHIMIE
+
+- story: matieres_L3_ABC
+  steps:
+    - intent: demander_matieres_ABC
+    - action: utter_demander_matieres_ABC
+
+- story: matieres_BMP_puis_BOE
+  steps:
+    - intent: demander_matieres_BMP
+    - action: utter_demander_matieres_BMP
+    - intent: demander_matieres_BOE
+    - action: utter_demander_matieres_BOE
+
+- story: matieres_NS_puis_TASSMQ
+  steps:
+    - intent: demander_matieres_NS
+    - action: utter_demander_matieres_NS
+    - intent: demander_matieres_TASSMQ
+    - action: utter_demander_matieres_TASSMQ
+
+- story: matieres_CHIMIE_puis_ABC
+  steps:
+    - intent: demander_matieres_CHIMIE
+    - action: utter_demander_matieres_CHIMIE
+    - intent: demander_matieres_ABC
+    - action: utter_demander_matieres_ABC
+
+- story: matieres_PEPE_puis_NS
+  steps:
+    - intent: demander_matieres_PEPE
+    - action: utter_demander_matieres_PEPE
+    - intent: demander_matieres_NS
+    - action: utter_demander_matieres_NS

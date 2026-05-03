@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+
+- story: cnim_ar
+  steps:
+    - intent: demander_cnim_ar
+    - action: utter_demander_cnim_ar
+
+- story: cnim_fr
+  steps:
+    - intent: demander_cnim_fr
+    - action: utter_demander_cnim_fr
+
+- story: cnim_voie1_ar
+  steps:
+    - intent: demander_cnim_ar
+    - action: utter_demander_cnim_ar
+    - intent: demander_cnim_voie1_ar
+    - action: utter_demander_cnim_voie1_ar
+
+- story: cnim_voie1_fr
+  steps:
+    - intent: demander_cnim_fr
+    - action: utter_demander_cnim_fr
+    - intent: demander_cnim_voie1_fr
+    - action: utter_demander_cnim_voie1_fr
+
+- story: cnim_voie2_ar
+  steps:
+    - intent: demander_cnim_ar
+    - action: utter_demander_cnim_ar
+    - intent: demander_cnim_voie2_ar
+    - action: utter_demander_cnim_voie2_ar
+
+- story: cnim_voie2_fr
+  steps:
+    - intent: demander_cnim_fr
+    - action: utter_demander_cnim_fr
+    - intent: demander_cnim_voie2_fr
+    - action: utter_demander_cnim_voie2_fr
+
+- story: cnim_epreuves_ar
+  steps:
+    - intent: demander_cnim_voie1_ar
+    - action: utter_demander_cnim_voie1_ar
+    - intent: demander_cnim_epreuves_ar
+    - action: utter_demander_cnim_epreuves_ar
+
+- story: cnim_epreuves_fr
+  steps:
+    - intent: demander_cnim_voie1_fr
+    - action: utter_demander_cnim_voie1_fr
+    - intent: demander_cnim_epreuves_fr
+    - action: utter_demander_cnim_epreuves_fr
+
+# ============================================================
+# 9. إدارية / متفرقة
+# ============================================================
+- story: Nuit_Info
+  steps:
+    - intent: demander_Nuit_Info
+    - action: utter_demander_Nuit_Info

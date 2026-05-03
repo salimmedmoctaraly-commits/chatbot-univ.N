@@ -1,0 +1,154 @@
+# ==================== M1 ====================
+version: "3.1"
+
+stories:
+- story: مسار M1 MESA
+  steps:
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+
+- story: مسار M1 MBF
+  steps:
+  - intent: ask_matieres_mbf_m1
+  - action: utter_ask_matieres_mbf_m1
+
+- story: مسار M1 CCA
+  steps:
+  - intent: ask_matieres_cca_m1
+  - action: utter_ask_matieres_cca_m1
+
+- story: مسار M1 Management
+  steps:
+  - intent: ask_matieres_management_m1
+  - action: utter_ask_matieres_management_m1
+
+# ==================== Stories combinées L3→M1→M2 ====================
+
+- story: مسار L3 ثم M1 CCA
+  steps:
+  - intent: ask_matieres_fc_l3
+  - action: utter_ask_matieres_fc_l3
+  - intent: ask_matieres_cca_m1
+  - action: utter_ask_matieres_cca_m1
+
+- story: مسار M1 ثم M2 MBF
+  steps:
+  - intent: ask_matieres_mbf_m1
+  - action: utter_ask_matieres_mbf_m1
+  - intent: ask_matieres_mbf_m2
+  - action: utter_ask_matieres_mbf_m2
+
+- story: مسار M1 ثم M2 CCA Prof
+  steps:
+  - intent: ask_matieres_cca_m1
+  - action: utter_ask_matieres_cca_m1
+  - intent: ask_matieres_cca_prof_m2
+  - action: utter_ask_matieres_cca_prof_m2
+
+- story: مسار L3 GRH ثم M2 GRH
+  steps:
+  - intent: ask_matieres_grh_l3
+  - action: utter_ask_matieres_grh_l3
+  - intent: ask_matieres_grh_m2
+  - action: utter_ask_matieres_grh_m2
+
+- story: مسار L3 اقتصاد تسيير ثم M1 MESA
+  steps:
+  - intent: ask_matieres_economie_gestion_l3
+  - action: utter_ask_matieres_economie_gestion_l3
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+
+- story: مسار L3 اقتصاد عمومي ثم M2 MAE APE
+  steps:
+  - intent: ask_matieres_economie_publique_l3
+  - action: utter_ask_matieres_economie_publique_l3
+  - intent: ask_matieres_mae_ape_m2
+  - action: utter_ask_matieres_mae_ape_m2
+
+- story: مسار M1 Management ثم M2 Entrepreneuriat
+  steps:
+  - intent: ask_matieres_management_m1
+  - action: utter_ask_matieres_management_m1
+  - intent: ask_matieres_entrepreneuriat_m2
+  - action: utter_ask_matieres_entrepreneuriat_m2
+
+- story: مسار M1 MESA ثم M2 MESA ISE
+  steps:
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+  - intent: ask_matieres_mesa_ise_m2
+  - action: utter_ask_matieres_mesa_ise_m2
+
+- story: مسار M1 MESA ثم M2 MESA Économétrie
+  steps:
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+  - intent: ask_matieres_mesa_econometrie_m2
+  - action: utter_ask_matieres_mesa_econometrie_m2
+
+- story: مسار L3 FC ثم M1 CCA ثم M2 CCA Recherche
+  steps:
+  - intent: ask_matieres_fc_l3
+  - action: utter_ask_matieres_fc_l3
+  - intent: ask_matieres_cca_m1
+  - action: utter_ask_matieres_cca_m1
+  - intent: ask_matieres_cca_recherche_m2
+  - action: utter_ask_matieres_cca_recherche_m2
+
+- story: مسار L3 BA ثم M1 MBF ثم M2 Finance Internationale
+  steps:
+  - intent: ask_matieres_ba_l3
+  - action: utter_ask_matieres_ba_l3
+  - intent: ask_matieres_mbf_m1
+  - action: utter_ask_matieres_mbf_m1
+  - intent: ask_matieres_finance_internationale_m2
+  - action: utter_ask_matieres_finance_internationale_m2
+
+- story: مسار L3 GRH ثم M2 Contrôle de Gestion
+  steps:
+  - intent: ask_matieres_grh_l3
+  - action: utter_ask_matieres_grh_l3
+  - intent: ask_matieres_controle_gestion_m2
+  - action: utter_ask_matieres_controle_gestion_m2
+
+- story: مسار L3 اقتصاد تسيير ثم M1 MESA ثم M2 MESA Économétrie
+  steps:
+  - intent: ask_matieres_economie_gestion_l3
+  - action: utter_ask_matieres_economie_gestion_l3
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+  - intent: ask_matieres_mesa_econometrie_m2
+  - action: utter_ask_matieres_mesa_econometrie_m2
+
+- story: مسار L1 ثم L2 ثم L3 ثم M2 GRH
+  steps:
+  - intent: ask_matieres_grh_l1
+  - action: utter_ask_matieres_grh_l1
+  - intent: ask_matieres_grh_l2
+  - action: utter_ask_matieres_grh_l2
+  - intent: ask_matieres_grh_l3
+  - action: utter_ask_matieres_grh_l3
+  - intent: ask_matieres_grh_m2
+  - action: utter_ask_matieres_grh_m2
+
+- story: مسار L3 Techniques Projets Publics ثم M2 MAE APE
+  steps:
+  - intent: ask_matieres_techniques_projets_publics_l3
+  - action: utter_ask_matieres_techniques_projets_publics_l3
+  - intent: ask_matieres_mae_ape_m2
+  - action: utter_ask_matieres_mae_ape_m2
+
+- story: مسار L3 Gestion Entreprises ثم M1 MESA
+  steps:
+  - intent: ask_matieres_gestion_entreprises_l3
+  - action: utter_ask_matieres_gestion_entreprises_l3
+  - intent: ask_matieres_mesa_m1
+  - action: utter_ask_matieres_mesa_m1
+
+- story: مسار L3 Administration Publique ثم M2 MAE CEE
+  steps:
+  - intent: ask_matieres_gestion_administration_publique_l3
+  - action: utter_ask_matieres_gestion_administration_publique_l3
+  - intent: ask_matieres_mae_cee_m2
+  - action: utter_ask_matieres_mae_cee_m2
