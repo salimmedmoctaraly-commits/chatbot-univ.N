@@ -5,7 +5,6 @@ from datetime import datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
-import uuid
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -13,47 +12,42 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+# ── Config ────────────────────────────────────────────────
 RASA_URL     = os.environ.get("RASA_URL", "http://localhost:5005/webhooks/rest/webhook")
 RASA_TIMEOUT = int(os.environ.get("RASA_TIMEOUT", "15"))
 
-_DEFAULT = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    "..", "rasa", "actions", "unknown_questions.json"
-)
-QUESTIONS_FILE = os.environ.get("QUESTIONS_FILE", os.path.normpath(_DEFAULT))
+# ── المسار الصحيح للملف ──────────────────────────────────
+# على Railway: استخدم /data/ (Railway Volume) إذا كان موجوداً
+# وإلا استخدم /app/shared/
+_VOLUME_PATH = "/data/unknown_questions.json"
+_DEFAULT_PATH = "/app/shared/unknown_questions.json"
 
-SESSION_TIMEOUT = 300
-_active_sessions: dict = {}
+def get_questions_file():
+    """يختار المسار الصحيح تلقائياً."""
+    env_path = os.environ.get("QUESTIONS_FILE")
+    if env_path:
+        return env_path
+    # إذا كان /data/ موجوداً (Railway Volume)
+    if os.path.exists("/data"):
+        return _VOLUME_PATH
+    return _DEFAULT_PATH
 
+QUESTIONS_FILE = get_questions_file()
 logger.info(f"QUESTIONS_FILE = {QUESTIONS_FILE}")
-logger.info(f"RASA_URL       = {RASA_URL}")
+
+# Sessions نشطة
+_active_sessions: dict = {}
+SESSION_TIMEOUT = 300
 
 
-# ✅ FIX RAILWAY : crée le fichier au démarrage s'il n'existe pas
-def _init_file():
-    try:
-        d = os.path.dirname(QUESTIONS_FILE)
-        if d:
-            os.makedirs(d, exist_ok=True)
-        if not os.path.exists(QUESTIONS_FILE):
-            with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
-                json.dump([], f)
-            logger.info(f"[init] Fichier créé : {QUESTIONS_FILE}")
-        else:
-            logger.info(f"[init] Fichier existant : {QUESTIONS_FILE}")
-    except Exception as e:
-        logger.error(f"[init] Impossible de créer le fichier : {e}")
-
-_init_file()
-
-
+# ── Helpers ───────────────────────────────────────────────
 def load_questions() -> list:
     try:
         if os.path.exists(QUESTIONS_FILE):
             with open(QUESTIONS_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 return data if isinstance(data, list) else []
-    except (json.JSONDecodeError, IOError) as e:
+    except Exception as e:
         logger.error(f"[load] {e}")
     return []
 
@@ -63,17 +57,23 @@ def save_questions(data: list) -> bool:
         d = os.path.dirname(QUESTIONS_FILE)
         if d:
             os.makedirs(d, exist_ok=True)
-        with open(QUESTIONS_FILE, "w", encoding="utf-8") as f:
+        tmp = QUESTIONS_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        logger.info(f"[save] {len(data)} questions écrites")
+        os.replace(tmp, QUESTIONS_FILE)
+        logger.info(f"[save] {len(data)} أسئلة في {QUESTIONS_FILE}")
         return True
-    except IOError as e:
+    except Exception as e:
         logger.error(f"[save] ERREUR: {e}")
         return False
 
 
 def ask_rasa(message: str, sender: str = "user") -> str:
-    res = requests.post(RASA_URL, json={"sender": sender, "message": message}, timeout=RASA_TIMEOUT)
+    res = requests.post(
+        RASA_URL,
+        json={"sender": sender, "message": message},
+        timeout=RASA_TIMEOUT,
+    )
     res.raise_for_status()
     parts = [m["text"] for m in res.json() if "text" in m]
     return "\n\n".join(parts) or "..."
@@ -87,27 +87,28 @@ def get_active_count() -> int:
     return len(active)
 
 
+# ── Routes ────────────────────────────────────────────────
 @app.route("/", methods=["GET"])
 def index():
-    return jsonify({"service": "UNA Chatbot API", "version": "2.0.0", "status": "running"})
+    return jsonify({
+        "service":        "UNA Chatbot API",
+        "version":        "2.0.0",
+        "status":         "running",
+        "questions_file": QUESTIONS_FILE,
+    })
 
 
 @app.route("/health", methods=["GET"])
 def health():
     questions = load_questions()
     return jsonify({
-        "status": "ok",
-        "timestamp": datetime.utcnow().isoformat(),
+        "status":          "ok",
+        "timestamp":       datetime.utcnow().isoformat(),
         "questions_count": len(questions),
-        "active_users": get_active_count(),
-        "questions_file": QUESTIONS_FILE,
-        "file_exists": os.path.exists(QUESTIONS_FILE),
+        "active_users":    get_active_count(),
+        "questions_file":  QUESTIONS_FILE,
+        "file_exists":     os.path.exists(QUESTIONS_FILE),
     })
-
-
-@app.route("/active-users", methods=["GET"])
-def active_users():
-    return jsonify({"active_users": get_active_count(), "timestamp": datetime.utcnow().isoformat()})
 
 
 @app.route("/ping", methods=["POST"])
@@ -115,26 +116,46 @@ def ping():
     data   = request.get_json(silent=True) or {}
     sender = data.get("sender", "anonymous")
     _active_sessions[sender] = datetime.utcnow().timestamp()
-    return jsonify({"status": "ok", "active_users": get_active_count()})
+    return jsonify({
+        "status":       "ok",
+        "active_users": get_active_count(),
+    })
+
+
+@app.route("/active-users", methods=["GET"])
+def active_users():
+    return jsonify({
+        "active_users": get_active_count(),
+        "timestamp":    datetime.utcnow().isoformat(),
+    })
 
 
 @app.route("/chat", methods=["GET", "POST"])
 def chat():
     if request.method == "GET":
         return jsonify({"endpoint": "/chat", "method": "POST"})
+
     data         = request.get_json(silent=True) or {}
     user_message = data.get("message", "").strip()
     sender       = data.get("sender", "anonymous")
+
     if not user_message:
         return jsonify({"error": "message is required"}), 400
+
     _active_sessions[sender] = datetime.utcnow().timestamp()
+    logger.info(f"[/chat] {sender}: {user_message[:80]}")
+
     try:
         reply = ask_rasa(user_message, sender)
-        return jsonify({"reply": reply, "sender": sender, "active_users": get_active_count()})
+        return jsonify({
+            "reply":        reply,
+            "sender":       sender,
+            "active_users": get_active_count(),
+        })
     except requests.Timeout:
-        return jsonify({"reply": "⏱ انتهت مهلة الاتصال بالبوت."}), 504
+        return jsonify({"reply": "⏱ انتهت مهلة الاتصال، حاول مجدداً."}), 504
     except requests.ConnectionError:
-        return jsonify({"reply": "⚠ تعذّر الاتصال بالخادم."}), 503
+        return jsonify({"reply": "⚠ تعذّر الاتصال بالخادم، يُرجى المحاولة لاحقاً."}), 503
     except Exception as e:
         logger.exception(e)
         return jsonify({"reply": f"⚠ خطأ: {str(e)}"}), 500
@@ -146,19 +167,19 @@ def save_unknown_question():
     question = data.get("question", "").strip()
     if not question:
         return jsonify({"error": "question is required"}), 400
+
     questions = load_questions()
     if questions and questions[-1].get("question") == question:
         return jsonify({"status": "duplicate", "count": len(questions)})
+
     questions.append({
-        "id": str(uuid.uuid4()),
-        "question": question,
-        "timestamp": datetime.utcnow().isoformat(),
-        "admin_reply": None,
-        "replied_at": None
+        "question":  question,
+        "timestamp": datetime.utcnow().isoformat()
     })
+
     if save_questions(questions):
         return jsonify({"status": "saved", "count": len(questions)})
-    return jsonify({"error": "Erreur lors de la sauvegarde"}), 500
+    return jsonify({"error": "Erreur sauvegarde"}), 500
 
 
 @app.route("/unknown-questions", methods=["GET"])
@@ -166,51 +187,28 @@ def get_questions():
     return jsonify(load_questions())
 
 
-@app.route("/unknown-questions/reply", methods=["POST"])
-def reply_to_unknown_question():
-    data       = request.get_json(silent=True) or {}
-    q_id       = data.get("question_id")
-    reply_text = data.get("reply", "").strip()
-    if not q_id:
-        return jsonify({"error": "question_id est requis"}), 400
-    if not reply_text:
-        return jsonify({"error": "La réponse est vide"}), 400
-    questions = load_questions()
-    found = False
-    for i, q in enumerate(questions):
-        if q.get("id") == q_id:
-            questions[i]["admin_reply"] = reply_text
-            questions[i]["replied_at"]  = datetime.utcnow().isoformat()
-            found = True
-            break
-    if not found:
-        return jsonify({"error": "Question introuvable"}), 404
-    if save_questions(questions):
-        return jsonify({"success": True, "message": "Réponse sauvegardée"})
-    return jsonify({"error": "Erreur lors de la sauvegarde"}), 500
-
-
 @app.route("/unknown-questions/all", methods=["DELETE"])
 def delete_all():
     count = len(load_questions())
     if save_questions([]):
-        return jsonify({"status": "deleted", "count": count, "permanent": True})
-    return jsonify({"error": "Erreur lors de la suppression"}), 500
+        logger.info(f"[DELETE ALL] {count} أسئلة محذوفة")
+        return jsonify({"status": "deleted", "count": count})
+    return jsonify({"error": "Erreur suppression"}), 500
 
 
-@app.route("/unknown-questions/<string:question_id>", methods=["DELETE"])
-def delete_question(question_id):
-    data         = load_questions()
-    original_len = len(data)
-    data         = [q for q in data if q.get("id") != question_id]
-    if len(data) == original_len:
-        return jsonify({"error": "Question introuvable"}), 404
+@app.route("/unknown-questions/<int:index>", methods=["DELETE"])
+def delete_question(index):
+    data = load_questions()
+    if index < 0 or index >= len(data):
+        return jsonify({"error": "index out of range"}), 404
+    removed = data.pop(index)
     if save_questions(data):
-        return jsonify({"status": "deleted", "permanent": True, "count": original_len - len(data)})
-    return jsonify({"error": "Erreur lors de la suppression"}), 500
+        return jsonify({"status": "deleted", "question": removed})
+    return jsonify({"error": "Erreur suppression"}), 500
 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    logger.info(f"Flask démarré sur :{port}")
+    logger.info(f"Flask على المنفذ :{port}")
+    logger.info(f"ملف الأسئلة: {QUESTIONS_FILE}")
     app.run(host="0.0.0.0", port=port, debug=False)
