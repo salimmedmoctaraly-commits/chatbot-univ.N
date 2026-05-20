@@ -58,6 +58,14 @@ nlu:
     - مواد DA2I S6
     - مواد السداسي السادس DA2I
     - برنامج DA2I S6
+    - daii s3
+    - daii s4
+    - daii s5
+    - daii s6
+    - daii L2
+    - Daii L3 
+    - daii ما هي مواد daii
+    - daii ما الذي يدرسه طلاب daii
 
 - intent: demander_matieres_MIAGE
   examples: |
@@ -110,6 +118,37 @@ nlu:
     - مواد MIAGE S6
     - مواد السداسي السادس MIAGE
     - برنامج MIAGE S6
+    - MIAGE L3
+    - miage s3
+    - miage s4
+    - miage s5
+    - miage s6
+    - miage L2
+    - miagee L3
+    - miage L3 matières
+    - miage L3 cours
+    - miage L3 programme
+    - miage L3 modules
+    - miage L3 quels cours
+    - miage L3 matières liste
+    - miage L3 programme complet
+    - miage L3 مواد
+    - miage L3 S5 S6
+    - miage L3 matières S5
+    - miage L3 modules S5
+    - miage L3 cours S5
+    - miage L3 programme S5
+    - miage L3 liste matières semestre 5
+    - miage L3 cinquième semestre matières
+    - miage L3 مواد S5
+    - miage L3 مواد السداسي الخامس
+    - miage L3 برنامج S5
+    - ما هي مواد miage
+    - ما الذي يدرسه طلاب miage
+    - miage ما هي مواد miage
+    - miage ما الذي يدرسه طلاب miage
+
+
 
 - intent: demander_matieres_MA
   examples: |
@@ -144,6 +183,63 @@ nlu:
     - مواد MA S6
     - مواد السداسي السادس MA
     - برنامج MA S6
+    - L3 MA matières
+    - L3 MA cours
+    - L3 MA programme
+    - L3 MA modules
+    - L3 MA quels cours
+    - L3 MA matières liste
+    - L3 MA programme complet
+    - L3 MA مواد
+    - L3 MA S5 S6
+    - L3 MA matières S5
+    - L3 MA modules S5
+    - L3 MA cours S5
+    - L3 MA programme S5
+    - L3 MA liste matières semestre 5
+    - L3 MA cinquième semestre matières
+    - L3 MA مواد S5
+    - L3 MA مواد السداسي الخامس
+    - L3 MA برنامج S5
+    - L3 MA matières S6
+    - L3 MA modules S6
+    - L3 MA cours S6
+    - L3 MA programme S6
+    - L3 MA liste matières semestre 6
+    - L3 MA sixième semestre matières
+    - L3 MA مواد S6
+    - L3 MA مواد السداسي السادس
+    - L3 MA برنامج S6
+    - L3 matières MA
+    - L3 cours MA
+    - L3 programme MA
+    - L3 modules MA
+    - L3 quels cours MA
+    - L3 matières liste MA
+    - L3 programme complet MA
+    - L3 matières MA S5
+    - L3 modules MA S5  
+    - L3 cours MA S5
+    - L3 programme MA S5
+    - L3 liste matières MA semestre 5
+    - L3 matières MA S6
+    - L3 modules MA S6
+    - L3 cours MA S6
+    - L3 programme MA S6
+    - L3 liste matières MA semestre 6
+    - L3 matières MA S5 S6
+    - L3 modules MA S5 S6
+    - L3 cours MA S5 S6
+    - L3 programme MA S5 S6
+    - L3 liste matières MA semestre 5 S6
+    - L3 MA cinquième semestre matières S6
+    - L3 MA sixième semestre matières S5
+    - L3 MA مواد S5 S6
+    - L3 MA مواد السداسي الخامس S6
+    - L3 MA مواد السداسي السادس S5
+    - L3 MA برنامج S5 S6
+    - ما هي مواد ma
+    - ما الذي يدرسه طلاب ma
 
 - intent: demander_matieres_MI
   examples: |
@@ -160,6 +256,10 @@ nlu:
     - MI programme complet
     - MI مواد
     - رياضيات ومعلوماتية مواد
+    - ما هي مواد mi
+    - ما الذي يدرسه طلاب mi
+    - MI S5
+    - MI S6
     - MI S5 S6
     - matières MI S5
     - modules MI S5
@@ -179,6 +279,57 @@ nlu:
     - مواد MI S6
     - مواد السداسي السادس MI
     - برنامج MI S6
+    - MI matières S5 S6
+    - MI modules S5 S6
+    - MI cours S5 S6
+    - MI programme S5 S6
+    - MI liste matières semestre 5 S6
+    - MI cinquième semestre matières S6
+    - MI sixième semestre matières S5
+    - MI مواد S5 S6
+    - MI مواد السداسي الخامس S6
+    - MI مواد السداسي السادس S5
+    - MI برنامج S5 S6
+    - L3 MI matières
+    - L3 MI cours
+    - L3 MI programme
+    - L3 MI modules
+    - L3 MI quels cours
+    - L3 MI matières liste
+    - L3 MI programme complet
+    - L3 MI مواد
+    - L3 MI S5
+    - L3 MI S6
+    - L3 MI S5 S6
+    - L3 MI matières S5
+    - L3 modules MI S5
+    - L3 cours MI S5
+    - L3 programme MI S5
+    - L3 liste matières MI semestre 5
+    - L3 MI cinquième semestre matières
+    - L3 MI مواد S5
+    - L3 MI مواد السداسي الخامس
+    - L3 MI برنامج S5
+    - L3 MI matières S6
+    - L3 modules MI S6
+    - L3 cours MI S6
+    - L3 programme MI S6
+    - L3 liste matières MI semestre 6
+    - L3 MI sixième semestre matières
+    - L3 MI مواد S6
+    - L3 MI مواد السداسي السادس
+    - L3 MI برنامج S6
+    - L3 matières MI S5 S6
+    - L3 modules MI S5 S6
+    - L3 cours MI S5 S6
+    - L3 programme MI S5 S6
+    - L3 liste matières MI semestre 5 S6
+    - L3 MI cinquième semestre matières S6
+    - L3 MI sixième semestre matières S5
+    - L3 MI مواد S5 S6
+    - L3 MI مواد السداسي الخامس S6
+    - L3 MI مواد السداسي السادس S5
+    - L3 MI برنامج S5 S6
 
 - intent: demander_matieres_PF
   examples: |
@@ -230,6 +381,40 @@ nlu:
     - مواد PF S6
     - مواد السداسي السادس PF
     - برنامج PF S6
+    - ما هي مواد pf
+    - ما الذي يدرسه طلاب pf
+    - pf ما هي مواد pf
+    - pf ما الذي يدرسه طلاب pf
+    - PF S3
+    - PF S4
+    - PF S5
+    - PF S6
+    - PF L2
+    - PF L3 matières
+    - PF L3 cours
+    - PF L3 programme
+    - PF L3 modules
+    - PF L3 quels cours
+    - PF L3 matières liste
+    - PF L3 programme complet
+    - PF L3 مواد
+    - PF L3 S5 S6
+    - PF L3 matières S5
+    - PF L3 modules S5
+    - PF L3 cours S5
+    - PF L3 programme S5
+    - PF L3 liste matières semestre 5
+    - PF L3 cinquième semestre matières
+    - PF L3 مواد S5
+    - PF L3 مواد السداسي الخامس
+    - PF L3 برنامج S5
+    - PF L3 matières S6
+    - PF L3 modules S6
+    - PF L3 cours S6
+    - PF L3 programme S6
+    - PF L3 liste matières semestre 6
+    - PF L3 sixième semestre matières
+    - PF L3 مواد S6 
 
 - intent: demander_matieres_EEA
   examples: |
@@ -281,7 +466,42 @@ nlu:
     - مواد EEA S6
     - مواد السداسي السادس EEA
     - برنامج EEA S6
-
+    - ما هي مواد eea
+    - ما الذي يدرسه طلاب eea
+    - eea ما هي مواد eea
+    - eea ما الذي يدرسه طلاب eea
+    - EEA S3
+    - EEA S4
+    - EEA S5
+    - EEA S6
+    - EEA L2
+    - EEA L3 matières
+    - EEA L3 cours
+    - EEA L3 programme
+    - EEA L3 modules
+    - EEA L3 quels cours
+    - EEA L3 matières liste
+    - EEA L3 programme complet
+    - EEA L3 مواد
+    - EEA L3 S5 S6
+    - EEA L3 matières S5
+    - EEA L3 modules S5
+    - EEA L3 cours S5
+    - EEA L3 programme S5
+    - EEA L3 liste matières semestre 5
+    - EEA L3 cinquième semestre matières
+    - EEA L3 مواد S5
+    - EEA L3 مواد السداسي الخامس
+    - EEA L3 برنامج S5
+    - EEA L3 matières S6
+    - EEA L3 modules S6
+    - EEA L3 cours S6
+    - EEA L3 programme S6
+    - EEA L3 liste matières semestre 6
+    - EEA L3 sixième semestre matières
+    - EEA L3 مواد S6
+    - EEA L3 مواد السداسي السادس
+    - EEA L3 برنامج S6
 - intent: demander_matieres_TSER
   examples: |
     - ما هي مواد TSER؟
@@ -332,6 +552,42 @@ nlu:
     - مواد TSER S6
     - مواد السداسي السادس TSER
     - برنامج TSER S6
+    - ما هي مواد tser
+    - ما الذي يدرسه طلاب tser
+    - tser ما هي مواد tser
+    - tser ما الذي يدرسه طلاب tser
+    - TSER S3
+    - TSER S4
+    - TSER S5
+    - TSER S6
+    - TSER L2
+    - TSER L3 matières
+    - TSER L3 cours
+    - TSER L3 programme
+    - TSER L3 modules
+    - TSER L3 quels cours
+    - TSER L3 matières liste
+    - TSER L3 programme complet
+    - TSER L3 مواد
+    - TSER L3 S5 S6
+    - TSER L3 matières S5
+    - TSER L3 modules S5
+    - TSER L3 cours S5
+    - TSER L3 programme S5
+    - TSER L3 liste matières semestre 5
+    - TSER L3 cinquième semestre matières
+    - TSER L3 مواد S5
+    - TSER L3 مواد السداسي الخامس
+    - TSER L3 برنامج S5
+    - TSER L3 matières S6
+    - TSER L3 modules S6
+    - TSER L3 cours S6
+    - TSER L3 programme S6
+    - TSER L3 liste matières semestre 6
+    - TSER L3 sixième semestre matières
+    - TSER L3 مواد S6
+    - TSER L3 مواد السداسي السادس
+    - TSER L3 برنامج S6 
 
 - intent: demander_matieres_IPG
   examples: |
@@ -383,6 +639,51 @@ nlu:
     - مواد IPG S6
     - مواد السداسي السادس IPG
     - برنامج IPG S6
+    - ما هي مواد ipg
+    - ما الذي يدرسه طلاب ipg
+    - ipg ما هي مواد ipg
+    - ipg ما الذي يدرسه طلاب ipg
+    - IPG S3
+    - IPG S4
+    - IPG S5
+    - IPG S6
+    - IPG L2
+    - IPG L3 matières
+    - IPG L3 cours
+    - IPG L3 programme
+    - IPG L3 modules
+    - IPG L3 quels cours
+    - IPG L3 matières liste
+    - IPG L3 programme complet
+    - IPG L3 مواد
+    - IPG L3 S5 S6
+    - IPG L3 matières S5
+    - IPG L3 modules S5
+    - IPG L3 cours S5
+    - IPG L3 programme S5
+    - IPG L3 liste matières semestre 5
+    - IPG L3 cinquième semestre matières
+    - IPG L3 مواد S5
+    - IPG L3 مواد السداسي الخامس
+    - IPG L3 برنامج S5
+    - IPG L3 matières S6
+    - IPG L3 modules S6
+    - IPG L3 cours S6
+    - IPG L3 programme S6
+    - IPG L3 liste matières semestre 6
+    - IPG L3 sixième semestre matières
+    - IPG L3 مواد S6
+    - IPG L3 مواد السداسي السادس
+    - IPG L3 برنامج S6    
+    - IPG sixième semestre matières S5
+    - IPG sixième semestre matières S6
+    - IPG cinquième semestre matières S5
+    - IPG cinquième semestre matières S6
+    - IPG matières S5 S6
+    - IPG modules S5 S6
+    - IPG cours S5 S6
+    - IPG programme S5 S6
+    - IPG liste matières semestre 5 S6
 
 - intent: demander_matieres_GEOSS
   examples: |
@@ -417,6 +718,40 @@ nlu:
     - مواد GEOSS S6
     - مواد السداسي السادس GEOSS
     - برنامج GEOSS S6
+    - geoss ما هي مواد geoss
+    - geoss ما الذي يدرسه طلاب geoss
+    - GEOSS S3
+    - GEOSS S4
+    - GEOSS S5
+    - GEOSS S6
+    - GEOSS L2
+    - GEOSS L3 matières
+    - GEOSS L3 cours
+    - GEOSS L3 programme
+    - GEOSS L3 modules
+    - GEOSS L3 quels cours
+    - GEOSS L3 matières liste
+    - GEOSS L3 programme complet
+    - GEOSS L3 مواد
+    - GEOSS L3 S5 S6
+    - GEOSS L3 matières S5
+    - GEOSS L3 modules S5
+    - GEOSS L3 cours S5
+    - GEOSS L3 programme S5
+    - GEOSS L3 liste matières semestre 5
+    - GEOSS L3 cinquième semestre matières
+    - GEOSS L3 مواد S5
+    - GEOSS L3 مواد السداسي الخامس
+    - GEOSS L3 برنامج S5
+    - GEOSS L3 matières S6
+    - GEOSS L3 modules S6
+    - GEOSS L3 cours S6
+    - GEOSS L3 programme S6
+    - GEOSS L3 liste matières semestre 6
+    - GEOSS L3 sixième semestre matières
+    - GEOSS L3 مواد S6
+    - GEOSS L3 مواد السداسي السادس
+    - GEOSS L3 برنامج S6  
 
 - intent: demander_matieres_GEOMIN
   examples: |
@@ -468,6 +803,40 @@ nlu:
     - مواد GEOMIN S6
     - مواد السداسي السادس GEOMIN
     - برنامج GEOMIN S6
+    - geomin ما هي مواد geomin
+    - geomin ما الذي يدرسه طلاب geomin
+    - GEOMIN S3
+    - GEOMIN S4
+    - GEOMIN S5
+    - GEOMIN S6
+    - GEOMIN L2
+    - GEOMIN L3 matières
+    - GEOMIN L3 cours
+    - GEOMIN L3 programme
+    - GEOMIN L3 modules
+    - GEOMIN L3 quels cours
+    - GEOMIN L3 matières liste
+    - GEOMIN L3 programme complet
+    - GEOMIN L3 مواد
+    - GEOMIN L3 S5 S6
+    - GEOMIN L3 matières S5
+    - GEOMIN L3 modules S5
+    - GEOMIN L3 cours S5
+    - GEOMIN L3 programme S5
+    - GEOMIN L3 liste matières semestre 5
+    - GEOMIN L3 cinquième semestre matières
+    - GEOMIN L3 مواد S5
+    - GEOMIN L3 مواد السداسي الخامس
+    - GEOMIN L3 برنامج S5
+    - GEOMIN L3 matières S6
+    - GEOMIN L3 modules S6
+    - GEOMIN L3 cours S6
+    - GEOMIN L3 programme S6
+    - GEOMIN L3 liste matières semestre 6
+    - GEOMIN L3 sixième semestre matières
+    - GEOMIN L3 مواد S6
+    - GEOMIN L3 مواد السداسي السادس
+    - GEOMIN L3 برنامج S6
 
 - intent: demander_matieres_PEPE
   examples: |
@@ -519,6 +888,64 @@ nlu:
     - مواد PEPE S6
     - مواد السداسي السادس PEPE
     - برنامج PEPE S6
+    - pepe ما هي مواد pepe
+    - pepe ما الذي يدرسه طلاب pepe
+    - PEPE S3
+    - PEPE S4
+    - PEPE S5
+    - PEPE S6
+    - PEPE L2
+    - PEPE L3 matières
+    - PEPE L3 cours
+    - PEPE L3 programme
+    - PEPE L3 modules
+    - PEPE L3 quels cours
+    - PEPE L3 matières liste
+    - PEPE L3 programme complet
+    - PEPE L3 مواد
+    - PEPE L3 S5 S6
+    - PEPE L3 matières S5
+    - PEPE L3 modules S5
+    - PEPE L3 cours S5
+    - PEPE L3 programme S5
+    - PEPE L3 liste matières semestre 5
+    - PEPE L3 cinquième semestre matières
+    - PEPE L3 مواد S5
+    - PEPE L3 مواد السداسي الخامس
+    - PEPE L3 برنامج S5
+    - PEPE L3 matières S6
+    - PEPE L3 modules S6
+    - PEPE L3 cours S6
+    - PEPE L3 programme S6
+    - PEPE L3 liste matières semestre 6
+    - PEPE L3 sixième semestre matières
+    - PEPE L3 مواد S6
+    - PEPE L3 مواد السداسي السادس
+    - PEPE L3 برنامج S6
+    - 2p2e
+    - 2p2e S3 S4
+    - 2p2e S5 S6
+    - 2p2e L3
+    - 2p2e L3 matières
+    - 2p2e L3 cours
+    - 2p2e L3 programme
+    - 2p2e L3 modules
+    - 2p2e L3 quels cours
+    - 2p2e L3 matières liste
+    - 2p2e L3 programme complet
+    - 2p2e L3 مواد
+    - 2p2e L3 S5 S6
+    - 2p2e L3 matières S5
+    - 2p2e L3 modules S5
+    - 2p2e L3 cours S5
+    - 2p2e L3 programme S5
+    - 2p2e L3 liste matières semestre 5
+    - 2p2e L3 cinquième semestre matières
+    - 2p2e L3 مواد S5
+    - 2p2e L3 مواد السداسي الخامس
+    - 2p2e L3 برنامج S5
+    - 2p2e L3 matières S6
+    - 2p2e L3 modules S6  
 
 - intent: demander_matieres_CHIMIE
   examples: |
@@ -570,6 +997,48 @@ nlu:
     - مواد CHIMIE S6
     - مواد السداسي السادس CHIMIE
     - برنامج CHIMIE S6
+    - ما هي مواد chimie
+    - ما الذي يدرسه طلاب chimie
+    - chimie شنه
+    - chimie ما هي
+    - chimie ما هي مواد chimie
+    - chimie ما الذي يدرسه طلاب chimie
+    - CHIMIE S3
+    - CHIMIE S4
+    - CHIMIE S5
+    - CHIMIE S6
+    - CHIMIE L2
+    - CHIMIE L3 matières
+    - CHIMIE L3 cours
+    - CHIMIE L3 programme
+    - CHIMIE L3 modules
+    - CHIMIE L3 quels cours
+    - CHIMIE L3 programme complet
+    - CHIMIE L3 مواد
+    - CHIMIE L3 S5 S6
+    - CHIMIE L3 matières S5
+    - CHIMIE L3 modules S5
+    - CHIMIE L3 cours S5
+    - CHIMIE L3 programme S5
+    - CHIMIE L3 liste matières semestre 5
+    - CHIMIE L3 cinquième semestre matières
+    - CHIMIE L3 مواد S5
+    - CHIMIE L3 مواد السداسي الخامس
+    - CHIMIE L3 برنامج S5
+    - CHIMIE L3 matières S6
+    - CHIMIE L3 modules S6
+    - CHIMIE L3 cours S6  
+    - CHIMIE L3 programme S6
+    - CHIMIE L3 liste matières semestre 6
+    - CHIMIE L3 sixième semestre matières
+    - CHIMIE L3 مواد S6
+    - CHIMIE L3 مواد السداسي السادس
+    - CHIMIE L3 برنامج S6   
+    - CHIMIE sixième semestre matières S5
+    - CHIMIE sixième semestre matières S6
+    - CHIMIE cinquième semestre matières S5
+    - CHIMIE cinquième semestre matières S6
+    - CHIMIE matières S5 S6
 
 - intent: demander_matieres_BMP
   examples: |
@@ -604,6 +1073,40 @@ nlu:
     - مواد BMP S6
     - مواد السداسي السادس BMP
     - برنامج BMP S6
+    - bmp ما هي مواد bmp
+    - bmp ما الذي يدرسه طلاب bmp
+    - BMP S3
+    - BMP S4
+    - BMP S5
+    - BMP S6
+    - BMP L2
+    - BMP L3 matières
+    - BMP L3 cours
+    - BMP L3 programme
+    - BMP L3 modules
+    - BMP L3 quels cours
+    - BMP L3 matières liste
+    - BMP L3 programme complet
+    - BMP L3 مواد
+    - BMP L3 S5 S6
+    - BMP L3 matières S5
+    - BMP L3 modules S5
+    - BMP L3 cours S5
+    - BMP L3 programme S5
+    - BMP L3 liste matières semestre 5
+    - BMP L3 cinquième semestre matières
+    - BMP L3 مواد S5
+    - BMP L3 مواد السداسي الخامس
+    - BMP L3 برنامج S5
+    - BMP L3 matières S6
+    - BMP L3 modules S6
+    - BMP L3 cours S6
+    - BMP L3 programme S6
+    - BMP L3 liste matières semestre 6
+    - BMP L3 sixième semestre matières
+    - BMP L3 مواد S6
+    - BMP L3 مواد السداسي السادس
+    - BMP L3 برنامج S6  
 
 - intent: demander_matieres_BOE
   examples: |
@@ -617,4 +1120,3045 @@ nlu:
     - ماذا يُدرَّس في BOE؟
     - BOE matières liste
     - BOE programme complet
-    - BO
+    - BOE مواد
+    - بيولوجيا الكائنات و النظم البيئية مواد
+    - BOE S5 S6
+    - matières BOE S5
+    - modules BOE S5
+    - cours BOE S5
+    - programme BOE S5
+    - liste matières BOE semestre 5
+    - BOE cinquième semestre matières
+    - مواد BOE S5
+    - مواد السداسي الخامس BOE
+    - برنامج BOE S5
+    - matières BOE S6
+    - modules BOE S6
+    - cours BOE S6
+    - programme BOE S6
+    - liste matières BOE semestre 6
+    - BOE sixième semestre matières
+    - مواد BOE S6
+    - مواد السداسي السادس BOE
+    - برنامج BOE S6
+    - boe ما الذي يدرسه طلاب boe
+    - BOE S3
+    - BOE S4
+    - BOE S5  
+    - BOE S6
+    - BOE L2
+    - BOE L3 matières
+    - BOE L3 cours
+    - BOE L3 programme
+    - BOE L3 modules
+    - BOE L3 quels cours
+    - BOE L3 matières liste
+    - BOE L3 programme complet
+    - BOE L3 مواد
+    - BOE L3 S5 S6
+    - BOE L3 matières S5
+    - BOE L3 modules S5
+    - BOE L3 cours S5
+    - BOE L3 programme S5
+    - BOE L3 liste matières semestre 5
+    - BOE L3 cinquième semestre matières
+    - BOE L3 مواد S5
+    - BOE L3 مواد السداسي الخامس
+    - BOE L3 برنامج S5
+    - BOE L3 matières S6
+    - BOE L3 modules S6
+    - BOE L3 cours S6
+    - BOE L3 programme S6
+    - BOE L3 liste matières semestre 6
+    - BOE L3 sixième semestre matières
+    - BOE L3 مواد S6
+    - BOE L3 مواد السداسي السادس
+    - BOE L3 برنامج S6  
+
+
+- intent: description_MA_ar
+  examples: |
+    - ما هو تخصص MA؟
+    - ما هو تخصص الرياضيات وتطبيقاتها؟
+    - عرفني بتخصص MA
+    - ما هو برنامج MA؟
+    - ما الذي يدرسه طلاب MA؟
+    - حدثني عن تخصص الرياضيات
+    - ما هو MA في FST؟
+    - وصف تخصص MA
+    - ما هو اختصاص MA؟
+    - ما معنى MA في الجامعة؟
+    - حدثني عن تخصص MA
+    - ما هي طبيعة تخصص MA؟
+    - كيف يبدو تخصص MA؟
+    - ماذا يتعلم طالب MA؟
+    - ما هي مجالات تخصص MA؟
+    - ما هي أهداف تخصص MA؟
+    - هل تخصص MA جيد؟
+    - ما هي مميزات MA؟
+    - ما هو مسار MA؟
+    - MA تخصص ماذا يدرس؟
+    - ما الفرق بين MA وغيره؟
+    - من يناسبه تخصص MA؟
+    - ma شنهو
+    - ma شنهي
+    - شنهو ma
+    - شنهي ma
+    - اشرحلي ma
+    - اعطيني معلومات عن ma
+    - شنو هو ma
+    - ma في الجامعة شنو
+    - شنو يدرس في ma
+    - ma شنه
+    - ma ما هو
+    - وصفلي ma
+    - ma كيفاش
+    - فهمني ma
+    - ma علاش موجود
+
+- intent: description_MA_fr
+  examples: |
+    - c'est quoi la spécialité MA ?
+    - décris le parcours MA
+    - présente la filière MA
+    - qu'est-ce que MA à la FST ?
+    - parle-moi de MA
+    - description de MA
+    - c'est quoi Mathématiques et Applications ?
+    - présentation de la filière MA
+    - que fait-on en MA ?
+    - MA c'est quoi comme formation ?
+    - c'est quoi MA ?
+    - c'est quoi comme filière MA ?
+    - en quoi consiste MA ?
+    - quelle est la formation MA ?
+    - donne-moi des infos sur MA
+    - ma c'est quoi ?
+    - koi ma
+    - c koi ma
+    - ma chnhi
+    - chnhi ma
+    - wach ma mzian ?
+    - ch7al fi ma ?
+    - ch7al l'année ma ?
+    - bghit n3rf ma
+    - ma chno howa ?
+    - explique-moi MA
+    - informations sur MA
+    - keskon ma
+    - c quoi ma
+    - tell me about ma
+    - what is ma
+    - info MA
+    - presentation MA
+    - define MA
+    - describe MA
+    - ma formation
+    - MA filière
+    - MA parcours
+    - MA programme fst
+    - qu'apprend-on en MA ?
+    - formation MA fst
+    - c'est quoi exactement MA ?
+    - présentation MA fst
+    - spécialité MA fst
+    - MA spécialité
+    - filière MA
+    - ma studies
+    - about ma
+    - ma major
+    - ma degree
+    - ma fst info
+    - ma
+    - mathématiques et applications
+
+- intent: description_MI_ar
+  examples: |
+    - ما هو تخصص MI؟
+    - ما هو تخصص الرياضيات والمعلوماتية؟
+    - عرفني بتخصص MI
+    - ما هو برنامج MI؟
+    - ما الذي يدرسه طلاب MI؟
+    - حدثني عن تخصص MI
+    - ما هو MI في FST؟
+    - وصف تخصص MI
+    - ما معنى MI في الجامعة؟
+    - ما هو اختصاص MI؟
+    - ما هي طبيعة تخصص MI؟
+    - كيف يبدو تخصص MI؟
+    - ماذا يتعلم طالب MI؟
+    - ما هي مجالات تخصص MI؟
+    - ما هي أهداف تخصص MI؟
+    - هل تخصص MI جيد؟
+    - ما هي مميزات MI؟
+    - ما هو مسار MI؟
+    - MI تخصص ماذا يدرس؟
+    - ما الفرق بين MI وغيره؟
+    - من يناسبه تخصص MI؟
+    - mi شنهو
+    - mi شنهي
+    - شنهو mi
+    - شنهي mi
+    - اشرحلي mi
+    - اعطيني معلومات عن mi
+    - شنو هو mi
+    - mi في الجامعة شنو
+    - شنو يدرس في mi
+    - mi شنه
+    - mi ما هو
+    - وصفلي mi
+    - mi كيفاش
+    - فهمني mi
+    - mi علاش موجود
+
+- intent: description_MI_fr
+  examples: |
+    - c'est quoi la spécialité MI ?
+    - décris le parcours MI
+    - présente la filière MI
+    - qu'est-ce que MI à la FST ?
+    - parle-moi de MI
+    - description de MI
+    - c'est quoi Mathématiques et Informatique ?
+    - présentation de la filière MI
+    - que fait-on en MI ?
+    - MI c'est quoi comme formation ?
+    - c'est quoi MI ?
+    - c'est quoi comme filière MI ?
+    - en quoi consiste MI ?
+    - quelle est la formation MI ?
+    - donne-moi des infos sur MI
+    - mi c'est quoi ?
+    - koi mi
+    - c koi mi
+    - mi chnhi
+    - chnhi mi
+    - wach mi mzian ?
+    - ch7al fi mi ?
+    - ch7al l'année mi ?
+    - bghit n3rf mi
+    - mi chno howa ?
+    - explique-moi MI
+    - informations sur MI
+    - keskon mi
+    - c quoi mi
+    - tell me about mi
+    - what is mi
+    - info MI
+    - presentation MI
+    - define MI
+    - describe MI
+    - mi formation
+    - MI filière
+    - MI parcours
+    - MI programme fst
+    - qu'apprend-on en MI ?
+    - formation MI fst
+    - c'est quoi exactement MI ?
+    - présentation MI fst
+    - spécialité MI fst
+    - MI spécialité
+    - filière MI
+    - mi studies
+    - about mi
+    - mi major
+    - mi degree
+    - mi fst info
+    - mi
+    - mathématiques et informatique
+
+- intent: description_MIAGE_ar
+  examples: |
+    - ما هو تخصص MIAGE؟
+    - عرفني بتخصص MIAGE
+    - ما هو برنامج MIAGE؟
+    - ما الذي يدرسه طلاب MIAGE؟
+    - حدثني عن تخصص MIAGE
+    - ما هو MIAGE في FST؟
+    - وصف تخصص MIAGE
+    - ما معنى MIAGE في الجامعة؟
+    - ما هو اختصاص MIAGE؟
+    - ما هي طبيعة تخصص MIAGE؟
+    - كيف يبدو تخصص MIAGE؟
+    - ماذا يتعلم طالب MIAGE؟
+    - ما هي مجالات تخصص MIAGE؟
+    - ما هي أهداف تخصص MIAGE؟
+    - هل تخصص MIAGE جيد؟
+    - ما هي مميزات MIAGE؟
+    - ما هو مسار MIAGE؟
+    - MIAGE تخصص ماذا يدرس؟
+    - ما الفرق بين MIAGE وغيره؟
+    - من يناسبه تخصص MIAGE؟
+    - miage شنهو
+    - miage شنهي
+    - شنهو miage
+    - شنهي miage
+    - اشرحلي miage
+    - اعطيني معلومات عن miage
+    - شنو هو miage
+    - miage في الجامعة شنو
+    - شنو يدرس في miage
+    - miage شنه
+    - miage ما هو
+    - وصفلي miage
+    - miage كيفاش
+    - فهمني miage
+    - miage علاش موجود
+
+- intent: description_MIAGE_fr
+  examples: |
+    - c'est quoi la spécialité MIAGE ?
+    - décris le parcours MIAGE
+    - présente la filière MIAGE
+    - qu'est-ce que MIAGE à la FST ?
+    - parle-moi de MIAGE
+    - description de MIAGE
+    - présentation de la filière MIAGE
+    - que fait-on en MIAGE ?
+    - MIAGE c'est quoi comme formation ?
+    - c'est quoi MIAGE ?
+    - c'est quoi comme filière MIAGE ?
+    - en quoi consiste MIAGE ?
+    - quelle est la formation MIAGE ?
+    - donne-moi des infos sur MIAGE
+    - miage c'est quoi ?
+    - koi miage
+    - c koi miage
+    - miage chnhi
+    - chnhi miage
+    - wach miage mzian ?
+    - ch7al fi miage ?
+    - ch7al l'année miage ?
+    - bghit n3rf miage
+    - miage chno howa ?
+    - explique-moi MIAGE
+    - informations sur MIAGE
+    - keskon miage
+    - c quoi miage
+    - tell me about miage
+    - what is miage
+    - info MIAGE
+    - presentation MIAGE
+    - define MIAGE
+    - describe MIAGE
+    - miage formation
+    - MIAGE filière
+    - MIAGE parcours
+    - MIAGE programme fst
+    - qu'apprend-on en MIAGE ?
+    - formation MIAGE fst
+    - c'est quoi exactement MIAGE ?
+    - présentation MIAGE fst
+    - spécialité MIAGE fst
+    - MIAGE spécialité
+    - filière MIAGE
+    - miage studies
+    - about miage
+    - miage major
+    - miage degree
+    - miage fst info
+    - miage
+    - métiers de l'informatique appliquée à la gestion des entreprises
+
+- intent: description_DA2I_ar
+  examples: |
+    - ما هو تخصص DA2I؟
+    - عرفني بتخصص DA2I
+    - ما هو برنامج DA2I؟
+    - ما الذي يدرسه طلاب DA2I؟
+    - حدثني عن تخصص DA2I
+    - ما هو DA2I في FST؟
+    - وصف تخصص DA2I
+    - ما معنى DA2I في الجامعة؟
+    - ما هو اختصاص DA2I؟
+    - ما هي طبيعة تخصص DA2I؟
+    - كيف يبدو تخصص DA2I؟
+    - ماذا يتعلم طالب DA2I؟
+    - ما هي مجالات تخصص DA2I؟
+    - ما هي أهداف تخصص DA2I؟
+    - هل تخصص DA2I جيد؟
+    - ما هي مميزات DA2I؟
+    - ما هو مسار DA2I؟
+    - DA2I تخصص ماذا يدرس؟
+    - ما الفرق بين DA2I وغيره؟
+    - من يناسبه تخصص DA2I؟
+    - da2i شنهو
+    - da2i شنهي
+    - شنهو da2i
+    - شنهي da2i
+    - اشرحلي da2i
+    - اعطيني معلومات عن da2i
+    - شنو هو da2i
+    - da2i في الجامعة شنو
+    - شنو يدرس في da2i
+    - da2i شنه
+    - da2i ما هو
+    - وصفلي da2i
+    - da2i كيفاش
+    - فهمني da2i
+    - شنهي daii
+    - ما هي daii
+    - ما هي مواد daii
+    - ما الذي يدرسه طلاب daii
+    - daii شنهي
+    - daii ما هي
+    - da2i علاش موجود
+
+
+
+- intent: description_DA2I_fr
+  examples: |
+    - c'est quoi la spécialité DA2I ?
+    - c'est quoi exactement DAII ?
+    - explique-moi DAII
+    - décris le parcours DA2I
+    - présente la filière DA2I
+    - qu'est-ce que DA2I à la FST ?
+    - parle-moi de DA2I
+    - description de DA2I
+    - présentation de la filière DA2I
+    - que fait-on en DA2I ?
+    - DA2I c'est quoi comme formation ?
+    - c'est quoi DA2I ?
+    - c'est quoi comme filière DA2I ?
+    - en quoi consiste DA2I ?
+    - quelle est la formation DA2I ?
+    - donne-moi des infos sur DA2I
+    - da2i c'est quoi ?
+    - koi da2i
+    - c koi da2i
+    - da2i chnhi
+    - chnhi da2i
+    - wach da2i mzian ?
+    - ch7al fi da2i ?
+    - ch7al l'année da2i ?
+    - bghit n3rf da2i
+    - da2i chno howa ?
+    - explique-moi DA2I
+    - informations sur DA2I
+    - keskon da2i
+    - c quoi da2i
+    - tell me about da2i
+    - what is da2i
+    - info DA2I
+    - presentation DA2I
+    - define DA2I
+    - describe DA2I
+    - da2i formation
+    - DA2I filière
+    - DA2I parcours
+    - DA2I programme fst
+    - qu'apprend-on en DA2I ?
+    - formation DA2I fst
+    - c'est quoi exactement DA2I ?
+    - présentation DA2I fst
+    - spécialité DA2I fst
+    - DA2I spécialité
+    - filière DA2I
+    - da2i studies
+    - about da2i
+    - da2i major
+    - da2i degree
+    - da2i fst info
+    - DAII
+    - DA2I
+    - chnhi daii
+    - daii chnhi
+    - developpement d'applications pour l'internet et l'internet
+
+
+- intent: description_PF_ar
+  examples: |
+    - ما هو تخصص PF؟
+    - ما هو تخصص الفيزياء الأساسية؟
+    - عرفني بتخصص PF
+    - ما هو برنامج PF؟
+    - ما الذي يدرسه طلاب PF؟
+    - حدثني عن تخصص الفيزياء
+    - ما هو PF في FST؟
+    - وصف تخصص PF
+    - ما معنى PF في الجامعة؟
+    - ما هو اختصاص PF؟
+    - حدثني عن تخصص PF
+    - ما هي طبيعة تخصص PF؟
+    - كيف يبدو تخصص PF؟
+    - ماذا يتعلم طالب PF؟
+    - ما هي مجالات تخصص PF؟
+    - ما هي أهداف تخصص PF؟
+    - هل تخصص PF جيد؟
+    - ما هي مميزات PF؟
+    - ما هو مسار PF؟
+    - PF تخصص ماذا يدرس؟
+    - ما الفرق بين PF وغيره؟
+    - من يناسبه تخصص PF؟
+    - pf شنهو
+    - pf شنهي
+    - شنهو pf
+    - شنهي pf
+    - اشرحلي pf
+    - اعطيني معلومات عن pf
+    - شنو هو pf
+    - pf في الجامعة شنو
+    - شنو يدرس في pf
+    - pf شنه
+    - pf ما هو
+    - وصفلي pf
+    - pf كيفاش
+    - فهمني pf
+    - pf علاش موجود
+
+- intent: description_PF_fr
+  examples: |
+    - c'est quoi la spécialité PF ?
+    - décris le parcours PF
+    - présente la filière PF
+    - qu'est-ce que PF à la FST ?
+    - parle-moi de PF
+    - description de PF
+    - c'est quoi Physique Fondamentale ?
+    - présentation de la filière PF
+    - que fait-on en PF ?
+    - PF c'est quoi comme formation ?
+    - c'est quoi PF ?
+    - c'est quoi comme filière PF ?
+    - en quoi consiste PF ?
+    - quelle est la formation PF ?
+    - donne-moi des infos sur PF
+    - pf c'est quoi ?
+    - koi pf
+    - c koi pf
+    - pf chnhi
+    - chnhi pf
+    - wach pf mzian ?
+    - ch7al fi pf ?
+    - ch7al l'année pf ?
+    - bghit n3rf pf
+    - pf chno howa ?
+    - explique-moi PF
+    - informations sur PF
+    - keskon pf
+    - c quoi pf
+    - tell me about pf
+    - what is pf
+    - info PF
+    - presentation PF
+    - define PF
+    - describe PF
+    - pf formation
+    - PF filière
+    - PF parcours
+    - PF programme fst
+    - qu'apprend-on en PF ?
+    - formation PF fst
+    - c'est quoi exactement PF ?
+    - présentation PF fst
+    - spécialité PF fst
+    - PF spécialité
+    - filière PF
+    - pf studies
+    - about pf
+    - pf major
+    - pf degree
+    - pf fst info
+    - PF
+    - PF L3
+    - chnhi pf
+    - pf chnhi
+    - physique fondamentale
+
+- intent: description_SP_ar
+  examples: |
+    - ما هو تخصص SP؟
+    - ما هو تخصص العلوم الفيزيائية؟
+    - عرفني بتخصص SP
+    - ما هو برنامج SP؟
+    - ما الذي يدرسه طلاب SP؟
+    - حدثني عن تخصص SP
+    - ما هو SP في FST؟
+    - وصف تخصص SP
+    - ما معنى SP في الجامعة؟
+    - ما هو اختصاص SP؟
+    - ما هي طبيعة تخصص SP؟
+    - كيف يبدو تخصص SP؟
+    - ماذا يتعلم طالب SP؟
+    - ما هي مجالات تخصص SP؟
+    - ما هي أهداف تخصص SP؟
+    - هل تخصص SP جيد؟
+    - ما هي مميزات SP؟
+    - ما هو مسار SP؟
+    - SP تخصص ماذا يدرس؟
+    - ما الفرق بين SP وغيره؟
+    - من يناسبه تخصص SP؟
+    - sp شنهو
+    - sp شنهي
+    - شنهو sp
+    - شنهي sp
+    - اشرحلي sp
+    - اعطيني معلومات عن sp
+    - شنو هو sp
+    - sp في الجامعة شنو
+    - شنو يدرس في sp
+    - sp شنه
+    - sp ما هو
+    - وصفلي sp
+    - sp كيفاش
+    - فهمني sp
+    - sp علاش موجود
+  
+
+- intent: description_SP_fr
+  examples: |
+    - c'est quoi la spécialité SP ?
+    - décris le parcours SP
+    - présente la filière SP
+    - qu'est-ce que SP à la FST ?
+    - parle-moi de SP
+    - description de SP
+    - c'est quoi Sciences Physiques ?
+    - présentation de la filière SP
+    - que fait-on en SP ?
+    - SP c'est quoi comme formation ?
+    - c'est quoi SP ?
+    - c'est quoi comme filière SP ?
+    - en quoi consiste SP ?
+    - quelle est la formation SP ?
+    - donne-moi des infos sur SP
+    - sp c'est quoi ?
+    - koi sp
+    - c koi sp
+    - sp chnhi
+    - chnhi sp
+    - wach sp mzian ?
+    - ch7al fi sp ?
+    - ch7al l'année sp ?
+    - bghit n3rf sp
+    - sp chno howa ?
+    - explique-moi SP
+    - informations sur SP
+    - keskon sp
+    - c quoi sp
+    - tell me about sp
+    - what is sp
+    - info SP
+    - presentation SP
+    - define SP
+    - describe SP
+    - sp formation
+    - SP filière
+    - SP parcours
+    - SP programme fst
+    - qu'apprend-on en SP ?
+    - formation SP fst
+    - c'est quoi exactement SP ?
+    - présentation SP fst
+    - spécialité SP fst
+    - SP spécialité
+    - filière SP
+    - sp studies
+    - about sp
+    - sp major
+    - sp degree
+    - sp fst info
+    - SP
+    - sciences physiques
+
+
+- intent: description_TSER_ar
+  examples: |
+    - ما هو تخصص TSER؟
+    - عرفني بتخصص TSER
+    - ما هو برنامج TSER؟
+    - ما الذي يدرسه طلاب TSER؟
+    - حدثني عن تخصص TSER
+    - ما هو TSER في FST؟
+    - وصف تخصص TSER
+    - ما معنى TSER في الجامعة؟
+    - ما هو اختصاص TSER؟
+    - ما هي طبيعة تخصص TSER؟
+    - كيف يبدو تخصص TSER؟
+    - ماذا يتعلم طالب TSER؟
+    - ما هي مجالات تخصص TSER؟
+    - ما هي أهداف تخصص TSER؟
+    - هل تخصص TSER جيد؟
+    - ما هي مميزات TSER؟
+    - ما هو مسار TSER؟
+    - TSER تخصص ماذا يدرس؟
+    - ما الفرق بين TSER وغيره؟
+    - من يناسبه تخصص TSER؟
+    - tser شنهو
+    - tser شنهي
+    - شنهو tser
+    - شنهي tser
+    - اشرحلي tser
+    - اعطيني معلومات عن tser
+    - شنو هو tser
+    - tser في الجامعة شنو
+    - شنو يدرس في tser
+    - tser شنه
+    - tser ما هو
+    - وصفلي tser
+    - tser كيفاش
+    - فهمني tser
+    - tser علاش موجود
+
+- intent: description_TSER_fr
+  examples: |
+    - c'est quoi la spécialité TSER ?
+    - décris le parcours TSER
+    - présente la filière TSER
+    - qu'est-ce que TSER à la FST ?
+    - parle-moi de TSER
+    - description de TSER
+    - présentation de la filière TSER
+    - que fait-on en TSER ?
+    - TSER c'est quoi comme formation ?
+    - c'est quoi TSER ?
+    - c'est quoi comme filière TSER ?
+    - en quoi consiste TSER ?
+    - quelle est la formation TSER ?
+    - donne-moi des infos sur TSER
+    - tser c'est quoi ?
+    - koi tser
+    - c koi tser
+    - tser chnhi
+    - chnhi tser
+    - wach tser mzian ?
+    - ch7al fi tser ?
+    - ch7al l'année tser ?
+    - bghit n3rf tser
+    - tser chno howa ?
+    - explique-moi TSER
+    - informations sur TSER
+    - keskon tser
+    - c quoi tser
+    - tell me about tser
+    - what is tser
+    - info TSER
+    - presentation TSER
+    - define TSER
+    - describe TSER
+    - tser formation
+    - TSER filière
+    - TSER parcours
+    - TSER programme fst
+    - qu'apprend-on en TSER ?
+    - formation TSER fst
+    - c'est quoi exactement TSER ?
+    - présentation TSER fst
+    - spécialité TSER fst
+    - TSER spécialité
+    - filière TSER
+    - tser studies
+    - about tser
+    - tser major
+    - tser degree
+    - tser
+    - tser fst info
+
+- intent: description_EEA_ar
+  examples: |
+    - ما هو تخصص EEA؟
+    - عرفني بتخصص EEA
+    - ما هو برنامج EEA؟
+    - ما الذي يدرسه طلاب EEA؟
+    - حدثني عن تخصص EEA
+    - ما هو EEA في FST؟
+    - وصف تخصص EEA
+    - ما معنى EEA في الجامعة؟
+    - ما هو اختصاص EEA؟
+    - ما هي طبيعة تخصص EEA؟
+    - كيف يبدو تخصص EEA؟
+    - ماذا يتعلم طالب EEA؟
+    - ما هي مجالات تخصص EEA؟
+    - ما هي أهداف تخصص EEA؟
+    - هل تخصص EEA جيد؟
+    - ما هي مميزات EEA؟
+    - ما هو مسار EEA؟
+    - EEA تخصص ماذا يدرس؟
+    - ما الفرق بين EEA وغيره؟
+    - من يناسبه تخصص EEA؟
+    - eea شنهو
+    - eea شنهي
+    - شنهو eea
+    - شنهي eea
+    - اشرحلي eea
+    - اعطيني معلومات عن eea
+    - شنو هو eea
+    - eea في الجامعة شنو
+    - شنو يدرس في eea
+    - eea شنه
+    - eea ما هو
+    - وصفلي eea
+    - eea كيفاش
+    - فهمني eea
+    - eea علاش موجود
+
+- intent: description_EEA_fr
+  examples: |
+    - c'est quoi la spécialité EEA ?
+    - décris le parcours EEA
+    - présente la filière EEA
+    - qu'est-ce que EEA à la FST ?
+    - parle-moi de EEA
+    - description de EEA
+    - présentation de la filière EEA
+    - que fait-on en EEA ?
+    - EEA c'est quoi comme formation ?
+    - c'est quoi EEA ?
+    - c'est quoi comme filière EEA ?
+    - en quoi consiste EEA ?
+    - quelle est la formation EEA ?
+    - donne-moi des infos sur EEA
+    - eea c'est quoi ?
+    - koi eea
+    - c koi eea
+    - eea chnhi
+    - chnhi eea
+    - wach eea mzian ?
+    - ch7al fi eea ?
+    - ch7al l'année eea ?
+    - bghit n3rf eea
+    - eea chno howa ?
+    - explique-moi EEA
+    - informations sur EEA
+    - keskon eea
+    - c quoi eea
+    - tell me about eea
+    - what is eea
+    - info EEA
+    - presentation EEA
+    - define EEA
+    - describe EEA
+    - eea formation
+    - EEA filière
+    - EEA parcours
+    - EEA programme fst
+    - qu'apprend-on en EEA ?
+    - formation EEA fst
+    - c'est quoi exactement EEA ?
+    - présentation EEA fst
+    - spécialité EEA fst
+    - EEA spécialité
+    - filière EEA
+    - eea studies
+    - about eea
+    - eea major
+    - eea degree
+    - eea fst info
+    - EEA
+  
+
+- intent: description_CHIMIE_ar
+  examples: |
+    - ما هو تخصص الكيمياء؟
+    - عرفني بتخصص CHIMIE
+    - ما هو برنامج الكيمياء؟
+    - ما الذي يدرسه طلاب الكيمياء؟
+    - حدثني عن تخصص الكيمياء
+    - ما هو CHIMIE في FST؟
+    - وصف تخصص الكيمياء
+    - ما هو اختصاص الكيمياء؟
+    - ما هي طبيعة تخصص الكيمياء؟
+    - ماذا يدرس طلاب الكيمياء؟
+    - ما هو تخصص CHIMIE؟
+    - ما هو برنامج CHIMIE؟
+    - ما الذي يدرسه طلاب CHIMIE؟
+    - حدثني عن تخصص CHIMIE
+    - وصف تخصص CHIMIE
+    - ما معنى CHIMIE في الجامعة؟
+    - ما هو اختصاص CHIMIE؟
+    - ما هي طبيعة تخصص CHIMIE؟
+    - كيف يبدو تخصص CHIMIE؟
+    - ماذا يتعلم طالب CHIMIE؟
+    - ما هي مجالات تخصص CHIMIE؟
+    - ما هي أهداف تخصص CHIMIE؟
+    - هل تخصص CHIMIE جيد؟
+    - ما هي مميزات CHIMIE؟
+    - ما هو مسار CHIMIE؟
+    - CHIMIE تخصص ماذا يدرس؟
+    - ما الفرق بين CHIMIE وغيره؟
+    - من يناسبه تخصص CHIMIE؟
+    - chimie شنهو
+    - chimie شنهي
+    - شنهو chimie
+    - شنهي chimie
+    - اشرحلي chimie
+    - اعطيني معلومات عن chimie
+    - شنو هو chimie
+    - chimie في الجامعة شنو
+    - شنو يدرس في chimie
+    - chimie ما هو
+    - وصفلي chimie
+    - chimie كيفاش
+    - فهمني chimie
+    - chimie علاش موجود
+
+- intent: description_CHIMIE_fr
+  examples: |
+    - c'est quoi la spécialité Chimie ?
+    - décris le parcours Chimie
+    - présente la filière Chimie
+    - qu'est-ce que Chimie à la FST ?
+    - parle-moi de Chimie
+    - description de CHIMIE
+    - présentation de la filière Chimie
+    - que fait-on en Chimie ?
+    - Chimie c'est quoi comme formation ?
+    - c'est quoi CHIMIE ?
+    - c'est quoi comme filière CHIMIE ?
+    - en quoi consiste CHIMIE ?
+    - quelle est la formation CHIMIE ?
+    - donne-moi des infos sur CHIMIE
+    - chimie c'est quoi ?
+    - koi chimie
+    - c koi chimie
+    - chimie chnhi
+    - chnhi chimie
+    - wach chimie mzian ?
+    - ch7al fi chimie ?
+    - ch7al l'année chimie ?
+    - bghit n3rf chimie
+    - chimie chno howa ?
+    - explique-moi CHIMIE
+    - informations sur CHIMIE
+    - keskon chimie
+    - c quoi chimie
+    - tell me about chimie
+    - what is chimie
+    - info CHIMIE
+    - presentation CHIMIE
+    - define CHIMIE
+    - describe CHIMIE
+    - chimie formation
+    - CHIMIE filière
+    - CHIMIE parcours
+    - CHIMIE programme fst
+    - qu'apprend-on en CHIMIE ?
+    - formation CHIMIE fst
+    - c'est quoi exactement CHIMIE ?
+    - présentation CHIMIE fst
+    - spécialité CHIMIE fst
+    - CHIMIE spécialité
+    - filière CHIMIE
+    - chimie studies
+    - about chimie
+    - chimie major
+    - chimie degree
+    - chimie fst info
+    - CHIMIE
+
+- intent: description_BMP_ar
+  examples: |
+    - ما هو تخصص BMP؟
+    - عرفني بتخصص BMP
+    - ما هو برنامج BMP؟
+    - ما الذي يدرسه طلاب BMP؟
+    - حدثني عن تخصص BMP
+    - ما هو BMP في FST؟
+    - وصف تخصص BMP
+    - ما معنى BMP في الجامعة؟
+    - ما هو اختصاص BMP؟
+    - ما هي طبيعة تخصص BMP؟
+    - كيف يبدو تخصص BMP؟
+    - ماذا يتعلم طالب BMP؟
+    - ما هي مجالات تخصص BMP؟
+    - ما هي أهداف تخصص BMP؟
+    - هل تخصص BMP جيد؟
+    - ما هي مميزات BMP؟
+    - ما هو مسار BMP؟
+    - BMP تخصص ماذا يدرس؟
+    - ما الفرق بين BMP وغيره؟
+    - من يناسبه تخصص BMP؟
+    - bmp شنهو
+    - bmp شنهي
+    - شنهو bmp
+    - شنهي bmp
+    - اشرحلي bmp
+    - اعطيني معلومات عن bmp
+    - شنو هو bmp
+    - bmp في الجامعة شنو
+    - شنو يدرس في bmp
+    - bmp شنه
+    - bmp ما هو
+    - وصفلي bmp
+    - bmp كيفاش
+    - فهمني bmp
+    - bmp علاش موجود
+
+- intent: description_BMP_fr
+  examples: |
+    - c'est quoi la spécialité BMP ?
+    - décris le parcours BMP
+    - présente la filière BMP
+    - qu'est-ce que BMP à la FST ?
+    - parle-moi de BMP
+    - description de BMP
+    - présentation de la filière BMP
+    - que fait-on en BMP ?
+    - BMP c'est quoi comme formation ?
+    - c'est quoi BMP ?
+    - c'est quoi comme filière BMP ?
+    - en quoi consiste BMP ?
+    - quelle est la formation BMP ?
+    - donne-moi des infos sur BMP
+    - bmp c'est quoi ?
+    - koi bmp
+    - c koi bmp
+    - bmp chnhi
+    - chnhi bmp
+    - wach bmp mzian ?
+    - ch7al fi bmp ?
+    - ch7al l'année bmp ?
+    - bghit n3rf bmp
+    - bmp chno howa ?
+    - explique-moi BMP
+    - informations sur BMP
+    - keskon bmp
+    - c quoi bmp
+    - tell me about bmp
+    - what is bmp
+    - info BMP
+    - presentation BMP
+    - define BMP
+    - describe BMP
+    - bmp formation
+    - BMP filière
+    - BMP parcours
+    - BMP programme fst
+    - qu'apprend-on en BMP ?
+    - formation BMP fst
+    - c'est quoi exactement BMP ?
+    - présentation BMP fst
+    - spécialité BMP fst
+    - BMP spécialité
+    - filière BMP
+    - bmp studies
+    - about bmp
+    - bmp major
+    - bmp degree
+    - bmp fst info
+
+- intent: description_BOE_ar
+  examples: |
+    - ما هو تخصص BOE؟
+    - عرفني بتخصص BOE
+    - ما هو برنامج BOE؟
+    - ما الذي يدرسه طلاب BOE؟
+    - حدثني عن تخصص BOE
+    - ما هو BOE في FST؟
+    - وصف تخصص BOE
+    - ما معنى BOE في الجامعة؟
+    - ما هو اختصاص BOE؟
+    - ما هي طبيعة تخصص BOE؟
+    - boe شنهي
+    - اشتعرف عن boe
+    - ما هي boe
+    - boe شنه
+    - boe ما هي
+    - كيف يبدو تخصص BOE؟
+    - ماذا يتعلم طالب BOE؟
+    - ما هي مجالات تخصص BOE؟
+    - ما هي أهداف تخصص BOE؟
+    - هل تخصص BOE جيد؟
+    - ما هي مميزات BOE؟
+    - ما هو مسار BOE؟
+    - BOE تخصص ماذا يدرس؟
+    - ما الفرق بين BOE وغيره؟
+    - من يناسبه تخصص BOE؟
+    - boe شنهو
+    - شنهو boe
+    - شنهي boe
+    - اشرحلي boe
+    - اعطيني معلومات عن boe
+    - شنو هو boe
+    - boe في الجامعة شنو
+    - شنو يدرس في boe
+    - boe ما هو
+    - وصفلي boe
+    - boe كيفاش
+    - فهمني boe
+    - boe علاش موجود
+
+- intent: description_BOE_fr
+  examples: |
+    - c'est quoi la spécialité BOE ?
+    - décris le parcours BOE
+    - présente la filière BOE
+    - qu'est-ce que BOE à la FST ?
+    - parle-moi de BOE
+    - description de BOE
+    - présentation de la filière BOE
+    - que fait-on en BOE ?
+    - BOE c'est quoi comme formation ?
+    - c'est quoi BOE ?
+    - BOE
+    - chnhi boe
+    - boe chnhi
+    - c'est quoi comme filière BOE ?
+    - en quoi consiste BOE ?
+    - quelle est la formation BOE ?
+    - donne-moi des infos sur BOE
+    - boe c'est quoi ?
+    - koi boe
+    - c koi boe
+    - wach boe mzian ?
+    - ch7al fi boe ?
+    - ch7al l'année boe ?
+    - bghit n3rf boe
+    - boe chno howa ?
+    - explique-moi BOE
+    - informations sur BOE
+    - keskon boe
+    - c quoi boe
+    - tell me about boe
+    - what is boe
+    - info BOE
+    - presentation BOE
+    - define BOE
+    - describe BOE
+    - boe formation
+    - BOE filière
+    - BOE parcours
+    - BOE programme fst
+    - qu'apprend-on en BOE ?
+    - formation BOE fst
+    - c'est quoi exactement BOE ?
+    - présentation BOE fst
+    - spécialité BOE fst
+    - BOE spécialité
+    - filière BOE
+    - boe studies
+    - about boe
+    - boe major
+    - boe degree
+    - boe fst info
+
+- intent: description_NS_ar
+  examples: |
+    - ما هو تخصص NS؟
+    - ما هو تخصص التغذية والصحة؟
+    - عرفني بتخصص NS
+    - ما هو برنامج NS؟
+    - ما الذي يدرسه طلاب NS؟
+    - حدثني عن تخصص NS
+    - ما هو NS في FST؟
+    - وصف تخصص NS
+    - ما معنى NS في الجامعة؟
+    - ما هو اختصاص NS؟
+    - ما هي طبيعة تخصص NS؟
+    - كيف يبدو تخصص NS؟
+    - ماذا يتعلم طالب NS؟
+    - ما هي مجالات تخصص NS؟
+    - ما هي أهداف تخصص NS؟
+    - هل تخصص NS جيد؟
+    - ما هي مميزات NS؟
+    - ما هو مسار NS؟
+    - NS تخصص ماذا يدرس؟
+    - ما الفرق بين NS وغيره؟
+    - من يناسبه تخصص NS؟
+    - ns شنهو
+    - ns شنهي
+    - شنهو ns
+    - شنهي ns
+    - اشرحلي ns
+    - اعطيني معلومات عن ns
+    - شنو هو ns
+    - ns في الجامعة شنو
+    - شنو يدرس في ns
+    - ns شنه
+    - ns ما هو
+    - وصفلي ns
+    - ns كيفاش
+    - فهمني ns
+    - ns علاش موجود
+
+- intent: description_NS_fr
+  examples: |
+    - c'est quoi la spécialité NS ?
+    - décris le parcours NS
+    - présente la filière NS
+    - qu'est-ce que NS à la FST ?
+    - parle-moi de NS
+    - description de NS
+    - c'est quoi Nutrition et Santé ?
+    - présentation de la filière NS
+    - que fait-on en NS ?
+    - NS c'est quoi comme formation ?
+    - c'est quoi NS ?
+    - c'est quoi comme filière NS ?
+    - en quoi consiste NS ?
+    - quelle est la formation NS ?
+    - donne-moi des infos sur NS
+    - ns c'est quoi ?
+    - koi ns
+    - c koi ns
+    - ns chnhi
+    - chnhi ns
+    - wach ns mzian ?
+    - ch7al fi ns ?
+    - ch7al l'année ns ?
+    - bghit n3rf ns
+    - ns chno howa ?
+    - explique-moi NS
+    - informations sur NS
+    - keskon ns
+    - c quoi ns
+    - tell me about ns
+    - what is ns
+    - info NS
+    - presentation NS
+    - define NS
+    - describe NS
+    - ns formation
+    - NS filière
+    - NS parcours
+    - NS programme fst
+    - qu'apprend-on en NS ?
+    - formation NS fst
+    - c'est quoi exactement NS ?
+    - présentation NS fst
+    - spécialité NS fst
+    - NS spécialité
+    - filière NS
+    - ns studies
+    - about ns
+    - ns major
+    - ns degree
+    - ns fst info
+
+- intent: description_TASSMQ_ar
+  examples: |
+    - ما هو تخصص TASSMQ؟
+    - عرفني بتخصص TASSMQ
+    - ما هو برنامج TASSMQ؟
+    - ما الذي يدرسه طلاب TASSMQ؟
+    - حدثني عن تخصص TASSMQ
+    - ما هو TASSMQ في FST؟
+    - وصف تخصص TASSMQ
+    - ما معنى TASSMQ في الجامعة؟
+    - ما هو اختصاص TASSMQ؟
+    - ما هي طبيعة تخصص TASSMQ؟
+    - كيف يبدو تخصص TASSMQ؟
+    - ماذا يتعلم طالب TASSMQ؟
+    - ما هي مجالات تخصص TASSMQ؟
+    - ما هي أهداف تخصص TASSMQ؟
+    - هل تخصص TASSMQ جيد؟
+    - ما هي مميزات TASSMQ؟
+    - ما هو مسار TASSMQ؟
+    - TASSMQ تخصص ماذا يدرس؟
+    - ما الفرق بين TASSMQ وغيره؟
+    - من يناسبه تخصص TASSMQ؟
+    - tassmq شنهو
+    - tassmq شنهي
+    - شنهو tassmq
+    - شنهي tassmq
+    - اشرحلي tassmq
+    - اعطيني معلومات عن tassmq
+    - شنو هو tassmq
+    - tassmq في الجامعة شنو
+    - شنو يدرس في tassmq
+    - tassmq شنه
+    - tassmq ما هو
+    - وصفلي tassmq
+    - tassmq كيفاش
+    - فهمني tassmq
+    - tassmq علاش موجود
+
+- intent: description_TASSMQ_fr
+  examples: |
+    - c'est quoi la spécialité TASSMQ ?
+    - décris le parcours TASSMQ
+    - présente la filière TASSMQ
+    - qu'est-ce que TASSMQ à la FST ?
+    - parle-moi de TASSMQ
+    - description de TASSMQ
+    - présentation de la filière TASSMQ
+    - que fait-on en TASSMQ ?
+    - TASSMQ c'est quoi comme formation ?
+    - c'est quoi TASSMQ ?
+    - c'est quoi comme filière TASSMQ ?
+    - en quoi consiste TASSMQ ?
+    - quelle est la formation TASSMQ ?
+    - donne-moi des infos sur TASSMQ
+    - tassmq c'est quoi ?
+    - koi tassmq
+    - c koi tassmq
+    - tassmq chnhi
+    - chnhi tassmq
+    - wach tassmq mzian ?
+    - ch7al fi tassmq ?
+    - ch7al l'année tassmq ?
+    - bghit n3rf tassmq
+    - tassmq chno howa ?
+    - explique-moi TASSMQ
+    - informations sur TASSMQ
+    - keskon tassmq
+    - c quoi tassmq
+    - tell me about tassmq
+    - what is tassmq
+    - info TASSMQ
+    - presentation TASSMQ
+    - define TASSMQ
+    - describe TASSMQ
+    - tassmq formation
+    - TASSMQ filière
+    - TASSMQ parcours
+    - TASSMQ programme fst
+    - qu'apprend-on en TASSMQ ?
+    - formation TASSMQ fst
+    - c'est quoi exactement TASSMQ ?
+    - présentation TASSMQ fst
+    - spécialité TASSMQ fst
+    - TASSMQ spécialité
+    - filière TASSMQ
+    - tassmq studies
+    - about tassmq
+    - tassmq major
+    - tassmq degree
+    - tassmq fst info
+
+- intent: description_IPG_ar
+  examples: |
+    - ما هو تخصص IPG؟
+    - عرفني بتخصص IPG
+    - ما هو برنامج IPG؟
+    - ما الذي يدرسه طلاب IPG؟
+    - حدثني عن تخصص IPG
+    - ما هو IPG في FST؟
+    - وصف تخصص IPG
+    - ما معنى IPG في الجامعة؟
+    - ما هو اختصاص IPG؟
+    - ما هي طبيعة تخصص IPG؟
+    - كيف يبدو تخصص IPG؟
+    - ماذا يتعلم طالب IPG؟
+    - ما هي مجالات تخصص IPG؟
+    - ما هي أهداف تخصص IPG؟
+    - هل تخصص IPG جيد؟
+    - ما هي مميزات IPG؟
+    - ما هو مسار IPG؟
+    - IPG تخصص ماذا يدرس؟
+    - ما الفرق بين IPG وغيره؟
+    - من يناسبه تخصص IPG؟
+    - ipg شنهو
+    - ipg شنهي
+    - شنهو ipg
+    - شنهي ipg
+    - اشرحلي ipg
+    - اعطيني معلومات عن ipg
+    - شنو هو ipg
+    - ipg في الجامعة شنو
+    - شنو يدرس في ipg
+    - ipg شنه
+    - ipg ما هو
+    - وصفلي ipg
+    - ipg كيفاش
+    - فهمني ipg
+    - ipg علاش موجود
+
+- intent: description_IPG_fr
+  examples: |
+    - c'est quoi la spécialité IPG ?
+    - décris le parcours IPG
+    - présente la filière IPG
+    - qu'est-ce que IPG à la FST ?
+    - parle-moi de IPG
+    - description de IPG
+    - présentation de la filière IPG
+    - que fait-on en IPG ?
+    - IPG c'est quoi comme formation ?
+    - c'est quoi IPG ?
+    - c'est quoi comme filière IPG ?
+    - en quoi consiste IPG ?
+    - quelle est la formation IPG ?
+    - donne-moi des infos sur IPG
+    - ipg c'est quoi ?
+    - koi ipg
+    - c koi ipg
+    - ipg chnhi
+    - chnhi ipg
+    - wach ipg mzian ?
+    - ch7al fi ipg ?
+    - ch7al l'année ipg ?
+    - bghit n3rf ipg
+    - ipg chno howa ?
+    - explique-moi IPG
+    - informations sur IPG
+    - keskon ipg
+    - c quoi ipg
+    - tell me about ipg
+    - what is ipg
+    - info IPG
+    - presentation IPG
+    - define IPG
+    - describe IPG
+    - ipg formation
+    - IPG filière
+    - IPG parcours
+    - IPG programme fst
+    - qu'apprend-on en IPG ?
+    - formation IPG fst
+    - c'est quoi exactement IPG ?
+    - présentation IPG fst
+    - spécialité IPG fst
+    - IPG spécialité
+    - filière IPG
+    - ipg studies
+    - about ipg
+    - ipg major
+    - ipg degree
+    - ipg fst info
+
+- intent: description_GEOSS_ar
+  examples: |
+    - ما هو تخصص GEOSS؟
+    - عرفني بتخصص GEOSS
+    - ما هو برنامج GEOSS؟
+    - ما الذي يدرسه طلاب GEOSS؟
+    - حدثني عن تخصص GEOSS
+    - ما هو GEOSS في FST؟
+    - وصف تخصص GEOSS
+    - ما معنى GEOSS في الجامعة؟
+    - ما هو اختصاص GEOSS؟
+    - ما هي طبيعة تخصص GEOSS؟
+    - كيف يبدو تخصص GEOSS؟
+    - ماذا يتعلم طالب GEOSS؟
+    - ما هي مجالات تخصص GEOSS؟
+    - ما هي أهداف تخصص GEOSS؟
+    - هل تخصص GEOSS جيد؟
+    - ما هي مميزات GEOSS؟
+    - ما هو مسار GEOSS؟
+    - GEOSS تخصص ماذا يدرس؟
+    - ما الفرق بين GEOSS وغيره؟
+    - من يناسبه تخصص GEOSS؟
+    - geoss شنهو
+    - geoss شنهي
+    - شنهو geoss
+    - شنهي geoss
+    - اشرحلي geoss
+    - اعطيني معلومات عن geoss
+    - شنو هو geoss
+    - geoss في الجامعة شنو
+    - شنو يدرس في geoss
+    - geoss شنه
+    - geoss ما هو
+    - وصفلي geoss
+    - geoss كيفاش
+    - فهمني geoss
+    - geoss علاش موجود
+
+- intent: description_GEOSS_fr
+  examples: |
+    - c'est quoi la spécialité GEOSS ?
+    - décris le parcours GEOSS
+    - présente la filière GEOSS
+    - qu'est-ce que GEOSS à la FST ?
+    - parle-moi de GEOSS
+    - description de GEOSS
+    - présentation de la filière GEOSS
+    - que fait-on en GEOSS ?
+    - GEOSS c'est quoi comme formation ?
+    - c'est quoi GEOSS ?
+    - c'est quoi comme filière GEOSS ?
+    - en quoi consiste GEOSS ?
+    - quelle est la formation GEOSS ?
+    - donne-moi des infos sur GEOSS
+    - geoss c'est quoi ?
+    - koi geoss
+    - c koi geoss
+    - geoss chnhi
+    - chnhi geoss
+    - wach geoss mzian ?
+    - ch7al fi geoss ?
+    - ch7al l'année geoss ?
+    - bghit n3rf geoss
+    - geoss chno howa ?
+    - explique-moi GEOSS
+    - informations sur GEOSS
+    - keskon geoss
+    - c quoi geoss
+    - tell me about geoss
+    - what is geoss
+    - info GEOSS
+    - presentation GEOSS
+    - define GEOSS
+    - describe GEOSS
+    - geoss formation
+    - GEOSS filière
+    - GEOSS parcours
+    - GEOSS programme fst
+    - qu'apprend-on en GEOSS ?
+    - formation GEOSS fst
+    - c'est quoi exactement GEOSS ?
+    - présentation GEOSS fst
+    - spécialité GEOSS fst
+    - GEOSS spécialité
+    - filière GEOSS
+    - geoss studies
+    - about geoss
+    - geoss major
+    - geoss degree
+    - geoss fst info
+
+- intent: description_GEOMIN_ar
+  examples: |
+    - ما هو تخصص GEOMIN؟
+    - عرفني بتخصص GEOMIN
+    - ما هو برنامج GEOMIN؟
+    - ما الذي يدرسه طلاب GEOMIN؟
+    - حدثني عن تخصص GEOMIN
+    - ما هو GEOMIN في FST؟
+    - وصف تخصص GEOMIN
+    - ما معنى GEOMIN في الجامعة؟
+    - ما هو اختصاص GEOMIN؟
+    - ما هي طبيعة تخصص GEOMIN؟
+    - كيف يبدو تخصص GEOMIN؟
+    - ماذا يتعلم طالب GEOMIN؟
+    - ما هي مجالات تخصص GEOMIN؟
+    - ما هي أهداف تخصص GEOMIN؟
+    - هل تخصص GEOMIN جيد؟
+    - ما هي مميزات GEOMIN؟
+    - ما هو مسار GEOMIN؟
+    - GEOMIN تخصص ماذا يدرس؟
+    - ما الفرق بين GEOMIN وغيره؟
+    - من يناسبه تخصص GEOMIN؟
+    - geomin شنهو
+    - geomin شنهي
+    - شنهو geomin
+    - شنهي geomin
+    - اشرحلي geomin
+    - اعطيني معلومات عن geomin
+    - شنو هو geomin
+    - geomin في الجامعة شنو
+    - شنو يدرس في geomin
+    - geomin شنه
+    - geomin ما هو
+    - وصفلي geomin
+    - geomin كيفاش
+    - فهمني geomin
+    - geomin علاش موجود
+
+- intent: description_GEOMIN_fr
+  examples: |
+    - c'est quoi la spécialité GEOMIN ?
+    - décris le parcours GEOMIN
+    - présente la filière GEOMIN
+    - qu'est-ce que GEOMIN à la FST ?
+    - parle-moi de GEOMIN
+    - description de GEOMIN
+    - présentation de la filière GEOMIN
+    - que fait-on en GEOMIN ?
+    - GEOMIN c'est quoi comme formation ?
+    - c'est quoi GEOMIN ?
+    - c'est quoi comme filière GEOMIN ?
+    - en quoi consiste GEOMIN ?
+    - quelle est la formation GEOMIN ?
+    - donne-moi des infos sur GEOMIN
+    - geomin c'est quoi ?
+    - koi geomin
+    - c koi geomin
+    - geomin chnhi
+    - chnhi geomin
+    - wach geomin mzian ?
+    - ch7al fi geomin ?
+    - ch7al l'année geomin ?
+    - bghit n3rf geomin
+    - geomin chno howa ?
+    - explique-moi GEOMIN
+    - informations sur GEOMIN
+    - keskon geomin
+    - c quoi geomin
+    - tell me about geomin
+    - what is geomin
+    - info GEOMIN
+    - presentation GEOMIN
+    - define GEOMIN
+    - describe GEOMIN
+    - geomin formation
+    - GEOMIN filière
+    - GEOMIN parcours
+    - GEOMIN programme fst
+    - qu'apprend-on en GEOMIN ?
+    - formation GEOMIN fst
+    - c'est quoi exactement GEOMIN ?
+    - présentation GEOMIN fst
+    - spécialité GEOMIN fst
+    - GEOMIN spécialité
+    - filière GEOMIN
+    - geomin studies
+    - about geomin
+    - geomin major
+    - geomin degree
+    - geomin fst info
+
+- intent: description_PEPE_ar
+  examples: |
+    - ما هو تخصص PEPE؟
+    - عرفني بتخصص PEPE
+    - ما هو برنامج PEPE؟
+    - ما الذي يدرسه طلاب PEPE؟
+    - حدثني عن تخصص PEPE
+    - ما هو PEPE في FST؟
+    - وصف تخصص PEPE
+    - ما معنى PEPE في الجامعة؟
+    - ما هو اختصاص PEPE؟
+    - ما هي طبيعة تخصص PEPE؟
+    - كيف يبدو تخصص PEPE؟
+    - ماذا يتعلم طالب PEPE؟
+    - ما هي مجالات تخصص PEPE؟
+    - ما هي أهداف تخصص PEPE؟
+    - هل تخصص PEPE جيد؟
+    - ما هي مميزات PEPE؟
+    - ما هو مسار PEPE؟
+    - PEPE تخصص ماذا يدرس؟
+    - ما الفرق بين PEPE وغيره؟
+    - من يناسبه تخصص PEPE؟
+    - pepe شنهو
+    - pepe شنهي
+    - شنهو pepe
+    - شنهي pepe
+    - اشرحلي pepe
+    - اعطيني معلومات عن pepe
+    - شنو هو pepe
+    - pepe في الجامعة شنو
+    - شنو يدرس في pepe
+    - pepe شنه
+    - pepe ما هو
+    - وصفلي pepe
+    - pepe كيفاش
+    - فهمني pepe
+    - pepe علاش موجود
+
+- intent: description_PEPE_fr
+  examples: |
+    - c'est quoi la spécialité PEPE ?
+    - décris le parcours PEPE
+    - présente la filière PEPE
+    - qu'est-ce que PEPE à la FST ?
+    - parle-moi de PEPE
+    - description de PEPE
+    - présentation de la filière PEPE
+    - que fait-on en PEPE ?
+    - PEPE c'est quoi comme formation ?
+    - c'est quoi PEPE ?
+    - c'est quoi comme filière PEPE ?
+    - en quoi consiste PEPE ?
+    - quelle est la formation PEPE ?
+    - donne-moi des infos sur PEPE
+    - pepe c'est quoi ?
+    - koi pepe
+    - c koi pepe
+    - pepe chnhi
+    - chnhi pepe
+    - wach pepe mzian ?
+    - ch7al fi pepe ?
+    - ch7al l'année pepe ?
+    - bghit n3rf pepe
+    - pepe chno howa ?
+    - explique-moi PEPE
+    - informations sur PEPE
+    - keskon pepe
+    - c quoi pepe
+    - tell me about pepe
+    - what is pepe
+    - info PEPE
+    - presentation PEPE
+    - define PEPE
+    - describe PEPE
+    - pepe formation
+    - PEPE filière
+    - PEPE parcours
+    - PEPE programme fst
+    - qu'apprend-on en PEPE ?
+    - formation PEPE fst
+    - c'est quoi exactement PEPE ?
+    - présentation PEPE fst
+    - spécialité PEPE fst
+    - PEPE spécialité
+    - filière PEPE
+    - pepe studies
+    - about pepe
+    - pepe major
+    - pepe degree
+    - pepe fst info
+
+- intent: description_ABC_ar
+  examples: |
+    - ما هو تخصص ABC؟
+    - عرفني بتخصص ABC
+    - ما هو برنامج ABC؟
+    - ما الذي يدرسه طلاب ABC؟
+    - حدثني عن تخصص ABC
+    - ما هو ABC في FST؟
+    - وصف تخصص ABC
+    - ما معنى ABC في الجامعة؟
+    - ما هو اختصاص ABC؟
+    - ما هي طبيعة تخصص ABC؟
+    - كيف يبدو تخصص ABC؟
+    - ماذا يتعلم طالب ABC؟
+    - ما هي مجالات تخصص ABC؟
+    - ما هي أهداف تخصص ABC؟
+    - هل تخصص ABC جيد؟
+    - ما هي مميزات ABC؟
+    - ما هو مسار ABC؟
+    - ABC تخصص ماذا يدرس؟
+    - ما الفرق بين ABC وغيره؟
+    - من يناسبه تخصص ABC؟
+    - abc شنهو
+    - abc شنهي
+    - شنهو abc
+    - شنهي abc
+    - اشرحلي abc
+    - اعطيني معلومات عن abc
+    - شنو هو abc
+    - abc في الجامعة شنو
+    - شنو يدرس في abc
+    - abc شنه
+    - abc ما هو
+    - وصفلي abc
+    - abc كيفاش
+    - فهمني abc
+    - abc علاش موجود
+
+- intent: description_ABC_fr
+  examples: |
+    - c'est quoi la spécialité ABC ?
+    - décris le parcours ABC
+    - présente la filière ABC
+    - qu'est-ce que ABC à la FST ?
+    - parle-moi de ABC
+    - description de ABC
+    - présentation de la filière ABC
+    - que fait-on en ABC ?
+    - ABC c'est quoi comme formation ?
+    - c'est quoi ABC ?
+    - c'est quoi comme filière ABC ?
+    - en quoi consiste ABC ?
+    - quelle est la formation ABC ?
+    - donne-moi des infos sur ABC
+    - abc c'est quoi ?
+    - koi abc
+    - c koi abc
+    - abc chnhi
+    - chnhi abc
+    - wach abc mzian ?
+    - ch7al fi abc ?
+    - ch7al l'année abc ?
+    - bghit n3rf abc
+    - abc chno howa ?
+    - explique-moi ABC
+    - informations sur ABC
+    - keskon abc
+    - c quoi abc
+    - tell me about abc
+    - what is abc
+    - info ABC
+    - presentation ABC
+    - define ABC
+    - describe ABC
+    - abc formation
+    - ABC filière
+    - ABC parcours
+    - ABC programme fst
+    - qu'apprend-on en ABC ?
+    - formation ABC fst
+    - c'est quoi exactement ABC ?
+    - présentation ABC fst
+    - spécialité ABC fst
+    - ABC spécialité
+    - filière ABC
+    - abc studies
+    - about abc
+    - abc major
+    - abc degree
+    - abc fst info
+
+- intent: masters_disponibles_BMP
+  examples: |
+    - ما هي ماسترات تخصص BMP؟
+    - ما هي الماسترات المتاحة لطلاب BMP؟
+    - ماذا يمكن لطالب BMP أن يكمل؟
+    - ما هي برامج الماستر بعد BMP؟
+    - masters après BMP
+    - quels masters pour BMP ?
+    - masters disponibles pour BMP
+    - قسم BMP ماستر
+    - ما هي الماسترات بعد BMP؟
+    - masters accessibles BMP
+    - ماسترات bmp
+    - تخصصات ماستر bmp
+    - ماستر متاح لـ bmp
+    - ماذا يختار طالب bmp
+    - خيارات bmp للماستر
+    - ما هي ماسترات bmp
+    - إحصائيات ماستر bmp
+    - ترتيب ماستر bmp
+    - معدل ماستر bmp
+    - أفضل ماستر لـ bmp
+    - ماستر بعد bmp
+    - توجيه bmp ماستر
+    - إحصائيات توجيه bmp
+    - ما هو آخر معدل ماستر bmp
+    - ما هو آخر ترتيب ماستر bmp
+    - إحصائيات bmp 2025
+    - خيارات ماستر بعد bmp
+    - ماستر bmp fst
+    - BMP ماستر
+    - ما هي تخصصات ماستر BMP؟
+    - masters bmp
+    - spécialités master bmp
+    - master disponible bmp
+    - que choisir bmp master
+    - options bmp master
+    - quels masters pour bmp
+    - statistiques master bmp
+    - classement master bmp
+    - moyenne master bmp
+    - meilleur master pour bmp
+    - master après bmp
+    - orientation bmp master
+    - statistiques orientation bmp
+    - dernier rang master bmp
+    - dernière moyenne master bmp
+    - statistiques bmp 2025
+    - choix master après bmp
+    - master bmp fst
+    - BMP master
+    - quels sont les spécialités master BMP?
+    - master en BMP
+    - spécialités master en BMP
+    - quelles sont les spécialités master en BMP?
+    - master BMP L3
+    - quelles sont les spécialités master BMP L3?
+    - master BMP L2
+    - spécialités master BMP L2
+    - quelles sont les spécialités master BMP L2?
+    - master BMP L1
+    - spécialités master BMP L1
+    - quelles sont les spécialités master BMP L1?
+    - master BMP S6
+    - quelles sont les spécialités master BMP S6?
+    - master BMP S5
+    - quelles sont les spécialités master BMP S5?
+    - master BMP / MI
+
+- intent: masters_disponibles_IPG
+  examples: |
+    - ما هي ماسترات تخصص IPG؟
+    - ما هي الماسترات المتاحة لطلاب IPG؟
+    - ماذا يمكن لطالب IPG أن يكمل؟
+    - ما هي برامج الماستر بعد IPG؟
+    - masters après IPG
+    - quels masters pour IPG ?
+    - masters disponibles pour IPG
+    - قسم IPG ماستر
+    - ما هي الماسترات بعد IPG؟
+    - masters accessibles IPG
+    - ماسترات ipg
+    - تخصصات ماستر ipg
+    - ماستر متاح لـ ipg
+    - ماذا يختار طالب ipg
+    - خيارات ipg للماستر
+    - ما هي ماسترات ipg
+    - إحصائيات ماستر ipg
+    - ترتيب ماستر ipg
+    - معدل ماستر ipg
+    - أفضل ماستر لـ ipg
+    - ماستر بعد ipg
+    - توجيه ipg ماستر
+    - إحصائيات توجيه ipg
+    - ما هو آخر معدل ماستر ipg
+    - ما هو آخر ترتيب ماستر ipg
+    - إحصائيات ipg 2025
+    - خيارات ماستر بعد ipg
+    - ماستر ipg fst
+    - IPG ماستر
+    - ما هي تخصصات ماستر IPG؟
+    - masters ipg
+    - spécialités master ipg
+    - master disponible ipg
+    - que choisir ipg master
+    - options ipg master
+    - quels masters pour ipg
+    - statistiques master ipg
+    - classement master ipg
+    - moyenne master ipg
+    - meilleur master pour ipg
+    - master après ipg
+    - orientation ipg master
+    - statistiques orientation ipg
+    - dernier rang master ipg
+    - dernière moyenne master ipg
+    - statistiques ipg 2025
+    - choix master après ipg
+    - master ipg fst
+    - IPG master
+    - quels sont les spécialités master IPG?
+    - master en IPG
+    - spécialités master en IPG
+    - quelles sont les spécialités master en IPG?
+    - master IPG L3
+    - quelles sont les spécialités master IPG L3?
+    - master IPG L2
+    - spécialités master IPG L2
+    - quelles sont les spécialités master IPG L2?
+    - master IPG L1
+    - spécialités master IPG L1
+    - quelles sont les spécialités master IPG L1?
+    - master IPG S6
+    - quelles sont les spécialités master IPG S6?
+    - master IPG S5
+    - quelles sont les spécialités master IPG S5?
+    - master IPG / MI
+
+- intent: masters_disponibles_ABC
+  examples: |
+    - ما هي ماسترات تخصص ABC؟
+    - ما هي الماسترات المتاحة لطلاب ABC؟
+    - ماذا يمكن لطالب ABC أن يكمل؟
+    - ما هي برامج الماستر بعد ABC؟
+    - masters après ABC
+    - quels masters pour ABC ?
+    - masters disponibles pour ABC
+    - قسم ABC ماستر
+    - ما هي الماسترات بعد ABC؟
+    - masters accessibles ABC
+    - ماسترات abc
+    - تخصصات ماستر abc
+    - ماستر متاح لـ abc
+    - ماذا يختار طالب abc
+    - خيارات abc للماستر
+    - ما هي ماسترات abc
+    - إحصائيات ماستر abc
+    - ترتيب ماستر abc
+    - معدل ماستر abc
+    - أفضل ماستر لـ abc
+    - ماستر بعد abc
+    - توجيه abc ماستر
+    - إحصائيات توجيه abc
+    - ما هو آخر معدل ماستر abc
+    - ما هو آخر ترتيب ماستر abc
+    - إحصائيات abc 2025
+    - خيارات ماستر بعد abc
+    - ماستر abc fst
+    - ABC ماستر
+    - ما هي تخصصات ماستر ABC؟
+    - masters abc
+    - spécialités master abc
+    - master disponible abc
+    - que choisir abc master
+    - options abc master
+    - quels masters pour abc
+    - statistiques master abc
+    - classement master abc
+    - moyenne master abc
+    - meilleur master pour abc
+    - master après abc
+    - orientation abc master
+    - statistiques orientation abc
+    - dernier rang master abc
+    - dernière moyenne master abc
+    - statistiques abc 2025
+    - choix master après abc
+    - master abc fst
+    - ABC master
+    - quels sont les spécialités master ABC?
+    - master en ABC
+    - spécialités master en ABC
+    - quelles sont les spécialités master en ABC?
+    - master ABC L3
+    - quelles sont les spécialités master ABC L3?
+    - master ABC L2
+    - spécialités master ABC L2
+    - quelles sont les spécialités master ABC L2?
+    - master ABC L1
+    - spécialités master ABC L1
+    - quelles sont les spécialités master ABC L1?
+    - master ABC S6
+    - quelles sont les spécialités master ABC S6?
+    - master ABC S5
+    - quelles sont les spécialités master ABC S5?
+    - master ABC / MI
+
+- intent: masters_disponibles_BOE
+  examples: |
+    - ما هي ماسترات تخصص BOE؟
+    - ما هي الماسترات المتاحة لطلاب BOE؟
+    - ماذا يمكن لطالب BOE أن يكمل؟
+    - ما هي برامج الماستر بعد BOE؟
+    - masters après BOE
+    - quels masters pour BOE ?
+    - masters disponibles pour BOE
+    - قسم BOE ماستر
+    - ما هي الماسترات بعد BOE؟
+    - masters accessibles BOE
+    - ماسترات boe
+    - تخصصات ماستر boe
+    - ماستر متاح لـ boe
+    - ماذا يختار طالب boe
+    - خيارات boe للماستر
+    - ما هي ماسترات boe
+    - إحصائيات ماستر boe
+    - ترتيب ماستر boe
+    - معدل ماستر boe
+    - أفضل ماستر لـ boe
+    - ماستر بعد boe
+    - توجيه boe ماستر
+    - إحصائيات توجيه boe
+    - ما هو آخر معدل ماستر boe
+    - ما هو آخر ترتيب ماستر boe
+    - إحصائيات boe 2025
+    - خيارات ماستر بعد boe
+    - ماستر boe fst
+    - BOE ماستر
+    - ما هي تخصصات ماستر BOE؟
+    - masters boe
+    - spécialités master boe
+    - master disponible boe
+    - que choisir boe master
+    - options boe master
+    - quels masters pour boe
+    - statistiques master boe
+    - classement master boe
+    - moyenne master boe
+    - meilleur master pour boe
+    - master après boe
+    - orientation boe master
+    - statistiques orientation boe
+    - dernier rang master boe
+    - dernière moyenne master boe
+    - statistiques boe 2025
+    - choix master après boe
+    - master boe fst
+    - BOE master
+    - quels sont les spécialités master BOE?
+    - master en BOE
+    - spécialités master en BOE
+    - quelles sont les spécialités master en BOE?
+    - master BOE L3
+    - quelles sont les spécialités master BOE L3?
+    - master BOE L2
+    - spécialités master BOE L2
+    - quelles sont les spécialités master BOE L2?
+    - master BOE L1
+    - spécialités master BOE L1
+    - quelles sont les spécialités master BOE L1?
+    - master BOE S6
+    - quelles sont les spécialités master BOE S6?
+    - master BOE S5
+    - quelles sont les spécialités master BOE S5?
+    - master BOE / MI
+
+- intent: masters_disponibles_PF
+  examples: |
+    - ما هي ماسترات تخصص PF؟
+    - ما هي الماسترات المتاحة لطلاب PF؟
+    - ماذا يمكن لطالب PF أن يكمل؟
+    - ما هي برامج الماستر بعد PF؟
+    - masters après PF
+    - quels masters pour PF ?
+    - masters disponibles pour PF
+    - قسم PF ماستر
+    - ما هي الماسترات بعد PF؟
+    - masters accessibles PF
+    - ماسترات pf
+    - تخصصات ماستر pf
+    - ماستر متاح لـ pf
+    - ماذا يختار طالب pf
+    - خيارات pf للماستر
+    - ما هي ماسترات pf
+    - إحصائيات ماستر pf
+    - ترتيب ماستر pf
+    - معدل ماستر pf
+    - أفضل ماستر لـ pf
+    - ماستر بعد pf
+    - توجيه pf ماستر
+    - إحصائيات توجيه pf
+    - ما هو آخر معدل ماستر pf
+    - ما هو آخر ترتيب ماستر pf
+    - إحصائيات pf 2025
+    - خيارات ماستر بعد pf
+    - ماستر pf fst
+    - PF ماستر
+    - ما هي تخصصات ماستر PF؟
+    - masters pf
+    - spécialités master pf
+    - master disponible pf
+    - que choisir pf master
+    - options pf master
+    - quels masters pour pf
+    - statistiques master pf
+    - classement master pf
+    - moyenne master pf
+    - meilleur master pour pf
+    - master après pf
+    - orientation pf master
+    - statistiques orientation pf
+    - dernier rang master pf
+    - dernière moyenne master pf
+    - statistiques pf 2025
+    - choix master après pf
+    - master pf fst
+    - PF master
+    - quels sont les spécialités master PF?
+    - master en PF
+    - spécialités master en PF
+    - quelles sont les spécialités master en PF?
+    - master PF L3
+    - quelles sont les spécialités master PF L3?
+    - master PF L2
+    - spécialités master PF L2
+    - quelles sont les spécialités master PF L2?
+    - master PF L1
+    - spécialités master PF L1
+    - quelles sont les spécialités master PF L1?
+    - master PF S6
+    - quelles sont les spécialités master PF S6?
+    - master PF S5
+    - quelles sont les spécialités master PF S5?
+    - master PF / MI
+
+- intent: masters_disponibles_CHIMIE
+  examples: |
+    - ما هي ماسترات تخصص CHIMIE؟
+    - ما هي الماسترات المتاحة لطلاب CHIMIE؟
+    - ماذا يمكن لطالب CHIMIE أن يكمل؟
+    - ما هي برامج الماستر بعد CHIMIE؟
+    - masters après CHIMIE
+    - quels masters pour CHIMIE ?
+    - masters disponibles pour CHIMIE
+    - قسم CHIMIE ماستر
+    - ما هي الماسترات بعد CHIMIE؟
+    - masters accessibles CHIMIE
+    - ماسترات chimie
+    - تخصصات ماستر chimie
+    - ماستر متاح لـ chimie
+    - ماذا يختار طالب chimie
+    - خيارات chimie للماستر
+    - ما هي ماسترات chimie
+    - إحصائيات ماستر chimie
+    - ترتيب ماستر chimie
+    - معدل ماستر chimie
+    - أفضل ماستر لـ chimie
+    - ماستر بعد chimie
+    - توجيه chimie ماستر
+    - إحصائيات توجيه chimie
+    - ما هو آخر معدل ماستر chimie
+    - ما هو آخر ترتيب ماستر chimie
+    - إحصائيات chimie 2025
+    - خيارات ماستر بعد chimie
+    - ماستر chimie fst
+    - CHIMIE ماستر
+    - ما هي تخصصات ماستر CHIMIE؟
+    - masters chimie
+    - spécialités master chimie
+    - master disponible chimie
+    - que choisir chimie master
+    - options chimie master
+    - quels masters pour chimie
+    - statistiques master chimie
+    - classement master chimie
+    - moyenne master chimie
+    - meilleur master pour chimie
+    - master après chimie
+    - orientation chimie master
+    - statistiques orientation chimie
+    - dernier rang master chimie
+    - dernière moyenne master chimie
+    - statistiques chimie 2025
+    - choix master après chimie
+    - master chimie fst
+    - CHIMIE master
+    - quels sont les spécialités master CHIMIE?
+    - master en CHIMIE
+    - spécialités master en CHIMIE
+    - quelles sont les spécialités master en CHIMIE?
+    - master CHIMIE L3
+    - quelles sont les spécialités master CHIMIE L3?
+    - master CHIMIE L2
+    - spécialités master CHIMIE L2
+    - quelles sont les spécialités master CHIMIE L2?
+    - master CHIMIE L1
+    - spécialités master CHIMIE L1
+    - quelles sont les spécialités master CHIMIE L1?
+    - master CHIMIE S6
+    - quelles sont les spécialités master CHIMIE S6?
+    - master CHIMIE S5
+    - quelles sont les spécialités master CHIMIE S5?
+    - master CHIMIE / MI
+
+- intent: masters_disponibles_EEA
+  examples: |
+    - ما هي ماسترات تخصص EEA؟
+    - ما هي الماسترات المتاحة لطلاب EEA؟
+    - ماذا يمكن لطالب EEA أن يكمل؟
+    - ما هي برامج الماستر بعد EEA؟
+    - masters après EEA
+    - quels masters pour EEA ?
+    - masters disponibles pour EEA
+    - قسم EEA ماستر
+    - ما هي الماسترات بعد EEA؟
+    - masters accessibles EEA
+    - ماسترات eea
+    - تخصصات ماستر eea
+    - ماستر متاح لـ eea
+    - ماذا يختار طالب eea
+    - خيارات eea للماستر
+    - ما هي ماسترات eea
+    - إحصائيات ماستر eea
+    - ترتيب ماستر eea
+    - معدل ماستر eea
+    - أفضل ماستر لـ eea
+    - ماستر بعد eea
+    - توجيه eea ماستر
+    - إحصائيات توجيه eea
+    - ما هو آخر معدل ماستر eea
+    - ما هو آخر ترتيب ماستر eea
+    - إحصائيات eea 2025
+    - خيارات ماستر بعد eea
+    - ماستر eea fst
+    - EEA ماستر
+    - ما هي تخصصات ماستر EEA؟
+    - masters eea
+    - spécialités master eea
+    - master disponible eea
+    - que choisir eea master
+    - options eea master
+    - quels masters pour eea
+    - statistiques master eea
+    - classement master eea
+    - moyenne master eea
+    - meilleur master pour eea
+    - master après eea
+    - orientation eea master
+    - statistiques orientation eea
+    - dernier rang master eea
+    - dernière moyenne master eea
+    - statistiques eea 2025
+    - choix master après eea
+    - master eea fst
+    - EEA master
+    - quels sont les spécialités master EEA?
+    - master en EEA
+    - spécialités master en EEA
+    - quelles sont les spécialités master en EEA?
+    - master EEA L3
+    - quelles sont les spécialités master EEA L3?
+    - master EEA L2
+    - spécialités master EEA L2
+    - quelles sont les spécialités master EEA L2?
+    - master EEA L1
+    - spécialités master EEA L1
+    - quelles sont les spécialités master EEA L1?
+    - master EEA S6
+    - quelles sont les spécialités master EEA S6?
+    - master EEA S5
+    - quelles sont les spécialités master EEA S5?
+    - master EEA / MI
+
+- intent: masters_disponibles_MIAGE
+  examples: |
+    - ما هي ماسترات تخصص MIAGE؟
+    - ما هي الماسترات المتاحة لطلاب MIAGE؟
+    - ماذا يمكن لطالب MIAGE أن يكمل؟
+    - ما هي برامج الماستر بعد MIAGE؟
+    - masters après MIAGE
+    - quels masters pour MIAGE ?
+    - masters disponibles pour MIAGE
+    - قسم MIAGE ماستر
+    - ما هي الماسترات بعد MIAGE؟
+    - masters accessibles MIAGE
+    - ماسترات miage
+    - تخصصات ماستر miage
+    - ماستر متاح لـ miage
+    - ماذا يختار طالب miage
+    - خيارات miage للماستر
+    - ما هي ماسترات miage
+    - إحصائيات ماستر miage
+    - ترتيب ماستر miage
+    - معدل ماستر miage
+    - أفضل ماستر لـ miage
+    - ماستر بعد miage
+    - توجيه miage ماستر
+    - إحصائيات توجيه miage
+    - ما هو آخر معدل ماستر miage
+    - ما هو آخر ترتيب ماستر miage
+    - إحصائيات miage 2025
+    - خيارات ماستر بعد miage
+    - ماستر miage fst
+    - MIAGE ماستر
+    - ما هي تخصصات ماستر MIAGE؟
+    - masters miage
+    - spécialités master miage
+    - master disponible miage
+    - que choisir miage master
+    - options miage master
+    - quels masters pour miage
+    - statistiques master miage
+    - classement master miage
+    - moyenne master miage
+    - meilleur master pour miage
+    - master après miage
+    - orientation miage master
+    - statistiques orientation miage
+    - dernier rang master miage
+    - dernière moyenne master miage
+    - statistiques miage 2025
+    - choix master après miage
+    - master miage fst
+    - MIAGE master
+    - quels sont les spécialités master MIAGE?
+    - master en MIAGE
+    - spécialités master en MIAGE
+    - quelles sont les spécialités master en MIAGE?
+    - master MIAGE L3
+    - quelles sont les spécialités master MIAGE L3?
+    - master MIAGE L2
+    - spécialités master MIAGE L2
+    - quelles sont les spécialités master MIAGE L2?
+    - master MIAGE L1
+    - spécialités master MIAGE L1
+    - quelles sont les spécialités master MIAGE L1?
+    - master MIAGE S6
+    - quelles sont les spécialités master MIAGE S6?
+    - master MIAGE S5
+    - quelles sont les spécialités master MIAGE S5?
+    - master MIAGE / MI
+
+- intent: masters_disponibles_TSER
+  examples: |
+    - ما هي ماسترات تخصص TSER؟
+    - ما هي الماسترات المتاحة لطلاب TSER؟
+    - ماذا يمكن لطالب TSER أن يكمل؟
+    - ما هي برامج الماستر بعد TSER؟
+    - masters après TSER
+    - quels masters pour TSER ?
+    - masters disponibles pour TSER
+    - قسم TSER ماستر
+    - ما هي الماسترات بعد TSER؟
+    - masters accessibles TSER
+    - ماسترات tser
+    - تخصصات ماستر tser
+    - ماستر متاح لـ tser
+    - ماذا يختار طالب tser
+    - خيارات tser للماستر
+    - ما هي ماسترات tser
+    - إحصائيات ماستر tser
+    - ترتيب ماستر tser
+    - معدل ماستر tser
+    - أفضل ماستر لـ tser
+    - ماستر بعد tser
+    - توجيه tser ماستر
+    - إحصائيات توجيه tser
+    - ما هو آخر معدل ماستر tser
+    - ما هو آخر ترتيب ماستر tser
+    - إحصائيات tser 2025
+    - خيارات ماستر بعد tser
+    - ماستر tser fst
+    - TSER ماستر
+    - ما هي تخصصات ماستر TSER؟
+    - masters tser
+    - spécialités master tser
+    - master disponible tser
+    - que choisir tser master
+    - options tser master
+    - quels masters pour tser
+    - statistiques master tser
+    - classement master tser
+    - moyenne master tser
+    - meilleur master pour tser
+    - master après tser
+    - orientation tser master
+    - statistiques orientation tser
+    - dernier rang master tser
+    - dernière moyenne master tser
+    - statistiques tser 2025
+    - choix master après tser
+    - master tser fst
+    - TSER master
+    - quels sont les spécialités master TSER?
+    - master en TSER
+    - spécialités master en TSER
+    - quelles sont les spécialités master en TSER?
+    - master TSER L3
+    - quelles sont les spécialités master TSER L3?
+    - master TSER L2
+    - spécialités master TSER L2
+    - quelles sont les spécialités master TSER L2?
+    - master TSER L1
+    - spécialités master TSER L1
+    - quelles sont les spécialités master TSER L1?
+    - master TSER S6
+    - quelles sont les spécialités master TSER S6?
+    - master TSER S5
+    - quelles sont les spécialités master TSER S5?
+    - master TSER / MI
+
+- intent: masters_disponibles_PEPE
+  examples: |
+    - ما هي ماسترات تخصص PEPE؟
+    - ما هي الماسترات المتاحة لطلاب PEPE؟
+    - ماذا يمكن لطالب PEPE أن يكمل؟
+    - ما هي برامج الماستر بعد PEPE؟
+    - masters après PEPE
+    - quels masters pour PEPE ?
+    - masters disponibles pour PEPE
+    - قسم PEPE ماستر
+    - ما هي الماسترات بعد PEPE؟
+    - masters accessibles PEPE
+    - ماسترات pepe
+    - تخصصات ماستر pepe
+    - ماستر متاح لـ pepe
+    - ماذا يختار طالب pepe
+    - خيارات pepe للماستر
+    - ما هي ماسترات pepe
+    - إحصائيات ماستر pepe
+    - ترتيب ماستر pepe
+    - معدل ماستر pepe
+    - أفضل ماستر لـ pepe
+    - ماستر بعد pepe
+    - توجيه pepe ماستر
+    - إحصائيات توجيه pepe
+    - ما هو آخر معدل ماستر pepe
+    - ما هو آخر ترتيب ماستر pepe
+    - إحصائيات pepe 2025
+    - خيارات ماستر بعد pepe
+    - ماستر pepe fst
+    - PEPE ماستر
+    - ما هي تخصصات ماستر PEPE؟
+    - masters pepe
+    - spécialités master pepe
+    - master disponible pepe
+    - que choisir pepe master
+    - options pepe master
+    - quels masters pour pepe
+    - statistiques master pepe
+    - classement master pepe
+    - moyenne master pepe
+    - meilleur master pour pepe
+    - master après pepe
+    - orientation pepe master
+    - statistiques orientation pepe
+    - dernier rang master pepe
+    - dernière moyenne master pepe
+    - statistiques pepe 2025
+    - choix master après pepe
+    - master pepe fst
+    - PEPE master
+    - quels sont les spécialités master PEPE?
+    - master en PEPE
+    - spécialités master en PEPE
+    - quelles sont les spécialités master en PEPE?
+    - master PEPE L3
+    - quelles sont les spécialités master PEPE L3?
+    - master PEPE L2
+    - spécialités master PEPE L2
+    - quelles sont les spécialités master PEPE L2?
+    - master PEPE L1
+    - spécialités master PEPE L1
+    - quelles sont les spécialités master PEPE L1?
+    - master PEPE S6
+    - quelles sont les spécialités master PEPE S6?
+    - master PEPE S5
+    - quelles sont les spécialités master PEPE S5?
+    - master PEPE / MI
+
+- intent: masters_disponibles_DA2I
+  examples: |
+    - ما هي ماسترات تخصص DA2I؟
+    - ما هي الماسترات المتاحة لطلاب DA2I؟
+    - ماذا يمكن لطالب DA2I أن يكمل؟
+    - ما هي برامج الماستر بعد DA2I؟
+    - masters après DA2I
+    - quels masters pour DA2I ?
+    - masters disponibles pour DA2I
+    - قسم DA2I ماستر
+    - ما هي الماسترات بعد DA2I؟
+    - masters accessibles DA2I
+    - ماسترات da2i
+    - تخصصات ماستر da2i
+    - ماستر متاح لـ da2i
+    - ماذا يختار طالب da2i
+    - خيارات da2i للماستر
+    - ما هي ماسترات da2i
+    - إحصائيات ماستر da2i
+    - ترتيب ماستر da2i
+    - معدل ماستر da2i
+    - أفضل ماستر لـ da2i
+    - ماستر بعد da2i
+    - توجيه da2i ماستر
+    - إحصائيات توجيه da2i
+    - ما هو آخر معدل ماستر da2i
+    - ما هو آخر ترتيب ماستر da2i
+    - إحصائيات da2i 2025
+    - خيارات ماستر بعد da2i
+    - ماستر da2i fst
+    - DA2I ماستر
+    - ما هي تخصصات ماستر DA2I؟
+    - masters da2i
+    - spécialités master da2i
+    - master disponible da2i
+    - que choisir da2i master
+    - options da2i master
+    - quels masters pour da2i
+    - statistiques master da2i
+    - classement master da2i
+    - moyenne master da2i
+    - meilleur master pour da2i
+    - master après da2i
+    - orientation da2i master
+    - statistiques orientation da2i
+    - dernier rang master da2i
+    - dernière moyenne master da2i
+    - statistiques da2i 2025
+    - choix master après da2i
+    - master da2i fst
+    - DA2I master
+    - quels sont les spécialités master DA2I?
+    - master en DA2I
+    - spécialités master en DA2I
+    - quelles sont les spécialités master en DA2I?
+    - master DA2I L3
+    - quelles sont les spécialités master DA2I L3?
+    - master DA2I L2
+    - spécialités master DA2I L2
+    - quelles sont les spécialités master DA2I L2?
+    - master DA2I L1
+    - spécialités master DA2I L1
+    - quelles sont les spécialités master DA2I L1?
+    - master DA2I S6
+    - quelles sont les spécialités master DA2I S6?
+    - master DA2I S5
+    - quelles sont les spécialités master DA2I S5?
+    - master DA2I / MI
+
+- intent: masters_disponibles_GEOMIN
+  examples: |
+    - ما هي ماسترات تخصص GEOMIN؟
+    - ما هي الماسترات المتاحة لطلاب GEOMIN؟
+    - ماذا يمكن لطالب GEOMIN أن يكمل؟
+    - ما هي برامج الماستر بعد GEOMIN؟
+    - masters après GEOMIN
+    - quels masters pour GEOMIN ?
+    - masters disponibles pour GEOMIN
+    - قسم GEOMIN ماستر
+    - ما هي الماسترات بعد GEOMIN؟
+    - masters accessibles GEOMIN
+    - ماسترات geomin
+    - تخصصات ماستر geomin
+    - ماستر متاح لـ geomin
+    - ماذا يختار طالب geomin
+    - خيارات geomin للماستر
+    - ما هي ماسترات geomin
+    - إحصائيات ماستر geomin
+    - ترتيب ماستر geomin
+    - معدل ماستر geomin
+    - أفضل ماستر لـ geomin
+    - ماستر بعد geomin
+    - توجيه geomin ماستر
+    - إحصائيات توجيه geomin
+    - ما هو آخر معدل ماستر geomin
+    - ما هو آخر ترتيب ماستر geomin
+    - إحصائيات geomin 2025
+    - خيارات ماستر بعد geomin
+    - ماستر geomin fst
+    - GEOMIN ماستر
+    - ما هي تخصصات ماستر GEOMIN؟
+    - masters geomin
+    - spécialités master geomin
+    - master disponible geomin
+    - que choisir geomin master
+    - options geomin master
+    - quels masters pour geomin
+    - statistiques master geomin
+    - classement master geomin
+    - moyenne master geomin
+    - meilleur master pour geomin
+    - master après geomin
+    - orientation geomin master
+    - statistiques orientation geomin
+    - dernier rang master geomin
+    - dernière moyenne master geomin
+    - statistiques geomin 2025
+    - choix master après geomin
+    - master geomin fst
+    - GEOMIN master
+    - quels sont les spécialités master GEOMIN?
+    - master en GEOMIN
+    - spécialités master en GEOMIN
+    - quelles sont les spécialités master en GEOMIN?
+    - master GEOMIN L3
+    - quelles sont les spécialités master GEOMIN L3?
+    - master GEOMIN L2
+    - spécialités master GEOMIN L2
+    - quelles sont les spécialités master GEOMIN L2?
+    - master GEOMIN L1
+    - spécialités master GEOMIN L1
+    - quelles sont les spécialités master GEOMIN L1?
+    - master GEOMIN S6
+    - quelles sont les spécialités master GEOMIN S6?
+    - master GEOMIN S5
+    - quelles sont les spécialités master GEOMIN S5?
+    - master GEOMIN / MI
+
+- intent: masters_disponibles_GEOSS
+  examples: |
+    - ما هي ماسترات تخصص GEOSS؟
+    - ما هي الماسترات المتاحة لطلاب GEOSS؟
+    - ماذا يمكن لطالب GEOSS أن يكمل؟
+    - ما هي برامج الماستر بعد GEOSS؟
+    - masters après GEOSS
+    - quels masters pour GEOSS ?
+    - masters disponibles pour GEOSS
+    - قسم GEOSS ماستر
+    - ما هي الماسترات بعد GEOSS؟
+    - masters accessibles GEOSS
+    - ماسترات geoss
+    - تخصصات ماستر geoss
+    - ماستر متاح لـ geoss
+    - ماذا يختار طالب geoss
+    - خيارات geoss للماستر
+    - ما هي ماسترات geoss
+    - إحصائيات ماستر geoss
+    - ترتيب ماستر geoss
+    - معدل ماستر geoss
+    - أفضل ماستر لـ geoss
+    - ماستر بعد geoss
+    - توجيه geoss ماستر
+    - إحصائيات توجيه geoss
+    - ما هو آخر معدل ماستر geoss
+    - ما هو آخر ترتيب ماستر geoss
+    - إحصائيات geoss 2025
+    - خيارات ماستر بعد geoss
+    - ماستر geoss fst
+    - GEOSS ماستر
+    - ما هي تخصصات ماستر GEOSS؟
+    - masters geoss
+    - spécialités master geoss
+    - master disponible geoss
+    - que choisir geoss master
+    - options geoss master
+    - quels masters pour geoss
+    - statistiques master geoss
+    - classement master geoss
+    - moyenne master geoss
+    - meilleur master pour geoss
+    - master après geoss
+    - orientation geoss master
+    - statistiques orientation geoss
+    - dernier rang master geoss
+    - dernière moyenne master geoss
+    - statistiques geoss 2025
+    - choix master après geoss
+    - master geoss fst
+    - GEOSS master
+    - quels sont les spécialités master GEOSS?
+    - master en GEOSS
+    - spécialités master en GEOSS
+    - quelles sont les spécialités master en GEOSS?
+    - master GEOSS L3
+    - quelles sont les spécialités master GEOSS L3?
+    - master GEOSS L2
+    - spécialités master GEOSS L2
+    - quelles sont les spécialités master GEOSS L2?
+    - master GEOSS L1
+    - spécialités master GEOSS L1
+    - quelles sont les spécialités master GEOSS L1?
+    - master GEOSS S6
+    - quelles sont les spécialités master GEOSS S6?
+    - master GEOSS S5
+    - quelles sont les spécialités master GEOSS S5?
+    - master GEOSS / MI
+
+- intent: masters_disponibles_NS
+  examples: |
+    - ما هي ماسترات تخصص NS؟
+    - ما هي الماسترات المتاحة لطلاب NS؟
+    - ماذا يمكن لطالب NS أن يكمل؟
+    - ما هي برامج الماستر بعد NS؟
+    - masters après NS
+    - quels masters pour NS ?
+    - masters disponibles pour NS
+    - قسم NS ماستر
+    - ما هي الماسترات بعد NS؟
+    - masters accessibles NS
+    - ماسترات ns
+    - تخصصات ماستر ns
+    - ماستر متاح لـ ns
+    - ماذا يختار طالب ns
+    - خيارات ns للماستر
+    - ما هي ماسترات ns
+    - إحصائيات ماستر ns
+    - ترتيب ماستر ns
+    - معدل ماستر ns
+    - أفضل ماستر لـ ns
+    - ماستر بعد ns
+    - توجيه ns ماستر
+    - إحصائيات توجيه ns
+    - ما هو آخر معدل ماستر ns
+    - ما هو آخر ترتيب ماستر ns
+    - إحصائيات ns 2025
+    - خيارات ماستر بعد ns
+    - ماستر ns fst
+    - NS ماستر
+    - ما هي تخصصات ماستر NS؟
+    - masters ns
+    - spécialités master ns
+    - master disponible ns
+    - que choisir ns master
+    - options ns master
+    - quels masters pour ns
+    - statistiques master ns
+    - classement master ns
+    - moyenne master ns
+    - meilleur master pour ns
+    - master après ns
+    - orientation ns master
+    - statistiques orientation ns
+    - dernier rang master ns
+    - dernière moyenne master ns
+    - statistiques ns 2025
+    - choix master après ns
+    - master ns fst
+    - NS master
+    - quels sont les spécialités master NS?
+    - master en NS
+    - spécialités master en NS
+    - quelles sont les spécialités master en NS?
+    - master NS L3
+    - quelles sont les spécialités master NS L3?
+    - master NS L2
+    - spécialités master NS L2
+    - quelles sont les spécialités master NS L2?
+    - master NS L1
+    - spécialités master NS L1
+    - quelles sont les spécialités master NS L1?
+    - master NS S6
+    - quelles sont les spécialités master NS S6?
+    - master NS S5
+    - quelles sont les spécialités master NS S5?
+    - master NS / MI
+
+- intent: masters_disponibles_SP
+  examples: |
+    - ما هي ماسترات تخصص SP؟
+    - ما هي الماسترات المتاحة لطلاب SP؟
+    - ماذا يمكن لطالب SP أن يكمل؟
+    - ما هي برامج الماستر بعد SP؟
+    - masters après SP
+    - quels masters pour SP ?
+    - masters disponibles pour SP
+    - قسم SP ماستر
+    - ما هي الماسترات بعد SP؟
+    - masters accessibles SP
+    - ماسترات sp
+    - تخصصات ماستر sp
+    - ماستر متاح لـ sp
+    - ماذا يختار طالب sp
+    - خيارات sp للماستر
+    - ما هي ماسترات sp
+    - إحصائيات ماستر sp
+    - ترتيب ماستر sp
+    - معدل ماستر sp
+    - أفضل ماستر لـ sp
+    - ماستر بعد sp
+    - توجيه sp ماستر
+    - إحصائيات توجيه sp
+    - ما هو آخر معدل ماستر sp
+    - ما هو آخر ترتيب ماستر sp
+    - إحصائيات sp 2025
+    - خيارات ماستر بعد sp
+    - ماستر sp fst
+    - SP ماستر
+    - ما هي تخصصات ماستر SP؟
+    - masters sp
+    - spécialités master sp
+    - master disponible sp
+    - que choisir sp master
+    - options sp master
+    - quels masters pour sp
+    - statistiques master sp
+    - classement master sp
+    - moyenne master sp
+    - meilleur master pour sp
+    - master après sp
+    - orientation sp master
+    - statistiques orientation sp
+    - dernier rang master sp
+    - dernière moyenne master sp
+    - statistiques sp 2025
+    - choix master après sp
+    - master sp fst
+    - SP master
+    - quels sont les spécialités master SP?
+    - master en SP
+    - spécialités master en SP
+    - quelles sont les spécialités master en SP?
+    - master SP L3
+    - quelles sont les spécialités master SP L3?
+    - master SP L2
+    - spécialités master SP L2
+    - quelles sont les spécialités master SP L2?
+    - master SP L1
+    - spécialités master SP L1
+    - quelles sont les spécialités master SP L1?
+    - master SP S6
+    - quelles sont les spécialités master SP S6?
+    - master SP S5
+    - quelles sont les spécialités master SP S5?
+    - master SP / MI
+
+- intent: masters_disponibles_TASSMQ
+  examples: |
+    - ما هي ماسترات تخصص TASSMQ؟
+    - ما هي الماسترات المتاحة لطلاب TASSMQ؟
+    - ماذا يمكن لطالب TASSMQ أن يكمل؟
+    - ما هي برامج الماستر بعد TASSMQ؟
+    - masters après TASSMQ
+    - quels masters pour TASSMQ ?
+    - masters disponibles pour TASSMQ
+    - قسم TASSMQ ماستر
+    - ما هي الماسترات بعد TASSMQ؟
+    - masters accessibles TASSMQ
+    - ماسترات tassmq
+    - تخصصات ماستر tassmq
+    - ماستر متاح لـ tassmq
+    - ماذا يختار طالب tassmq
+    - خيارات tassmq للماستر
+    - ما هي ماسترات tassmq
+    - إحصائيات ماستر tassmq
+    - ترتيب ماستر tassmq
+    - معدل ماستر tassmq
+    - أفضل ماستر لـ tassmq
+    - ماستر بعد tassmq
+    - توجيه tassmq ماستر
+    - إحصائيات توجيه tassmq
+    - ما هو آخر معدل ماستر tassmq
+    - ما هو آخر ترتيب ماستر tassmq
+    - إحصائيات tassmq 2025
+    - خيارات ماستر بعد tassmq
+    - ماستر tassmq fst
+    - TASSMQ ماستر
+    - ما هي تخصصات ماستر TASSMQ؟
+    - masters tassmq
+    - spécialités master tassmq
+    - master disponible tassmq
+    - que choisir tassmq master
+    - options tassmq master
+    - quels masters pour tassmq
+    - statistiques master tassmq
+    - classement master tassmq
+    - moyenne master tassmq
+    - meilleur master pour tassmq
+    - master après tassmq
+    - orientation tassmq master
+    - statistiques orientation tassmq
+    - dernier rang master tassmq
+    - dernière moyenne master tassmq
+    - statistiques tassmq 2025
+    - choix master après tassmq
+    - master tassmq fst
+    - TASSMQ master
+    - quels sont les spécialités master TASSMQ?
+    - master en TASSMQ
+    - spécialités master en TASSMQ
+    - quelles sont les spécialités master en TASSMQ?
+    - master TASSMQ L3
+    - quelles sont les spécialités master TASSMQ L3?
+    - master TASSMQ L2
+    - spécialités master TASSMQ L2
+    - quelles sont les spécialités master TASSMQ L2?
+    - master TASSMQ L1
+    - spécialités master TASSMQ L1
+    - quelles sont les spécialités master TASSMQ L1?
+    - master TASSMQ S6
+    - quelles sont les spécialités master TASSMQ S6?
+    - master TASSMQ S5
+    - quelles sont les spécialités master TASSMQ S5?
+    - master TASSMQ / MI
+
+- intent: masters_disponibles_MA_fr
+  examples: |
+    - ما هي ماسترات تخصص MA؟
+    - ما هي الماسترات المتاحة لطلاب MA؟
+    - ماذا يمكن لطالب MA أن يكمل؟
+    - ما هي برامج الماستر بعد MA؟
+    - masters après MA
+    - quels masters pour MA ?
+    - masters disponibles pour MA
+    - قسم MA ماستر
+    - ما هي الماسترات بعد MA؟
+    - masters accessibles MA
+    - ماسترات ma
+    - تخصصات ماستر ma
+    - ماستر متاح لـ ma
+    - ماذا يختار طالب ma
+    - خيارات ma للماستر
+    - ما هي ماسترات ma
+    - إحصائيات ماستر ma
+    - ترتيب ماستر ma
+    - معدل ماستر ma
+    - أفضل ماستر لـ ma
+    - ماستر بعد ma
+    - توجيه ma ماستر
+    - إحصائيات توجيه ma
+    - ماستر رياضيات وتطبيقات متاح
+    - ما هو آخر معدل ماستر ma
+    - ما هو آخر ترتيب ماستر ma
+    - إحصائيات ma 2025
+    - خيارات ماستر بعد ma
+    - ماستر ma fst
+    - ماستر بعد رياضيات وتطبيقات
+    - masters ma
+    - spécialités master ma
+    - master disponible ma
+    - que choisir ma master
+    - options ma master
+    - quels masters pour ma
+    - statistiques master ma
+    - classement master ma
+    - moyenne master ma
+    - meilleur master pour ma
+    - master après ma
+    - orientation ma master
+    - statistiques orientation ma
+    - master maths applications disponible
+    - dernier rang master ma
+    - dernière moyenne master ma
+    - statistiques ma 2025
+    - choix master après ma
+    - master ma fst
+    - master après mathématiques applications
+
+
+- intent: masters_disponibles_MI_fr
+  examples: |
+    - ما هي ماسترات تخصص MI؟
+    - ما هي الماسترات المتاحة لطلاب MI؟
+    - ماذا يمكن لطالب MI أن يكمل؟
+    - ما هي برامج الماستر بعد MI؟
+    - masters après MI
+    - quels masters pour MI ?
+    - masters disponibles pour MI
+    - قسم MI ماستر
+    - ما هي الماسترات بعد MI؟
+    - masters accessibles MI
+    - ماسترات mi
+    - تخصصات ماستر mi
+    - ماستر متاح لـ mi
+    - ماذا يختار طالب mi
+    - خيارات mi للماستر
+    - ما هي ماسترات mi
+    - إحصائيات ماستر mi
+    - ترتيب ماستر mi
+    - معدل ماستر mi
+    - أفضل ماستر لـ mi
+    - ماستر بعد mi
+    - توجيه mi ماستر
+    - إحصائيات توجيه mi
+    - ماستر رياضيات ومعلوماتية متاح
+    - ما هو آخر معدل ماستر mi
+    - ما هو آخر ترتيب ماستر mi
+    - إحصائيات mi 2025
+    - خيارات ماستر بعد mi
+    - ماستر mi fst
+    - ماستر بعد رياضيات ومعلوماتية
+    - MI ماستر
+    - ما هي تخصصات ماستر MI؟
+    - masters mi
+    - spécialités master mi
+    - master disponible mi
+    - que choisir mi master
+    - options mi master
+    - quels masters pour mi
+    - statistiques master mi
+    - classement master mi
+    - moyenne master mi
+    - meilleur master pour mi
+    - master après mi
+    - orientation mi master
+    - statistiques orientation mi
+    - master maths informatique disponible
+    - dernier rang master mi
+    - dernière moyenne master mi
+    - statistiques mi 2025
+    - choix master après mi
+    - master mi fst
+    - master après mathématiques informatique
+    - MI master
+    - quels sont les spécialités master MI?
+    - master en MI
+    - spécialités master en MI
+    - quelles sont les spécialités master en MI?
+    - master MI L3
+    - quelles sont les spécialités master MI L3?
+    - master MI L2
+    - spécialités master MI L2
+    - quelles sont les spécialités master MI L2?
+
+- intent: demander_matieres_ABC
+  examples: |
+    - ما هي مواد تخصص ABC؟
+    - مواد ABC
+    - ماذا يدرس طلاب ABC؟
+    - مقررات تخصص ABC
+    - matières ABC
+    - programme ABC FST
+    - modules ABC
+    - ABC quels cours ?
+    - ماذا يُدرَّس في ABC؟
+    - برنامج ABC
+    - ABC مواد
+    - مواد الفيزياء والكيمياء والبيولوجيا
+    - ABC S3 S4
+    - matières ABC FST
+
+- intent: demander_matieres_NS
+  examples: |
+    - ما هي مواد تخصص NS؟
+    - مواد NS
+    - ماذا يدرس طلاب NS؟
+    - مقررات تخصص NS
+    - matières NS
+    - programme NS FST
+    - modules NS
+    - NS quels cours ?
+    - ماذا يُدرَّس في NS؟
+    - برنامج NS
+    - NS مواد
+    - مواد علوم الطبيعة
+    - NS S3 S4
+    - matières NS FST
+
+- intent: demander_matieres_SP
+  examples: |
+    - ما هي مواد تخصص SP؟
+    - مواد SP
+    - ماذا يدرس طلاب SP؟
+    - مقررات تخصص SP
+    - matières SP
+    - programme SP FST
+    - modules SP
+    - SP quels cours ?
+    - ماذا يُدرَّس في SP؟
+    - برنامج SP
+    - SP مواد
+    - مواد الفيزياء الإحصائية
+    - SP S3 S4
+    - matières SP FST
+
+- intent: demander_matieres_TASSMQ
+  examples: |
+    - ما هي مواد تخصص TASSMQ؟
+    - مواد TASSMQ
+    - ماذا يدرس طلاب TASSMQ؟
+    - مقررات تخصص TASSMQ
+    - matières TASSMQ
+    - programme TASSMQ FST
+    - modules TASSMQ
+    - TASSMQ quels cours ?
+    - ماذا يُدرَّس في TASSMQ؟
+    - برنامج TASSMQ
+    - TASSMQ مواد
+    - مواد الإحصاء والرياضيات التطبيقية
+    - TASSMQ S3 S4
+    - matières TASSMQ FST

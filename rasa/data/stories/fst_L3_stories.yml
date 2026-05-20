@@ -177,3 +177,300 @@ stories:
     - action: utter_demander_matieres_PEPE
     - intent: demander_matieres_NS
     - action: utter_demander_matieres_NS
+- story: Description MA ar
+  steps:
+  - intent: description_MA_ar
+  - action: utter_description_MA_ar
+
+- story: Description MA fr
+  steps:
+  - intent: description_MA_fr
+  - action: utter_description_MA_fr
+
+- story: Description MI ar
+  steps:
+  - intent: description_MI_ar
+  - action: utter_description_MI_ar
+
+- story: Description MI fr
+  steps:
+  - intent: description_MI_fr
+  - action: utter_description_MI_fr
+
+- story: Description MIAGE ar
+  steps:
+  - intent: description_MIAGE_ar
+  - action: utter_description_MIAGE_ar
+
+- story: Description MIAGE fr
+  steps:
+  - intent: description_MIAGE_fr
+  - action: utter_description_MIAGE_fr
+
+- story: Description DA2I ar
+  steps:
+  - intent: description_DA2I_ar
+  - action: utter_description_DA2I_ar
+
+- story: Description DA2I fr
+  steps:
+  - intent: description_DA2I_fr
+  - action: utter_description_DA2I_fr
+
+- story: Description PF ar
+  steps:
+  - intent: description_PF_ar
+  - action: utter_description_PF_ar
+
+- story: Description PF fr
+  steps:
+  - intent: description_PF_fr
+  - action: utter_description_PF_fr
+
+- story: Description SP ar
+  steps:
+  - intent: description_SP_ar
+  - action: utter_description_SP_ar
+
+- story: Description SP fr
+  steps:
+  - intent: description_SP_fr
+  - action: utter_description_SP_fr
+
+- story: Description TSER ar
+  steps:
+  - intent: description_TSER_ar
+  - action: utter_description_TSER_ar
+
+- story: Description TSER fr
+  steps:
+  - intent: description_TSER_fr
+  - action: utter_description_TSER_fr
+
+- story: Description EEA ar
+  steps:
+  - intent: description_EEA_ar
+  - action: utter_description_EEA_ar
+
+- story: Description EEA fr
+  steps:
+  - intent: description_EEA_fr
+  - action: utter_description_EEA_fr
+
+- story: Description CHIMIE ar
+  steps:
+  - intent: description_CHIMIE_ar
+  - action: utter_description_CHIMIE_ar
+
+- story: Description CHIMIE fr
+  steps:
+  - intent: description_CHIMIE_fr
+  - action: utter_description_CHIMIE_fr
+
+- story: Description BMP ar
+  steps:
+  - intent: description_BMP_ar
+  - action: utter_description_BMP_ar
+
+- story: Description BMP fr
+  steps:
+  - intent: description_BMP_fr
+  - action: utter_description_BMP_fr
+
+- story: Description BOE ar
+  steps:
+  - intent: description_BOE_ar
+  - action: utter_description_BOE_ar
+
+- story: Description BOE fr
+  steps:
+  - intent: description_BOE_fr
+  - action: utter_description_BOE_fr
+
+- story: Description NS ar
+  steps:
+  - intent: description_NS_ar
+  - action: utter_description_NS_ar
+
+- story: Description NS fr
+  steps:
+  - intent: description_NS_fr
+  - action: utter_description_NS_fr
+
+- story: Description TASSMQ ar
+  steps:
+  - intent: description_TASSMQ_ar
+  - action: utter_description_TASSMQ_ar
+
+- story: Description TASSMQ fr
+  steps:
+  - intent: description_TASSMQ_fr
+  - action: utter_description_TASSMQ_fr
+
+- story: Description IPG ar
+  steps:
+  - intent: description_IPG_ar
+  - action: utter_description_IPG_ar
+
+- story: Description IPG fr
+  steps:
+  - intent: description_IPG_fr
+  - action: utter_description_IPG_fr
+
+- story: Description GEOSS ar
+  steps:
+  - intent: description_GEOSS_ar
+  - action: utter_description_GEOSS_ar
+
+- story: Description GEOSS fr
+  steps:
+  - intent: description_GEOSS_fr
+  - action: utter_description_GEOSS_fr
+
+- story: Description GEOMIN ar
+  steps:
+  - intent: description_GEOMIN_ar
+  - action: utter_description_GEOMIN_ar
+
+- story: Description GEOMIN fr
+  steps:
+  - intent: description_GEOMIN_fr
+  - action: utter_description_GEOMIN_fr
+
+- story: Description PEPE ar
+  steps:
+  - intent: description_PEPE_ar
+  - action: utter_description_PEPE_ar
+
+- story: Description PEPE fr
+  steps:
+  - intent: description_PEPE_fr
+  - action: utter_description_PEPE_fr
+
+- story: Description ABC ar
+  steps:
+  - intent: description_ABC_ar
+  - action: utter_description_ABC_ar
+
+- story: Description ABC fr
+  steps:
+  - intent: description_ABC_fr
+  - action: utter_description_ABC_fr
+- story: Masters disponibles BMP
+  steps:
+  - intent: masters_disponibles_BMP
+  - action: utter_masters_disponibles_BMP
+
+- story: Masters disponibles IPG
+  steps:
+  - intent: masters_disponibles_IPG
+  - action: utter_masters_disponibles_IPG
+
+- story: Masters disponibles ABC
+  steps:
+  - intent: masters_disponibles_ABC
+  - action: utter_masters_disponibles_ABC
+
+- story: Masters disponibles BOE
+  steps:
+  - intent: masters_disponibles_BOE
+  - action: utter_masters_disponibles_BOE
+
+- story: Masters disponibles PF
+  steps:
+  - intent: masters_disponibles_PF
+  - action: utter_masters_disponibles_PF
+
+- story: Masters disponibles CHIMIE
+  steps:
+  - intent: masters_disponibles_CHIMIE
+  - action: utter_masters_disponibles_CHIMIE
+
+- story: Masters disponibles EEA
+  steps:
+  - intent: masters_disponibles_EEA
+  - action: utter_masters_disponibles_EEA
+
+- story: Masters disponibles MIAGE
+  steps:
+  - intent: masters_disponibles_MIAGE
+  - action: utter_masters_disponibles_MIAGE
+
+- story: Masters disponibles TSER
+  steps:
+  - intent: masters_disponibles_TSER
+  - action: utter_masters_disponibles_TSER
+
+- story: Masters disponibles PEPE
+  steps:
+  - intent: masters_disponibles_PEPE
+  - action: utter_masters_disponibles_PEPE
+
+- story: Masters disponibles DA2I
+  steps:
+  - intent: masters_disponibles_DA2I
+  - action: utter_masters_disponibles_DA2I
+
+- story: Masters disponibles GEOMIN
+  steps:
+  - intent: masters_disponibles_GEOMIN
+  - action: utter_masters_disponibles_GEOMIN
+
+- story: Masters disponibles GEOSS
+  steps:
+  - intent: masters_disponibles_GEOSS
+  - action: utter_masters_disponibles_GEOSS
+
+- story: Masters disponibles NS
+  steps:
+  - intent: masters_disponibles_NS
+  - action: utter_masters_disponibles_NS
+
+- story: Masters disponibles SP
+  steps:
+  - intent: masters_disponibles_SP
+  - action: utter_masters_disponibles_SP
+
+- story: Masters disponibles TASSMQ
+  steps:
+  - intent: masters_disponibles_TASSMQ
+  - action: utter_masters_disponibles_TASSMQ
+
+# ══════════════════════════════════════════
+# Masters disponibles MA
+# ══════════════════════════════════════════
+
+
+
+- story: masters_disponibles_MA_fr
+  steps:
+    - intent: masters_disponibles_MA_fr
+    - action: utter_masters_disponibles_MA_fr
+
+
+
+- story: masters_fr_puis_MA
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+    - intent: masters_disponibles_MA_fr
+    - action: utter_masters_disponibles_MA_fr
+
+# ══════════════════════════════════════════
+# Masters disponibles MI
+# ══════════════════════════════════════════
+
+
+
+- story: masters_disponibles_MI_fr
+  steps:
+    - intent: masters_disponibles_MI_fr
+    - action: utter_masters_disponibles_MI_fr
+
+
+- story: masters_fr_puis_MI
+  steps:
+    - intent: demander_masters_fr
+    - action: utter_demander_masters_fr
+    - intent: masters_disponibles_MI_fr
+    - action: utter_masters_disponibles_MI_fr

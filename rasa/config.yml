@@ -11,11 +11,11 @@ pipeline:
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 50
+  epochs: 100
   constrain_similarities: true
 - name: EntitySynonymMapper
 - name: ResponseSelector
-  epochs: 50
+  epochs: 100
   constrain_similarities: true
 - name: FallbackClassifier
   threshold: 0.3
@@ -26,9 +26,10 @@ policies:
 - name: RulePolicy
 - name: UnexpecTEDIntentPolicy
   max_history: 5
-  epochs: 50
+  epochs: 100
 - name: TEDPolicy
   max_history: 5
-  epochs: 50
+  epochs: 100
   constrain_similarities: true
+
 assistant_id: 20260407-164321-navy-backpack

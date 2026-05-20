@@ -26,26 +26,6 @@ rules:
     - intent: demander_doctorat_fr
     - action: utter_demander_doctorat_fr
 
-- rule: masters_disponibles_MA_ar
-  steps:
-    - intent: masters_disponibles_MA_ar
-    - action: utter_masters_disponibles_MA_ar
-
-- rule: masters_disponibles_MA_fr
-  steps:
-    - intent: masters_disponibles_MA_fr
-    - action: utter_masters_disponibles_MA_fr
-
-- rule: masters_disponibles_MI_ar
-  steps:
-    - intent: masters_disponibles_MI_ar
-    - action: utter_masters_disponibles_MI_ar
-
-- rule: masters_disponibles_MI_fr
-  steps:
-    - intent: masters_disponibles_MI_fr
-    - action: utter_masters_disponibles_MI_fr
-
 # ══════════════════════════════════════════
 # Vue générale Master/Doctorat
 # ══════════════════════════════════════════
@@ -169,3 +149,7 @@ rules:
   steps:
     - intent: M2_MATERIAUX_fr
     - action: utter_M2_MATERIAUX_fr
+- rule: Répondre aux matières PIA
+  steps:
+  - intent: demander_matieres_PIA
+  - action: utter_M1_PIA_fr

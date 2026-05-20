@@ -1,8 +1,8 @@
+import json
 import os
-import re
 import uuid
+import re
 import logging
-import requests
 from datetime import datetime
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
@@ -11,51 +11,102 @@ from rasa_sdk.executor import CollectingDispatcher
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ── URL Flask ─────────────────────────────────────────────
-# على Railway: FLASK_URL = https://cheerful-perception-xxxx.railway.app
-# محلياً:      FLASK_URL = http://flask_app:5000
-FLASK_URL = os.environ.get(
-    "FLASK_URL",
-    "http://flask_app:5000"
-)
-logger.info(f"[actions] FLASK_URL = {FLASK_URL}")
+# ── مسار الملف ────────────────────────────────────────────
+# Railway Volume  → /data/unknown_questions.json
+# Local Docker    → rasa/actions/unknown_questions.json
+def _get_questions_file() -> str:
+    env = os.environ.get("QUESTIONS_FILE")
+    if env:
+        return env
+    if os.path.exists("/data"):
+        return "/data/unknown_questions.json"
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), "unknown_questions.json")
+
+QUESTIONS_FILE = _get_questions_file()
+logger.info(f"[actions] QUESTIONS_FILE = {QUESTIONS_FILE}")
 
 
 # ── Helpers ───────────────────────────────────────────────
+def _load_questions() -> list:
+    try:
+        if os.path.exists(QUESTIONS_FILE):
+            with open(QUESTIONS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, IOError) as e:
+        logger.error(f"[load] Erreur: {e}")
+    return []
+
+
+def _save_questions(data: list) -> bool:
+    """كتابة ذرية — تمنع تلف الملف عند الكتابة المتزامنة."""
+    try:
+        d = os.path.dirname(QUESTIONS_FILE)
+        if d:
+            os.makedirs(d, exist_ok=True)
+        tmp = QUESTIONS_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, QUESTIONS_FILE)  # ذري — لا يتلف الملف
+        return True
+    except IOError as e:
+        logger.error(f"[save] Erreur: {e}")
+        return False
+
+
+def _normalize(q: dict) -> dict:
+    """يضيف الحقول الناقصة للأسئلة القديمة."""
+    if "id" not in q:
+        q["id"] = str(uuid.uuid4())
+    if "admin_reply" not in q:
+        q["admin_reply"] = None
+    if "replied_at" not in q:
+        q["replied_at"] = None
+    return q
+
+
+def _migrate(data: list) -> list:
+    """ترحيل البيانات القديمة تلقائياً."""
+    changed = False
+    for i, q in enumerate(data):
+        if "id" not in q or "admin_reply" not in q:
+            data[i] = _normalize(q)
+            changed = True
+    if changed:
+        logger.info("[migrate] بيانات قديمة تمت ترقيتها")
+        _save_questions(data)
+    return data
+
+
 def _is_arabic(text: str) -> bool:
     ar = len(re.findall(r'[\u0600-\u06FF]', text))
     return ar > len(text) * 0.2 if text else False
 
 
 def _save_unknown(question: str) -> bool:
-    """
-    يرسل السؤال إلى Flask /save-unknown-question
-    Flask هو المسؤول الوحيد عن الكتابة في الملف.
-    """
+    """حفظ سؤال غير معروف مع anti-doublon."""
     if not question or not question.strip():
         return False
-    try:
-        res = requests.post(
-            f"{FLASK_URL}/save-unknown-question",
-            json={"question": question.strip()},
-            timeout=5,
-        )
-        if res.status_code == 200:
-            data = res.json()
-            logger.info(f"[save] ✅ ({data.get('count','?')} total): {question[:60]}")
-            return True
-        else:
-            logger.error(f"[save] ❌ HTTP {res.status_code}: {res.text[:100]}")
-            return False
-    except requests.Timeout:
-        logger.error(f"[save] ⏱ Timeout Flask: {question[:60]}")
+    q = question.strip()
+    data = _load_questions()
+    data = _migrate(data)
+    # تجنب التكرار المتتالي
+    if data and data[-1].get("question") == q:
+        logger.info(f"[save] doublon ignoré: {q[:60]}")
         return False
-    except requests.ConnectionError as e:
-        logger.error(f"[save] ❌ Connexion Flask: {e}")
-        return False
-    except Exception as e:
-        logger.error(f"[save] ❌ Erreur: {e}")
-        return False
+    data.append({
+        "id":          str(uuid.uuid4()),
+        "question":    q,
+        "timestamp":   datetime.now().isoformat(),
+        "admin_reply": None,
+        "replied_at":  None
+    })
+    ok = _save_questions(data)
+    if ok:
+        logger.info(f"[save] ✅ ({len(data)} total): {q[:60]}")
+    else:
+        logger.error(f"[save] ❌ فشل: {q[:60]}")
+    return ok
 
 
 # ═══════════════════════════════════════════════════════════
@@ -87,7 +138,7 @@ class ActionDefaultFallback(Action):
 
 
 # ═══════════════════════════════════════════════════════════
-# Action 2 — حفظ سؤال غير معروف
+# Action 2 — حفظ سؤال غير معروف (من Rules)
 # ═══════════════════════════════════════════════════════════
 class ActionSaveUnknownQuestion(Action):
 

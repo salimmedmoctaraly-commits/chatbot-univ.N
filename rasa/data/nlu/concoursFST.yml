@@ -26,10 +26,24 @@ nlu:
     - esp و ipgei
     - كيف أدخل مدرسة المهندسين
     - مسابقة esp ipgei
+    - cnim 
+    - chnhi cnim
+    - cnim chnhi 
+    - انكد انشارك ف كنيم ؟
+    - هل انا مؤهل ل مسابقة المهندسين ؟
+    - شنهي كنيم 
+    -  cnim شنهي 
+    - كنيم شنهي 
+    - شنهو كنيم 
+    - كنيم 
+    - كنييم
+    - ككنم
+    - كنيمم
 
 - intent: demander_cnim_fr
   examples: |
     - concours cnim
+    - cnim concours
     - c'est quoi cnim
     - cnim c'est quoi
     - informations sur cnim
@@ -44,11 +58,18 @@ nlu:
     - explication cnim
     - voies cnim
     - cnim voie 1 et voie 2
+    - cnim voie 2 et voie 1
+    - voie 1 et voie 2 cnim
+    - voie 2 et voie 1 cnim
     - quelles sont les écoles d'ingénieurs
     - esp et ipgei
     - comment intégrer une école d'ingénieurs
     - concours esp ipgei
     - accès cycle ingénieur mauritanie
+    - cycle ingénieur
+    - cycle ingénieur mauritanie
+    - polytechnique concours
+    - concours polytechnique
 
 - intent: demander_cnim_epreuves_ar
   examples: |
@@ -72,6 +93,11 @@ nlu:
     - تواريخ اختبارات cnim
     - ما هي معاملات cnim
     - جدول مسابقة المهندسين 2025
+    - المواد كنيم 
+    - شنهومه مواد كنيم 
+    - امتحان اكنيم اف كم من ماده 
+    - مواد فيهم مات 
+    - مواد كنيم فيهم الفيزياء 
 
 - intent: demander_cnim_epreuves_fr
   examples: |
@@ -141,12 +167,22 @@ nlu:
     - 2ème année préparatoire cnim
     - condition âge cnim voie 1
     - une seule participation cnim
-
+    - licence établissement public cnim voie 1
+    - voie 1
+    - cnim voie 1
+    - chnhi voie 1
+    - voie 1 chnhi 
+    - voie 1 L3
+    - voie 1 lisence
+    - étudiant établissement public concours voie 1
 - intent: demander_cnim_voie2_ar
   examples: |
     - المسار الثاني cnim
     - voie 2 cniim
-    - cnim 14
+    - L3 cnim voie 2 
+    - L3 cnim
+    - Cnim L3
+    - Cnim Voi 2
     - شروط المسار الثاني
     - طالب l3 مسابقة
     - من أفضل 10 بالمئة
@@ -187,6 +223,13 @@ nlu:
     - concours ingénieurs voie 2
     - jamais participé au cnim
     - licence établissement public cnim
+    - voie 2
+    - cnim voie 2
+    - chnhi voie 2
+    - voie 2 chnhi 
+    - voie 2 L3
+    - voie 2 lisence 3
+    - étudiant établissement public concours voie 2
 
 - intent: demander_Nuit_Info
   examples: |

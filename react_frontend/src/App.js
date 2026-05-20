@@ -3,6 +3,17 @@ import axios from "axios";
 import "./App.css";
 import logo from "./logo.png";
 import UnknownQuestions from "./UnknownQuestions";
+import {
+  RefreshCw,
+  Moon,
+  Sun,
+  ThumbsUp,
+  ThumbsDown,
+  Copy,
+  Check,
+  ChevronDown,
+  Send,
+} from "lucide-react";
 
 const FLASK_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
@@ -37,7 +48,7 @@ const QUICK_SUGGESTIONS = [
   { ar: "الامتحانات", fr: "Examens"     },
   { ar: "السكن",      fr: "Logement"    },
   { ar: "الكليات",    fr: "Facultés"    },
-  { ar: "ل.م.د",     fr: "LMD"       },
+  { ar: "ل.م.د",     fr: "LMD"         },
 ];
 
 function App() {
@@ -83,7 +94,7 @@ function App() {
   }, [page]);
 
   useEffect(() => {
-    const fn = () => setPage(window.location.pathname === "dashboard" ? "admin" : "chat");
+    const fn = () => setPage(window.location.pathname === "/dashboard" ? "admin" : "chat");
     window.addEventListener("popstate", fn);
     return () => window.removeEventListener("popstate", fn);
   }, []);
@@ -189,6 +200,9 @@ function App() {
         .dot3 { animation-delay:.4s !important; }
         .chat-card { width:100%; height:100vh; height:100dvh; border-radius:0; }
         @media (min-width: 600px) {
+          .chat-card { width:90%; max-width:600px; height:88vh; max-height:800px; border-radius:20px; }
+        }
+        @media (min-width: 1024px) {
           .chat-card { width:520px; height:88vh; max-height:740px; border-radius:20px; }
         }
         .messages-win { flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; }
@@ -208,7 +222,7 @@ function App() {
         position: "relative",
       }}>
 
-        {/* HEADER */}
+        {/* ── HEADER ── */}
         <div style={{
           background: C.header, padding: "12px 14px",
           display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -240,25 +254,41 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* أزرار الهيدر — Lucide */}
           <div style={{ display:"flex", gap:6, alignItems:"center" }}>
+            {/* زر الوضع الليلي/النهاري */}
             <button onClick={() => setDark(d => !d)} className="icon-btn"
-              style={{ background:"rgba(255,255,255,.15)", border:"none", borderRadius:8,
-                width:34, height:34, cursor:"pointer", fontSize:15,
-                display:"flex", alignItems:"center", justifyContent:"center" }}>
-              {dark ? "☀️" : "🌙"}
+              title={dark ? "Wضع النهار" : "Wضع الليل"}
+              style={{
+                background:"rgba(255,255,255,.15)", border:"none", borderRadius:8,
+                width:34, height:34, cursor:"pointer",
+                display:"flex", alignItems:"center", justifyContent:"center",
+                color:"white",
+              }}>
+              {dark
+                ? <Sun size={17} strokeWidth={2}/>
+                : <Moon size={17} strokeWidth={2}/>
+              }
             </button>
+
+            {/* زر إعادة المحادثة */}
             {messages.length > 0 && (
               <button onClick={resetConversation} className="icon-btn"
-                style={{ background:"rgba(255,255,255,.15)", border:"none", borderRadius:8,
-                  width:34, height:34, cursor:"pointer", fontSize:15,
-                  display:"flex", alignItems:"center", justifyContent:"center" }}>
-                🔄
+                title="إعادة المحادثة"
+                style={{
+                  background:"rgba(255,255,255,.15)", border:"none", borderRadius:8,
+                  width:34, height:34, cursor:"pointer",
+                  display:"flex", alignItems:"center", justifyContent:"center",
+                  color:"white",
+                }}>
+                <RefreshCw size={17} strokeWidth={2}/>
               </button>
             )}
           </div>
         </div>
 
-        {/* MESSAGES */}
+        {/* ── MESSAGES ── */}
         <div className="messages-win" ref={messagesWinRef} onScroll={handleScroll}
           style={{ padding:"14px", display:"flex", flexDirection:"column",
             gap:10, background: dark?"#0f172a":"#f8faf8" }}>
@@ -324,25 +354,47 @@ function App() {
                   <span style={{ fontSize:10, color:C.sub, marginTop:2, direction:"ltr" }}>
                     {msg.time}
                   </span>
+
+                  {/* أزرار التقييم والنسخ — Lucide */}
                   {!isUser && (
-                    <div style={{ display:"flex", gap:5, marginTop:2, alignItems:"center" }}>
+                    <div style={{ display:"flex", gap:4, marginTop:3, alignItems:"center" }}>
+
+                      {/* نسخ */}
                       <button className="icon-btn" onClick={() => copyText(msg.text, i)}
+                        title="Copier"
                         style={{ background:"none", border:"none", cursor:"pointer",
-                          fontSize:12, color:C.sub, padding:2, minWidth:24, minHeight:24 }}>
-                        {copied === i ? "✅" : "📋"}
+                          padding:4, borderRadius:6, color:C.sub,
+                          display:"flex", alignItems:"center", justifyContent:"center",
+                          minWidth:26, minHeight:26 }}>
+                        {copied === i
+                          ? <Check size={14} strokeWidth={2.5} color="#10b981"/>
+                          : <Copy size={14} strokeWidth={2}/>
+                        }
                       </button>
+
+                      {/* تقييم */}
                       {ratings[i] ? (
-                        <span style={{ fontSize:10, color:"#10b981" }}>
-                          {ratings[i]==="up" ? "👍 Merci!" : "👎 Noté"}
+                        <span style={{ fontSize:10, color:"#10b981", padding:"0 2px" }}>
+                          {ratings[i]==="up" ? "Merci !" : "Noté"}
                         </span>
                       ) : (
                         <>
                           <button className="rating-btn" onClick={() => rateMessage(i,"up")}
-                            style={{ background:"none",border:"none",cursor:"pointer",
-                              fontSize:13,padding:2,minWidth:24,minHeight:24 }}>👍</button>
+                            title="Utile"
+                            style={{ background:"none", border:"none", cursor:"pointer",
+                              padding:4, borderRadius:6, color:C.sub,
+                              display:"flex", alignItems:"center", justifyContent:"center",
+                              minWidth:26, minHeight:26 }}>
+                            <ThumbsUp size={14} strokeWidth={2}/>
+                          </button>
                           <button className="rating-btn" onClick={() => rateMessage(i,"down")}
-                            style={{ background:"none",border:"none",cursor:"pointer",
-                              fontSize:13,padding:2,minWidth:24,minHeight:24 }}>👎</button>
+                            title="Pas utile"
+                            style={{ background:"none", border:"none", cursor:"pointer",
+                              padding:4, borderRadius:6, color:C.sub,
+                              display:"flex", alignItems:"center", justifyContent:"center",
+                              minWidth:26, minHeight:26 }}>
+                            <ThumbsDown size={14} strokeWidth={2}/>
+                          </button>
                         </>
                       )}
                     </div>
@@ -370,19 +422,23 @@ function App() {
           <div ref={messagesEndRef}/>
         </div>
 
+        {/* زر التمرير للأسفل — Lucide */}
         {showScrollBtn && (
-          <button onClick={scrollToBottom} style={{
-            position:"absolute", bottom:74, right:14,
-            width:34, height:34, borderRadius:"50%",
-            background:"#1a5c35", color:"white", border:"none",
-            cursor:"pointer", fontSize:15,
-            boxShadow:"0 4px 12px rgba(26,92,53,.4)",
-            display:"flex", alignItems:"center", justifyContent:"center",
-            zIndex:10, animation:"popIn .2s ease",
-          }}>↓</button>
+          <button onClick={scrollToBottom}
+            style={{
+              position:"absolute", bottom:74, right:14,
+              width:34, height:34, borderRadius:"50%",
+              background:"#1a5c35", color:"white", border:"none",
+              cursor:"pointer",
+              boxShadow:"0 4px 12px rgba(26,92,53,.4)",
+              display:"flex", alignItems:"center", justifyContent:"center",
+              zIndex:10, animation:"popIn .2s ease",
+            }}>
+            <ChevronDown size={18} strokeWidth={2.5}/>
+          </button>
         )}
 
-        {/* INPUT */}
+        {/* ── INPUT ── */}
         <form onSubmit={sendMessage} className="input-area" style={{
           padding:"10px 12px", borderTop:`1px solid ${C.bdr}`,
           background:C.card, display:"flex", gap:8, alignItems:"center",
@@ -400,11 +456,15 @@ function App() {
             onFocus={e => e.target.style.borderColor="#1a5c35"}
             onBlur={e => e.target.style.borderColor=C.inputBdr}
           />
+          {/* زر الإرسال — Lucide */}
           <button type="submit" disabled={!input.trim()} className="send-btn-main"
             style={{ background:"#1a5c35", color:"white", border:"none",
               borderRadius:24, padding:"11px 18px", fontSize:13, fontWeight:700,
-              cursor:"pointer", whiteSpace:"nowrap", flexShrink:0, minHeight:44 }}>
-            ▶ إرسال
+              cursor:"pointer", whiteSpace:"nowrap", flexShrink:0, minHeight:44,
+              display:"flex", alignItems:"center", gap:6,
+            }}>
+            <Send size={15} strokeWidth={2.5}/>
+            <span>إرسال</span>
           </button>
         </form>
       </div>

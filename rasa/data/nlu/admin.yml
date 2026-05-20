@@ -123,6 +123,7 @@ nlu:
     - Bankily FST
     - B-PAY
     - Comment utiliser Bankily pour payer les frais FST ?
+    - 6ari9t le5lass par bankily
 
 - intent: demander_documents_inscription_ar
   examples: |
@@ -466,6 +467,10 @@ nlu:
     - lien réclamation
     - réclamation FST
     - réclamation
+    - reclamation examen FST
+    - reclamation examen 
+    - reclamation devoir FST
+    - reclamation devoir
     - Quel est le lien pour faire une réclamation FST ?
 
 - intent: demander_systeme_LMD_ar
@@ -701,6 +706,362 @@ nlu:
     - taux CC et CF LMD
     - Comment est calculée la note finale en LMD ?
 
+- intent: conditions_acces_licence_ar
+  examples: |
+    - شروط القبول في الليسانس
+    - كيف أقبل في الليسانس؟
+    - ما شروط الالتحاق بالليسانس؟
+    - من يحق له الالتحاق بالليسانس؟
+    - شروط الدخول للليسانس في FST
+    - هل يلزم الباكالوريا للدخول للليسانس؟
+    - ما معايير القبول في الليسانس؟
+    - من يستطيع التسجيل في الليسانس؟
+    - ما الشهادة المطلوبة لليسانس؟
+    - دخول الليسانس شروطه
+    - شروط القبول الليسانس
+    - قبول ليسانس FST
+    - شروط ليسانس
+    - من يدخل الليسانس؟
+    - ما هي شروط القبول في الليسانس في FST؟
+
+- intent: conditions_acces_master_ar
+  examples: |
+    - شروط القبول في الماستر
+    - كيف أقبل في الماستر؟
+    - من يدخل الماستر؟
+    - شروط الالتحاق بالماستر
+    - كيف يتم الانتقاء للماستر؟
+    - ما هي المعايير للقبول في الماستر؟
+    - هل يوجد انتقاء للماستر؟
+    - شروط دخول الماستر في FST
+    - من يحق له التسجيل في الماستر؟
+    - ما الشهادة المطلوبة للماستر؟
+    - القبول في الماستر كيف يتم؟
+    - شروط الماستر قبول
+    - دخول ماستر FST
+    - قبول ماستر
+    - ما هي شروط القبول في الماستر في FST؟
+
+- intent: conditions_acces_fr
+  examples: |
+    - Quelles sont les conditions d'accès au LMD ?
+    - Conditions d'admission à la FST
+    - Comment accéder à la Licence ?
+    - Conditions pour entrer en Master
+    - Qui peut s'inscrire à la Licence ?
+    - Quels diplômes pour accéder à la Licence ?
+    - Comment se faire admettre en Master ?
+    - Critères d'admission Master FST
+    - Conditions d'accès Licence FST
+    - Qui peut entrer en Master ?
+    - Bac requis pour la Licence ?
+    - conditions accès LMD
+    - admission Licence FST
+    - conditions entrée Master
+    - Quelles sont les conditions d'admission à la FST ?
+
+- intent: compensation_licence_ar
+  examples: |
+    - قواعد المعاوضة في الليسانس
+    - كيف تعمل المعاوضة في الليسانس؟
+    - شروط التعويض في الليسانس
+    - متى تُعوَّض علامة مقياس؟
+    - المعاوضة بين الوحدات في الليسانس
+    - هل يمكن تعويض علامة منخفضة في الليسانس؟
+    - ما هي العتبة الدنيا للعنصر في الليسانس؟
+    - معاوضة الفصل شروطها ما هي؟
+    - قواعد معاوضة الليسانس FST
+    - معاوضة وحدات ليسانس
+    - تعويض في الليسانس
+    - معاوضة ليسانس
+    - شروط المعاوضة في الليسانس
+    - حد علامة 9 في الوحدة للمعاوضة
+    - ما هي قواعد المعاوضة في الليسانس؟
+
+- intent: compensation_licence_fr
+  examples: |
+    - Comment sont compensées les notes en Licence ?
+    - Comment fonctionne la compensation en Licence ?
+    - Conditions de compensation en Licence
+    - Quand un module est-il validé par compensation ?
+    - Seuil pour la compensation Licence
+    - Compensation entre modules en Licence
+    - Peut-on compenser une note basse en Licence ?
+    - Seuil minimal d'un élément en Licence
+    - Règles de compensation d'un semestre Licence
+    - compensation Licence FST
+    - compensation modules licence
+    - comment marche la compensation en licence
+    - règles compensation licence
+    - seuil 9 pour compensation
+    - Quelles sont les règles de compensation en Licence ?
+
+- intent: compensation_master_ar
+  examples: |
+    - قواعد المعاوضة في الماستر
+    - كيف تعمل المعاوضة في الماستر؟
+    - شروط التعويض في الماستر
+    - ما هو حد المعاوضة في الماستر؟
+    - شرط العتبة في وحدات الماستر
+    - المعاوضة بين وحدات الماستر
+    - هل يمكن تعويض علامة في الماستر؟
+    - العتبة الدنيا في الماستر كم هي؟
+    - معاوضة فصل الماستر شروطها
+    - قواعد معاوضة الماستر FST
+    - معاوضة وحدات الماستر
+    - تعويض في الماستر
+    - معاوضة ماستر
+    - شروط المعاوضة في الماستر
+    - ما هي قواعد المعاوضة في الماستر؟
+
+- intent: compensation_master_fr
+  examples: |
+    - Comment sont compensées les notes en Master ?
+    - Comment fonctionne la compensation en Master ?
+    - Seuil pour la compensation Master
+    - Compensation entre modules en Master
+    - Peut-on compenser en Master ?
+    - Seuil minimal d'un élément en Master
+    - Règles de validation par compensation en Master
+    - Conditions de compensation semestre Master
+    - compensation Master FST
+    - compensation modules master
+    - règles compensation master
+    - seuil compensation master
+    - comment compenser en master
+    - note minimale master compensation
+    - Quelles sont les règles de compensation en Master ?
+
+- intent: licence_fondamentale_ar
+  examples: |
+    - ما هو الليسانس الأساسي؟
+    - شرح الليسانس الأساسي
+    - ليسانس فوندامونتال ما هو؟
+    - ما تعريف الليسانس الأساسي؟
+    - الليسانس الأكاديمي ما هو؟
+    - الليسانس للدراسات العليا
+    - ليسانس للماستر
+    - ليسانس نظري
+    - ليسانس fondamentale
+    - ما هو الليسانس الأساسي في FST؟
+    - الليسانس الذي يوصل للدكتوراه
+    - ليسانس دراسات عليا
+    - شرح ليسانس fondamentale
+    - الليسانس الأكاديمي FST
+    - ما معنى ليسانس fondamentale؟
+
+- intent: licence_professionnelle_ar
+  examples: |
+    - ما هو الليسانس المهني؟
+    - شرح الليسانس المهني
+    - ليسانس بروفيسيونيل ما هو؟
+    - الليسانس التطبيقي ما هو؟
+    - ليسانس لسوق الشغل
+    - ليسانس مهني FST
+    - ليسانس تطبيقي
+    - ليسانس professionnelle
+    - ما هو الليسانس المهني في FST؟
+    - الليسانس الذي يوصل لسوق العمل
+    - ليسانس وظيفي
+    - ليسانس مع تدريب
+    - الليسانس العملي FST
+    - ما معنى ليسانس professionnelle؟
+    - ليسانس للتوظيف
+
+- intent: master_recherche_ar
+  examples: |
+    - ما هو ماستر البحث؟
+    - شرح ماستر البحث
+    - ماستر بحثي ما هو؟
+    - الماستر للدكتوراه
+    - ماستر académique
+    - ماستر البحث العلمي
+    - ماستر نظري FST
+    - شرح ماستر recherche
+    - الماستر الذي يوصل للدكتوراه
+    - ماستر للتدريس الجامعي
+    - ماستر بحث FST
+    - ما معنى ماستر recherche؟
+    - ماستر بحث أكاديمي
+    - ماستر للبحث العلمي
+    - ماستر recherche ما هو؟
+
+- intent: master_professionnel_ar
+  examples: |
+    - ما هو الماستر المهني؟
+    - شرح الماستر المهني
+    - ماستر مهني ما هو؟
+    - الماستر لسوق الشغل
+    - ماستر تطبيقي
+    - ماستر professionnel
+    - ماستر مع تدريب ميداني
+    - الماستر التطبيقي FST
+    - شرح ماستر professionnel
+    - الماستر الذي يوصل لسوق العمل
+    - ماستر للتوظيف
+    - ماستر مهني FST
+    - ما معنى ماستر professionnel؟
+    - ماستر بتقرير تدريب
+    - ماستر للحياة المهنية
+
+- intent: licence_fondamentale_fr
+  examples: |
+    - C'est quoi la Licence Fondamentale ?
+    - Explication de la Licence Fondamentale
+    - Licence fondamentale FST
+    - Licence pour les études supérieures
+    - Licence académique FST
+    - Licence pour continuer en Master
+    - Licence théorique
+    - licence fondamentale
+    - Qu'est-ce que la Licence Fondamentale ?
+    - Licence menant au Doctorat
+    - licence pour master
+    - licence académique
+    - c'est quoi la licence fondamentale FST ?
+    - licence de recherche
+    - définition licence fondamentale
+
+- intent: licence_professionnelle_fr
+  examples: |
+    - C'est quoi la Licence Professionnelle ?
+    - Explication Licence Professionnelle
+    - Licence professionnelle FST
+    - Licence pour le marché du travail
+    - Licence appliquée FST
+    - Licence avec stage obligatoire
+    - licence professionnelle
+    - licence appliquée
+    - Qu'est-ce que la Licence Professionnelle ?
+    - Licence menant à la vie professionnelle
+    - licence pour travailler
+    - licence pratique
+    - c'est quoi la licence professionnelle FST ?
+    - licence avec insertion professionnelle
+    - définition licence professionnelle
+
+- intent: master_recherche_fr
+  examples: |
+    - C'est quoi le Master Recherche ?
+    - Explication Master Recherche
+    - Master recherche FST
+    - Master pour le Doctorat
+    - Master académique FST
+    - Master avec mémoire de recherche
+    - master recherche
+    - master académique
+    - Qu'est-ce que le Master Recherche ?
+    - Master menant au Doctorat
+    - master pour enseigner
+    - master pour chercheur
+    - c'est quoi le master recherche FST ?
+    - master de recherche scientifique
+    - définition master recherche
+
+- intent: master_professionnel_fr
+  examples: |
+    - C'est quoi le Master Professionnel ?
+    - Explication Master Professionnel
+    - Master professionnel FST
+    - Master pour le marché du travail
+    - Master appliqué FST
+    - Master avec stage en entreprise
+    - master professionnel
+    - master appliqué
+    - Qu'est-ce que le Master Professionnel ?
+    - Master menant à la vie professionnelle
+    - master pour travailler
+    - master pratique
+    - c'est quoi le master professionnel FST ?
+    - master avec rapport de stage
+    - définition master professionnel
+
+- intent: comparaison_recherche_professionnel_ar
+  examples: |
+    - ما الفرق بين ماستر البحث والماستر المهني؟
+    - مقارنة ماستر بحث وماستر مهني
+    - ماستر بحث أم ماستر مهني؟
+    - الفرق بين النوعين من الماستر
+    - أيهما أفضل ماستر بحث أم مهني؟
+    - ماستر recherche vs professionnel
+    - مقارنة نوعي الماستر
+    - الاختلاف بين الماستريين
+    - ماستر بحث ماستر مهني فرق
+    - أختار ماستر بحث أم مهني؟
+    - مقارنة الماستريين FST
+    - فرق ماستر مهني وبحث
+    - أيهما أختار للماستر؟
+    - ما الفرق بين نوعي الماستر في FST؟
+    - الفرق ماستر بحث مهني
+
+- intent: comparaison_recherche_professionnel_fr
+  examples: |
+    - Quelle est la différence entre Master Recherche et Professionnel ?
+    - Quelle est la différence entre Specialité Recherche et Professionnel ?
+    - Specialité Recherche et Professionnel
+    - Comparaison Master Recherche et Professionnel
+    - Master recherche ou professionnel ?
+    - Différence entre les deux types de Master
+    - Lequel choisir Master recherche ou professionnel ?
+    - master recherche vs professionnel
+    - comparer les deux masters
+    - différence master recherche professionnel
+    - master recherche master professionnel lequel ?
+    - choisir entre master recherche et professionnel
+    - comparaison masters FST
+    - différence entre masters FST
+    - Quelle est la différence entre les deux types de Master FST ?
+    - master théorique vs master pratique
+    - comparer master recherche et professionnel FST
+    -  Recherche vs Professionnel
+    - Comparaison Recherche et Professionnel
+    - Différence entre Master Recherche et Professionnel
+    - Lequel choisir entre Master Recherche et Professionnel ?
+    - Master Recherche vs Professionnel FST
+    - Comparaison Master Recherche et Professionnel FST
+    - Différence entre les deux types de Master à la FST
+    - Quelle est la différence entre Master Recherche et Professionnel à la FST ?
+
+- intent: comparaison_licence_ar
+  examples: |
+    - ما الفرق بين الليسانس الأساسي والمهني؟
+    - مقارنة ليسانس أساسي وليسانس مهني
+    - ليسانس أساسي أم مهني؟
+    - الفرق بين نوعي الليسانس
+    - أيهما أفضل ليسانس أساسي أم مهني؟
+    - مقارنة بين ليسانس أساسي وليسانس مهني
+    - مقارنة نوعي الليسانس
+    - الاختلاف بين الليسانسين
+    - ليسانس أساسي ليسانس مهني فرق
+    - أختار ليسانس أساسي أم مهني؟
+    - مقارنة الليسانسين FST
+    - فرق ليسانس مهني وأساسي
+    - ما الفرق بين نوعي الليسانس في FST؟
+    - الفرق ليسانس أساسي مهني
+    - أيهما أختار للليسانس؟
+    - ما الفرق بين نوعي الليسانس في FST؟
+    - فرق بين تخصص مهني وأساسي
+    -فرق بين تخصص أساسى و مهني  
+    - فرق بين ليسانس مهني وأساسي
+    - ما الفرق بين ليسانس أساسي ومهني في FST؟
+- intent: comparaison_licence_fr
+  examples: |
+    - Quelle est la différence entre Licence Fondamentale et Professionnelle ?
+    - Comparaison Licence Fondamentale et Professionnelle
+    - Licence fondamentale ou professionnelle ?
+    - Différence entre les deux types de Licence
+    - Lequel choisir Licence fondamentale ou professionnelle ?
+    - licence fondamentale vs professionnelle
+    - comparer les deux licences
+    - différence licence fondamentale professionnelle
+    - licence fondamentale licence professionnelle lequel ?
+    - choisir entre licence fondamentale et professionnelle
+    - comparaison licences FST
+    - différence entre licences FST
+    - Quelle est la différence entre les deux types de Licence FST ?
+    - licence théorique vs licence pratique
+    - comparer licence fondamentale et professionnelle FST
+
 - intent: derogation_inscription_ar
   examples: |
     - استثناء تسجيل
@@ -746,3 +1107,231 @@ nlu:
     - inscrit en 2023 pas en 2024
     - tous les étudiants L3 autorisés
     - master 2 inscription autorisée
+    - master 2 inscription interdite
+    - L3 inscription autorisée
+    - L3 inscription interdite
+    - L2 inscription autorisée
+    - L2 inscription interdite
+    - L1 inscription autorisée
+    - L1 inscription interdite
+    - étudiants exclus L3 inscription autorisée
+    - étudiants exclus L3 inscription interdite
+    - étudiants exclus L2 inscription autorisée
+
+- intent: ask_identity
+  examples: |
+    - من أنت
+    - من انت ؟
+    - ما أنت
+    - عرف بنفسك
+    - عرفني عليك
+    - من أنت يا بوت
+    - ما هو دورك
+    - ما هي مهمتك
+    - أخبرني عنك
+    - هل أنت بوت
+    - هل أنت روبوت
+    - ما اسمك
+    - ما هو اسمك
+    - من تكون
+    - ما طبيعتك
+    - ما وظيفتك
+    - ما الذي يمكنك فعله
+    - ماذا تفعل
+    - ما قدراتك
+    - هل أنت ذكاء اصطناعي
+    - هل أنت إنسان
+    - هل تفهمني
+    - ما هو هدفك
+    - لماذا أنت هنا
+    - كيف يمكنك مساعدتي
+    - ماذا تعرف
+    - هل يمكنك مساعدتي
+    - انت منو
+    - انت شنهو
+    - شنهو دورك
+    - شخبارك ومن انت
+    - انت شتسوّي
+    - انت بنادم ولا بوت
+    - انت حقيقي
+    - شنهي وظيفتك
+    - شنو فايدتك
+    - قول لي عن نفسك
+    - تفهمني؟
+    - انت شنهو بالضبط
+    - نبي نعرف انت منو
+    - إياك انت بوت
+    - انت شنهو ذكاء اصطناعي
+    - شنهي خدماتك
+    - انت منين
+    - انت شنو اسمك
+    - من انت يالخو
+    - انت شنهو من بوت
+    - انت شنهي هويتك
+    - انت شنهو معدل
+    - انت لاهي تعدل شنهو
+    - شنهو اللي تقدر تعدلو
+    - انت من اهل لخيام ولا ذكاء
+    - انت شنهي شغلتك
+    - انت من أيا نوع
+    - قول لي انت منو
+    - كيفاش تگد تعاوني
+    - انت شنهي قدراتك
+    - انت شنهو اسمك يالبوت
+    - تفهم الحسانية؟
+    - تفهم لغتي؟
+    - انت حك بنادم
+    - شنهو تخصصك
+    - qui es-tu
+    - tu es qui
+    - présente-toi
+    - c'est quoi ton rôle
+    - tu es un robot
+    - tu es une IA
+    - quel est ton nom
+    - comment tu t'appelles
+    - que fais-tu
+    - à quoi tu sers
+    - comment tu fonctionnes
+    - tu es humain
+    - tu comprends l'arabe
+    - tu parles français
+    - what are you
+    - who are you
+    - are you a bot
+    - what can you do
+    - c'est quoi ton identité
+    - t'es qui toi
+    - tu fais quoi exactement
+    - présente-toi un peu
+    - c'est quoi ton but
+    - t'es une intelligence artificielle
+    - tu es réel ou virtuel
+    - quel est ton objectif
+    - tu peux m'aider en quoi
+    - tu es de nature quoi
+    - donne-moi tes fonctionnalités
+    - tu parles hassanya
+    - tu es un chatbot
+    - c'est quoi ton utilité
+    - tu sers à quoi ici
+    - tu comprends le mauritanien
+    - qui êtes-vous
+    - quel est votre rôle
+    - pouvez-vous vous présenter
+    - tu as des sentiments
+    - tu es vivant
+    - t'es une machine
+    - qu'est-ce que tu sais faire
+    - tu sers à quoi au juste
+    - nt
+    - ent 
+    - ente 
+    - nt mnho 
+    - dewrak
+    - vaydtek 
+    - vayedtek chnhi
+    
+
+- intent: ask_developer
+  examples: |
+    - من طورك
+    - من طورك ؟
+    - من صنعك
+    - من برمجك
+    - من أنشأك
+    - من بناك
+    - من عملك
+    - من أنشأ هذا البوت
+    - من صمم هذا البوت
+    - من طور هذا المساعد
+    - من هم مطوروك
+    - من الذي صنعك
+    - من الذي برمجك
+    - من الذي طورك
+    - مين صنعك
+    - مين برمجك
+    - مين طورك
+    - من صممك
+    - من هو فريق التطوير
+    - من هم الطلاب الذين صنعوك
+    - أخبرني عن فريق التطوير
+    - هل أنت مشروع تخرج
+    - هل هذا مشروع PFE
+    - ما هو مشروعك
+    - مين اللي سواك
+    - مين اللي اشتغل عليك
+    - شكون اللي صنعك
+    - منو برمجك
+    - منو المطور مالك
+    - شكون طورك
+    - منين جيت ومن صنعك
+    - مين اللي تعب عليك
+    - شكون اصحاب هاد المشروع
+    - من عدلك
+    - منين جيت انت ومعدلك منو
+    - منو اللي برمجك يالبوت
+    - شكون اللي صممك
+    - انت مشروع تخرج لشي حد
+    - منهو اللي اشتغل عليك
+    - من عدل هاذ البوت
+    - منين لاهي نعرف اللي عدلك
+    - منو اللي برمج هاذ الشي
+    - منو اللي جابك هون
+    - انت مشروع PFE لشي تركة
+    - التركة اللي عدلوك من هم
+    - شكون هما التلاميد ولا الطلاب اللي صنعوك
+    - من برمج هاذ الذكاء
+    - منهو مول هاذ البوت
+    - منين جا هاذ البوت ومنهو اللي عدلو
+    - انت تفرغ لشي حد برمجك
+    - من صمم هاذ المساعد
+    - منهو صاحب الفكرة
+    - من برمج هاذ السيستم
+    - مين تعب على برمجتك
+    - شكون اللي خرجك للدنيا
+    - من هم المهندسين اللي طوروك
+    - انت برمجتك يد موريتانية
+    - من عدل هاذ التطبيق
+    - منهو اللي كاتب الكود حقك
+    - منين جيت ومنهو اللي سواك
+    - qui t'a créé
+    - qui t'a développé
+    - qui t'a programmé
+    - qui t'a conçu
+    - qui sont les développeurs
+    - c'est qui le développeur
+    - tu as été créé par qui
+    - tu es un projet PFE
+    - c'est un projet de fin d'études
+    - qui sont les étudiants qui t'ont créé
+    - parle-moi des développeurs
+    - qui t'a fait
+    - équipe de développement
+    - who made you
+    - who created you
+    - who built you
+    - who programmed you
+    - who are your developers
+    - who developed this chatbot
+    - c'est qui ton créateur
+    - qui a écrit ton code
+    - t'es le projet de qui
+    - qui sont les génies derrière toi
+    - c'est fait par des étudiants
+    - qui t'a mis en place
+    - qui a bossé sur toi
+    - tu es le fruit de quel projet
+    - c'est qui l'équipe de dev
+    - qui t'a codé
+    - qui a développé cette IA
+    - qui t'a fabriqué
+    - c'est qui ton maître
+    - tu viens de quel labo
+    - qui est l'auteur de ce bot
+    - c'est qui l'ingénieur derrière toi
+    - qui t'a mis en ligne
+    - qui sont les fondateurs
+    - tu as été programmé par qui
+    - qui a fait ton design
+    - c'est un travail d'équipe de qui

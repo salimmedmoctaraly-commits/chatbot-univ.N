@@ -12,7 +12,7 @@ nlu:
       - Quelles sont les matières de première année droit S1?
       - Programme L1 droit premier semestre
       - Cours droit première année semestre 1
-      - Que contient le S1 de L1 droit?
+      - Que contient le S1 de L1 droit?  
 
 - intent: ask_matieres_l1_droit_s2
   examples: |

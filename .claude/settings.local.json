@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk -F'action: ' '{print $2}')",
+      "Bash(awk '{print $NF}')",
+      "Bash(conda run *)",
+      "Bash(RASA_DIR=/mnt/c/Users/hp/Desktop/PROJET_CHATBOT_UNIV/rasa *)",
+      "Read(//mnt/c/Users/hp/Desktop/PROJET_CHATBOT_UNIV/rasa/data/**)"
+    ]
+  }
+}

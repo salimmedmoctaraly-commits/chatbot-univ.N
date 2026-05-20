@@ -212,3 +212,111 @@ rules:
     - intent: demander_evaluation_LMD_fr
     - action: utter_demander_evaluation_LMD_fr
 
+- rule: conditions_acces_licence_ar
+  steps:
+    - intent: conditions_acces_licence_ar
+    - action: utter_conditions_acces_licence_ar
+
+- rule: conditions_acces_master_ar
+  steps:
+    - intent: conditions_acces_master_ar
+    - action: utter_conditions_acces_master_ar
+
+- rule: conditions_acces_fr
+  steps:
+    - intent: conditions_acces_fr
+    - action: utter_conditions_acces_fr
+
+- rule: compensation_licence_ar
+  steps:
+    - intent: compensation_licence_ar
+    - action: utter_compensation_licence_ar
+
+- rule: compensation_licence_fr
+  steps:
+    - intent: compensation_licence_fr
+    - action: utter_compensation_licence_fr
+
+- rule: compensation_master_ar
+  steps:
+    - intent: compensation_master_ar
+    - action: utter_compensation_master_ar
+
+- rule: compensation_master_fr
+  steps:
+    - intent: compensation_master_fr
+    - action: utter_compensation_master_fr
+
+# ══════════════════════════════════════════
+# Types de diplômes (Licence / Master)
+# ══════════════════════════════════════════
+
+- rule: licence_fondamentale_ar
+  steps:
+    - intent: licence_fondamentale_ar
+    - action: utter_licence_fondamentale_ar
+
+- rule: licence_professionnelle_ar
+  steps:
+    - intent: licence_professionnelle_ar
+    - action: utter_licence_professionnelle_ar
+
+- rule: master_recherche_ar
+  steps:
+    - intent: master_recherche_ar
+    - action: utter_master_recherche_ar
+
+- rule: master_professionnel_ar
+  steps:
+    - intent: master_professionnel_ar
+    - action: utter_master_professionnel_ar
+
+- rule: licence_fondamentale_fr
+  steps:
+    - intent: licence_fondamentale_fr
+    - action: utter_licence_fondamentale_fr
+
+- rule: licence_professionnelle_fr
+  steps:
+    - intent: licence_professionnelle_fr
+    - action: utter_licence_professionnelle_fr
+
+- rule: master_recherche_fr
+  steps:
+    - intent: master_recherche_fr
+    - action: utter_master_recherche_fr
+
+- rule: master_professionnel_fr
+  steps:
+    - intent: master_professionnel_fr
+    - action: utter_master_professionnel_fr
+
+- rule: comparaison_recherche_professionnel_ar
+  steps:
+    - intent: comparaison_recherche_professionnel_ar
+    - action: utter_comparaison_recherche_professionnel_ar
+
+- rule: comparaison_recherche_professionnel_fr
+  steps:
+    - intent: comparaison_recherche_professionnel_fr
+    - action: utter_comparaison_recherche_professionnel_fr
+
+- rule: comparaison_licence_ar
+  steps:
+    - intent: comparaison_licence_ar
+    - action: utter_comparaison_licence_ar
+
+- rule: comparaison_licence_fr
+  steps:
+    - intent: comparaison_licence_fr
+    - action: utter_comparaison_licence_fr
+
+- rule: Répondre à qui es-tu
+  steps:
+    - intent: ask_identity
+    - action: utter_ask_identity
+
+- rule: Répondre à qui t'a développé
+  steps:
+    - intent: ask_developer
+    - action: utter_ask_developer

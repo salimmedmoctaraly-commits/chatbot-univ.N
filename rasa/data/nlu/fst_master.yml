@@ -86,97 +86,7 @@ nlu:
     - Programme doctorat FST
     - Doctorat après master FST
 
-- intent: masters_disponibles_MA_ar
-  examples: |
-    - ماسترات ma
-    - تخصصات ماستر ma
-    - ماستر متاح لـ ma
-    - ماذا يختار طالب ma
-    - خيارات ma للماستر
-    - ما هي ماسترات ma
-    - إحصائيات ماستر ma
-    - ترتيب ماستر ma
-    - معدل ماستر ma
-    - أفضل ماستر لـ ma
-    - ماستر بعد ma
-    - توجيه ma ماستر
-    - إحصائيات توجيه ma
-    - ماستر رياضيات وتطبيقات متاح
-    - ما هو آخر معدل ماستر ma
-    - ما هو آخر ترتيب ماستر ma
-    - إحصائيات ma 2025
-    - خيارات ماستر بعد ma
-    - ماستر ma fst
-    - ماستر بعد رياضيات وتطبيقات
 
-- intent: masters_disponibles_MA_fr
-  examples: |
-    - masters ma
-    - spécialités master ma
-    - master disponible ma
-    - que choisir ma master
-    - options ma master
-    - quels masters pour ma
-    - statistiques master ma
-    - classement master ma
-    - moyenne master ma
-    - meilleur master pour ma
-    - master après ma
-    - orientation ma master
-    - statistiques orientation ma
-    - master maths applications disponible
-    - dernier rang master ma
-    - dernière moyenne master ma
-    - statistiques ma 2025
-    - choix master après ma
-    - master ma fst
-    - master après mathématiques applications
-
-- intent: masters_disponibles_MI_ar
-  examples: |
-    - ماسترات mi
-    - تخصصات ماستر mi
-    - ماستر متاح لـ mi
-    - ماذا يختار طالب mi
-    - خيارات mi للماستر
-    - ما هي ماسترات mi
-    - إحصائيات ماستر mi
-    - ترتيب ماستر mi
-    - معدل ماستر mi
-    - أفضل ماستر لـ mi
-    - ماستر بعد mi
-    - توجيه mi ماستر
-    - إحصائيات توجيه mi
-    - ماستر رياضيات ومعلوماتية متاح
-    - ما هو آخر معدل ماستر mi
-    - ما هو آخر ترتيب ماستر mi
-    - إحصائيات mi 2025
-    - خيارات ماستر بعد mi
-    - ماستر mi fst
-    - ماستر بعد رياضيات ومعلوماتية
-
-- intent: masters_disponibles_MI_fr
-  examples: |
-    - masters mi
-    - spécialités master mi
-    - master disponible mi
-    - que choisir mi master
-    - options mi master
-    - quels masters pour mi
-    - statistiques master mi
-    - classement master mi
-    - moyenne master mi
-    - meilleur master pour mi
-    - master après mi
-    - orientation mi master
-    - statistiques orientation mi
-    - master maths informatique disponible
-    - dernier rang master mi
-    - dernière moyenne master mi
-    - statistiques mi 2025
-    - choix master après mi
-    - master mi fst
-    - master après mathématiques informatique
 
 - intent: M2_BMPB_fr
   examples: |
@@ -886,3 +796,25 @@ nlu:
     - comment faire un doctorat?
     - PhD université Nouakchott
 
+- intent: demander_matieres_PIA
+  examples: |
+    - ما هي مواد ماستر PIA؟
+    - مواد تخصص PIA
+    - ماذا يدرس طلاب PIA؟
+    - ما هي مواد الفينيسيكولتور والذكاء الاصطناعي؟
+    - مواد M1 PIA
+    - ما هي مقررات PIA؟
+    - برنامج ماستر PIA
+    - مواد Phoeniciculture et Intelligence Artificielle
+    - quelles sont les matières de PIA
+    - matières du master PIA
+    - programme PIA
+    - modules PIA master
+    - matières Phoeniciculture Intelligence Artificielle
+    - c'est quoi les matières de PIA
+    - liste des matières PIA
+    - PIA مواد
+    - PIA برنامج
+    - مواد الفينيسيكولتور
+    - ما يدرس في PIA
+    - المواد في ماستر PIA

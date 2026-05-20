@@ -31,6 +31,54 @@ nlu:
     - يسعد صباحك
     - هلو
     - أهلاً فيك
+    - شحالك
+    - شخبارك
+    - كيفك
+    - شنو الأخبار
+    - لاباس؟
+    - كيف داير؟
+    - الحمد لله بخير
+    - يا مرحبا
+    - هلا بيك
+    - أهلين
+    - صباح الفل
+    - مساء الفل
+    - نورتي
+    - نورت
+    - مرحبتين
+    - حي الله من جانا
+    - أهلًا
+    - سلام عليكم
+    - هلا وغلا
+    - أخبارك؟
+    - شحوالك
+    - واش راك مليح؟
+    - bonjour khouya
+    - salut labas
+    - slm cv
+    - hey ça va
+    - coucou labas
+    - salut comment tu vas
+    - bonjour comment ça va
+    - salut ça va
+    - hey comment tu vas
+    - bonjour ça va
+    - salut ça va ?
+    - hey ça va ?
+    - coucou comment tu vas
+    - bonjour comment tu vas ?
+    - salut comment ça va ?
+    - hey comment ça va
+    - coucou ça va
+    - bonjour comment tu vas
+    - salut comment tu vas ?
+    - hey comment tu vas ?
+    - coucou comment tu vas ?
+    - bonjour comment ça va ?
+    - salut comment ça va ?
+    - hey comment ça va ?
+    - coucou comment ça va ?  
+    - هون
 
 - intent: saluer_fr
   examples: |
@@ -61,6 +109,29 @@ nlu:
     - slm
     - hun
     - ch7lk
+    - sh7alk
+    - bjr
+    - bsr
+    - salut cv
+    - bonsoir cv
+    - salut mon ami
+    - bonjour monsieur
+    - bonjour madame
+    - hello ça va
+    - yo salut
+    - hey coucou
+    - salut chatbot
+    - bonjour assistant
+    - salut aide moi
+    - hello bonsoir
+    - salut bonjour
+    - bonjour les amis
+    - coucou comment ça va
+    - salut l'équipe
+    - bonne soirée à vous
+    - bonne journée
+    - salut tout le monde
+    - bon matin
 
 - intent: au_revoir_ar
   examples: |
@@ -85,6 +156,27 @@ nlu:
     - إلى لقاء قريب
     - وداع
     - الله يسلمك
+    - ربي يحفظك
+    - في حفظ الله
+    - نشوفك من بعد
+    - إلى الملتقى
+    - يعطيك العافية
+    - يعطيك الصحة
+    - تصبح على ألف خير
+    - سلام
+    - باي نشوفك
+    - مع ألف سلامة
+    - إلى اللقاء غداً
+    - شكراً بزاف
+    - مشكور
+    - الله يعطيك الصحة
+    - سلملي
+    - إلى اللقاء يا صديقي
+    - شكراً على وقتك
+    - bye bye
+    - merci salam
+    - تصبح على خير خويا
+    - نشوفك قريب
 
 - intent: au_revoir_fr
   examples: |
@@ -113,7 +205,28 @@ nlu:
     - Merci pour tout au revoir
     - bay
     - chkrn
-    - 
+    - merci beaucoup
+    - à demain
+    - à très bientôt
+    - bonne chance
+    - salut bye
+    - bye salut
+    - merci infiniment
+    - passe une bonne journée
+    - passe une bonne soirée
+    - merci pour tout
+    - à une prochaine fois
+    - ciao bye
+    - on se voit plus tard
+    - je reviens après
+    - bonne nuit à vous
+    - merci chatbot
+    - au plaisir
+    - merci encore
+    - à plus mon ami
+    - bonne continuation à vous
+    - bye l'ami
+    - merci assistant
 
 - intent: out_of_scope_ar
   examples: |
@@ -134,6 +247,118 @@ nlu:
     - كيف أتعلم البرمجة؟
     - ما هو لون السماء؟
     - من فاز في كأس العالم؟
+    - احكي لي قصة
+    - أريد لعبة
+    - من هو أفضل لاعب؟
+    - كيف أصبح غني؟
+    - ما هو الحب؟
+    - ما معنى الحياة؟
+    - افتح يوتيوب
+    - افتح فيسبوك
+    - ما سعر الدولار؟
+    - أخبار الرياضة اليوم
+    - هل تعرف الطبخ؟
+    - أريد تعلم الإنجليزية
+    - نكتة مضحكة
+    - هل تحب كرة القدم؟
+    - ما هو أفضل هاتف؟
+    - كيف أصلح الحاسوب؟
+    - ماذا تعرف عن الذكاء الاصطناعي؟
+    - احسب لي 5+5
+    - من هو أينشتاين؟
+    - ما هي عاصمة موريتانيا؟
+    - من فاز أمس؟
+    - ما رأيك في الزواج؟
+    - كيف أفتح حساب بنكي؟
+    - هل تعرف الألعاب؟
+    - ما معنى الصداقة؟
+    - كم عمرك؟
+    - شكون أحسن مغني؟
+    - شنو رأيك فالكورة
+    - الأحد
+    - الإثنين
+    - الثلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السبت
+    - جانفي
+    - فبراير
+    - مارس
+    - أفريل
+    - مايو
+    - جوان
+    - يوليو
+    - أغسطس
+    - سبتمبر
+    - أكتوبر
+    - نوفمبر
+    - ديسمبر
+    - نواكشوط
+    - نواذيبو
+    - روصو
+    - كيفه
+    - أطار
+    - أكجوجت
+    - النعمة
+    - سيلبابي
+    - كيهيدي
+    - ازويرات
+    - تجكجة
+    - لعيون
+    - بوتلميت
+    - الشامي
+    - محمد
+    - أحمد
+    - محمد سالم
+    - محمد الأمين
+    - محمد محمود
+    - الشيخ
+    - سيدي
+    - المختار
+    - عبد الله
+    - عبد الرحمن
+    - فاطمة
+    - خديجة
+    - مريم
+    - عائشة
+    - زينب
+    - أم الخير
+    - محفوظ
+    - المصطفى
+    - عالي
+    - سيد أحمد
+    - باب
+    - حمادي
+    - السالك
+    - الداه
+    - محمدو
+    - أحمد سالم
+    - محمد يحيى
+    - تكبر
+    - منت
+    - ولد
+    - أهل
+    - أهل الشيخ
+    - أهل أحمد
+    - قبيلة
+    - موريتانيا
+    - شنقيط
+    - الحوض الشرقي
+    - الحوض الغربي
+    - لعصابة
+    - الترارزة
+    - تكانت
+    - آدرار
+    - داخلت نواذيبو
+    - إينشيري
+    - كيدي ماغه
+    - كوركول
+    - لبراكنة
+    - معهد الرقمنة
+    - ⁠ليسكا
+    - ⁠بولي
+    - ⁠بوليتكنك
 
 - intent: out_of_scope_fr
   examples: |
@@ -154,11 +379,79 @@ nlu:
     - Comment apprendre la programmation ?
     - Quelle est la couleur du ciel ?
     - Qui a gagné la coupe du monde ?
-
+    - mohamed lemin
+    - mohamed mahmoud
+    - salah
+    - raconte une histoire
+    - donne-moi une chanson
+    - ouvre youtube
+    - ouvre facebook
+    - quelle est la météo ?
+    - qui est le meilleur joueur ?
+    - comment devenir riche ?
+    - parle-moi d'amour
+    - quelle est la signification de la vie ?
+    - fais-moi rire
+    - connais-tu le gaming ?
+    - aide moi en physique
+    - quel est le meilleur téléphone ?
+    - combien coûte un iphone ?
+    - parle-moi du cinéma
+    - qui est Einstein ?
+    - qui a créé internet ?
+    - donne une recette
+    - fais un calcul
+    - 5+8
+    - 1+1
+    - 10x10
+    - 100/4
+    - 2^3
+    - racine carrée de 16
+    - log(100)
+    - ln(e)
+    - sin(90)
+    - cos(0)
+    - tan(45)
+    - quelle est la capitale de l'Allemagne ?
+    - combien font 10x10 ?
+    - quel âge as-tu ?
+    - SupNum
+    - tu connais netflix ?
+    - parle anglais
+    - qui est cristiano ronaldo ?
+    - raconte une blague marocaine
+    - quel est ton sport préféré ?
+    - donne-moi les nouvelles
+    - Liscae
+    - liup
+    - luip
+    - poly
+    - polytechnique
+    - 1
+    - 2
+    - 3 
+    - 4
+    - 5
+    - 6
+    - 0
+    - 7
+    - 8
+    - 9
+    - 10
 - intent: greet
   examples: |
     - كيف حالك
     - hi
+    - كيف الأحوال
+    - ça va
+    - hello
+    - salut
+    - labas
+    - واش لاباس
+    - كيف داير
+    - hey
+    - hi chatbot
+    - شنو حوالك
 
 - intent: goodbye
   examples: |
@@ -167,6 +460,10 @@ nlu:
     - شكراً جزيلاً
     - merci
     - بالسلامة
+    - bye
+    - bonne nuit
+    - au revoir
+    - ciao
 
 - intent: affirm
   examples: |
@@ -180,6 +477,17 @@ nlu:
     - exactement
     - c'est ça
     - correct
+    - إي
+    - اها
+    - تمام
+    - أكيد
+    - بالتأكيد
+    - yep
+    - yes
+    - d'accord
+    - موافق
+    - صح
+    
 
 - intent: deny
   examples: |
@@ -190,4 +498,23 @@ nlu:
     - non
     - pas du tout
     - non merci
-
+    - أبداً
+    - nope
+    - jamais
+    - ماشي
+    - خاطئ
+    - لا أوافق
+    - مو صحيح
+    - مستحيل
+    - ماشي صحيح
+    - لا شكرا
+    - لا أعتقد ذلك
+    - لا أظن ذلك
+    - لا أعتقد
+    - لا أظن 
+    - ابدي
+    - ماهي حك
+    - مانك فاهم شي
+    - ماشي فاهم شي
+    - كدبت
+    - ماشي فاهم والو خالص 

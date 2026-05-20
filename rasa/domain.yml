@@ -4,6 +4,12 @@ version: "3.1"
 # INTENTS
 # ============================================================
 intents:
+  # IDENTITÉ  ══════════════════════════════════════
+  - ask_identity
+
+  # DÉVELOPPEUR ══════════════════════════════════════
+  - ask_developer
+
   # ── عام / General ───────────────────────────────────
   - saluer_ar
   - saluer_fr
@@ -24,6 +30,8 @@ intents:
   - ask_centres
   - ask_facultes_liste
   - ask_repartition_etudiants
+  - ask_inscription
+  - ask_master_programs
 
   # ── FST ─────────────────────────────────────────────
   - presentation_fst_ar
@@ -90,15 +98,49 @@ intents:
   - demander_matieres_SP
   - demander_matieres_ABC
 
+   # ── Descriptions spécialités ────────────────────────
+  - description_MA_ar
+  - description_MA_fr
+  - description_MI_ar
+  - description_MI_fr
+  - description_MIAGE_ar
+  - description_MIAGE_fr
+  - description_DA2I_ar
+  - description_DA2I_fr
+  - description_PF_ar
+  - description_PF_fr
+  - description_SP_ar
+  - description_SP_fr
+  - description_TSER_ar
+  - description_TSER_fr
+  - description_EEA_ar
+  - description_EEA_fr
+  - description_CHIMIE_ar
+  - description_CHIMIE_fr
+  - description_BMP_ar
+  - description_BMP_fr
+  - description_BOE_ar
+  - description_BOE_fr
+  - description_NS_ar
+  - description_NS_fr
+  - description_TASSMQ_ar
+  - description_TASSMQ_fr
+  - description_IPG_ar
+  - description_IPG_fr
+  - description_GEOSS_ar
+  - description_GEOSS_fr
+  - description_GEOMIN_ar
+  - description_GEOMIN_fr
+  - description_PEPE_ar
+  - description_PEPE_fr
+  - description_ABC_ar
+  - description_ABC_fr
+
   # ── FST Master ──────────────────────────────────────
   - demander_masters_ar
   - demander_masters_fr
   - demander_doctorat_ar
   - demander_doctorat_fr
-  - masters_disponibles_MA_ar
-  - masters_disponibles_MA_fr
-  - masters_disponibles_MI_ar
-  - masters_disponibles_MI_fr
   - M2_BMPB_fr
   - M2_BOMVRH_fr
   - M2_TASSMQ_fr
@@ -117,6 +159,27 @@ intents:
   - M2_MATERIAUX_fr
   - M2_IA_MLDS_fr
   - M2_IA_NLPCV_fr
+  - demander_matieres_PIA
+
+# ── Masters disponibles par spécialité ──────────────
+  - masters_disponibles_BMP
+  - masters_disponibles_IPG
+  - masters_disponibles_ABC
+  - masters_disponibles_BOE
+  - masters_disponibles_PF
+  - masters_disponibles_CHIMIE
+  - masters_disponibles_EEA
+  - masters_disponibles_MIAGE
+  - masters_disponibles_TSER
+  - masters_disponibles_PEPE
+  - masters_disponibles_DA2I
+  - masters_disponibles_GEOMIN
+  - masters_disponibles_GEOSS
+  - masters_disponibles_NS
+  - masters_disponibles_SP
+  - masters_disponibles_TASSMQ
+  - masters_disponibles_MA_fr
+  - masters_disponibles_MI_fr
 
   # ── FLSH ─────────────────────────────────────────────
   - ask_flsh
@@ -222,9 +285,9 @@ intents:
   - ask_matieres_master_relations_internationales
   - ask_matieres_master_droit_prive
   - ask_matieres_master_maritime
-  
+
   # ── FMPOS  ───────────────────────────────
- 
+
   - ask_fmpos_info
   - ask_fmpos_specializations
   - ask_fmpos_structure_medecine
@@ -235,7 +298,7 @@ intents:
   - ask_matieres_pcep1_s2
   - ask_matieres_pcep1
 
-  
+
 
   # ── CNIM ────────────────────────────────────────────
   - demander_cnim_ar
@@ -285,6 +348,25 @@ intents:
   - demander_regles_exclusion_LMD_fr
   - demander_evaluation_LMD_ar
   - demander_evaluation_LMD_fr
+  - conditions_acces_licence_ar
+  - conditions_acces_master_ar
+  - conditions_acces_fr
+  - compensation_licence_ar
+  - compensation_licence_fr
+  - compensation_master_ar
+  - compensation_master_fr
+  - licence_fondamentale_ar
+  - licence_professionnelle_ar
+  - master_recherche_ar
+  - master_professionnel_ar
+  - licence_fondamentale_fr
+  - licence_professionnelle_fr
+  - master_recherche_fr
+  - master_professionnel_fr
+  - comparaison_recherche_professionnel_ar
+  - comparaison_recherche_professionnel_fr
+  - comparaison_licence_ar
+  - comparaison_licence_fr
   - derogation_inscription_ar
   - derogation_inscription_fr
   - demander_resultats_fst_ar
@@ -312,6 +394,8 @@ actions:
   - utter_ask_centres
   - utter_ask_facultes_liste
   - utter_ask_repartition_etudiants
+  - utter_ask_inscription
+  - utter_ask_master_programs
   # ── FST ─────────────────────────────────────────────
   - utter_ask_fst
   - utter_ask_fst_licences
@@ -340,13 +424,93 @@ actions:
   - utter_ask_matieres_developpement_local_l1
   - utter_ask_matieres_environnement_l1
 
- 
+
 
 
 # ============================================================
 # RESPONSES
 # ============================================================
 responses:
+
+# ══════════════════════════════════════
+  # IDENTITÉ
+  # ══════════════════════════════════════
+  utter_ask_identity:
+    - text: |
+        🤖 أنا مساعد الطالب الجامعي
+        جامعة نواكشوط العصرية 🎓
+
+        صُممت لمساعدة جميع طلاب كليات
+        جامعة نواكشوط العصرية:
+
+        🏛️ الكليات:
+        • كلية العلوم والتقنيات (FST)
+        • كلية الاقتصاد والتسيير (FEG)
+        • كلية الحقوق والعلوم السياسية (FSJP)
+        • كلية الآداب والعلوم الإنسانية (FLSH)
+        • كلية الطب والصيدلة (FMPOS)
+
+        📌 يمكنني مساعدتك في:
+        • 📚 معلومات التخصصات
+        • 📝 إجراءات التسجيل
+        • 🎓 برامج الماستر
+        • 📅 الجدول الزمني
+        • 💰 المنح الدراسية
+        • 🏠 السكن الجامعي
+
+        اسألني عن أي شيء! 😊
+
+    - text: |
+        🤖 Je suis l'Assistant Étudiant Virtuel
+        de l'Université de Nouakchott Al-Aasriya 🎓
+
+        Conçu pour aider les étudiants de
+        toutes les facultés de l'université :
+
+        🏛️ Facultés :
+        • Faculté des Sciences et Techniques (FST)
+        • Faculté d'Économie et de Gestion (FEG)
+        • Faculté de Droit et Sciences Politiques (FSJP)
+        • Faculté des Lettres et Sciences Humaines (FLSH)
+        • Faculté de Médecine et de Pharmacie (FMPOS)
+
+
+        Je peux vous aider avec :
+        • 📚 Informations sur les spécialités
+        • 📝 Procédures d'inscription
+        • 🎓 Programmes de Master
+        • 💰 Bourses d'études
+        • 🏠 Hébergement universitaire
+
+        Posez-moi n'importe quelle question ! 😊
+
+  # ══════════════════════════════════════
+  # DÉVELOPPEUR
+  # ══════════════════════════════════════
+  utter_ask_developer:
+    - text: |
+        👨‍💻 تم تطويري كمشروع تخرج (PFE)
+        بكلية العلوم والتقنيات — FST
+        جامعة نواكشوط العصرية 🎓
+
+        المطوران:
+        • محمد سالم محمد مختار عالي
+        • أحمد يعقوب بدي بي
+
+        قسم الرياضيات والمعلوماتية
+        تحت إشراف: الأستاذ بيدي بوه شيخنه
+
+    - text: |
+        👨‍💻 Développé comme Projet de Fin d'Études (PFE)
+        à la Faculté des Sciences et Techniques — FST
+        Université de Nouakchott Al-Aasriya 🎓
+
+        Développeurs :
+        • Mohamed Salim Med Moctar Aly
+        • Ahmed Yaghoub Bedi Be
+
+        Département de Mathématiques et Informatique
+        Sous la direction de : Mr. Beide Bouh Cheikhne
 
   # ── سلام / وداع ──────────────────────────────────────
   utter_greet:
@@ -396,7 +560,7 @@ responses:
   # ── الجامعة ─────────────────────────────────────────
   utter_ask_universite_generale:
     - text: |
-        🎓 **جامعة نواكشوط العصرية (UNA)**
+       **جامعة نواكشوط العصرية (UNA)**
         - تأسست سنة 1981 | www.univ-nkc.mr
         - الطلبة: 29,000 (120 دوليون)
         - مدرسون دائمون: 590 | متعاونون: 480
@@ -404,21 +568,21 @@ responses:
 
   utter_ask_president:
     - text: |
-        🏛️ **رئاسة الجامعة:**
+       **رئاسة الجامعة:**
         - الرئيس: د. علي محمد سالم البخاري
         - نائب الرئيس (الأكاديمية): د. محمد الأمين مولاي إبراهيم
         - نائب الرئيس (البحث): د. عليو حمادي باري
         - الأمين العام: د. محمد عبد الجليل ولد احويبيب
 
   utter_ask_nombre_etudiants:
-    - text: "👨‍🎓 عدد الطلاب: **29,000** (منهم 120 دوليون)\n29 000 étudiants dont 120 internationaux."
+    - text: " عدد الطلاب: **29,000** (منهم 120 دوليون)\n29 000 étudiants dont 120 internationaux."
 
   utter_ask_nombre_facultes:
-    - text: "🏫 **5 كليات** و**90 شعبة تكوين**\n5 facultés | 90 filières de formation"
+    - text: " **5 كليات** و**90 شعبة تكوين**\n5 facultés | 90 filières de formation"
 
   utter_ask_centres:
     - text: |
-        🏢 **مراكز الجامعة:**
+       **مراكز الجامعة:**
         - مكتبة جامعية
         - مركز تشغيل وتكوين
         - مركز تعليم عن بعد
@@ -427,7 +591,7 @@ responses:
 
   utter_ask_facultes_liste:
     - text: |
-        🏛️ **الكليات الخمس:**
+       **الكليات الخمس:**
         1. كلية الآداب والعلوم الإنسانية (FLSH)
         2. كلية العلوم والتقنيات (FST)
         3. كلية الطب والصيدلة وطب الأسنان (FMPOS)
@@ -436,12 +600,36 @@ responses:
 
   utter_ask_repartition_etudiants:
     - text: |
-        📊 **توزيع الطلاب:**
+        **توزيع الطلاب:**
         - FEG (الاقتصاد): 33.3%
         - FST (العلوم): 27.7%
         - FLSH (الآداب): 17.4%
         - FSJP (القانون): 13%
         - FMPOS (الطب): 8.7%
+
+  utter_ask_inscription:
+    - text: |
+        📝 **التسجيل في الجامعة / Inscription à l'université:**
+        🇲🇷 **خطوات التسجيل:**
+        1️⃣ ادفع الرسوم عبر Bankily (B-PAY)
+        2️⃣ أنشئ حساباً على بوابة الجامعة
+        3️⃣ أكمل الاستمارة وأرسل طلبك
+        ⚠️ للمزيد من التفاصيل، حدّد الكلية المعنية.
+
+        🇫🇷 **Étapes d'inscription:**
+        1️⃣ Payer les frais via Bankily (B-PAY)
+        2️⃣ Créer un compte sur le portail universitaire
+        3️⃣ Compléter le formulaire et soumettre la candidature
+        ⚠️ Pour plus de détails, précisez la faculté concernée.
+
+  utter_ask_master_programs:
+    - text: |
+        🎓 **برامج الماستر في الجامعة / Programmes de Master:**
+        🔬 **FST:** IA_MLDS | IA_NLPCV | ISDR_SI | ISDR_RSC | BMPB | BOMVRH | BEES | NS | TASSMQ | PIA | SDD | MA_IMCS | SN | MATERIAUX | 2M | ER | GEOLOGIE | MINE | 2E
+        📊 **FEG:** MESA | MBF | CCA | Management | GRH | Finance | Entrepreneuriat | MAE | Contrôle de Gestion
+        ⚖️ **FSJP:** Droit Public | Droit Privé | Droits de l'Homme | Relations Internationales | Droit des Affaires | Droit Maritime
+        🏥 **FMPOS:** Sciences Médicales (Médecine, Pharmacie, Odonto-stomatologie)
+        ℹ️ Précisez la faculté pour plus de détails.
 
   # ── FST ─────────────────────────────────────────────
   utter_ask_fst:
@@ -454,29 +642,30 @@ responses:
 
   utter_ask_fst_licences:
     - text: |
-        📋 **شعب FST:**
-        **أساسي:** BMP | BOE | GEO | Chimie | SP | PF | EEA | MA | MI
-        **مهني:** GEOMIN | NS | TAS-SMQ | TSER | MIAGE | DA2I | PEPE | IPG | ABC
+       شعب FST:
+       أساسي: BMP | BOE | GEO | Chimie | SP | PF | MA | MI
+        مهني: GEOMIN | NS | TAS-SMQ | TSER | EEA | MIAGE | DA2I | PEPE | IPG | ABC | RSC |TPGM
 
   utter_ask_fst_parcours_bg:
     - text: |
-        🌿 **مسار BG — FST:**
-        L1: BG → L2: PEPE | ABC | TAS-SMQ | NS | GEO
-        L3: PEPE | ABC | TAS-SMQ | NS | GEOSS | GEOMIN | BMP | BOE
-        Master: NS | BEE3 | BMPB | BOMVRH | TASSMQ | MEE
+       مسار BG — FST:
+        L1: BG → L2: PEPE | ABC | TAS-SMQ | NS | GEO | BIO | IPG 
+        L3: PEPE | ABC | TAS-SMQ | NS | GEOSS | GEOMIN | BMP | BOE | IPG 
+        Master: NS | BEES | BMPB | BOMVRH | TASSMQ | PIA
         Doctorat: Biologie | Géologie
 
   utter_ask_fst_parcours_mpi:
     - text: |
-        💻 **مسار MPI — FST:**
-        L1: MPI → L2: DA2I | MIAGE | EEA | PF | SP | MAI
-        L3: DA2I | MIAGE | EEA | TSER | PF | SP | MA | MI
+
+        مسار MPI — FST:
+        L1: MPI → L2: DA2I | MIAGE | EEA | PF | SP | MAI | RSC
+        L3: DA2I | MIAGE | EEA | TSER | PF | SP | MA | MI | RSC
         Master: ISDR_SI | ISDR_RSC | IA_MLDS | IA_NLPCV | MA_IMCS | SDD
         Doctorat: Informatique | Maths | Physique
 
   utter_ask_fst_parcours_pc:
     - text: |
-        ⚗️ **مسار PC — FST:**
+        مسار PC — FST:
         L1: PC → L2: SP | PF | EEA | Chimie | IPG | ABC
         L3: SP | PF | EEA | TSER | IPG | ABC | Chimie
         Master: SN | Chimie | MEE | ER | 2M
@@ -486,14 +675,14 @@ responses:
     - text: |
         🎓 **برامج الماستر — FST:**
         - Informatique: IA_MLDS | IA_NLPCV | ISDR_SI | ISDR_RSC
-        - Biologie: BMPB | BOMVRH | BEES | NS | TASSMQ
+        - Biologie: BMPB | BOMVRH | BEES | NS | TASSMQ  | PIA
         - Statistiques/Maths: SDD | MA_IMCS
-        - Chimie/Physique: SN | MATERIAUX | 2M | ER
+        - Chimie/Physique: SN | MATERIAUX | 2M | ER | GE
         - Géologie: MINE | GEOLOGIE | 2E
 
   utter_ask_doctorat:
     - text: |
-        🎓 **الدكتوراه:**
+        **الدكتوراه:**
         **FST:** Biologie | Géologie | Chimie | Physique | Maths | Informatique
         **FMPOS:** الطب (7 سنوات) | الصيدلة (6 سنوات) | طب الأسنان (6 سنوات)
         الشرط: ماستر أو ما يعادله (Bac+5) | المدة: 3 سنوات (Bac+8)
@@ -518,7 +707,7 @@ responses:
     - text: "Le Vice-Doyen de la FST est Dr. Mohamed Abdelwedoud Ould Mhamed"
 
   utter_demander_sg_FST_ar:
-    - text: "الأمين العام للكلية هو الدكتور محمد هدامين همدي"
+    - text: "الأمين العام للكلية هو الدكتور محمد حدامين همدي"
 
   utter_demander_sg_FST_fr:
     - text: "Le Secrétaire Général de la FST est Dr. Mohamed Hademine Hemmidy"
@@ -562,29 +751,29 @@ responses:
     - text: |
         شعبة MPI (رياضيات – فيزياء – معلوماتية)
         بعد L1:
-        L2: MIAGE، DA2I، MAI، EEA، TSER، PF
-        L3: MA، MI، MIAGE، DA2I، EEA، TSER، PF
+        L2: MIAGE، DA2I، MAI، EEA، TSER، PF ّ| RSC
+        L3: MA، MI، MIAGE، DA2I، EEA، TSER، PF , RSC
 
   utter_demander_info_MPI_fr:
     - text: |
         Filière MPI (Mathématiques – Physique – Informatique)
         Après L1:
-        L2: MIAGE, DA2I, MAI, EEA, TSER, PF
-        L3: MA, MI, MIAGE, DA2I, EEA, TSER, PF
+        L2: MIAGE, DA2I, MAI, EEA, TSER, PF , RSC
+        L3: MA, MI, MIAGE, DA2I, EEA, TSER, PF , RSC
 
   utter_demander_info_BG_ar:
     - text: |
         شعبة BG (بيولوجيا – جيولوجيا)
         بعد L1:
-        L2: BIO، GEO، NS، TAS-SMQ، ABC، IPG، 2P2E
-        L3: BMP، BOE، Géos، Géomin، NS، TAS-SMQ، ABC، IPG، 2P2E
+        L2: PEPE | ABC | TAS-SMQ | NS | GEO | BIO | IPG 
+        L3: PEPE | ABC | TAS-SMQ | NS | GEOSS | GEOMIN | BMP | BOE | IPG 
 
   utter_demander_info_BG_fr:
     - text: |
         Filière BG (Biologie – Géologie)
         Après L1:
-        L2: BIO, GEO, NS, TAS-SMQ, ABC, IPG, 2P2E
-        L3: BMP, BOE, Géos, Géomin, NS, TAS-SMQ, ABC, IPG, 2P2E
+        L2: PEPE | ABC | TAS-SMQ | NS | GEO | BIO | IPG 
+        L3: PEPE | ABC | TAS-SMQ | NS | GEOSS | GEOMIN | BMP | BOE | IPG 
 
   utter_demander_info_PC_ar:
     - text: |
@@ -621,6 +810,7 @@ responses:
         6. Certificat informatique et internet 2
         7. Arabe 2
         8. Anglais 2
+
 
   utter_demander_matieres_BG_S1:
     - text: |
@@ -700,11 +890,12 @@ responses:
         • الفيزياء الأساسية (PF)
         • الإلكترونيات والكهرباء (EEA)
         • تكنولوجيا الطاقات المتجددة (TSER)
+        • الشبكات والأنظمة المتصلة (RSC)
 
   utter_demander_specialites_MPI_fr:
     - text: |
         Spécialités MPI:
-        L2: MIAGE, DA2I, MAI, EEA, TSER, PF
+        L2: MIAGE, DA2I, MAI, EEA, TSER, PF , RSC
         L3:
         • Mathématiques et Applications (MA)
         • Mathématiques et Informatique (MI)
@@ -713,6 +904,7 @@ responses:
         • Physiques Fondamentales (PF)
         • Electronique, Electrotechnique (EEA)
         • Technologies Energies Renouvelables (TSER)
+        • Réseaux et Systèmes Connectés (RSC)
 
   utter_demander_specialites_BG_ar:
     - text: |
@@ -771,198 +963,1170 @@ responses:
   utter_demander_matieres_MAI:
     - text: |
         MAI (Mathématiques et Applications de l'Informatique) L2:
-        S3: Langage C avancé • Graphes • Algèbre linéaire 2 • Systèmes d'exploitation
-            Topologie métriques • Calcul scientifique • Fonctions plusieurs variables I
-        S4: Analyse numérique • Fonctions plusieurs variables II • Projet UNIX
-            Architecture ordinateurs • Python • EDO • Probabilités discrètes • Anglais
+        S3:
+        Langage C avancé
+        Graphes
+        Algèbre linéaire 2
+        Systèmes d'exploitation
+        Topologie métriques
+        Calcul scientifique
+        Fonctions plusieurs variables I
+        Analyse convergence
+        Analyse vectorielle
+        S4:
+        Analyse numérique
+        Fonctions plusieurs variables II
+        Projet UNIX
+        Architecture ordinateurs
+        Python
+        EDO
+        EDP intro
+        Intégration
+        Probabilités discrètes
+        Anglais
 
   utter_demander_matieres_BIOLOGIE:
     - text: |
         Biologie L2:
-        S3: Génétique formelle • Diversité animale 1 • Diversité végétale 1
-            Bactériologie I • Écologie végétale I • Biologie moléculaire I
-            Biochimie structurale 1 • Parasitologie I • Anglais
-        S4: Écologie animale I • Physiologie animale I • Biochimie métabolique
-            Génétique des populations • Physiologie végétale I • Anglais
+        S3:
+        Génétique formelle
+        Diversité animale 1
+        Diversité végétale 1
+        Bactériologie I
+        Écologie végétale I
+        Biologie moléculaire I
+        Biochimie structurale 1
+        Parasitologie I
+        Rédaction scientifique
+        Anglais
+        S4:
+        Écologie animale I
+        Physiologie animale I
+        Biochimie métabolique
+        Histologie végétale
+        Génétique des populations
+        Physiologie végétale I
+        Anglais
 
   utter_demander_matieres_GEO:
     - text: |
         Géologie L2:
-        S3: Trigonométrie • Stratigraphie • Pétrographie ignée • Géophysique
-            Géochimie • Géodésie • Paléontologie • Étude des minéraux • Anglais
-        S4: Géochimie minérale • Géologie environnement • Topographie
-            Cartographie géologique • Géophysique appliquée • Pétrographie sédimentaire
+        S3:
+        Trigonométrie
+        Stratigraphie
+        Pétrographie ignée
+        Géophysique
+        Géochimie
+        Géodésie
+        Paléontologie
+        Étude des minéraux
+        Rédaction scientifique
+        Anglais
+        S4:
+        Géochimie minérale
+        Géologie environnement
+        Topographie
+        Cartographie géologique
+        Géophysique appliquée
+        Orogénie
+        Pétrographie sédimentaire
+        Anglais
 
-  # ── FST L3 ──────────────────────────────────────────
   utter_demander_matieres_MA:
     - text: |
         MA (Mathématiques et Applications):
-        S5: 
-        Théorie des groupes 
-        Analyse complexe 
-        Topologie 
+        S5:
+        Théorie des groupes
+        Analyse complexe
+        Topologie
         Mesure & intégration
-        Programmation linéaire 
-        Géométrie affine  
-        Calcul différentiel  
+        Programmation linéaire
+        Géométrie affine
+        Calcul différentiel
+        Analyse numérique II
         Python II
+        Probabilités
         S6:
-        Anneaux et corps 
-        Courbes et surfaces 
+        Anneaux et corps
+        Courbes et surfaces
+        Mesure & intégration II
         Statistique inférentielle
-        Algorithmique 
-        Optimisation 
-        Analyse convexe 
-        Anglais 
+        Algorithmique
+        Optimisation
+        Analyse convexe
+        Anglais
         PFE
 
   utter_demander_matieres_MI:
     - text: |
         MI (Mathématiques et Informatique):
-        S5: Programmation linéaire • Python II • Projet Web • Analyse numérique II
-            Java I • Base de données • Mesure & intégration I • Web dynamique • Anglais
-        S6: Réseaux • Algorithmique • Statistique inférentielle • Optimisation
-            Java II • Entreprenariat • Anglais • PFE
+        S5:
+        Programmation linéaire
+        Python II
+        Projet Web
+        Analyse numérique II
+        Java I
+        Base de données
+        Mesure & intégration I
+        Calcul différentiel
+        Web dynamique
+        Anglais
+        S6:
+        Réseaux
+        Algorithmique
+        Statistique inférentielle
+        Mesure & intégration II
+        Optimisation
+        Java II
+        Entreprenariat
+        Anglais
+        PFE
 
   utter_demander_matieres_DA2I:
     - text: |
         DA2I:
-        S3: Système d'exploitation • Programmation Internet • JavaSE • Unix
-            Architecture ordinateurs • Python • Base de données • Anglais
-        S4: Réseaux informatiques • Data Mining • Recherche opérationnelle
-            Outils web • Web dynamique • Multimédia • Anglais
-        S5: Conception SI • Admin BDD • Sécurité • Admin systèmes • Génie logiciel
-        S6: Projet de fin d'études
+        S3:
+        Système d'exploitation
+        Programmation Internet
+        JavaSE
+        Unix
+        Architecture ordinateurs
+        Python
+        Base de données
+        Automates
+        Anglais
+        Français
+        S4:
+        Réseaux informatiques
+        Data Mining
+        Recherche opérationnelle
+        Marketing
+        Outils web
+        Web dynamique
+        Multimédia
+        Projet Web
+        Anglais
+        Français
+        S5:
+        Conception SI
+        Admin BDD
+        Droit NTIC
+        Entreprenariat
+        Sécurité
+        Admin systèmes
+        Applications distribuées
+        Génie logiciel
+        Algo
+        Réseaux avancés
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_MIAGE:
     - text: |
         MIAGE:
-        S3: Python • Anglais • Automates • BDD • Internet • JavaSE • Unix
-        S4: Web dynamique • Outils web • Réseaux • Data Mining • Marketing • Comptabilité
-        S5: Réseaux avancés • Conception SI • Économie • Maqaolátía • Génie logiciel • IA
-        S6: Projet de fin d'études
+        S3:
+        Python
+        Anglais
+        Automates
+        BDD
+        Internet
+        JavaSE
+        Unix
+        OS
+        Architecture
+        S4:
+        Web dynamique
+        Outils web
+        Réseaux
+        Data Mining
+        Projet Web
+        Marketing
+        Comptabilité
+        Anglais
+        RO
+        Français
+        S5:
+        Réseaux avancés
+        Conception SI
+        Algo
+        Économie
+        Droit NTIC
+        Entreprenariat
+        Comptabilité analytique
+        Admin BDD
+        Génie logiciel
+        IA
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_PF:
     - text: |
         PF (Physique Fondamentale):
-        S3: Techniques communication • Programmation C • Math physiciens I
-            Electromagnétisme • Mécanique solide • Thermodynamique
-        S4: Mécanique milieux continus • Analyse numérique I • Mécanique quantique I
-            Electronique • Physique ondes • Optique physique • Anglais
-        S5: Mécanique analytique • Math physiciens II • Physique état solide
-            Relativité restreinte • Mécanique fluides • Anglais
-        S6: Physique nucléaire • Thermodynamique avancée • Mécanique quantique II • PFE
+        S3:
+        Techniques communication
+        Programmation C
+        Math physiciens I
+        Electromagnétisme
+        Mécanique solide
+        Thermodynamique
+        Projet personnel
+        S4:
+        Mécanique milieux continus
+        Analyse numérique I
+        Mécanique quantique I
+        Electronique
+        Physique ondes
+        Optique physique
+        Anglais
+        S5:
+        Mécanique analytique
+        Math physiciens II
+        Physique état solide
+        Analyse numérique II
+        Relativité restreinte
+        Mécanique fluides
+        Anglais
+        S6:
+        Physique nucléaire
+        Thermodynamique avancée
+        Physique statistique
+        Mécanique quantique II
+        Droit
+        Économie
+        PFE
 
   utter_demander_matieres_EEA:
     - text: |
         EEA:
-        S3: Machines électriques I • Electromagnétisme • Analogique I • Numérique I
-            Outils math • Programmation C • Circuits linéaires • Anglais
-        S4: Machines électriques II • Thermodynamique • Traitement signal
-            Systèmes linéaires • Analogique II • Anglais
-        S5: Instrumentation • Commande machines • Production énergie
-            Electronique puissance • Asservissement • Informatique industrielle
-        S6: Stage en entreprise
+        S3:
+        Machines électriques I
+        Electromagnétisme
+        Analogique I
+        Numérique I
+        Outils math
+        Programmation C
+        Circuits linéaires
+        Anglais
+        Français
+        S4:
+        Machines électriques II
+        Thermodynamique
+        Traitement signal
+        Systèmes linéaires
+        Schéma électrique
+        Analogique II
+        Circuits électriques
+        Anglais
+        Français
+        S5:
+        Instrumentation
+        Commande machines
+        Production énergie
+        Distribution électrique
+        Électronique puissance
+        Asservissement
+        Informatique industrielle
+        Mini projet
+        S6:
+        Stage en entreprise
 
   utter_demander_matieres_TSER:
     - text: |
         TSER:
-        S3: Thermodynamique ingénieur • Mécanique fluides • Math ingénieur
-            Electromagnétisme • Electrotechnique • Transferts thermiques • Matlab • Anglais
-        S4: Electronique analogique • Production énergie • Machines électriques • Anglais
-        S5: Conversion solaire • Génie énergétique • Biomasse • Solaire PV • Éolien
-        S6: Stage en entreprise
+        S3:
+        Thermodynamique ingénieur
+        Mécanique fluides
+        Math ingénieur
+        Electromagnétisme
+        Electrotechnique
+        Transferts thermiques
+        Electrocinétique
+        Matlab
+        Anglais
+        Français
+        S4:
+        Electronique analogique
+        Production énergie
+        Installation électrique
+        Micro centrales
+        Machines électriques
+        Hydrogène
+        Anglais
+        Français
+        S5:
+        Conversion solaire
+        Génie énergétique
+        Machines thermiques
+        Biomasse
+        Solaire PV
+        Éolien
+        Systèmes hybrides
+        Mini projet
+        Anglais
+        Français
+        S6:
+        Stage en entreprise
 
   utter_demander_matieres_IPG:
     - text: |
         IPG (Ingénierie Pétrole et Gaz):
-        S3: Acoustique • Géologie • Chimie minérale • Chimie hydrocarbures • Hydraulique
-        S4: Géophysique appliquée • Pétrologie • Hydrologie • Chimie hydrocarbures II
-        S5: Pétrochimie • Géochimie • Forage • Exploration sismique • Traitement gaz
-        S6: Projet de fin d'études
+        S3:
+        Acoustique
+        Géologie
+        Chimie minérale
+        Chimie hydrocarbures
+        Hydraulique
+        Math traitement signal
+        Physique
+        Géologie pétrole
+        S4:
+        Géophysique appliquée
+        Pétrologie
+        Hydrologie
+        Chimie hydrocarbures II
+        Physique appliquée pétrole
+        Acoustique avancée
+        S5:
+        Pétrochimie
+        Géochimie
+        Forage
+        Géopolitique hydrocarbures
+        Exploration sismique
+        Ingénierie réservoirs
+        Exploitation
+        Impact env
+        Traitement gaz
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_GEOSS:
     - text: |
         GEOSS (Géosciences):
-        S5: Géologie régionale • Géoressources • Télédétection • Géologie Précambrien
-            Cycles géochimiques • Ressources minérales • Anglais
-        S6: Géodynamique bassins • Géologie structurale • Géophysique analytique
-            Géodynamique globale • Géomorphologie • Chimie eau • Économie • Droit
+        S5:
+        Géologie régionale
+        Géoressources
+        Télédétection
+        Géologie Précambrien
+        Cycles géochimiques
+        Ressources minérales
+        Rédaction scientifique
+        Anglais
+        S6:
+        Géodynamique bassins
+        Géologie structurale
+        Géophysique analytique
+        Géodynamique globale
+        Géomorphologie
+        Chimie eau
+        Économie
+        Droit
 
   utter_demander_matieres_GEOMIN:
     - text: |
         GEOMIN:
-        S3: Paléontologie • Minéraux • Trigonométrie • Stratigraphie • Pétrographie
-            Géophysique • Géochimie • Géodésie • Anglais
-        S4: Stratigraphie avancée • Géochimie • Géophysique appliquée • Pétrologie
-        S5: Géologie Mauritanie • Métallogénie • Hydrogéologie • Valorisation minerais
-        S6: Projet de fin d'études
+        S3:
+        Paléontologie
+        Minéraux
+        Trigonométrie
+        Stratigraphie
+        Pétrographie
+        Géophysique
+        Géochimie
+        Géodésie
+        Rédaction scientifique
+        Anglais
+        S4:
+        Stratigraphie avancée
+        Géochimie
+        Géophysique appliquée
+        Pétrologie
+        Paléontologie appliquée
+        Minéralogie
+        Géodésie cartographie
+        Anglais
+        S5:
+        Géologie Mauritanie
+        Métallogénie
+        Hydrogéologie
+        Ressources énergétiques
+        Valorisation minerais
+        Environnement minier
+        Géotechnique
+        Télédétection SIG
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_PEPE:
     - text: |
         PEPE (2P2E):
-        S3: Chimie minérale • Chimie organique • Chimie analytique
-            Mécanique fluides • Microbiologie eaux • Statistiques • Anglais
-        S4: Chimie avancée • Microbiologie avancée • Hydraulique II • Techniques traitement eau
-        S5: Réseaux assainissement • Ressources eau • Pompage • Impact environnemental
-        S6: Projet de fin d'études
+        S3:
+        Chimie minérale
+        Chimie organique
+        Chimie analytique
+        Mécanique fluides
+        Microbiologie eaux
+        Statistiques
+        Spéciation chimique
+        Anglais
+        Français
+        S4:
+        Chimie avancée
+        Microbiologie avancée
+        Hydraulique II
+        Techniques traitement eau
+        Statistiques appliquées
+        Anglais scientifique
+        Français avancé
+        S5:
+        Réseaux assainissement
+        Ressources eau
+        Pompage
+        Impact environnemental
+        Adduction
+        Eau souterraine
+        SIG
+        Entreprenariat
+        Textes juridiques
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_CHIMIE:
     - text: |
         CHIMIE L3:
-        S3: Outils math • Chimie minérale • Chimie des solutions • Stéréochimie
-        S4: Chimie organique avancée • Chimie inorganique avancée • Chimie analytique avancée
-        S5: Méthodes séparatives • Chimie matériaux • Chimie quantique • Electrochimie
-        S6: Chimie coordination • Chimie verte • Chimie eau/env • Économie • Droit
+        S3:
+        Outils math
+        Chimie minérale
+        Chimie des solutions
+        Stéréochimie
+        Chimie organique descriptive
+        Electronique analogique I
+        Probabilités
+        Anglais
+        S4:
+        Chimie organique avancée
+        Chimie inorganique avancée
+        Chimie analytique avancée
+        Electronique analogique II
+        Probabilités continues
+        Anglais scientifique
+        S5:
+        Méthodes séparatives
+        Chimie matériaux
+        Méthodes spectroscopiques II
+        Chimie quantique
+        Electrochimie
+        Thermodynamique chimique II
+        Anglais
+        S6:
+        Chimie coordination
+        Chimie verte
+        Chimie eau/env
+        Synthèse organique
+        Chimie pétrole/gaz
+        Chimie fine
+        Économie
+        Droit
 
   utter_demander_matieres_BMP:
     - text: |
         BMP (Biologie Moléculaire et Physiologie):
-        S5: Génie Génétique • Immunologie • Biochimie structurale II
-            Biochimie métabolique II • Génétique des populations II
-            Microbiologie 2 • Statistiques • Anglais
-        S6: Projet de fin d'études
+        S5:
+        Génie Génétique
+        Immunologie
+        Biochimie structurale II
+        Biochimie métabolique II
+        Génétique des populations II
+        Microbiologie 2
+        Statistiques
+        Logiciel stat
+        Anglais
+        Droit
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_BOE:
     - text: |
         BOE (Biologie des Organismes et Écosystèmes):
-        S3: Écologie animale I • Ornithologie • Diversité végétale I
-            Bio statistique • Biologie marine • Diversité animale I
-        S4: Écologie animale II • Ornithologie avancée • Diversité végétale II
-        S5: Mêmes modules + approfondissement
-        S6: Écologie microorganismes • Écotoxicologie • Pédologie
+        S3:
+        Écologie animale I
+        Ornithologie
+        Diversité végétale I
+        Bio statistique
+        Biologie marine
+        Diversité animale I
+        Écologie végétale I
+        Logiciel stat
+        Anglais
+        Droit
+        S4:
+        Écologie animale II
+        Ornithologie avancée
+        Diversité végétale II
+        Bio statistique avancée
+        Biologie marine approfondie
+        Diversité animale II
+        S5:
+        Mêmes modules + approfondissement
+        S6:
+        Écologie microorganismes
+        Microbiologie sols/eaux
+        Dynamique écosystèmes
+        Écotoxicologie
+        Pédologie
+        Photo-interprétation
+        Anglais
+        Économie
 
   utter_demander_matieres_NS:
     - text: |
         NS (Nutrition et Santé):
-        S5: Sécurité alimentaire • Diététique clinique • Pathologies nutritionnelles
-            Alimentation nourrisson • Nutrition femmes enceintes
-            Nutrition communautaire • Méthodes enquêtes • Biostatistique
-        S6: Projet de fin d'études
+        S5:
+        Sécurité alimentaire
+        Diététique clinique
+        Pathologies nutritionnelles
+        Alimentation nourrisson
+        Nutrition femmes enceintes
+        Prise en charge nutritionnelle
+        Nutrition communautaire
+        Méthodes enquêtes
+        Normes qualité
+        Biostatistique
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_TASSMQ:
     - text: |
         TASSMQ (Technologie Alimentaire et Système Management Qualité):
-        S5: Sécurité alimentaire • Analyse sensorielle • Technologies alimentaires 2
-            Produits locaux • Biotechnologie • Système Management Qualité • Biostatistique
-        S6: Projet de fin d'études
+        S5:
+        Sécurité alimentaire
+        Analyse sensorielle
+        Technologies alimentaires 2
+        Produits locaux
+        Biotechnologie
+        Gestion processus
+        Système Management Qualité
+        Biostatistique
+        Normes qualité
+        Nutrition communautaire
+        S6:
+        Projet de fin d'études
 
   utter_demander_matieres_SP:
     - text: |
         SP (Sciences Physiques):
-        S3: JavaSE • Python • BDD • OS • Mécanique solide • Thermodynamique • Chimie organique 2
-        S4: Java avancé • Python avancé • BDD avancée • Réseaux sécurité • Mécanique appliquée
-        S5: Chimie analytique • Méthodes séparatives • Physique état solide • Mécanique quantique II
-        S6: Physique nucléaire • Mécanique fluides • Chimie organique 3 • Économie • Droit
+        S3:
+        JavaSE
+        Python
+        BDD
+        OS
+        Mécanique solide
+        Thermodynamique
+        Chimie organique 2
+        Math physiciens 1
+        Techniques communication
+        S4:
+        Java avancé
+        Python avancé
+        BDD avancée
+        Réseaux sécurité
+        Mécanique appliquée
+        Thermodynamique appliquée
+        Chimie organique III
+        S5:
+        Chimie analytique
+        Méthodes séparatives
+        Méthodes spectroscopiques
+        Physique état solide
+        Electromagnétisme
+        Mécanique quantique II
+        Anglais
+        S6:
+        Physique nucléaire
+        Mécanique fluides
+        Chimie organique 3
+        Chimie minérale 2
+        Économie
+        Droit
 
   utter_demander_matieres_ABC:
     - text: |
         ABC (Analyses Biologiques et Chimiques):
-        S3: Chimie base • Biochimie base • Biologie moléculaire • Chimie analytique • Statistiques
-        S4: Chimie organique avancée • Biochimie métabolique • Techniques analytiques avancées
-        S5: Analyses chimiques • Analyses biologiques • Électrochimie • Entrepreneuriat
-        S6: Projet de fin d'études
+        S3:
+        Chimie base
+        Biochimie base
+        Biologie moléculaire
+        Informatique
+        Techniques biochimiques
+        Plans expériences
+        Chimie analytique
+        Statistiques
+        Anglais
+        S4:
+        Chimie organique avancée
+        Biochimie métabolique
+        Biologie moléculaire avancée
+        Techniques analytiques avancées
+        Statistiques appliquées
+        Anglais scientifique
+        S5:
+        Analyses chimiques
+        Analyses biologiques
+        Électrochimie
+        Méthodes spécifiques
+        TP Microbiologie
+        TP Biochimie
+        Entrepreneuriat
+        Biosécurité
+        Échantillonnage
+        S6:
+        Projet de fin d'études
+  # ── Descriptions spécialités ─────────────────────────
 
+  utter_description_MA_ar:
+    - text: |
+        📐 **تخصص MA — الرياضيات والتطبيقات**
+        ══════════════════════════════════
+
+        يُعدّ تخصص MA من أبرز التخصصات العلمية المعتمدة على الرياضيات.
+        يركّز على توظيف الأدوات الرياضية في النمذجة والتحليل
+        لفهم الظواهر الواقعية واتخاذ قرارات علمية دقيقة.
+
+        🔭 **الآفاق المستقبلية:**
+        - تطوير البرمجيات والأنظمة الذكية
+        - تحليل البيانات والإحصاء التطبيقي
+        - الذكاء الاصطناعي والنمذجة الرياضية
+        - البحث العلمي وحل المشكلات الصناعية والاقتصادية
+
+  utter_description_MA_fr:
+    - text: |
+        📐 **Spécialité MA — Mathématiques et Applications**
+        ══════════════════════════════════════════════
+
+        La spécialité MA compte parmi les principales filières scientifiques
+        basées sur les mathématiques. Elle se concentre sur l'utilisation
+        des outils mathématiques dans la modélisation et l'analyse
+        pour comprendre les phénomènes réels et prendre des décisions
+        scientifiques précises.
+
+        🔭 **Perspectives d'avenir:**
+        - Développement de logiciels et de systèmes intelligents
+        - Analyse de données et statistiques appliquées
+        - Intelligence artificielle et modélisation mathématique
+        - Recherche scientifique et résolution de problèmes industriels et économiques
+
+  utter_description_MI_ar:
+    - text: |
+        💻 **تخصص MI — الرياضيات والمعلوماتية**
+        ══════════════════════════════════════
+
+        يجمع تخصص MI بين الرياضيات وعلوم الحاسوب،
+        ويركّز على الخوارزميات والبرمجة وتطوير الأنظمة،
+        مما يؤهّل الطلبة لحل المشكلات برمجياً وتصميم
+        حلول رقمية مبتكرة.
+
+        🔭 **الآفاق المستقبلية:**
+        - تطوير البرمجيات والأنظمة الذكية
+        - تحليل البيانات والإحصاء التطبيقي
+        - الذكاء الاصطناعي والنمذجة الرياضية
+        - البحث العلمي وحل المشكلات الصناعية والاقتصادية
+
+  utter_description_MI_fr:
+    - text: |
+        💻 **Spécialité MI — Mathématiques et Informatique**
+        ══════════════════════════════════════════════
+
+        La spécialité MI associe les mathématiques et l'informatique,
+        et se concentre sur les algorithmes, la programmation et le
+        développement de systèmes, ce qui prépare les étudiants à
+        résoudre des problèmes par la programmation et à concevoir
+        des solutions numériques innovantes.
+
+        🔭 **Perspectives d'avenir:**
+        - Développement de logiciels et de systèmes intelligents
+        - Analyse de données et statistiques appliquées
+        - Intelligence artificielle et modélisation mathématique
+        - Recherche scientifique et résolution de problèmes industriels et économiques
+
+  utter_description_MIAGE_ar:
+    - text: |
+        🖥️ **تخصص MIAGE — طرق المعلوماتية التطبيقية للتسيير**
+        ══════════════════════════════════════════════════
+
+        يُعتبر تخصص MIAGE من أهم التخصصات المهنية في الإعلام الآلي،
+        إذ يجمع بين الجانب التقني والتطبيقي لإعداد طلاب قادرين على
+        تطوير حلول رقمية مبتكرة وربط التكنولوجيا باحتياجات المؤسسات.
+
+        🔭 **الآفاق المستقبلية:**
+        - تطوير التطبيقات وأنظمة المعلومات
+        - تحليل البيانات والذكاء الاصطناعي
+        - ريادة الأعمال الرقمية
+
+  utter_description_MIAGE_fr:
+    - text: |
+        🖥️ **Spécialité MIAGE — Méthodes Informatiques Appliquées à la Gestion**
+        ══════════════════════════════════════════════════════════════════
+
+        Les spécialités MIAGE et DAII font partie des filières professionnelles
+        les plus importantes en informatique. Elles allient l'aspect technique
+        et pratique afin de former des étudiants capables de développer des
+        solutions numériques innovantes et de relier la technologie aux besoins
+        des entreprises.
+
+        🔭 **Perspectives d'avenir:**
+        - Développement d'applications et systèmes d'information
+        - Analyse de données et intelligence artificielle
+        - Entrepreneuriat numérique
+
+  utter_description_DA2I_ar:
+    - text: |
+        🌐 **تخصص DA2I — تطوير وإدارة الإنترنت والأنظمة**
+        ══════════════════════════════════════════════
+
+        يُعتبر تخصص DA2I من أهم التخصصات المهنية في الإعلام الآلي،
+        إذ يجمع بين الجانب التقني والتطبيقي لإعداد طلاب قادرين على
+        تطوير حلول رقمية مبتكرة وربط التكنولوجيا باحتياجات المؤسسات.
+
+        🔭 **الآفاق المستقبلية:**
+        - تطوير التطبيقات وأنظمة المعلومات
+        - تحليل البيانات والذكاء الاصطناعي
+        - ريادة الأعمال الرقمية
+
+  utter_description_DA2I_fr:
+    - text: |
+        🌐 **Spécialité DA2I — Développement et Administration Internet**
+        ══════════════════════════════════════════════════════════
+
+        Les spécialités MIAGE et DAII font partie des filières professionnelles
+        les plus importantes en informatique. Elles allient l'aspect technique
+        et pratique afin de former des étudiants capables de développer des
+        solutions numériques innovantes et de relier la technologie aux besoins
+        des entreprises.
+
+        🔭 **Perspectives d'avenir:**
+        - Développement d'applications, systèmes d'information
+        - Analyse de données, intelligence artificielle
+        - Entrepreneuriat numérique
+
+  utter_description_PF_ar:
+    - text: |
+        ⚛️ **تخصص PF — الفيزياء الأساسية**
+        ══════════════════════════════════
+
+        هي فرع من العلوم يهدف إلى فهم القوانين والمبادئ التي تحكم الكون،
+        مثل حركة الأجسام، الطاقة، القوى، والمادة.
+        وتشمل مجالات مثل الميكانيكا الكلاسيكية، الكهرومغناطيسية،
+        الفيزياء الكمية والنسبية.
+
+        🔭 **الآفاق المستقبلية:**
+        - تطوير الحواسيب الكمية المعتمدة على ميكانيكا الكم
+        - فهم أعمق للكون مثل الثقوب السوداء والطاقة المظلمة
+        - تحسين مصادر الطاقة مثل الاندماج النووي
+        - تطبيقات متقدمة في الطب والاتصالات
+
+  utter_description_PF_fr:
+    - text: |
+        ⚛️ **Spécialité PF — Physique Fondamentale**
+        ══════════════════════════════════════════
+
+        La physique fondamentale est une branche des sciences qui vise à
+        comprendre les lois et les principes qui régissent l'univers, comme
+        le mouvement des corps, l'énergie, les forces et la matière.
+        Elle inclut des domaines tels que la mécanique classique,
+        l'électromagnétisme, la physique quantique et la relativité.
+
+        🔭 **Perspectives d'avenir:**
+        - Le développement des ordinateurs quantiques
+        - Une compréhension plus profonde de l'univers (trous noirs, énergie noire)
+        - L'amélioration des sources d'énergie comme la fusion nucléaire
+        - Des applications avancées en médecine et en télécommunications
+
+  utter_description_SP_ar:
+    - text: |
+        🔬 **تخصص SP — العلوم الفيزيائية**
+        ══════════════════════════════════
+
+        هو مجال علمي يدرس القوانين الأساسية التي تحكم الطبيعة،
+        مثل الحركة والطاقة والكهرباء والضوء والمادة.
+        يعتمد على مواد رئيسية مثل الفيزياء والكيمياء والرياضيات
+        لفهم الظواهر الطبيعية وتفسيرها.
+
+        🔭 **الآفاق المستقبلية:**
+        - التدريس في المدارس أو الجامعات
+        - البحث العلمي في المختبرات
+        - العمل في قطاعات الطاقة
+        - مجالات الصناعة والتكنولوجيا
+
+  utter_description_SP_fr:
+    - text: |
+        🔬 **Spécialité SP — Sciences Physiques**
+        ══════════════════════════════════════
+
+        La spécialité Sciences Physiques est un domaine scientifique qui étudie
+        les lois fondamentales régissant la nature, comme le mouvement, l'énergie,
+        l'électricité, la lumière et la matière. Elle s'appuie sur des matières
+        principales telles que la physique, la chimie et les mathématiques
+        pour comprendre et expliquer les phénomènes naturels.
+
+        🔭 **Perspectives d'avenir:**
+        - L'enseignement dans les écoles ou les universités
+        - La recherche scientifique en laboratoire
+        - Le travail dans les secteurs de l'énergie: électricité, énergie solaire
+        - Les domaines de l'industrie et de la technologie
+
+  utter_description_TSER_ar:
+    - text: |
+        ☀️ **تخصص TSER — تقنيات أنظمة الطاقة المتجددة**
+        ═══════════════════════════════════════════════
+
+        تُعد تقنيات الطاقة المتجددة فرعاً من الفيزياء التطبيقية،
+        وتشمل حلولاً مبتكرة لتحويل المصادر الطبيعية المستدامة
+        إلى كهرباء وحرارة تتجدد باستمرار ولا تنفد،
+        مثل الشمس والرياح والمياه والكتلة الحيوية.
+        وتتميز بأنها صديقة للبيئة وتقلل من التلوث.
+
+        🔭 **الآفاق المستقبلية:**
+        - توليد الكهرباء (محطات شمسية وريّاح)
+        - النقل (السيارات الكهربائية والوقود النظيفة)
+        - المناطق المعزولة (أنظمة مستقلة أو هجينة)
+
+  utter_description_TSER_fr:
+    - text: |
+        ☀️ **Spécialité TSER — Technologies des Systèmes d'Energie Renouvelable**
+        ══════════════════════════════════════════════════════════════════
+
+        Les technologies des systèmes d'énergie renouvelable sont une branche
+        de la physique appliquée et incluent des solutions innovantes pour convertir
+        les sources naturelles durables en électricité et en chaleur qui se
+        renouvellent continuellement et ne s'épuisent pas, comme le soleil,
+        le vent, l'eau et la biomasse. Elles se caractérisent par leur respect
+        de l'environnement et par la réduction de la pollution.
+
+        🔭 **Perspectives d'avenir:**
+        - La production d'électricité: centrales solaires et éoliennes
+        - Le transport: voitures électriques et carburants propres
+        - Les zones isolées: systèmes autonomes ou hybrides
+
+  utter_description_EEA_ar:
+    - text: |
+        ⚡ **تخصص EEA — الإلكترونيات واللكتروتقنيات والأتمتة**
+        ═══════════════════════════════════════════════════
+
+        تخصص من فروع الفيزياء التطبيقية يهتم بتصميم وتشغيل
+        وصيانة الأنظمة والآليات الكهربائية والتحكم الآلي.
+
+        🔭 **الآفاق المستقبلية:**
+        - المصانع والأنظمة الصناعية
+        - الطاقة الكهربائية
+        - التحكم الآلي (الأتمتة)
+
+  utter_description_EEA_fr:
+    - text: |
+        ⚡ **Spécialité EEA — Electronique, Electrotechnique et Automatique**
+        ═══════════════════════════════════════════════════════════════
+
+        C'est une spécialité des branches de la physique appliquée qui s'intéresse
+        à la conception, à l'exploitation et à la maintenance des systèmes et
+        dispositifs électriques ainsi qu'au contrôle automatique.
+
+        🔭 **Perspectives d'avenir:**
+        - Les usines et les systèmes industriels
+        - L'énergie électrique
+        - Le contrôle automatique: automatisation
+
+  utter_description_CHIMIE_ar:
+    - text: |
+        🧪 **تخصص الكيمياء**
+        ══════════════════
+
+        تخصص الكيمياء هو العلم الذي يدرس المادة وتركيبها وخصائصها
+        والتفاعلات التي تحدث بينها. يدرس طلابه كل فروع الكيمياء.
+        كما أنه تخصص تجريبي يعتمد على الفهم والتحليل والمختبر.
+
+        🔭 **الآفاق المستقبلية:**
+        - البحث العلمي والأكاديمي
+        - الصناعة الكيميائية بمختلف مجالاتها
+        - المختبرات الطبية والبيئية والجنسائية
+        - مجالات الطاقة والتعدين وتحلية المياه
+
+  utter_description_CHIMIE_fr:
+    - text: |
+        🧪 **Spécialité Chimie**
+        ══════════════════════
+
+        C'est la science qui étudie la matière, sa composition, ses propriétés
+        et les réactions qui se produisent entre elles. Les étudiants y étudient
+        toutes les branches de la chimie. C'est une spécialité expérimentale
+        qui repose sur la compréhension, l'analyse et le laboratoire.
+
+        🔭 **Perspectives d'avenir:**
+        - Recherche scientifique et académique
+        - Industrie chimique dans tous ses domaines
+        - Laboratoires médicaux, environnementaux et de police scientifique
+        - Domaines de l'énergie, des mines et du dessalement de l'eau
+
+
+  utter_description_BMP_ar:
+    - text: |
+        🧬 تخصص BMP — البيولوجيا الجزيئية والفيزيولوجيا والتكنولوجيا الحيوية
+
+        تخصص علمي يدرس الظواهر الحيوية على المستوى الجزيئي والخلوي،
+        ويشمل: الهندسة الوراثية، المناعة، البيولوجيا الجزيئية،
+        الفيزيولوجيا الحيوانية والنباتية، والتكنولوجيا الحيوية.
+
+        🔭 الآفاق المستقبلية:
+        • البحث العلمي في المختبرات
+        • الصناعة الدوائية والصحية
+        • الزراعة والتكنولوجيا الحيوية
+        • مجال البيئة والأمن الغذائي
+
+  utter_description_BMP_fr:
+    - text: |
+        🧬 Spécialité BMP — Biologie Moléculaire, Physiologie et Biotechnologies
+
+        Formation scientifique qui étudie les phénomènes du vivant
+        au niveau moléculaire et cellulaire. Elle couvre le génie
+        génétique, l'immunologie, la biologie moléculaire, la
+        physiologie animale et végétale ainsi que les biotechnologies.
+
+        🔭 Perspectives d'avenir:
+        • Recherche scientifique en laboratoire
+        • Industrie pharmaceutique et biomédicale
+        • Agriculture et biotechnologies
+        • Environnement et sécurité alimentaire
+
+  utter_description_BOE_ar:
+    - text: |
+        🌿 تخصص BOE — بيولوجيا الكائنات والأنظمة البيئية
+
+        مجال علمي يدرس الكائنات الحية في تفاعلها مع بيئتها،
+        من المستوى الفردي إلى مستوى النظام البيئي. يشمل:
+        علم البيئة، التنوع الحيوي، الأورنيثولوجيا، البيولوجيا
+        البحرية، والسموم البيئية.
+
+        🔭 الآفاق المستقبلية:
+        • إدارة البيئة والتنوع الحيوي
+        • البحث العلمي البيئي
+        • المتنزهات والمحميات الطبيعية
+        • مراقبة جودة المياه والنظم البيئية
+
+  utter_description_BOE_fr:
+    - text: |
+        🌿 Spécialité BOE — Biologie des Organismes et Écosystèmes
+
+        Domaine scientifique qui étudie les organismes vivants en
+        interaction avec leur environnement, de l'échelle individuelle
+        à l'échelle des écosystèmes. Couvre l'écologie, la biodiversité,
+        l'ornithologie, la biologie marine et l'écotoxicologie.
+
+        🔭 Perspectives d'avenir:
+        • Gestion de l'environnement et de la biodiversité
+        • Recherche scientifique en écologie
+        • Parcs et réserves naturelles
+        • Contrôle qualité des eaux et des milieux naturels
+
+  utter_description_NS_ar:
+    - text: |
+        🥗 تخصص NS — التغذية والصحة
+
+        تخصص متعدد التخصصات يجمع بين علوم الغذاء والصحة العامة.
+        يدرس العلاقة بين التغذية والصحة، وأمراض سوء التغذية،
+        والأمن الغذائي، وأساليب مراقبة جودة الغذاء.
+
+        🔭 الآفاق المستقبلية:
+        • الصناعة الغذائية والزراعية
+        • الصحة العامة والمجتمعية
+        • المستشفيات ومراكز الصحة
+        • البحث في التغذية والسلامة الغذائية
+
+  utter_description_NS_fr:
+    - text: |
+        🥗 Spécialité NS — Nutrition et Santé
+
+        Formation pluridisciplinaire qui combine les sciences
+        alimentaires et la santé publique. Elle étudie la relation
+        entre alimentation et santé, les maladies nutritionnelles,
+        la sécurité alimentaire et le contrôle qualité des aliments.
+
+        🔭 Perspectives d'avenir:
+        • Industries agro-alimentaires
+        • Santé publique et communautaire
+        • Hôpitaux et centres de santé
+        • Recherche en nutrition et sécurité alimentaire
+
+  utter_description_TASSMQ_ar:
+    - text: |
+        🏭 تخصص TAS-SMQ — تكنولوجيا الأغذية وأنظمة إدارة الجودة
+
+        تخصص مهني يجمع بين علوم وتكنولوجيا الأغذية ونظم
+        إدارة الجودة. يركز على تحليل الأغذية، ضمان السلامة
+        الغذائية، معايير ISO، HACCP، والتحكم في جودة الإنتاج.
+
+        🔭 الآفاق المستقبلية:
+        • مراقبة الجودة في الصناعة الغذائية
+        • مختبرات التحليل الغذائي
+        • الهيئات التنظيمية والسلامة الغذائية
+        • البحث والتطوير في صناعة الأغذية
+
+  utter_description_TASSMQ_fr:
+    - text: |
+        🏭 Spécialité TAS-SMQ — Technologie Alimentaire et Système de Management de la Qualité
+
+        Formation professionnelle combinant les sciences et technologies
+        alimentaires avec les systèmes de management de la qualité.
+        Se concentre sur l'analyse des aliments, la sécurité sanitaire,
+        les normes ISO, HACCP et le contrôle qualité de la production.
+
+        🔭 Perspectives d'avenir:
+        • Contrôle qualité dans l'industrie alimentaire
+        • Laboratoires d'analyse alimentaire
+        • Organismes de réglementation et sécurité alimentaire
+        • Recherche et développement dans l'agro-alimentaire
+
+  utter_description_IPG_ar:
+    - text: |
+        ⛽ تخصص IPG — هندسة البترول والغاز
+
+        تخصص تطبيقي يجمع بين الجيولوجيا والهندسة الكيميائية
+        لدراسة استكشاف واستخراج وتكرير النفط والغاز الطبيعي.
+        يشمل: الجيوفيزياء، الكيمياء الهيدروكربونية، والهيدرولوجيا.
+
+        🔭 الآفاق المستقبلية:
+        • شركات البترول والغاز الطبيعي
+        • استكشاف الموارد الطبيعية
+        • مختبرات التحليل الجيوكيميائي
+        • الطاقة والصناعات الاستخراجية
+
+  utter_description_IPG_fr:
+    - text: |
+        ⛽ Spécialité IPG — Ingénierie Pétrole et Gaz
+
+        Formation appliquée combinant géologie et génie chimique
+        pour l'étude de l'exploration, de l'extraction et du
+        raffinage du pétrole et du gaz naturel. Inclut la
+        géophysique, la chimie des hydrocarbures et l'hydrologie.
+
+        🔭 Perspectives d'avenir:
+        • Compagnies pétrolières et gazières
+        • Exploration des ressources naturelles
+        • Laboratoires d'analyse géochimique
+        • Industries énergétiques et extractives
+
+  utter_description_GEOSS_ar:
+    - text: |
+        🪨 تخصص GEOSS — علوم الأرض (الجيوعلوم)
+
+        تخصص يدرس بنية الأرض وتطورها عبر الزمن الجيولوجي.
+        يشمل: الجيولوجيا الإقليمية، الجيومورفولوجيا، الاستشعار
+        عن بعد، الجيوديناميكية، والموارد الطبيعية.
+
+        🔭 الآفاق المستقبلية:
+        • استكشاف الموارد المعدنية
+        • إدارة الكوارث الطبيعية
+        • الدراسات البيئية والجغرافية
+        • البحث الجيولوجي الأكاديمي
+
+  utter_description_GEOSS_fr:
+    - text: |
+        🪨 Spécialité GEOSS — Géosciences
+
+        Spécialité qui étudie la structure et l'évolution de la
+        Terre à travers le temps géologique. Couvre la géologie
+        régionale, la géomorphologie, la télédétection, la
+        géodynamique et les ressources naturelles.
+
+        🔭 Perspectives d'avenir:
+        • Exploration des ressources minérales
+        • Gestion des risques naturels
+        • Études environnementales et géographiques
+        • Recherche géologique académique
+
+  utter_description_GEOMIN_ar:
+    - text: |
+        ⛏️ تخصص GEOMIN — الجيولوجيا المنجمية
+
+        تخصص تطبيقي يركز على الجيولوجيا التطبيقية في مجال
+        التعدين. يدرس: البحث عن المعادن، طرق الاستخراج،
+        الجيوإحصاء، الجيوفيزياء التطبيقية، وتقييم الرواسب.
+
+        🔭 الآفاق المستقبلية:
+        • شركات التعدين واستخراج المعادن
+        • الدراسات والاستكشاف الجيولوجي
+        • الهيئات الحكومية المعنية بالتعدين
+        • إدارة الموارد المعدنية
+
+  utter_description_GEOMIN_fr:
+    - text: |
+        ⛏️ Spécialité GEOMIN — Géologie Minière
+
+        Formation appliquée axée sur la géologie dans le domaine
+        minier. Étudie la prospection minière, les méthodes
+        d'extraction, la géostatistique, la géophysique appliquée
+        et l'évaluation des gisements minéraux.
+
+        🔭 Perspectives d'avenir:
+        • Compagnies minières et extractives
+        • Études et prospection géologique
+        • Organismes gouvernementaux du secteur minier
+        • Gestion des ressources minérales
+
+  utter_description_PEPE_ar:
+    - text: |
+        💧 تخصص PEPE (2P2E) — إنتاج وتوزيع مياه الشرب
+
+        تخصص مهني يدرس كيمياء المياه، الميكروبيولوجيا المائية،
+        الهيدروليك، تقنيات معالجة المياه، وشبكات التصريف
+        الصحي. يهتم بضمان جودة وسلامة مياه الشرب.
+
+        🔭 الآفاق المستقبلية:
+        • شركات توزيع وتوليد المياه الصالحة للشرب
+        • هيئات معالجة مياه الصرف الصحي
+        • المختبرات البيئية والمائية
+        • إدارة الموارد المائية
+
+  utter_description_PEPE_fr:
+    - text: |
+        💧 Spécialité PEPE (2P2E) — Production et Distribution d'Eau Potable
+
+        Formation professionnelle qui étudie la chimie de l'eau,
+        la microbiologie aquatique, l'hydraulique, les techniques
+        de traitement de l'eau et les réseaux d'assainissement.
+        Garantit la qualité et la sécurité de l'eau potable.
+
+        🔭 Perspectives d'avenir:
+        • Sociétés de production et distribution d'eau
+        • Stations d'épuration des eaux usées
+        • Laboratoires environnementaux et aquatiques
+        • Gestion des ressources en eau
+
+  utter_description_ABC_ar:
+    - text: |
+        🔬 تخصص ABC — التحاليل البيولوجية والكيميائية
+
+        تخصص تطبيقي يجمع بين البيولوجيا والكيمياء التحليلية.
+        يدرس تقنيات التحليل المختبري في المجالات الطبية،
+        البيئية، والغذائية: الميكروبيولوجيا، الكيمياء التحليلية،
+        والبيوكيمياء التطبيقية.
+
+        🔭 الآفاق المستقبلية:
+        • المختبرات الطبية والصيدلانية
+        • مراقبة البيئة والمياه
+        • الصناعة الغذائية والصحية
+        • البحث العلمي والأكاديمي
+
+  utter_description_ABC_fr:
+    - text: |
+        🔬 Spécialité ABC — Analyses Biologiques et Chimiques
+
+        Formation appliquée combinant biologie et chimie analytique.
+        Étudie les techniques d'analyses en laboratoire dans les
+        domaines médical, environnemental et alimentaire :
+        microbiologie, chimie analytique et biochimie appliquée.
+
+        🔭 Perspectives d'avenir:
+        • Laboratoires médicaux et pharmaceutiques
+        • Contrôle environnemental et qualité des eaux
+        • Industries alimentaire et sanitaire
+        • Recherche scientifique et académique
   # ── FST Master ──────────────────────────────────────
   utter_demander_masters_ar:
     - text: |
@@ -996,448 +2160,1104 @@ responses:
         • Conditions: Master ou équivalent (Bac+5)
         • Durée: 3 ans après le master (Bac+8)
 
-  utter_masters_disponibles_MA_ar:
+
+
+# ── Masters disponibles par spécialité ───────────────
+
+  utter_masters_disponibles_BMP:
     - text: |
-        الماسترات المتاحة لتخصص MA – 2025:
-        1️⃣ ماستر المعلوماتية - الشبكات RSC (UNFST)
-        2️⃣ ماستر الذكاء الاصطناعي MLDS (UNFST)
-        3️⃣ ماستر الذكاء الاصطناعي - NLP & CV (UNFST)
-        4️⃣ ماستر الرياضيات - SSD (UNFST)
-        5️⃣ ماستر المعلوماتية - نظم المعلومات SI (UNFST)
-        6️⃣ ماستر الاقتصاد القياسي (UNFEG)
-        7️⃣ ماستر الرياضيات - IMCS (UNFST)
-        8️⃣ ماجستير في الجامعات الجزائرية (UNDZ)
-        9️⃣ ماجستير في الجامعات التونسية (UNTN)
-        🔟 ماجستير في الجامعات المغربية (UNMA)
+        🎓 **Masters disponibles pour BMP — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Biologie — BMPB
+           (Biologie Moléculaire, Physiologie et Biotechnologies)
+        2️⃣ Master Informatique — Bio-Informatique
+        3️⃣ Master Biologie — PIA
+           (Phœniciculture & Intelligence Artificielle)
+        4️⃣ Master Biologie — BOMVRH
+           (Biologie des Organismes Marins et Valorisation des Ressources Halieutiques)
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_IPG:
+    - text: |
+        🎓 **Masters disponibles pour IPG — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Géologie — GEOMIN
+           (Géologie Appliquée : Option Mine)
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_ABC:
+    - text: |
+        🎓 **Masters disponibles pour ABC — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Biologie — BMPB
+           (Biologie Moléculaire, Physiologie et Biotechnologies)
+        2️⃣ Master Informatique — Bio-Informatique
+        3️⃣ Master Chimie — SN
+           (Chimie des Substances Naturelles)
+        4️⃣ Master Eau et Environnement — EE
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_BOE:
+    - text: |
+        🎓 **Masters disponibles pour BOE — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Biologie — BEES
+           (Biologie Environnementale et Ecosystèmes Sahéliens)
+        2️⃣ Master Biologie — BOMVRH
+           (Biologie des Organismes Marins et Valorisation des Ressources Halieutiques)
+        3️⃣ Master Biologie — PIA
+           (Phœniciculture & Intelligence Artificielle)
+        4️⃣ Master Informatique — Bio-Informatique
+        5️⃣ Master Biologie — BMPB
+           (Biologie Moléculaire, Physiologie et Biotechnologies)
+
+        🇲🇷 **École Normale Supérieure (NOUS):**
+        6️⃣ Master en éducation sciences de la vie et de la terre
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_PF:
+    - text: |
+        🎓 **Masters disponibles pour PF — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Physique — 2M
+           (Mécanique et Matériaux)
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_CHIMIE:
+    - text: |
+        🎓 **Masters disponibles pour CHIMIE — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Chimie — SN
+           (Chimie des Substances Naturelles)
+        2️⃣ Master Chimie — CM
+           (Chimie des Matériaux)
+        3️⃣ Master Eau et Environnement — EE
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_EEA:
+    - text: |
+        🎓 **Masters disponibles pour EEA — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Physique — MPGE
+           (Master Professionnel Génie Electrique)
+        2️⃣ Master Physique — ER
+           (Energies Renouvelables)
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_MIAGE:
+    - text: |
+        🎓 **Masters disponibles pour MIAGE — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Informatique — SI
+           (Systèmes d'Information)
+        2️⃣ Master Informatique — RSC
+           (Réseaux et Systèmes Communiquants)
+        3️⃣ Master Informatique — IA/MLDS
+           (Intelligence Artificielle, Machine Learning et Data Science)
+        4️⃣ Master Informatique — IA/NLP&CV
+           (Traitement du Langage Naturel et Vision par Ordinateur)
+        5️⃣ Master Informatique — Bio-Informatique
+
+        🇲🇷 **ISCAE (en commun avec FST):**
+        6️⃣ Informatique Appliquée à la Gestion
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_TSER:
+    - text: |
+        🎓 **Masters disponibles pour TSER — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Physique — ER
+           (Energies Renouvelables)
+        2️⃣ Master Physique — MPGE
+           (Master Professionnel Génie Electrique)
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_PEPE:
+    - text: |
+        🎓 **Masters disponibles pour PEPE — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Eau et Environnement — EE
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_DA2I:
+    - text: |
+        🎓 **Masters disponibles pour DA2I — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Informatique — RSC
+           (Réseaux et Systèmes Communiquants)
+        2️⃣ Master Informatique — IA/MLDS
+           (Intelligence Artificielle, Machine Learning et Data Science)
+        3️⃣ Master Informatique — SI
+           (Systèmes d'Information)
+        4️⃣ Master Informatique — IA/NLP&CV
+           (Traitement du Langage Naturel et Vision par Ordinateur)
+
+        🇲🇷 **SUPNUM:**
+        5️⃣ Master en Cybersécurité
+
+        🇲🇷 **ISCAE (en commun avec FST):**
+        6️⃣ Informatique Appliquée à la Gestion
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_GEOMIN:
+    - text: |
+        🎓 **Masters disponibles pour GEOMIN — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Géologie — GEOMIN
+           (Géologie Appliquée : Option Mine)
+        2️⃣ Master Eau et Environnement — EE
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_GEOSS:
+    - text: |
+        🎓 **Masters disponibles pour GEOSS — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **ISCAE:**
+        Pour plus d'informations, contactez l'administration de la faculté.
+
+        💡 Il est conseillé de contacter le département de Géologie de la FST
+        pour les dernières informations disponibles.
+
+  utter_masters_disponibles_NS:
+    - text: |
+        🎓 **Masters disponibles pour NS — 2025**
+        ═══════════════════════════════════════
+
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Nutrition Humaine — NS
+           (Nutrition Santé)
+        2️⃣ Master Nutrition Humaine — TA-SMCQ
+           (Technologie des Aliments, Systèmes de Management et Contrôle Qualité)
+        3️⃣ Master Biologie — PIA
+           (Phœniciculture & Intelligence Artificielle)
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_SP:
+    - text: |
+        🎓 **Masters disponibles pour SP — 2025**
+        ═══════════════════════════════════════
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
+  utter_masters_disponibles_TASSMQ:
+    - text: |
+        🎓 **Masters disponibles pour TAS-SMQ — 2025**
+        ═══════════════════════════════════════
+
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
+
 
   utter_masters_disponibles_MA_fr:
     - text: |
-        Masters disponibles pour MA – 2025:
-        1️⃣ Master Informatique - RSC (UNFST)
-        2️⃣ Master Informatique - IA MLDS (UNFST)
-        3️⃣ Master Informatique - IA NLP & CV (UNFST)
-        4️⃣ Master Mathématiques - SSD (UNFST)
-        5️⃣ Master Informatique - SI (UNFST)
-        6️⃣ Master Econométrie (UNFEG)
-        7️⃣ Master Mathématiques - IMCS (UNFST)
-        8️⃣ Master universités algériennes (UNDZ)
-        9️⃣ Master universités tunisiennes (UNTN)
-        🔟 Master universités marocaines (UNMA)
+        🎓 **Masters disponibles pour MA — 2025**
+        ═══════════════════════════════════════
 
-  utter_masters_disponibles_MI_ar:
-    - text: |
-        الماسترات المتاحة لتخصص MI – 2025:
-                كلية العلوم والتقنيات (UNFST):
-                1️⃣ ماستر المعلوماتية - الشبكات والأنظمة المتصلة
-                2️⃣ ماجستير في علوم الحاسوب - الذكاء الاصطناعي - التعلم الآلي وعلوم البيانات
-                3️⃣ ماجستير في علوم الحاسوب - معالجة اللغة الطبيعية والرؤية الحاسوبية
-                4️⃣ ماستر الرياضيات وتطبيقاتها - الإحصاء وعلوم البيانات
-                5️⃣ ماستر المعلوماتية - نظم المعلومات
-                6️⃣ ماستر الرياضيات وتطبيقاتها - المهندسة الرياضية والحساب العلمي
-                7️⃣ ماستر المعلوماتية - المعلوماتية الحيوية
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Informatique — SI
+           (Systèmes d'Information)
+        2️⃣ Master Informatique — IA/MLDS
+           (Intelligence Artificielle, Machine Learning et Data Science)
+        3️⃣ Master Informatique — IA/NLP&CV
+           (Traitement du Langage Naturel et Vision par Ordinateur)
+        4️⃣ Master Mathématiques et Applications — SSD
+           (Statistiques et Sciences des Données)
+        5️⃣ Master Mathématiques et Applications — IMCS
+           (Ingénierie Mathématique et Calcul Scientifique)
 
-              كلية الاقتصاد والتسيير (UNFEG):
-                8️⃣ ماستر الاقتصاد القياسي - المهندسة الإحصائية والاقتصادية
-                9️⃣ ماستر الاقتصاد القياسي - الاقتصاد القياسي
+        🇲🇷 **Faculté d'Economie et de Gestion — FEG:**
+        6️⃣ Master Econométrie — ISE
+           (Ingénierie Statistique et Economique)
+        7️⃣ Master Econométrie — Econométrie
 
-        ISCAE (مشترك مع FST):
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
 
-                🔟 المعلوماتية التطبيقية للإدارة
 
-              خارج موريتانيا:
-                🇩🇿 ماجستير في الجامعات الجزائرية (UNDZ)
-                🇹🇳 ماجستير في الجامعات التونسية (UNTN)
-                🇲🇦 ماجستير في الجامعات المغربية (UNMA)
 
   utter_masters_disponibles_MI_fr:
     - text: |
-        Masters disponibles pour MI – 2025:
+        🎓 **Masters disponibles pour MI — 2025**
+        ═══════════════════════════════════════
 
-        Faculté des Sciences et Techniques (UNFST) :
-            1️⃣ Master en Informatique – Réseaux et Systèmes Connectés
-            2️⃣ Master en Informatique – Intelligence Artificielle, Apprentissage Automatique et Science des Données
-            3️⃣ Master en Informatique – Traitement du Langage Naturel et Vision par Ordinateur
-            4️⃣ Master en Mathématiques et Applications – Statistique et Science des Données
-            5️⃣ Master en Informatique – Systèmes d’Information
-            6️⃣ Master en Mathématiques et Applications – Ingénierie Mathématique et Calcul Scientifique
-            7️⃣ Master en Informatique – Bio-informatique
+        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        1️⃣ Master Informatique — RSC
+           (Réseaux et Systèmes Communiquants)
+        2️⃣ Master Informatique — IA/MLDS
+           (Intelligence Artificielle, Machine Learning et Data Science)
+        3️⃣ Master Informatique — IA/NLP&CV
+           (Traitement du Langage Naturel et Vision par Ordinateur)
+        4️⃣ Master Mathématiques et Applications — SDD
+           (Statistiques et Sciences des Données)
+        5️⃣ Master Informatique — SI
+           (Systèmes d'Information)
+        6️⃣ Master Mathématiques et Applications — IMCS
+           (Ingénierie Mathématique et Calcul Scientifique)
+        7️⃣ Master Informatique — Bio-Informatique
 
-            Faculté des Sciences Économiques et de Gestion (UNFEG) :
-            8️⃣ Master en Économétrie – Ingénierie Statistique et Économique
-            9️⃣ Master en Économétrie – Économétrie
+        🇲🇷 **Faculté d'Economie et de Gestion — FEG:**
+        8️⃣ Master Econométrie — ISE
+           (Ingénierie Statistique et Economique)
+        9️⃣ Master Econométrie — Econométrie
 
-            ISCAE (en commun avec la FST) :
-            🔟 Informatique Appliquée à la Gestion
+        🇲🇷 **ISCAE (en commun avec FST):**
+        🔟 Informatique Appliquée à la Gestion
 
-            Hors Mauritanie :
-            🇩🇿 Master dans les universités algériennes (UNDZ)
-            🇹🇳 Master dans les universités tunisiennes (UNTN)
-            🇲🇦 Master dans les universités marocaines (UNMA)  
+        🌍 **Hors Mauritanie:**
+        🇩🇿 Master dans les universités algériennes (UNDZ)
+        🇹🇳 Master dans les universités tunisiennes (UNTN)
+        🇲🇦 Master dans les universités marocaines (UNMA)
 
   # ── Master 2 ─────────────────────────────────────────
   utter_M2_BMPB_fr:
     - text: |
         M2 BMPB:
-        S1: Biosécurité • Génétique humaine • Biochimie métabolique • Bioéthique
-            Oncologie fondamentale • Biologie Cellulaire • Génétique moléculaire • Anglais
-        S2: Biostatistiques • Bactériologie médicale • SIG • Virologie médicale
-            Biotechnologies animales • Biologie Moléculaire • Techniques d'analyses
-        S3: Substances naturelles • Bioinformatique • Amélioration génétique
-            Biotechnologies végétales • Parasitologie appliquée • Immunologie appliquée
+        S1:
+        Biosécurité
+        Génétique humaine
+        Biochimie métabolique
+        Bioéthique
+        Oncologie fondamentale
+        Biologie Cellulaire
+        Génétique moléculaire
+        Anglais
+        S2:
+        Biostatistiques
+        Bactériologie médicale
+        SIG
+        Virologie médicale
+        Biotechnologies animales
+        Biologie Moléculaire
+        Techniques d'analyses
+        S3:
+        Substances naturelles
+        Bioinformatique
+        Amélioration génétique
+        Biotechnologies végétales
+        Parasitologie appliquée
+        Immunologie appliquée
 
   utter_M2_BOMVRH_fr:
     - text: |
         M2 BOMVRH:
-        S1: Aquaculture marine et continentale • Biosécurité • Diversité des algues
-            Ecologie marine • Biodiversité aquatique • Socio-économie des pêches • Anglais
-        S2: Biostatistiques • Changements climatiques • SIG • Gestion durable des pêches
-            Océanographie • Génétique des populations • Droit de l'environnement
-        S3: Ressources halieutiques • Biologie et Ecologie du plancton • Technologie de pêche
+        S1:
+        Aquaculture marine et continentale
+        Biosécurité
+        Diversité des algues
+        Ecologie marine
+        Biodiversité aquatique
+        Socio-économie des pêches
+        Anglais
+        S2:
+        Biostatistiques
+        Changements climatiques
+        SIG
+        Gestion durable des pêches
+        Océanographie
+        Génétique des populations
+        Droit de l'environnement
+        S3:
+        Ressources halieutiques
+        Biologie et Ecologie du plancton
+        Technologie de pêche
 
   utter_M2_TASSMQ_fr:
     - text: |
         M2 TASSMQ:
-        S1: Sécurité alimentaire • Outils statistiques • Biosécurité des aliments
-            Biostatistique • Filières alimentaires • Anglais scientifique
-        S2: Biofortification et Biotechnologie • Bonnes Pratiques industrielles
-            HACCP ISO 9001 • Méthodes microbiologiques • Analyses instrumentales
-        S3: Contrôle hygiène • Amélioration qualité • Audit BPH/BPF • ISO 14000 et 45000
+        S1:
+        Sécurité alimentaire
+        Outils statistiques
+        Biosécurité des aliments
+        Biostatistique
+        Filières alimentaires
+        Anglais scientifique
+        S2:
+        Biofortification et Biotechnologie
+        Bonnes Pratiques industrielles
+        HACCP ISO 9001
+        Méthodes microbiologiques
+        Analyses instrumentales
+        S3:
+        Contrôle hygiène
+        Amélioration qualité
+        Audit BPH/BPF
+        ISO 14000 et 45000
 
   utter_M2_NS_fr:
     - text: |
         M2 NS:
-        S2: Biochimie énergétique • Régulations physiologiques • Nutrition communautaire
-            Epidémiologie nutritionnelle • Physiologie de la nutrition • Comportement alimentaire
-        S3: Nutrition Mère-enfant • Education nutritionnelle • Montage de projet
-            Prise en charge nutritionnelle • Nutrition et vieillissement • Enquêtes alimentaires
+        S2:
+        Biochimie énergétique
+        Régulations physiologiques
+        Nutrition communautaire
+        Epidémiologie nutritionnelle
+        Physiologie de la nutrition
+        Comportement alimentaire
+        S3:
+        Nutrition Mère-enfant
+        Education nutritionnelle
+        Montage de projet
+        Prise en charge nutritionnelle
+        Nutrition et vieillissement
+        Enquêtes alimentaires
 
   utter_M2_ISDR_RSC_fr:
     - text: |
         M2 ISDR RSC:
-        S2: Cloud computing • Introduction au routage • Bases de données NoSQL
-            Intelligence Artificielle • Réseaux Télécoms • Protocoles internet • Gestion de projets
-        S3: Systèmes Distribués • Réseaux de Distribution de Contenus • Développement Mobile
-            Infrastructure IoT • Réseaux mobile • Administration Réseaux • Sécurité Réseaux
+        S2:
+        Cloud computing
+        Introduction au routage
+        Bases de données NoSQL
+        Intelligence Artificielle
+        Réseaux Télécoms
+        Protocoles internet
+        Gestion de projets
+        S3:
+        Systèmes Distribués
+        Réseaux de Distribution de Contenus
+        Développement Mobile
+        Infrastructure IoT
+        Réseaux mobile
+        Administration Réseaux
+        Sécurité Réseaux
 
   utter_M2_ISDR_SI_fr:
     - text: |
         M2 ISDR SI:
-        S1: Administration BD • BD semi-structurées • Python • Java et Génie logiciel
-            Fondements Réseaux • Perl & JavaScript • Anglais Scientifique
-        S2: Cloud computing • Web sémantique • Interface Homme-Machine • NoSQL • IA • SIG
-        S3: Motifs de Conception • Framework JAVA • Architectures SOA • Framework Python
-            Développement Mobile • Méthodes Agiles • ERP • Sécurité des SI
+        S1:
+        Administration BD
+        BD semi-structurées
+        Python
+        Java et Génie logiciel
+        Fondements Réseaux
+        Perl & JavaScript
+        Anglais Scientifique
+        S2:
+        Cloud computing
+        Web sémantique
+        Interface Homme-Machine
+        NoSQL
+        IA
+        SIG
+        S3:
+        Motifs de Conception
+        Framework JAVA
+        Architectures SOA
+        Framework Python
+        Développement Mobile
+        Méthodes Agiles
+        ERP
+        Sécurité des SI
 
   utter_M2_MA_IMCS_fr:
     - text: |
         M2 MA-IMCS:
-        S1: Analyse Fonctionnelle I • Mécanique des Milieux Continus • Probabilités et Statistiques
-            Géométrie Différentielle • Analyse Numérique • Anglais • EDO
-        S2: Analyse Fonctionnelle II • Méthodes des EDP Linéaires • Programmation Scientifique
-            Distribution et Analyse de Fourier • Graphes • Optimisation
-        S3: EDP Elliptiques • Analyse non Linéaire • Calcul Stochastique • Éléments Finis
+        S1:
+        Analyse Fonctionnelle I
+        Mécanique des Milieux Continus
+        Probabilités et Statistiques
+        Géométrie Différentielle
+        Analyse Numérique
+        Anglais
+        EDO
+        S2:
+        Analyse Fonctionnelle II
+        Méthodes des EDP Linéaires
+        Programmation Scientifique
+        Distribution et Analyse de Fourier
+        Graphes
+        Optimisation
+        S3:
+        EDP Elliptiques
+        Analyse non Linéaire
+        Calcul Stochastique
+        Éléments Finis
 
   utter_M2_MINE_fr:
     - text: |
         M2 MINE:
-        S1: Hydrogéologie de la Mauritanie • Méthodes d'enrichissement minières
-            Topographie appliquée • Pétrologie sédimentaire • SIG et bases de données
-        S2: Géophysique appliquée • Caractérisation Géotechnique • Enrichissement de minerais II
-            Stabilité des ouvrages • Impacts environnemental • Economie minière
-        S3: Pelletisation et Métallurgie • Géostatistique • Stratigraphie de la Mauritanie
+        S1:
+        Hydrogéologie de la Mauritanie
+        Méthodes d'enrichissement minières
+        Topographie appliquée
+        Pétrologie sédimentaire
+        SIG et bases de données
+        S2:
+        Géophysique appliquée
+        Caractérisation Géotechnique
+        Enrichissement de minerais II
+        Stabilité des ouvrages
+        Impacts environnemental
+        Economie minière
+        S3:
+        Pelletisation et Métallurgie
+        Géostatistique
+        Stratigraphie de la Mauritanie
 
   utter_M2_GEOLOGIE_fr:
     - text: |
         M2 GEOLOGIE:
-        S1: Hydrogéologie de la Mauritanie • Topographie appliquée • Pétrologie sédimentaire
-            Géodynamique des Bassins • SIG et bases de données • Paléontologie
-        S2: Environnements littoraux • Géodynamique Globale • Métallogénie
-            Tectonique Analytique • Magmatisme et métamorphisme • Géologie structurale
-        S3: Prospection géophysique • Géologie du Pétrole • Géostatistique
+        S1:
+        Hydrogéologie de la Mauritanie
+        Topographie appliquée
+        Pétrologie sédimentaire
+        Géodynamique des Bassins
+        SIG et bases de données
+        Paléontologie
+        S2:
+        Environnements littoraux
+        Géodynamique Globale
+        Métallogénie
+        Tectonique Analytique
+        Magmatisme et métamorphisme
+        Géologie structurale
+        S3:
+        Prospection géophysique
+        Géologie du Pétrole
+        Géostatistique
 
   utter_M2_2E_fr:
     - text: |
         M2 2E:
-        S1: Contrôle qualité de l'eau potable • Chimie et Microbiologie de l'eau
-            Sciences environnementales • Mécanique des fluides • Hydraulique urbaine
-        S2: Protection de l'environnement • Pollution • SIG et télédétection
-        S3: Epuration des eaux usées • Procédés d'extraction • Traitement de l'eau potable
+        S1:
+        Contrôle qualité de l'eau potable
+        Chimie et Microbiologie de l'eau
+        Sciences environnementales
+        Mécanique des fluides
+        Hydraulique urbaine
+        S2:
+        Protection de l'environnement
+        Pollution
+        SIG et télédétection
+        S3:
+        Epuration des eaux usées
+        Procédés d'extraction
+        Traitement de l'eau potable
 
   utter_M2_BEES_fr:
     - text: |
         M2 BEES:
-        S1: Ecosystèmes marins • Bioéthique • Ecosystèmes désertiques et sahéliens
-            Marqueurs biologiques • Etude d'impact sur l'environnement • Ecotoxicologie
-        S2: Biostatistiques • SIG • Conservation et régénération de la diversité
-            Protection des aires protégées • Norme iso 14001
-        S3: Ornithologie appliquée • Résistance aux stress abiotiques • Politiques nationales
+        S1:
+        Ecosystèmes marins
+        Bioéthique
+        Ecosystèmes désertiques et sahéliens
+        Marqueurs biologiques
+        Etude d'impact sur l'environnement
+        Ecotoxicologie
+        S2:
+        Biostatistiques
+        SIG
+        Conservation et régénération de la diversité
+        Protection des aires protégées
+        Norme iso 14001
+        S3:
+        Ornithologie appliquée
+        Résistance aux stress abiotiques
+        Politiques nationales
 
   utter_M2_ER_fr:
     - text: |
         M2 ER:
-        S1: Réseaux Electriques • Electronique • Machines Electriques • Semi-Conducteurs
-            Transfert de Chaleur et de Masse • Matériaux Photovoltaïques • Instrumentation
-        S2: Convertisseurs Electroniques • Energie éolienne • Stockage de l'Energie
-            Energies Solaires Photovoltaïques • Energie solaire thermique
-        S3: Electronique de puissance • Automatique • Systèmes hybrides
+        S1:
+        Réseaux Electriques
+        Electronique
+        Machines Electriques
+        Semi-Conducteurs
+        Transfert de Chaleur et de Masse
+        Matériaux Photovoltaïques
+        Instrumentation
+        S2:
+        Convertisseurs Electroniques
+        Energie éolienne
+        Stockage de l'Energie
+        Energies Solaires Photovoltaïques
+        Energie solaire thermique
+        S3:
+        Electronique de puissance
+        Automatique
+        Systèmes hybrides
 
   utter_M2_SDD_fr:
     - text: |
         M2 SDD:
-        S1: Régression linéaire • Statistique Inférentielle • Base de données
-            Analyse de données • Anglais Scientifique • Logiciel R • Python
-        S2: Statistique Inférentielle 2 • Exploration de données • Apprentissage statistique
-        S3: Apprentissage statistique avancé • Séries temporelles • Visualisation de données
-            Analyse de données massives • Econométrie avancée
+        S1:
+        Régression linéaire
+        Statistique Inférentielle
+        Base de données
+        Analyse de données
+        Anglais Scientifique
+        Logiciel R
+        Python
+        S2:
+        Statistique Inférentielle 2
+        Exploration de données
+        Apprentissage statistique
+        S3:
+        Apprentissage statistique avancé
+        Séries temporelles
+        Visualisation de données
+        Analyse de données massives
+        Econométrie avancée
 
   utter_M2_2M_fr:
     - text: |
         M2 2M:
-        S1: Mécanique des fluides • Comportement Mécanique des Matériaux
-            Mécanique des Milieux Continus • Analyse Numérique • Physique du Solide
-        S2: Matériaux de Structure • Dynamique Tourbillonnaire • Corrosion et Dégradation
-        S3: Méthodes d'élaboration des matériaux • Aérodynamique • Nanomatériaux
+        S1:
+        Mécanique des fluides
+        Comportement Mécanique des Matériaux
+        Mécanique des Milieux Continus
+        Analyse Numérique
+        Physique du Solide
+        S2:
+        Matériaux de Structure
+        Dynamique Tourbillonnaire
+        Corrosion et Dégradation
+        S3:
+        Méthodes d'élaboration des matériaux
+        Aérodynamique
+        Nanomatériaux
 
   utter_M2_SN_fr:
     - text: |
         M2 SN:
-        S1: Ressources minières pétrolières • Cinétique chimique avancée • Chimie analytique
-            Plantes médicinales • Méthodes spectroscopiques • Méthodes séparatives
-        S2: Chimie de coordination • Statistiques et outil informatique • Photochimie
-        S3: Chimie organométallique • Méthodes récentes en Synthèse organique
-            Métabolites végétaux • Normes environnementales • Botanique de Mauritanie
+        S1:
+        Ressources minières pétrolières
+        Cinétique chimique avancée
+        Chimie analytique
+        Plantes médicinales
+        Méthodes spectroscopiques
+        Méthodes séparatives
+        S2:
+        Chimie de coordination
+        Statistiques et outil informatique
+        Photochimie
+        S3:
+        Chimie organométallique
+        Méthodes récentes en Synthèse organique
+        Métabolites végétaux
+        Normes environnementales
+        Botanique de Mauritanie
 
   utter_M2_MATERIAUX_fr:
     - text: |
         M2 MATERIAUX:
-        S3: Cristallographie aux Rayons X • Nanomatériaux • Polymères à propriétés spécifiques
-            Métallurgie • Propriétés des matériaux • Corrosion et traitement de surface
-            Méthodes d'analyse • Matériaux naturels utiles • Céramiques industrielles
+        S3:
+        Cristallographie aux Rayons X
+        Nanomatériaux
+        Polymères à propriétés spécifiques
+        Métallurgie
+        Propriétés des matériaux
+        Corrosion et traitement de surface
+        Méthodes d'analyse
+        Matériaux naturels utiles
+        Céramiques industrielles
 
   utter_M2_IA_MLDS_fr:
     - text: |
         M2 IA – Parcours MLDS:
-        S1: Méthodologie Lean Startup • Python avancé • Frameworks IA
-            Machine Learning • Deep Learning • Bases Mathématiques pour l'IA • Cloud Computing
-        S2: Big Data Technologies • Traitement de Données
-            Techniques d'Optimisation • Vision par Ordinateur
-        S3: Reinforcement Learning et Agents Autonomes
+        S1:
+        Méthodologie Lean Startup
+        Python avancé
+        Frameworks IA
+        Machine Learning
+        Deep Learning
+        Bases Mathématiques pour l'IA
+        Cloud Computing
+        S2:
+        Big Data Technologies
+        Traitement de Données
+        Techniques d'Optimisation
+        Vision par Ordinateur
+        S3:
+        Reinforcement Learning et Agents Autonomes
 
   utter_M2_IA_NLPCV_fr:
     - text: |
         M2 IA – Parcours NLPCV:
-        S2: Traitement d'Image • Techniques d'Optimisation • Vision par Ordinateur • NLP Dialects
-        S3: Large Language Models (LLM) et NLP Avancé
+        S2:
+        Traitement d'Image
+        Techniques d'Optimisation
+        Vision par Ordinateur
+        NLP Dialects
+        S3:
+        Large Language Models (LLM) et NLP Avancé
+  utter_M1_PIA_fr:
+    - text: |
+        M1 PIA (Phoeniciculture & Intelligence Artificielle):
+        S1:
+        Botanique et physiologie du palmier dattier
+        Agroécologie et climatologie des zones arides
+        Sol, nutrition et irrigation en Phoeniciculture
+        Techniques de multiplication et plantation des palmiers
+        Initiation à la gestion des ressources hydriques
+        Introduction à l'intelligence artificielle en agriculture
+        Bioéthique
+        Biosécurité
+        Documentation et rédaction scientifique en Anglais
+        Législation
+        S2:
+        Amélioration variétale et biotechnologies (culture in vitro, sélection génétique)
+        Techniques de culture et gestion des palmeraies
+        Pathologies et ravageurs du palmier dattier
+        Économie et gestion des exploitations phoenicicoles
+        IA pour la détection des maladies et des stress hydriques
+        Systèmes d'irrigation intelligents et gestion hydrique avancée avec IA
+        Stage d'immersion professionnelle
+        SIG et Télédétection I
+        Biostatistiques
+        Logiciels Open Sources
+
 
   # ── FLSH ─────────────────────────────────────────────
+
   utter_ask_flsh:
     - text: |
         📚 **كلية الآداب والعلوم الإنسانية (FLSH)**
-        - العميد: د. محمد فال بيان
-        - نائب العميد: د. أحمد مولود ولد أيده
-        - الأمين العام: د. عبد الله سيدي محمد ابنو
-        - **14 ليسانس** — 3 سنوات بعد الباك
+        العميد: د. محمد فال بيان
+        نائب العميد: د. أحمد مولود ولد أيده
+        الأمين العام: د. عبد الله سيدي محمد ابنو
+        14 ليسانس — 3 سنوات بعد الباك
 
   utter_ask_flsh_licences:
     - text: |
         📋 **شعب FLSH:**
-        **أساسي:** العربية | الفرنسية | الإنجليزية | الإسبانية | التركية | الصينية | اللغات الوطنية | الفلسفة | علم الاجتماع | التاريخ | الجغرافيا
-        **مهني:** العمل الاجتماعي | التنمية المحلية | البيئة والتنمية المستدامة
+        أساسي:
+        العربية
+        الفرنسية
+        الإنجليزية
+        الإسبانية
+        التركية
+        الصينية
+        اللغات الوطنية
+        الفلسفة
+        علم الاجتماع
+        التاريخ
+        الجغرافيا
+        مهني:
+        العمل الاجتماعي
+        التنمية المحلية
+        البيئة والتنمية المستدامة
 
   utter_ask_inscription_flsh:
     - text: |
-        📋 **التسجيل في FLSH:**
-        يتم عبر المنصة الجامعية الرسمية.
-        شروط إعادة التسجيل: لا يمكن التسجيل أكثر من مرتين في نفس المستوى.
+        📝 **التسجيل في FLSH / Inscription FLSH:**
+        ✅ يمكنك التسجيل إذا: رصيدك ≥ 30 نقطة ولم تكرر أكثر من مرتين في نفس المستوى.
+        ❌ ممنوع التسجيل إذا: رصيد < 30 نقطة أو كررت مرتين في نفس المستوى.
+        📋 Conditions de réinscription à la FLSH:
+        ✅ Réinscription autorisée si: crédit ≥ 30 et redoublement < 2 fois au même niveau.
+        ❌ Réinscription refusée si: crédit < 30 ou redoublement déjà effectué 2 fois.
+        ℹ️ Pour plus d'informations, contactez l'administration de la FLSH.
 
   utter_ask_matieres_flsh_l1:
     - text: |
-        📚 **مواد L1 FLSH — حسب التخصص:**
-        اكتب تخصصك: العربية | الفرنسية | الإنجليزية | الإسبانية | التركية | الصينية | اللغات الوطنية | الفلسفة | علم الاجتماع | التاريخ | الجغرافيا | العمل الاجتماعي | التنمية المحلية | البيئة
+        📚 **مواد السنة الأولى — FLSH L1:**
+        🗣️ المقررات المشتركة لجميع التخصصات:
+        - اللغة العربية (تعبير ومطالعة)
+        - اللغة الفرنسية
+        - الإنجليزية / اللغة الأجنبية
+        - المنهجية الجامعية
+        - الإعلام الآلي
+        - مادة التخصص (حسب الفرع)
+        📌 Matières communes L1 FLSH:
+        - Langue arabe
+        - Langue française
+        - Anglais / Langue étrangère
+        - Méthodologie universitaire
+        - Informatique
+        - Matière de spécialité
+        💡 Précisez votre spécialité pour plus de détails.
 
   utter_ask_matieres_philosophie_l1:
     - text: |
         🧠 **L1 — الفلسفة**
-
-        📅 السداسي الأول/S1:
-        علم الكلام • الفلسفة الإسلامية • الفلسفة اليونانية • ماهية الفلسفة
-        Sociologie • Psychologie • Terminologie • Français 1
-
-        📅 السداسي الثاني/S2:
-        الفلسفة الإسلامية • السياسة المدنية • فلسفة قرون الوسطى • الإمامة والسياسة الشرعية
-        Terminologie 2 • Français 2 • Méthodologie de pensée philosophique • Problématique de pensée philosophique
+        S1:
+        علم الكلام
+        الفلسفة الإسلامية
+        الفلسفة اليونانية
+        ماهية الفلسفة
+        Sociologie
+        Psychologie
+        Terminologie
+        Français 1
+        S2:
+        الفلسفة الإسلامية
+        السياسة المدنية
+        فلسفة قرون الوسطى
+        الإمامة والسياسة الشرعية
+        Terminologie 2
+        Français 2
+        Méthodologie de pensée philosophique
+        Problématique de pensée philosophique
 
   utter_ask_matieres_francais_l1:
     - text: |
         🇫🇷 **L1 — اللغة الفرنسية**
-
-        📅 السداسي الأول/S1:
-        Histoire de l'art • Histoire de la littérature africaine • Pratique de l'oral
-        Grammaire 1 • Arabe 1 • Questions de linguistique • Histoire de la littérature française • Introduction à la sociologie
-
-        📅 السداسي الثاني/S2:
-        Pratique de l'écrit • Arabe 2 • Histoire de la littérature mauritanienne
-        Histoire de la littérature maghrébine • Phonétique • Grammaires des textes
-        Introduction à l'anthropologie • Art et littérature
+        S1:
+        Histoire de l'art
+        Histoire de la littérature africaine
+        Pratique de l'oral
+        Grammaire 1
+        Arabe 1
+        Questions de linguistique
+        Histoire de la littérature française
+        Introduction à la sociologie
+        S2:
+        Pratique de l'écrit
+        Arabe 2
+        Histoire de la littérature mauritanienne
+        Histoire de la littérature maghrébine
+        Phonétique
+        Grammaires des textes
+        Introduction à l'anthropologie
+        Art et littérature
 
   utter_ask_matieres_anglais_l1:
     - text: |
-        🇬🇧 **L1 — اللغة الإنجليزية**
-
-        📅 السداسي الأول/S1:
-        العربية • Practical learning skills • Practical phonetics and Morphology 1
-        Writing 1 • Integrated listening, speaking and reading 1 • Grammar
-        Expresión y comprensión orales 1 • Français
-
-        📅 السداسي الثاني/S2:
-        العربية • Building learner anatomy • Integrated listening, speaking and reading 2
-        Expresión y comprensión escritas • Writing 2 • Grammar 2 • Français 2
+        🇬 **L1 — اللغة الإنجليزية**
+        S1:
+        العربية
+        Practical learning skills
+        Practical phonetics and Morphology 1
+        Writing 1
+        Integrated listening, speaking and reading 1
+        Grammar
+        Expresión y comprensión orales 1
+        Français
+        S2:
+        العربية
+        Building learner anatomy
+        Integrated listening, speaking and reading 2
+        Expresión y comprensión escritas
+        Writing 2
+        Grammar 2
+        Français 2
         Practical phonetics and morphology 2
 
   utter_ask_matieres_turc_l1:
     - text: |
         🇹🇷 **L1 — اللغة التركية**
+        S1:
+        تطبيقات على الكتابة
+        القواعد
+        الأدب التركي
+        تطبيقات على القراءة
+        تطبيقات على الاستماع
+        تطبيقات على الكلام
+        العربية
+        الفرنسية
+        S2:
+        تطبيقات على الكتابة
+        القواعد
+        الأدب التركي
+        تطبيقات على القراءة
+        تطبيقات على الاستماع
+        تطبيقات على الكلام
+        العربية
+        الفرنسية
 
-        📅 السداسي الأول/S1:
-        تطبيقات على الكتابة • القواعد • الأدب التركي • تطبيقات على القراءة
-        تطبيقات على الاستماع • تطبيقات على الكلام • العربية • الفرنسية
-
-        📅 السداسي الثاني/S2:
-        تطبيقات على الكتابة • القواعد • الأدب التركي • تطبيقات على القراءة
-        تطبيقات على الاستماع • تطبيقات على الكلام • العربية • الفرنسية
   utter_ask_matieres_espagnol_l1:
     - text: |
-        🇪🇸 **L1 — تخصص الإسبانية (كلية الآداب)**
+        🇪🇸 **L1 — الإسبانية**
+        S1:
+        Arabe de communication 1
+        Gramática 1
+        Fonética 1
+        Español de los medios de comunicación 1
+        Expresión y compréhension orales 1
+        Inglés 1
+        Français de communication 1
+        Expresión y compréhension escritas 1
+        S2:
+        Arabe de communication 2
+        Gramática 2
+        Fonética 2
+        Expresión y compréhension escritas 2
+        Expresión y compréhension orales 2
+        Inglés 2
+        Français de communication 2
+        Español de los medios de comunicación 2 (radio, tv)
 
-        📅 **السداسي الأول (S1):**
-        Arabe de communication 1\n • Gramática 1\n • Fonética 1\n • Español de los medios de comunicación 1\n • Expresión y compréhension orales 1\n • Inglés 1\n • Français de communication 1\n • Expresión y compréhension escritas 1\n
-
-        📅 **السداسي الثاني (S2):**
-        Arabe de communication 2\n • Gramática 2\n • Fonética 2\n • Expresión y compréhension escritas 2\n • Expresión y compréhension orales 2\n • Inglés 2\n • Français de communication 2\n • Español de los medios de comunicación 2 (radio, tv)\n
   utter_ask_matieres_chinois_l1:
     - text: |
         🇨🇳 **L1 — اللغة الصينية**
-
-        📅 السداسي الأول/S1:
-        Phonetic • Intensive Reading and Handwriting • Basic grammar
-        Arabe de Communication • Reading/Writing • Français de Communication
-        Listening • Speaking/Listening
-
-        📅 السداسي الثاني/S2:
-        Intensive Reading • Basic writing • Introduction to China
-        Français de Communication • Arabe de Communication • Listening and Speaking
-        Phonetics • Basic Grammar
+        S1:
+        Phonetic
+        Intensive Reading and Handwriting
+        Basic grammar
+        Arabe de Communication
+        Reading/Writing
+        Français de Communication
+        Listening
+        Speaking/Listening
+        S2:
+        Intensive Reading
+        Basic writing
+        Introduction to China
+        Français de Communication
+        Arabe de Communication
+        Listening and Speaking
+        Phonetics
+        Basic Grammar
 
   utter_ask_matieres_langues_nationales_l1:
     - text: |
         🗣️ **L1 — اللغات الوطنية واللسانيات**
-
-        📅 السداسي الأول/S1:
-        Littérature française • Nature du langage • Pulaar 1 • Phonétique
-        Grammaire 1 • Questions de linguistics • Arabe 1 • Littérature négro-africaine
-
-        📅 السداسي الثاني/S2:
-        Littérature maghrébine • Linguistique générale • Soninke • Morphologie
-        Grammaire 2 • Littérature mauritanienne • Linguistique structurale • Wolof 1
+        S1:
+        Littérature française
+        Nature du langage
+        Pulaar 1
+        Phonétique
+        Grammaire 1
+        Questions de linguistics
+        Arabe 1
+        Littérature négro-africaine
+        S2:
+        Littérature maghrébine
+        Linguistique générale
+        Soninke
+        Morphologie
+        Grammaire 2
+        Littérature mauritanienne
+        Linguistique structurale
+        Wolof 1
 
   utter_ask_matieres_sociologie_l1:
     - text: |
         👥 **L1 — علم الاجتماع**
-
-        📅 السداسي الأول/S1:
-        الأنتربولوجيا • مبادئ علم الإجتماع • الدراسات الكولونيالية • علم العمران البشري
-        Psychologie • Philosophie • Terminologie 1 • Français 1
-
-        📅 السداسي الثاني/S2:
-        الأنقسامية • الإنحراف الإجتماعي • الوظيفية والبنيوية
+        S1:
+        الأنتربولوجيا
+        مبادئ علم الإجتماع
+        الدراسات الكولونيالية
+        علم العمران البشري
+        Psychologie
+        Philosophie
+        Terminologie 1
+        Français 1
+        S2:
+        الأنقسامية
+        الإنحراف الإجتماعي
+        الوظيفية والبنيوية
         الإتجاهات المعاصرة والحديثة في علم الإجتماع
-        Statistique descriptive • Méthodologie de recherches • Terminologie 2 • Français 2
+        Statistique descriptive
+        Méthodologie de recherches
+        Terminologie 2
+        Français 2
 
   utter_ask_matieres_histoire_l1:
     - text: |
         🏛️ **L1 — التاريخ والحضارة**
-
-        📅 السداسي الأول/S1:
-        مدخل إلى دراسة العصور الحجرية • مدخل إلى دراسة علم الآثار
-        مدخل إلى دراسة علم الجغرافيا • Sociologie • Études du texte
-        النهضة الأوروبية • Méthodologie • التوسع الأوروبي
-
-        📅 السداسي الثاني/S2:
-        Approches des écoles historiques • Textes médiévaux • الثورة الفرنسية
-        شبه جزيرة العرب وبلاد الرافدين • الثورة الروسية • Terminologies
-        مصر وبلاد الشام • أعمال تطبيقية وميدانية
+        S1:
+        مدخل إلى دراسة العصور الحجرية
+        مدخل إلى دراسة علم الآثار
+        مدخل إلى دراسة علم الجغرافيا
+        Sociologie
+        Études du texte
+        النهضة الأوروبية
+        Méthodologie
+        التوسع الأوروبي
+        S2:
+        Approches des écoles historiques
+        Textes médiévaux
+        الثورة الفرنسية
+        شبه جزيرة العرب وبلاد الرافدين
+        الثورة الروسية
+        Terminologies
+        مصر وبلاد الشام
+        أعمال تطبيقية وميدانية
 
   utter_ask_matieres_geographie_l1:
     - text: |
         🗺️ **L1 — الجغرافيا**
-
-        📅 السداسي الأول/S1:
-        Analyse de textes en français • Terminologies géographique • Introduction à la géographie
-        جيومورفولوجيا بنيوية • مدخل للجغرافيا الإقليمية • الجغرافيا السياسية
-        تاريخ موريتانيا • Introduction à la sociologie
-
-        📅 السداسي الثاني/S2:
-        المناخ العام • مناهج البحث الجغرافي • La géographie de la population
-        الجغرافيا الإقتصادية • الجغرافيا الحيوية • Analyse de textes en français
-        الخريطة الطبوغرافية • Terminologies géographiques
+        S1:
+        Analyse de textes en français
+        Terminologies géographique
+        Introduction à la géographie
+        جيومورفولوجيا بنيوية
+        مدخل للجغرافيا الإقليمية
+        الجغرافيا السياسية
+        تاريخ موريتانيا
+        Introduction à la sociologie
+        S2:
+        المناخ العام
+        مناهج البحث الجغرافي
+        La géographie de la population
+        الجغرافيا الإقتصادية
+        الجغرافيا الحيوية
+        Analyse de textes en français
+        الخريطة الطبوغرافية
+        Terminologies géographiques
 
   utter_ask_matieres_travail_social_l1:
     - text: |
         🤝 **L1 — العمل الاجتماعي**
-
-        📅 السداسي الأول/S1:
-        نظريات العمل الاجتماعي • العربية • تاريخ العمل الاجتماعي
-        Théories et psychologique de travail social • الإتصال والإنعاش
-        Technique de recherche • Vulgarisation social et assistance social • Français
-
-        📅 السداسي الثاني/S2:
-        Français • Informatique • Protection social et acteurs sociaux
-        الظواهر الاجتماعية الجديدة • تقنيات وتحليل المعطيات • العربية
-        الخدمة الاجتماعية في المجال الطبي • Déviance et conflits sociaux
+        S1:
+        نظريات العمل الاجتماعي
+        العربية
+        تاريخ العمل الاجتماعي
+        Théories et psychologique de travail social
+        الإتصال والإنعاش
+        Technique de recherche
+        Vulgarisation social et assistance social
+        Français
+        S2:
+        Français
+        Informatique
+        Protection social et acteurs sociaux
+        الظواهر الاجتماعية الجديدة
+        تقنيات وتحليل المعطيات
+        العربية
+        الخدمة الاجتماعية في المجال الطبي
+        Déviance et conflits sociaux
 
   utter_ask_matieres_developpement_local_l1:
     - text: |
         🌍 **L1 — التنمية المحلية**
-
-        📅 السداسي الأول/S1:
-        مدخل إلى التنمية المحلية في موريتانيا • المجتمعات والتنظيم المجالي
-        مدخل إلى التنمية الإقليمية • عربية نصوص ومصطلحات • Français de Communication
-        Structures sociales en Mauritanie • Introduction aux politiques territoriales
+        S1:
+        مدخل إلى التنمية المحلية في موريتانيا
+        المجتمعات والتنظيم المجالي
+        مدخل إلى التنمية الإقليمية
+        عربية نصوص ومصطلحات
+        Français de Communication
+        Structures sociales en Mauritanie
+        Introduction aux politiques territoriales
         Introduction à l'Aménagement
-
-        📅 السداسي الثاني/S2:
-        المجتمعات الموريتانية والنظم العقارية • السياسات السكانية في موريتانيا
-        العربية لغة تواصل • التنظيم وحكامة الجماعات المحلي • Genre et développement
-        Sociologie de territoire en Mauritanie • Dynamique des villes et développement local
+        S2:
+        المجتمعات الموريتانية والنظم العقارية
+        السياسات السكانية في موريتانيا
+        العربية لغة تواصل
+        التنظيم وحكامة الجماعات المحلي
+        Genre et développement
+        Sociologie de territoire en Mauritanie
+        Dynamique des villes et développement local
         Français de Communication 2
 
   utter_ask_matieres_environnement_l1:
     - text: |
         🌿 **L1 — البيئة والتنمية المستدامة**
-
-        📅 السداسي الأول/S1:
-        مدخل لدراسة الحاسوب • Français • Introduction à l'étude de l'environnement
-        Développement durable • مدخل الجغرافيا • Introduction à l'économie
-        مدخل لدراسة التنمية • مدخل لعلم الإجتماع
-
-        📅 السداسي الثاني/S2:
-        المقومات الطبيعية • Environnement continental • المقومات البشرية • Français
-        Statistiques descriptives • Lecture et analyse des cartes topographiques
-        البيئة البحرية • رسم الخرائط بمساعدة الحاسوب
+        S1:
+        مدخل لدراسة الحاسوب
+        Français
+        Introduction à l'étude de l'environnement
+        Développement durable
+        مدخل الجغرافيا
+        Introduction à l'économie
+        مدخل لدراسة التنمية
+        مدخل لعلم الإجتماع
+        S2:
+        المقومات الطبيعية
+        Environnement continental
+        المقومات البشرية
+        Français
+        Statistiques descriptives
+        Lecture et analyse des cartes topographiques
+        البيئة البحرية
+        رسم الخرائط بمساعدة الحاسوب
 
   utter_ask_matieres_arabe_l1:
     - text: |
         📖 **L1 — الدراسات العربية**
-
-        📅 السداسي الأول/S1:
-        النحو 1 • الصرف • الفقه • أدب إسلامي وأموي • تقنيات التعبير
-        علوم القرآن • أدب جاهلي • Français 1
-
-        📅 السداسي الثاني/S2:
-        أدب عباسي • أدب أندلسي • النحو 2 • الصرف 2 • تقنيات التعبير
-        علوم الحديث • حضارة عربية إسلامية • Français 2
-
-  
+        S1:
+        النحو 1
+        الصرف
+        الفقه
+        أدب إسلامي وأموي
+        تقنيات التعبير
+        علوم القرآن
+        أدب جاهلي
+        Français 1
+        S2:
+        أدب عباسي
+        أدب أندلسي
+        النحو 2
+        الصرف 2
+        تقنيات التعبير
+        علوم الحديث
+        حضارة عربية إسلامية
+        Français 2
 
 
   utter_ask_feg_info:
@@ -1583,7 +3403,7 @@ responses:
         ⚠️ **ملاحظة عامة:**
         لا يستفيد من المداولات إلا من أجرى امتحان الاستدراك في العنصر المعني ولم يرتكب مخالفات مدة الامتحان
 
-  
+
 # ============================================================
 # FMPOS
 # ============================================================
@@ -2018,7 +3838,7 @@ responses:
            • شهادة التسجيل + بطاقة الطالب + هوية وطنية + صورة
            ⚠️ النسخ المصادق عليها غير مقبولة!
         ❌ محظور: الحقائب، أوراق الغش، الهواتف، السماعات، الساعات الذكية
-    
+
 
   utter_demander_reglement_examens_fr:
     - text: |
@@ -2027,7 +3847,7 @@ responses:
            • Attestation + carte étudiant + CIN + photo
            ⚠️ Les copies légalisées ne sont pas acceptées!
         ❌ Interdits: sacs, antisèches, téléphones, écouteurs, montres connectées
-        
+
 
   utter_demander_types_exclusion_ar:
     - text: |
@@ -2070,122 +3890,471 @@ responses:
   utter_demander_systeme_LMD_ar:
     - text: |
         نظام LMD (ليسانس – ماستر – دكتوراه):
-      
-        • ليسانس: 3 سنوات | 6 فصول | 180 رصيداً
-        • ماستر: 2 سنتان (Bac+5) | 4 فصول | 120 رصيداً
-        • دكتوراه: 3 سنوات بعد الماستر (Bac+8)
+        ليسانس: 3 سنوات | 6 فصول | 180 رصيداً
+        ماستر: سنتان (Bac+5) | 4 فصول | 120 رصيداً
+        دكتوراه: 3 سنوات بعد الماستر (Bac+8)
+    - text: |
+        🎓 **مستويات نظام ل م د:**
+        الليسانس (ل):
+        3 سنوات بعد الباكالوريا
+        6 سداسيات — 180 رصيداً
+        نوعان: أساسي (للدراسات العليا) ومهني (للاندماج المهني)
+        الماستر (م):
+        سنتان بعد الليسانس (باك + 5)
+        4 سداسيات — 120 رصيداً
+        نوعان: ماستر بحث وماستر مهني
+        الدكتوراه (د):
+        3 سنوات بعد الماستر (باك + 8)
 
   utter_demander_systeme_LMD_fr:
     - text: |
         Système LMD (Licence – Master – Doctorat):
-        
-        • Licence: 3 ans | 6 semestres | 180 crédits
-        • Master: 2 ans (Bac+5) | 4 semestres | 120 crédits
-        • Doctorat: 3 ans après le Master (Bac+8)
+        Licence: 3 ans | 6 semestres | 180 crédits
+        Master: 2 ans (Bac+5) | 4 semestres | 120 crédits
+        Doctorat: 3 ans après le Master (Bac+8)
+    - text: |
+        🎓 **Niveaux du système LMD :**
+        Licence (L) :
+        3 ans après le Bac
+        6 semestres — 180 crédits
+        Fondamentale (poursuite d'études) ou Appliquée (insertion professionnelle)
+        Master (M) :
+        2 ans après la Licence (Bac+5)
+        4 semestres — 120 crédits
+        Master de recherche ou Master professionnel
+        Doctorat (D) :
+        3 ans après le Master (Bac+8)
 
   utter_demander_organisation_LMD_ar:
     - text: |
         تنظيم LMD:
         الهرم: فيليار → فصل → مقياس (1-3 عناصر) → رصيد
-        • الفصل: 16 أسبوعاً | 5 مقاييس كحد أقصى | 30 رصيداً
-        • التسجيل: إداري + بيداغوجي (إلزامي كل فصل)
-        • لا تسجيل بعد انتهاء الآجال
+        الفصل: 16 أسبوعاً | 5 مقاييس كحد أقصى | 30 رصيداً
+        التسجيل: إداري + بيداغوجي (إلزامي كل فصل)
+        لا تسجيل بعد انتهاء الآجال
+    - text: |
+        📚 **تنظيم الدراسة في نظام ل م د:**
+        الشعبة:
+        مسار تكوين يضم وحدات متجانسة تنتمي لحقل أو عدة حقول معرفية
+        السداسي:
+        فترة زمنية تمتد 16 أسبوعاً
+        لا يزيد على 5 وحدات تمثل 30 رصيداً
+        السنة الجامعية = سداسيان
+        الوحدة:
+        المكون الأساسي للتكوين
+        تتشكل من 1 إلى 3 عناصر متجانسة
+        العنصر:
+        دروس نظرية أو أعمال تطبيقية أو أعمال ميدانية أو مشاريع أو تدريب
+        الرصيد:
+        وحدة قياس تمكن من تحديد حجم العمل المطلوب للتكوين
 
   utter_demander_organisation_LMD_fr:
     - text: |
         Organisation du LMD:
         Hiérarchie: Filière → Semestre → Module (1-3 éléments) → Crédit
-        • Semestre: 16 semaines | max 5 modules | 30 crédits
-        • Inscription: Administrative + Pédagogique (obligatoire chaque semestre)
-        • Aucune inscription hors délai acceptée
+        Semestre: 16 semaines | max 5 modules | 30 crédits
+        Inscription: Administrative + Pédagogique (obligatoire chaque semestre)
+        Aucune inscription hors délai acceptée
+    - text: |
+        📚 **Organisation des études LMD :**
+        Filière :
+        Cursus composé d'un ensemble cohérent de modules appartenant à un ou plusieurs champs disciplinaires
+        Semestre :
+        16 semaines d'enseignement et d'évaluation
+        Maximum 5 modules représentant 30 crédits
+        Une année universitaire comprend deux semestres
+        Module :
+        Structure de base du système LMD
+        Comporte entre 1 et 3 éléments cohérents
+        Élément de module :
+        Cours théorique et/ou TD et/ou TP et/ou activité pratique ou stage
+        Crédit :
+        Unité de mesure pour quantifier la charge de travail requise des étudiants
 
   utter_demander_progression_licence_ar:
     - text: |
         قواعد الانتقال في الليسانس:
         التعويض:
-           • المقياس متحقق إذا كان معدل عناصره ≥ 10/20
-           • الفصل متحقق إذا كان معدل مقاييسه ≥ 10/20
+        المقياس متحقق إذا كان معدل عناصره ≥ 10/20
+        الفصل متحقق إذا كان معدل مقاييسه ≥ 10/20
         الانتقال:
-           • داخل السنة: تلقائي
-           • L1→L2: 39 رصيداً (S1+S2) + معدل سنوي ≥ 10
-           • L2→L3: معدل ≥ 10 + 99 رصيداً (S1-S4)
+        داخل السنة: تلقائي
+        L1→L2: 39 رصيداً (S1+S2) + معدل سنوي ≥ 10
+        L2→L3: معدل ≥ 10 + 99 رصيداً (S1-S4)
+    - text: |
+        📈 **قواعد الانتقال في مرحلة الليسانس:**
+        للحصول على الليسانس: 180 رصيداً
+        الانتقال من سداسي لآخر في نفس السنة: تلقائي
+        من السنة 1 إلى السنة 2:
+        استيفاء 39 رصيداً على الأقل (S1+S2)
+        معدل سنوي ≥ 10/20 عن طريق المعاوضة
+        من السنة 2 إلى السنة 3:
+        معدل سنوي ≥ 10/20 عن طريق المعاوضة
+        استيفاء 99 رصيداً على الأقل (S1 إلى S4)
+        التحقق من S1 و S2
+        الطالب يحتفظ بنتائج العناصر والوحدات المستوفاة
+        يعيد التسجيل إجبارياً في العناصر غير المستوفاة
+        لا يمكن التسجيل في أكثر من 30 رصيداً في السداسي الواحد
 
   utter_demander_progression_licence_fr:
     - text: |
         Règles de progression en Licence:
         Compensation:
-           • Module validé si moyenne éléments ≥ 10/20
-           • Semestre validé si moyenne modules ≥ 10/20
+        Module validé si moyenne éléments ≥ 10/20
+        Semestre validé si moyenne modules ≥ 10/20
         Passage:
-           • Intra-année: automatique
-           • L1→L2: 39 crédits (S1+S2) + moyenne annuelle ≥ 10
-           • L2→L3: note ≥ 10 + 99 crédits (S1-S4)
+        Intra-année: automatique
+        L1→L2: 39 crédits (S1+S2) + moyenne annuelle ≥ 10
+        L2→L3: note ≥ 10 + 99 crédits (S1-S4)
+    - text: |
+        📈 **Règles de progression — Licence :**
+        Pour obtenir la Licence : 180 crédits
+        Passage d'un semestre à l'autre dans la même année : automatique
+        Passage de L1 à L2 :
+        Validation d'au moins 39 crédits entre S1 et S2
+        Moyenne annuelle ≥ 10/20 par compensation entre tous les modules
+        Passage de L2 à L3 :
+        Moyenne annuelle ≥ 10/20 par compensation
+        Validation d'au moins 99 crédits entre S1, S2, S3 et S4
+        Validation de S1 et S2
+        Les éléments capitalisés et modules validés sont conservés définitivement
+        L'étudiant reprend obligatoirement les éléments non acquis
+        Maximum 30 crédits par semestre (sauf dérogation)
 
   utter_demander_progression_master_ar:
     - text: |
         قواعد الانتقال في الماستر:
-           • S1→S2: تلقائي
-           • M1→M2: علامة ≥ 10 في جميع الوحدات أو معدل عام ≥ 10
-           • S3→S4: 90 رصيداً متحققاً
-           • مذكرة غير مناقشة: تمديد استثنائي ≤ 6 أشهر
+        S1→S2: تلقائي
+        M1→M2: علامة ≥ 10 في جميع الوحدات أو معدل عام ≥ 10
+        S3→S4: 90 رصيداً متحققاً
+        مذكرة غير مناقشة: تمديد استثنائي ≤ 6 أشهر
+    - text: |
+        📈 **قواعد الانتقال في مرحلة الماستر:**
+        للحصول على الماستر: 120 رصيداً
+        الانتقال من السداسي 1 إلى السداسي 2: تلقائي
+        من السنة 1 إلى السنة 2:
+        معدل ≥ 10/20 في جميع وحدات التكوين
+        أو معدل سنوي ≥ 10/20 بالمعاوضة بين جميع وحدات التكوين
+        الانتقال من السداسي 3 إلى السداسي 4:
+        تحصيل 90 رصيداً
+        الطالب يحتفظ بنتائج العناصر والوحدات المستوفاة
+        الطلبة الذين لم يناقشوا يمكنهم الاستفادة من تمديد استثنائي لا يزيد على 6 أشهر
 
   utter_demander_progression_master_fr:
     - text: |
         Règles de progression en Master:
-           • S1→S2: automatique
-           • M1→M2: note ≥ 10 dans toutes les unités OU moyenne générale ≥ 10
-           • S3→S4: 90 crédits validés
-           • Mémoire non soutenu: prorogation exceptionnelle ≤ 6 mois
+        S1→S2: automatique
+        M1→M2: note ≥ 10 dans toutes les unités OU moyenne générale ≥ 10
+        S3→S4: 90 crédits validés
+        Mémoire non soutenu: prorogation exceptionnelle ≤ 6 mois
+    - text: |
+        📈 **Règles de progression — Master :**
+        Pour obtenir le Master : 120 crédits
+        Passage du S1 au S2 : automatique
+        Passage de M1 à M2 :
+        Note ≥ 10/20 dans tous les modules
+        ou Moyenne annuelle générale ≥ 10/20 par compensation
+        Passage du S3 au S4 :
+        Validation de 90 crédits
+        Les éléments capitalisés et modules validés sont conservés définitivement
+        Les étudiants n'ayant pas soutenu peuvent bénéficier d'une prorogation exceptionnelle de 6 mois maximum
 
   utter_demander_regles_exclusion_LMD_ar:
     - text: |
         قواعد الإقصاء في نظام LMD:
-        • الطالب الذي يرسب لمدة أكثر من سنتين في نفس المستوى يُقصى
-        • الطالب الذي يتجاوز الحد الأقصى للتسجيل يُقصى
-        • في حالة الغش المثبت: إقصاء من الدورة الامتحانية
+        الطالب الذي يرسب لمدة أكثر من سنتين في نفس المستوى يُقصى
+        الطالب الذي يتجاوز الحد الأقصى للتسجيل يُقصى
+        في حالة الغش المثبت: إقصاء من الدورة الامتحانية
+    - text: |
+        🚫 **قواعد الطرد:**
+        لا يمكن للطالب التسجيل أكثر من مرتين في نفس الوحدة (ليسانس أو ماستر)
+        الليسانس:
+        يستفيد الطالب من 3 سداسيات احتياط
+        يمكن الحصول على ترخيص استثنائي
+        الماستر:
+        يستفيد الطالب من 2 سداسيات احتياط
+        يمكن الحصول على ترخيص استثنائي
 
   utter_demander_regles_exclusion_LMD_fr:
     - text: |
         Règles d'exclusion dans le système LMD:
-        • L'étudiant qui échoue pendant plus de 2 ans au même niveau est exclu
-        • L'étudiant qui dépasse le nombre maximum d'inscriptions est exclu
-        • En cas de fraude prouvée: exclusion de la session d'examen
+        L'étudiant qui échoue pendant plus de 2 ans au même niveau est exclu
+        L'étudiant qui dépasse le nombre maximum d'inscriptions est exclu
+        En cas de fraude prouvée: exclusion de la session d'examen
+    - text: |
+        🚫 **Règles d'exclusion :**
+        L'étudiant s'inscrit au maximum deux fois à un même module en Licence ou en Master
+        Licence :
+        L'étudiant a droit à 3 semestres de réserve
+        Il peut bénéficier d'une dérogation
+        Master :
+        L'étudiant a droit à 2 semestres de réserve
+        Il peut bénéficier d'une dérogation
 
   utter_demander_evaluation_LMD_ar:
     - text: |
         نظام التقييم في LMD:
-        • CC (مراقبة مستمرة): 40%
-        • CF (امتحان نهائي): 60%
-        • TP (أعمال تطبيقية): يُحسب ضمن CC أو بشكل منفصل
-        • العتبة الدنيا للعنصر حسب المقياس
+        CC (مراقبة مستمرة): 40%
+        CF (امتحان نهائي): 60%
+        TP (أعمال تطبيقية): يُحسب ضمن CC أو بشكل منفصل
+        العتبة الدنيا للعنصر حسب المقياس
+    - text: |
+        📊 **قواعد تقويم المعارف:**
+        يتم التقويم عبر:
+        المراقبة المستمرة (الاختبارات)
+        الامتحانات الفصلية النهائية
+        الأعمال التطبيقية
+        نظام مزدوج يجمع بين المراقبة المستمرة والامتحانات
+        دورة واحدة تكميلية فقط
+        في حالة الغياب عن الامتحانات لا يقبل أي مبرر
+        للأعمال التطبيقية: تقديم مبرر خلال 72 ساعة
+        في حالة الغش: الإنذار، التوبيخ، إلغاء النتيجة، الطرد المؤقت أو النهائي
 
   utter_demander_evaluation_LMD_fr:
     - text: |
         Système d'évaluation dans le LMD:
-        • CC (Contrôle Continu): 40%
-        • CF (Contrôle Final): 60%
-        • TP (Travaux Pratiques): comptabilisé dans le CC ou séparément
-        • Seuil minimal par élément selon le module
+        CC (Contrôle Continu): 40%
+        CF (Contrôle Final): 60%
+        TP (Travaux Pratiques): comptabilisé dans le CC ou séparément
+        Seuil minimal par élément selon le module
+    - text: |
+        📊 **Règles d'évaluation des connaissances :**
+        L'évaluation s'effectue sous forme de :
+        Contrôle continu (examens)
+        Examens semestriels finaux
+        Travaux pratiques
+        Régime mixte avec une seule session de rattrapage
+        En cas d'absence aux examens : aucun justificatif accepté
+        Pour les TP : justificatif médical dans un délai de 72 heures
+        En cas de fraude : avertissement, blâme, nullité de l'élément/module, exclusion provisoire ou définitive
+
+  utter_conditions_acces_licence_ar:
+    - text: |
+        📋 **شروط القبول في مرحلة الليسانس:**
+        الولوج مفتوح أمام الحاصلين على شهادة الباكالوريا
+        أو شهادة تعادلها معترف بها
+        بشرط توفر معايير القبول المحددة في عرض التكوين
+
+  utter_conditions_acces_master_ar:
+    - text: |
+        📋 **شروط القبول في مرحلة الماستر:**
+        مفتوح أمام الحاصلين على شهادة الليسانس أو ما يعادلها
+        القبول يتم بعد انتقاء الملفات وفق عدد المقاعد المتاحة
+
+  utter_conditions_acces_fr:
+    - text: |
+        📋 **Conditions d'accès :**
+        Licence :
+        Titulaires du baccalauréat ou titre reconnu équivalent
+        Satisfaisant aux critères d'admission de l'offre de formation
+        Master :
+        Titulaires d'un diplôme de licence ou titre reconnu équivalent
+        Sélection sur dossiers selon le nombre de places ouvertes
+
+  utter_compensation_licence_ar:
+    - text: |
+        ⚖️ **قواعد المعاوضة في مرحلة الليسانس:**
+        استيفاء الوحدة:
+        علامة ≥ 10/20 أو بالمعاوضة بين عناصرها
+        دون أن تقل أي علامة عنصر عن العتبة المحددة من المؤسسة
+        استيفاء السداسي:
+        معدل جميع وحداته ≥ 10/20
+        دون أن تقل علامة أي وحدة عن 9/20
+        ودون أن تقل أي علامة عنصر عن العتبة المحددة
+
+  utter_compensation_licence_fr:
+    - text: |
+        ⚖️ **Compensation — Licence :**
+        Validation d'un module :
+        Note ≥ 10/20 ou par compensation entre ses éléments
+        Aucune note d'élément inférieure au seuil fixé par l'établissement
+        Validation d'un semestre :
+        Moyenne de tous les modules ≥ 10/20
+        Aucune note de module inférieure à 9/20
+        Aucune note d'élément inférieure au seuil fixé par l'établissement
+
+  utter_compensation_master_ar:
+    - text: |
+        ⚖️ **قواعد المعاوضة في مرحلة الماستر:**
+        استيفاء الوحدة:
+        علامة ≥ 10/20 أو بالمعاوضة بين عناصرها
+        دون أن تقل أي علامة عنصر عن العتبة المحددة من المؤسسة
+        استيفاء السداسي:
+        معدل جميع وحداته ≥ 10/20
+        دون أن تقل علامة أي وحدة عن العتبة المحددة
+        ودون أي علامة عنصر أدنى من العتبة المحددة
+
+  utter_compensation_master_fr:
+    - text: |
+        ⚖️ **Compensation — Master :**
+        Validation d'un module :
+        Note ≥ 10/20 ou compensation entre ses éléments
+        Aucune note d'élément inférieure au seuil fixé par l'établissement
+        Validation d'un semestre :
+        Moyenne de tous les modules ≥ 10/20
+        Aucune note de module inférieure au seuil fixé
+        Aucune note d'élément inférieure au seuil fixé
+
+  utter_licence_fondamentale_ar:
+    - text: |
+        📖 **الليسانس الأساسي (Fondamentale):**
+        تكوين نظري وأكاديمي عميق
+        الهدف: مواصلة الدراسات العليا (ماستر، دكتوراه)
+        يركز على البحث والتحليل والمعرفة النظرية
+        مسار: ليسانس → ماستر بحث → دكتوراه
+
+  utter_licence_professionnelle_ar:
+    - text: |
+        🛠️ **الليسانس المهني (Professionnelle):**
+        تكوين تطبيقي وعملي
+        الهدف: الاندماج المباشر في سوق الشغل
+        يركز على المهارات المهنية والتدريب الميداني
+        مسار: ليسانس → حياة مهنية
+
+  utter_master_recherche_ar:
+    - text: |
+        🔬 **ماستر البحث (Recherche):**
+        يُعدّ الطالب للبحث العلمي والدكتوراه
+        يتضمن مذكرة بحث أكاديمية عميقة
+        التقييم: مقاييس نظرية + مذكرة بحث
+        المسار بعده: دكتوراه (Bac+8)
+        المستهدف: من يريد التعمق الأكاديمي والتدريس الجامعي
+
+  utter_master_professionnel_ar:
+    - text: |
+        💼 **الماستر المهني (Professionnel):**
+        يعدّ الطالب لسوق العمل مباشرة
+        يتضمن تدريباً ميدانياً في مؤسسة
+        التقييم: مقاييس تطبيقية + تقرير تدريب
+        المسار بعده: الحياة المهنية
+        المستهدف: من يريد الاندماج السريع في سوق الشغل
+
+  utter_licence_fondamentale_fr:
+    - text: |
+        📖 **Licence Fondamentale :**
+        Formation théorique et académique approfondie
+        Objectif : poursuite des études supérieures (Master, Doctorat)
+        Axée sur la recherche, l'analyse et les connaissances théoriques
+        Parcours : Licence → Master Recherche → Doctorat
+
+  utter_licence_professionnelle_fr:
+    - text: |
+        🛠️ **Licence Professionnelle / Appliquée :**
+        Formation pratique et appliquée
+        Objectif : insertion directe dans le marché du travail
+        Axée sur les compétences professionnelles et les stages
+        Parcours : Licence → Vie professionnelle
+
+  utter_master_recherche_fr:
+    - text: |
+        🔬 **Master Recherche :**
+        Prépare l'étudiant à la recherche scientifique et au Doctorat
+        Comprend un mémoire de recherche académique approfondi
+        Évaluation : modules théoriques + mémoire de recherche
+        Parcours après : Doctorat (Bac+8)
+        Destiné à : ceux qui souhaitent approfondir leurs connaissances et enseigner
+
+  utter_master_professionnel_fr:
+    - text: |
+        💼 **Master Professionnel :**
+        Prépare l'étudiant directement au marché du travail
+        Comprend un stage en entreprise
+        Évaluation : modules appliqués + rapport de stage
+        Parcours après : vie professionnelle
+        Destiné à : ceux qui souhaitent une insertion rapide dans le monde du travail
+
+  utter_comparaison_recherche_professionnel_ar:
+    - text: |
+        ⚖️ **مقارنة: ماستر بحث vs ماستر مهني**
+        الهدف:
+        بحث: الدكتوراه والبحث العلمي
+        مهني: سوق الشغل المباشر
+        المذكرة:
+        بحث: مذكرة بحث أكاديمية عميقة
+        مهني: تقرير تدريب ميداني
+        التكوين:
+        بحث: نظري وتحليلي
+        مهني: تطبيقي وعملي
+        المسار بعده:
+        بحث: دكتوراه (Bac+8)
+        مهني: الحياة المهنية
+        المستهدف:
+        بحث: الباحثون والأكاديميون
+        مهني: المهنيون وأصحاب العمل
+
+  utter_comparaison_recherche_professionnel_fr:
+    - text: |
+        ⚖️ **Comparaison : Master Recherche vs Master Professionnel**
+        Objectif :
+        Recherche : Doctorat et recherche scientifique
+        Professionnel : Marché du travail direct
+        Mémoire :
+        Recherche : Mémoire académique approfondi
+        Professionnel : Rapport de stage en entreprise
+        Formation :
+        Recherche : Théorique et analytique
+        Professionnel : Appliquée et pratique
+        Parcours après :
+        Recherche : Doctorat (Bac+8)
+        Professionnel : Vie professionnelle
+        Destiné à :
+        Recherche : Chercheurs et académiciens
+        Professionnel : Professionnels et employeurs
+
+  utter_comparaison_licence_ar:
+    - text: |
+        ⚖️ **مقارنة: ليسانس أساسي vs ليسانس مهني**
+        الهدف:
+        أساسي: مواصلة الدراسات العليا
+        مهني: الاندماج في سوق الشغل
+        التكوين:
+        أساسي: نظري وأكاديمي
+        مهني: تطبيقي وميداني
+        المسار بعده:
+        أساسي: ماستر → دكتوراه
+        مهني: حياة مهنية مباشرة
+        التدريب:
+        أساسي: محدود أو غير إلزامي
+        مهني: إلزامي وأساسي
+
+  utter_comparaison_licence_fr:
+    - text: |
+        ⚖️ **Comparaison : Licence Fondamentale vs Licence Professionnelle**
+        Objectif :
+        Fondamentale : Poursuite des études supérieures
+        Professionnelle : Insertion dans le marché du travail
+        Formation :
+        Fondamentale : Théorique et académique
+        Professionnelle : Appliquée et pratique
+        Parcours après :
+        Fondamentale : Master → Doctorat
+        Professionnelle : Vie professionnelle directe
+        Stage :
+        Fondamentale : Limité ou non obligatoire
+        Professionnelle : Obligatoire et fondamental
 
   utter_demander_resultats_fst_ar:
     - text: |
         طريقة الاطلاع على نتائج الامتحانات:
-        1️⃣ افتح الرابط: http://resultats.una.mr/FST/
-        2️⃣ أدخل رقم التسجيل أو رقم الباكلوريا
-        3️⃣ اضغط زر 'ادخل ENTRER'
-        4️⃣ يظهر اسمك وشعبتك تلقائياً
-        5️⃣ اختر الفصل من القائمة
-        6️⃣ اضغط على تبويب 'Résultats CC / نتائج الاختبار'
+        1️⃣ افتح الرابط: https://resultats.univ-nkc.mr
+        2️⃣️اختر كليتك من القائمة (FST / FLSH / FMPOS / FSJP / FEG)
+        3️⃣ أدخل رقم التسجيل (Matricule)
+        4️⃣ اضغط زر 'ادخل ENTRER'
+        5️⃣ يظهر اسمك وشعبتك تلقائياً
+        6️⃣ اختر الفصل من القائمة
+        7️⃣ اضغط على تبويب 'Résultats CC / نتائج الاختبار'
 
   utter_demander_resultats_fst_fr:
     - text: |
         Comment consulter vos résultats d'examens:
-        1️⃣ Ouvrir le lien: http://resultats.una.mr/FST/
-        2️⃣ Entrer votre Numéro Etudiant ou Num BAC
-        3️⃣ Cliquer sur 'ENTRER ادخل'
-        4️⃣ Votre nom et filière s'affichent automatiquement
-        5️⃣ Choisir le semestre dans la liste
-        6️⃣ Cliquer sur l'onglet 'Résultats CC'
+          1️⃣ Ouvrir le lien: https://resultats.univ-nkc.mr
+          2️⃣ Choisir votre faculté (FST / FLSH / FMPOS / FSJP / FEG)
+          3️⃣ Entrer votre Matricule
+          4️⃣ Cliquer sur 'ENTRER ادخل'
+          5️⃣ Votre nom et filière s'affichent automatiquement
+          6️⃣ Choisir le semestre dans la liste
+          7️⃣ Cliquer sur l'onglet 'Résultats CC'
+
 
   utter_ask_criteres_bourse:
     - text: |
@@ -3151,31 +5320,31 @@ responses:
     - text: |
         🏛️ **كلية العلوم القانونية والسياسية — FSJP**
 
-        العميد:\n
-        د. محمد معطالله\n
-        نائب العميد:\n
-        د. محمد محمود محمد مختار\n
-        الأمين العام:\n
-        د. محمد عبد الله سيدي بوي\n
+        العميد:
+        د. محمد معطالله
+        نائب العميد:
+        د. محمد محمود محمد مختار
+        الأمين العام:
+        د. محمد عبد الله سيدي بوي
 
-        مدة الدراسة: 3 سنوات بعد الباكالوريا\n
-        عدد الليسانسات: 04\n
+        مدة الدراسة: 3 سنوات بعد الباكالوريا
+        عدد الليسانسات: 04
 
   utter_ask_fsjp_specializations:
     - text: |
         🎓 **تخصصات كلية العلوم القانونية والسياسية — FSJP**
 
-        📚 ليسانس أساسي — Droit Public:\n
-        قانون عام/إدارة عمومية\n
-        • Droit Public/Administration publique\n
-        قانون عام/علوم سياسية\n
-        • Droit Public/Sciences Politiques\n
+        📚 ليسانس أساسي — Droit Public:
+        قانون عام/إدارة عمومية
+        • Droit Public/Administration publique
+        قانون عام/علوم سياسية
+        • Droit Public/Sciences Politiques
 
-        📚 ليسانس أساسي — Droit Privé:\n
-        قانون خاص/قانون الأعمال والمؤسسات\n
-        • Droit Privé/Droit des affaires et de l'entreprise\n
-        قانون خاص/مهن قضائية وقانونية\n
-        • Droit Privé/Carrières Judiciaires et Juridiques\n
+        📚 ليسانس أساسي — Droit Privé:
+        قانون خاص/قانون الأعمال والمؤسسات
+        • Droit Privé/Droit des affaires et de l'entreprise
+        قانون خاص/مهن قضائية وقانونية
+        • Droit Privé/Carrières Judiciaires et Juridiques
 
 # ============================================================
 # L1 DROIT — COMMUN
@@ -3185,28 +5354,28 @@ responses:
     - text: |
         📘 **L1 en Droit — S1 (مشترك)**
 
-        تاريخ القانون والمؤسسات الاجتماعية 1\n
-        المبهجة القانونية\n
-        القانون الدستوري 1\n
-        الاقتصاد السياسي\n
-        التشريع الإسلامي 1\n
-        مدخل لدراسة القانون 1\n
-        Introduction à l'Etude du droit 1\n
-        Introduction aux institutions politiques et administratives\n
-        Terminologies juridiques 1\n
-        Méthodologie Juridique\n
+        تاريخ القانون والمؤسسات الاجتماعية 1
+        المبهجة القانونية
+        القانون الدستوري 1
+        الاقتصاد السياسي
+        التشريع الإسلامي 1
+        مدخل لدراسة القانون 1
+        Introduction à l'Etude du droit 1
+        Introduction aux institutions politiques et administratives
+        Terminologies juridiques 1
+        Méthodologie Juridique
 
   utter_ask_matieres_l1_droit_s2:
     - text: |
         📘 **L1 en Droit — S2 (مشترك)**
 
-        القانون الدستوري 2\n
-        Terminologies juridiques 2\n
-        Histoire de droit et des institutions Sociales 2\n
-        Introduction à l'Etude des Relations Internationales\n
-        Droit Musulman 2\n
-        Institutions Internationales\n
-        Introduction à l'Etude du droit 2\n
+        القانون الدستوري 2
+        Terminologies juridiques 2
+        Histoire de droit et des institutions Sociales 2
+        Introduction à l'Etude des Relations Internationales
+        Droit Musulman 2
+        Institutions Internationales
+        Introduction à l'Etude du droit 2
 
 # ============================================================
 # L2 DROIT — COMMUN
@@ -3216,27 +5385,27 @@ responses:
     - text: |
         📗 **L2 en Droit — S3 (مشترك)**
 
-        التشريع الإسلامي\n
-        Economie de l'Entreprise\n
-        الفرنسية 3\n
-        القانون الإداري 1\n
-        قانون الالتزامات 1 (العقود)\n
-        العلوم السياسية\n
-        القانون الجنائي العام\n
-        القانون التجاري\n
+        التشريع الإسلامي
+        Economie de l'Entreprise
+        الفرنسية 3
+        القانون الإداري 1
+        قانون الالتزامات 1 (العقود)
+        العلوم السياسية
+        القانون الجنائي العام
+        القانون التجاري
 
   utter_ask_matieres_l2_droit_s4:
     - text: |
         📗 **L2 en Droit — S4 (مشترك)**
 
-        التشريع الإسلامي\n
-        القانون الإداري 2\n
-        مصطلحات قانونية 4\n
-        العلوم السياسية\n
-        القانون التجاري\n
-        Finances Publiques\n
-        القانون الجنائي العام\n
-        قانون الالتزامات 2 (العقود)\n
+        التشريع الإسلامي
+        القانون الإداري 2
+        مصطلحات قانونية 4
+        العلوم السياسية
+        القانون التجاري
+        Finances Publiques
+        القانون الجنائي العام
+        قانون الالتزامات 2 (العقود)
 
 # ============================================================
 # L3 — DROIT PUBLIC / ADMINISTRATION PUBLIQUE
@@ -3246,27 +5415,27 @@ responses:
     - text: |
         📙 **L3 — قانون عام / إدارة عمومية — S5**
 
-        المرافق العمومية الكبرى\n
-        القانون الدولي للبيئة\n
-        اللغة\n
-        قانون المنظمات الدولية\n
-        الحريات العامة\n
-        القانون الدولي العام\n
-        التراعات الإدارية\n
-        القانون العام الاقتصادي\n
+        المرافق العمومية الكبرى
+        القانون الدولي للبيئة
+        اللغة
+        قانون المنظمات الدولية
+        الحريات العامة
+        القانون الدولي العام
+        التراعات الإدارية
+        القانون العام الاقتصادي
 
   utter_ask_matieres_droit_public_admin_l3_s6:
     - text: |
         📙 **L3 — قانون عام / إدارة عمومية — S6**
 
-        القانون الضريبي\n
-        علوم الإدارة\n
-        قانون الميزانية\n
-        قانون الوظيفة العمومية\n
-        قانون الإجراءات\n
-        إدارة الأملاك العمومية\n
-        اللامركزية والتنمية المحلية\n
-        مناهج البحث\n
+        القانون الضريبي
+        علوم الإدارة
+        قانون الميزانية
+        قانون الوظيفة العمومية
+        قانون الإجراءات
+        إدارة الأملاك العمومية
+        اللامركزية والتنمية المحلية
+        مناهج البحث
 
 # ============================================================
 # L3 — DROIT PUBLIC / SCIENCES POLITIQUES
@@ -3276,29 +5445,29 @@ responses:
   utter_ask_matieres_droit_public_sp_l3_s5:
     - text: |
         📙 **L3 — قانون عام / علوم سياسية — S5**
-        ⚠️ نفس مواد S5 تخصص الإدارة العمومية\n
+        ⚠️ نفس مواد S5 تخصص الإدارة العمومية
 
-        المرافق العمومية الكبرى\n
-        القانون الدولي للبيئة\n
-        اللغة\n
-        قانون المنظمات الدولية\n
-        الحريات العامة\n
-        القانون الدولي العام\n
-        التراعات الإدارية\n
-        Droit public économique\n
+        المرافق العمومية الكبرى
+        القانون الدولي للبيئة
+        اللغة
+        قانون المنظمات الدولية
+        الحريات العامة
+        القانون الدولي العام
+        التراعات الإدارية
+        Droit public économique
 
   utter_ask_matieres_droit_public_sp_l3_s6:
     - text: |
         📙 **L3 — قانون عام / علوم سياسية — S6**
 
-        حقوق الإنسان الأساسية\n
-        العلاقات الدبلوماسية والقنصلية\n
-        الحكم الرشيد\n
-        علم الاجتماع السياسي\n
-        استراتيجيا الأمن والدفاع\n
-        العلاقات الأورومتوسطية\n
-        نظم سياسية مقارنة\n
-        مناهج البحث\n
+        حقوق الإنسان الأساسية
+        العلاقات الدبلوماسية والقنصلية
+        الحكم الرشيد
+        علم الاجتماع السياسي
+        استراتيجيا الأمن والدفاع
+        العلاقات الأورومتوسطية
+        نظم سياسية مقارنة
+        مناهج البحث
 
 # ============================================================
 # L3 — DROIT PRIVÉ / AFFAIRES ET ENTREPRISE
@@ -3308,26 +5477,26 @@ responses:
     - text: |
         📙 **L3 — قانون خاص / قانون الأعمال والمؤسسات — S5**
 
-        الحقوق العينية\n
-        نظام الالتزامات\n
-        القانون الاجتماعي\n
-        القانون العام للشركات\n
-        اللغة\n
-        الملكية الفكرية\n
-        TD القانون العام للشركات\n
-        قانون التأمين\n
-        القانون الجنائي الخاص وعلم الإجرام\n
+        الحقوق العينية
+        نظام الالتزامات
+        القانون الاجتماعي
+        القانون العام للشركات
+        اللغة
+        الملكية الفكرية
+        TD القانون العام للشركات
+        قانون التأمين
+        القانون الجنائي الخاص وعلم الإجرام
 
   utter_ask_matieres_droit_prive_affaires_l3_s6:
     - text: |
         📙 **L3 — قانون خاص / قانون الأعمال والمؤسسات — S6**
 
-        المسطرة المدنية\n
-        قانون العقود التجارية\n
-        القانون الخاص للشركات\n
-        قانون التحكيم\n
-        مناهج البحث\n
-        المسطرة الجنائية\n
+        المسطرة المدنية
+        قانون العقود التجارية
+        القانون الخاص للشركات
+        قانون التحكيم
+        مناهج البحث
+        المسطرة الجنائية
 
 # ============================================================
 # L3 — DROIT PRIVÉ / CARRIÈRES JUDICIAIRES
@@ -3337,29 +5506,29 @@ responses:
   utter_ask_matieres_droit_prive_carrieres_l3_s5:
     - text: |
         📙 **L3 — قانون خاص / مهن قضائية وقانونية — S5**
-        ⚠️ نفس مواد S5 تخصص قانون الأعمال والمؤسسات\n
+        ⚠️ نفس مواد S5 تخصص قانون الأعمال والمؤسسات
 
-        الحقوق العينية\n
-        نظام الالتزامات\n
-        اللغة\n
-        القانون الاجتماعي\n
-        القانون العام للشركات\n
-        الملكية الفكرية\n
-        TD القانون العام للشركات\n
-        قانون التأمين\n
-        القانون الجنائي الخاص وعلم الإجرام\n
+        الحقوق العينية
+        نظام الالتزامات
+        اللغة
+        القانون الاجتماعي
+        القانون العام للشركات
+        الملكية الفكرية
+        TD القانون العام للشركات
+        قانون التأمين
+        القانون الجنائي الخاص وعلم الإجرام
 
   utter_ask_matieres_droit_prive_carrieres_l3_s6:
     - text: |
         📙 **L3 — قانون خاص / مهن قضائية وقانونية — S6**
 
-        المسطرة المدنية\n
-        قانون العقود الخاصة\n
-        حقوق الإنسان والحريات الأساسية\n
-        طرق التنفيذ\n
-        منازعات إدارية\n
-        مناهج البحث\n
-        المسطرة الجنائية\n
+        المسطرة المدنية
+        قانون العقود الخاصة
+        حقوق الإنسان والحريات الأساسية
+        طرق التنفيذ
+        منازعات إدارية
+        مناهج البحث
+        المسطرة الجنائية
 
 # ============================================================
 # MASTER 1
@@ -3369,78 +5538,78 @@ responses:
     - text: |
         🎓 **Master 1 — القانون العام — S2**
 
-        اللغة الفرنسية\n
-        قانون العلاقات الدبلوماسية والقنصلية\n
-        الوظيفة التشريعية في الدساتير المغاربية\n
-        قانون الوظيفة العمومية\n
-        نظرية العلاقات الدولية\n
-        إدارة الأزمات\n
-        القضاء الإداري\n
-        القضاء الدستوري\n
-        مناهج البحث القانوني\n
+        اللغة الفرنسية
+        قانون العلاقات الدبلوماسية والقنصلية
+        الوظيفة التشريعية في الدساتير المغاربية
+        قانون الوظيفة العمومية
+        نظرية العلاقات الدولية
+        إدارة الأزمات
+        القضاء الإداري
+        القضاء الدستوري
+        مناهج البحث القانوني
 
   utter_ask_matieres_master_entreprise_affaires:
     - text: |
         🎓 **Master 1 — Droit de l'Entreprise et des Affaires — S2**
 
-        الطرق البديلة لتسوية النزاعات\n
-        السيطرة المدنية\n
-        صعوبات المؤسسة\n
-        الإنجليزية\n
-        قانون التجارة الدولية\n
-        القانون الدولي الخاص\n
-        محاسبة الشركات\n
-        قانون المنافسة وحماية المستهلك\n
+        الطرق البديلة لتسوية النزاعات
+        السيطرة المدنية
+        صعوبات المؤسسة
+        الإنجليزية
+        قانون التجارة الدولية
+        القانون الدولي الخاص
+        محاسبة الشركات
+        قانون المنافسة وحماية المستهلك
 
   utter_ask_matieres_master_droits_homme:
     - text: |
         🎓 **Master 1 — حقوق الإنسان والقانون الإنساني — S2**
 
-        الحقوق الاقتصادية والاجتماعية والثقافية\n
-        القانون الجنائي الدولي\n
-        الحقوق المدنية والسياسية\n
-        الإجراءات الجنائية والحريات\n
-        قوانين اللاجئين والهجرة\n
-        القانون الدولي الإنساني\n
-        القضاء الجنائي الدولي\n
-        الحماية الدولية للطفل والمرأة\n
+        الحقوق الاقتصادية والاجتماعية والثقافية
+        القانون الجنائي الدولي
+        الحقوق المدنية والسياسية
+        الإجراءات الجنائية والحريات
+        قوانين اللاجئين والهجرة
+        القانون الدولي الإنساني
+        القضاء الجنائي الدولي
+        الحماية الدولية للطفل والمرأة
 
   utter_ask_matieres_master_relations_internationales:
     - text: |
         🎓 **Master 1 — العلاقات الدولية والدفاع — S2**
 
-        التحديات الدولية المعاصرة\n
-        القانون الدولي العام\n
-        اللغة\n
-        السياسات الخارجية السفارية\n
-        القانون الجنائي الدولي\n
-        الفضاءات الدولية السياسية والاقتصادية الكبرى\n
-        سوسيولوجيا الإعلام\n
-        القانون الدولي الإنساني\n
+        التحديات الدولية المعاصرة
+        القانون الدولي العام
+        اللغة
+        السياسات الخارجية السفارية
+        القانون الجنائي الدولي
+        الفضاءات الدولية السياسية والاقتصادية الكبرى
+        سوسيولوجيا الإعلام
+        القانون الدولي الإنساني
 
   utter_ask_matieres_master_droit_prive:
     - text: |
         🎓 **Master 1 — بحث القانون الخاص — S2**
 
-        القانون الضريبي\n
-        قانون المنافسة وحماية المستهلك\n
-        القانون الدولي الخاص\n
-        قانون التأمين\n
-        القانون الجنائي للأعمال\n
-        قانون الأسرة\n
+        القانون الضريبي
+        قانون المنافسة وحماية المستهلك
+        القانون الدولي الخاص
+        قانون التأمين
+        القانون الجنائي للأعمال
+        قانون الأسرة
 
   utter_ask_matieres_master_maritime:
     - text: |
         🎓 **Master 1 — Recherche Droit des Espaces et Activités Maritimes — S2**
 
-        Introduction à la logistique\n
-        Modes Alternatifs de règlement des conflits (MARC)\n
-        Droit des professions maritimes\n
-        Droit portiaire\n
-        Droit maritime (Transport Maritime)\n
-        Droit international privé\n
-        Droit et procédure douanière\n
-        Droit du littoral\n
+        Introduction à la logistique
+        Modes Alternatifs de règlement des conflits (MARC)
+        Droit des professions maritimes
+        Droit portiaire
+        Droit maritime (Transport Maritime)
+        Droit international privé
+        Droit et procédure douanière
+        Droit du littoral
 # ============================================================
 # SESSION CONFIG
 # ============================================================
@@ -3476,9 +5645,7 @@ slots:
     mappings:
       - type: from_text
 
-# ============================================================
-# FORMS
-# ============================================================
+
 forms:
   simple_contact_form:
     required_slots:

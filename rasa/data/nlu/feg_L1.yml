@@ -20,6 +20,7 @@ nlu:
     - اقتصاد تسيير السنة الأولى
     - L1 Economie-Gestion
     - matières L1 Economie-Gestion
+    
 
 - intent: ask_matieres_fc_l1
   examples: |

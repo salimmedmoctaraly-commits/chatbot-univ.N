@@ -249,6 +249,8 @@ nlu:
     - Quelles sont les filières de L1 ?
     - filières première année FST
     - شعب L1 في FST
+    - fst السنه الالى 
+    - السنه الاؤلى من fst 
     - ما الشعب المتاحة في السنة الأولى؟
     - les filières en 1ère année
     - combien de filières en L1 ?
@@ -266,11 +268,11 @@ nlu:
     - filières L1
     - الشعب المتاحة في السنة الأولى FST
     - ماذا أختار في L1؟
-
+    - fst L1
+    - MPI BG PC
 - intent: ask_fst
   examples: |
     - معلومات عن FST
-    - كلية العلوم والتقنيات
     - من هو عميد FST؟
     - إدارة كلية العلوم
     - FST نواكشوط
@@ -287,7 +289,32 @@ nlu:
     - ما هي الليسانسات في FST؟
     - filières de la FST
     - licences FST
+    - FST licences
+    - filières de la FST L3
     - quelles sont les spécialités de la FST?
+    - fst L3
+    - ما هي التخصصات المتاحة في FST؟
+    - ما هي التخصصات في السنة الثالثة؟
+    - ما هي التخصصات في السنة الثالثة FST؟
+    - ما هي التخصصات في السنة الثالثة من FST؟
+    - ما هي التخصصات في L3 FST؟
+    - ما هي التخصصات في L3 من FST؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات نواكشوط؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025 2026؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025 2026 2027؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025 2026 2027 2028؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025 2026 2027 2028 2029؟
+    - ما هي التخصصات في السنة الثالثة من كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025 2026 2027 2028 2029 2030؟
+    - ما هي التخصصات في السنة الثالثة
+    - licences dans FST
+    - quelles sont les spécialités L3 de la FST ?
+    - L3 Dans FST quelles sont les spécialités ?
+    - l3 fst
 
 - intent: ask_fst_parcours_bg
   examples: |
@@ -296,7 +323,21 @@ nlu:
     - parcours BG FST
     - مسار البيولوجيا والجيولوجيا
     - BG FST
-    - تخصص بيولوجيا
+    - مسار BG في FST
+    - BG quelles sont les spécialités ?
+    - BG quelles sont les options ?
+    - BG quelles sont les spécialisations ?
+    - BG quelles sont les filières ?
+    - BG quelles sont les parcours de spécialisation ?
+    - BG quelles sont les voies de spécialisation ?
+    - BG quelles sont les voies de spécialisation en L3 ?
+    - BG quelles sont les voies de spécialisation en L3 de FST ?
+    - BG quelles sont les voies de spécialisation en L3 de la FST ?
+    - BG quelles sont les voies de spécialisation en L3 de la FST nvaokchott ?
+    - BG quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024 ?
+    - BG quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024-2025 ?
+    - BG quelles sont les voies de spécialisation en L3 de la FST nva
+    - 
 
 - intent: ask_fst_parcours_mpi
   examples: |
@@ -305,6 +346,18 @@ nlu:
     - مسار المعلوماتية والرياضيات
     - MPI FST
     - تخصص المعلوماتية في FST
+    - تخصص الرياضيات في FST
+    - تخصص الفيزياء في FST
+    - مسار MPI في FST
+    - MPI quelles sont les spécialités ?
+    - MPI quelles sont les options ?
+    - MPI quelles sont les spécialisations ?
+    - MPI quelles sont les filières ?
+    - MPI quelles sont les parcours de spécialisation ?
+    - MPI quelles sont les voies de spécialisation ?
+    - MPI quelles sont les voies de spécialisation en L3 ?
+    - MPI quelles sont les voies de spécialisation en L3 de FST ?
+    - MPI quelles sont les voies de spécialisation en L3 de la FST ?  
 
 - intent: ask_fst_parcours_pc
   examples: |
@@ -313,6 +366,28 @@ nlu:
     - parcours PC FST
     - مسار الفيزياء والكيمياء
     - PC FST
+    - تخصص الفيزياء
+    - تخصص الكيمياء
+    - chnhi pc
+    - pc chnhi
+    - مسار PC في FST
+    - PC quelles sont les spécialités ?
+    - PC quelles sont les options ?
+    - PC quelles sont les spécialisations ?
+    - PC quelles sont les filières ?
+    - PC quelles sont les parcours de spécialisation ?
+    - PC quelles sont les voies de spécialisation ?
+    - PC quelles sont les voies de spécialisation en L3 ?
+    - PC quelles sont les voies de spécialisation en L3 de FST ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST nvaokchott ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024 ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024-2025 ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024-2025 2026 ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024-2025 2026 2027 ?
+    - PC quelles sont les voies de spécialisation en L3 de la FST nvaokchott 2024-2025 2026 2027 2028 ?
+    - PC quelles sont les voies de spécialisation en L3     
+
 
 
 - intent: demander_resultats_fst_ar
@@ -330,9 +405,20 @@ nlu:
     - نتائج الدورة الثانية
     - رابط النتائج
     - resultats fst
+    -  MI كيف أعرف نتيجتي
+    - BG كيف أعرف نتيجتي
+    - PC كيف أعرف نتيجتي
+    - FST كيف أعرف إذا نجحت
     - BGأريد نتائجي
     -  FST كيف أعرف إذا نجحت
     - نتائج الامتحانات الجامعية
+    - كيف أطلع على نتائجي في FST؟
+    - كيف أطلع على نتائجي في كلية العلوم والتقنيات؟
+    - كيف أطلع على نتائجي في كلية العلوم والتقنيات بنواكشوط؟
+    - كيف أطلع على نتائجي في كلية العلوم والتقنيات بنواكشوط موريتانيا؟
+    - كيف أطلع على نتائجي في كلية العلوم والتقنيات بنواكشوط موريتانيا 2024؟
+    - كيف أطلع على نتائجي في كلية العلوم والتقنيات بنواكشوط موريتانيا 2024-2025؟
+    - كيف أطلع على نتائجي في كلية العلوم والتقنيات بنوا
 
 - intent: demander_resultats_fst_fr
   examples: |
@@ -355,3 +441,85 @@ nlu:
     - chnho mew93 neta2ij fst 
     - chnho mew93 neta2ij lemti7an fst
     - chnho mew93 neta2ij lemti7an mpi MPI bg BG pc PC MAI MI MIAGE DA2I MI mi
+    - chnho mew93 neta2ij lemti7an mpi MPI bg BG pc PC MAI MI MIAGE DA2I MI mi 2024
+    - chnho mew93 neta2ij lemti7an mpi MPI bg
+    - chnho mew93 neta2ij lemti7an mpi MPI bg BG pc PC MAI MI MIAGE DA2I MI mi 2024-2025
+    - chnho mew93 neta2ij lemti7an mpi MPI bg
+    - resultats FEG
+    - resultats fmpos
+    - resultats fse
+    - resultats fsegt
+    - resultats fst nvaokchott
+    - resultats fst nouakchott
+    - resultats fsjp
+    - resultats fsr
+    - resultat fst
+    - resultats université
+    - comment consulter mes résultats à la FST ?
+    - comment consulter mes résultats à la faculté des sciences et techniques ?
+    - comment consulter mes résultats à la faculté des sciences et techniques de nouakchott ?
+    - comment consulter mes résultats à la faculté des sciences et techniques de nouakchott 2024 ?
+    - comment consulter mes résultats à la faculté des sciences et techniques de nouakchott 2024-2025 ?
+    - comment consulter mes résultats à la faculté des sciences et techniques de nouakchott 2024-2025 2026 ?
+    - comment consulter mes résultats à la faculté des sciences et techniques de nouakchott
+    - resultats fst L1
+    - resultats fst L2
+    - resultat fst L3
+    - resultat fst MPI
+    - resultat fst BG
+    - resultat fst PC
+    - resultats fst MA
+    - resultats fst MI
+    - resultats fst MIAGE
+    - resultats fst DA2I
+    - resultats fst MI mi
+    - resultats  MPI 2024 
+    - resultats BG 2024
+    - resultats PC 2024
+    - resultats MA 2024
+    - resultats MI 2024
+    - resultats MIAGE 2024
+    - resultats DA2I 2024
+    - resultats MI mi 2024
+    - resultats  EEA
+    - resultats  TSER
+    - resultats  L3
+    - resultats  L2
+    - resultats  L1
+    - resultats  S1
+    - resultats  S2
+    - resultats  semestre 1
+    - resultats  semestre 2
+    - resultats  session 1
+    - resultats  session 2  
+    - resultats  session de rattrapage
+    - resultats  rattrapage
+    - resultats  examen de rattrapage
+    - resultats  examen de rattrapage fst
+    - resultats  examen de rattrapage FSJH
+    - resultats  MAI
+    - resultats  MI
+    - resultats  MIAGE
+    - resultats  DA2I
+    - resultats  MI mi
+    - resultats  MPI
+    - resultats  BG
+    - resultats  PC
+    - resultats  BIE
+    - resultats  BIO
+    - resultats  CHM
+    - resultats  CHIMIE
+    - resultats  sn
+    - resultats  BMP
+    - resultats  FC
+    - resultats  BA
+    - resultats  anglais
+    - resultats  français
+    - resultats  arabe
+    - resultats  espagnol
+    - resultats  chinois
+    - resultats  droit
+    - resultats  droit L1
+    - resultats  droit L2
+    - resultats  turc
+    -

@@ -81,6 +81,10 @@ nlu:
     - facultés
     - facultes
     - الكليات
+    - شعب الجامعة
+    - filières de l'université
+    - أقسام الجامعة
+    - تخصصات الجامعة
 
 - intent: ask_repartition_etudiants
   examples: |
@@ -91,6 +95,28 @@ nlu:
     - statistiques étudiants
     - quelle faculté a le plus d'étudiants?
     - pourcentage étudiants par faculté
+    - répartition des étudiants par faculté
+    - إحصائيات الطلبة حسب الكلية
+    - نسبة الطلاب في كل كلية
+    - توزيع الطلبة حسب الكلية
+    - نسبة الطلاب في FST
+    - نسبة الطلاب في FEG
+    - نسبة الطلاب في FSJP
+    - نسبة الطلاب في L1
+    - نسبة الطلاب في L2
+    - نسبة الطلاب في L3
+    - نسبة الطلاب في master
+    - نسبة الطلاب في doctorat
+    - نسبة الطلاب في كل سنة دراسية
+    - نسبة الطلاب في كل تخصص
+    - نسبة الطلاب في كل شعبة
+    - نسبة الطلاب في كل قسم
+    - نسبة الطلاب في كل فرع
+    - نسبة الطلاب في كل مجال
+    - نسبة الطلاب في كل مسار
+    - نسبة الطلاب في كل مسلك
+    
+
 
 - intent: ask_criteres_bourse
   examples: |
@@ -121,7 +147,18 @@ nlu:
     - conditions المنحة
     - المنحة
     - bourse 
-
+    - bourse universitaire
+    - bourse d'études
+    - bourse universitai
+    - bourse d'étude
+    - bourse L3
+    - bourse master
+    - bourse doctorat
+    - bourse L2
+    - bourse L1
+    - bourse licence
+    - bourse majour
+    - 
 - intent: ask_inscription_bourse_cnou
   examples: |
     - التسجيل في المنحة بالمركز
@@ -139,6 +176,14 @@ nlu:
     - inscription bourse CNOU
     - كيف أسجل في bourse
     - وثائق inscription المنحة
+    - أين أسجل في bourse
+    - متى يبدأ inscription bourse
+    - inscription bourse 2025-2026
+    - وثائق inscription bourse 2025-2026
+    - inscription bourse 2025
+    - inscription bourse 2026
+    - inscription bourse universitaire 2025
+    - inscription bourse universitaire 2026
 
 - intent: ask_criteres_logement
   examples: |
@@ -234,4 +279,33 @@ nlu:
     - أين أسجل في المطعم
     - وثائق التسجيل في المطعم
 
+- intent: ask_inscription
+  examples: |
+    - كيف أسجل في الجامعة؟
+    - إجراءات التسجيل الجامعي
+    - ما خطوات التسجيل؟
+    - كيف تتم عملية التسجيل؟
+    - أريد التسجيل في الجامعة
+    - التسجيل في الجامعة
+    - comment s'inscrire à l'université?
+    - procédure d'inscription universitaire
+    - étapes d'inscription
+    - comment faire pour s'inscrire?
+    - je veux m'inscrire à l'université
+    - inscription universitaire
+
+- intent: ask_master_programs
+  examples: |
+    - ما برامج الماستر في الجامعة؟
+    - ما هي برامج الماستر المتاحة؟
+    - قائمة برامج الماستر
+    - ما تخصصات الماستر؟
+    - الماستر في الجامعة
+    - ماستر الجامعة
+    - quels sont les programmes de master?
+    - liste des masters disponibles
+    - programmes de master à l'université
+    - quelles spécialités en master?
+    - masters disponibles
+    - master université
 

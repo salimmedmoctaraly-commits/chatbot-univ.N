@@ -41,69 +41,6 @@ stories:
     - action: utter_demander_doctorat_fr
 
 # ══════════════════════════════════════════
-# Masters disponibles MA
-# ══════════════════════════════════════════
-
-- story: masters_disponibles_MA_ar
-  steps:
-    - intent: masters_disponibles_MA_ar
-    - action: utter_masters_disponibles_MA_ar
-
-- story: masters_disponibles_MA_fr
-  steps:
-    - intent: masters_disponibles_MA_fr
-    - action: utter_masters_disponibles_MA_fr
-
-- story: masters_ar_puis_MA
-  steps:
-    - intent: demander_masters_ar
-    - action: utter_demander_masters_ar
-    - intent: masters_disponibles_MA_ar
-    - action: utter_masters_disponibles_MA_ar
-
-- story: masters_fr_puis_MA
-  steps:
-    - intent: demander_masters_fr
-    - action: utter_demander_masters_fr
-    - intent: masters_disponibles_MA_fr
-    - action: utter_masters_disponibles_MA_fr
-
-# ══════════════════════════════════════════
-# Masters disponibles MI
-# ══════════════════════════════════════════
-
-- story: masters_disponibles_MI_ar
-  steps:
-    - intent: masters_disponibles_MI_ar
-    - action: utter_masters_disponibles_MI_ar
-
-- story: masters_disponibles_MI_fr
-  steps:
-    - intent: masters_disponibles_MI_fr
-    - action: utter_masters_disponibles_MI_fr
-
-- story: masters_ar_puis_MI
-  steps:
-    - intent: demander_masters_ar
-    - action: utter_demander_masters_ar
-    - intent: masters_disponibles_MI_ar
-    - action: utter_masters_disponibles_MI_ar
-
-- story: masters_fr_puis_MI
-  steps:
-    - intent: demander_masters_fr
-    - action: utter_demander_masters_fr
-    - intent: masters_disponibles_MI_fr
-    - action: utter_masters_disponibles_MI_fr
-
-- story: MA_puis_MI_ar
-  steps:
-    - intent: masters_disponibles_MA_ar
-    - action: utter_masters_disponibles_MA_ar
-    - intent: masters_disponibles_MI_ar
-    - action: utter_masters_disponibles_MI_ar
-
-# ══════════════════════════════════════════
 # Vue générale Master/Doctorat
 # ══════════════════════════════════════════
 
@@ -282,3 +219,7 @@ stories:
     - action: utter_M2_NS_fr
     - intent: M2_TASSMQ_fr
     - action: utter_M2_TASSMQ_fr
+- story: Demander matières PIA
+  steps:
+  - intent: demander_matieres_PIA
+  - action: utter_M1_PIA_fr

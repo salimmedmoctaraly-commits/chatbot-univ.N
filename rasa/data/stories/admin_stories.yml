@@ -174,6 +174,10 @@ stories:
     - action: utter_demander_regles_exclusion_LMD_ar
     - intent: demander_evaluation_LMD_ar
     - action: utter_demander_evaluation_LMD_ar
+    - intent: compensation_licence_ar
+    - action: utter_compensation_licence_ar
+    - intent: conditions_acces_licence_ar
+    - action: utter_conditions_acces_licence_ar
 
 - story: LMD_fr
   steps:
@@ -187,6 +191,10 @@ stories:
     - action: utter_demander_regles_exclusion_LMD_fr
     - intent: demander_evaluation_LMD_fr
     - action: utter_demander_evaluation_LMD_fr
+    - intent: compensation_licence_fr
+    - action: utter_compensation_licence_fr
+    - intent: conditions_acces_fr
+    - action: utter_conditions_acces_fr
 
 - story: systeme_LMD_ar
   steps:
@@ -218,6 +226,159 @@ stories:
     - intent: demander_progression_master_fr
     - action: utter_demander_progression_master_fr
 
+- story: conditions_acces_licence_ar
+  steps:
+    - intent: conditions_acces_licence_ar
+    - action: utter_conditions_acces_licence_ar
+
+- story: conditions_acces_master_ar
+  steps:
+    - intent: conditions_acces_master_ar
+    - action: utter_conditions_acces_master_ar
+
+- story: conditions_acces_fr
+  steps:
+    - intent: conditions_acces_fr
+    - action: utter_conditions_acces_fr
+
+- story: compensation_licence_ar
+  steps:
+    - intent: compensation_licence_ar
+    - action: utter_compensation_licence_ar
+
+- story: compensation_licence_fr
+  steps:
+    - intent: compensation_licence_fr
+    - action: utter_compensation_licence_fr
+
+- story: compensation_master_ar
+  steps:
+    - intent: compensation_master_ar
+    - action: utter_compensation_master_ar
+
+- story: compensation_master_fr
+  steps:
+    - intent: compensation_master_fr
+    - action: utter_compensation_master_fr
+
+- story: LMD_master_ar
+  steps:
+    - intent: demander_progression_master_ar
+    - action: utter_demander_progression_master_ar
+    - intent: compensation_master_ar
+    - action: utter_compensation_master_ar
+    - intent: conditions_acces_master_ar
+    - action: utter_conditions_acces_master_ar
+
+- story: LMD_master_fr
+  steps:
+    - intent: demander_progression_master_fr
+    - action: utter_demander_progression_master_fr
+    - intent: compensation_master_fr
+    - action: utter_compensation_master_fr
+    - intent: conditions_acces_fr
+    - action: utter_conditions_acces_fr
+
+# ══════════════════════════════════════════
+# Types de diplômes (Licence / Master)
+# ══════════════════════════════════════════
+
+- story: licence_fondamentale_ar
+  steps:
+    - intent: licence_fondamentale_ar
+    - action: utter_licence_fondamentale_ar
+
+- story: licence_professionnelle_ar
+  steps:
+    - intent: licence_professionnelle_ar
+    - action: utter_licence_professionnelle_ar
+
+- story: master_recherche_ar
+  steps:
+    - intent: master_recherche_ar
+    - action: utter_master_recherche_ar
+
+- story: master_professionnel_ar
+  steps:
+    - intent: master_professionnel_ar
+    - action: utter_master_professionnel_ar
+
+- story: licence_fondamentale_fr
+  steps:
+    - intent: licence_fondamentale_fr
+    - action: utter_licence_fondamentale_fr
+
+- story: licence_professionnelle_fr
+  steps:
+    - intent: licence_professionnelle_fr
+    - action: utter_licence_professionnelle_fr
+
+- story: master_recherche_fr
+  steps:
+    - intent: master_recherche_fr
+    - action: utter_master_recherche_fr
+
+- story: master_professionnel_fr
+  steps:
+    - intent: master_professionnel_fr
+    - action: utter_master_professionnel_fr
+
+- story: comparaison_recherche_professionnel_ar
+  steps:
+    - intent: comparaison_recherche_professionnel_ar
+    - action: utter_comparaison_recherche_professionnel_ar
+
+- story: comparaison_recherche_professionnel_fr
+  steps:
+    - intent: comparaison_recherche_professionnel_fr
+    - action: utter_comparaison_recherche_professionnel_fr
+
+- story: comparaison_licence_ar
+  steps:
+    - intent: comparaison_licence_ar
+    - action: utter_comparaison_licence_ar
+
+- story: comparaison_licence_fr
+  steps:
+    - intent: comparaison_licence_fr
+    - action: utter_comparaison_licence_fr
+
+- story: types_master_ar
+  steps:
+    - intent: master_recherche_ar
+    - action: utter_master_recherche_ar
+    - intent: master_professionnel_ar
+    - action: utter_master_professionnel_ar
+    - intent: comparaison_recherche_professionnel_ar
+    - action: utter_comparaison_recherche_professionnel_ar
+
+- story: types_master_fr
+  steps:
+    - intent: master_recherche_fr
+    - action: utter_master_recherche_fr
+    - intent: master_professionnel_fr
+    - action: utter_master_professionnel_fr
+    - intent: comparaison_recherche_professionnel_fr
+    - action: utter_comparaison_recherche_professionnel_fr
+
+- story: types_licence_ar
+  steps:
+    - intent: licence_fondamentale_ar
+    - action: utter_licence_fondamentale_ar
+    - intent: licence_professionnelle_ar
+    - action: utter_licence_professionnelle_ar
+    - intent: comparaison_licence_ar
+    - action: utter_comparaison_licence_ar
+
+- story: types_licence_fr
+  steps:
+    - intent: licence_fondamentale_fr
+    - action: utter_licence_fondamentale_fr
+    - intent: licence_professionnelle_fr
+    - action: utter_licence_professionnelle_fr
+    - intent: comparaison_licence_fr
+    - action: utter_comparaison_licence_fr
+
 # ══════════════════════════════════════════
 # Rachat
 # ══════════════════════════════════════════
@@ -236,3 +397,73 @@ stories:
     - intent: demander_rachat_diplome_fr
     - action: utter_demander_rachat_diplome_fr
 
+
+- story: identité simple
+  steps:
+    - intent: ask_identity
+    - action: utter_ask_identity
+
+- story: développeur simple
+  steps:
+    - intent: ask_developer
+    - action: utter_ask_developer
+
+- story: salutation puis identité
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_identity
+    - action: utter_ask_identity
+
+- story: salutation puis développeur
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_developer
+    - action: utter_ask_developer
+
+- story: identité puis développeur
+  steps:
+    - intent: ask_identity
+    - action: utter_ask_identity
+    - intent: ask_developer
+    - action: utter_ask_developer
+
+- story: développeur puis identité
+  steps:
+    - intent: ask_developer
+    - action: utter_ask_developer
+    - intent: ask_identity
+    - action: utter_ask_identity
+
+- story: identité puis question inscription
+  steps:
+    - intent: ask_identity
+    - action: utter_ask_identity
+    - intent: ask_inscription
+    - action: utter_ask_inscription
+
+- story: identité puis tخصصات
+  steps:
+    - intent: ask_identity
+    - action: utter_ask_identity
+    - intent: ask_fst
+    - action: utter_ask_fst
+
+- story: développeur puis question master
+  steps:
+    - intent: ask_developer
+    - action: utter_ask_developer
+    - intent: ask_master_programs
+    - action: utter_ask_master_programs
+
+- story: salutation identité développeur
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_identity
+    - action: utter_ask_identity
+    - intent: ask_developer
+    - action: utter_ask_developer
+    - intent: goodbye
+    - action: utter_goodbye

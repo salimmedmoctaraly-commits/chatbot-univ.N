@@ -107,3 +107,273 @@ rules:
   steps:
     - intent: demander_matieres_ABC
     - action: utter_demander_matieres_ABC
+
+- rule: Description MA ar
+  steps:
+  - intent: description_MA_ar
+  - action: utter_description_MA_ar
+
+- rule: Description MA fr
+  steps:
+  - intent: description_MA_fr
+  - action: utter_description_MA_fr
+
+- rule: Description MI ar
+  steps:
+  - intent: description_MI_ar
+  - action: utter_description_MI_ar
+
+- rule: Description MI fr
+  steps:
+  - intent: description_MI_fr
+  - action: utter_description_MI_fr
+
+- rule: Description MIAGE ar
+  steps:
+  - intent: description_MIAGE_ar
+  - action: utter_description_MIAGE_ar
+
+- rule: Description MIAGE fr
+  steps:
+  - intent: description_MIAGE_fr
+  - action: utter_description_MIAGE_fr
+
+- rule: Description DA2I ar
+  steps:
+  - intent: description_DA2I_ar
+  - action: utter_description_DA2I_ar
+
+- rule: Description DA2I fr
+  steps:
+  - intent: description_DA2I_fr
+  - action: utter_description_DA2I_fr
+
+- rule: Description PF ar
+  steps:
+  - intent: description_PF_ar
+  - action: utter_description_PF_ar
+
+- rule: Description PF fr
+  steps:
+  - intent: description_PF_fr
+  - action: utter_description_PF_fr
+
+- rule: Description SP ar
+  steps:
+  - intent: description_SP_ar
+  - action: utter_description_SP_ar
+
+- rule: Description SP fr
+  steps:
+  - intent: description_SP_fr
+  - action: utter_description_SP_fr
+
+- rule: Description TSER ar
+  steps:
+  - intent: description_TSER_ar
+  - action: utter_description_TSER_ar
+
+- rule: Description TSER fr
+  steps:
+  - intent: description_TSER_fr
+  - action: utter_description_TSER_fr
+
+- rule: Description EEA ar
+  steps:
+  - intent: description_EEA_ar
+  - action: utter_description_EEA_ar
+
+- rule: Description EEA fr
+  steps:
+  - intent: description_EEA_fr
+  - action: utter_description_EEA_fr
+
+- rule: Description CHIMIE ar
+  steps:
+  - intent: description_CHIMIE_ar
+  - action: utter_description_CHIMIE_ar
+
+- rule: Description CHIMIE fr
+  steps:
+  - intent: description_CHIMIE_fr
+  - action: utter_description_CHIMIE_fr
+
+- rule: Description BMP ar
+  steps:
+  - intent: description_BMP_ar
+  - action: utter_description_BMP_ar
+
+- rule: Description BMP fr
+  steps:
+  - intent: description_BMP_fr
+  - action: utter_description_BMP_fr
+
+- rule: Description BOE ar
+  steps:
+  - intent: description_BOE_ar
+  - action: utter_description_BOE_ar
+
+- rule: Description BOE fr
+  steps:
+  - intent: description_BOE_fr
+  - action: utter_description_BOE_fr
+
+- rule: Description NS ar
+  steps:
+  - intent: description_NS_ar
+  - action: utter_description_NS_ar
+
+- rule: Description NS fr
+  steps:
+  - intent: description_NS_fr
+  - action: utter_description_NS_fr
+
+- rule: Description TASSMQ ar
+  steps:
+  - intent: description_TASSMQ_ar
+  - action: utter_description_TASSMQ_ar
+
+- rule: Description TASSMQ fr
+  steps:
+  - intent: description_TASSMQ_fr
+  - action: utter_description_TASSMQ_fr
+
+- rule: Description IPG ar
+  steps:
+  - intent: description_IPG_ar
+  - action: utter_description_IPG_ar
+
+- rule: Description IPG fr
+  steps:
+  - intent: description_IPG_fr
+  - action: utter_description_IPG_fr
+
+- rule: Description GEOSS ar
+  steps:
+  - intent: description_GEOSS_ar
+  - action: utter_description_GEOSS_ar
+
+- rule: Description GEOSS fr
+  steps:
+  - intent: description_GEOSS_fr
+  - action: utter_description_GEOSS_fr
+
+- rule: Description GEOMIN ar
+  steps:
+  - intent: description_GEOMIN_ar
+  - action: utter_description_GEOMIN_ar
+
+- rule: Description GEOMIN fr
+  steps:
+  - intent: description_GEOMIN_fr
+  - action: utter_description_GEOMIN_fr
+
+- rule: Description PEPE ar
+  steps:
+  - intent: description_PEPE_ar
+  - action: utter_description_PEPE_ar
+
+- rule: Description PEPE fr
+  steps:
+  - intent: description_PEPE_fr
+  - action: utter_description_PEPE_fr
+
+- rule: Description ABC ar
+  steps:
+  - intent: description_ABC_ar
+  - action: utter_description_ABC_ar
+
+- rule: Description ABC fr
+  steps:
+  - intent: description_ABC_fr
+  - action: utter_description_ABC_fr
+- rule: Masters disponibles BMP
+  steps:
+  - intent: masters_disponibles_BMP
+  - action: utter_masters_disponibles_BMP
+
+- rule: Masters disponibles IPG
+  steps:
+  - intent: masters_disponibles_IPG
+  - action: utter_masters_disponibles_IPG
+
+- rule: Masters disponibles ABC
+  steps:
+  - intent: masters_disponibles_ABC
+  - action: utter_masters_disponibles_ABC
+
+- rule: Masters disponibles BOE
+  steps:
+  - intent: masters_disponibles_BOE
+  - action: utter_masters_disponibles_BOE
+
+- rule: Masters disponibles PF
+  steps:
+  - intent: masters_disponibles_PF
+  - action: utter_masters_disponibles_PF
+
+- rule: Masters disponibles CHIMIE
+  steps:
+  - intent: masters_disponibles_CHIMIE
+  - action: utter_masters_disponibles_CHIMIE
+
+- rule: Masters disponibles EEA
+  steps:
+  - intent: masters_disponibles_EEA
+  - action: utter_masters_disponibles_EEA
+
+- rule: Masters disponibles MIAGE
+  steps:
+  - intent: masters_disponibles_MIAGE
+  - action: utter_masters_disponibles_MIAGE
+
+- rule: Masters disponibles TSER
+  steps:
+  - intent: masters_disponibles_TSER
+  - action: utter_masters_disponibles_TSER
+
+- rule: Masters disponibles PEPE
+  steps:
+  - intent: masters_disponibles_PEPE
+  - action: utter_masters_disponibles_PEPE
+
+- rule: Masters disponibles DA2I
+  steps:
+  - intent: masters_disponibles_DA2I
+  - action: utter_masters_disponibles_DA2I
+
+- rule: Masters disponibles GEOMIN
+  steps:
+  - intent: masters_disponibles_GEOMIN
+  - action: utter_masters_disponibles_GEOMIN
+
+- rule: Masters disponibles GEOSS
+  steps:
+  - intent: masters_disponibles_GEOSS
+  - action: utter_masters_disponibles_GEOSS
+
+- rule: Masters disponibles NS
+  steps:
+  - intent: masters_disponibles_NS
+  - action: utter_masters_disponibles_NS
+
+- rule: Masters disponibles SP
+  steps:
+  - intent: masters_disponibles_SP
+  - action: utter_masters_disponibles_SP
+
+- rule: Masters disponibles TASSMQ
+  steps:
+  - intent: masters_disponibles_TASSMQ
+  - action: utter_masters_disponibles_TASSMQ
+
+- rule: Masters disponibles MA
+  steps:
+  - intent: masters_disponibles_MA_fr
+  - action: utter_masters_disponibles_MA_fr
+
+- rule: Masters disponibles MI
+  steps:
+  - intent: masters_disponibles_MI_fr
+  - action: utter_masters_disponibles_MI_fr
+    

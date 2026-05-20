@@ -15,7 +15,6 @@ nlu:
     - شعبة MPI ما تدرس فيها؟
     - ما البرنامج الدراسي لـ MPI؟
     - ما التخصصات بعد MPI؟
-    - برنامج MPI
     - MPI مسارها
     - MPI وBG ما الفرق؟
     - ما هي شعبة الرياضيات والفيزياء والمعلوماتية؟
@@ -23,7 +22,8 @@ nlu:
     - MPI
     - شعبة MPI كيف تكون؟
     - ما الذي يدرسه طلاب MPI؟
-
+    - تخصص MPI
+    - MPI صصخت 
 - intent: demander_info_MPI_fr
   examples: |
     - C'est quoi la filière MPI ?
@@ -43,6 +43,9 @@ nlu:
     - La filière MPI
     - Débouchés MPI FST
     - MPI filière description
+    - filière MPI
+    - Que peut-on faire avec MPI ?
+
 
 - intent: demander_matieres_MPI_S1
   examples: |
@@ -63,6 +66,38 @@ nlu:
     - programme MPI S1
     - MPI الفصل الأول مواد
     - cours MPI semestre 1
+    - مواد MPI 
+    - برنامج MPI 
+    - MPI الفصل الأول مواد
+    - cours MPI semestre 1
+    - MPI مواد
+    -  MPI programme
+    - Quelles sont les matières en MPI ?
+    - Que contient le programme MPI ?
+    - Cours MPI semestre 1
+    - Matières MPI S1
+    - modules MPI S1
+    - MPI premier semestre matières
+    - Que peut-on apprendre en MPI S1 ?
+    - Qu'enseigne-t-on en MPI S1 ?
+    - programme MPI 
+    - cours du premier semestre MPI
+    - MPI S1 programme
+    - liste matières MPI S1
+    - matières MPI S1
+    - MPI S1
+    - MPI semestre 1 matières 
+    - Quelles sont les matières en MPI S1 ?
+    - Que peut-on apprendre en MPI S1 ?
+    - Qu'enseigne-t-on en MPI S1 ?
+    - s1 MPI matières
+    - s1 MPI cours
+    - s1 MPI programme
+    - s1 MPI matières liste
+    - s1 MPI matières
+    - s1 MPI programme
+    - s1 MPI semestre 1 matières  
+
 
 - intent: demander_matieres_MPI_S2
   examples: |
