@@ -149,6 +149,13 @@ function App() {
 
   const resetConversation = () => { setMessages([]); setRatings({}); };
 
+  // ── اتجاه حقل الإدخال بحسب اللغة المكتوبة ──
+  const inputDir  = input.trim() ? (detectLang(input) === "ar" ? "rtl" : "ltr") : "rtl";
+  const inputAlign = inputDir === "rtl" ? "right" : "left";
+  const inputPlaceholder = inputDir === "ltr"
+    ? "Écrivez votre question..."
+    : "اكتب سؤالك هنا...";
+
   const C = {
     bg:       dark ? "#0f172a" : "#f0f4f0",
     card:     dark ? "#1e293b" : "#ffffff",
@@ -335,7 +342,9 @@ function App() {
                 )}
                 <div style={{ maxWidth:"76%", display:"flex", flexDirection:"column",
                   alignItems: isUser?"flex-end":"flex-start" }}>
-                  <div style={{
+                  <div
+                    className={isRTL ? "bubble bubble-ar" : "bubble bubble-fr"}
+                    style={{
                     background: isUser?C.userBg:C.botBg,
                     color: isUser?"white":C.text,
                     padding:"9px 13px",
@@ -445,12 +454,14 @@ function App() {
         }}>
           <input type="text" value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="اكتب سؤالك هنا... / Écrivez votre question..."
+            placeholder={inputPlaceholder}
             style={{ flex:1, padding:"11px 15px",
               border:`1.5px solid ${C.inputBdr}`, borderRadius:24,
               background:C.inputBg, color:C.text, fontSize:14,
               fontFamily:"'Tajawal',sans-serif", outline:"none",
-              direction:"rtl", textAlign:"right", transition:"border-color .2s",
+              direction: inputDir,
+              textAlign: inputAlign,
+              transition:"border-color .2s",
               WebkitTextSizeAdjust:"100%",
             }}
             onFocus={e => e.target.style.borderColor="#1a5c35"}

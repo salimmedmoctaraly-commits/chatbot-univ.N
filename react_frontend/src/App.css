@@ -1,379 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
 
-* {
+/* ── Reset ── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Tajawal', sans-serif;
-  direction: rtl;
-  background: linear-gradient(135deg, #1a3a2a 0%, #0d1f16 100%);
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
-.App {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.chat-container {
-  width: 100%;
-  max-width: 560px;
-  height: 90vh;
-  height: 90dvh;
-  background: #f5f0e8;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+html, body {
+  height: 100%;
+  /* لا نفرض اتجاهاً عاماً — كل عنصر يتحكم في اتجاهه */
+  direction: ltr;
+  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+  background: #f0f4f0;
   overflow: hidden;
-  border: 2px solid #c9a84c;
 }
 
-/* ── HEADER ── */
-.chat-header {
-  background: linear-gradient(135deg, #1a4a2e 0%, #2d6e45 100%);
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #c9a84c;
-  direction: rtl;
-  flex-shrink: 0;
-}
+/* ══════════════════════════════════════════════
+   فقاعات الرسائل — BUBBLES (Arabic / French)
+══════════════════════════════════════════════ */
 
-.university-logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 2px solid #c9a84c;
-  object-fit: cover;
-  background: white;
-  flex-shrink: 0;
-}
-
-.header-text {
-  flex: 1;
-  text-align: center;
-  padding: 0 8px;
-}
-
-.header-text h2 {
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 2px;
-  line-height: 1.2;
-}
-
-.header-text p {
-  color: #c9a84c;
-  font-size: 12px;
-  font-style: italic;
-}
-
-/* ── UTILISATEURS ACTIFS ── */
-.active-users {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 4px;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  border-radius: 50px;
-  padding: 2px 8px;
-  font-size: 11px;
-  color: #4ade80;
-  font-style: normal;
-}
-
-.active-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 5px #10b981;
-  animation: activePulse 2s infinite;
-  flex-shrink: 0;
-}
-
-@keyframes activePulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
-}
-
-/* ── MESSAGES ── */
-.messages-window {
-  flex: 1;
-  padding: 12px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #f5f0e8;
-  -webkit-overflow-scrolling: touch;
-}
-
-.welcome-message {
-  text-align: center;
-  color: #666;
-  margin: auto;
-  padding: 20px 10px;
-}
-
-.welcome-message span {
-  font-size: 40px;
-}
-
-.welcome-message p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #1a4a2e;
-}
-
-.message-wrapper {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-}
-
-.user-wrapper {
-  flex-direction: row;
-}
-
-.bot-wrapper {
-  flex-direction: row-reverse;
-}
-
-.bot-avatar {
-  font-size: 26px;
-  min-width: 32px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.message {
-  padding: 10px 14px;
-  border-radius: 18px;
-  max-width: 78%;
-  word-wrap: break-word;
+/* المشتركة */
+.bubble {
+  unicode-bidi: embed;
+  overflow-wrap: break-word;
   word-break: break-word;
-  font-size: 14px;
-  line-height: 1.6;
 }
 
-.user-message {
-  background: linear-gradient(135deg, #1a4a2e, #2d6e45);
-  color: white;
-  border-bottom-left-radius: 4px;
-  border: 1px solid #c9a84c;
+/* عربي → يمين */
+.bubble-ar {
   direction: rtl;
   text-align: right;
 }
 
-.bot-message {
-  background: white;
-  color: #333;
-  border-bottom-right-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border: 1px solid #e0d5c0;
-  white-space: pre-wrap;
-  direction: auto;
-  text-align: start;
-  unicode-bidi: plaintext;
-}
-
-/* ── INPUT ── */
-.input-area {
-  padding: 10px 12px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  border-top: 2px solid #c9a84c;
-  background: white;
+/* فرنسي/إنجليزي → يسار */
+.bubble-fr {
   direction: ltr;
-  flex-shrink: 0;
+  text-align: left;
 }
 
-.input-area input {
-  flex: 1;
-  padding: 11px 16px;
-  border: 2px solid #c9a84c;
-  border-radius: 25px;
-  font-family: 'Tajawal', sans-serif;
-  font-size: 14px;
-  outline: none;
-  direction: rtl;
-  background: #faf8f3;
-  color: #333;
-  min-width: 0;
-}
-
-.input-area input:focus {
-  border-color: #1a4a2e;
-  box-shadow: 0 0 0 3px rgba(26,74,46,0.08);
-}
-
-.input-area input::placeholder {
-  color: #aaa;
-  font-size: 13px;
-}
-
-.send-btn {
-  background: linear-gradient(135deg, #1a4a2e, #2d6e45);
-  color: white;
-  border: none;
-  padding: 11px 16px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-family: 'Tajawal', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  border: 1px solid #c9a84c;
-  transition: transform 0.2s, box-shadow 0.2s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.send-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 14px rgba(26,74,46,0.35);
-}
-
-.send-btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* ── SCROLLBAR ── */
-.messages-window::-webkit-scrollbar       { width: 4px; }
-.messages-window::-webkit-scrollbar-track { background: transparent; }
-.messages-window::-webkit-scrollbar-thumb {
-  background: #c9a84c;
-  border-radius: 10px;
-}
-
-/* ── TYPING ── */
-.typing-indicator {
-  display: flex;
-  gap: 5px;
-  padding: 12px 16px !important;
-  align-items: center;
-}
-
-.typing-indicator span {
-  width: 8px;
-  height: 8px;
-  background: #c9a84c;
+/* ══════════════════════════════════════════════
+   مؤشر النقاط (كتابة...)
+══════════════════════════════════════════════ */
+.dot1 {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  animation: bounce 1.2s infinite;
+  background: #1a5c35;
+  margin: 0 2px;
+  animation: blink 1.2s infinite;
+}
+.dot2 { animation-delay: .2s !important; }
+.dot3 { animation-delay: .4s !important; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .3; }
 }
 
-.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes bounce {
-  0%, 60%, 100% { transform: translateY(0); }
-  30%           { transform: translateY(-8px); }
+/* ══════════════════════════════════════════════
+   أزرار التفاعل
+══════════════════════════════════════════════ */
+.quick-btn {
+  transition: all .2s;
+  font-family: 'Tajawal', sans-serif;
+}
+.quick-btn:hover {
+  background: #1a5c35 !important;
+  color: white !important;
+  transform: translateY(-2px);
 }
 
-/* ══════════════════════════════════════
-   RESPONSIVE — MOBILE
-══════════════════════════════════════ */
-@media (max-width: 600px) {
-  .App {
-    padding: 0;
-    align-items: stretch;
-  }
+.send-btn-main {
+  transition: all .2s;
+  font-family: 'Tajawal', sans-serif;
+}
+.send-btn-main:hover:not(:disabled) {
+  background: #14532d !important;
+}
+.send-btn-main:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
 
-  .chat-container {
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    border-radius: 0;
-    border: none;
-    border-top: 2px solid #c9a84c;
-  }
+.icon-btn {
+  transition: all .2s;
+}
+.icon-btn:hover {
+  opacity: .75;
+  transform: scale(1.1);
+}
 
-  .chat-header {
-    padding: 10px 12px;
-  }
+.rating-btn {
+  transition: transform .15s;
+}
+.rating-btn:hover {
+  transform: scale(1.25);
+}
 
-  .university-logo {
-    width: 45px;
-    height: 45px;
-  }
+/* ══════════════════════════════════════════════
+   البطاقة الرئيسية — chat-card
+══════════════════════════════════════════════ */
+.chat-card {
+  /* الهاتف: ملء الشاشة */
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  border-radius: 0;
+}
 
-  .header-text h2 {
-    font-size: 15px;
-  }
-
-  .header-text p {
-    font-size: 11px;
-  }
-
-  .messages-window {
-    padding: 10px 8px;
-    gap: 8px;
-  }
-
-  .message {
-    font-size: 13.5px;
-    padding: 9px 13px;
-    max-width: 85%;
-  }
-
-  .bot-avatar {
-    font-size: 22px;
-    min-width: 28px;
-  }
-
-  .input-area {
-    padding: 8px 10px;
-    gap: 6px;
-  }
-
-  .input-area input {
-    padding: 10px 14px;
-    font-size: 14px;
-  }
-
-  .send-btn {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-
-  .welcome-message span {
-    font-size: 36px;
-  }
-
-  .welcome-message p {
-    font-size: 13px;
+/* تابلت */
+@media (min-width: 600px) {
+  .chat-card {
+    width: 90%;
+    max-width: 620px;
+    height: 88vh;
+    max-height: 820px;
+    border-radius: 20px;
   }
 }
 
-@media (max-width: 380px) {
-  .header-text h2 {
-    font-size: 13px;
+/* ديسكتوب */
+@media (min-width: 1024px) {
+  .chat-card {
+    width: 540px;
+    height: 88vh;
+    max-height: 760px;
+    border-radius: 20px;
   }
+}
 
-  .university-logo {
-    width: 40px;
-    height: 40px;
+/* ══════════════════════════════════════════════
+   نافذة الرسائل
+══════════════════════════════════════════════ */
+.messages-win {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.input-area {
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+}
+
+/* ══════════════════════════════════════════════
+   Scrollbar
+══════════════════════════════════════════════ */
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-thumb { background: #1a5c35; border-radius: 4px; }
+
+/* ══════════════════════════════════════════════
+   Keyframes
+══════════════════════════════════════════════ */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-28px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.msg-row { animation: fadeUp .3s ease both; }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE — Mobile small
+══════════════════════════════════════════════ */
+@media (max-width: 599px) {
+  .send-btn-main {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
   }
-
-  .send-btn {
-    padding: 10px 10px;
-    font-size: 12px;
+  .quick-btn {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
   }
 }
