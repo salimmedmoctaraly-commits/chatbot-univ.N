@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import {
-  Home, Users, BarChart2, FileText, Calendar, Settings,
+  Home, Users, BarChart2, FileText, Settings,
   HelpCircle, CheckCircle2, Search, Menu, Sun, Moon,
   Bell, RefreshCw, AlertTriangle, Trash2, CornerDownLeft,
   Lock, Key, Download, MessageSquare, TrendingUp, Globe,
@@ -18,7 +18,6 @@ const TRANSLATIONS = {
     navUsers: "المستخدمون",
     navStats: "الإحصائيات",
     navReports: "التقارير",
-    navCalendar: "الجدول الزمني",
     navSettings: "الإعدادات",
     adminTitle: "AdminDashboard",
     adminSub: "UNA — Accès administrateur",
@@ -90,7 +89,6 @@ const TRANSLATIONS = {
     lastQuestions: "آخر الأسئلة مع الردود",
     notReplied: "لم يتم الرد بعد",
     noRecorded: "لا توجد أسئلة مسجلة",
-    calendarTitle: "الجدول الزمني الجامعي 2025-2026",
     settingsAppearance: "المظهر",
     darkMode: "الوضع الليلي",
     darkOn: "مفعّل — النمط الداكن",
@@ -126,7 +124,6 @@ const TRANSLATIONS = {
     navUsers: "Utilisateurs",
     navStats: "Statistiques",
     navReports: "Rapports",
-    navCalendar: "Calendrier",
     navSettings: "Paramètres",
     adminTitle: "AdminDashboard",
     adminSub: "UNA — Accès administrateur",
@@ -198,7 +195,6 @@ const TRANSLATIONS = {
     lastQuestions: "Dernières questions avec réponses",
     notReplied: "Pas encore répondu",
     noRecorded: "Aucune question enregistrée",
-    calendarTitle: "Calendrier universitaire 2025-2026",
     settingsAppearance: "Apparence",
     darkMode: "Mode sombre",
     darkOn: "Activé — Thème sombre",
@@ -335,41 +331,6 @@ function AnimBar({ pct, color, delay, active }) {
   );
 }
 
-function LineChart({ data, color, active, dark }) {
-  const W = 200, H = 60;
-  const [prog, setProg] = useState(0);
-  useEffect(() => {
-    if (!active) return;
-    let s = null;
-    const step = ts => {
-      if (!s) s = ts;
-      const p = Math.min((ts-s)/1800, 1);
-      setProg(p);
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [active]);
-  const max = Math.max(...data, 1);
-  const pts = data.map((v,i)=>[(i/(data.length-1))*W, H-(v/max)*H]);
-  const vis = pts.slice(0, Math.max(2, Math.round(prog*pts.length)));
-  const poly = vis.map(p=>p.join(",")).join(" ");
-  const area = `0,${H} ${poly} ${vis[vis.length-1][0]},${H}`;
-  const gridColor = dark ? "rgba(255,255,255,.06)" : "rgba(0,0,0,.06)";
-  return (
-    <svg width="100%" height={H} viewBox={`0 0 ${W} ${H}`} style={{overflow:"visible"}}>
-      {[0,25,50,75].map(v=>(
-        <line key={v} x1="0" y1={H-(v/100)*H} x2={W} y2={H-(v/100)*H}
-          stroke={gridColor} strokeWidth="1"/>
-      ))}
-      <polygon points={area} fill={color} opacity="0.15"/>
-      <polyline points={poly} fill="none" stroke={color} strokeWidth="2"
-        strokeLinejoin="round" strokeLinecap="round"/>
-      {vis.map((p,i)=>(
-        <circle key={i} cx={p[0]} cy={p[1]} r="3" fill={color}/>
-      ))}
-    </svg>
-  );
-}
 
 function getCSS(dark) {
   return {
@@ -414,6 +375,7 @@ export default function UnknownQuestions({ onBack }) {
   const [chatbotUsers, setChatbotUsers] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile]   = useState(() => window.innerWidth < 768);
+  const [stats, setStats]         = useState(null);
 
   const T = TRANSLATIONS[lang];
   const C = getCSS(dark);
@@ -429,14 +391,23 @@ export default function UnknownQuestions({ onBack }) {
   useEffect(() => {
     if (!auth) return;
     load();
+    loadStats();
     checkServer();
     fetchChatbotUsers();
     setTimeout(() => setAnimated(true), 300);
     const srvInterval  = setInterval(checkServer, 30000);
     const chatInterval = setInterval(fetchChatbotUsers, 15000);
-    return () => { clearInterval(srvInterval); clearInterval(chatInterval); };
+    const statsInterval = setInterval(loadStats, 60000);
+    return () => { clearInterval(srvInterval); clearInterval(chatInterval); clearInterval(statsInterval); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auth]);
+
+  const loadStats = useCallback(async () => {
+    try {
+      const r = await fetch(`${API_URL}/unknown-questions/stats`);
+      if (r.ok) { const d = await r.json(); setStats(d); }
+    } catch {}
+  }, []);
 
   const fetchChatbotUsers = async () => {
     try {
@@ -573,6 +544,8 @@ export default function UnknownQuestions({ onBack }) {
   const arPct         = questions.length ? Math.round((arCount/questions.length)*100) : 0;
   const frPct         = 100 - arPct;
   const repliedCount  = Object.keys(replies).length;
+  const unansweredCount = questions.length - repliedCount;
+  const replyRatePct = questions.length ? Math.round((repliedCount / questions.length) * 100) : 0;
   const facData = [
     {name:"FST",  v:230, color:"#3b82f6"},
     {name:"FLSH", v:185, color:"#10b981"},
@@ -580,13 +553,12 @@ export default function UnknownQuestions({ onBack }) {
     {name:"FSJP", v:105, color:"#8b5cf6"},
     {name:"FEG",  v:70,  color:"#eab308"},
   ];
-  const lineData = [82,78,85,80,88,82,85,80,83,85];
-
-  const cQ  = useCountUp(questions.length, animated);
-  const cAr = useCountUp(arCount, animated);
-  const cFr = useCountUp(frCount, animated);
-  const cRp = useCountUp(repliedCount, animated);
-  const cCU = useCountUp(chatbotUsers, animated);
+  const cQ         = useCountUp(questions.length, animated);
+  const cAr        = useCountUp(arCount, animated);
+  const cFr        = useCountUp(frCount, animated);
+  const cRp        = useCountUp(repliedCount, animated);
+  const cCU        = useCountUp(chatbotUsers, animated);
+  const cUnanswered = useCountUp(unansweredCount, animated);
 
   // ── Nav items ─────────────────────────────────────
   const NAV = [
@@ -594,7 +566,6 @@ export default function UnknownQuestions({ onBack }) {
     {id:"users",     label:T.navUsers,     icon:<Users    size={16}/>},
     {id:"stats",     label:T.navStats,     icon:<BarChart2 size={16}/>},
     {id:"reports",   label:T.navReports,   icon:<FileText  size={16}/>},
-    {id:"calendar",  label:T.navCalendar,  icon:<Calendar  size={16}/>},
     {id:"settings",  label:T.navSettings,  icon:<Settings  size={16}/>},
   ];
 
@@ -744,21 +715,38 @@ export default function UnknownQuestions({ onBack }) {
             gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(4,1fr)",
             gap:10, marginBottom:14}}>
             {[
-              {icon:<HelpCircle  size={20} color="#f97316"/>, bg:"#f97316", num:cQ,  lbl:T.statUnknown},
-              {icon:<CheckCircle2 size={20} color="#10b981"/>, bg:"#10b981", num:cRp, lbl:T.statReplied},
-              {icon:<Users       size={20} color="#8b5cf6"/>, bg:"#8b5cf6", num:cCU, lbl:T.statActive},
-              {icon:<Activity    size={20} color="#3b82f6"/>, bg:"#3b82f6", num:questions.length, lbl:T.statTotal},
+              {
+                icon:<HelpCircle size={20} color={unansweredCount>0?"#f43f5e":"#f97316"}/>,
+                bg: unansweredCount>0?"#f43f5e":"#f97316",
+                num: cUnanswered,
+                lbl: T.statUnknown,
+                badge: unansweredCount>0
+              },
+              {icon:<CheckCircle2 size={20} color="#10b981"/>, bg:"#10b981", num:cRp,            lbl:T.statReplied},
+              {icon:<Users        size={20} color="#8b5cf6"/>, bg:"#8b5cf6", num:cCU,            lbl:T.statActive},
+              {icon:<Activity     size={20} color="#3b82f6"/>, bg:"#3b82f6", num:cQ,             lbl:T.statTotal},
             ].map((s,i)=>(
-              <div key={i} style={{...cardStyle(), display:"flex", alignItems:"center", gap:12,
-                cursor:"default", transition:"all .25s", animation:`cardIn .5s ${i*0.07}s both`}}
+              <div key={i} style={{
+                ...cardStyle(),
+                display:"flex", alignItems:"center", gap:12,
+                cursor:"default", transition:"all .25s", animation:`cardIn .5s ${i*0.07}s both`,
+                ...(s.badge ? {border:`1px solid rgba(244,63,94,.35)`, boxShadow:`0 0 0 1px rgba(244,63,94,.15)`} : {})
+              }}
                 onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-3px)"; e.currentTarget.style.boxShadow="0 8px 24px rgba(0,0,0,.15)";}}
-                onMouseLeave={e=>{e.currentTarget.style.transform="none"; e.currentTarget.style.boxShadow="none";}}>
+                onMouseLeave={e=>{e.currentTarget.style.transform="none"; e.currentTarget.style.boxShadow=s.badge?"0 0 0 1px rgba(244,63,94,.15)":"none";}}>
                 <div style={{width:40, height:40, borderRadius:10, flexShrink:0,
-                  background:s.bg+"22", display:"flex", alignItems:"center", justifyContent:"center"}}>
+                  background:s.bg+"22", display:"flex", alignItems:"center", justifyContent:"center",
+                  position:"relative"}}>
                   {s.icon}
+                  {s.badge && (
+                    <div style={{position:"absolute", top:-4, right:-4, width:14, height:14,
+                      background:"#f43f5e", borderRadius:"50%",
+                      animation:"pulse 2s infinite", border:`2px solid ${C.card}`}}/>
+                  )}
                 </div>
                 <div>
-                  <div style={{fontSize:isMobile?22:26, fontWeight:800, color:C.text}}>{s.num}</div>
+                  <div style={{fontSize:isMobile?22:26, fontWeight:800,
+                    color: s.badge ? "#f43f5e" : C.text}}>{s.num}</div>
                   <div style={{fontSize:10, color:C.sub, marginTop:2}}>{s.lbl}</div>
                 </div>
               </div>
@@ -810,18 +798,57 @@ export default function UnknownQuestions({ onBack }) {
 
             {/* Response rate */}
             <div style={{...cardStyle(), animation:"cardIn .5s .44s both"}}>
-              <div style={{fontSize:12, fontWeight:700, color:C.text, marginBottom:12,
+              <div style={{fontSize:12, fontWeight:700, color:C.text, marginBottom:10,
                 display:"flex", alignItems:"center", gap:6}}>
                 <TrendingUp size={13} color={C.sub}/>{T.responseRate}
               </div>
-              <div style={{display:"flex", alignItems:"flex-end", gap:6}}>
-                <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", height:60, marginLeft:4, marginRight:4}}>
-                  {[100,75,50,0].map(v=>(<span key={v} style={{fontSize:9,color:C.sub}}>{v}</span>))}
+              <div style={{display:"flex", alignItems:"center", gap:14}}>
+                {/* Donut gauge */}
+                <div style={{position:"relative", width:70, height:70, flexShrink:0}}>
+                  <svg width="70" height="70" viewBox="0 0 70 70">
+                    <circle cx="35" cy="35" r="28" fill="none"
+                      stroke={dark?"#1e3a5f":"#e2e8f0"} strokeWidth="9"/>
+                    <circle cx="35" cy="35" r="28" fill="none"
+                      stroke={replyRatePct >= 70 ? "#10b981" : replyRatePct >= 40 ? "#f97316" : "#f43f5e"}
+                      strokeWidth="9"
+                      strokeLinecap="round"
+                      strokeDasharray={`${(replyRatePct / 100) * 175.9} 175.9`}
+                      transform="rotate(-90 35 35)"
+                      style={{transition:"stroke-dasharray 1.2s ease, stroke .4s"}}/>
+                  </svg>
+                  <div style={{position:"absolute", inset:0, display:"flex",
+                    alignItems:"center", justifyContent:"center",
+                    fontSize:14, fontWeight:800,
+                    color: replyRatePct >= 70 ? "#10b981" : replyRatePct >= 40 ? "#f97316" : "#f43f5e"}}>
+                    {replyRatePct}%
+                  </div>
                 </div>
-                <div style={{flex:1}}>
-                  <LineChart data={lineData} color="#10b981" active={animated} dark={dark}/>
-                  <div style={{display:"flex", justifyContent:"space-between", marginTop:4}}>
-                    {[1,3,5,7,9,10].map(v=>(<span key={v} style={{fontSize:9,color:C.sub}}>{v}</span>))}
+                {/* Stats */}
+                <div style={{flex:1, display:"flex", flexDirection:"column", gap:8}}>
+                  <div style={{display:"flex", gap:6}}>
+                    <div style={{flex:1, background:dark?"#0f172a":"#f0fdf4",
+                      borderRadius:8, padding:"6px 8px", textAlign:"center",
+                      border:"1px solid rgba(16,185,129,.2)"}}>
+                      <div style={{fontSize:16, fontWeight:800, color:"#10b981"}}>{stats?.today ?? 0}</div>
+                      <div style={{fontSize:9, color:C.sub}}>{lang==="ar"?"اليوم":"Aujourd'hui"}</div>
+                    </div>
+                    <div style={{flex:1, background:dark?"#0f172a":"#f0f4ff",
+                      borderRadius:8, padding:"6px 8px", textAlign:"center",
+                      border:"1px solid rgba(139,92,246,.2)"}}>
+                      <div style={{fontSize:16, fontWeight:800, color:"#8b5cf6"}}>{stats?.last_7_days ?? 0}</div>
+                      <div style={{fontSize:9, color:C.sub}}>{lang==="ar"?"7 أيام":"7 jours"}</div>
+                    </div>
+                  </div>
+                  <div style={{fontSize:10, color:C.sub, direction:"rtl", textAlign:"right", lineHeight:1.5}}>
+                    {repliedCount} {lang==="ar"?"مجاب":"répondu"} / {questions.length} {lang==="ar"?"سؤال":"question"}
+                  </div>
+                  {/* Progress bar */}
+                  <div style={{height:5, background:dark?"#1e3a5f":"#e2e8f0", borderRadius:50, overflow:"hidden"}}>
+                    <div style={{height:"100%", borderRadius:50,
+                      background: replyRatePct >= 70 ? "linear-gradient(90deg,#10b981,#059669)"
+                                : replyRatePct >= 40 ? "linear-gradient(90deg,#f97316,#ea580c)"
+                                : "linear-gradient(90deg,#f43f5e,#dc2626)",
+                      width:`${replyRatePct}%`, transition:"width 1.2s ease"}}/>
                   </div>
                 </div>
               </div>
@@ -850,6 +877,49 @@ export default function UnknownQuestions({ onBack }) {
               <span style={{fontSize:12, color:C.sub}}>{T.liveUsers}</span>
             </div>
           </div>
+
+          {/* Unanswered alert banner */}
+          {unansweredCount > 0 && (
+            <div style={{
+              ...cardStyle({padding:"12px 16px", marginBottom:14}),
+              background:dark
+                ?"linear-gradient(135deg,rgba(244,63,94,.12),rgba(249,115,22,.08))"
+                :"linear-gradient(135deg,rgba(244,63,94,.06),rgba(249,115,22,.04))",
+              border:"1px solid rgba(244,63,94,.3)",
+              animation:"cardIn .5s .5s both",
+              display:"flex", alignItems:"center", justifyContent:"space-between",
+              gap:12, flexWrap:"wrap"
+            }}>
+              <div style={{display:"flex", alignItems:"center", gap:12}}>
+                <div style={{width:40, height:40, borderRadius:10,
+                  background:"linear-gradient(135deg,#f43f5e,#f97316)",
+                  display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0}}>
+                  <HelpCircle size={20} color="white"/>
+                </div>
+                <div>
+                  <div style={{fontSize:13, fontWeight:700, color:C.text}}>
+                    {unansweredCount} {lang==="ar"?"سؤال بانتظار الرد":"question(s) en attente de réponse"}
+                  </div>
+                  <div style={{fontSize:11, color:C.sub, marginTop:2}}>
+                    {lang==="ar"
+                      ? `آخر سؤال: ${displayed.find(q=>!replies[q.question])?.question?.slice(0,50) || "—"}…`
+                      : `Dernier: ${displayed.find(q=>!replies[q.question])?.question?.slice(0,50) || "—"}…`}
+                  </div>
+                </div>
+              </div>
+              <button onClick={()=>{
+                const first = questions.findIndex(q=>!q.admin_reply);
+                if(first>=0) { setReplyIdx(first); setReplyTxt(""); }
+              }}
+                style={{padding:"8px 16px", background:"linear-gradient(135deg,#f43f5e,#f97316)",
+                  color:"white", border:"none", borderRadius:8, cursor:"pointer",
+                  fontSize:12, fontFamily:"'Tajawal',sans-serif", fontWeight:700,
+                  display:"flex", alignItems:"center", gap:5, flexShrink:0}}>
+                <CornerDownLeft size={13}/>
+                {lang==="ar"?"الرد الآن":"Répondre"}
+              </button>
+            </div>
+          )}
 
           {renderTable()}
         </>
@@ -1013,37 +1083,6 @@ export default function UnknownQuestions({ onBack }) {
         </div>
       );
 
-      case "calendar": return (
-        <div style={{...cardStyle(), animation:"cardIn .5s both"}}>
-          <h3 style={{color:C.text, fontSize:15, fontWeight:700, marginBottom:20,
-            display:"flex", alignItems:"center", gap:8}}>
-            <Calendar size={16} color="#3b82f6"/>{T.calendarTitle}
-          </h3>
-          {[
-            {date:"29 سبتمبر 2025",  label:"الدخول الإداري",           color:"#3b82f6"},
-            {date:"06 أكتوبر 2025",  label:"دخول الطلاب + التسجيل",    color:"#10b981"},
-            {date:"13 أكتوبر 2025",  label:"بداية الدروس",             color:"#f97316"},
-            {date:"01 ديسمبر 2025",  label:"اختبارات الفردية",          color:"#8b5cf6"},
-            {date:"19 يناير 2026",   label:"امتحانات الدورة 1 (فردية)", color:"#f43f5e"},
-            {date:"09 فبراير 2026",  label:"بداية الفصول الزوجية",     color:"#06b6d4"},
-            {date:"01 يونيو 2026",   label:"امتحانات الدورة 1 (زوجية)",color:"#eab308"},
-            {date:"22 يونيو 2026",   label:"امتحانات الدورة 2 (فردية)",color:"#f43f5e"},
-            {date:"06 يوليو 2026",   label:"امتحانات الدورة 2 (زوجية)",color:"#10b981"},
-            {date:"27 يوليو 2026",   label:"احتفال نهاية السنة",       color:"#3b82f6"},
-          ].map((ev,i)=>(
-            <div key={i} style={{display:"flex", alignItems:"center", gap:12, marginBottom:9,
-              animation:`rowIn .4s ${i*0.06}s both`}}>
-              <div style={{width:7,height:7,borderRadius:"50%",background:ev.color,flexShrink:0,
-                boxShadow:`0 0 6px ${ev.color}`}}/>
-              <div style={{background:dark?"#0f172a":"#f8fafc", borderRadius:8, padding:"8px 13px",
-                flex:1, border:`1px solid ${ev.color}33`}}>
-                <div style={{fontSize:10, color:ev.color, fontWeight:700}}>{ev.date}</div>
-                <div style={{fontSize:13, color:C.text, marginTop:1}}>{ev.label}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      );
 
       case "settings": return (
         <div style={{display:"flex", flexDirection:"column", gap:14, animation:"cardIn .5s both"}}>
