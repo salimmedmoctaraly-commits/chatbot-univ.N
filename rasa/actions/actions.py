@@ -3,6 +3,7 @@ import os
 import uuid
 import re
 import logging
+import requests as http_requests
 from datetime import datetime
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
@@ -11,9 +12,17 @@ from rasa_sdk.executor import CollectingDispatcher
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ── مسار الملف ────────────────────────────────────────────
-# Railway Volume  → /data/unknown_questions.json
-# Local Docker    → rasa/actions/unknown_questions.json
+# ══════════════════════════════════════════════════════════════
+#  CONFIG — Flask API ou fichier JSON de secours
+# ══════════════════════════════════════════════════════════════
+
+# URL du backend Flask (priorité : variable d'environnement)
+# En Docker : http://flask_app:5000
+# En local  : http://localhost:5000
+FLASK_BACKEND_URL = os.environ.get("FLASK_BACKEND_URL", "").rstrip("/")
+logger.info(f"[actions] FLASK_BACKEND_URL = {FLASK_BACKEND_URL or '(non défini — mode JSON)'}")
+
+# Fichier JSON de secours (quand Flask n'est pas disponible)
 def _get_questions_file() -> str:
     env = os.environ.get("QUESTIONS_FILE")
     if env:
@@ -23,10 +32,13 @@ def _get_questions_file() -> str:
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), "unknown_questions.json")
 
 QUESTIONS_FILE = _get_questions_file()
-logger.info(f"[actions] QUESTIONS_FILE = {QUESTIONS_FILE}")
+logger.info(f"[actions] QUESTIONS_FILE (secours) = {QUESTIONS_FILE}")
 
 
-# ── Helpers ───────────────────────────────────────────────
+# ══════════════════════════════════════════════════════════════
+#  Helpers — JSON (mode secours)
+# ══════════════════════════════════════════════════════════════
+
 def _load_questions() -> list:
     try:
         if os.path.exists(QUESTIONS_FILE):
@@ -34,12 +46,12 @@ def _load_questions() -> list:
                 data = json.load(f)
                 return data if isinstance(data, list) else []
     except (json.JSONDecodeError, IOError) as e:
-        logger.error(f"[load] Erreur: {e}")
+        logger.error(f"[load] Erreur JSON: {e}")
     return []
 
 
 def _save_questions(data: list) -> bool:
-    """كتابة ذرية — تمنع تلف الملف عند الكتابة المتزامنة."""
+    """Écriture atomique — empêche la corruption du fichier."""
     try:
         d = os.path.dirname(QUESTIONS_FILE)
         if d:
@@ -47,15 +59,14 @@ def _save_questions(data: list) -> bool:
         tmp = QUESTIONS_FILE + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        os.replace(tmp, QUESTIONS_FILE)  # ذري — لا يتلف الملف
+        os.replace(tmp, QUESTIONS_FILE)
         return True
     except IOError as e:
-        logger.error(f"[save] Erreur: {e}")
+        logger.error(f"[save] Erreur JSON: {e}")
         return False
 
 
 def _normalize(q: dict) -> dict:
-    """يضيف الحقول الناقصة للأسئلة القديمة."""
     if "id" not in q:
         q["id"] = str(uuid.uuid4())
     if "admin_reply" not in q:
@@ -66,51 +77,85 @@ def _normalize(q: dict) -> dict:
 
 
 def _migrate(data: list) -> list:
-    """ترحيل البيانات القديمة تلقائياً."""
     changed = False
     for i, q in enumerate(data):
         if "id" not in q or "admin_reply" not in q:
             data[i] = _normalize(q)
             changed = True
     if changed:
-        logger.info("[migrate] بيانات قديمة تمت ترقيتها")
+        logger.info("[migrate] données anciennes migrées")
         _save_questions(data)
     return data
 
 
 def _is_arabic(text: str) -> bool:
-    ar = len(re.findall(r'[\u0600-\u06FF]', text))
+    ar = len(re.findall(r'[؀-ۿ]', text))
     return ar > len(text) * 0.2 if text else False
 
 
-def _save_unknown(question: str) -> bool:
-    """حفظ سؤال غير معروف مع anti-doublon."""
+# ══════════════════════════════════════════════════════════════
+#  Fonction principale de sauvegarde
+#  Priorité : API Flask → fichier JSON (secours)
+# ══════════════════════════════════════════════════════════════
+
+def _save_unknown(question: str, sender_id: str = None) -> bool:
+    """
+    Sauvegarde une question inconnue.
+    1. Essaie l'API Flask  → écrit dans SQLite (lu par le dashboard)
+    2. Si Flask indisponible → écrit dans unknown_questions.json (secours)
+    """
     if not question or not question.strip():
         return False
     q = question.strip()
+
+    # ── Méthode 1 : API Flask (SQLite) ────────────────────────
+    if FLASK_BACKEND_URL:
+        try:
+            resp = http_requests.post(
+                f"{FLASK_BACKEND_URL}/save-unknown-question",
+                json={"question": q, "sender_id": sender_id},
+                timeout=5,
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                status = data.get("status", "ok")
+                count  = data.get("count", "?")
+                logger.info(f"[save] ✅ Flask API ({status}, {count} total): {q[:60]}")
+                return True
+            else:
+                logger.warning(f"[save] Flask API status {resp.status_code}: {resp.text[:100]}")
+        except http_requests.Timeout:
+            logger.warning("[save] Flask API timeout — secours JSON")
+        except http_requests.ConnectionError:
+            logger.warning("[save] Flask API inaccessible — secours JSON")
+        except Exception as e:
+            logger.warning(f"[save] Flask API erreur ({e}) — secours JSON")
+
+    # ── Méthode 2 : Fichier JSON (secours) ────────────────────
     data = _load_questions()
     data = _migrate(data)
-    # تجنب التكرار المتتالي
+    # Éviter les doublons consécutifs
     if data and data[-1].get("question") == q:
-        logger.info(f"[save] doublon ignoré: {q[:60]}")
+        logger.info(f"[save] doublon ignoré (JSON): {q[:60]}")
         return False
     data.append({
         "id":          str(uuid.uuid4()),
         "question":    q,
         "timestamp":   datetime.now().isoformat(),
+        "sender_id":   sender_id,
         "admin_reply": None,
-        "replied_at":  None
+        "replied_at":  None,
     })
     ok = _save_questions(data)
     if ok:
-        logger.info(f"[save] ✅ ({len(data)} total): {q[:60]}")
+        logger.info(f"[save] ✅ JSON ({len(data)} total): {q[:60]}")
     else:
-        logger.error(f"[save] ❌ فشل: {q[:60]}")
+        logger.error(f"[save] ❌ échec JSON: {q[:60]}")
     return ok
 
 
 # ═══════════════════════════════════════════════════════════
-# Action 1 — Fallback
+# Action 1 — Fallback (question non comprise)
 # ═══════════════════════════════════════════════════════════
 class ActionDefaultFallback(Action):
 
@@ -125,9 +170,10 @@ class ActionDefaultFallback(Action):
     ) -> List[Dict[Text, Any]]:
 
         user_message = (tracker.latest_message.get("text") or "").strip()
+        sender_id    = tracker.sender_id
 
         if user_message:
-            _save_unknown(user_message)
+            _save_unknown(user_message, sender_id)
 
         if _is_arabic(user_message):
             dispatcher.utter_message(response="utter_fallback_ar")
@@ -138,7 +184,7 @@ class ActionDefaultFallback(Action):
 
 
 # ═══════════════════════════════════════════════════════════
-# Action 2 — حفظ سؤال غير معروف (من Rules)
+# Action 2 — حفظ سؤال غير معروف (depuis les Rules)
 # ═══════════════════════════════════════════════════════════
 class ActionSaveUnknownQuestion(Action):
 
@@ -153,8 +199,10 @@ class ActionSaveUnknownQuestion(Action):
     ) -> List[Dict[Text, Any]]:
 
         user_message = (tracker.latest_message.get("text") or "").strip()
+        sender_id    = tracker.sender_id
+
         if user_message:
-            _save_unknown(user_message)
+            _save_unknown(user_message, sender_id)
 
         return []
 

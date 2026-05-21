@@ -17,6 +17,7 @@ intents:
   - au_revoir_fr
   - out_of_scope_ar
   - out_of_scope_fr
+  - nlu_fallback
   - greet
   - goodbye
   - affirm
