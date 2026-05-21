@@ -25,18 +25,6 @@ function generateSenderId() {
   return `user_${Date.now()}_${Math.random().toString(36).substr(2, 8)}`;
 }
 
-function playNotifSound() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const o = ctx.createOscillator();
-    const g = ctx.createGain();
-    o.connect(g); g.connect(ctx.destination);
-    o.frequency.value = 520; o.type = "sine";
-    g.gain.setValueAtTime(0.15, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
-    o.start(ctx.currentTime); o.stop(ctx.currentTime + 0.35);
-  } catch {}
-}
 
 function formatTime(date) {
   return date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
@@ -150,7 +138,6 @@ function App() {
     try {
       const res = await axios.post(`${FLASK_URL}/chat`, { message: text, sender: senderId });
       setIsTyping(false);
-      playNotifSound();
       setMessages([...current, {
         text: res.data.reply, sender: "bot",
         lang: detectLang(res.data.reply),
