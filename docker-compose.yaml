@@ -33,7 +33,8 @@ services:
       - ./shared:/app/shared
     environment:
       - QUESTIONS_FILE=/app/shared/unknown_questions.json
-      - FLASK_BACKEND_URL=http://flask_app:5000
+      - DB_FILE=/app/shared/chatbot.db
+      - FLASK_BACKEND_URL=http://flask_backend:5000
     command: start --actions actions
     restart: unless-stopped
 
