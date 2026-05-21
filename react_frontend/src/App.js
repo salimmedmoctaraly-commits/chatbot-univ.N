@@ -42,6 +42,12 @@ function formatTime(date) {
   return date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 }
 
+function formatVisitors(n) {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1).replace(".0","") + "M";
+  if (n >= 1_000)     return (n / 1_000).toFixed(1).replace(".0","") + "K";
+  return String(n);
+}
+
 const QUICK_SUGGESTIONS = [
   { ar: "ل.م.د",     fr: "LMD"         },
   { ar: "النتائج",    fr: "Résultats"    },
@@ -58,6 +64,7 @@ function App() {
   );
   const [dark, setDark]                   = useState(false);
   const [online, setOnline]               = useState(null);
+  const [visitors, setVisitors]           = useState(0);
   const [showScrollBtn, setShowScrollBtn] = useState(false);
   const [ratings, setRatings]             = useState({});
   const [copied, setCopied]               = useState(null);
@@ -84,6 +91,19 @@ function App() {
     };
     check();
     const iv = setInterval(check, 20000);
+    return () => clearInterval(iv);
+  }, []);
+
+  // ── عداد الزوار المباشر ─────────────────────────────────────
+  useEffect(() => {
+    const fetchVisitors = async () => {
+      try {
+        const r = await axios.get(`${FLASK_URL}/active-users`, { timeout: 4000 });
+        setVisitors(r.data.active_users ?? r.data.count ?? 0);
+      } catch {}
+    };
+    fetchVisitors();
+    const iv = setInterval(fetchVisitors, 30_000);
     return () => clearInterval(iv);
   }, []);
 
@@ -185,10 +205,15 @@ function App() {
         html, body { height: 100%; overflow: hidden; }
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-thumb { background: #1a5c35; border-radius: 4px; }
-        @keyframes slideDown { from{opacity:0;transform:translateY(-28px)} to{opacity:1;transform:none} }
-        @keyframes fadeUp    { from{opacity:0;transform:translateY(14px)}  to{opacity:1;transform:none} }
-        @keyframes popIn     { from{opacity:0;transform:scale(.9)}         to{opacity:1;transform:scale(1)} }
-        @keyframes blink     { 0%,100%{opacity:1} 50%{opacity:.3} }
+        @keyframes slideDown  { from{opacity:0;transform:translateY(-28px)} to{opacity:1;transform:none} }
+        @keyframes fadeUp     { from{opacity:0;transform:translateY(14px)}  to{opacity:1;transform:none} }
+        @keyframes popIn      { from{opacity:0;transform:scale(.9)}         to{opacity:1;transform:scale(1)} }
+        @keyframes blink      { 0%,100%{opacity:1} 50%{opacity:.3} }
+        @keyframes liveIn     { from{opacity:0;transform:scale(.7) translateY(-4px)} to{opacity:1;transform:scale(1) translateY(0)} }
+        @keyframes livePulse  { 0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.7);transform:scale(1)}
+                                60%{box-shadow:0 0 0 5px rgba(239,68,68,0);transform:scale(1.15)} }
+        .live-badge { animation: liveIn .4s .2s cubic-bezier(.16,1,.3,1) both; }
+        .live-badge:hover { transform: scale(1.04); transition: transform .15s; }
         .msg-row   { animation: fadeUp .3s ease both; }
         .quick-btn { transition: all .2s; font-family: 'Tajawal',sans-serif; }
         .quick-btn:hover { background: #1a5c35 !important; color: white !important; transform: translateY(-2px); }
@@ -262,6 +287,43 @@ function App() {
 
           {/* أزرار الهيدر — Lucide */}
           <div style={{ display:"flex", gap:6, alignItems:"center" }}>
+
+            {/* ── شارة الزوار المباشر ── */}
+            {visitors > 0 && (
+              <div className="live-badge" style={{
+                display:"inline-flex", alignItems:"center", gap:5,
+                background:"rgba(0,0,0,.52)",
+                backdropFilter:"blur(8px)",
+                border:"1px solid rgba(255,255,255,.13)",
+                borderRadius:50,
+                padding:"4px 10px 4px 7px",
+                cursor:"default",
+                userSelect:"none",
+              }}>
+                {/* النقطة الحمراء النابضة */}
+                <div style={{
+                  width:8, height:8, borderRadius:"50%",
+                  background:"#ef4444", flexShrink:0,
+                  animation:"livePulse 1.8s infinite",
+                }}/>
+                {/* العدد */}
+                <span style={{
+                  fontSize:12, fontWeight:800, color:"white",
+                  fontFamily:"'Tajawal',sans-serif", lineHeight:1, letterSpacing:.3,
+                }}>
+                  {formatVisitors(visitors)}
+                </span>
+                {/* النص */}
+                <span style={{
+                  fontSize:10, fontWeight:700,
+                  color:"rgba(255,255,255,.82)",
+                  fontFamily:"'Tajawal',sans-serif",
+                }}>
+                  مباشر&nbsp;·&nbsp;Live
+                </span>
+              </div>
+            )}
+
             {/* زر الوضع الليلي/النهاري */}
             <button onClick={() => setDark(d => !d)} className="icon-btn"
               title={dark ? "Wضع النهار" : "Wضع الليل"}
