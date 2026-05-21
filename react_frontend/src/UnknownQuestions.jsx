@@ -367,7 +367,9 @@ export default function UnknownQuestions({ onBack }) {
   const [animated, setAnimated]   = useState(false);
   const [srvOk, setSrvOk]         = useState(false);
   const [lang, setLang]           = useState("ar");
-  const [adminPassword, setAdminPassword] = useState(DEFAULT_ADMIN_PASSWORD);
+  const [adminPassword, setAdminPassword] = useState(
+    () => localStorage.getItem("una_admin_pwd") || DEFAULT_ADMIN_PASSWORD
+  );
   const [curPass, setCurPass]     = useState("");
   const [newPass, setNewPass]     = useState("");
   const [confPass, setConfPass]   = useState("");
@@ -471,6 +473,7 @@ export default function UnknownQuestions({ onBack }) {
     if (newPass.length < 6)        { setPassMsg({ text: T.passShort, ok: false }); return; }
     if (newPass !== confPass)      { setPassMsg({ text: T.passMismatch, ok: false }); return; }
     setAdminPassword(newPass);
+    localStorage.setItem("una_admin_pwd", newPass);
     setCurPass(""); setNewPass(""); setConfPass("");
     setPassMsg({ text: T.passChanged, ok: true });
     showToast(T.passChanged);
@@ -1441,7 +1444,7 @@ export default function UnknownQuestions({ onBack }) {
       )}
 
       {/* ── LAYOUT ── */}
-      <div style={{display:"flex", minHeight:"100vh", fontFamily:"'Tajawal',sans-serif",
+      <div style={{display:"flex", height:"100dvh", overflow:"hidden", fontFamily:"'Tajawal',sans-serif",
         direction:T.dir, background:C.bg, color:C.text, transition:"background .3s",
         animation:"fadeIn .4s ease"}}>
 
@@ -1530,7 +1533,8 @@ export default function UnknownQuestions({ onBack }) {
           </div>
 
           {/* CONTENT */}
-          <div style={{flex:1, padding: isMobile ? "12px" : "16px 20px", overflowY:"auto"}}>
+          <div style={{flex:1, padding: isMobile ? "12px" : "16px 20px", overflowY:"auto",
+            WebkitOverflowScrolling:"touch", minHeight:0}}>
             {renderSection()}
           </div>
         </div>

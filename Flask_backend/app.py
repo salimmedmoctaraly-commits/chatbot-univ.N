@@ -167,6 +167,52 @@ migrate_from_json()
 
 
 # ══════════════════════════════════════════════════════════════
+#  FALLBACK DETECTION — كشف ردود Rasa غير المفهومة
+# ══════════════════════════════════════════════════════════════
+
+# يمكن تخصيص هذه القائمة عبر متغير البيئة FALLBACK_KEYWORDS (مفصولة بـ |)
+_DEFAULT_FALLBACK_KW = (
+    "لم أفهم|لا أفهم|لا أعرف|عذراً لا أملك|لست متأكد|"
+    "لا يمكنني الإجابة|غير متأكد|لا توجد معلومات|"
+    "je ne comprends|désolé|je ne sais pas|je n'ai pas|"
+    "I don't understand|I don't know"
+)
+_FALLBACK_KW = [
+    k.strip().lower()
+    for k in os.environ.get("FALLBACK_KEYWORDS", _DEFAULT_FALLBACK_KW).split("|")
+    if k.strip()
+]
+
+def is_fallback_response(text: str) -> bool:
+    """True إذا بدت استجابة Rasa غير مفهومة (fallback)."""
+    stripped = text.strip()
+    if stripped in ("...", "", "…"):
+        return True
+    t = stripped.lower()
+    return any(kw in t for kw in _FALLBACK_KW)
+
+
+def auto_save_unknown(question: str, sender_id: str) -> None:
+    """حفظ سؤال غير مجاب تلقائياً — بدون تكرار."""
+    try:
+        with get_db() as conn:
+            last = conn.execute(
+                "SELECT question FROM unknown_questions ORDER BY id DESC LIMIT 1"
+            ).fetchone()
+            if last and last["question"] == question:
+                return  # تجنب التكرار المتتالي
+            conn.execute(
+                """INSERT INTO unknown_questions (question, timestamp, sender_id)
+                   VALUES (?, ?, ?)""",
+                (question, datetime.utcnow().isoformat(), sender_id)
+            )
+            conn.commit()
+        logger.info(f"[auto-save] سؤال غير مجاب تلقائياً: {question[:60]}")
+    except Exception as exc:
+        logger.error(f"[auto-save] خطأ: {exc}")
+
+
+# ══════════════════════════════════════════════════════════════
 #  HELPERS
 # ══════════════════════════════════════════════════════════════
 
@@ -263,14 +309,24 @@ def chat():
 
     try:
         reply = ask_rasa(user_message, sender)
+
+        # ── كشف وحفظ تلقائي لأسئلة Rasa غير المفهومة ──────────
+        fallback = is_fallback_response(reply)
+        if fallback:
+            auto_save_unknown(user_message, sender)
+        # ────────────────────────────────────────────────────────
+
         return jsonify({
             "reply":        reply,
             "sender":       sender,
             "active_users": get_active_count(),
+            "is_fallback":  fallback,
         })
     except requests.Timeout:
+        auto_save_unknown(user_message, sender)   # مهلة = سؤال غير مجاب
         return jsonify({"reply": "⏱ انتهت مهلة الاتصال، حاول مجدداً."}), 504
     except requests.ConnectionError:
+        auto_save_unknown(user_message, sender)   # خادم معطل = سؤال غير مجاب
         return jsonify({"reply": "⚠ تعذّر الاتصال بالخادم، يُرجى المحاولة لاحقاً."}), 503
     except Exception as e:
         logger.exception(e)
