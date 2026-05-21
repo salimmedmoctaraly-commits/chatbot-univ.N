@@ -43,12 +43,10 @@ function formatTime(date) {
 }
 
 const QUICK_SUGGESTIONS = [
-  { ar: "التسجيل",    fr: "Inscription" },
-  { ar: "المنح",      fr: "Bourses"     },
-  { ar: "الامتحانات", fr: "Examens"     },
-  { ar: "السكن",      fr: "Logement"    },
-  { ar: "الكليات",    fr: "Facultés"    },
   { ar: "ل.م.د",     fr: "LMD"         },
+  { ar: "النتائج",    fr: "Résultats"    },
+  { ar: "المنح",      fr: "Bourses"     },
+  { ar: "الكليات",    fr: "Facultés"    },
 ];
 
 function App() {
