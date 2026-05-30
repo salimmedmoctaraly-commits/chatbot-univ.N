@@ -1,4 +1,4 @@
-version: "3.1"
+﻿version: "3.1"
 
 nlu:
 
@@ -14,7 +14,7 @@ nlu:
     - ما هي UNA؟
     - معلومات عامة عن الجامعة
     - عرفني بالجامعة
-    - جامعة نواكشوط العصرية
+    - جامعة نواكشوط
     - qu'est-ce que l'université de Nouakchott?
     - informations sur l'université
     - c'est quoi l'UNA?

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+﻿import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import "./App.css";
 import logo from "./logo.png";
@@ -257,7 +257,7 @@ function App() {
                 مساعد الطالب الجامعي
               </h2>
               <p style={{ color:"rgba(255,255,255,.75)", fontSize:11, margin:"1px 0 0" }}>
-                Université de Nouakchott Al-Aasriya
+                Université de Nouakchott
               </p>
               <div style={{ display:"flex", alignItems:"center", gap:4, marginTop:2 }}>
                 <div style={{

@@ -1,4 +1,4 @@
-version: "3.1"
+﻿version: "3.1"
 
 # ============================================================
 # INTENTS
@@ -439,10 +439,10 @@ responses:
   utter_ask_identity:
     - text: |
         🤖 أنا مساعد الطالب الجامعي
-        جامعة نواكشوط العصرية 🎓
+        جامعة نواكشوط 🎓
 
         صُممت لمساعدة جميع طلاب كليات
-        جامعة نواكشوط العصرية:
+        جامعة نواكشوط:
 
         🏛️ الكليات:
         • كلية العلوم والتقنيات (FST)
@@ -463,7 +463,7 @@ responses:
 
     - text: |
         🤖 Je suis l'Assistant Étudiant Virtuel
-        de l'Université de Nouakchott Al-Aasriya 🎓
+        de l'Université de Nouakchott 🎓
 
         Conçu pour aider les étudiants de
         toutes les facultés de l'université :
@@ -492,7 +492,7 @@ responses:
     - text: |
         👨‍💻 تم تطويري كمشروع تخرج (PFE)
         بكلية العلوم والتقنيات — FST
-        جامعة نواكشوط العصرية 🎓
+        جامعة نواكشوط 🎓
 
         المطوران:
         • محمد سالم محمد مختار عالي
@@ -504,7 +504,7 @@ responses:
     - text: |
         👨‍💻 Développé comme Projet de Fin d'Études (PFE)
         à la Faculté des Sciences et Techniques — FST
-        Université de Nouakchott Al-Aasriya 🎓
+        Université de Nouakchott 🎓
 
         Développeurs :
         • Mohamed Salim Med Moctar Aly
@@ -515,7 +515,7 @@ responses:
 
   # ── سلام / وداع ──────────────────────────────────────
   utter_greet:
-    - text: "أهلاً بك في مساعد جامعة نواكشوط العصرية! 👋\nكيف يمكنني مساعدتك؟\n\nBonjour ! Bienvenue dans l'assistant de l'UNA ! Comment puis-je vous aider ?"
+    - text: "أهلاً بك في مساعد جامعة نواكشوط! 👋\nكيف يمكنني مساعدتك؟\n\nBonjour ! Bienvenue dans l'assistant de l'UNA ! Comment puis-je vous aider ?"
 
   utter_goodbye:
     - text: "وداعاً! نتمنى لك التوفيق 🎓\nAu revoir et bonne chance !"
@@ -527,18 +527,18 @@ responses:
     - text: "حسناً! هل يمكنني مساعدتك بشيء آخر؟"
 
   utter_saluer_ar:
-    - text: "أهلاً بك في خدمة معلومات جامعة نواكشوط العصرية. كيف يمكنني مساعدتك؟"
-    - text: "أهلاً وسهلاً بك في جامعة نواكشوط العصرية. كيف أستطيع مساعدتك اليوم؟"
-    - text: "مرحباً بك في خدمة المعلومات بجامعة نواكشوط العصرية. تفضل بطرح سؤالك."
-    - text: "حياك الله! أنت الآن في خدمة معلومات جامعة نواكشوط العصرية. كيف يمكنني مساعدتك؟"
-    - text: "أهلاً بك! يسعدني مساعدتك في كل ما يتعلق بجامعة نواكشوط العصرية."
+    - text: "أهلاً بك في خدمة معلومات جامعة نواكشوط. كيف يمكنني مساعدتك؟"
+    - text: "أهلاً وسهلاً بك في جامعة نواكشوط. كيف أستطيع مساعدتك اليوم؟"
+    - text: "مرحباً بك في خدمة المعلومات بجامعة نواكشوط. تفضل بطرح سؤالك."
+    - text: "حياك الله! أنت الآن في خدمة معلومات جامعة نواكشوط. كيف يمكنني مساعدتك؟"
+    - text: "أهلاً بك! يسعدني مساعدتك في كل ما يتعلق بجامعة نواكشوط."
 
   utter_saluer_fr:
-    - text: "Bonjour ! Bienvenue au service d'information de l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider ?"
-    - text: "Bonjour et bienvenue à l'Université de Nouakchott Al-Aasriya. Que puis-je faire pour vous ?"
-    - text: "Bienvenue au service d'information de l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider aujourd'hui ?"
-    - text: "Salut ! Je suis l'assistant virtuel de l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider ?"
-    - text: "Bonjour ! N'hésitez pas à poser votre question sur l'Université de Nouakchott Al-Aasriya."
+    - text: "Bonjour ! Bienvenue au service d'information de l'Université de Nouakchott. Comment puis-je vous aider ?"
+    - text: "Bonjour et bienvenue à l'Université de Nouakchott. Que puis-je faire pour vous ?"
+    - text: "Bienvenue au service d'information de l'Université de Nouakchott. Comment puis-je vous aider aujourd'hui ?"
+    - text: "Salut ! Je suis l'assistant virtuel de l'Université de Nouakchott. Comment puis-je vous aider ?"
+    - text: "Bonjour ! N'hésitez pas à poser votre question sur l'Université de Nouakchott."
 
   utter_au_revoir_ar:
     - text: "مع السلامة! نتمنى لك التوفيق."
@@ -547,10 +547,10 @@ responses:
     - text: "Au revoir ! Bonne chance dans vos études."
 
   utter_out_of_scope_ar:
-    - text: "عذراً، هذا السؤال خارج نطاق اختصاصي. أنا هنا للإجابة على أسئلة حول جامعة نواكشوط العصرية. كيف يمكنني مساعدتك؟"
+    - text: "عذراً، هذا السؤال خارج نطاق اختصاصي. أنا هنا للإجابة على أسئلة حول جامعة نواكشوط. كيف يمكنني مساعدتك؟"
 
   utter_out_of_scope_fr:
-    - text: "Désolé, cette question dépasse mon domaine. Je suis ici pour les questions sur l'Université de Nouakchott Al-Aasriya. Comment puis-je vous aider ?"
+    - text: "Désolé, cette question dépasse mon domaine. Je suis ici pour les questions sur l'Université de Nouakchott. Comment puis-je vous aider ?"
 
   utter_fallback_ar:
     - text: "عذراً، لم أفهم سؤالك. هل يمكنك إعادة الصياغة؟"
@@ -561,7 +561,7 @@ responses:
   # ── الجامعة ─────────────────────────────────────────
   utter_ask_universite_generale:
     - text: |
-       **جامعة نواكشوط العصرية (UNA)**
+       **جامعة نواكشوط (UNA)**
         - تأسست سنة 1981 | www.univ-nkc.mr
         - الطلبة: 29,000 (120 دوليون)
         - مدرسون دائمون: 590 | متعاونون: 480
@@ -690,7 +690,7 @@ responses:
 
   # ── FST Responses détaillées ────────────────────────
   utter_presentation_fst_ar:
-    - text: "كلية العلوم والتقنيات (FST) - نواكشوط\n• تأسست نوفمبر 1995 (مرسوم 95.046)\n• تابعة لجامعة نواكشوط العصرية\n• نظام LMD منذ 2008-2009\n• المهمة: تكوين أساسي وتطبيقي + بحث علمي + خدمة المجتمع"
+    - text: "كلية العلوم والتقنيات (FST) - نواكشوط\n• تأسست نوفمبر 1995 (مرسوم 95.046)\n• تابعة لجامعة نواكشوط\n• نظام LMD منذ 2008-2009\n• المهمة: تكوين أساسي وتطبيقي + بحث علمي + خدمة المجتمع"
 
   utter_presentation_fst_fr:
     - text: "Faculté des Sciences et Techniques (FST) - Nouakchott\n• Créée en novembre 1995 (décret n°95.046)\n• Rattachée à l'Université de Nouakchott Al Aasriya\n• Système LMD depuis 2008-2009\n• Mission: formation fondamentale + recherche + service communautaire"
@@ -2170,7 +2170,7 @@ responses:
         🎓 **Masters disponibles pour BMP — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Biologie — BMPB
            (Biologie Moléculaire, Physiologie et Biotechnologies)
         2️⃣ Master Informatique — Bio-Informatique
@@ -2189,7 +2189,7 @@ responses:
         🎓 **Masters disponibles pour IPG — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Géologie — GEOMIN
            (Géologie Appliquée : Option Mine)
 
@@ -2203,7 +2203,7 @@ responses:
         🎓 **Masters disponibles pour ABC — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Biologie — BMPB
            (Biologie Moléculaire, Physiologie et Biotechnologies)
         2️⃣ Master Informatique — Bio-Informatique
@@ -2221,7 +2221,7 @@ responses:
         🎓 **Masters disponibles pour BOE — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Biologie — BEES
            (Biologie Environnementale et Ecosystèmes Sahéliens)
         2️⃣ Master Biologie — BOMVRH
@@ -2245,7 +2245,7 @@ responses:
         🎓 **Masters disponibles pour PF — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Physique — 2M
            (Mécanique et Matériaux)
 
@@ -2259,7 +2259,7 @@ responses:
         🎓 **Masters disponibles pour CHIMIE — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Chimie — SN
            (Chimie des Substances Naturelles)
         2️⃣ Master Chimie — CM
@@ -2276,7 +2276,7 @@ responses:
         🎓 **Masters disponibles pour EEA — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Physique — MPGE
            (Master Professionnel Génie Electrique)
         2️⃣ Master Physique — ER
@@ -2292,7 +2292,7 @@ responses:
         🎓 **Masters disponibles pour MIAGE — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Informatique — SI
            (Systèmes d'Information)
         2️⃣ Master Informatique — RSC
@@ -2316,7 +2316,7 @@ responses:
         🎓 **Masters disponibles pour TSER — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Physique — ER
            (Energies Renouvelables)
         2️⃣ Master Physique — MPGE
@@ -2332,7 +2332,7 @@ responses:
         🎓 **Masters disponibles pour PEPE — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Eau et Environnement — EE
 
         🌍 **Hors Mauritanie:**
@@ -2345,7 +2345,7 @@ responses:
         🎓 **Masters disponibles pour DA2I — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Informatique — RSC
            (Réseaux et Systèmes Communiquants)
         2️⃣ Master Informatique — IA/MLDS
@@ -2371,7 +2371,7 @@ responses:
         🎓 **Masters disponibles pour GEOMIN — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Géologie — GEOMIN
            (Géologie Appliquée : Option Mine)
         2️⃣ Master Eau et Environnement — EE
@@ -2397,7 +2397,7 @@ responses:
         🎓 **Masters disponibles pour NS — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Nutrition Humaine — NS
            (Nutrition Santé)
         2️⃣ Master Nutrition Humaine — TA-SMCQ
@@ -2436,7 +2436,7 @@ responses:
         🎓 **Masters disponibles pour MA — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Informatique — SI
            (Systèmes d'Information)
         2️⃣ Master Informatique — IA/MLDS
@@ -2465,7 +2465,7 @@ responses:
         🎓 **Masters disponibles pour MI — 2025**
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott Al-Aasriya — FST:**
+        🇲🇷 **Université de Nouakchott — FST:**
         1️⃣ Master Informatique — RSC
            (Réseaux et Systèmes Communiquants)
         2️⃣ Master Informatique — IA/MLDS

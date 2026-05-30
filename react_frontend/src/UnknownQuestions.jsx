@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+﻿import { useState, useEffect, useCallback } from "react";
 import {
   Home, Users, BarChart2, FileText, Settings,
   HelpCircle, CheckCircle2, Search, Menu, Sun, Moon,
@@ -24,7 +24,7 @@ const TRANSLATIONS = {
     passwordPlaceholder: "كلمة المرور / Mot de passe",
     loginBtn: "دخول →",
     wrongPass: "كلمة المرور خاطئة",
-    footer: "FST Chatbot v2.0 · جامعة نواكشوط العصرية © 2025",
+    footer: "FST Chatbot v2.0 · جامعة نواكشوط © 2025",
     searchPlaceholder: "البحث...",
     serverStatus: "حالة الخادم",
     connected: "متصل",
@@ -130,7 +130,7 @@ const TRANSLATIONS = {
     passwordPlaceholder: "Mot de passe / كلمة المرور",
     loginBtn: "Connexion →",
     wrongPass: "Mot de passe incorrect",
-    footer: "FST Chatbot v2.0 · Université de Nouakchott Al-Aasriya © 2025",
+    footer: "FST Chatbot v2.0 · Université de Nouakchott © 2025",
     searchPlaceholder: "Rechercher...",
     serverStatus: "État du serveur",
     connected: "Connecté",
@@ -1199,7 +1199,7 @@ export default function UnknownQuestions({ onBack }) {
                color:srvOk?"#10b981":"#f43f5e"},
               {label:T.qCount,     val:`${questions.length} ${T.question}`},
               {label:T.rCount,     val:`${repliedCount} ${T.reply}`},
-              {label:T.university, val:"Université de Nouakchott Al-Aasriya"},
+              {label:T.university, val:"Université de Nouakchott"},
             ].map((r,i)=>(
               <div key={i} style={{display:"flex", alignItems:"center", justifyContent:"space-between",
                 padding:"9px 0", borderBottom:`1px solid ${C.bdr}`}}>
