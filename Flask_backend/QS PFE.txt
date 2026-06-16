@@ -1,1 +1,0 @@
-verifie tous les fichies NLU : est-ce que tout est bien en place ? et est-ce qu'il manque quelque chose  ? 

@@ -378,6 +378,8 @@ export default function UnknownQuestions({ onBack }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile]   = useState(() => window.innerWidth < 768);
   const [stats, setStats]         = useState(null);
+  const [facStats, setFacStats]   = useState([]);
+  const [rasaOk, setRasaOk]       = useState(false);
 
   const T = TRANSLATIONS[lang];
   const C = getCSS(dark);
@@ -396,11 +398,13 @@ export default function UnknownQuestions({ onBack }) {
     loadStats();
     checkServer();
     fetchChatbotUsers();
+    fetchFacStats();
     setTimeout(() => setAnimated(true), 300);
-    const srvInterval  = setInterval(checkServer, 30000);
-    const chatInterval = setInterval(fetchChatbotUsers, 15000);
+    const srvInterval   = setInterval(checkServer, 30000);
+    const chatInterval  = setInterval(fetchChatbotUsers, 15000);
     const statsInterval = setInterval(loadStats, 60000);
-    return () => { clearInterval(srvInterval); clearInterval(chatInterval); clearInterval(statsInterval); };
+    const facInterval   = setInterval(fetchFacStats, 60000);
+    return () => { clearInterval(srvInterval); clearInterval(chatInterval); clearInterval(statsInterval); clearInterval(facInterval); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auth]);
 
@@ -454,6 +458,21 @@ export default function UnknownQuestions({ onBack }) {
       if (!r.ok) throw new Error();
       setSrvOk(true);
     } catch { setSrvOk(false); }
+    try {
+      const r = await fetch(`${API_URL}/rasa-health`);
+      if (!r.ok) throw new Error();
+      const d = await r.json();
+      setRasaOk(d.ok === true);
+    } catch { setRasaOk(false); }
+  };
+
+  const fetchFacStats = async () => {
+    try {
+      const r = await fetch(`${API_URL}/faculty-stats`);
+      if (!r.ok) throw new Error();
+      const d = await r.json();
+      setFacStats(Array.isArray(d) ? d : []);
+    } catch {}
   };
 
   const showToast = (msg, type="success") => {
@@ -539,6 +558,34 @@ export default function UnknownQuestions({ onBack }) {
     showToast(T.exportDone);
   };
 
+  const exportExcel = () => {
+    const dateStr = new Date().toISOString().slice(0,10);
+    const rowsHtml = [...questions].reverse().map((q,i) => `
+      <tr>
+        <td>${i+1}</td>
+        <td style="direction:rtl">${q.question.replace(/</g,"&lt;")}</td>
+        <td>${getCategory(q.question)}</td>
+        <td>${new Date(q.timestamp).toLocaleDateString("fr-FR")}</td>
+        <td style="direction:rtl">${(replies[q.question]?.text || q.admin_reply || "").replace(/</g,"&lt;")}</td>
+      </tr>`).join("");
+    const html = `<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:x="urn:schemas-microsoft-com:office:excel"
+      xmlns="http://www.w3.org/TR/REC-html40">
+      <head><meta charset="utf-8"/></head>
+      <body><table>
+        <tr style="background:#1a5c35;color:white">
+          <th>#</th><th>السؤال</th><th>الفئة</th><th>التاريخ</th><th>الرد</th>
+        </tr>
+        ${rowsHtml}
+      </table></body></html>`;
+    const blob = new Blob(["﻿" + html], {type:"application/vnd.ms-excel;charset=utf-8;"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `questions_${dateStr}.xls`;
+    a.click();
+    showToast(T.exportDone);
+  };
+
   // ── Derived data ──────────────────────────────────
   const displayed     = [...questions].reverse();
   const filtered      = displayed.filter(q => q.question.toLowerCase().includes(search.toLowerCase()));
@@ -549,13 +596,15 @@ export default function UnknownQuestions({ onBack }) {
   const repliedCount  = Object.keys(replies).length;
   const unansweredCount = questions.length - repliedCount;
   const replyRatePct = questions.length ? Math.round((repliedCount / questions.length) * 100) : 0;
-  const facData = [
-    {name:"FST",  v:230, color:"#3b82f6"},
-    {name:"FLSH", v:185, color:"#10b981"},
-    {name:"FMPOS",v:140, color:"#f97316"},
-    {name:"FSJP", v:105, color:"#8b5cf6"},
-    {name:"FEG",  v:70,  color:"#eab308"},
-  ];
+  const facData = facStats.length > 0
+    ? facStats.map(f => ({ name: f.name, v: f.count, color: f.color }))
+    : [
+        {name:"FST",  v:0, color:"#3b82f6"},
+        {name:"FLSH", v:0, color:"#10b981"},
+        {name:"FMPOS",v:0, color:"#f97316"},
+        {name:"FSJP", v:0, color:"#8b5cf6"},
+        {name:"FEG",  v:0, color:"#eab308"},
+      ];
   const cQ         = useCountUp(questions.length, animated);
   const cAr        = useCountUp(arCount, animated);
   const cFr        = useCountUp(frCount, animated);
@@ -789,13 +838,16 @@ export default function UnknownQuestions({ onBack }) {
                 <Building2 size={13} color={C.sub}/>{T.mostActive}
               </div>
               <div style={{display:"flex", flexDirection:"column", gap:8}}>
-                {facData.map((f,i)=>(
-                  <div key={i} style={{display:"flex", alignItems:"center", gap:8}}>
-                    <span style={{fontSize:11,fontWeight:700,color:C.text,width:38,textAlign:"right",flexShrink:0}}>{f.name}</span>
-                    <AnimBar pct={(f.v/230)*100} color={f.color} delay={i*100} active={animated}/>
-                    <span style={{fontSize:11,color:C.sub,width:26,flexShrink:0}}>{f.v}</span>
-                  </div>
-                ))}
+                {(() => {
+                  const maxV = Math.max(...facData.map(f => f.v), 1);
+                  return facData.map((f,i)=>(
+                    <div key={i} style={{display:"flex", alignItems:"center", gap:8}}>
+                      <span style={{fontSize:11,fontWeight:700,color:C.text,width:38,textAlign:"right",flexShrink:0}}>{f.name}</span>
+                      <AnimBar pct={(f.v/maxV)*100} color={f.color} delay={i*100} active={animated}/>
+                      <span style={{fontSize:11,color:C.sub,width:26,flexShrink:0}}>{f.v}</span>
+                    </div>
+                  ));
+                })()}
               </div>
             </div>
 
@@ -1051,8 +1103,8 @@ export default function UnknownQuestions({ onBack }) {
               <FileText size={16} color="#3b82f6"/>{T.reportsTitle}
             </h3>
             {[
-              {icon:<Download size={18}/>, label:T.reportCSV, action:exportCSV, color:"#10b981"},
-              {icon:<BarChart2 size={18}/>, label:T.reportXLS, action:exportCSV, color:"#3b82f6"},
+              {icon:<Download size={18}/>, label:T.reportCSV, action:exportCSV,   color:"#10b981"},
+              {icon:<BarChart2 size={18}/>, label:T.reportXLS, action:exportExcel, color:"#3b82f6"},
             ].map((r,i)=>(
               <div key={i} style={{display:"flex", alignItems:"center", justifyContent:"space-between",
                 padding:"13px 14px", background:dark?"#0f172a":"#f8fafc", borderRadius:10,
@@ -1604,7 +1656,7 @@ export default function UnknownQuestions({ onBack }) {
               <div style={{fontSize:10, color:"rgba(255,255,255,.4)", fontWeight:700, marginBottom:5}}>
                 {T.serverStatus}
               </div>
-              {[{label:"Flask", ok:srvOk}, {label:"Rasa", ok:srvOk}].map((s,i)=>(
+              {[{label:"Flask", ok:srvOk}, {label:"Rasa", ok:rasaOk}].map((s,i)=>(
                 <div key={i} style={{display:"flex", alignItems:"center", gap:6, fontSize:11,
                   color:"rgba(255,255,255,.6)", marginBottom:3}}>
                   <div className="dot-p" style={{

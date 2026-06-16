@@ -499,7 +499,7 @@ responses:
         • أحمد يعقوب بدي بي
 
         قسم الرياضيات والمعلوماتية
-        تحت إشراف: الأستاذ بيدي بوه شيخنه
+        تحت إشراف: الأستاذ بيده بوه شيخنا
 
     - text: |
         👨‍💻 Développé comme Projet de Fin d'Études (PFE)
@@ -2167,10 +2167,9 @@ responses:
 
   utter_masters_disponibles_BMP:
     - text: |
-        🎓 **Masters disponibles pour BMP — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour BMP — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Biologie — BMPB
            (Biologie Moléculaire, Physiologie et Biotechnologies)
         2️⃣ Master Informatique — Bio-Informatique
@@ -2179,31 +2178,30 @@ responses:
         4️⃣ Master Biologie — BOMVRH
            (Biologie des Organismes Marins et Valorisation des Ressources Halieutiques)
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_IPG:
     - text: |
-        🎓 **Masters disponibles pour IPG — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour IPG — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Géologie — GEOMIN
            (Géologie Appliquée : Option Mine)
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_ABC:
     - text: |
-        🎓 **Masters disponibles pour ABC — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour ABC — 2025
+       
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Biologie — BMPB
            (Biologie Moléculaire, Physiologie et Biotechnologies)
         2️⃣ Master Informatique — Bio-Informatique
@@ -2211,17 +2209,16 @@ responses:
            (Chimie des Substances Naturelles)
         4️⃣ Master Eau et Environnement — EE
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_BOE:
     - text: |
-        🎓 **Masters disponibles pour BOE — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour BOE — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Biologie — BEES
            (Biologie Environnementale et Ecosystèmes Sahéliens)
         2️⃣ Master Biologie — BOMVRH
@@ -2232,7 +2229,7 @@ responses:
         5️⃣ Master Biologie — BMPB
            (Biologie Moléculaire, Physiologie et Biotechnologies)
 
-        🇲🇷 **École Normale Supérieure (NOUS):**
+        🇲🇷 École Normale Supérieure (NOUS):
         6️⃣ Master en éducation sciences de la vie et de la terre
 
         🌍 **Hors Mauritanie:**
@@ -2242,57 +2239,55 @@ responses:
 
   utter_masters_disponibles_PF:
     - text: |
-        🎓 **Masters disponibles pour PF — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour PF — 2025 :
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Physique — 2M
            (Mécanique et Matériaux)
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_CHIMIE:
     - text: |
-        🎓 **Masters disponibles pour CHIMIE — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour CHIMIE — 2025 :
+    
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Chimie — SN
            (Chimie des Substances Naturelles)
         2️⃣ Master Chimie — CM
            (Chimie des Matériaux)
         3️⃣ Master Eau et Environnement — EE
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_EEA:
     - text: |
-        🎓 **Masters disponibles pour EEA — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour EEA — 2025 
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Physique — MPGE
            (Master Professionnel Génie Electrique)
         2️⃣ Master Physique — ER
            (Energies Renouvelables)
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_MIAGE:
     - text: |
-        🎓 **Masters disponibles pour MIAGE — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour MIAGE — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Informatique — SI
            (Systèmes d'Information)
         2️⃣ Master Informatique — RSC
@@ -2303,49 +2298,48 @@ responses:
            (Traitement du Langage Naturel et Vision par Ordinateur)
         5️⃣ Master Informatique — Bio-Informatique
 
-        🇲🇷 **ISCAE (en commun avec FST):**
+        🇲🇷 ISCAE (en commun avec FST):
         6️⃣ Informatique Appliquée à la Gestion
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_TSER:
     - text: |
-        🎓 **Masters disponibles pour TSER — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour TSER — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Physique — ER
            (Energies Renouvelables)
         2️⃣ Master Physique — MPGE
            (Master Professionnel Génie Electrique)
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_PEPE:
     - text: |
-        🎓 **Masters disponibles pour PEPE — 2025**
+        🎓 Masters disponibles pour PEPE — 2025
         ═══════════════════════════════════════
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Eau et Environnement — EE
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_DA2I:
     - text: |
-        🎓 **Masters disponibles pour DA2I — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour DA2I — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Informatique — RSC
            (Réseaux et Systèmes Communiquants)
         2️⃣ Master Informatique — IA/MLDS
@@ -2355,38 +2349,35 @@ responses:
         4️⃣ Master Informatique — IA/NLP&CV
            (Traitement du Langage Naturel et Vision par Ordinateur)
 
-        🇲🇷 **SUPNUM:**
+        🇲🇷 SUPNUM:
         5️⃣ Master en Cybersécurité
 
-        🇲🇷 **ISCAE (en commun avec FST):**
+        🇲🇷 ISCAE (en commun avec FST):
         6️⃣ Informatique Appliquée à la Gestion
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_GEOMIN:
     - text: |
-        🎓 **Masters disponibles pour GEOMIN — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour GEOMIN — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Géologie — GEOMIN
            (Géologie Appliquée : Option Mine)
         2️⃣ Master Eau et Environnement — EE
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_GEOSS:
     - text: |
-        🎓 **Masters disponibles pour GEOSS — 2025**
-        ═══════════════════════════════════════
-
-        🇲🇷 **ISCAE:**
+        🎓 Masters disponibles pour GEOSS — 2025
+        🇲🇷 ISCAE:
         Pour plus d'informations, contactez l'administration de la faculté.
 
         💡 Il est conseillé de contacter le département de Géologie de la FST
@@ -2394,10 +2385,9 @@ responses:
 
   utter_masters_disponibles_NS:
     - text: |
-        🎓 **Masters disponibles pour NS — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour NS — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Nutrition Humaine — NS
            (Nutrition Santé)
         2️⃣ Master Nutrition Humaine — TA-SMCQ
@@ -2405,27 +2395,25 @@ responses:
         3️⃣ Master Biologie — PIA
            (Phœniciculture & Intelligence Artificielle)
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_SP:
     - text: |
-        🎓 **Masters disponibles pour SP — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour SP — 2025
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
 
   utter_masters_disponibles_TASSMQ:
     - text: |
-        🎓 **Masters disponibles pour TAS-SMQ — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour TAS-SMQ — 2025
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
@@ -2433,10 +2421,9 @@ responses:
 
   utter_masters_disponibles_MA_fr:
     - text: |
-        🎓 **Masters disponibles pour MA — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour MA — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Informatique — SI
            (Systèmes d'Information)
         2️⃣ Master Informatique — IA/MLDS
@@ -2448,12 +2435,12 @@ responses:
         5️⃣ Master Mathématiques et Applications — IMCS
            (Ingénierie Mathématique et Calcul Scientifique)
 
-        🇲🇷 **Faculté d'Economie et de Gestion — FEG:**
+        🇲🇷 Faculté d'Economie et de Gestion — FEG:
         6️⃣ Master Econométrie — ISE
            (Ingénierie Statistique et Economique)
         7️⃣ Master Econométrie — Econométrie
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)
@@ -2462,10 +2449,9 @@ responses:
 
   utter_masters_disponibles_MI_fr:
     - text: |
-        🎓 **Masters disponibles pour MI — 2025**
-        ═══════════════════════════════════════
+        🎓 Masters disponibles pour MI — 2025
 
-        🇲🇷 **Université de Nouakchott — FST:**
+        🇲🇷 Université de Nouakchott — FST:
         1️⃣ Master Informatique — RSC
            (Réseaux et Systèmes Communiquants)
         2️⃣ Master Informatique — IA/MLDS
@@ -2480,15 +2466,15 @@ responses:
            (Ingénierie Mathématique et Calcul Scientifique)
         7️⃣ Master Informatique — Bio-Informatique
 
-        🇲🇷 **Faculté d'Economie et de Gestion — FEG:**
+        🇲🇷 Faculté d'Economie et de Gestion — FEG:
         8️⃣ Master Econométrie — ISE
            (Ingénierie Statistique et Economique)
         9️⃣ Master Econométrie — Econométrie
 
-        🇲🇷 **ISCAE (en commun avec FST):**
+        🇲🇷 ISCAE (en commun avec FST):
         🔟 Informatique Appliquée à la Gestion
 
-        🌍 **Hors Mauritanie:**
+        🌍 Hors Mauritanie:
         🇩🇿 Master dans les universités algériennes (UNDZ)
         🇹🇳 Master dans les universités tunisiennes (UNTN)
         🇲🇦 Master dans les universités marocaines (UNMA)

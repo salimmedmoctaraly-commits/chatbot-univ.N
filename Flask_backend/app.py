@@ -505,6 +505,53 @@ def search_questions():
     return jsonify([row_to_dict(r) for r in rows])
 
 
+@app.route("/faculty-stats", methods=["GET"])
+def faculty_stats():
+    """توزيع الأسئلة حسب الكلية المذكورة في السؤال."""
+    faculty_keywords = {
+        "FST":   ["fst", "sciences et techniques", "علوم تقنيات", "علوم والتقنيات", "كلية العلوم"],
+        "FLSH":  ["flsh", "lettres", "sciences humaines", "آداب", "إنسانية", "اجتماعية"],
+        "FMPOS": ["fmpos", "médecine", "pharmacie", "طب", "صيدلة", "odontologie"],
+        "FSJP":  ["fsjp", "droit", "sciences politiques", "حقوق", "علوم سياسية"],
+        "FEG":   ["feg", "économie", "gestion", "اقتصاد", "تسيير", "تجارة"],
+    }
+    colors = {
+        "FST":   "#3b82f6",
+        "FLSH":  "#10b981",
+        "FMPOS": "#f97316",
+        "FSJP":  "#8b5cf6",
+        "FEG":   "#eab308",
+    }
+
+    with get_db() as conn:
+        rows = conn.execute("SELECT question FROM unknown_questions").fetchall()
+
+    counts = {fac: 0 for fac in faculty_keywords}
+    for row in rows:
+        q_lower = row["question"].lower()
+        for fac, keywords in faculty_keywords.items():
+            if any(kw in q_lower for kw in keywords):
+                counts[fac] += 1
+
+    result = sorted(
+        [{"name": k, "count": v, "color": colors[k]} for k, v in counts.items()],
+        key=lambda x: -x["count"]
+    )
+    return jsonify(result)
+
+
+@app.route("/rasa-health", methods=["GET"])
+def rasa_health():
+    """التحقق من حالة خادم Rasa بشكل مستقل."""
+    rasa_base = RASA_URL.split("/webhooks")[0]
+    try:
+        r = requests.get(rasa_base, timeout=3)
+        ok = r.status_code < 500
+    except Exception:
+        ok = False
+    return jsonify({"ok": ok, "url": rasa_base})
+
+
 # ══════════════════════════════════════════════════════════════
 #  ENTRY POINT
 # ══════════════════════════════════════════════════════════════
