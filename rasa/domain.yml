@@ -455,7 +455,6 @@ responses:
         • 📚 معلومات التخصصات
         • 📝 إجراءات التسجيل
         • 🎓 برامج الماستر
-        • 📅 الجدول الزمني
         • 💰 المنح الدراسية
         • 🏠 السكن الجامعي
 
@@ -495,7 +494,7 @@ responses:
         جامعة نواكشوط 🎓
 
         المطوران:
-        • محمد سالم محمد مختار عالي
+        • محمد سالم محمد المختار عالي
         • أحمد يعقوب بدي بي
 
         قسم الرياضيات والمعلوماتية
@@ -592,7 +591,7 @@ responses:
 
   utter_ask_facultes_liste:
     - text: |
-       **الكليات الخمس:**
+       الكليات الخمس:
         1. كلية الآداب والعلوم الإنسانية (FLSH)
         2. كلية العلوم والتقنيات (FST)
         3. كلية الطب والصيدلة وطب الأسنان (FMPOS)
@@ -1585,14 +1584,13 @@ responses:
 
   utter_description_MA_ar:
     - text: |
-        📐 **تخصص MA — الرياضيات والتطبيقات**
-        ══════════════════════════════════
+        📐 تخصص MA — الرياضيات والتطبيقات
 
         يُعدّ تخصص MA من أبرز التخصصات العلمية المعتمدة على الرياضيات.
         يركّز على توظيف الأدوات الرياضية في النمذجة والتحليل
         لفهم الظواهر الواقعية واتخاذ قرارات علمية دقيقة.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - تطوير البرمجيات والأنظمة الذكية
         - تحليل البيانات والإحصاء التطبيقي
         - الذكاء الاصطناعي والنمذجة الرياضية
@@ -1600,8 +1598,7 @@ responses:
 
   utter_description_MA_fr:
     - text: |
-        📐 **Spécialité MA — Mathématiques et Applications**
-        ══════════════════════════════════════════════
+        📐 Spécialité MA — Mathématiques et Applications
 
         La spécialité MA compte parmi les principales filières scientifiques
         basées sur les mathématiques. Elle se concentre sur l'utilisation
@@ -1609,7 +1606,7 @@ responses:
         pour comprendre les phénomènes réels et prendre des décisions
         scientifiques précises.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Développement de logiciels et de systèmes intelligents
         - Analyse de données et statistiques appliquées
         - Intelligence artificielle et modélisation mathématique
@@ -1617,15 +1614,14 @@ responses:
 
   utter_description_MI_ar:
     - text: |
-        💻 **تخصص MI — الرياضيات والمعلوماتية**
-        ══════════════════════════════════════
+        💻 تخصص MI — الرياضيات والمعلوماتية
 
         يجمع تخصص MI بين الرياضيات وعلوم الحاسوب،
         ويركّز على الخوارزميات والبرمجة وتطوير الأنظمة،
         مما يؤهّل الطلبة لحل المشكلات برمجياً وتصميم
         حلول رقمية مبتكرة.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - تطوير البرمجيات والأنظمة الذكية
         - تحليل البيانات والإحصاء التطبيقي
         - الذكاء الاصطناعي والنمذجة الرياضية
@@ -1633,8 +1629,7 @@ responses:
 
   utter_description_MI_fr:
     - text: |
-        💻 **Spécialité MI — Mathématiques et Informatique**
-        ══════════════════════════════════════════════
+        💻 Spécialité MI — Mathématiques et Informatique
 
         La spécialité MI associe les mathématiques et l'informatique,
         et se concentre sur les algorithmes, la programmation et le
@@ -1642,7 +1637,7 @@ responses:
         résoudre des problèmes par la programmation et à concevoir
         des solutions numériques innovantes.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Développement de logiciels et de systèmes intelligents
         - Analyse de données et statistiques appliquées
         - Intelligence artificielle et modélisation mathématique
@@ -1650,22 +1645,20 @@ responses:
 
   utter_description_MIAGE_ar:
     - text: |
-        🖥️ **تخصص MIAGE — طرق المعلوماتية التطبيقية للتسيير**
-        ══════════════════════════════════════════════════
+        🖥️ تخصص MIAGE — طرق المعلوماتية التطبيقية للتسيير
 
         يُعتبر تخصص MIAGE من أهم التخصصات المهنية في الإعلام الآلي،
         إذ يجمع بين الجانب التقني والتطبيقي لإعداد طلاب قادرين على
         تطوير حلول رقمية مبتكرة وربط التكنولوجيا باحتياجات المؤسسات.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - تطوير التطبيقات وأنظمة المعلومات
         - تحليل البيانات والذكاء الاصطناعي
         - ريادة الأعمال الرقمية
 
   utter_description_MIAGE_fr:
     - text: |
-        🖥️ **Spécialité MIAGE — Méthodes Informatiques Appliquées à la Gestion**
-        ══════════════════════════════════════════════════════════════════
+        🖥️ Spécialité MIAGE — Méthodes Informatiques Appliquées à la Gestion
 
         Les spécialités MIAGE et DAII font partie des filières professionnelles
         les plus importantes en informatique. Elles allient l'aspect technique
@@ -1673,29 +1666,27 @@ responses:
         solutions numériques innovantes et de relier la technologie aux besoins
         des entreprises.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Développement d'applications et systèmes d'information
         - Analyse de données et intelligence artificielle
         - Entrepreneuriat numérique
 
   utter_description_DA2I_ar:
     - text: |
-        🌐 **تخصص DA2I — تطوير وإدارة الإنترنت والأنظمة**
-        ══════════════════════════════════════════════
+        🌐 تخصص DA2I — تطوير وإدارة الإنترنت والأنظمة
 
         يُعتبر تخصص DA2I من أهم التخصصات المهنية في الإعلام الآلي،
         إذ يجمع بين الجانب التقني والتطبيقي لإعداد طلاب قادرين على
         تطوير حلول رقمية مبتكرة وربط التكنولوجيا باحتياجات المؤسسات.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - تطوير التطبيقات وأنظمة المعلومات
         - تحليل البيانات والذكاء الاصطناعي
         - ريادة الأعمال الرقمية
 
   utter_description_DA2I_fr:
     - text: |
-        🌐 **Spécialité DA2I — Développement et Administration Internet**
-        ══════════════════════════════════════════════════════════
+        🌐 Spécialité DA2I — Développement et Administration Internet
 
         Les spécialités MIAGE et DAII font partie des filières professionnelles
         les plus importantes en informatique. Elles allient l'aspect technique
@@ -1703,22 +1694,21 @@ responses:
         solutions numériques innovantes et de relier la technologie aux besoins
         des entreprises.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Développement d'applications, systèmes d'information
         - Analyse de données, intelligence artificielle
         - Entrepreneuriat numérique
 
   utter_description_PF_ar:
     - text: |
-        ⚛️ **تخصص PF — الفيزياء الأساسية**
-        ══════════════════════════════════
+        ⚛️ تخصص PF — الفيزياء الأساسية
 
         هي فرع من العلوم يهدف إلى فهم القوانين والمبادئ التي تحكم الكون،
         مثل حركة الأجسام، الطاقة، القوى، والمادة.
         وتشمل مجالات مثل الميكانيكا الكلاسيكية، الكهرومغناطيسية،
         الفيزياء الكمية والنسبية.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - تطوير الحواسيب الكمية المعتمدة على ميكانيكا الكم
         - فهم أعمق للكون مثل الثقوب السوداء والطاقة المظلمة
         - تحسين مصادر الطاقة مثل الاندماج النووي
@@ -1726,8 +1716,7 @@ responses:
 
   utter_description_PF_fr:
     - text: |
-        ⚛️ **Spécialité PF — Physique Fondamentale**
-        ══════════════════════════════════════════
+        ⚛️ Spécialité PF — Physique Fondamentale
 
         La physique fondamentale est une branche des sciences qui vise à
         comprendre les lois et les principes qui régissent l'univers, comme
@@ -1735,7 +1724,7 @@ responses:
         Elle inclut des domaines tels que la mécanique classique,
         l'électromagnétisme, la physique quantique et la relativité.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Le développement des ordinateurs quantiques
         - Une compréhension plus profonde de l'univers (trous noirs, énergie noire)
         - L'amélioration des sources d'énergie comme la fusion nucléaire
@@ -1743,15 +1732,14 @@ responses:
 
   utter_description_SP_ar:
     - text: |
-        🔬 **تخصص SP — العلوم الفيزيائية**
-        ══════════════════════════════════
+        🔬 تخصص SP — العلوم الفيزيائية
 
         هو مجال علمي يدرس القوانين الأساسية التي تحكم الطبيعة،
         مثل الحركة والطاقة والكهرباء والضوء والمادة.
         يعتمد على مواد رئيسية مثل الفيزياء والكيمياء والرياضيات
         لفهم الظواهر الطبيعية وتفسيرها.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - التدريس في المدارس أو الجامعات
         - البحث العلمي في المختبرات
         - العمل في قطاعات الطاقة
@@ -1759,8 +1747,7 @@ responses:
 
   utter_description_SP_fr:
     - text: |
-        🔬 **Spécialité SP — Sciences Physiques**
-        ══════════════════════════════════════
+        🔬 Spécialité SP — Sciences Physiques
 
         La spécialité Sciences Physiques est un domaine scientifique qui étudie
         les lois fondamentales régissant la nature, comme le mouvement, l'énergie,
@@ -1768,7 +1755,7 @@ responses:
         principales telles que la physique, la chimie et les mathématiques
         pour comprendre et expliquer les phénomènes naturels.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - L'enseignement dans les écoles ou les universités
         - La recherche scientifique en laboratoire
         - Le travail dans les secteurs de l'énergie: électricité, énergie solaire
@@ -1776,8 +1763,7 @@ responses:
 
   utter_description_TSER_ar:
     - text: |
-        ☀️ **تخصص TSER — تقنيات أنظمة الطاقة المتجددة**
-        ═══════════════════════════════════════════════
+        ☀️ تخصص TSER — تقنيات أنظمة الطاقة المتجددة
 
         تُعد تقنيات الطاقة المتجددة فرعاً من الفيزياء التطبيقية،
         وتشمل حلولاً مبتكرة لتحويل المصادر الطبيعية المستدامة
@@ -1785,15 +1771,14 @@ responses:
         مثل الشمس والرياح والمياه والكتلة الحيوية.
         وتتميز بأنها صديقة للبيئة وتقلل من التلوث.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - توليد الكهرباء (محطات شمسية وريّاح)
         - النقل (السيارات الكهربائية والوقود النظيفة)
         - المناطق المعزولة (أنظمة مستقلة أو هجينة)
 
   utter_description_TSER_fr:
     - text: |
-        ☀️ **Spécialité TSER — Technologies des Systèmes d'Energie Renouvelable**
-        ══════════════════════════════════════════════════════════════════
+        ☀️ Spécialité TSER — Technologies des Systèmes d'Energie Renouvelable
 
         Les technologies des systèmes d'énergie renouvelable sont une branche
         de la physique appliquée et incluent des solutions innovantes pour convertir
@@ -1802,48 +1787,45 @@ responses:
         le vent, l'eau et la biomasse. Elles se caractérisent par leur respect
         de l'environnement et par la réduction de la pollution.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - La production d'électricité: centrales solaires et éoliennes
         - Le transport: voitures électriques et carburants propres
         - Les zones isolées: systèmes autonomes ou hybrides
 
   utter_description_EEA_ar:
     - text: |
-        ⚡ **تخصص EEA — الإلكترونيات واللكتروتقنيات والأتمتة**
-        ═══════════════════════════════════════════════════
+        ⚡ تخصص EEA — الإلكترونيات واللكتروتقنيات والأتمتة
 
         تخصص من فروع الفيزياء التطبيقية يهتم بتصميم وتشغيل
         وصيانة الأنظمة والآليات الكهربائية والتحكم الآلي.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - المصانع والأنظمة الصناعية
         - الطاقة الكهربائية
         - التحكم الآلي (الأتمتة)
 
   utter_description_EEA_fr:
     - text: |
-        ⚡ **Spécialité EEA — Electronique, Electrotechnique et Automatique**
-        ═══════════════════════════════════════════════════════════════
+        ⚡ Spécialité EEA — Electronique, Electrotechnique et Automatique
 
         C'est une spécialité des branches de la physique appliquée qui s'intéresse
         à la conception, à l'exploitation et à la maintenance des systèmes et
         dispositifs électriques ainsi qu'au contrôle automatique.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Les usines et les systèmes industriels
         - L'énergie électrique
         - Le contrôle automatique: automatisation
 
   utter_description_CHIMIE_ar:
     - text: |
-        🧪 **تخصص الكيمياء**
-        ══════════════════
+        🧪 تخصص الكيمياء
 
         تخصص الكيمياء هو العلم الذي يدرس المادة وتركيبها وخصائصها
         والتفاعلات التي تحدث بينها. يدرس طلابه كل فروع الكيمياء.
         كما أنه تخصص تجريبي يعتمد على الفهم والتحليل والمختبر.
 
-        🔭 **الآفاق المستقبلية:**
+        🔭 الآفاق المستقبلية:
         - البحث العلمي والأكاديمي
         - الصناعة الكيميائية بمختلف مجالاتها
         - المختبرات الطبية والبيئية والجنسائية
@@ -1851,15 +1833,13 @@ responses:
 
   utter_description_CHIMIE_fr:
     - text: |
-        🧪 **Spécialité Chimie**
-        ══════════════════════
-
+        🧪 Spécialité Chimie
         C'est la science qui étudie la matière, sa composition, ses propriétés
         et les réactions qui se produisent entre elles. Les étudiants y étudient
         toutes les branches de la chimie. C'est une spécialité expérimentale
         qui repose sur la compréhension, l'analyse et le laboratoire.
 
-        🔭 **Perspectives d'avenir:**
+        🔭 Perspectives d'avenir:
         - Recherche scientifique et académique
         - Industrie chimique dans tous ses domaines
         - Laboratoires médicaux, environnementaux et de police scientifique
@@ -4347,21 +4327,21 @@ responses:
     - text: |
         بناءً على الوثائق الرسمية الصادرة عن وزارة التعليم العالي والبحث العلمي (مديرية التوجيه والمنح) بتاريخ 6 مارس 2026، إليك  معايير الاستحقاق
 
-        🎓 **معايير استحقاق المنحة الجامعية**
+        🎓 معايير استحقاق المنحة الجامعية
 
         📌 معايير الدعم والتميز:
-        • **الدعم الاجتماعي**: ناجحو باكالوريا 2024/2025 المقيدون في السجل الاجتماعي أو اليتامى
-        • **لامركزية التعليم**: المسجلون في مؤسسات الداخل (خارج العاصمة)
-        • **التميز الدراسي**: المتفوقون في باكالوريا 2024/2025 (الأوائل حسب الشعبة)
-        • **التميز الأكاديمي**: الحاصلون على المراكز الثلاثة الأولى في كل مستوى وتخصص
+        • الدعم الاجتماعي: ناجحو باكالوريا 2024/2025 المقيدون في السجل الاجتماعي أو اليتامى
+        • لامركزية التعليم: المسجلون في مؤسسات الداخل (خارج العاصمة)
+        • التميز الدراسي: المتفوقون في باكالوريا 2024/2025 (الأوائل حسب الشعبة)
+        • التميز الأكاديمي: الحاصلون على المراكز الثلاثة الأولى في كل مستوى وتخصص
 
         📌 المعايير الانتقالية (حسب السنة والعمر):
-        • **السنة 3**: لا يتجاوز 24 سنة بتاريخ 31/12/2025
-        • **السنة 4**: لا يتجاوز 26 سنة
-        • **السنة 5**: لا يتجاوز 27 سنة
-        • **السنة 6**: لا يتجاوز 28 سنة • لا تتجاوز مدة الباك 7 سنوات
-        • **السنة 7**: لا يتجاوز 29 سنة • لا تتجاوز مدة الباك 8 سنوات
-        • **السنة 8**: لا يتجاوز 28 سنة • لا تتجاوز مدة الباك 9 سنوات
+        • السنة 3 : لا يتجاوز 24 سنة بتاريخ 31/12/2025
+        • السنة 4 : لا يتجاوز 26 سنة
+        • السنة 5 : لا يتجاوز 27 سنة
+        • السنة 6 : لا يتجاوز 28 سنة • لا تتجاوز مدة الباك 7 سنوات
+        • السنة 7 : لا يتجاوز 29 سنة • لا تتجاوز مدة الباك 8 سنوات
+        • السنة 8 : لا يتجاوز 28 سنة • لا تتجاوز مدة الباك 9 سنوات
 
   utter_ask_inscription_bourse_cnou:
     - text: |
@@ -4400,16 +4380,16 @@ responses:
     - text: |
         بناءً على الإعلان الرسمي الصادر عن المركز الوطني للخدمات الجامعية (إدارة الإقامات الجامعية) بتاريخ 25 نوفمبر 2025، إليك معلومات تجديد السكن الجامعي
 
-        🏠 **تجديد السكن الجامعي 2025-2026**
+        🏠 تجديد السكن الجامعي 2025-2026
 
-        📌 **الجهة المعنية:** الطلاب والطالبات المستفيدون من الحي السكني للسنة الجامعية 2024-2025
+        📌 الجهة المعنية: الطلاب والطالبات المستفيدون من الحي السكني للسنة الجامعية 2024-2025
 
-        📋 **الوثائق المطلوبة:**
+        📋 الوثائق المطلوبة:
         • صورة شمسية مسجل عليها رقم الهاتف
         • إفادة تسجيل تثبت الاجتياز في امتحانات الفصل الأخير من السنة الجامعية 2024-2025
 
-        🗓️ **الموعد:** ابتداءً من الاثنين 01 ديسمبر 2025
-        🕘 **التوقيت:** من 9:00 صباحاً إلى غاية 1:00 زوالاً
+        🗓️ الموعد: ابتداءً من الاثنين 01 ديسمبر 2025
+        🕘التوقيت: من 9:00 صباحاً إلى غاية 1:00 زوالاً
 
   utter_ask_criteres_transport:
     - text: |
