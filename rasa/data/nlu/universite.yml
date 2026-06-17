@@ -11,16 +11,22 @@ nlu:
     - أخبرني عن جامعة نواكشوط
     - متى تأسست الجامعة؟
     - تاريخ تأسيس الجامعة
-    - ما هي UNA؟
+    - ما هي UN؟
     - معلومات عامة عن الجامعة
     - عرفني بالجامعة
     - جامعة نواكشوط
     - qu'est-ce que l'université de Nouakchott?
     - informations sur l'université
-    - c'est quoi l'UNA?
+    - c'est quoi l'UN?
     - présentation de l'université
     - quand a été créée l'université?
     - histoire de l'université de Nouakchott
+    - تاريخ تأسيس UN
+    - معلومات عن UN
+    - متى تأسست UNA
+    - ما هي جامعة UNA؟
+    - UN
+
 
 - intent: ask_president
   examples: |
@@ -80,7 +86,16 @@ nlu:
     - quelles facultés existe-t-il?
     - facultés
     - facultes
+    - شعب الجامعة
+    - كليات
+    - لكليات
+    - faculte
+    - facultée
     - الكليات
+    - facltes
+    - fcultes
+    - facultees
+    - faculttes
     - شعب الجامعة
     - filières de l'université
     - أقسام الجامعة
