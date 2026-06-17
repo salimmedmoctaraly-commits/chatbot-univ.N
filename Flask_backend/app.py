@@ -4,6 +4,7 @@ Base de données : SQLite  (migration automatique depuis JSON)
 """
 
 import re
+import unicodedata
 import sqlite3
 import json
 import os
@@ -181,72 +182,191 @@ def row_to_dict(row: sqlite3.Row) -> dict:
 
 # ══════════════════════════════════════════════════════════════
 #  FACULTY DETECTION — اكتشاف الكلية من محتوى الرسالة
+#  يستخدم: تطبيع النص + قاموس شامل + نظام التسجيل (Scoring)
 # ══════════════════════════════════════════════════════════════
 
-# الكلمات المفتاحية لكل كلية — مرتبة من الأكثر تخصصًا إلى الأقل
-_FACULTY_PATTERNS: dict[str, list[str]] = {
-    # كلية الطب والصيدلة وطب الأسنان
+_ARABIC_DIACRITICS = re.compile(
+    r'[ً-ٰٟۖ-ۜ۟-۪ۤۧۨ-ۭ]'
+)
+
+
+def normalize_text(text: str) -> str:
+    """تطبيع النص: إزالة التشكيل، NFC، حروف صغيرة، ضغط المسافات."""
+    text = _ARABIC_DIACRITICS.sub('', text)
+    text = unicodedata.normalize('NFC', text)
+    text = text.lower()
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+
+# قاموس شامل لكل كلية — كل نمط مع حدود كلمة صريحة
+_FACULTY_REGEX: dict[str, list[str]] = {
+
+    # ══ كلية الطب والصيدلة وطب الأسنان ══
     "FMPOS": [
         r"\bfmpos\b",
-        r"\bpcem\b|\bpcep\b",
-        r"médecine|medecine|pharmacie|odontologie|dentiste|dentaire",
-        r"\bالطب\b|\bطب\b|\bصيدلة\b|\bأسنان\b|\bطبيب\b",
-        r"السنة الطبية|تحضيرية طبية|numérus clausus",
+        r"\bpcem\d?\b", r"\bpcep\d?\b",
+        r"\bm[eé]decine\b", r"\bmedical\b",
+        r"\bpharmac(ie|y)\b",
+        r"\bodontologie\b", r"\bdentiste\b", r"\bdentaire\b",
+        r"\bnursing\b", r"\bchirurgie\b",
+        r"\bالطب\b", r"\bطب\b",
+        r"\bصيدلة\b", r"\bأسنان\b", r"\bطبيب\b",
+        r"\bتمريض\b", r"\bجراحة\b",
+        r"السنة الطبية", r"تحضيرية طبية",
+        r"numérus clausus", r"طب بشري", r"طب عام",
+        r"\bسريري[ةا]?\b",
     ],
-    # كلية الحقوق والعلوم السياسية
+
+    # ══ كلية الحقوق والعلوم السياسية ══
     "FSJP": [
         r"\bfsjp\b",
-        r"\bdroit\b|sciences?\s+politiques?|juridique",
-        r"\bالحقوق\b|\bحقوق\b|\bعلوم سياسية\b|\bقانون\b",
+        r"\bdroit\b",
+        r"sciences?\s+politiques?",
+        r"\bjuridique\b", r"\bjudiciaire\b",
+        r"droit\s+des\s+affaires",
+        r"droit\s+priv[eé]", r"droit\s+public",
+        r"administration\s+publique",
+        r"carri[eè]res?\s+judiciaires?",
+        r"\bالحقوق\b", r"\bحقوق\b",
+        r"علوم\s+سياسية",
+        r"\bقانون\b", r"\bالقانون\b",
+        r"\bقانوني[ةة]?\b",
+        r"إدارة\s+عمومية",
+        r"الإدارة\s+العمومية",
+        r"القانون\s+المدني",
+        r"القانون\s+التجاري",
+        r"القانون\s+العام",
     ],
-    # كلية الاقتصاد والتسيير
+
+    # ══ كلية الاقتصاد والتسيير ══
     "FEG": [
         r"\bfeg\b",
-        r"économie|economie|sciences?\s+écon|\bgestion\b",
-        r"\bfinance\b|comptabilité|comptabilite|\bmarketing\b|\bmanagement\b",
-        r"اقتصاد|تسيير|مالية|محاسبة|إدارة أعمال|علوم اقتصادية",
+        r"\b[eé]conomie\b",
+        r"sciences?\s+[eé]conomiques?",
+        r"\bgestion\b",
+        r"\bfinance\b",
+        r"\bcomptabilit[eé]\b",
+        r"\bbanques?\b", r"\bassurance\b",
+        r"ressources\s+humaines",
+        r"\bmarketing\b", r"\bmanagement\b",
+        r"gestion\s+des\s+(entreprises?|projets?|ressources?)",
+        r"techniques?\s+de\s+gestion",
+        r"\bالاقتصاد\b", r"\bاقتصاد\b",
+        r"\bالتسيير\b", r"\bتسيير\b",
+        r"\bمالية\b", r"\bمحاسبة\b",
+        r"\bبنوك\b", r"\bالتأمين\b",
+        r"موارد\s+بشرية",
+        r"تسيير\s+المؤسسات",
+        r"مشاريع\s+عمومية",
+        r"إدارة\s+أعمال",
+        r"علوم\s+اقتصادية",
     ],
-    # كلية الآداب والعلوم الإنسانية
+
+    # ══ كلية الآداب والعلوم الإنسانية ══
     "FLSH": [
         r"\bflsh\b",
-        r"\blettres\b|sciences?\s+humaines?",
-        r"\bhistoire\b|géographie|geographie|philosophie|sociologie|anthropologie|linguistique|psychologie",
-        r"الآداب|آداب|تاريخ|جغرافيا|فلسفة|علم اجتماع|أدب عربي|أنثروبولوجيا|لسانيات",
+        r"\blettres\b",
+        r"sciences?\s+humaines?",
+        r"\bhistoire\b",
+        r"\bg[eé]ographie\b",
+        r"\bphilosophie\b",
+        r"\bsociologie\b",
+        r"\banthropologie\b",
+        r"\blinguistique\b",
+        r"\bpsychologie\b",
+        r"\blitt[eé]rature\b",
+        r"\bالآداب\b", r"\bآداب\b",
+        r"\bالأدب\b", r"أدب\s+عربي",
+        r"\bتاريخ\b", r"\bالتاريخ\b",
+        r"\bجغرافيا\b", r"\bالجغرافيا\b",
+        r"\bفلسفة\b", r"\bالفلسفة\b",
+        r"علم\s+الاجتماع",
+        r"اللغة\s+العربية",
+        r"اللغة\s+الفرنسية",
+        r"اللغة\s+الإنجليزية",
+        r"اللغة\s+الإسبانية",
+        r"اللغة\s+التركية",
+        r"اللغة\s+الصينية",
+        r"اللغات\s+الوطنية",
+        r"عمل\s+اجتماعي",
+        r"تنمية\s+محلية",
+        r"البيئة\s+والتنمية",
+        r"\bأنثروبولوجيا\b", r"\bلسانيات\b",
     ],
-    # كلية العلوم والتقنيات
+
+    # ══ كلية العلوم والتقنيات ══
     "FST": [
         r"\bfst\b",
-        r"sciences?\s+et\s+techniques?|علوم والتقنيات|علوم تقنيات",
-        r"\bmpi\b|\bbmp\b|\bipg\b|\babc\b|\bboe\b",
-        r"mathématiques?|mathematiques?|رياضيات",
-        r"\binformatique\b|معلوماتية|إعلام آلي",
-        r"\bphysique\b|فيزياء",
-        r"\bchimie\b|كيمياء",
-        r"\bbiologie\b|أحياء|علم الحياة",
-        r"géologie|geologie|جيولوجيا",
-        r"concours\s+fst|كونكور",
+        r"sciences?\s+et\s+techniques?",
+        r"علوم\s+والتقنيات",
+        r"كلية\s+العلوم\s+والتقنيات",
+        # دورات تحضيرية
+        r"\bmpi\b",
+        r"\bcycle\s+bg\b", r"\bbranche\s+bg\b", r"bg\s+fst",
+        # شعب الإجازة الأساسية
+        r"\bbmp\b", r"\bboe\b",
+        # كودات الإجازة المهنية (مميزة ومحددة)
+        r"\bgeomin\b",
+        r"\bmiage\b", r"\bda2i\b",
+        r"\bpepe\b", r"\bipg\b",
+        r"\babc\b", r"\btser\b",
+        r"\beea\b", r"\btpgm\b",
+        # كودات الماستر
+        r"\bbees\b", r"\bbmpb\b", r"\bbomvrh\b",
+        r"\btassmq\b", r"\bisdr\b",
+        r"ia[_\-](mlds|nlpcv)",
+        r"ma[_\-]imcs",
+        r"\bsdd\b",
+        # تخصصات الدكتوراه والإجازة
+        r"\bmath[eé]matiques?\b", r"\bmaths?\b",
+        r"\binformatique\b",
+        r"\bphysique\b",
+        r"\bchimie\b",
+        r"\bbiologie\b",
+        r"\bg[eé]ologie\b",
+        # العربية
+        r"\bرياضيات\b", r"\bالرياضيات\b",
+        r"\bمعلوماتية\b", r"إعلام\s+آلي",
+        r"\bفيزياء\b", r"\bالفيزياء\b",
+        r"\bكيمياء\b", r"\bالكيمياء\b",
+        r"\bأحياء\b", r"علم\s+الحياة",
+        r"\bجيولوجيا\b",
+        r"concours\s+fst", r"\bكونكور\b",
     ],
 }
 
-# تجميع أنماط Regex مسبقًا لتحسين الأداء
-_COMPILED_FACULTY: dict[str, list[re.Pattern]] = {
+# تجميع الأنماط مسبقًا
+_COMPILED_FACULTY_REGEX: dict[str, list[re.Pattern]] = {
     fac: [re.compile(p, re.IGNORECASE | re.UNICODE) for p in patterns]
-    for fac, patterns in _FACULTY_PATTERNS.items()
+    for fac, patterns in _FACULTY_REGEX.items()
 }
 
-# ترتيب الأولوية: من الأكثر تخصصًا إلى الأقل
-_FACULTY_PRIORITY = ["FMPOS", "FSJP", "FEG", "FLSH", "FST"]
+# ترتيب الأولوية عند تساوي النقاط (من الأكثر تخصصًا)
+_FACULTY_PRIORITY_ORDER = ["FMPOS", "FSJP", "FEG", "FLSH", "FST"]
+_PRIORITY_INDEX = {fac: i for i, fac in enumerate(_FACULTY_PRIORITY_ORDER)}
 
 
 def detect_faculty(message: str) -> str | None:
-    """اكتشاف الكلية من محتوى رسالة المستخدم."""
+    """
+    اكتشاف الكلية الأم — نظام التسجيل (Scoring) مع الأولوية عند التعادل.
+    يدعم: العربية، الفرنسية، الاختصارات، النصوص المختلطة.
+    """
     if not message:
         return None
-    for faculty in _FACULTY_PRIORITY:
-        for pattern in _COMPILED_FACULTY[faculty]:
-            if pattern.search(message):
-                return faculty
-    return None
+
+    normalized = normalize_text(message)
+
+    scores: dict[str, int] = {}
+    for fac, patterns in _COMPILED_FACULTY_REGEX.items():
+        count = sum(1 for p in patterns if p.search(normalized))
+        if count > 0:
+            scores[fac] = count
+
+    if not scores:
+        return None
+
+    return min(scores, key=lambda f: (-scores[f], _PRIORITY_INDEX[f]))
 
 
 def migrate_unknown_to_chat_logs() -> None:
