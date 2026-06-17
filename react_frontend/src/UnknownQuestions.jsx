@@ -430,7 +430,7 @@ export default function UnknownQuestions({ onBack }) {
   const load = useCallback(async () => {
     setLoading(true); setFetchErr("");
     try {
-      const r = await fetch(`${API_URL}/unknown-questions`);
+      const r = await fetch(`${API_URL}/unknown-questions/grouped`);
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const d = await r.json();
       setQuestions(Array.isArray(d) ? d : []);
@@ -498,9 +498,13 @@ export default function UnknownQuestions({ onBack }) {
     showToast(T.passChanged);
   };
 
-  const deleteOne = async id => {
+  const deleteOne = async (questionText) => {
     try {
-      const res = await fetch(`${API_URL}/unknown-questions/${id}`, { method:"DELETE" });
+      const res = await fetch(`${API_URL}/unknown-questions/by-question`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: questionText })
+      });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       showToast(T.deleteDone);
       setDelOne(null);
@@ -529,7 +533,7 @@ export default function UnknownQuestions({ onBack }) {
       const res = await fetch(`${API_URL}/unknown-questions/reply`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question_id: q.id, reply: replyTxt })
+        body: JSON.stringify({ question_id: q.first_id, reply: replyTxt })
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setReplies(prev => ({
@@ -587,7 +591,7 @@ export default function UnknownQuestions({ onBack }) {
   };
 
   // ── Derived data ──────────────────────────────────
-  const displayed     = [...questions].reverse();
+  const displayed     = [...questions]; // already DESC from /grouped endpoint
   const filtered      = displayed.filter(q => q.question.toLowerCase().includes(search.toLowerCase()));
   const arCount       = questions.filter(q => detectLang(q.question)==="ar").length;
   const frCount       = questions.length - arCount;
@@ -692,7 +696,7 @@ export default function UnknownQuestions({ onBack }) {
           const realIdx = questions.indexOf(q);
           const cat = getCategory(q.question);
           const cc  = CAT_COLORS[cat];
-          const dt  = new Date(q.timestamp).toLocaleDateString("fr-FR");
+          const dt  = new Date(q.last_seen || q.timestamp).toLocaleDateString("fr-FR");
           const rep = replies[q.question];
           return (
             <div key={i} style={{display:"grid", gridTemplateColumns:"1fr 88px 96px 106px 76px",
@@ -702,10 +706,19 @@ export default function UnknownQuestions({ onBack }) {
               onMouseEnter={e=>e.currentTarget.style.background=dark?"#0f172a22":"#f8fafc"}
               onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
               <div style={{minWidth:0}}>
-                <p style={{fontSize:13, color:C.text, direction:"rtl", textAlign:"right",
-                  whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", margin:0}}>
-                  {q.question}
-                </p>
+                <div style={{display:"flex", alignItems:"center", gap:6, direction:"rtl"}}>
+                  <p style={{fontSize:13, color:C.text, direction:"rtl", textAlign:"right",
+                    whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", margin:0, flex:1}}>
+                    {q.question}
+                  </p>
+                  {q.count > 1 && (
+                    <span title={`سُئل ${q.count} مرات`} style={{
+                      background:"#f43f5e", color:"white", borderRadius:20,
+                      padding:"1px 7px", fontSize:10, fontWeight:800, flexShrink:0,
+                      border:"1px solid rgba(244,63,94,.4)", whiteSpace:"nowrap"
+                    }}>×{q.count}</span>
+                  )}
+                </div>
                 {rep && (
                   <p style={{fontSize:11, color:"#10b981", marginTop:2, direction:"rtl",
                     textAlign:"right", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis"}}>
@@ -742,7 +755,7 @@ export default function UnknownQuestions({ onBack }) {
                     <Pencil size={11}/>
                   </button>
                 )}
-                <button onClick={()=>setDelOne(q.id)}
+                <button onClick={()=>setDelOne(q)}
                   style={{background:"rgba(244,63,94,.12)", border:"1px solid rgba(244,63,94,.25)",
                     color:"#f43f5e", borderRadius:7, padding:"4px 7px", cursor:"pointer",
                     display:"flex", alignItems:"center"}}>
@@ -1428,17 +1441,24 @@ export default function UnknownQuestions({ onBack }) {
             <h3 style={{color:C.text, fontSize:16, fontWeight:700, margin:"0 0 8px"}}>{T.confirmDeleteOne}</h3>
             <p style={{color:C.sub, fontSize:13, margin:"0 0 8px", direction:"rtl"}}>{T.confirmDeleteOneMsg}</p>
             <p style={{color:C.text, fontSize:12, background:dark?"#0f172a":"#f8fafc",
-              padding:"8px 12px", borderRadius:8, marginBottom:20, direction:"rtl"}}>
-              {questions.find(q=>q.id===delOne)?.question}
+              padding:"8px 12px", borderRadius:8, marginBottom:8, direction:"rtl"}}>
+              {delOne?.question}
             </p>
-            <div style={{display:"flex", gap:10, justifyContent:"center"}}>
+            {delOne?.count > 1 && (
+              <p style={{color:"#f43f5e", fontSize:11, marginBottom:16, fontWeight:600}}>
+                {lang==="ar"
+                  ? `⚠ سيتم حذف جميع النسخ الـ ${delOne.count} من هذا السؤال`
+                  : `⚠ Les ${delOne.count} occurrences seront supprimées`}
+              </p>
+            )}
+            <div style={{display:"flex", gap:10, justifyContent:"center", marginTop: delOne?.count > 1 ? 0 : 12}}>
               <button onClick={()=>setDelOne(null)}
                 style={{padding:"8px 20px", border:`1px solid ${C.bdr}`, borderRadius:8,
                   cursor:"pointer", fontSize:13, fontFamily:"'Tajawal',sans-serif",
                   background:C.card, color:C.sub}}>
                 {T.cancel}
               </button>
-              <button onClick={()=>deleteOne(delOne)}
+              <button onClick={()=>deleteOne(delOne?.question)}
                 style={{padding:"8px 20px", background:"#f43f5e", color:"white", border:"none",
                   borderRadius:8, cursor:"pointer", fontSize:13,
                   fontFamily:"'Tajawal',sans-serif", fontWeight:700,

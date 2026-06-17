@@ -193,14 +193,16 @@ def is_fallback_response(text: str) -> bool:
 
 
 def auto_save_unknown(question: str, sender_id: str) -> None:
-    """حفظ سؤال غير مجاب تلقائياً — بدون تكرار."""
+    """حفظ سؤال غير مجاب تلقائياً — بدون تكرار حقيقي."""
     try:
         with get_db() as conn:
-            last = conn.execute(
-                "SELECT question FROM unknown_questions ORDER BY id DESC LIMIT 1"
+            existing = conn.execute(
+                "SELECT id FROM unknown_questions WHERE question = ? AND admin_reply IS NULL LIMIT 1",
+                (question,)
             ).fetchone()
-            if last and last["question"] == question:
-                return  # تجنب التكرار المتتالي
+            if existing:
+                logger.info(f"[auto-save] سؤال موجود مسبقاً بدون رد: {question[:60]}")
+                return
             conn.execute(
                 """INSERT INTO unknown_questions (question, timestamp, sender_id)
                    VALUES (?, ?, ?)""",
@@ -339,7 +341,7 @@ def chat():
 
 @app.route("/save-unknown-question", methods=["POST"])
 def save_unknown_question():
-    """حفظ سؤال غير مجاب تلقائياً من Rasa."""
+    """حفظ سؤال غير مجاب — بدون تكرار حقيقي."""
     data      = request.get_json(silent=True) or {}
     question  = data.get("question", "").strip()
     sender_id = data.get("sender_id") or data.get("sender")
@@ -348,12 +350,11 @@ def save_unknown_question():
         return jsonify({"error": "question is required"}), 400
 
     with get_db() as conn:
-        # منع التكرار المتتالي من نفس المُرسِل
-        last = conn.execute(
-            """SELECT question FROM unknown_questions
-               ORDER BY id DESC LIMIT 1"""
+        existing = conn.execute(
+            "SELECT id FROM unknown_questions WHERE question = ? AND admin_reply IS NULL LIMIT 1",
+            (question,)
         ).fetchone()
-        if last and last["question"] == question:
+        if existing:
             total = conn.execute(
                 "SELECT COUNT(*) FROM unknown_questions"
             ).fetchone()[0]
@@ -381,6 +382,28 @@ def get_questions():
         rows = conn.execute(
             "SELECT * FROM unknown_questions ORDER BY timestamp ASC"
         ).fetchall()
+    return jsonify([row_to_dict(r) for r in rows])
+
+
+@app.route("/unknown-questions/grouped", methods=["GET"])
+def get_questions_grouped():
+    """إرجاع الأسئلة مجمّعةً حسب النص — مع عدد التكرارات."""
+    with get_db() as conn:
+        rows = conn.execute("""
+            SELECT
+                question,
+                COUNT(*)        AS count,
+                MIN(id)         AS first_id,
+                MAX(id)         AS latest_id,
+                MIN(timestamp)  AS first_seen,
+                MAX(timestamp)  AS last_seen,
+                MAX(admin_reply)  AS admin_reply,
+                MAX(replied_at)   AS replied_at,
+                MAX(sender_id)    AS sender_id
+            FROM unknown_questions
+            GROUP BY question
+            ORDER BY MAX(timestamp) DESC
+        """).fetchall()
     return jsonify([row_to_dict(r) for r in rows])
 
 
@@ -447,6 +470,27 @@ def reply_question():
         "admin_reply": reply_text,
         "replied_at":  datetime.utcnow().isoformat(),
     })
+
+
+@app.route("/unknown-questions/by-question", methods=["DELETE"])
+def delete_by_question():
+    """حذف جميع نسخ سؤال معيّن (حسب نص السؤال)."""
+    data     = request.get_json(silent=True) or {}
+    question = data.get("question", "").strip()
+    if not question:
+        return jsonify({"error": "question is required"}), 400
+
+    with get_db() as conn:
+        count = conn.execute(
+            "SELECT COUNT(*) FROM unknown_questions WHERE question = ?", (question,)
+        ).fetchone()[0]
+        if count == 0:
+            return jsonify({"error": "Question not found"}), 404
+        conn.execute("DELETE FROM unknown_questions WHERE question = ?", (question,))
+        conn.commit()
+
+    logger.info(f"[DELETE by-question] {count} نسخة محذوفة: {question[:60]}")
+    return jsonify({"status": "deleted", "count": count, "question": question})
 
 
 @app.route("/unknown-questions/<int:qid>", methods=["DELETE"])
