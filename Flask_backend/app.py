@@ -3,6 +3,7 @@ UNA Chatbot — Flask Backend  v3.0
 Base de données : SQLite  (migration automatique depuis JSON)
 """
 
+import re
 import sqlite3
 import json
 import os
@@ -90,7 +91,6 @@ def init_db() -> None:
                 replied_at  TEXT    DEFAULT NULL
             )
         """)
-        # فهرس للبحث السريع
         conn.execute("""
             CREATE INDEX IF NOT EXISTS idx_timestamp
             ON unknown_questions (timestamp DESC)
@@ -98,6 +98,24 @@ def init_db() -> None:
         conn.execute("""
             CREATE INDEX IF NOT EXISTS idx_replied
             ON unknown_questions (admin_reply)
+        """)
+        # جدول تسجيل جميع التفاعلات لإحصائيات الكليات
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS chat_logs (
+                id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                message     TEXT    NOT NULL,
+                sender_id   TEXT,
+                timestamp   TEXT    NOT NULL,
+                faculty     TEXT    DEFAULT NULL
+            )
+        """)
+        conn.execute("""
+            CREATE INDEX IF NOT EXISTS idx_chatlog_faculty
+            ON chat_logs (faculty)
+        """)
+        conn.execute("""
+            CREATE INDEX IF NOT EXISTS idx_chatlog_ts
+            ON chat_logs (timestamp DESC)
         """)
         conn.commit()
     logger.info("[DB] ✓ جداول قاعدة البيانات جاهزة")
@@ -161,9 +179,103 @@ def row_to_dict(row: sqlite3.Row) -> dict:
     return dict(row)
 
 
+# ══════════════════════════════════════════════════════════════
+#  FACULTY DETECTION — اكتشاف الكلية من محتوى الرسالة
+# ══════════════════════════════════════════════════════════════
+
+# الكلمات المفتاحية لكل كلية — مرتبة من الأكثر تخصصًا إلى الأقل
+_FACULTY_PATTERNS: dict[str, list[str]] = {
+    # كلية الطب والصيدلة وطب الأسنان
+    "FMPOS": [
+        r"\bfmpos\b",
+        r"\bpcem\b|\bpcep\b",
+        r"médecine|medecine|pharmacie|odontologie|dentiste|dentaire",
+        r"\bالطب\b|\bطب\b|\bصيدلة\b|\bأسنان\b|\bطبيب\b",
+        r"السنة الطبية|تحضيرية طبية|numérus clausus",
+    ],
+    # كلية الحقوق والعلوم السياسية
+    "FSJP": [
+        r"\bfsjp\b",
+        r"\bdroit\b|sciences?\s+politiques?|juridique",
+        r"\bالحقوق\b|\bحقوق\b|\bعلوم سياسية\b|\bقانون\b",
+    ],
+    # كلية الاقتصاد والتسيير
+    "FEG": [
+        r"\bfeg\b",
+        r"économie|economie|sciences?\s+écon|\bgestion\b",
+        r"\bfinance\b|comptabilité|comptabilite|\bmarketing\b|\bmanagement\b",
+        r"اقتصاد|تسيير|مالية|محاسبة|إدارة أعمال|علوم اقتصادية",
+    ],
+    # كلية الآداب والعلوم الإنسانية
+    "FLSH": [
+        r"\bflsh\b",
+        r"\blettres\b|sciences?\s+humaines?",
+        r"\bhistoire\b|géographie|geographie|philosophie|sociologie|anthropologie|linguistique|psychologie",
+        r"الآداب|آداب|تاريخ|جغرافيا|فلسفة|علم اجتماع|أدب عربي|أنثروبولوجيا|لسانيات",
+    ],
+    # كلية العلوم والتقنيات
+    "FST": [
+        r"\bfst\b",
+        r"sciences?\s+et\s+techniques?|علوم والتقنيات|علوم تقنيات",
+        r"\bmpi\b|\bbmp\b|\bipg\b|\babc\b|\bboe\b",
+        r"mathématiques?|mathematiques?|رياضيات",
+        r"\binformatique\b|معلوماتية|إعلام آلي",
+        r"\bphysique\b|فيزياء",
+        r"\bchimie\b|كيمياء",
+        r"\bbiologie\b|أحياء|علم الحياة",
+        r"géologie|geologie|جيولوجيا",
+        r"concours\s+fst|كونكور",
+    ],
+}
+
+# تجميع أنماط Regex مسبقًا لتحسين الأداء
+_COMPILED_FACULTY: dict[str, list[re.Pattern]] = {
+    fac: [re.compile(p, re.IGNORECASE | re.UNICODE) for p in patterns]
+    for fac, patterns in _FACULTY_PATTERNS.items()
+}
+
+# ترتيب الأولوية: من الأكثر تخصصًا إلى الأقل
+_FACULTY_PRIORITY = ["FMPOS", "FSJP", "FEG", "FLSH", "FST"]
+
+
+def detect_faculty(message: str) -> str | None:
+    """اكتشاف الكلية من محتوى رسالة المستخدم."""
+    if not message:
+        return None
+    for faculty in _FACULTY_PRIORITY:
+        for pattern in _COMPILED_FACULTY[faculty]:
+            if pattern.search(message):
+                return faculty
+    return None
+
+
+def migrate_unknown_to_chat_logs() -> None:
+    """
+    ترحيل الأسئلة غير المجابة القديمة إلى chat_logs
+    يعمل مرة واحدة فقط إذا كانت chat_logs فارغة.
+    """
+    with get_db() as conn:
+        if conn.execute("SELECT COUNT(*) FROM chat_logs").fetchone()[0] > 0:
+            return
+        rows = conn.execute(
+            "SELECT question, sender_id, timestamp FROM unknown_questions"
+        ).fetchall()
+        if not rows:
+            return
+        for row in rows:
+            conn.execute(
+                "INSERT INTO chat_logs (message, sender_id, timestamp, faculty) VALUES (?,?,?,?)",
+                (row["question"], row["sender_id"], row["timestamp"],
+                 detect_faculty(row["question"]))
+            )
+        conn.commit()
+        logger.info(f"[DB] ✓ تم ترحيل {len(rows)} سؤال من unknown_questions إلى chat_logs")
+
+
 # ── تهيئة قاعدة البيانات عند بدء التشغيل ──
 init_db()
 migrate_from_json()
+migrate_unknown_to_chat_logs()
 
 
 # ══════════════════════════════════════════════════════════════
@@ -309,6 +421,19 @@ def chat():
     _active_sessions[sender] = datetime.utcnow().timestamp()
     logger.info(f"[/chat] {sender}: {user_message[:80]}")
 
+    # ── تسجيل التفاعل في chat_logs (قبل إرسال الرد) ──────────
+    faculty = detect_faculty(user_message)
+    try:
+        with get_db() as conn:
+            conn.execute(
+                "INSERT INTO chat_logs (message, sender_id, timestamp, faculty) VALUES (?,?,?,?)",
+                (user_message, sender, datetime.utcnow().isoformat(), faculty)
+            )
+            conn.commit()
+    except Exception as log_err:
+        logger.warning(f"[chat_logs] خطأ في التسجيل: {log_err}")
+    # ─────────────────────────────────────────────────────────
+
     try:
         reply = ask_rasa(user_message, sender)
 
@@ -325,10 +450,10 @@ def chat():
             "is_fallback":  fallback,
         })
     except requests.Timeout:
-        auto_save_unknown(user_message, sender)   # مهلة = سؤال غير مجاب
+        auto_save_unknown(user_message, sender)
         return jsonify({"reply": "⏱ انتهت مهلة الاتصال، حاول مجدداً."}), 504
     except requests.ConnectionError:
-        auto_save_unknown(user_message, sender)   # خادم معطل = سؤال غير مجاب
+        auto_save_unknown(user_message, sender)
         return jsonify({"reply": "⚠ تعذّر الاتصال بالخادم، يُرجى المحاولة لاحقاً."}), 503
     except Exception as e:
         logger.exception(e)
@@ -551,14 +676,7 @@ def search_questions():
 
 @app.route("/faculty-stats", methods=["GET"])
 def faculty_stats():
-    """توزيع الأسئلة حسب الكلية المذكورة في السؤال."""
-    faculty_keywords = {
-        "FST":   ["fst", "sciences et techniques", "علوم تقنيات", "علوم والتقنيات", "كلية العلوم"],
-        "FLSH":  ["flsh", "lettres", "sciences humaines", "آداب", "إنسانية", "اجتماعية"],
-        "FMPOS": ["fmpos", "médecine", "pharmacie", "طب", "صيدلة", "odontologie"],
-        "FSJP":  ["fsjp", "droit", "sciences politiques", "حقوق", "علوم سياسية"],
-        "FEG":   ["feg", "économie", "gestion", "اقتصاد", "تسيير", "تجارة"],
-    }
+    """إحصائيات نشاط الكليات — مبنية على جميع تفاعلات المستخدمين (chat_logs)."""
     colors = {
         "FST":   "#3b82f6",
         "FLSH":  "#10b981",
@@ -566,16 +684,18 @@ def faculty_stats():
         "FSJP":  "#8b5cf6",
         "FEG":   "#eab308",
     }
-
     with get_db() as conn:
-        rows = conn.execute("SELECT question FROM unknown_questions").fetchall()
+        rows = conn.execute("""
+            SELECT faculty, COUNT(*) AS count
+            FROM chat_logs
+            WHERE faculty IS NOT NULL
+            GROUP BY faculty
+        """).fetchall()
 
-    counts = {fac: 0 for fac in faculty_keywords}
+    counts = {f: 0 for f in colors}
     for row in rows:
-        q_lower = row["question"].lower()
-        for fac, keywords in faculty_keywords.items():
-            if any(kw in q_lower for kw in keywords):
-                counts[fac] += 1
+        if row["faculty"] in counts:
+            counts[row["faculty"]] = row["count"]
 
     result = sorted(
         [{"name": k, "count": v, "color": colors[k]} for k, v in counts.items()],
