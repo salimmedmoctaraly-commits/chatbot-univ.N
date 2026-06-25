@@ -41,6 +41,10 @@ const QUICK_SUGGESTIONS = [
   { ar: "النتائج",    fr: "Résultats"    },
   { ar: "المنح",      fr: "Bourses"     },
   { ar: "الكليات",    fr: "Facultés"    },
+  { ar: "",    fr: "MI"              },
+  { ar: "",    fr: "MA"              },
+  { ar: "",    fr: "Master MI "      },
+  { ar: "",    fr: "Master MA "      },
 ];
 
 function App() {
