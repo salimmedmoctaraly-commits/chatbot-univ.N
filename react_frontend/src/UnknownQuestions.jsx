@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Home, Users, BarChart2, FileText, Settings,
   HelpCircle, CheckCircle2, Search, Menu, Sun, Moon,

@@ -41,7 +41,7 @@ const QUICK_SUGGESTIONS = [
   { ar: "النتائج",    fr: "Résultats"    },
   { ar: "المنح",      fr: "Bourses"     },
   { ar: "الكليات",    fr: "Facultés"    },
-];
+  ];
 
 function App() {
   const [input, setInput]                 = useState("");
