@@ -507,7 +507,6 @@ def ping():
     return jsonify({
         "status":       "ok",
         "timestamp":    datetime.utcnow().isoformat(),
->>>>>>> 4a0ddd94e10f02748826847e6a01c62f10e47190
     })
 
 
