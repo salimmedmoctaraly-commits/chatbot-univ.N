@@ -29,9 +29,9 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 RASA_URL     = os.environ.get("RASA_URL", "http://localhost:5005/webhooks/rest/webhook")
 RASA_TIMEOUT = int(os.environ.get("RASA_TIMEOUT", "15"))
 
-# Sessions نشطة
+# Sessions نشطة — فقط عند إرسال رسائل فعلية
 _active_sessions: dict = {}
-SESSION_TIMEOUT = 300  # ثانية
+SESSION_TIMEOUT = 300  # 5 دقائق — مدة عرض المستخدم كنشط بعد آخر رسالة
 
 
 # ══════════════════════════════════════════════════════════════
@@ -505,12 +505,13 @@ def health():
 
 @app.route("/ping", methods=["POST"])
 def ping():
-    data   = request.get_json(silent=True) or {}
-    sender = data.get("sender", "anonymous")
-    _active_sessions[sender] = datetime.utcnow().timestamp()
+    """
+    تفعيل الحفاظ على الاتصال فقط — لا يسجل المستخدم كنشط.
+    النشاط الفعلي يُسجل فقط عند /chat
+    """
     return jsonify({
         "status":       "ok",
-        "active_users": get_active_count(),
+        "timestamp":    datetime.utcnow().isoformat(),
     })
 
 
