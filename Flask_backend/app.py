@@ -1,8 +1,3 @@
-
-UNA Chatbot — Flask Backend  v3.0
-Base de données : SQLite  (migration automatique depuis JSON)
-"""
-
 import re
 import unicodedata
 import sqlite3
