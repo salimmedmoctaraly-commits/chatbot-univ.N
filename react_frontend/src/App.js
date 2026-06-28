@@ -41,17 +41,7 @@ const QUICK_SUGGESTIONS = [
   { ar: "النتائج",    fr: "Résultats"    },
   { ar: "المنح",      fr: "Bourses"     },
   { ar: "الكليات",    fr: "Facultés"    },
-  { ar: "MI",    fr: ""              },
-  { ar: "MA",    fr: ""              },
-  { ar: "Master MI",    fr: ""      },
-  { ar: "Master MA ",    fr: ""      },
-  { ar: "راشا",    fr: "Rachat"      },
-   { ar: "FSJP",    fr: "القانون"      },
-  { ar: "FMPOS ",    fr: "الطب"      },
-  { ar: "FEG",   fr: "الاقتصاد"      },
-  { ar: "FLSH",   fr: "الاداب"      },
-  
-];
+  ];
 
 function App() {
   const [input, setInput]                 = useState("");
