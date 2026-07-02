@@ -1,3 +1,9 @@
+
+"""
+UNA Chatbot — Flask Backend  v3.0
+Base de données : SQLite  (migration automatique depuis JSON)
+"""
+
 import re
 import unicodedata
 import sqlite3
@@ -507,7 +513,7 @@ def ping():
     return jsonify({
         "status":       "ok",
         "timestamp":    datetime.utcnow().isoformat(),
-    })
+})
 
 
 @app.route("/active-users", methods=["GET"])
