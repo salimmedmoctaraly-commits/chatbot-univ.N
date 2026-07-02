@@ -1,4 +1,3 @@
-
 """
 UNA Chatbot — Flask Backend  v3.0
 Base de données : SQLite  (migration automatique depuis JSON)
@@ -514,8 +513,6 @@ def ping():
         "status":       "ok",
         "timestamp":    datetime.utcnow().isoformat(),
 })
-
-
 @app.route("/active-users", methods=["GET"])
 def active_users():
     return jsonify({
@@ -837,11 +834,9 @@ def rasa_health():
         ok = False
     return jsonify({"ok": ok, "url": rasa_base})
 
-
 # ══════════════════════════════════════════════════════════════
 #  ENTRY POINT
 # ══════════════════════════════════════════════════════════════
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     logger.info(f"Flask على المنفذ :{port}")
